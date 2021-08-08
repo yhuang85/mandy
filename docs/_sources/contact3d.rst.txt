@@ -10,9 +10,14 @@ Contact structure is a structure on a space. So let's first talk about spaces.
 
 It may be either the choice of god or the perception of our kind that we all live in a space. Since the time we looked into the sky, the earth, or the ocean, we never stopped wondering, physically or mentally, about the mysterious space around us.
 
-When talking about spaces, one of the first things that come to is the so-called *dimension*, or in more plain terms: how big is it? One way of measuring the size of a space, which is particularly fonded by physicists/engineers, is to use the *degrees of freedom*. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up/down, left/right, and front/back. The mathematical definition of dimension, however, is a rather fussy one. In fact, there are many different versions of dimensions that suit different purposes.  For now, it's good enough to just have a physical understanding of the dimension.
+When talking about spaces, one of the first things that come to is the so-called *dimension*, or in more plain terms: how big is it? There is no universally agreed definition of what a dimension is. There really shouldn't be since any definition has to serve a particular purpose and no definition makes sense as a standalone. Here are two definitions of dimensions that are relevant to contact structures. 
 
-Measurement of dimension
-------------------------
+Visual dimension -- Degrees of Freedom
+	This way of defining diemsion is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up :math:`\leftrightarrow` down, left :math:`\leftrightarrow` right, and forward :math:`\leftrightarrow` backward. 
 
-How does one measure dimensions? Well, the answer depends on how you define the dimension. If the dimension is defined as the degrees of freedom, then any creature living in the space will immediately know what it is without any measurement. For example, a tree knows very well that it can grow in all three dimensions. On the other hand, if the dimension :math:`D` is defined to be the rate of volume growth of a ball (that is, if $latex \textrm{Vol}(B(r)) &bg=eff0e4$ denotes the volume of a ball of radius $latex r &bg=eff0e4$, then $latex D &bg=eff0e4$ is the growth rate of $latex \textrm{Vol}(B(r)) &bg=eff0e4$ with with respect to $latex r &bg=eff0e4$),  then one surely needs to be able to measure the volume in order to compute the dimension. To avoid further terminological confusions, let's call dimension of the first kind visual dimension and dimension of the second kind measure dimension.
+Measure dimension -- Volume Growth
+	The other, maybe less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius. 
+
+
+Distribution
+------------

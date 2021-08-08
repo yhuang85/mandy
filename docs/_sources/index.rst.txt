@@ -1,12 +1,15 @@
+.. Mandy documentation master file, created by
+   sphinx-quickstart on Sun Aug  8 11:18:32 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
 Welcome to Mandy's wonderland!
-====================================
+=================================
 
 We write about math, about food, about anything we like.
 
 .. note::
-
-	This project is under active development.
-
+   This project is under active development.
 
 .. toctree::
    :hidden:
