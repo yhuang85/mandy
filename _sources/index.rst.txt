@@ -1,0 +1,14 @@
+Welcome to Mandy's wonderland!
+====================================
+
+We write about math, about food, about anything we like.
+
+.. note::
+
+	This project is under active development.
+
+
+.. toctree::
+   :hidden:
+
+   contact3d
