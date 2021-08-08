@@ -1,23 +1,55 @@
 What's a contact structure in dimension 3?
 ==========================================
 
+
+.. note::
+	Last updated: |today|
+
 We try to explain what a contact structure is in a 3-dimensional space from an intrinsic viewpoint, i.e., we pretend to live inside the contact 3-space without any knowledge of what an outside universe means. This article is heavily influenced by a `paper <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/carnot_caratheodory.pdf>`_ of M. Gromov.
 
 Space and dimension
 -------------------
 
-Contact structure is a structure on a space. So let's first talk about spaces.
+Contact structure is a structure living in a space. So let's first talk about spaces.
 
 It may be either the choice of god or the perception of our kind that we all live in a space. Since the time we looked into the sky, the earth, or the ocean, we never stopped wondering, physically or mentally, about the mysterious space around us.
 
-When talking about spaces, one of the first things that come to is the so-called *dimension*, or in more plain terms: how big is it? There is no universally agreed definition of what a dimension is. There really shouldn't be since any definition has to serve a particular purpose and no definition makes sense as a standalone. Here are two definitions of dimensions that are relevant to contact structures. 
+When talking about spaces, one of the first things that come to is the so-called *dimension*, or in more plain terms: how big is it? There is no universally agreed definition of what a dimension is. There really shouldn't be one since every definition has to serve a particular purpose and no definition makes sense as a standalone. Here are two definitions of dimensions that are relevant to contact structures. 
 
 Visual dimension -- Degrees of Freedom
-	This way of defining diemsion is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up :math:`\leftrightarrow` down, left :math:`\leftrightarrow` right, and forward :math:`\leftrightarrow` backward. 
+	This way of defining dimension is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up :math:`\leftrightarrow` down, left :math:`\leftrightarrow` right, and forward :math:`\leftrightarrow` backward. 
 
 Measure dimension -- Volume Growth
-	The other, maybe less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius. 
+	The other, slightly less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius. 
+	
+	.. highlights:: 
+		The faster the volume grows, the larger the dimension is. 
 
+	To make some sense of this statement, imagine the space as consisting of an immensely dense population of particles. Then the volume of a ball can be thought of as counting the number of particles in the ball. Now a fast volume growth means that with a unit increment of the radius, the ball suddenly contains much more particles. This is a good indication that the space is "large".
+
+.. note::
+
+	1. Another intriguing definition of dimension, named after F. Hausdorff, aims at measuring the size of `fractals <https://en.wikipedia.org/wiki/Fractal>`_. We shall make no use of that since contact structures do not live on fractals.
+	2. The volume growth of balls is by itself a very interesting and counter-intuitive phenomenon, especially when the dimension is large [#]_ . Indeed, the mass of a high dimensional ball is highly concentrated near its boundary, as opposed to the interior which would have followed from common sense. This is known as the `concentration of measure <https://en.wikipedia.org/wiki/Concentration_of_measure>`_.
+
+Homogeneity of space
+--------------------
+
+All the above definitions of dimensions are local in nature, i.e.,
+
+.. highlights::
+	The dimension measures the size of a space at the vicinity of every point.
+
+It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn't even have to be continuous.
+
+
+Harmony of dimensions
+---------------------
+
+For a space :math:`V`, let :math:`\mathrm{Vdim}(V)` be its visual dimension and :math:`\mathrm{Mdim}(V)` be its measure dimension. 
 
 Distribution
 ------------
+
+
+.. [#] Dimension 3 is not large enough. 

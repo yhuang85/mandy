@@ -183,21 +183,53 @@
         </div>
         <section id="what-s-a-contact-structure-in-dimension-3">
 <h1>What’s a contact structure in dimension 3?<a class="headerlink" href="#what-s-a-contact-structure-in-dimension-3" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Last updated: Aug 08, 2021</p>
+</div>
 <p>We try to explain what a contact structure is in a 3-dimensional space from an intrinsic viewpoint, i.e., we pretend to live inside the contact 3-space without any knowledge of what an outside universe means. This article is heavily influenced by a <a class="reference external" href="https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/carnot_caratheodory.pdf">paper</a> of M. Gromov.</p>
 <section id="space-and-dimension">
 <h2>Space and dimension<a class="headerlink" href="#space-and-dimension" title="Permalink to this headline">¶</a></h2>
-<p>Contact structure is a structure on a space. So let’s first talk about spaces.</p>
+<p>Contact structure is a structure living in a space. So let’s first talk about spaces.</p>
 <p>It may be either the choice of god or the perception of our kind that we all live in a space. Since the time we looked into the sky, the earth, or the ocean, we never stopped wondering, physically or mentally, about the mysterious space around us.</p>
-<p>When talking about spaces, one of the first things that come to is the so-called <em>dimension</em>, or in more plain terms: how big is it? There is no universally agreed definition of what a dimension is. There really shouldn’t be since any definition has to serve a particular purpose and no definition makes sense as a standalone. Here are two definitions of dimensions that are relevant to contact structures.</p>
-<dl class="simple">
-<dt>Visual dimension – Degrees of Freedom</dt><dd><p>This way of defining diemsion is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> down, left <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> right, and forward <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> backward.</p>
+<p>When talking about spaces, one of the first things that come to is the so-called <em>dimension</em>, or in more plain terms: how big is it? There is no universally agreed definition of what a dimension is. There really shouldn’t be one since every definition has to serve a particular purpose and no definition makes sense as a standalone. Here are two definitions of dimensions that are relevant to contact structures.</p>
+<dl>
+<dt>Visual dimension – Degrees of Freedom</dt><dd><p>This way of defining dimension is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> down, left <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> right, and forward <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> backward.</p>
 </dd>
-<dt>Measure dimension – Volume Growth</dt><dd><p>The other, maybe less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius.</p>
+<dt>Measure dimension – Volume Growth</dt><dd><p>The other, slightly less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius.</p>
+<blockquote class="highlights">
+<div><p>The faster the volume grows, the larger the dimension is.</p>
+</div></blockquote>
+<p>To make some sense of this statement, imagine the space as consisting of an immensely dense population of particles. Then the volume of a ball can be thought of as counting the number of particles in the ball. Now a fast volume growth means that with a unit increment of the radius, the ball suddenly contains much more particles. This is a good indication that the space is “large”.</p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Another intriguing definition of dimension, named after F. Hausdorff, aims at measuring the size of <a class="reference external" href="https://en.wikipedia.org/wiki/Fractal">fractals</a>. We shall make no use of that since contact structures do not live on fractals.</p></li>
+<li><p>The volume growth of balls is by itself a very interesting and counter-intuitive phenomenon, especially when the dimension is large <a class="footnote-reference brackets" href="#id2" id="id1">1</a> . Indeed, the mass of a high dimensional ball is highly concentrated near its boundary, as opposed to the interior which would have followed from common sense. This is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Concentration_of_measure">concentration of measure</a>.</p></li>
+</ol>
+</div>
+</section>
+<section id="homogeneity-of-space">
+<h2>Homogeneity of space<a class="headerlink" href="#homogeneity-of-space" title="Permalink to this headline">¶</a></h2>
+<p>All the above definitions of dimensions are local in nature, i.e.,</p>
+<blockquote class="highlights">
+<div><p>The dimension measures the size of a space at the vicinity of every point.</p>
+</div></blockquote>
+<p>It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn’t even have to be continuous.</p>
+</section>
+<section id="harmony-of-dimensions">
+<h2>Harmony of dimensions<a class="headerlink" href="#harmony-of-dimensions" title="Permalink to this headline">¶</a></h2>
+<p>For a space <span class="math notranslate nohighlight">\(V\)</span>, let <span class="math notranslate nohighlight">\(\mathrm{Vdim}(V)\)</span> be its visual dimension and <span class="math notranslate nohighlight">\(\mathrm{Mdim}(V)\)</span> be its measure dimension.</p>
 </section>
 <section id="distribution">
 <h2>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Dimension 3 is not large enough.</p>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -249,6 +281,8 @@
             <ul>
 <li><a class="reference internal" href="#">What’s a contact structure in dimension 3?</a><ul>
 <li><a class="reference internal" href="#space-and-dimension">Space and dimension</a></li>
+<li><a class="reference internal" href="#homogeneity-of-space">Homogeneity of space</a></li>
+<li><a class="reference internal" href="#harmony-of-dimensions">Harmony of dimensions</a></li>
 <li><a class="reference internal" href="#distribution">Distribution</a></li>
 </ul>
 </li>
