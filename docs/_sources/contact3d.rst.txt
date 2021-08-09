@@ -46,7 +46,7 @@ It is therefore entirely possible that the dimension of a space jumps from point
 Harmony of dimensions
 ---------------------
 
-For a space :math:`V`, let :math:`\mathrm{Vdim}(V)` be its visual dimension and :math:`\mathrm{Mdim}(V)` be its measure dimension. 
+For a space :math:`V`, let :math:`\op{Vdim}(V)` be its visual dimension and :math:`\op{Mdim}(V)` be its measure dimension. 
 
 Distribution
 ------------
