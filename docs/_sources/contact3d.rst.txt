@@ -1,4 +1,4 @@
-What's a contact structure in dimension 3?
+What's a contact structure in 3D?
 ==========================================
 
 
@@ -17,10 +17,10 @@ It may be either the choice of god or the perception of our kind that we all liv
 When talking about spaces, one of the first things that come to is the so-called *dimension*, or in more plain terms: how big is it? There is no universally agreed definition of what a dimension is. There really shouldn't be one since every definition has to serve a particular purpose and no definition makes sense as a standalone. Here are two definitions of dimensions that are relevant to contact structures. 
 
 Visual dimension -- Degrees of Freedom
-	This way of defining dimension is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up :math:`\leftrightarrow` down, left :math:`\leftrightarrow` right, and forward :math:`\leftrightarrow` backward. 
+	This way of defining dimension is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up :math:`\leftrightarrow` down, left :math:`\leftrightarrow` right, and forward :math:`\leftrightarrow` backward.
 
 Measure dimension -- Volume Growth
-	The other, slightly less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius. 
+	The other, slightly less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius. Namely, if :math:`\op{Vol}(B(r))` denotes the volume of a ball of radius :math:`r`, then the asymptotic :math:`\op{Vol}(B(r)) \sim r^d` as :math:`r \to 0` defines the measure dimension to be :math:`d`.
 	
 	.. highlights:: 
 		The faster the volume grows, the larger the dimension is. 
@@ -40,16 +40,28 @@ All the above definitions of dimensions are local in nature, i.e.,
 .. highlights::
 	The dimension measures the size of a space at the vicinity of every point.
 
-It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn't even have to be continuous.
+It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn't even have to be continuous. Given a space :math:`V` and a point :math:`p \in V`, let's write :math:`\dim_p(V)` for the dimension of :math:`V` at :math:`p`, whose definition may be any one of the above. 
+
+.. important::
+	Whenever we write just :math:`\dim(V)`, we assume implicitly that the dimension is the same at all points, i.e., the space is in a sense homogeneous.
 
 
 Harmony of dimensions
 ---------------------
 
-For a space :math:`V`, let :math:`\op{Vdim}(V)` be its visual dimension and :math:`\op{Mdim}(V)` be its measure dimension. 
+For a space :math:`V`, let's write :math:`\op{Vdim}(V)` for its visual dimension and :math:`\op{Mdim}(V)` for its measure dimension. For "usual" spaces :math:`V`, one can expect :math:`\op{Vdim}(V) = \op{Mdim}(V)`. For example, we have :math:`\op{Vdim}(\RR^3)=3` obviously, and also :math:`\op{Mdim}(\RR^3)=3` since :math:`\op{Vol}(B^3(r)) = \tfrac{4}{3}\pi r^3`.
+
+.. important::
+	It's in fact irrelevant what exactly the shape one uses to compute the measure dimension. We used balls above probably because it's the most intuitive shape, but it's not the shape whose volume is the easiest to compute. Indeed, it's easier to use cubes :math:`K(r)` of side length :math:`r` instead and refer to the much simpler :math:`\op{Vol}(K(r)) = r^3`.
+
+It's not immediately obvious what kind of spaces would have unequal visual and measure dimensions. Contact structures, especially in dimension 3, provide good examples of such "weird" spaces. Indeed, we're not even interested in the underlying topology of the space, which will always be :math:`\RR^3`.
 
 Distribution
 ------------
+
+In :math:`\RR^3`, one can freely walk in all 3 independent directions if no further constraints are enforced. However, it's not hard to imagine that a live being, for whatever reason, is disallowed to move in certain directions. From now on this live being will be called Mandy. Then for all Mandy can see, the visual dimension, aka the degree of freedom, may well be less than 3 even though from the viewpoint of an outsider, the space itself has not changed at all.
+
+Constraints like these are called distributions. More formally, a distribution :math:`D` on :math:`\RR^3` is a choice of subspace at every point, i.e., :math:`D(x) \subset T_x \RR^3 \cong \RR^3` is a linear subspace for every :math:`x \in \RR^3`.
 
 
 .. [#] Dimension 3 is not large enough. 

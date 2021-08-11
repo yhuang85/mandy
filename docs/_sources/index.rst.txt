@@ -11,6 +11,9 @@ We write about math, about food, about anything we like.
 .. note::
    This project is under active development. Check out this `repo <https://github.com/yhuang85/mandy_source.git>`_ if you're curious about how this website is built.
 
+.. warning::
+   Technical terminologies used in this site are by no means universally agreed and logical arguments are not necessarily rigorous. The goal, which would never be achieved, is to keep the articles as accessible and self-contained as possible.
+
 .. toctree::
    :hidden:
 

@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Welcome to Mandy’s wonderland!" href="index.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.07.31.beta41"/>
-        <title>What’s a contact structure in dimension 3? - Mandy&#39;s wonderland</title>
+        <title>What’s a contact structure in 3D? - Mandy&#39;s wonderland</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=daa650a7760fac3eee23aa959745d2c866b74cb3" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=93475b62d1c3bc01323a0eefdc14a62d77b12690" />
@@ -155,7 +155,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">What’s a contact structure in dimension 3?</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">What’s a contact structure in 3D?</a></li>
 </ul>
 
 </div>
@@ -181,11 +181,11 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <section id="what-s-a-contact-structure-in-dimension-3">
-<h1>What’s a contact structure in dimension 3?<a class="headerlink" href="#what-s-a-contact-structure-in-dimension-3" title="Permalink to this headline">¶</a></h1>
+        <section id="what-s-a-contact-structure-in-3d">
+<h1>What’s a contact structure in 3D?<a class="headerlink" href="#what-s-a-contact-structure-in-3d" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Last updated: Aug 09, 2021</p>
+<p>Last updated: Aug 11, 2021</p>
 </div>
 <p>We try to explain what a contact structure is in a 3-dimensional space from an intrinsic viewpoint, i.e., we pretend to live inside the contact 3-space without any knowledge of what an outside universe means. This article is heavily influenced by a <a class="reference external" href="https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/carnot_caratheodory.pdf">paper</a> of M. Gromov.</p>
 <section id="space-and-dimension">
@@ -196,7 +196,7 @@
 <dl>
 <dt>Visual dimension – Degrees of Freedom</dt><dd><p>This way of defining dimension is particularly fonded by physicists and engineers. Roughly speaking, it asks about in how many independent directions can one moves around. In this sense, we all seem to live in a 3-dimensional space since there are apparently 3 degrees of freedom: up <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> down, left <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> right, and forward <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> backward.</p>
 </dd>
-<dt>Measure dimension – Volume Growth</dt><dd><p>The other, slightly less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius.</p>
+<dt>Measure dimension – Volume Growth</dt><dd><p>The other, slightly less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius. Namely, if <span class="math notranslate nohighlight">\(\op{Vol}(B(r))\)</span> denotes the volume of a ball of radius <span class="math notranslate nohighlight">\(r\)</span>, then the asymptotic <span class="math notranslate nohighlight">\(\op{Vol}(B(r)) \sim r^d\)</span> as <span class="math notranslate nohighlight">\(r \to 0\)</span> defines the measure dimension to be <span class="math notranslate nohighlight">\(d\)</span>.</p>
 <blockquote class="highlights">
 <div><p>The faster the volume grows, the larger the dimension is.</p>
 </div></blockquote>
@@ -217,14 +217,25 @@
 <blockquote class="highlights">
 <div><p>The dimension measures the size of a space at the vicinity of every point.</p>
 </div></blockquote>
-<p>It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn’t even have to be continuous.</p>
+<p>It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn’t even have to be continuous. Given a space <span class="math notranslate nohighlight">\(V\)</span> and a point <span class="math notranslate nohighlight">\(p \in V\)</span>, let’s write <span class="math notranslate nohighlight">\(\dim_p(V)\)</span> for the dimension of <span class="math notranslate nohighlight">\(V\)</span> at <span class="math notranslate nohighlight">\(p\)</span>, whose definition may be any one of the above.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Whenever we write just <span class="math notranslate nohighlight">\(\dim(V)\)</span>, we assume implicitly that the dimension is the same at all points, i.e., the space is in a sense homogeneous.</p>
+</div>
 </section>
 <section id="harmony-of-dimensions">
 <h2>Harmony of dimensions<a class="headerlink" href="#harmony-of-dimensions" title="Permalink to this headline">¶</a></h2>
-<p>For a space <span class="math notranslate nohighlight">\(V\)</span>, let <span class="math notranslate nohighlight">\(\op{Vdim}(V)\)</span> be its visual dimension and <span class="math notranslate nohighlight">\(\op{Mdim}(V)\)</span> be its measure dimension.</p>
+<p>For a space <span class="math notranslate nohighlight">\(V\)</span>, let’s write <span class="math notranslate nohighlight">\(\op{Vdim}(V)\)</span> for its visual dimension and <span class="math notranslate nohighlight">\(\op{Mdim}(V)\)</span> for its measure dimension. For “usual” spaces <span class="math notranslate nohighlight">\(V\)</span>, one can expect <span class="math notranslate nohighlight">\(\op{Vdim}(V) = \op{Mdim}(V)\)</span>. For example, we have <span class="math notranslate nohighlight">\(\op{Vdim}(\RR^3)=3\)</span> obviously, and also <span class="math notranslate nohighlight">\(\op{Mdim}(\RR^3)=3\)</span> since <span class="math notranslate nohighlight">\(\op{Vol}(B^3(r)) = \tfrac{4}{3}\pi r^3\)</span>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It’s in fact irrelevant what exactly the shape one uses to compute the measure dimension. We used balls above probably because it’s the most intuitive shape, but it’s not the shape whose volume is the easiest to compute. Indeed, it’s easier to use cubes <span class="math notranslate nohighlight">\(K(r)\)</span> of side length <span class="math notranslate nohighlight">\(r\)</span> instead and refer to the much simpler <span class="math notranslate nohighlight">\(\op{Vol}(K(r)) = r^3\)</span>.</p>
+</div>
+<p>It’s not immediately obvious what kind of spaces would have unequal visual and measure dimensions. Contact structures, especially in dimension 3, provide good examples of such “weird” spaces. Indeed, we’re not even interested in the underlying topology of the space, which will always be <span class="math notranslate nohighlight">\(\RR^3\)</span>.</p>
 </section>
 <section id="distribution">
 <h2>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h2>
+<p>In <span class="math notranslate nohighlight">\(\RR^3\)</span>, one can freely walk in all 3 independent directions if no further constraints are enforced. However, it’s not hard to imagine that a live being, for whatever reason, is disallowed to move in certain directions. From now on this live being will be called Mandy. Then for all Mandy can see, the visual dimension, aka the degree of freedom, may well be less than 3 even though from the viewpoint of an outsider, the space itself has not changed at all.</p>
+<p>Constraints like these are called distributions. More formally, a distribution <span class="math notranslate nohighlight">\(D\)</span> on <span class="math notranslate nohighlight">\(\RR^3\)</span> is a choice of subspace at every point, i.e., <span class="math notranslate nohighlight">\(D(x) \subset T_x \RR^3 \cong \RR^3\)</span> is a linear subspace for every <span class="math notranslate nohighlight">\(x \in \RR^3\)</span>.</p>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Dimension 3 is not large enough.</p>
@@ -279,7 +290,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">What’s a contact structure in dimension 3?</a><ul>
+<li><a class="reference internal" href="#">What’s a contact structure in 3D?</a><ul>
 <li><a class="reference internal" href="#space-and-dimension">Space and dimension</a></li>
 <li><a class="reference internal" href="#homogeneity-of-space">Homogeneity of space</a></li>
 <li><a class="reference internal" href="#harmony-of-dimensions">Harmony of dimensions</a></li>
