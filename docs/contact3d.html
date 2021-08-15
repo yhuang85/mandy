@@ -185,7 +185,7 @@
 <h1>What’s a contact structure in 3D?<a class="headerlink" href="#what-s-a-contact-structure-in-3d" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Last updated: Aug 11, 2021</p>
+<p>Last updated: Aug 15, 2021</p>
 </div>
 <p>We try to explain what a contact structure is in a 3-dimensional space from an intrinsic viewpoint, i.e., we pretend to live inside the contact 3-space without any knowledge of what an outside universe means. This article is heavily influenced by a <a class="reference external" href="https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/carnot_caratheodory.pdf">paper</a> of M. Gromov.</p>
 <section id="space-and-dimension">
@@ -207,7 +207,7 @@
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>Another intriguing definition of dimension, named after F. Hausdorff, aims at measuring the size of <a class="reference external" href="https://en.wikipedia.org/wiki/Fractal">fractals</a>. We shall make no use of that since contact structures do not live on fractals.</p></li>
-<li><p>The volume growth of balls is by itself a very interesting and counter-intuitive phenomenon, especially when the dimension is large <a class="footnote-reference brackets" href="#id2" id="id1">1</a> . Indeed, the mass of a high dimensional ball is highly concentrated near its boundary, as opposed to the interior which would have followed from common sense. This is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Concentration_of_measure">concentration of measure</a>.</p></li>
+<li><p>The volume growth of balls is by itself a very interesting and counter-intuitive phenomenon, especially when the dimension is large <a class="footnote-reference brackets" href="#id5" id="id1">1</a> . Indeed, the mass of a high dimensional ball is highly concentrated near its boundary, as opposed to the interior which would have followed from common sense. This is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Concentration_of_measure">concentration of measure</a>.</p></li>
 </ol>
 </div>
 </section>
@@ -218,27 +218,89 @@
 <div><p>The dimension measures the size of a space at the vicinity of every point.</p>
 </div></blockquote>
 <p>It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn’t even have to be continuous. Given a space <span class="math notranslate nohighlight">\(V\)</span> and a point <span class="math notranslate nohighlight">\(p \in V\)</span>, let’s write <span class="math notranslate nohighlight">\(\dim_p(V)\)</span> for the dimension of <span class="math notranslate nohighlight">\(V\)</span> at <span class="math notranslate nohighlight">\(p\)</span>, whose definition may be any one of the above.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Whenever we write just <span class="math notranslate nohighlight">\(\dim(V)\)</span>, we assume implicitly that the dimension is the same at all points, i.e., the space is in a sense homogeneous.</p>
 </div>
 </section>
-<section id="harmony-of-dimensions">
-<h2>Harmony of dimensions<a class="headerlink" href="#harmony-of-dimensions" title="Permalink to this headline">¶</a></h2>
+<section id="agreement-of-dimensions">
+<h2>Agreement of dimensions<a class="headerlink" href="#agreement-of-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>For a space <span class="math notranslate nohighlight">\(V\)</span>, let’s write <span class="math notranslate nohighlight">\(\op{Vdim}(V)\)</span> for its visual dimension and <span class="math notranslate nohighlight">\(\op{Mdim}(V)\)</span> for its measure dimension. For “usual” spaces <span class="math notranslate nohighlight">\(V\)</span>, one can expect <span class="math notranslate nohighlight">\(\op{Vdim}(V) = \op{Mdim}(V)\)</span>. For example, we have <span class="math notranslate nohighlight">\(\op{Vdim}(\RR^3)=3\)</span> obviously, and also <span class="math notranslate nohighlight">\(\op{Mdim}(\RR^3)=3\)</span> since <span class="math notranslate nohighlight">\(\op{Vol}(B^3(r)) = \tfrac{4}{3}\pi r^3\)</span>.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>It’s in fact irrelevant what exactly the shape one uses to compute the measure dimension. We used balls above probably because it’s the most intuitive shape, but it’s not the shape whose volume is the easiest to compute. Indeed, it’s easier to use cubes <span class="math notranslate nohighlight">\(K(r)\)</span> of side length <span class="math notranslate nohighlight">\(r\)</span> instead and refer to the much simpler <span class="math notranslate nohighlight">\(\op{Vol}(K(r)) = r^3\)</span>.</p>
 </div>
 <p>It’s not immediately obvious what kind of spaces would have unequal visual and measure dimensions. Contact structures, especially in dimension 3, provide good examples of such “weird” spaces. Indeed, we’re not even interested in the underlying topology of the space, which will always be <span class="math notranslate nohighlight">\(\RR^3\)</span>.</p>
 </section>
-<section id="distribution">
-<h2>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h2>
-<p>In <span class="math notranslate nohighlight">\(\RR^3\)</span>, one can freely walk in all 3 independent directions if no further constraints are enforced. However, it’s not hard to imagine that a live being, for whatever reason, is disallowed to move in certain directions. From now on this live being will be called Mandy. Then for all Mandy can see, the visual dimension, aka the degree of freedom, may well be less than 3 even though from the viewpoint of an outsider, the space itself has not changed at all.</p>
-<p>Constraints like these are called distributions. More formally, a distribution <span class="math notranslate nohighlight">\(D\)</span> on <span class="math notranslate nohighlight">\(\RR^3\)</span> is a choice of subspace at every point, i.e., <span class="math notranslate nohighlight">\(D(x) \subset T_x \RR^3 \cong \RR^3\)</span> is a linear subspace for every <span class="math notranslate nohighlight">\(x \in \RR^3\)</span>.</p>
+<section id="distribution-and-conductivity">
+<h2>Distribution and conductivity<a class="headerlink" href="#distribution-and-conductivity" title="Permalink to this headline">¶</a></h2>
+<p>In <span class="math notranslate nohighlight">\(\RR^3\)</span>, one can freely walk in all 3 independent directions if no further constraints are enforced. However, it’s not hard to imagine that a live being, for whatever reason, is disallowed to move in certain directions. From now on this live being will be called Mandy. Then for all Mandy knows, the visual dimension, aka the degree of freedom, may well be less than 3 even though from the viewpoint of an outsider, the space itself has not changed at all.</p>
+<p>Constraints like these are called distributions. More formally, a distribution <span class="math notranslate nohighlight">\(D\)</span> on <span class="math notranslate nohighlight">\(\RR^3\)</span> is a choice of subspace at every point, i.e., <span class="math notranslate nohighlight">\(D(x) \subset T_x \RR^3 \cong \RR^3\)</span> is a linear subspace for every <span class="math notranslate nohighlight">\(x \in \RR^3\)</span>. Then dimension <span class="math notranslate nohighlight">\(\dim D(x)\)</span> is called the <em>rank</em> of <span class="math notranslate nohighlight">\(D\)</span> at <span class="math notranslate nohighlight">\(x\)</span>. To make life a bit easier, we will always work under the following two assumptions:</p>
+<ul class="simple">
+<li><p>The rank of <span class="math notranslate nohighlight">\(D\)</span> is constant, and will be called <span class="math notranslate nohighlight">\(\op{rank}(D)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(D\)</span> varies smoothly from point to point.</p></li>
+</ul>
+<p>The only potentially interesting scenarios are <span class="math notranslate nohighlight">\(\op{rank}(D) = 1\)</span> or <span class="math notranslate nohighlight">\(2\)</span>. The <span class="math notranslate nohighlight">\(\op{rank}(D) = 1\)</span> case is also not particularly interesting for our purposes here since Mandy, in this case, will just live either on a line or on a circle, and the actual space <span class="math notranslate nohighlight">\(\RR^3\)</span> becomes irrelevant. So let’s assume <span class="math notranslate nohighlight">\(\op{rank}(D) = 2\)</span> from now on. Moreover, we want to make sure that Mandy is able to explore the entire <span class="math notranslate nohighlight">\(\RR^3\)</span> under the constraint <span class="math notranslate nohighlight">\(D\)</span>, which we translate into the following <em>conductivity</em> condition.</p>
+<dl class="simple">
+<dt>Conductivity of <span class="math notranslate nohighlight">\(D\)</span></dt><dd><p>For any two points <span class="math notranslate nohighlight">\(p, q \in \RR^3\)</span>, there exists an integral curve <span class="math notranslate nohighlight">\(\gamma\)</span>, i.e., a curve everywhere tangent to <span class="math notranslate nohighlight">\(D\)</span>, connecting <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span>.</p>
+</dd>
+</dl>
+<p>Obviously not all distributions are conductive, for example, the distribution of planes all parallel to the <span class="math notranslate nohighlight">\(xy\)</span>-plane is not. The following distribution, on the other hand, is quite conductive</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[D_{\std} \coloneqq \ker(dz-ydx) = \op{span} (\p_x + y\p_z, \p_y).\]</div></div>
+<p>Indeed, for any <span class="math notranslate nohighlight">\(p, q \in \RR^3\)</span>, consider the projections <span class="math notranslate nohighlight">\(\pi(p), \pi(q) \in \RR^2_{xy}\)</span>, where <span class="math notranslate nohighlight">\(\pi: \RR^3 \to \RR^2\)</span> is defined by <span class="math notranslate nohighlight">\(\pi(x, y, z) = (x, y)\)</span>.</p>
+<p>Pick a (parametrized) curve <span class="math notranslate nohighlight">\(\bar{\gamma}: [0, 1] \to \RR^2_{xy}\)</span> such that <span class="math notranslate nohighlight">\(\bar{\gamma}(0) = \pi(p)\)</span> and <span class="math notranslate nohighlight">\(\bar{\gamma}(1) = \pi(q)\)</span>. Then <span class="math notranslate nohighlight">\(\bar{\gamma}\)</span> has a unique integral lift <span class="math notranslate nohighlight">\(\gamma: [0, 1] \to \RR^3\)</span> given the initial condition <span class="math notranslate nohighlight">\(\gamma(0) = p\)</span> in the sense that <span class="math notranslate nohighlight">\(\bar{\gamma} = \pi \circ \gamma\)</span>. This is plainly because <span class="math notranslate nohighlight">\(\pi_{\ast}: D_{\std} \to T\RR^2\)</span> is a pointwise isomorphism. More explicitly, we can solve for <span class="math notranslate nohighlight">\(z\)</span> along <span class="math notranslate nohighlight">\(\gamma\)</span> by</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[z(t) = \int_0^t y(s)x'(s)ds + z(0), \quad t \in [0, 1],\]</div></div>
+<p>where <span class="math notranslate nohighlight">\((x(t), y(t), z(t)) \coloneqq \gamma(t)\)</span> and <span class="math notranslate nohighlight">\(z(0) = z(p)\)</span>. Now to make sure that <span class="math notranslate nohighlight">\(z(1) = z(q)\)</span>, one just need to choose <span class="math notranslate nohighlight">\(\bar{\gamma}\)</span> such that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\int_0^1 y(s)x'(s)ds = z(q) - z(p),\]</div></div>
+<p>and there are simply plenty of such curves <a class="footnote-reference brackets" href="#id6" id="id2">2</a> .</p>
+<p>The above distribution <span class="math notranslate nohighlight">\(D_{\std}\)</span> is an example of a contact structure and it’s special enough to be called the <em>standard contact structure</em> even though we will not get to explain what’s standard about it in this article.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The projection <span class="math notranslate nohighlight">\(\pi: \RR^3 \to \RR^2\)</span> above, known as the <em>Lagrangian projection</em>, is a quite helpful tool in understanding contact structures in general essentially because of the unique lifting property mentioned above. It’s an important bridge between contact and symplectic structures.</p>
+</div>
+</section>
+<section id="disagreement-of-dimensions">
+<h2>Disagreement of dimensions<a class="headerlink" href="#disagreement-of-dimensions" title="Permalink to this headline">¶</a></h2>
+<p>Obviously <span class="math notranslate nohighlight">\(\op{Vdim} (\RR^3, D_{\std}) = 2\)</span> and it’s our goal here to compute <span class="math notranslate nohighlight">\(\op{Mdim} (\RR^3, D_{\std})\)</span>. To this end, we need a metric on <span class="math notranslate nohighlight">\(\RR^3\)</span> so that we can measure length and volume. The particular choice of metric is not super important here and we will stick to the Euclidean metric for simplicity.</p>
+<p>We shall compute <span class="math notranslate nohighlight">\(\op{Mdim}(\RR^3, D_{\std})\)</span> near the origin as follows. Consider a small cube</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[K(r) \coloneqq [0, r_x] \times [0, r_y] \times [0, r_z] \subset \RR^3\]</div></div>
+<p>of Euclidean side lengths <span class="math notranslate nohighlight">\(r_x, r_y, r_z\)</span>. We’d like it to be a square cube of side length <span class="math notranslate nohighlight">\(r\)</span> when measured in <span class="math notranslate nohighlight">\((\RR^3, D_{\std})\)</span> <a class="footnote-reference brackets" href="#id7" id="id3">3</a> . Namely, if we write <span class="math notranslate nohighlight">\(X = (r, 0, 0), Y = (0, r, 0), Z = (0, 0, r)\)</span> be the three vertices adjacent to the origin <span class="math notranslate nohighlight">\(O\)</span>, then we need</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\dist(O, X) = \dist(O, Y) = \dist(O, Z) = r,\]</div></div>
+<p>where the distance between two points is defined to be the length of the shortest path connecting them. Once this is achieved, the measure dimension is simply the growth rate of <span class="math notranslate nohighlight">\(\op{Vol} (K(r)) = r_x r_y r_z\)</span> as <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
+<p>Quite obviously <span class="math notranslate nohighlight">\(\dist(O, X) = r_x\)</span> and <span class="math notranslate nohighlight">\(\dist(O, Y) = r_y\)</span>. Therefore <span class="math notranslate nohighlight">\(r_x = r_y = r\)</span>. But the computation of <span class="math notranslate nohighlight">\(\dist(O, Z)\)</span> requires some effort since the straight interval between <span class="math notranslate nohighlight">\(O\)</span> and <span class="math notranslate nohighlight">\(Z\)</span> is not tangent to <span class="math notranslate nohighlight">\(D_{\std}\)</span>. Let</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\gamma: [0, 1] \to \RR^3: t \mapsto (x(t), y(t), z(t))\]</div></div>
+<p>be an integral curve from <span class="math notranslate nohighlight">\(O\)</span> to <span class="math notranslate nohighlight">\(Z\)</span>. Then the length <span class="math notranslate nohighlight">\(\ell(\gamma)\)</span> of <span class="math notranslate nohighlight">\(\gamma\)</span> can be computed as follows</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\ell(\gamma) = \int_0^1 \left( \sqrt{\dot{x}^2 + \dot{y}^2 + \dot{z}^2} \right) dt = \int_0^1 \left( \sqrt{(1 + y^2) \dot{x}^2 + \dot{y}^2} \right) dt\]</div></div>
+<p>Let <span class="math notranslate nohighlight">\(\bar{\gamma} \coloneqq \pi \circ \gamma: [0, 1] \to \RR^2\)</span> as before. Then there is a constant <span class="math notranslate nohighlight">\(K &gt; 0\)</span> such that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tfrac{1}{K} \cdot \ell(\bar{\gamma}) &lt; \ell(\gamma) &lt; K \cdot \ell(\bar{\gamma}).\]</div></div>
+<p>Hence as far as the asymptotic is concerned <span class="math notranslate nohighlight">\(\ell(\gamma) \sim \ell(\bar{\gamma})\)</span> as <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
+<p>Observe that <span class="math notranslate nohighlight">\(\bar{\gamma}\)</span> is a closed loop since <span class="math notranslate nohighlight">\(\pi (O) = \pi (Z) = 0\)</span>. Hence the minimization of <span class="math notranslate nohighlight">\(\ell(\gamma)\)</span>, up to a bounded error, can be translated into the problem of maximizing <span class="math notranslate nohighlight">\(\ell(\bar{\gamma})\)</span> while keeping the area <span class="math notranslate nohighlight">\(A\)</span> enclosed by <span class="math notranslate nohighlight">\(\bar{\gamma} \subset \RR^2\)</span> constant <a class="footnote-reference brackets" href="#id8" id="id4">4</a> . This is a classical isoperimetric problem and by forgetting an irrelevant constant, we have</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\min_{A = r_z} \ell (\bar{\gamma}) \sim \sqrt{r_z}\]</div></div>
+<p>It follows that <span class="math notranslate nohighlight">\(r_z \sim r^2\)</span>, and we conclude that</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\op{Vol} (K(r)) = r_x r_y r_z \sim r^4.\]</div></div>
+<p>Hence <span class="math notranslate nohighlight">\(\op{Mdim} (\RR^3, D_{\std}) = 4\)</span>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Dimension 3 is not large enough.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>The easiest way to find such a curve is to invoke Stokes’ theorem.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>A cube of side length <span class="math notranslate nohighlight">\(r\)</span> is just a convenient substitute for a ball of radius <span class="math notranslate nohighlight">\(r\)</span>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>By Stokes’ theorem <span class="math notranslate nohighlight">\(A = z(C) - z(O) = r_z\)</span>.</p>
 </dd>
 </dl>
 </section>
@@ -293,8 +355,9 @@
 <li><a class="reference internal" href="#">What’s a contact structure in 3D?</a><ul>
 <li><a class="reference internal" href="#space-and-dimension">Space and dimension</a></li>
 <li><a class="reference internal" href="#homogeneity-of-space">Homogeneity of space</a></li>
-<li><a class="reference internal" href="#harmony-of-dimensions">Harmony of dimensions</a></li>
-<li><a class="reference internal" href="#distribution">Distribution</a></li>
+<li><a class="reference internal" href="#agreement-of-dimensions">Agreement of dimensions</a></li>
+<li><a class="reference internal" href="#distribution-and-conductivity">Distribution and conductivity</a></li>
+<li><a class="reference internal" href="#disagreement-of-dimensions">Disagreement of dimensions</a></li>
 </ul>
 </li>
 </ul>
@@ -312,6 +375,6 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/main.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"RR": "{\\mathbb R}", "op": ["\\operatorname {#1}", 1]}}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"RR": "{\\mathbb R}", "op": ["\\operatorname {#1}", 1], "p": "{\\partial}", "std": "{\\operatorname{std}}", "dist": "{\\operatorname{dist}}"}, "packages": {"[+]": ["mathtools"]}}, "loader": {"load": ["[tex]/mathtools"]}}</script>
     </body>
 </html>
