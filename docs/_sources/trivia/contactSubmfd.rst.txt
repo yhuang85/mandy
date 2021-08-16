@@ -1,4 +1,4 @@
-Aren't contact submanifolds just everywhere?
-============================================
+How to find contact submanifolds?
+=================================
 
 tbc...
