@@ -191,7 +191,7 @@ In fact, the distributions :math:`D_k, k > 1`, are locally isomorphic to :math:`
 
 Based on these observations, we can finally propose an intrinsic characterization of contact structures as follows:
 
-	A contact structure on a :math:`3`-dimensional space is a rank-:math:`2` distribution, which makes the measure dimension greater than :math:`3` everywhere.
+	A contact structure on a :math:`3`-dimensional space is a rank-:math:`2` distribution, which makes the measure dimension homogeneous and greater than :math:`3` everywhere.
 
 Of course, one can easily find formal definition of `contact structures <https://en.wikipedia.org/wiki/Contact_geometry>`_. But the point of the above heuristic (which may not even be correct!) is that if you, at some point in your life [#drunk]_ ,  start suspecting whether you live in a contact world because you can only move in :math:`2` directions instead of the usual :math:`3`, you can find it out simply by measuring volume of tiny little balls.
 
