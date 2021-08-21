@@ -20,4 +20,4 @@ We write about math, about food, about anything we like.
    :maxdepth: 2
 
    contact3d
-   trivia/index
+   contactMorse
