@@ -18,6 +18,8 @@ Visual dimension -- Degrees of Freedom
 Measure dimension -- Volume Growth
 	The other, slightly less intuitive, way to define dimension is to ask how fast does the volume of a ball grow with the radius. Namely, if :math:`\op{Vol}(B(r))` denotes the volume of a ball of radius :math:`r`, then the asymptotic :math:`\op{Vol}(B(r)) \sim r^d` as :math:`r \to 0` defines the measure dimension to be :math:`d`.
 	
+	.. container::
+	
 		The faster the volume grows, the larger the dimension is. 
 
 	To make some sense of this statement, imagine the space as consisting of an immensely dense population of particles. Then the volume of a ball can be thought of as counting the number of particles in the ball. Now a fast volume growth means that with a unit increment of the radius, the ball suddenly contains much more particles. This is a good indication that the space is "large".
@@ -156,6 +158,7 @@ where :math:`D_1 = D_{\std}` of course. One can verify they are all conductive, 
 
 Let's first compute the measure dimension at the origin as before. Indeed, the only difference in such a computation between different :math:`k` is the distance :math:`\dist(O, Z)`. Specifically, we need to solve the following optimization problem:
 
+.. container::
 
 	With the 'area'
 

@@ -1,0 +1,12 @@
+Mathematics
+===========
+
+****
+
+.. toctree::
+   :caption: Contact and Symplectic Topology
+   :titlesonly:
+   :maxdepth: 2
+
+   contact3d
+   contactMorse
