@@ -5,8 +5,8 @@ name = "pypi"
 
 [packages]
 Sphinx = "*"
-sphinx-autobuild = "*"
 pydata-sphinx-theme = "*"
+sphinx-autobuild = "*"
 
 [dev-packages]
 
