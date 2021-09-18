@@ -35,6 +35,7 @@
     <script>window.MathJax = {"tex": {"macros": {"RR": "{\\mathbb R}", "Lcal": "{\\mathcal L}", "op": ["\\operatorname {#1}", 1], "p": "{\\partial}", "std": "{\\operatorname{std}}", "dist": "{\\operatorname{dist}}"}, "packages": {"[+]": ["mathtools"]}}, "loader": {"load": ["[tex]/mathtools"]}}</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Coding" href="../Coding/index.html" />
     <link rel="prev" title="What’s a contact structure in 3D?" href="contact3d.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -72,6 +73,12 @@
     <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="index.html">
   Mathematics
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Coding/index.html">
+  Coding
  </a>
 </li>
 
@@ -166,6 +173,11 @@
      Back to Contact
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -226,12 +238,12 @@
 </div>
 <div class="section" id="back-to-contact">
 <h3>Back to Contact<a class="headerlink" href="#back-to-contact" title="Permalink to this headline">¶</a></h3>
-<p>The compatibility between a contact manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span> and a Morse function <span class="math notranslate nohighlight">\(f: M \to \RR\)</span>, by analogy, asks the flow of <span class="math notranslate nohighlight">\(X \coloneqq \nabla f\)</span> to preserve <span class="math notranslate nohighlight">\(\xi\)</span>.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, E. Giroux <a class="reference internal" href="#gi03" id="id3"><span>[Gi03]</span></a> argued that every contact manifold admits a compatible Morse function.</p>
+<p>The compatibility between a contact manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span> and a Morse function <span class="math notranslate nohighlight">\(f: M \to \RR\)</span>, by analogy, asks the flow of <span class="math notranslate nohighlight">\(X \coloneqq \nabla f\)</span> to preserve <span class="math notranslate nohighlight">\(\xi\)</span>.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, E. Giroux <a class="reference internal" href="#gi03" id="id3"><span>[Gi03]</span></a> argued that every (closed) contact manifold admits a compatible Morse function.</p>
 <p>The regular level sets and critical points of a contact Morse function look quite different from the symplectic case, mostly because the compatibility condition now reads <span class="math notranslate nohighlight">\(\Lcal_X \alpha = g \alpha\)</span> where <span class="math notranslate nohighlight">\(\xi = \ker \alpha\)</span> is a contact form and <span class="math notranslate nohighlight">\(g\)</span> can be <em>any</em> function. In particular, the flow of <span class="math notranslate nohighlight">\(X\)</span> doesn’t have to expand the contact volume at all.</p>
 <dl>
 <dt>Contact regular level sets</dt><dd><p>A regular level set <span class="math notranslate nohighlight">\(\Sigma \subset (M, \xi)\)</span> can be decomposed into three pieces</p>
 <div class="math notranslate nohighlight" id="equation-hypersurfacedecomposition">
-<span class="eqno">(1)<a class="headerlink" href="#equation-hypersurfacedecomposition" title="Permalink to this equation">¶</a></span>\[\Sigma = R_+ \cup \Gamma \cup R_-\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-hypersurfacedecomposition" title="Permalink to this equation">¶</a></span>\[\Sigma = R_+ \cup \Gamma \cup R_-,\]</div>
 </dd>
 </dl>
 <p>where <span class="math notranslate nohighlight">\(\Gamma = \{ \alpha (X) = 0 \}\)</span> and <span class="math notranslate nohighlight">\(R_{\pm} = \{ \pm \alpha (X) &gt; 0 \}\)</span>, respectively. It turns out that <span class="math notranslate nohighlight">\((\Gamma, \xi|_{\Gamma})\)</span> is itself a contact manifold of dimension <span class="math notranslate nohighlight">\(\dim M - 2\)</span>, i.e., it’s a codimension-<span class="math notranslate nohighlight">\(2\)</span> contact submanifold of <span class="math notranslate nohighlight">\((M, \xi)\)</span>. Moreover <span class="math notranslate nohighlight">\(( R_{\pm}, d\alpha|_{R_{\pm}} )\)</span> are symplectic manifolds. However, they don’t necessarily carry a Morse structure as described above.</p>
@@ -250,6 +262,11 @@
 <p>Note that <span class="math notranslate nohighlight">\(X|_{H_k}\)</span> exponentially expands the contact volume in the above model. For <span class="math notranslate nohighlight">\(k \geq n+1\)</span>, one can simply reverse the signs of <span class="math notranslate nohighlight">\(X|_{H_k}\)</span> in the above equation, in which case <span class="math notranslate nohighlight">\(X|_{H_k}\)</span> exponentially contracts the contact volume. These handles will just be called contact handles since nobody was interested in registering them as trademarks.</p>
 </dd>
 </dl>
+</div>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The fact that every (closed) contact manifold admits a compatible Morse function means that one can build any contact manifold from the standard-looking contact handles. However, it doesn’t really give us much more grip on the contact manifold itself because such handle decompositions are by no means unique. Indeed, most of the power of Morse theory lies in the ability to connect different choices of Morse functions by homotopies. Such homotopies or more generally the flexibility of contact Morse functions are unfortunately not available from <a class="reference internal" href="#gi03" id="id4"><span>[Gi03]</span></a> due to the global nature of the argument, which is more-or-less a replica of an argument of S. Donaldson <a class="reference internal" href="#don96" id="id5"><span>[Don96]</span></a> for symplectic manifolds which are far more rigid.</p>
+<p>We will follow a completely different path to build a hopefully more useful contact Morse theory. The main tools will be hypersurfaces and characteristic foliations on them. These tools are native to contact topology and were extensively used by D. Bennequin, Eliashberg, Giroux among many others for various purposes in the early days of the subject.</p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="gradient"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
@@ -261,8 +278,11 @@
 <dt class="label" id="eg91"><span class="brackets"><a class="fn-backref" href="#id1">EG91</a></span></dt>
 <dd><p>Y. Eliashberg and M. Gromov. <a class="reference external" href="https://www.ihes.fr/~gromov/symplecticmanifolds/163/">Convex symplectic manifolds</a></p>
 </dd>
-<dt class="label" id="gi03"><span class="brackets"><a class="fn-backref" href="#id3">Gi03</a></span></dt>
+<dt class="label" id="gi03"><span class="brackets">Gi03</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>)</span></dt>
 <dd><p>E. Giroux. <a class="reference external" href="https://arxiv.org/abs/math/0305129">Géométrie de contact: de la dimension trois vers les dimensions supérieures</a></p>
+</dd>
+<dt class="label" id="don96"><span class="brackets"><a class="fn-backref" href="#id5">Don96</a></span></dt>
+<dd><p>S. Donaldson. <a class="reference external" href="https://projecteuclid.org/journals/journal-of-differential-geometry/volume-44/issue-4/Symplectic-submanifolds-and-almost-complex-geometry/10.4310/jdg/1214459407.full">Symplectic submanifolds and almost-complex geometry</a></p>
 </dd>
 </dl>
 </div>
