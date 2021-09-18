@@ -16,3 +16,4 @@ Last updated: |today|
     :maxdepth: 2
 
     CAST/index
+    Coding/index

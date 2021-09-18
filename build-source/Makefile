@@ -19,8 +19,12 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+livehtml:
+	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+
 # Github
 github:
-	@make html
+	@make clean html
 	@rm -rf ../docs/*
 	@cp -a build/html/. ../docs
