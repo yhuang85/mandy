@@ -1,7 +1,7 @@
 How to do Morse theory in contact topology?
 ===========================================
 
-In this article, we explain how to cut any contact manifold into simple pieces from a Morse-theoretic viewpoint.
+In this article, we explain how to cut any contact manifold into simple pieces as well as how to manipulate them from a Morse-theoretic viewpoint. The math of this article is based on many years of collaboration with K. Honda, but the interpretations are mostly mine. Moreover, the focus will be on ideas rather than technical details: one can hardly find any proofs here.
 
 
 Morse Theory in Topology
@@ -21,13 +21,13 @@ Any value in between two adjacent singular values is a *regular value*. Let's ta
 
 Morse theory aims at recognizing manifolds by their handle decompositions. Most importantly, although one same manifold may have many different handle decompositions, as many as there are generic functions, they are all connected to each other via a sequence of handle manipulations. It is therefore fair to say the following:
 
-    Morse theory is all about manipulations of handles: creations, cancellations, and isotopies.
+    *Morse theory is all about manipulations of handles: creations, cancellations, and isotopies.*
 
 
 First Blend of Morse theory with Contact Structures
 ---------------------------------------------------
 
-A Symplectic Detour
+A Symplectic detour
 *******************
 
 Let's actually start by talking about the attempt of blending Morse theory into symplectic topology initiated Y. Eliashberg and M. Gromov [EG91]_. Let :math:`(W, \omega)` be a symplectic manifold and :math:`f: W \to \RR` be a Morse function. The most obvious guess of a compatibility condition between :math:`f` and :math:`\omega`, at least from a Morse theoretic viewpoint, would be that the flow of the gradient vector field :math:`\nabla f \eqqcolon X`, with respect to some metric [#gradient]_ , preserves :math:`\omega`. This is not a very good guess though since :math:`X` would then necessarily be volume preserving, and in turn :math:`f` can have neither local minima nor maxima.
@@ -55,7 +55,7 @@ Symplectic handles
 Such handles are known as *Weinstein handles* because A. Weinstein first wrote down these normal forms. A particularly important special case is when :math:`k = n` and we we call these handles *critical* because only these handles actually carry nontrivial symplectic information.
 
 
-Back to Contact
+Back to contact
 ***************
 
 The compatibility between a contact manifold :math:`(M, \xi)` and a Morse function :math:`f: M \to \RR`, by analogy, asks the flow of :math:`X \coloneqq \nabla f` to preserve :math:`\xi`.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, E. Giroux [Gi03]_ argued that every (closed) contact manifold admits a compatible Morse function.
@@ -98,16 +98,78 @@ The fact that every (closed) contact manifold admits a compatible Morse function
 
 We will follow a completely different path to build a hopefully more useful contact Morse theory. The main tools will be hypersurfaces and characteristic foliations on them. These tools are native to contact topology and were extensively used by D. Bennequin, Eliashberg, Giroux among many others for various purposes in the early days of the subject.
 
+The Game Plan
+-------------
+
+Separation of contact structure and topology
+********************************************
+
+The first key principle in the development of contact Morse theory is to separate the contact topological problem from the purely topological problem. Specifically, given a contact manifold :math:`(M, \xi)`, we always start from just any Morse function :math:`f: M \to \RR`. Suppose :math:`\dim M = 2n+1`, then :math:`f` induces a decomposition
+
+.. math::
+   :label: heegaardDecomposition
+
+   M = H_1 \cup (\Sigma \times I) \cup H_2, \quad I \coloneqq [0,1],
+
+where :math:`H_1` is a neighborhood of the union of the stable manifolds of all critical points of :math:`f` of index at most :math:`n`, and similarly :math:`H_2` is a neighborhood of the union of the unstable manifolds of all critical points of :math:`f` of index at least :math:`n+1`, and finally :math:`\Sigma` may be identified with either :math:`\p H_1` or :math:`\p H_2`. Such a decomposition is nothing but a higher-dimensional analogue of the `Heegaard decomposition <https://en.wikipedia.org/wiki/Heegaard_splitting>`_ for 3-manifolds.
+
+The reason for decomposing :math:`M` as in :eq:`heegaardDecomposition` is because the contact structures :math:`\xi|_{H_1}, \xi|_{H_2}` can be made standard by Gromov's *h*-principle on isotropic/Legendrian approximations. Namely, the stable manifold of all critical points of index at most :math:`n` can be :math:`C^0`-approximated by isotropic submanifolds. It follows that :math:`H_1` becomes a neighborhood of a CW-complex built out of isotropic cells, which in turns carries a standard contact structure. The same holds for :math:`H_2` by reversing the direction of :math:`\nabla f`. Finally, the complement of :math:`H_1 \cup H_2` in :math:`M` is a product :math:`\Sigma \times I`, which, in some sense, carries all the information about :math:`\xi`.
+
+To summarize, the decomposition :eq:`heegaardDecomposition` serves the purpose of separating contact topology from pure topology as follows:
+
+* The handlebodies :math:`H_1, H_2` knows all about the topology of :math:`M` but nothing about :math:`\xi`.
+* The middle layer :math:`\Sigma \times I` knows all about :math:`\xi` but nothing about :math:`M`.
+
+.. note::
+   The handlebodies :math:`H_1, H_2` in :eq:`heegaardDecomposition` are by no means unique, although the (restricted) contact structures are uniquely determined by their topological type.
+
+Morsify the characteristic foliation
+************************************
+
+Given any hypersurface :math:`\Sigma \in (M, \xi)`, the *characteristic foliation* :math:`\Sigma_{\xi}` is a line field defined by
+
+.. math::
+   \Sigma_{\xi} \coloneqq \ker (d\alpha|_{T\Sigma \cap \xi}),
+
+where :math:`\xi = \ker\alpha` is a contact form. Moreover, when both :math:`\Sigma` and :math:`\xi` are oriented, which will always be the case here, so is :math:`\Sigma_{\xi}` and it becomes a vector field (without any significance on the magnitude). Characteristic foliations play a crucial role in this story because they, to a great extent which will become clear later, uniquely determines the contact germ on :math:`\Sigma`.
+
+Now the job of characterizing a contact structure on :math:`\Sigma \times I` boils down to characterizing the evolution of the contact germs on :math:`\Sigma \times t` for :math:`t \in I`, which, in turn, boils down to characterizing the evolution of a :math:`1`-parameter family of vector fields :math:`(\Sigma \times t)_{\xi}, t \in I`.
+
+In the case of :math:`\dim M = 3`, the above job was successfully done by Giroux in [Gi91]_ and [Gi99]_, where he applied the results of such analysis to classify contact structures on a number of :math:`3`-manifolds. However, Giroux's argument from these two papers are rather specific to dimension :math:`3` and are of little use in higher dimensions [#falseBelieve]_. Specifically, the study of characteristic foliations on a :math:`2`-dimensional surface falls into a much bigger subject of studying dynamics of generic vector fields on surfaces. Rather mature and comprehensive theories on the later subject, such as the `Poincaré-Bendixson theorem <https://en.wikipedia.org/wiki/Poincar%C3%A9%E2%80%93Bendixson_theorem>`_, was developed long before contact topology was even recognized as an independent subject. However, it's indeed hopeless to track down every single trajectory of a generic vector field in dimensions greater than two due to the ubiquity of chaotic behavior.
+
+The challenge is, therefore, to ensure the controllability of :math:`\Sigma_{\xi}` (e.g., as the gradient vector field of a Morse function) on sufficiently generic hypersurfaces :math:`\Sigma`. The basic idea is to wiggle :math:`\Sigma` almost everywhere to create attractors, built out of Morse critical points, which destroy any potential global dynamics of :math:`\Sigma_{\xi}`. The actual implementation of this idea is nearly perfect in dimension :math:`3` but much less so in higher dimensions. The details can be found in [HH18]_ and [HH19]_.
+
+Summary
+*******
+
+Every (closed) contact manifold can be decomposed into three pieces: two standard contact handlebodies and a product :math:`\Sigma \times I`. The contact structure :math:`\xi|_{\Sigma \times I}` can be understood via the :math:`1`-parameter family of characteristic foliations :math:`\Sigma_t|_{\xi} \coloneqq (\Sigma \times t)_{\xi}` for :math:`t \in I`. The characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I`, can be made Morse by a :math:`C^0`-small perturbation. Thus the problem is finally reduced to understanding a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. More details about carrying out this game plan will be explained in the next section.
+
+
+Second Blend of Morse Theory with Contact Structures
+----------------------------------------------------
+
+Recall in the first blend of Morse theory with contact structures, the result is a decomposition of :math:`(M, \xi)` into a bunch of contact handles.
+
+tbc...
 
 .. rubric:: Footnotes
 
 .. [#gradient] Morse theory is topological in nature and doesn't care about metric very much. In particular, it's more correct and convenient but unfortunately also more cumbersome to use `gradient-like vector fields <https://en.wikipedia.org/wiki/Gradient-like_vector_field>`_ instead.
 
+.. [#falseBelieve] Ironically, the failure of Giroux's argument in dimensions greater than three went so far to even form a consensus that hypersurfaces in higher-dimensional contact manifolds are intractable and hopeless. It was at least the case when I entered the subject as a graduate student. From my own experience, there is nothing better than breaking false believes.
 
 .. rubric:: References
 
+.. [Don96] S\. Donaldson\. `Symplectic submanifolds and almost-complex geometry <https://projecteuclid.org/journals/journal-of-differential-geometry/volume-44/issue-4/Symplectic-submanifolds-and-almost-complex-geometry/10.4310/jdg/1214459407.full>`_
+
 .. [EG91] Y\. Eliashberg and M\. Gromov\. `Convex symplectic manifolds <https://www.ihes.fr/~gromov/symplecticmanifolds/163/>`_
+
+.. [Gi91] E\. Giroux\. `Convexité en topologie de contact <https://link.springer.com/article/10.1007%2FBF02566670>`_
+
+.. [Gi99] E\. Giroux\. `Structures de contact en dimension trois et bifurcations des feuilletages de surfaces <https://arxiv.org/abs/math/9908178>`_
 
 .. [Gi03] E\. Giroux\. `Géométrie de contact: de la dimension trois vers les dimensions supérieures <https://arxiv.org/abs/math/0305129>`_
 
-.. [Don96] S\. Donaldson\. `Symplectic submanifolds and almost-complex geometry <https://projecteuclid.org/journals/journal-of-differential-geometry/volume-44/issue-4/Symplectic-submanifolds-and-almost-complex-geometry/10.4310/jdg/1214459407.full>`_
+.. [HH18] K\. Honda and Y\. Huang\. `Bypass attachments in higher-dimensional contact topology <https://arxiv.org/abs/1803.09142>`_
+
+.. [HH19] K\. Honda and Y\. Huang\. `Convex hypersurface theory in contact topology <https://arxiv.org/abs/1907.06025>`_
