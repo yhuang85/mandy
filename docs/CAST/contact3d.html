@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>What’s a contact structure in 3D? &#8212; Mandy&#39;s wonderland</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.3237efd0efc78099ddd6020bfa69a81b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -23,9 +24,9 @@
 
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.da3d79339a62de1b5761.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -38,7 +39,10 @@
     <link rel="next" title="How to do Morse theory in contact topology?" href="contactMorse.html" />
     <link rel="prev" title="Mathematics" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -117,7 +121,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <p class="caption" role="heading">
+    <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contact and Symplectic Topology
  </span>
@@ -214,10 +218,10 @@
               
               <div>
                 
-  <div class="section" id="what-s-a-contact-structure-in-3d">
+  <section id="what-s-a-contact-structure-in-3d">
 <h1>What’s a contact structure in 3D?<a class="headerlink" href="#what-s-a-contact-structure-in-3d" title="Permalink to this headline">¶</a></h1>
 <p>We try to explain what a contact structure is in a <span class="math notranslate nohighlight">\(3\)</span>-dimensional space from an intrinsic viewpoint, i.e., we pretend to live inside the contact 3-space without any knowledge of what an outside universe means. This article is heavily influenced by a <a class="reference external" href="https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/carnot_caratheodory.pdf">paper</a> of M. Gromov.</p>
-<div class="section" id="space-and-dimension">
+<section id="space-and-dimension">
 <h2>Space and Dimension<a class="headerlink" href="#space-and-dimension" title="Permalink to this headline">¶</a></h2>
 <p>Contact structure is a structure living in a space. So let’s first talk about spaces.</p>
 <p>It may be either the choice of god or the perception of our kind that we all live in a space. Since the time we looked into the sky, the earth, or the ocean, we never stopped wondering, physically or mentally, about the mysterious space around us.</p>
@@ -239,16 +243,16 @@
 <li><p>The volume growth of balls is by itself a very interesting and counter-intuitive phenomenon, especially when the dimension is large <a class="footnote-reference brackets" href="#threenotbig" id="id1">1</a> . Indeed, the mass of a high dimensional ball is highly concentrated near its boundary, as opposed to the interior which would have followed from common sense. This is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Concentration_of_measure">concentration of measure</a>.</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="homogeneity-of-space">
+</section>
+<section id="homogeneity-of-space">
 <h2>Homogeneity of Space<a class="headerlink" href="#homogeneity-of-space" title="Permalink to this headline">¶</a></h2>
 <p>All the above definitions of dimensions are local in nature, i.e., The dimension measures the size of a space at the vicinity of every point. It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn’t even have to be continuous. Given a space <span class="math notranslate nohighlight">\(V\)</span> and a point <span class="math notranslate nohighlight">\(p \in V\)</span>, let’s write <span class="math notranslate nohighlight">\(\dim_p(V)\)</span> for the dimension of <span class="math notranslate nohighlight">\(V\)</span> at <span class="math notranslate nohighlight">\(p\)</span>, whose definition may be any one of the above.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Whenever we write just <span class="math notranslate nohighlight">\(\dim(V)\)</span>, we assume implicitly that the dimension is the same at all points, i.e., the space is in a sense homogeneous.</p>
 </div>
-</div>
-<div class="section" id="agreement-of-dimensions">
+</section>
+<section id="agreement-of-dimensions">
 <h2>Agreement of Dimensions<a class="headerlink" href="#agreement-of-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>For a space <span class="math notranslate nohighlight">\(V\)</span>, let’s write <span class="math notranslate nohighlight">\(\op{Vdim}(V)\)</span> for its visual dimension and <span class="math notranslate nohighlight">\(\op{Mdim}(V)\)</span> for its measure dimension. For “usual” spaces <span class="math notranslate nohighlight">\(V\)</span>, one can expect <span class="math notranslate nohighlight">\(\op{Vdim}(V) = \op{Mdim}(V)\)</span>. For example, we have <span class="math notranslate nohighlight">\(\op{Vdim}(\RR^3)=3\)</span> obviously, and also <span class="math notranslate nohighlight">\(\op{Mdim}(\RR^3)=3\)</span> since <span class="math notranslate nohighlight">\(\op{Vol}(B^3(r)) = \tfrac{4}{3}\pi r^3\)</span>.</p>
 <div class="admonition note">
@@ -256,8 +260,8 @@
 <p>It’s in fact irrelevant what exactly the shape one uses to compute the measure dimension. We used balls above probably because it’s the most intuitive shape, but it’s not the shape whose volume is the easiest to compute. Indeed, it’s easier to use cubes <span class="math notranslate nohighlight">\(K(r)\)</span> of side length <span class="math notranslate nohighlight">\(r\)</span> instead and refer to the much simpler <span class="math notranslate nohighlight">\(\op{Vol}(K(r)) = r^3\)</span>.</p>
 </div>
 <p>It’s not immediately obvious what kind of spaces would have unequal visual and measure dimensions. Contact structures, especially in dimension <span class="math notranslate nohighlight">\(3\)</span>, provide good examples of such “weird” spaces. Indeed, we’re not even interested in the underlying topology of the space, which will always be <span class="math notranslate nohighlight">\(\RR^3\)</span>.</p>
-</div>
-<div class="section" id="distribution-and-conductivity">
+</section>
+<section id="distribution-and-conductivity">
 <h2>Distribution and Conductivity<a class="headerlink" href="#distribution-and-conductivity" title="Permalink to this headline">¶</a></h2>
 <p>In <span class="math notranslate nohighlight">\(\RR^3\)</span>, one can freely walk in all <span class="math notranslate nohighlight">\(3\)</span> independent directions if no further constraints are enforced. However, it’s not hard to imagine that a live being, for whatever reason, is disallowed to move in certain directions. From now on this live being will be called Mandy. Then for all Mandy knows, the visual dimension, aka the degree of freedom, may well be less than <span class="math notranslate nohighlight">\(3\)</span> even though from the viewpoint of an outsider, the space itself has not changed at all.</p>
 <p>Constraints like these are called distributions. More formally, a distribution <span class="math notranslate nohighlight">\(D\)</span> on <span class="math notranslate nohighlight">\(\RR^3\)</span> is a choice of subspace at every point, i.e., <span class="math notranslate nohighlight">\(D(x) \subset T_x \RR^3 \cong \RR^3\)</span> is a linear subspace for every <span class="math notranslate nohighlight">\(x \in \RR^3\)</span>. Then dimension <span class="math notranslate nohighlight">\(\dim D(x)\)</span> is called the <em>rank</em> of <span class="math notranslate nohighlight">\(D\)</span> at <span class="math notranslate nohighlight">\(x\)</span>. To make life a bit easier, we will always work under the following two assumptions:</p>
@@ -290,8 +294,8 @@
 <p class="admonition-title">Note</p>
 <p>The projection <span class="math notranslate nohighlight">\(\pi: \RR^3 \to \RR^2\)</span> above, known as the <em>Lagrangian projection</em>, is a quite helpful tool in understanding contact structures in general essentially because of the unique lifting property mentioned above. It’s an important bridge between contact and symplectic structures.</p>
 </div>
-</div>
-<div class="section" id="disagreement-of-dimensions">
+</section>
+<section id="disagreement-of-dimensions">
 <h2>Disagreement of Dimensions<a class="headerlink" href="#disagreement-of-dimensions" title="Permalink to this headline">¶</a></h2>
 <p>Obviously <span class="math notranslate nohighlight">\(\op{Vdim} (\RR^3, D_{\std}) = 2\)</span> and it’s our goal here to compute <span class="math notranslate nohighlight">\(\op{Mdim} (\RR^3, D_{\std})\)</span>. To this end, we need a metric on <span class="math notranslate nohighlight">\(\RR^3\)</span> so that we can measure length and volume. The particular choice of metric is not super important here and we will stick to the Euclidean metric for simplicity.</p>
 <p>We shall compute <span class="math notranslate nohighlight">\(\op{Mdim}(\RR^3, D_{\std})\)</span> near the origin as follows. Consider a small cube</p>
@@ -318,12 +322,12 @@
 <div class="math notranslate nohighlight">
 \[\op{Vol} (K(r)) = r_x r_y r_z \sim r^4.\]</div>
 <p>Hence <span class="math notranslate nohighlight">\(\op{Mdim} (\RR^3, D_{\std}) = 4\)</span>, at least near the origin.</p>
-</div>
-<div class="section" id="homogeneity-of-contact-structures">
+</section>
+<section id="homogeneity-of-contact-structures">
 <h2>Homogeneity of Contact Structures<a class="headerlink" href="#homogeneity-of-contact-structures" title="Permalink to this headline">¶</a></h2>
 <p>It turns out that contact structures are far more homogeneous than just having constant measure dimension. Indeed, a <a class="reference external" href="https://en.wikipedia.org/wiki/Darboux%27s_theorem">theorem</a> of Darboux asserts that any contact structure (which we haven’t defined yet) is locally isomorphic to the standard <span class="math notranslate nohighlight">\((\RR^3, D_{\std})\)</span>, hence the name. It follows that <span class="math notranslate nohighlight">\(\op{Mdim} (\RR^3, D_{\std}) = 4\)</span> after all <a class="footnote-reference brackets" href="#darbouxredundant" id="id6">5</a> .</p>
-</div>
-<div class="section" id="more-distributions">
+</section>
+<section id="more-distributions">
 <h2>More Distributions<a class="headerlink" href="#more-distributions" title="Permalink to this headline">¶</a></h2>
 <p>Inspired by the definition of <span class="math notranslate nohighlight">\(D_{\std}\)</span>, let’s consider the following sequence of distributions</p>
 <div class="math notranslate nohighlight">
@@ -349,8 +353,8 @@
 \[\ell \sim r_z^{1/(k+1)}\]</div>
 <p>as <span class="math notranslate nohighlight">\(r_z \to 0\)</span>. We conclude that <span class="math notranslate nohighlight">\(\op{Mdim}_0 (\RR^3, D_k) = k+3\)</span>. This is interesting since the measure dimension captures the power <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <p>It turns out that <span class="math notranslate nohighlight">\((\RR^3, D_k)\)</span> is not homogeneous when <span class="math notranslate nohighlight">\(k&gt;1\)</span>. In particular, the measure dimension equals <span class="math notranslate nohighlight">\(k+3\)</span> at points with <span class="math notranslate nohighlight">\(y = 0\)</span> and equals <span class="math notranslate nohighlight">\(4\)</span> as in the case of contact structures otherwise. We omit the details here as the computations are exactly the same.</p>
-</div>
-<div class="section" id="what-s-a-contact-structure-anyway">
+</section>
+<section id="what-s-a-contact-structure-anyway">
 <h2>What’s a Contact Structure Anyway?<a class="headerlink" href="#what-s-a-contact-structure-anyway" title="Permalink to this headline">¶</a></h2>
 <p>In fact, the distributions <span class="math notranslate nohighlight">\(D_k, k &gt; 1\)</span>, are locally isomorphic to <span class="math notranslate nohighlight">\(D_{\std}\)</span> on the region where <span class="math notranslate nohighlight">\(y \neq 0\)</span>. Moreover, it doesn’t seem possible to have a distribution on <span class="math notranslate nohighlight">\(\RR^3\)</span> whose measure dimension is <em>everywhere</em> greater than <span class="math notranslate nohighlight">\(4\)</span>.</p>
 <p>Based on these observations, we can finally propose an intrinsic characterization of contact structures as follows:</p>
@@ -381,8 +385,8 @@
 <dd><p>Most likely when you are sufficiently drunk.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -394,20 +398,19 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../_static/js/index.da3d79339a62de1b5761.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
       <p class="copyright">
-    &copy; Copyright 2021, Mandy.<br/>
+    &copy; Copyright 2021, Mandy.<br>
 </p>
     </div>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br>
 </p>
     </div>
     
