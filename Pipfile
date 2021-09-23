@@ -5,10 +5,12 @@ name = "pypi"
 
 [packages]
 Sphinx = "*"
-pydata-sphinx-theme = "*"
 sphinx-autobuild = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3"
+
+[packages.pydata-sphinx-theme]
+git = "https://github.com/yhuang85/pydata-sphinx-theme.git"

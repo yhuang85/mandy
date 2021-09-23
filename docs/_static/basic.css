@@ -238,7 +238,8 @@ a.headerlink {
 }
 
 a.brackets:before,
-span.brackets > a:before{
+span.brackets > a,
+dt.label + span.brackets:before{
     content: "[";
 }
 
