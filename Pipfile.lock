@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3eb85d9575ab93d5f5a77fb26950823dad12e7bde17efb44aeb7d90b90d1267d"
+            "sha256": "94709f3360b20f89ea8f5e8371baed764eb146b2a656d84ea0a8ce90e456f8ca"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -29,6 +29,13 @@
                 "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"
             ],
             "version": "==2.9.1"
+        },
+        "beautifulsoup4": {
+            "hashes": [
+                "sha256:9a315ce70049920ea4572a4055bc4bd700c940521d36fc858205ad4fcde149bf",
+                "sha256:c23ad23c521d818955a4151a67d81580319d4bf548d3d49f4223ae041ff98891"
+            ],
+            "version": "==4.10.0"
         },
         "certifi": {
             "hashes": [
@@ -154,7 +161,9 @@
             "version": "==21.0"
         },
         "pydata-sphinx-theme": {
-            "git": "https://github.com/yhuang85/pydata-sphinx-theme.git"
+            "editable": true,
+            "git": "https://github.com/yhuang85/pydata-sphinx-theme.git",
+            "ref": "6edc720a2914e2d62a1e2c32f3cd89a9b722c2fa"
         },
         "pygments": {
             "hashes": [
@@ -197,6 +206,13 @@
                 "sha256:e997baa4f2e9139951b6f4c631bad912dfd3c792467e2f03d7239464af90e914"
             ],
             "version": "==2.1.0"
+        },
+        "soupsieve": {
+            "hashes": [
+                "sha256:052774848f448cf19c7e959adf5566904d525f33a3f8b6ba6f6f8f26ec7de0cc",
+                "sha256:c2c1c2d44f158cdbddab7824a9af8c4f83c76b1e23e049479aa432feb6c4c23b"
+            ],
+            "version": "==2.2.1"
         },
         "sphinx": {
             "hashes": [
