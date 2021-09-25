@@ -12,6 +12,14 @@ The Github page is served from the **docs** folder, which is automatically gener
 
 - [Pipenv](https://pipenv.pypa.io/en/latest/) is used to manage Python packages.
 
-- [Pydata-Sphinx-Theme](https://github.com/pydata/pydata-sphinx-theme) is used to style the website. (I'm currently waiting for the theme to style common [ReST](https://docutils.sourceforge.io/rst.html) directives [#454](https://github.com/pydata/pydata-sphinx-theme/issues/454#issue-980549092))
+- [Pydata-Sphinx-Theme](https://github.com/pydata/pydata-sphinx-theme) is used to style the website. (~~I'm currently waiting for the theme to style common [ReST](https://docutils.sourceforge.io/rst.html) directives [#454](https://github.com/pydata/pydata-sphinx-theme/issues/454#issue-980549092)~~)
+  
+  - With help from [Chris Holdgraf](https://github.com/choldgraf), I was able to implement the desired styling myself which includes
+    
+    - GitHub markdown style `blockquote` for indented texts: copied from this [repo](https://github.com/sindresorhus/github-markdown-css).
+    - Bracket around references/citations when they are cited more than once, e.g. **\[Newton\]\(1,2\)** if Newton is cited twice.
+    - Make footnote labels appear as supercripts, e.g. **Newton was hit by an apple <sup>[1]</sup>**.
+
+    Note that the Pipfile installs `pydata-sphinx-theme` from my fork rather than the official repo, which I will try to keep up with.
 
 - Since Github page can only be rendered under certain path (I use **main/docs**), I followed suggestions in this [post](https://www.docslikecode.com/articles/github-pages-python-sphinx/) to organize folders in this repo.
