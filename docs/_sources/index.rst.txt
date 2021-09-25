@@ -5,7 +5,7 @@ We write about math, about food, about anything we like.
 
 .. note::
 
-    This project is under active development. Check out this `repo <https://github.com/yhuang85/mandy_source.git>`_ if you're curious about how this website is built.
+    This project is under active development. Check out this `repo <https://github.com/yhuang85/mandy.git>`_ if you're curious about how this website is built.
 
 Last updated: |today|
 

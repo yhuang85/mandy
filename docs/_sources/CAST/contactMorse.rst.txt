@@ -21,7 +21,7 @@ Any value in between two adjacent singular values is a *regular value*. Let's ta
 
 Morse theory aims at recognizing manifolds by their handle decompositions. Most importantly, although one same manifold may have many different handle decompositions, as many as there are generic functions, they are all connected to each other via a sequence of handle manipulations. It is therefore fair to say the following:
 
-    *Morse theory is all about manipulations of handles: creations, cancellations, and isotopies.*
+    Morse theory is all about manipulations of handles: creations, cancellations, and isotopies.
 
 
 First Blend of Morse theory with Contact Structures
@@ -107,9 +107,9 @@ Separation of contact structure and topology
 The first key principle in the development of contact Morse theory is to separate the contact topological problem from the purely topological problem. Specifically, given a contact manifold :math:`(M, \xi)`, we always start from just any Morse function :math:`f: M \to \RR`. Suppose :math:`\dim M = 2n+1`, then :math:`f` induces a decomposition
 
 .. math::
-   :label: heegaardDecomposition
+    :label: heegaardDecomposition
 
-   M = H_1 \cup (\Sigma \times I) \cup H_2, \quad I \coloneqq [0,1],
+    M = H_1 \cup (\Sigma \times I) \cup H_2, \quad I \coloneqq [0,1],
 
 where :math:`H_1` is a neighborhood of the union of the stable manifolds of all critical points of :math:`f` of index at most :math:`n`, and similarly :math:`H_2` is a neighborhood of the union of the unstable manifolds of all critical points of :math:`f` of index at least :math:`n+1`, and finally :math:`\Sigma` may be identified with either :math:`\p H_1` or :math:`\p H_2`. Such a decomposition is nothing but a higher-dimensional analogue of the `Heegaard decomposition <https://en.wikipedia.org/wiki/Heegaard_splitting>`_ for 3-manifolds.
 
@@ -121,7 +121,7 @@ To summarize, the decomposition :eq:`heegaardDecomposition` serves the purpose o
 * The middle layer :math:`\Sigma \times I` knows all about :math:`\xi` but nothing about :math:`M`.
 
 .. note::
-   The handlebodies :math:`H_1, H_2` in :eq:`heegaardDecomposition` are by no means unique, although the (restricted) contact structures are uniquely determined by their topological type.
+    The handlebodies :math:`H_1, H_2` in :eq:`heegaardDecomposition` are by no means unique, although the (restricted) contact structures are uniquely determined by their topological type.
 
 Morsify the characteristic foliation
 ************************************
@@ -129,7 +129,8 @@ Morsify the characteristic foliation
 Given any hypersurface :math:`\Sigma \in (M, \xi)`, the *characteristic foliation* :math:`\Sigma_{\xi}` is a line field defined by
 
 .. math::
-   \Sigma_{\xi} \coloneqq \ker (d\alpha|_{T\Sigma \cap \xi}),
+
+    \Sigma_{\xi} \coloneqq \ker (d\alpha|_{T\Sigma \cap \xi}),
 
 where :math:`\xi = \ker\alpha` is a contact form. Moreover, when both :math:`\Sigma` and :math:`\xi` are oriented, which will always be the case here, so is :math:`\Sigma_{\xi}` and it becomes a vector field (without any significance on the magnitude). Characteristic foliations play a crucial role in this story because they, to a great extent which will become clear later, uniquely determines the contact germ on :math:`\Sigma`.
 
@@ -148,7 +149,17 @@ Every (closed) contact manifold can be decomposed into three pieces: two standar
 Second Blend of Morse Theory with Contact Structures
 ----------------------------------------------------
 
-Recall in the first blend of Morse theory with contact structures, the result is a decomposition of :math:`(M, \xi)` into a bunch of contact handles.
+Recall in the first blend of Morse theory with contact structures, the result is a decomposition of :math:`(M, \xi)` into a bunch of contact handles. This approach appears to be somewhat useless since there is no way (that I know of) to connect two contact Morse functions through a family of contact Morse functions.
+
+Instead, we'll use the ideas outlined in the :ref:`game plan<The Game Plan>` to build a contact Morse theory which works in families. To facilitate the exposition, let's use the following convention to indicate the dimension of the family of Morse functions under consideration. We say a Morse theory (of whatever flavor) is established at
+
+* :math:`\pi_0`-level if Morse functions exist generally,
+* :math:`\pi_1`-level if any two Morse functions are homotopic through Morse functions,
+* :math:`\pi_2`-level if a circle-family of Morse functions can be realized as the boundary of a disk-family of Morse functions,
+* and so on for :math:`\pi_k`-levels for :math:`k > 2`.
+
+.. note::
+    Critial points, among others, in families of Morse functions degenerate according to the standard `tranversality theory <https://en.wikipedia.org/wiki/Transversality_theorem>`_ on jet bundles. For example, critical points are nondegenerate at :math:`\pi_0`-level but may degenerate to birth-death type singularities at :math:`\pi_1`-level and swallowtails at :math:`\pi_2`-level and so on.
 
 tbc...
 

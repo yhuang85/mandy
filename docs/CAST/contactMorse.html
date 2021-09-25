@@ -245,7 +245,7 @@
 <p>Any value in between two adjacent singular values is a <em>regular value</em>. Let’s take, for example, two regular values <span class="math notranslate nohighlight">\(a_{k-1} \in (c_{k-1}, c_k)\)</span> and <span class="math notranslate nohighlight">\(a_k \in (c_k, c_{k+1})\)</span>, jamming <span class="math notranslate nohighlight">\(c_k\)</span> in between. Then we cut out of <span class="math notranslate nohighlight">\(M\)</span> a piece bounded between two smooth hypersurfaces <span class="math notranslate nohighlight">\(\Sigma_{k-1} \coloneqq f^{-1} (a_{k-1})\)</span> and <span class="math notranslate nohighlight">\(\Sigma_k \coloneqq f^{-1} (a_k)\)</span>. This piece is simple enough in the sense that it’s always topologically equivalent to a <em>handle attachment</em> regardless of what manifold we’re talking about: it only depends on a local invariant called the Morse index of <span class="math notranslate nohighlight">\(c_k\)</span>.</p>
 <p>Morse theory aims at recognizing manifolds by their handle decompositions. Most importantly, although one same manifold may have many different handle decompositions, as many as there are generic functions, they are all connected to each other via a sequence of handle manipulations. It is therefore fair to say the following:</p>
 <blockquote>
-<div><p><em>Morse theory is all about manipulations of handles: creations, cancellations, and isotopies.</em></p>
+<div><p>Morse theory is all about manipulations of handles: creations, cancellations, and isotopies.</p>
 </div></blockquote>
 </section>
 <section id="first-blend-of-morse-theory-with-contact-structures">
@@ -334,7 +334,18 @@
 </section>
 <section id="second-blend-of-morse-theory-with-contact-structures">
 <h2>Second Blend of Morse Theory with Contact Structures<a class="headerlink" href="#second-blend-of-morse-theory-with-contact-structures" title="Permalink to this headline">¶</a></h2>
-<p>Recall in the first blend of Morse theory with contact structures, the result is a decomposition of <span class="math notranslate nohighlight">\((M, \xi)\)</span> into a bunch of contact handles.</p>
+<p>Recall in the first blend of Morse theory with contact structures, the result is a decomposition of <span class="math notranslate nohighlight">\((M, \xi)\)</span> into a bunch of contact handles. This approach appears to be somewhat useless since there is no way (that I know of) to connect two contact Morse functions through a family of contact Morse functions.</p>
+<p>Instead, we’ll use the ideas outlined in the <a class="reference internal" href="#the-game-plan"><span class="std std-ref">game plan</span></a> to build a contact Morse theory which works in families. To facilitate the exposition, let’s use the following convention to indicate the dimension of the family of Morse functions under consideration. We say a Morse theory (of whatever flavor) is established at</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\pi_0\)</span>-level if Morse functions exist generally,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi_1\)</span>-level if any two Morse functions are homotopic through Morse functions,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pi_2\)</span>-level if a circle-family of Morse functions can be realized as the boundary of a disk-family of Morse functions,</p></li>
+<li><p>and so on for <span class="math notranslate nohighlight">\(\pi_k\)</span>-levels for <span class="math notranslate nohighlight">\(k &gt; 2\)</span>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Critial points, among others, in families of Morse functions degenerate according to the standard <a class="reference external" href="https://en.wikipedia.org/wiki/Transversality_theorem">tranversality theory</a> on jet bundles. For example, critical points are nondegenerate at <span class="math notranslate nohighlight">\(\pi_0\)</span>-level but may degenerate to birth-death type singularities at <span class="math notranslate nohighlight">\(\pi_1\)</span>-level and swallowtails at <span class="math notranslate nohighlight">\(\pi_2\)</span>-level and so on.</p>
+</div>
 <p>tbc…</p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
