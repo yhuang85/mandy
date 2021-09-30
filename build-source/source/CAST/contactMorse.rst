@@ -3,11 +3,15 @@ How to do Morse theory in contact topology?
 
 In this article, we explain how to cut any contact manifold into simple pieces as well as how to manipulate them from a Morse-theoretic viewpoint. The math of this article is based on many years of collaboration with K. Honda, but the interpretations are mostly mine. Moreover, the focus will be on ideas rather than technical details: one can hardly find any proofs here.
 
+.. note::
+
+    One can find a list of references at the end of this article. They're cited here for various purposes and they are not necessarily the best references, assuming such things exist, if one wishes to learn about the subject. As a matter of fact, for the papers in the list which are not written by myself, I either have never read it or I do not fully understand it.
+
 
 Morse Theory in Topology
 ------------------------
 
-The most basic and general idea of Morse theory is to understand global properties of a topological space by cutting it into simple pieces and keep track of the assembly process. There are many variations and complications that might sneak behind the simply looking idea. For example, the topological space itself may be `singular <https://en.wikipedia.org/wiki/Stratified_Morse_theory>`_ or `infinite dimensional <https://en.wikipedia.org/wiki/Floer_homology>`_, and the "simple pieces" and "assembly process" may take very `different forms <https://en.wikipedia.org/wiki/Triangulation_(topology)>`_.
+The most basic and general idea of Morse theory is to understand global properties of a topological space by cutting it into simple pieces and keep track of the assemble process. There are many variations and complications that might sneak behind the simply looking idea. For example, the topological space itself may be `singular <https://en.wikipedia.org/wiki/Stratified_Morse_theory>`_ or `infinite dimensional <https://en.wikipedia.org/wiki/Floer_homology>`_, and the "simple pieces" and "assemble process" may take very `different forms <https://en.wikipedia.org/wiki/Triangulation_(topology)>`_.
 
 We will be concerned with the most classical Morse theory here, where spaces are smooth finite-dimensional manifolds :math:`M` and decompositions of :math:`M` are given by the so-called Morse functions :math:`f: M \to \RR`, which are nothing but *generic* smooth functions. More precisely, the only data we care about :math:`f` is a sequence of *singular values*
 
@@ -24,7 +28,7 @@ Morse theory aims at recognizing manifolds by their handle decompositions. Most 
     Morse theory is all about manipulations of handles: creations, cancellations, and isotopies.
 
 
-First Blend of Morse theory with Contact Structures
+First Blend of Morse Theory with Contact Structures
 ---------------------------------------------------
 
 A Symplectic detour
@@ -98,8 +102,11 @@ The fact that every (closed) contact manifold admits a compatible Morse function
 
 We will follow a completely different path to build a hopefully more useful contact Morse theory. The main tools will be hypersurfaces and characteristic foliations on them. These tools are native to contact topology and were extensively used by D. Bennequin, Eliashberg, Giroux among many others for various purposes in the early days of the subject.
 
-The Game Plan
--------------
+
+The Main Ideas
+--------------
+
+The main ideas in the attempt to understanding contact structures via Morse theory were introduced in [HH18]_ and [HH19]_, which we briefly recall here.
 
 Separation of contact structure and topology
 ********************************************
@@ -121,6 +128,7 @@ To summarize, the decomposition :eq:`heegaardDecomposition` serves the purpose o
 * The middle layer :math:`\Sigma \times I` knows all about :math:`\xi` but nothing about :math:`M`.
 
 .. note::
+
     The handlebodies :math:`H_1, H_2` in :eq:`heegaardDecomposition` are by no means unique, although the (restricted) contact structures are uniquely determined by their topological type.
 
 Morsify the characteristic foliation
@@ -143,7 +151,7 @@ The challenge is, therefore, to ensure the controllability of :math:`\Sigma_{\xi
 Summary
 *******
 
-Every (closed) contact manifold can be decomposed into three pieces: two standard contact handlebodies and a product :math:`\Sigma \times I`. The contact structure :math:`\xi|_{\Sigma \times I}` can be understood via the :math:`1`-parameter family of characteristic foliations :math:`\Sigma_t|_{\xi} \coloneqq (\Sigma \times t)_{\xi}` for :math:`t \in I`. The characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I`, can be made Morse by a :math:`C^0`-small perturbation. Thus the problem is finally reduced to understanding a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. More details about carrying out this game plan will be explained in the next section.
+Every (closed) contact manifold can be decomposed into three pieces: two standard contact handlebodies and a product :math:`\Sigma \times I`. The contact structure :math:`\xi|_{\Sigma \times I}` can be understood via the :math:`1`-parameter family of characteristic foliations :math:`\Sigma_t|_{\xi} \coloneqq (\Sigma \times t)_{\xi}` for :math:`t \in I`. The characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I`, can be made Morse by a :math:`C^0`-small perturbation. Thus the problem is finally reduced to understanding a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. More details about implementing these ideas will be explained in the next section.
 
 
 Second Blend of Morse Theory with Contact Structures
@@ -151,17 +159,39 @@ Second Blend of Morse Theory with Contact Structures
 
 Recall in the first blend of Morse theory with contact structures, the result is a decomposition of :math:`(M, \xi)` into a bunch of contact handles. This approach appears to be somewhat useless since there is no way (that I know of) to connect two contact Morse functions through a family of contact Morse functions.
 
-Instead, we'll use the ideas outlined in the :ref:`game plan<The Game Plan>` to build a contact Morse theory which works in families. To facilitate the exposition, let's use the following convention to indicate the dimension of the family of Morse functions under consideration. We say a Morse theory (of whatever flavor) is established at
+Instead, we'll use the ideas outlined above to build a contact Morse theory which works in families. To facilitate the exposition, let's use the following convention to indicate the dimension of the family of Morse functions under consideration. We say a Morse theory (of whatever flavor) is established at
 
-* :math:`\pi_0`-level if Morse functions exist generally,
+* :math:`\pi_0`-level if Morse functions exist generically,
 * :math:`\pi_1`-level if any two Morse functions are homotopic through Morse functions,
 * :math:`\pi_2`-level if a circle-family of Morse functions can be realized as the boundary of a disk-family of Morse functions,
 * and so on for :math:`\pi_k`-levels for :math:`k > 2`.
 
 .. note::
+
     Critial points, among others, in families of Morse functions degenerate according to the standard `tranversality theory <https://en.wikipedia.org/wiki/Transversality_theorem>`_ on jet bundles. For example, critical points are nondegenerate at :math:`\pi_0`-level but may degenerate to birth-death type singularities at :math:`\pi_1`-level and swallowtails at :math:`\pi_2`-level and so on.
 
+For example, the usual Morse theory is fully-established in the category of smooth functions and provides deep insights into the structure of smooth manifolds via `Cerf theory <https://en.wikipedia.org/wiki/Cerf_theory>`_, `h-cobordism theorem <https://en.wikipedia.org/wiki/H-cobordism>`_ and so on. In the contact category, we need to at least impose one additional compatibility condition between functions and contact structures: the gradient vector field must preserve the contact structure. However, as we'll see, this condition alone is not enough to build a useful (family) contact Morse theory.
+
+Topological skeleta
+*******************
+
+Recall that although the existence of contact Morse functions, in abundance as a matter of fact, was established in [Gi03]_, nearly no flexibility is available for these rather abstract functions, which makes it hardly useful in practice. On the other hand, one cannot expect genericity to hold in the sense of usual transversality theory as in the smooth case because contact structures are by no means generic in that sense.
+
+As a matter of fact, it makes little sense to even look for (generic) homotopies between contact Morse functions because it violates the first principle of separation between topological and contact topological considerations. Instead, let's emphasize once again that the decomposition :eq:`heegaardDecomposition` is always the first step when decomposing a contact manifold :math:`(M, \xi)`. Recall that the contact handlebodies :math:`H_1, H_2 \subset M` are uniquely determined by the corresponding isotropic skeleta, which also capture the topology of :math:`M`. For this reason, we introduce the following terminology:
+
+    Up to a negligible ambiguity, either :math:`H_1, H_2` or their skeleta are called *topological skeleta* of :math:`(M, \xi)`.
+
+Of course, one contact manifold may have many different topological skeleta, and it's far from obvious how two choices are related to each other in a Morse theoretic way. However, such difficulty doesn't bother us, at least for now, since we're not really interested in the topology of :math:`M`. Indeed, it'd already be a great success of contact Morse theory if one could get some insights into contact structures on :math:`S^{2n+1}, n \geq 2`.
+
+A family Morse theory on hypersurfaces
+**************************************
+
+Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :eq:`heegaardDecomposition`. As explained in the :ref:`main ideas<The Main Ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels.
+
+At the :math:`\pi_0`-level, it means that for any :math:`t_0 \in I`, the hypersurface :math:`\Sigma = \Sigma_{t_0}` can be :math:`C^0`-perturbed such that :math:`\Sigma_{\xi}` is Morse. Let :math:`p \in \Sigma` be a critical point. Then we say :math:`p` is *positive* if :math:`T_p \Sigma = \xi_p` as oriented vector spaces and *negative* if :math:`T_p \Sigma = -\xi_p`. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold :math:`R_+ \subset \Sigma`, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the :ref:`first blend<First Blend of Morse Theory with Contact Structures>`. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold :math:`R_- \subset \Sigma`. Denoting the remaining borderline between :math:`R_+` and :math:`R_-` by :math:`\Gamma`, we arrive at the familiar :math:`\Sigma = R_+ \cup_{\Gamma} R_-` which appeared as the structure of a regular level set in :eq:`hypersurfaceDecomposition`.
+
 tbc...
+
 
 .. rubric:: Footnotes
 
