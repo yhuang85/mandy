@@ -78,7 +78,9 @@ Contact regular level sets
 
 .. note::
 
-    We will rewrite the decomposition :eq:`hypersurfaceDecomposition` as :math:`\Sigma = R_+ \cup_{\Gamma} R_-` to highlight the viewpoint that :math:`\Sigma` can be obtained by gluing (closures of) :math:`R_{\pm}` along the common boundary :math:`\Gamma`.
+    * We will rewrite the decomposition :eq:`hypersurfaceDecomposition` as :math:`\Sigma = R_+ \cup_{\Gamma} R_-` to highlight the viewpoint that :math:`\Sigma` can be obtained by gluing (closures of) :math:`R_{\pm}` along the common boundary :math:`\Gamma`.
+
+    * It's shown in [Gi91]_ that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in :eq:`hypersurfaceDecomposition`. Such hypersurfaces are named *convex* by following conventions in [EG91]_ which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn't make any sense in the contact world. Indeed, they're more of a "flat" kind because the contact structure is invariant in the transverse direction. This is the main reason why we don't use the term "convex hypersurface" in this article. Another reason for not considering hypersurfaces like :eq:`hypersurfaceDecomposition` in general is that the domains :math:`R_{\pm}` are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the :ref:`second blend<Second Blend of Morse Theory with Contact Structures>`.
 
 Contact handles
     Assuming :math:`\dim M = 2n+1` and :math:`k \leq n`, an index-:math:`k` contact handle always takes the following standard form
@@ -188,7 +190,39 @@ A family Morse theory on hypersurfaces
 
 Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :eq:`heegaardDecomposition`. As explained in the :ref:`main ideas<The Main Ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels.
 
-At the :math:`\pi_0`-level, it means that for any :math:`t_0 \in I`, the hypersurface :math:`\Sigma = \Sigma_{t_0}` can be :math:`C^0`-perturbed such that :math:`\Sigma_{\xi}` is Morse. Let :math:`p \in \Sigma` be a critical point. Then we say :math:`p` is *positive* if :math:`T_p \Sigma = \xi_p` as oriented vector spaces and *negative* if :math:`T_p \Sigma = -\xi_p`. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold :math:`R_+ \subset \Sigma`, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the :ref:`first blend<First Blend of Morse Theory with Contact Structures>`. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold :math:`R_- \subset \Sigma`. Denoting the remaining borderline between :math:`R_+` and :math:`R_-` by :math:`\Gamma`, we arrive at the familiar :math:`\Sigma = R_+ \cup_{\Gamma} R_-` which appeared as the structure of a regular level set in :eq:`hypersurfaceDecomposition`.
+:math:`\pi_0`-level
++++++++++++++++++++
+
+The :math:`\pi_0`-level Morse theory means that for any :math:`t_0 \in I`, the hypersurface :math:`\Sigma = \Sigma_{t_0}` can be :math:`C^0`-perturbed such that :math:`\Sigma_{\xi}` is Morse. Let :math:`p \in \Sigma` be a critical point. Then we say :math:`p` is *positive* if :math:`T_p \Sigma = \xi_p` as oriented vector spaces and *negative* if :math:`T_p \Sigma = -\xi_p`. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold :math:`R_+ \subset \Sigma`, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the :ref:`first blend<First Blend of Morse Theory with Contact Structures>`. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold :math:`R_- \subset \Sigma`. Denoting the remaining borderline between :math:`R_+` and :math:`R_-` by :math:`\Gamma`, we arrive at the familiar :math:`\Sigma = R_+ \cup_{\Gamma} R_-` which appeared as the structure of a regular level set in :eq:`hypersurfaceDecomposition`.
+
+    We say a hypersurface :math:`\Sigma` is *Morse* if :math:`\Sigma_{\xi}` is Morse. Moreover, genericity is always appropriately understood according to the :math:`\pi_k`-level of the Morse theory under discussion.
+
+.. note::
+
+    Morse hypersurfaces are not generic. They are only :math:`C^0`-dense among all hypersurfaces, which is enough for all we care. It's important to note that contact Morse theory lives on hypersurfaces rather than the contact manifold itself.
+
+:math:`\pi_1`-level
++++++++++++++++++++
+
+Suppose :math:`\Sigma_0, \Sigma_1` are Morse, where :math:`\Sigma_t \coloneqq \Sigma \times t, t \in I`. This is indeed the case when they are boundaries of standard neighborhoods of the isotropic skeleta :math:`H_0, H_1`. Then the :math:`\pi_1`-level Morse theory means that, up to a :math:`C^0`-small perturbation, the :math:`1`-parameter family :math:`\Sigma_t|_{\xi}` can be realized as the gradient of a :math:`1`-parameter family of Morse functions. It turns out that for most of the time :math:`t \in I`, the contact germ on :math:`\Sigma_t` doesn't change, up to isotopy.
+
+    We say a Morse hypersurface is *invariant* if the contact germ is invariant in the transverse direction. This is equivalent to, as it turns out, the nonexistence of flow lines from negative critical points to positive critical points.
+
+Due to genericity and the index constraint on Weinstein handles, :math:`\Sigma_t` may fail to be invariant only when there is a (unique) trajectory of :math:`\Sigma_t|_{\xi}` from a negative index-:math:`n` critical point :math:`p_n^-` to a positive index-:math:`n` critical point :math:`p_n^+`, assuming :math:`\dim \Sigma = 2n`. Moreover, such failure may happen for only finitely many :math:`t \in I`, which we call the :math:`\pi_1`-*critical moments*.
+
+    Depending on the context, a :math:`\pi_1`-*switch* at a :math:`\pi_1`-critical moment :math:`t_0 \in I` refers to either one of the following:
+
+    * The (transversely cut out) trajectory from :math:`p_-` to :math:`p_+`.
+    * The hypersurface :math:`\Sigma_{t_0}`.
+    * The contact structure on :math:`\Sigma \times [t_0 - \epsilon, t_0 + \epsilon]` for :math:`\epsilon > 0` sufficiently small.
+
+Topological speaking, the difference between :math:`\Sigma_{t_0 - \epsilon}` and :math:`\Sigma_{t_0 + \epsilon}` is a handle slide of a negative :math:`n`-handle over a positive :math:`n`-handle. However, not every topological handle slide of this kind can be realized as a :math:`\pi_1`-switch, even after requiring all isotopies involved in the handle slide are contact isotopies. Namely, suppose :math:`Y \subset \Sigma_{t_0}` is a regular level set between :math:`p_n^-` and :math:`p_n^+` such that the unstable manifold of :math:`p_n^-` intersects :math:`Y` along a Legendrian sphere :math:`\Lambda_-` and the stable manifold of :math:`p_n^+` intersects :math:`Y` along :math:`\Lambda_+`. Here we recall :math:`Y` is naturally a contact submanifold. Then :math:`\Lambda_{\pm}` intersect :math:`\xi|_Y`-transversely at exactly one point :math:`q` (on the :math:`\pi_1`-switch). Extending the definitions of :math:`Y` and :math:`\Lambda_{\pm}` to all :math:`t` close to :math:`t_0`, we require that :math:`\Lambda_+` is slightly "below" :math:`\Lambda_-`, measured against the positive co-orientation of :math:`\xi|_Y`, near :math:`q` for :math:`t < t_0` and "above" for :math:`t > t_0`.
+
+    In plain words, the handle slide corresponding to a :math:`\pi_1`-switch isotopes :math:`\Lambda_+` up across :math:`\Lambda_-` as :math:`t` passes over :math:`t_0`.
+
+.. note::
+
+    Historically speaking, a :math:`\pi_1`-switch is trivially a special case of "bifurcations" considered by Giroux in his dynamical convex surface theory [Gi99]_, and less trivially a special case of "bypass attachments" considered by Honda in his combinatorial convex surface theory [Ho99]_, both in dimension :math:`3`. The later was generalized to all dimensions in [HH18]_. In particular, the decomposition :eq:`heegaardDecomposition` indeed gives rise to a contact Morse function. However, none of these developments are relevant here and we don't even care about general contact Morse functions per se.
 
 tbc...
 
@@ -214,3 +248,5 @@ tbc...
 .. [HH18] K\. Honda and Y\. Huang\. `Bypass attachments in higher-dimensional contact topology <https://arxiv.org/abs/1803.09142>`_
 
 .. [HH19] K\. Honda and Y\. Huang\. `Convex hypersurface theory in contact topology <https://arxiv.org/abs/1907.06025>`_
+
+.. [Ho99] K\. Honda\. `On the classification of tight contact structures I <https://arxiv.org/abs/math/9910127>`_

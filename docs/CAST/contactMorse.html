@@ -9,7 +9,7 @@
     <title>How to do Morse theory in contact topology? &#8212; Mandy&#39;s wonderland</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.a845f08952ddceee59fd7469ecf799de.css" rel="stylesheet">
+  <link href="../_static/css/index.f8312eac34e2432659a6ef7e609c047e.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.ea16aa3fe9d77da809bc.js">
+  <link rel="preload" as="script" href="../_static/js/index.c258f241e0e9126fa012.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -200,7 +200,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
+    <a class="reference internal nav-link" href="#id15">
      Summary
     </a>
    </li>
@@ -220,6 +220,24 @@
     <a class="reference internal nav-link" href="#a-family-morse-theory-on-hypersurfaces">
      A family Morse theory on hypersurfaces
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pi-0-level">
+       <span class="math notranslate nohighlight">
+        \(\pi_0\)
+       </span>
+       -level
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pi-1-level">
+       <span class="math notranslate nohighlight">
+        \(\pi_1\)
+       </span>
+       -level
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -296,7 +314,10 @@
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We will rewrite the decomposition <a class="reference internal" href="#equation-hypersurfacedecomposition">(1)</a> as <span class="math notranslate nohighlight">\(\Sigma = R_+ \cup_{\Gamma} R_-\)</span> to highlight the viewpoint that <span class="math notranslate nohighlight">\(\Sigma\)</span> can be obtained by gluing (closures of) <span class="math notranslate nohighlight">\(R_{\pm}\)</span> along the common boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p>
+<ul class="simple">
+<li><p>We will rewrite the decomposition <a class="reference internal" href="#equation-hypersurfacedecomposition">(1)</a> as <span class="math notranslate nohighlight">\(\Sigma = R_+ \cup_{\Gamma} R_-\)</span> to highlight the viewpoint that <span class="math notranslate nohighlight">\(\Sigma\)</span> can be obtained by gluing (closures of) <span class="math notranslate nohighlight">\(R_{\pm}\)</span> along the common boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p></li>
+<li><p>It’s shown in <a class="reference internal" href="#gi91" id="id4"><span>[Gi91]</span></a> that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in <a class="reference internal" href="#equation-hypersurfacedecomposition">(1)</a>. Such hypersurfaces are named <em>convex</em> by following conventions in <a class="reference internal" href="#eg91" id="id5"><span>[EG91]</span></a> which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn’t make any sense in the contact world. Indeed, they’re more of a “flat” kind because the contact structure is invariant in the transverse direction. This is the main reason why we don’t use the term “convex hypersurface” in this article. Another reason for not considering hypersurfaces like <a class="reference internal" href="#equation-hypersurfacedecomposition">(1)</a> in general is that the domains <span class="math notranslate nohighlight">\(R_{\pm}\)</span> are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the <a class="reference internal" href="#second-blend-of-morse-theory-with-contact-structures"><span class="std std-ref">second blend</span></a>.</p></li>
+</ul>
 </div>
 <dl>
 <dt>Contact handles</dt><dd><p>Assuming <span class="math notranslate nohighlight">\(\dim M = 2n+1\)</span> and <span class="math notranslate nohighlight">\(k \leq n\)</span>, an index-<span class="math notranslate nohighlight">\(k\)</span> contact handle always takes the following standard form</p>
@@ -310,13 +331,13 @@
 </section>
 <section id="summary">
 <h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
-<p>The fact that every (closed) contact manifold admits a compatible Morse function means that one can build any contact manifold from the standard-looking contact handles. However, it doesn’t really give us much more grip on the contact manifold itself because such handle decompositions are by no means unique. Indeed, most of the power of Morse theory lies in the ability to connect different choices of Morse functions by homotopies. Such homotopies or more generally the flexibility of contact Morse functions are unfortunately not available from <a class="reference internal" href="#gi03" id="id4"><span>[Gi03]</span></a> due to the global nature of the argument, which is more-or-less a replica of an argument of S. Donaldson <a class="reference internal" href="#don96" id="id5"><span>[Don96]</span></a> for symplectic manifolds which are far more rigid.</p>
+<p>The fact that every (closed) contact manifold admits a compatible Morse function means that one can build any contact manifold from the standard-looking contact handles. However, it doesn’t really give us much more grip on the contact manifold itself because such handle decompositions are by no means unique. Indeed, most of the power of Morse theory lies in the ability to connect different choices of Morse functions by homotopies. Such homotopies or more generally the flexibility of contact Morse functions are unfortunately not available from <a class="reference internal" href="#gi03" id="id6"><span>[Gi03]</span></a> due to the global nature of the argument, which is more-or-less a replica of an argument of S. Donaldson <a class="reference internal" href="#don96" id="id7"><span>[Don96]</span></a> for symplectic manifolds which are far more rigid.</p>
 <p>We will follow a completely different path to build a hopefully more useful contact Morse theory. The main tools will be hypersurfaces and characteristic foliations on them. These tools are native to contact topology and were extensively used by D. Bennequin, Eliashberg, Giroux among many others for various purposes in the early days of the subject.</p>
 </section>
 </section>
 <section id="the-main-ideas">
 <h2>The Main Ideas<a class="headerlink" href="#the-main-ideas" title="Permalink to this headline">¶</a></h2>
-<p>The main ideas in the attempt to understanding contact structures via Morse theory were introduced in <a class="reference internal" href="#hh18" id="id6"><span>[HH18]</span></a> and <a class="reference internal" href="#hh19" id="id7"><span>[HH19]</span></a>, which we briefly recall here.</p>
+<p>The main ideas in the attempt to understanding contact structures via Morse theory were introduced in <a class="reference internal" href="#hh18" id="id8"><span>[HH18]</span></a> and <a class="reference internal" href="#hh19" id="id9"><span>[HH19]</span></a>, which we briefly recall here.</p>
 <section id="separation-of-contact-structure-and-topology">
 <h3>Separation of contact structure and topology<a class="headerlink" href="#separation-of-contact-structure-and-topology" title="Permalink to this headline">¶</a></h3>
 <p>The first key principle in the development of contact Morse theory is to separate the contact topological problem from the purely topological problem. Specifically, given a contact manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span>, we always start from just any Morse function <span class="math notranslate nohighlight">\(f: M \to \RR\)</span>. Suppose <span class="math notranslate nohighlight">\(\dim M = 2n+1\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> induces a decomposition</p>
@@ -341,11 +362,11 @@
 \[\Sigma_{\xi} \coloneqq \ker (d\alpha|_{T\Sigma \cap \xi}),\]</div>
 <p>where <span class="math notranslate nohighlight">\(\xi = \ker\alpha\)</span> is a contact form. Moreover, when both <span class="math notranslate nohighlight">\(\Sigma\)</span> and <span class="math notranslate nohighlight">\(\xi\)</span> are oriented, which will always be the case here, so is <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> and it becomes a vector field (without any significance on the magnitude). Characteristic foliations play a crucial role in this story because they, to a great extent which will become clear later, uniquely determines the contact germ on <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
 <p>Now the job of characterizing a contact structure on <span class="math notranslate nohighlight">\(\Sigma \times I\)</span> boils down to characterizing the evolution of the contact germs on <span class="math notranslate nohighlight">\(\Sigma \times t\)</span> for <span class="math notranslate nohighlight">\(t \in I\)</span>, which, in turn, boils down to characterizing the evolution of a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of vector fields <span class="math notranslate nohighlight">\((\Sigma \times t)_{\xi}, t \in I\)</span>.</p>
-<p>In the case of <span class="math notranslate nohighlight">\(\dim M = 3\)</span>, the above job was successfully done by Giroux in <a class="reference internal" href="#gi91" id="id8"><span>[Gi91]</span></a> and <a class="reference internal" href="#gi99" id="id9"><span>[Gi99]</span></a>, where he applied the results of such analysis to classify contact structures on a number of <span class="math notranslate nohighlight">\(3\)</span>-manifolds. However, Giroux’s argument from these two papers are rather specific to dimension <span class="math notranslate nohighlight">\(3\)</span> and are of little use in higher dimensions <a class="footnote-reference brackets" href="#falsebelieve" id="id10">2</a>. Specifically, the study of characteristic foliations on a <span class="math notranslate nohighlight">\(2\)</span>-dimensional surface falls into a much bigger subject of studying dynamics of generic vector fields on surfaces. Rather mature and comprehensive theories on the later subject, such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9%E2%80%93Bendixson_theorem">Poincaré-Bendixson theorem</a>, was developed long before contact topology was even recognized as an independent subject. However, it’s indeed hopeless to track down every single trajectory of a generic vector field in dimensions greater than two due to the ubiquity of chaotic behavior.</p>
-<p>The challenge is, therefore, to ensure the controllability of <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> (e.g., as the gradient vector field of a Morse function) on sufficiently generic hypersurfaces <span class="math notranslate nohighlight">\(\Sigma\)</span>. The basic idea is to wiggle <span class="math notranslate nohighlight">\(\Sigma\)</span> almost everywhere to create attractors, built out of Morse critical points, which destroy any potential global dynamics of <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span>. The actual implementation of this idea is nearly perfect in dimension <span class="math notranslate nohighlight">\(3\)</span> but much less so in higher dimensions. The details can be found in <a class="reference internal" href="#hh18" id="id11"><span>[HH18]</span></a> and <a class="reference internal" href="#hh19" id="id12"><span>[HH19]</span></a>.</p>
+<p>In the case of <span class="math notranslate nohighlight">\(\dim M = 3\)</span>, the above job was successfully done by Giroux in <a class="reference internal" href="#gi91" id="id10"><span>[Gi91]</span></a> and <a class="reference internal" href="#gi99" id="id11"><span>[Gi99]</span></a>, where he applied the results of such analysis to classify contact structures on a number of <span class="math notranslate nohighlight">\(3\)</span>-manifolds. However, Giroux’s argument from these two papers are rather specific to dimension <span class="math notranslate nohighlight">\(3\)</span> and are of little use in higher dimensions <a class="footnote-reference brackets" href="#falsebelieve" id="id12">2</a>. Specifically, the study of characteristic foliations on a <span class="math notranslate nohighlight">\(2\)</span>-dimensional surface falls into a much bigger subject of studying dynamics of generic vector fields on surfaces. Rather mature and comprehensive theories on the later subject, such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9%E2%80%93Bendixson_theorem">Poincaré-Bendixson theorem</a>, was developed long before contact topology was even recognized as an independent subject. However, it’s indeed hopeless to track down every single trajectory of a generic vector field in dimensions greater than two due to the ubiquity of chaotic behavior.</p>
+<p>The challenge is, therefore, to ensure the controllability of <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> (e.g., as the gradient vector field of a Morse function) on sufficiently generic hypersurfaces <span class="math notranslate nohighlight">\(\Sigma\)</span>. The basic idea is to wiggle <span class="math notranslate nohighlight">\(\Sigma\)</span> almost everywhere to create attractors, built out of Morse critical points, which destroy any potential global dynamics of <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span>. The actual implementation of this idea is nearly perfect in dimension <span class="math notranslate nohighlight">\(3\)</span> but much less so in higher dimensions. The details can be found in <a class="reference internal" href="#hh18" id="id13"><span>[HH18]</span></a> and <a class="reference internal" href="#hh19" id="id14"><span>[HH19]</span></a>.</p>
 </section>
-<section id="id13">
-<h3>Summary<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<section id="id15">
+<h3>Summary<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>Every (closed) contact manifold can be decomposed into three pieces: two standard contact handlebodies and a product <span class="math notranslate nohighlight">\(\Sigma \times I\)</span>. The contact structure <span class="math notranslate nohighlight">\(\xi|_{\Sigma \times I}\)</span> can be understood via the <span class="math notranslate nohighlight">\(1\)</span>-parameter family of characteristic foliations <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi} \coloneqq (\Sigma \times t)_{\xi}\)</span> for <span class="math notranslate nohighlight">\(t \in I\)</span>. The characteristic foliations <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}, t \in I\)</span>, can be made Morse by a <span class="math notranslate nohighlight">\(C^0\)</span>-small perturbation. Thus the problem is finally reduced to understanding a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of Morse functions on <span class="math notranslate nohighlight">\(\Sigma\)</span>. More details about implementing these ideas will be explained in the next section.</p>
 </section>
 </section>
@@ -366,7 +387,7 @@
 <p>For example, the usual Morse theory is fully-established in the category of smooth functions and provides deep insights into the structure of smooth manifolds via <a class="reference external" href="https://en.wikipedia.org/wiki/Cerf_theory">Cerf theory</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/H-cobordism">h-cobordism theorem</a> and so on. In the contact category, we need to at least impose one additional compatibility condition between functions and contact structures: the gradient vector field must preserve the contact structure. However, as we’ll see, this condition alone is not enough to build a useful (family) contact Morse theory.</p>
 <section id="topological-skeleta">
 <h3>Topological skeleta<a class="headerlink" href="#topological-skeleta" title="Permalink to this headline">¶</a></h3>
-<p>Recall that although the existence of contact Morse functions, in abundance as a matter of fact, was established in <a class="reference internal" href="#gi03" id="id14"><span>[Gi03]</span></a>, nearly no flexibility is available for these rather abstract functions, which makes it hardly useful in practice. On the other hand, one cannot expect genericity to hold in the sense of usual transversality theory as in the smooth case because contact structures are by no means generic in that sense.</p>
+<p>Recall that although the existence of contact Morse functions, in abundance as a matter of fact, was established in <a class="reference internal" href="#gi03" id="id16"><span>[Gi03]</span></a>, nearly no flexibility is available for these rather abstract functions, which makes it hardly useful in practice. On the other hand, one cannot expect genericity to hold in the sense of usual transversality theory as in the smooth case because contact structures are by no means generic in that sense.</p>
 <p>As a matter of fact, it makes little sense to even look for (generic) homotopies between contact Morse functions because it violates the first principle of separation between topological and contact topological considerations. Instead, let’s emphasize once again that the decomposition <a class="reference internal" href="#equation-heegaarddecomposition">(2)</a> is always the first step when decomposing a contact manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span>. Recall that the contact handlebodies <span class="math notranslate nohighlight">\(H_1, H_2 \subset M\)</span> are uniquely determined by the corresponding isotropic skeleta, which also capture the topology of <span class="math notranslate nohighlight">\(M\)</span>. For this reason, we introduce the following terminology:</p>
 <blockquote>
 <div><p>Up to a negligible ambiguity, either <span class="math notranslate nohighlight">\(H_1, H_2\)</span> or their skeleta are called <em>topological skeleta</em> of <span class="math notranslate nohighlight">\((M, \xi)\)</span>.</p>
@@ -376,41 +397,78 @@
 <section id="a-family-morse-theory-on-hypersurfaces">
 <h3>A family Morse theory on hypersurfaces<a class="headerlink" href="#a-family-morse-theory-on-hypersurfaces" title="Permalink to this headline">¶</a></h3>
 <p>Away from the topological skeleta, the contact manifold reduces to a product <span class="math notranslate nohighlight">\(\Sigma \times I\)</span> as in <a class="reference internal" href="#equation-heegaarddecomposition">(2)</a>. As explained in the <a class="reference internal" href="#the-main-ideas"><span class="std std-ref">main ideas</span></a>, up to a <span class="math notranslate nohighlight">\(C^0\)</span>-small perturbation, the characteristic foliations <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}, t \in I\)</span> can be realized as the gradient of a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of Morse functions on <span class="math notranslate nohighlight">\(\Sigma\)</span>. It is this Morse theory which can be made “generic” and work in families. In what follows, we’ll spell out the details of this Morse theory on hypersurfaces at <span class="math notranslate nohighlight">\(\pi_0, \pi_1\)</span>, and <span class="math notranslate nohighlight">\(\pi_2\)</span>-levels.</p>
-<p>At the <span class="math notranslate nohighlight">\(\pi_0\)</span>-level, it means that for any <span class="math notranslate nohighlight">\(t_0 \in I\)</span>, the hypersurface <span class="math notranslate nohighlight">\(\Sigma = \Sigma_{t_0}\)</span> can be <span class="math notranslate nohighlight">\(C^0\)</span>-perturbed such that <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> is Morse. Let <span class="math notranslate nohighlight">\(p \in \Sigma\)</span> be a critical point. Then we say <span class="math notranslate nohighlight">\(p\)</span> is <em>positive</em> if <span class="math notranslate nohighlight">\(T_p \Sigma = \xi_p\)</span> as oriented vector spaces and <em>negative</em> if <span class="math notranslate nohighlight">\(T_p \Sigma = -\xi_p\)</span>. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold <span class="math notranslate nohighlight">\(R_+ \subset \Sigma\)</span>, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the <a class="reference internal" href="#first-blend-of-morse-theory-with-contact-structures"><span class="std std-ref">first blend</span></a>. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold <span class="math notranslate nohighlight">\(R_- \subset \Sigma\)</span>. Denoting the remaining borderline between <span class="math notranslate nohighlight">\(R_+\)</span> and <span class="math notranslate nohighlight">\(R_-\)</span> by <span class="math notranslate nohighlight">\(\Gamma\)</span>, we arrive at the familiar <span class="math notranslate nohighlight">\(\Sigma = R_+ \cup_{\Gamma} R_-\)</span> which appeared as the structure of a regular level set in <a class="reference internal" href="#equation-hypersurfacedecomposition">(1)</a>.</p>
+<section id="pi-0-level">
+<h4><span class="math notranslate nohighlight">\(\pi_0\)</span>-level<a class="headerlink" href="#pi-0-level" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="math notranslate nohighlight">\(\pi_0\)</span>-level Morse theory means that for any <span class="math notranslate nohighlight">\(t_0 \in I\)</span>, the hypersurface <span class="math notranslate nohighlight">\(\Sigma = \Sigma_{t_0}\)</span> can be <span class="math notranslate nohighlight">\(C^0\)</span>-perturbed such that <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> is Morse. Let <span class="math notranslate nohighlight">\(p \in \Sigma\)</span> be a critical point. Then we say <span class="math notranslate nohighlight">\(p\)</span> is <em>positive</em> if <span class="math notranslate nohighlight">\(T_p \Sigma = \xi_p\)</span> as oriented vector spaces and <em>negative</em> if <span class="math notranslate nohighlight">\(T_p \Sigma = -\xi_p\)</span>. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold <span class="math notranslate nohighlight">\(R_+ \subset \Sigma\)</span>, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the <a class="reference internal" href="#first-blend-of-morse-theory-with-contact-structures"><span class="std std-ref">first blend</span></a>. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold <span class="math notranslate nohighlight">\(R_- \subset \Sigma\)</span>. Denoting the remaining borderline between <span class="math notranslate nohighlight">\(R_+\)</span> and <span class="math notranslate nohighlight">\(R_-\)</span> by <span class="math notranslate nohighlight">\(\Gamma\)</span>, we arrive at the familiar <span class="math notranslate nohighlight">\(\Sigma = R_+ \cup_{\Gamma} R_-\)</span> which appeared as the structure of a regular level set in <a class="reference internal" href="#equation-hypersurfacedecomposition">(1)</a>.</p>
+<blockquote>
+<div><p>We say a hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> is <em>Morse</em> if <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> is Morse. Moreover, genericity is always appropriately understood according to the <span class="math notranslate nohighlight">\(\pi_k\)</span>-level of the Morse theory under discussion.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Morse hypersurfaces are not generic. They are only <span class="math notranslate nohighlight">\(C^0\)</span>-dense among all hypersurfaces, which is enough for all we care. It’s important to note that contact Morse theory lives on hypersurfaces rather than the contact manifold itself.</p>
+</div>
+</section>
+<section id="pi-1-level">
+<h4><span class="math notranslate nohighlight">\(\pi_1\)</span>-level<a class="headerlink" href="#pi-1-level" title="Permalink to this headline">¶</a></h4>
+<p>Suppose <span class="math notranslate nohighlight">\(\Sigma_0, \Sigma_1\)</span> are Morse, where <span class="math notranslate nohighlight">\(\Sigma_t \coloneqq \Sigma \times t, t \in I\)</span>. This is indeed the case when they are boundaries of standard neighborhoods of the isotropic skeleta <span class="math notranslate nohighlight">\(H_0, H_1\)</span>. Then the <span class="math notranslate nohighlight">\(\pi_1\)</span>-level Morse theory means that, up to a <span class="math notranslate nohighlight">\(C^0\)</span>-small perturbation, the <span class="math notranslate nohighlight">\(1\)</span>-parameter family <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}\)</span> can be realized as the gradient of a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of Morse functions. It turns out that for most of the time <span class="math notranslate nohighlight">\(t \in I\)</span>, the contact germ on <span class="math notranslate nohighlight">\(\Sigma_t\)</span> doesn’t change, up to isotopy.</p>
+<blockquote>
+<div><p>We say a Morse hypersurface is <em>invariant</em> if the contact germ is invariant in the transverse direction. This is equivalent to, as it turns out, the nonexistence of flow lines from negative critical points to positive critical points.</p>
+</div></blockquote>
+<p>Due to genericity and the index constraint on Weinstein handles, <span class="math notranslate nohighlight">\(\Sigma_t\)</span> may fail to be invariant only when there is a (unique) trajectory of <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}\)</span> from a negative index-<span class="math notranslate nohighlight">\(n\)</span> critical point <span class="math notranslate nohighlight">\(p_n^-\)</span> to a positive index-<span class="math notranslate nohighlight">\(n\)</span> critical point <span class="math notranslate nohighlight">\(p_n^+\)</span>, assuming <span class="math notranslate nohighlight">\(\dim \Sigma = 2n\)</span>. Moreover, such failure may happen for only finitely many <span class="math notranslate nohighlight">\(t \in I\)</span>, which we call the <span class="math notranslate nohighlight">\(\pi_1\)</span>-<em>critical moments</em>.</p>
+<blockquote>
+<div><p>Depending on the context, a <span class="math notranslate nohighlight">\(\pi_1\)</span>-<em>switch</em> at a <span class="math notranslate nohighlight">\(\pi_1\)</span>-critical moment <span class="math notranslate nohighlight">\(t_0 \in I\)</span> refers to either one of the following:</p>
+<ul class="simple">
+<li><p>The (transversely cut out) trajectory from <span class="math notranslate nohighlight">\(p_-\)</span> to <span class="math notranslate nohighlight">\(p_+\)</span>.</p></li>
+<li><p>The hypersurface <span class="math notranslate nohighlight">\(\Sigma_{t_0}\)</span>.</p></li>
+<li><p>The contact structure on <span class="math notranslate nohighlight">\(\Sigma \times [t_0 - \epsilon, t_0 + \epsilon]\)</span> for <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> sufficiently small.</p></li>
+</ul>
+</div></blockquote>
+<p>Topological speaking, the difference between <span class="math notranslate nohighlight">\(\Sigma_{t_0 - \epsilon}\)</span> and <span class="math notranslate nohighlight">\(\Sigma_{t_0 + \epsilon}\)</span> is a handle slide of a negative <span class="math notranslate nohighlight">\(n\)</span>-handle over a positive <span class="math notranslate nohighlight">\(n\)</span>-handle. However, not every topological handle slide of this kind can be realized as a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch, even after requiring all isotopies involved in the handle slide are contact isotopies. Namely, suppose <span class="math notranslate nohighlight">\(Y \subset \Sigma_{t_0}\)</span> is a regular level set between <span class="math notranslate nohighlight">\(p_n^-\)</span> and <span class="math notranslate nohighlight">\(p_n^+\)</span> such that the unstable manifold of <span class="math notranslate nohighlight">\(p_n^-\)</span> intersects <span class="math notranslate nohighlight">\(Y\)</span> along a Legendrian sphere <span class="math notranslate nohighlight">\(\Lambda_-\)</span> and the stable manifold of <span class="math notranslate nohighlight">\(p_n^+\)</span> intersects <span class="math notranslate nohighlight">\(Y\)</span> along <span class="math notranslate nohighlight">\(\Lambda_+\)</span>. Here we recall <span class="math notranslate nohighlight">\(Y\)</span> is naturally a contact submanifold. Then <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> intersect <span class="math notranslate nohighlight">\(\xi|_Y\)</span>-transversely at exactly one point <span class="math notranslate nohighlight">\(q\)</span> (on the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch). Extending the definitions of <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> to all <span class="math notranslate nohighlight">\(t\)</span> close to <span class="math notranslate nohighlight">\(t_0\)</span>, we require that <span class="math notranslate nohighlight">\(\Lambda_+\)</span> is slightly “below” <span class="math notranslate nohighlight">\(\Lambda_-\)</span>, measured against the positive co-orientation of <span class="math notranslate nohighlight">\(\xi|_Y\)</span>, near <span class="math notranslate nohighlight">\(q\)</span> for <span class="math notranslate nohighlight">\(t &lt; t_0\)</span> and “above” for <span class="math notranslate nohighlight">\(t &gt; t_0\)</span>.</p>
+<blockquote>
+<div><p>In plain words, the handle slide corresponding to a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch isotopes <span class="math notranslate nohighlight">\(\Lambda_+\)</span> up across <span class="math notranslate nohighlight">\(\Lambda_-\)</span> as <span class="math notranslate nohighlight">\(t\)</span> passes over <span class="math notranslate nohighlight">\(t_0\)</span>.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Historically speaking, a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch is trivially a special case of “bifurcations” considered by Giroux in his dynamical convex surface theory <a class="reference internal" href="#gi99" id="id17"><span>[Gi99]</span></a>, and less trivially a special case of “bypass attachments” considered by Honda in his combinatorial convex surface theory <a class="reference internal" href="#ho99" id="id18"><span>[Ho99]</span></a>, both in dimension <span class="math notranslate nohighlight">\(3\)</span>. The later was generalized to all dimensions in <a class="reference internal" href="#hh18" id="id19"><span>[HH18]</span></a>. In particular, the decomposition <a class="reference internal" href="#equation-heegaarddecomposition">(2)</a> indeed gives rise to a contact Morse function. However, none of these developments are relevant here and we don’t even care about general contact Morse functions per se.</p>
+</div>
 <p>tbc…</p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="gradient"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>Morse theory is topological in nature and doesn’t care about metric very much. In particular, it’s more correct and convenient but unfortunately also more cumbersome to use <a class="reference external" href="https://en.wikipedia.org/wiki/Gradient-like_vector_field">gradient-like vector fields</a> instead.</p>
 </dd>
-<dt class="label" id="falsebelieve"><span class="brackets"><a class="fn-backref" href="#id10">2</a></span></dt>
+<dt class="label" id="falsebelieve"><span class="brackets"><a class="fn-backref" href="#id12">2</a></span></dt>
 <dd><p>Ironically, the failure of Giroux’s argument in dimensions greater than three went so far to even form a consensus that hypersurfaces in higher-dimensional contact manifolds are intractable and hopeless. It was at least the case when I entered the subject as a graduate student. From my own experience, there is nothing better than breaking false believes.</p>
 </dd>
 </dl>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="don96"><span class="brackets"><a class="fn-backref" href="#id5">Don96</a></span></dt>
+<dt class="label" id="don96"><span class="brackets"><a class="fn-backref" href="#id7">Don96</a></span></dt>
 <dd><p>S. Donaldson. <a class="reference external" href="https://projecteuclid.org/journals/journal-of-differential-geometry/volume-44/issue-4/Symplectic-submanifolds-and-almost-complex-geometry/10.4310/jdg/1214459407.full">Symplectic submanifolds and almost-complex geometry</a></p>
 </dd>
-<dt class="label" id="eg91"><span class="brackets"><a class="fn-backref" href="#id1">EG91</a></span></dt>
+<dt class="label" id="eg91"><span class="brackets">EG91</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id5">2</a>)</span></dt>
 <dd><p>Y. Eliashberg and M. Gromov. <a class="reference external" href="https://www.ihes.fr/~gromov/symplecticmanifolds/163/">Convex symplectic manifolds</a></p>
 </dd>
-<dt class="label" id="gi91"><span class="brackets"><a class="fn-backref" href="#id8">Gi91</a></span></dt>
+<dt class="label" id="gi91"><span class="brackets">Gi91</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id10">2</a>)</span></dt>
 <dd><p>E. Giroux. <a class="reference external" href="https://link.springer.com/article/10.1007%2FBF02566670">Convexité en topologie de contact</a></p>
 </dd>
-<dt class="label" id="gi99"><span class="brackets"><a class="fn-backref" href="#id9">Gi99</a></span></dt>
+<dt class="label" id="gi99"><span class="brackets">Gi99</span><span class="fn-backref">(<a href="#id11">1</a>,<a href="#id17">2</a>)</span></dt>
 <dd><p>E. Giroux. <a class="reference external" href="https://arxiv.org/abs/math/9908178">Structures de contact en dimension trois et bifurcations des feuilletages de surfaces</a></p>
 </dd>
-<dt class="label" id="gi03"><span class="brackets">Gi03</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>,<a href="#id14">3</a>)</span></dt>
+<dt class="label" id="gi03"><span class="brackets">Gi03</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>,<a href="#id16">3</a>)</span></dt>
 <dd><p>E. Giroux. <a class="reference external" href="https://arxiv.org/abs/math/0305129">Géométrie de contact: de la dimension trois vers les dimensions supérieures</a></p>
 </dd>
-<dt class="label" id="hh18"><span class="brackets">HH18</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id11">2</a>)</span></dt>
+<dt class="label" id="hh18"><span class="brackets">HH18</span><span class="fn-backref">(<a href="#id8">1</a>,<a href="#id13">2</a>,<a href="#id19">3</a>)</span></dt>
 <dd><p>K. Honda and Y. Huang. <a class="reference external" href="https://arxiv.org/abs/1803.09142">Bypass attachments in higher-dimensional contact topology</a></p>
 </dd>
-<dt class="label" id="hh19"><span class="brackets">HH19</span><span class="fn-backref">(<a href="#id7">1</a>,<a href="#id12">2</a>)</span></dt>
+<dt class="label" id="hh19"><span class="brackets">HH19</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id14">2</a>)</span></dt>
 <dd><p>K. Honda and Y. Huang. <a class="reference external" href="https://arxiv.org/abs/1907.06025">Convex hypersurface theory in contact topology</a></p>
 </dd>
+<dt class="label" id="ho99"><span class="brackets"><a class="fn-backref" href="#id18">Ho99</a></span></dt>
+<dd><p>K. Honda. <a class="reference external" href="https://arxiv.org/abs/math/9910127">On the classification of tight contact structures I</a></p>
+</dd>
 </dl>
+</section>
 </section>
 </section>
 </section>
@@ -425,7 +483,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.ea16aa3fe9d77da809bc.js"></script>
+  <script src="../_static/js/index.c258f241e0e9126fa012.js"></script>
 <footer class="footer mt-5 mt-md-0">
   <div class="container">
     
