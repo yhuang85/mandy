@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "94709f3360b20f89ea8f5e8371baed764eb146b2a656d84ea0a8ce90e456f8ca"
+            "sha256": "e6bd1a27bec700141bb0cbc799a1289f17258c0330d053f2a5cda500de5b40d4"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -161,9 +161,12 @@
             "version": "==21.0"
         },
         "pydata-sphinx-theme": {
-            "editable": true,
-            "git": "https://github.com/yhuang85/pydata-sphinx-theme.git",
-            "ref": "6edc720a2914e2d62a1e2c32f3cd89a9b722c2fa"
+            "hashes": [
+                "sha256:60af9000ce6b512e20102b8b43e8f0a3bbc700579acc078afe35eb362aa10949",
+                "sha256:e549c907b1e0bb08b152db20daf577522d74a650e157b3dad8385e5db4c6e182"
+            ],
+            "index": "pypi",
+            "version": "==0.7.0"
         },
         "pygments": {
             "hashes": [
