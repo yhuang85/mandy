@@ -188,7 +188,7 @@ Of course, one contact manifold may have many different topological skeleta, and
 A family Morse theory on hypersurfaces
 **************************************
 
-Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :eq:`heegaardDecomposition`. As explained in the :ref:`main ideas<The Main Ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels.
+Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :eq:`heegaardDecomposition`. As explained in the :ref:`main ideas<The Main Ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels. As a convention, all explicitly mentioned (Morse) critical points are assumed to be nondegenerate unless otherwise specified.
 
 :math:`\pi_0`-level
 +++++++++++++++++++
@@ -212,17 +212,62 @@ Due to genericity and the index constraint on Weinstein handles, :math:`\Sigma_t
 
     Depending on the context, a :math:`\pi_1`-*switch* at a :math:`\pi_1`-critical moment :math:`t_0 \in I` refers to either one of the following:
 
-    * The (transversely cut out) trajectory from :math:`p_-` to :math:`p_+`.
+    * The (transversely cut out) trajectory from :math:`p_n^-` to :math:`p_n^+`.
     * The hypersurface :math:`\Sigma_{t_0}`.
     * The contact structure on :math:`\Sigma \times [t_0 - \epsilon, t_0 + \epsilon]` for :math:`\epsilon > 0` sufficiently small.
 
-Topological speaking, the difference between :math:`\Sigma_{t_0 - \epsilon}` and :math:`\Sigma_{t_0 + \epsilon}` is a handle slide of a negative :math:`n`-handle over a positive :math:`n`-handle. However, not every topological handle slide of this kind can be realized as a :math:`\pi_1`-switch, even after requiring all isotopies involved in the handle slide are contact isotopies. Namely, suppose :math:`Y \subset \Sigma_{t_0}` is a regular level set between :math:`p_n^-` and :math:`p_n^+` such that the unstable manifold of :math:`p_n^-` intersects :math:`Y` along a Legendrian sphere :math:`\Lambda_-` and the stable manifold of :math:`p_n^+` intersects :math:`Y` along :math:`\Lambda_+`. Here we recall :math:`Y` is naturally a contact submanifold. Then :math:`\Lambda_{\pm}` intersect :math:`\xi|_Y`-transversely at exactly one point :math:`q` (on the :math:`\pi_1`-switch). Extending the definitions of :math:`Y` and :math:`\Lambda_{\pm}` to all :math:`t` close to :math:`t_0`, we require that :math:`\Lambda_+` is slightly "below" :math:`\Lambda_-`, measured against the positive co-orientation of :math:`\xi|_Y`, near :math:`q` for :math:`t < t_0` and "above" for :math:`t > t_0`.
+Topological speaking, the difference between :math:`\Sigma_{t_0 - \epsilon}` and :math:`\Sigma_{t_0 + \epsilon}` is a handle slide of a negative :math:`n`-handle over a positive :math:`n`-handle. However, not every topological handle slide of this kind can be realized as a :math:`\pi_1`-switch, even after requiring all isotopies involved in the handle slide are contact isotopies. Namely, suppose :math:`Y \subset \Sigma_{t_0}` is a regular level set between :math:`p_n^-` and :math:`p_n^+` such that the unstable manifold of :math:`p_n^-` intersects :math:`Y` along a Legendrian sphere :math:`\Lambda_-` and the stable manifold of :math:`p_n^+` intersects :math:`Y` along :math:`\Lambda_+`. Here we recall :math:`Y` is naturally a contact submanifold. [#contactSubmfd]_ Then :math:`\Lambda_{\pm}` intersect :math:`\xi|_Y`-transversely at exactly one point :math:`q` (on the :math:`\pi_1`-switch), i.e.,
+
+.. math::
+    :label: xiTransverse
+
+    T_q \Lambda_+ \oplus T_q \Lambda_- = (\xi|_Y)_q.
+
+Extending the definitions of :math:`Y` and :math:`\Lambda_{\pm}` to all :math:`t` close to :math:`t_0`, we require that :math:`\Lambda_+` is slightly "below" :math:`\Lambda_-`, measured against the positive co-orientation of :math:`\xi|_Y`, near :math:`q` for :math:`t < t_0` and "above" for :math:`t > t_0`.
 
     In plain words, the handle slide corresponding to a :math:`\pi_1`-switch isotopes :math:`\Lambda_+` up across :math:`\Lambda_-` as :math:`t` passes over :math:`t_0`.
 
 .. note::
 
     Historically speaking, a :math:`\pi_1`-switch is trivially a special case of "bifurcations" considered by Giroux in his dynamical convex surface theory [Gi99]_, and less trivially a special case of "bypass attachments" considered by Honda in his combinatorial convex surface theory [Ho99]_, both in dimension :math:`3`. The later was generalized to all dimensions in [HH18]_. In particular, the decomposition :eq:`heegaardDecomposition` indeed gives rise to a contact Morse function. However, none of these developments are relevant here and we don't even care about general contact Morse functions per se.
+
+Besides :math:`\pi_1`-switches, there are many other :math:`\pi_1`-level Morse theoretic degenerations, such as creation and elimination of critical points, that may happen in the family :math:`\Sigma_t|_{\xi}, t \in I`. However, these phenomena may happen either within :math:`R_+` or :math:`R_-`, and they belong to the subject of Weinstein homotopies, whose general understanding is completely out of reach by the current technology.
+
+To summarize, the :math:`\pi_1`-level contact Morse theory asserts that, modulo Weinstein homotopies, any contact structure on :math:`\Sigma \times I` can be realized as a finite sequence of :math:`\pi_1`-switches.
+
+:math:`\pi_2`-level
++++++++++++++++++++
+
+The :math:`\pi_2`-level contact Morse theory aims at connecting two realizations of the same :math:`(\Sigma \times I, \xi)` as :math:`1`-parameter families of Morse functions on :math:`\Sigma`. It's therefore inappropriate to ignore the :math:`C^0`-perturbation part and pretend that the realizing hypersurface foliation is just :math:`\Sigma_t = \Sigma \times t, t \in I`. For the sake of distinction, let :math:`\Sigma^0_t, t \in I`, and :math:`\Sigma^1_t, t \in I`, be two different foliations realizing :math:`\pi_1`-level Morse theories as explained above. Namely, modulo Weinstein homotopies, the :math:`1`-parameter families :math:`\Sigma^0_t|_{\xi}` and :math:`\Sigma^1_t|_{\xi}` give rise to two compositions of :math:`\pi_1`-switches. Therefore, the goal is, roughly speaking, to connect different compositions of :math:`\pi_1`-switches which define the same contact structure, in a Morse theoretic way.
+
+By analogy with the :math:`\pi_1`-switch, here is a complete list of :math:`\pi_2`-switches which at some point breaks the invariance of the contact germ. First of all, we need to work on the :math:`2`-dimensional parameter space :math:`(s, t) \in I^2`, where :math:`t` shall always parametrize the foliations and :math:`s` parametrizes the homotopies. At a :math:`\pi_2`-critical moment :math:`(s_0, t_0) \in I^2`, one of the following scenarios may happen: [#pi2labels]_
+
+* (:math:`\pi_2^a`-switch) There exist a negative birth-death-type index-:math:`(n+1)` critical point :math:`p_{n+1, n}^-` and a positive index-:math:`n` critical point :math:`p_n^+`, such that there is a unique transversely cut out trajectory from :math:`p_{n+1, n}^-` to :math:`p_n^+`. Here the notation :math:`p_{n+1, n}` for a birth-death-type critical point indicates the dimension of the stable manifold, which is :math:`n+1`, and the unstable manifold, which is :math:`n`. Flipping the orientation, one also has the same type of switch at a trajectory from a negative :math:`p_n^-` to a positive :math:`p_{n, n-1}^+`.
+
+* (:math:`\pi_2^b`-switch) There exist two index-:math:`n` negative critical points :math:`p_n^-, q_n^-` and two positive :math:`p_n^+, q_n^+`, such that there are exactly two transversely cut out trajectories: one from :math:`p_n^-` to :math:`p_n^+` and the other from :math:`q_n^-` to :math:`q_n^+`.
+
+* (:math:`\pi_2^c`-switch) There exist a negative index-:math:`(n+1)` critical point :math:`p_{n+1}^-` and a positive index-:math:`n` critical point :math:`p_n^+` and a unique trajectory from :math:`p_{n+1}^-` to :math:`p_n^+` which is transversely cut out with respect to a :math:`2`-dimensional family :math:`\Sigma_t^s|_{\xi}` for :math:`(s, t)` close to :math:`(s_0, t_0)`.
+
+* (:math:`\pi_2^d`-switch) There exist a negative index-:math:`n` critical point :math:`p_n^-` and a positive :math:`p_n^+`, such that there exists a trajectory from :math:`p_n^-` to :math:`p_n^+` which is not transversely cut out, but rather has a first-order tangency. Namely, let :math:`Y \subset \Sigma_{t_0}^{s_0}` be a regular level set between :math:`p_n^-` and :math:`p_n^+`, and :math:`\Lambda_{\pm} \subset Y` be Legendrian spheres just as in the above discussion at the :math:`\pi_1`-level. Then the unique intersection :math:`q = \Lambda_+ \cap \Lambda_-` satisfies the following
+
+  .. math::
+
+      \dim(T_q \Lambda_+ \cap T_q \Lambda_-) = 1.
+
+  This should be compared with the :math:`\xi|_Y`-transversality condition :eq:`xiTransverse`.
+
+
+
+Summary
+*******
+
+We start with the definition of topological skeleta, which serve the purpose of separating topology from contact structures. Then we proceed with a description of the sought-after contact Morse theory on hypersurfaces from :math:`\pi_0` to :math:`\pi_2`-level. The :math:`\pi_0`-level is the foundation for everything that follows and technically speaking, it involves all the hard techniques established in [HH19]_. The :math:`\pi_1`-level reduces the study of contact structures to the study of finite sequences of :math:`\pi_1`-switches. Finally, the :math:`\pi_2`-level provides a complete list of moves one needs to compare two different sequences of :math:`\pi_1`-switches. In principle, one could continue to build :math:`\pi_k`-level contact Morse theory for :math:`k \geq 3`. We choose not to do that for two reasons: first, as far as the classification of contact structures is concerned, the :math:`\pi_2`-level Morse theory suffices, and second, there is no significant technical advancement already from :math:`\pi_0`-level up.
+
+
+Examples
+--------
+
+So far the theory has been dry and obscure. We need examples to make it sensible but as for any other theories, there is a high risk of breaking it by testing against the reality. Let's do it.
 
 tbc...
 
@@ -232,6 +277,10 @@ tbc...
 .. [#gradient] Morse theory is topological in nature and doesn't care about metric very much. In particular, it's more correct and convenient but unfortunately also more cumbersome to use `gradient-like vector fields <https://en.wikipedia.org/wiki/Gradient-like_vector_field>`_ instead.
 
 .. [#falseBelieve] Ironically, the failure of Giroux's argument in dimensions greater than three went so far to even form a consensus that hypersurfaces in higher-dimensional contact manifolds are intractable and hopeless. It was at least the case when I entered the subject as a graduate student. From my own experience, there is nothing better than breaking false believes.
+
+.. [#contactSubmfd] Regular level sets in a Morse hypersurface provide a rich source of examples of contact submanifolds. However, they don't carry themselves much information about the original contact manifold.
+
+.. [#pi2labels] The :math:`\pi_2`-switches are labeled by alphabetic letters at a random order because I don't have a better naming strategy.
 
 .. rubric:: References
 
