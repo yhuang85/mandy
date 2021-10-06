@@ -12,7 +12,8 @@ The only piece of mathematics that I had been working on as a professional is ab
 .. toctree::
    :caption: Contact and Symplectic Topology
    :titlesonly:
-   :maxdepth: 2
+   :maxdepth: 1
 
    contact3d
    contactMorse
+   coLegendrian/index
