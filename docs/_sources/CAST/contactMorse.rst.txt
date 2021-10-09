@@ -216,7 +216,7 @@ Due to genericity and the index constraint on Weinstein handles, :math:`\Sigma_t
     * The hypersurface :math:`\Sigma_{t_0}`.
     * The contact structure on :math:`\Sigma \times [t_0 - \epsilon, t_0 + \epsilon]` for :math:`\epsilon > 0` sufficiently small.
 
-Topological speaking, the difference between :math:`\Sigma_{t_0 - \epsilon}` and :math:`\Sigma_{t_0 + \epsilon}` is a handle slide of a negative :math:`n`-handle over a positive :math:`n`-handle. However, not every topological handle slide of this kind can be realized as a :math:`\pi_1`-switch, even after requiring all isotopies involved in the handle slide are contact isotopies. Namely, suppose :math:`Y \subset \Sigma_{t_0}` is a regular level set between :math:`p_n^-` and :math:`p_n^+` such that the unstable manifold of :math:`p_n^-` intersects :math:`Y` along a Legendrian sphere :math:`\Lambda_-` and the stable manifold of :math:`p_n^+` intersects :math:`Y` along :math:`\Lambda_+`. Here we recall :math:`Y` is naturally a contact submanifold. [#contactSubmfd]_ Then :math:`\Lambda_{\pm}` intersect :math:`\xi|_Y`-transversely at exactly one point :math:`q` (on the :math:`\pi_1`-switch), i.e.,
+Topological speaking, the difference between :math:`\Sigma_{t_0 - \epsilon}` and :math:`\Sigma_{t_0 + \epsilon}` is a handle slide of a negative :math:`n`-handle over a positive :math:`n`-handle. However, not every topological handle slide of this kind can be realized as a :math:`\pi_1`-switch, even after assuming all isotopies involved in the handle slide are contact isotopies. Namely, suppose :math:`Y \subset \Sigma_{t_0}` is a regular level set between :math:`p_n^-` and :math:`p_n^+` such that the unstable manifold of :math:`p_n^-` intersects :math:`Y` along a Legendrian sphere :math:`\Lambda_-` and the stable manifold of :math:`p_n^+` intersects :math:`Y` along :math:`\Lambda_+`. Here we recall :math:`Y` is naturally a contact submanifold. [#contactSubmfd]_ Then :math:`\Lambda_{\pm}` intersect :math:`\xi|_Y`-transversely at exactly one point :math:`q` (on the :math:`\pi_1`-switch), i.e.,
 
 .. math::
     :label: xiTransverse
@@ -261,13 +261,53 @@ By analogy with the :math:`\pi_1`-switch, here is a complete list of :math:`\pi_
 Summary
 *******
 
-We start with the definition of topological skeleta, which serve the purpose of separating topology from contact structures. Then we proceed with a description of the sought-after contact Morse theory on hypersurfaces from :math:`\pi_0` to :math:`\pi_2`-level. The :math:`\pi_0`-level is the foundation for everything that follows and technically speaking, it involves all the hard techniques established in [HH19]_. The :math:`\pi_1`-level reduces the study of contact structures to the study of finite sequences of :math:`\pi_1`-switches. Finally, the :math:`\pi_2`-level provides a complete list of moves one needs to compare two different sequences of :math:`\pi_1`-switches. In principle, one could continue to build :math:`\pi_k`-level contact Morse theory for :math:`k \geq 3`. We choose not to do that for two reasons: first, as far as the classification of contact structures is concerned, the :math:`\pi_2`-level Morse theory suffices, and second, there is no significant technical advancement already from :math:`\pi_0`-level up.
+We start with the definition of topological skeleta, which serve the purpose of separating topology from contact structures. Then we proceed with a description of the sought-after contact Morse theory on hypersurfaces from :math:`\pi_0` to :math:`\pi_2`-level. The :math:`\pi_0`-level is the foundation for everything that follows and technically speaking, it involves all the (good and bad) techniques established in [HH19]_. The :math:`\pi_1`-level reduces the study of contact structures to the study of finite sequences of :math:`\pi_1`-switches. Finally, the :math:`\pi_2`-level provides a complete list of moves one needs to compare two different sequences of :math:`\pi_1`-switches. In principle, one could continue to build :math:`\pi_k`-level contact Morse theory for :math:`k \geq 3`. We choose not to do that for two reasons: first, as far as the classification of contact structures is concerned, the :math:`\pi_2`-level Morse theory suffices, and second, there is no significant technical advancement already from :math:`\pi_0`-level up.
 
 
 Examples
 --------
 
-So far the theory has been dry and obscure. We need examples to make it sensible but as for any other theories, there is a high risk of breaking it by testing against the reality. Let's do it.
+So far the theory has been dry and obscure. We need examples to make it sensible but as for any other theories, there is a high risk of breaking it by testing against the reality. So let's do it.
+
+Simple and trivial :math:`\pi_1`-switches
+*****************************************
+
+Recall :math:`\pi_1`-switches are exactly where the contact germs on a :math:`1`-parameter family of Morse hypersurfaces change. They don't come for free for otherwise contact topology would be completely trivial. It's generally difficult to verify the existence of a particular :math:`\pi_1`-switch inside a given contact manifold. However, there exists a class of :math:`\pi_1`-switches which can always be found at the vicinity of any (invariant) Morse hypersurface. These :math:`\pi_1`-switches are called the *simple* ones and are the subject of discussion in this section.
+
+The creation of simple :math:`\pi_1`-switches is very much a procedure of creating something out of nothing, and not surprisingly, it relies on certain :math:`\pi_2`-switches. Since :math:`\pi_2`-switches are directionless, all creations can be reversed to eliminations, which we'll omit.
+
+    There are at least three ways to create simple :math:`\pi_1`-switches: the first uses :math:`\pi_2^a`-switch to create the trivial ones, the second relies on the first and uses in addition :math:`\pi_2^b`-switch to create simple but nontrivial ones, and lastly the third is independent of the previous two and use just :math:`\pi_2^d`-switch.
+
+.. note::
+
+    The only :math:`\pi_2`-switch which is not involved in the above procedure is the :math:`\pi_2^c`-switch. Rather than bridging :math:`\pi_1`-switches, it serves the function of generating certain contact topological "pseudo-isotopes" of :math:`1`-parameter families of Morse hypersurfaces.
+
+.. sidebar:: Morse picture of the :math:`\pi_2^a`-switch
+
+    .. image:: static/pi2a-morse.svg
+        :width: 400px
+
+Let's start with the simplest scenario of a trivial :math:`\pi_1`-switch, which can be created by a :math:`\pi_2`-switch as shown in the right-hand-side picture.
+
+.. note::
+
+    All pictures will be drawn in dimension :math:`2`, but are supposed to illustrate the general situation in any dimension. For example, saddles usually represent index-:math:`n` critical points (assuming :math:`\dim \Sigma = 2n`).
+
+Specifically, the square in the middle represents the parameter space :math:`I^2_{s,t}` where :math:`s` is horizontal and :math:`t` is vertical. The red dot at the center of :math:`I^2` and the corresponding Morse vector field represents the critical moment when the :math:`\pi_2^a`-switch takes place. The left-side of :math:`I^2` represents a Morse homotopy :math:`\Sigma_t^0|_{\xi}` which contains no critical moments, i.e., there are no :math:`\pi_1`-switches. However, the right-side of :math:`I^2` represents a Morse homotopy :math:`\Sigma_t^1|_{\xi}` which contains exactly one :math:`\pi_1`-switch [#pi2a_morse_sign]_. Scanning from left to right, one could say that a :math:`\pi_1`-switch is born via a :math:`\pi_2^a`-switch.
+
+    The so created :math:`\pi_1`-switch is said to be *trivial* since the corresponding contact structure on :math:`\Sigma \times I` is isotropic, relative to the boundaries, to the :math:`I`-invariant one (modulo Weinstein homotopies of :math:`R_{\pm}` as usual).
+
+The above Morse picture about the creation of trivial :math:`\pi_1`-switches is conceptually clear but can be difficult to use in practice. So let's talk about another approach, called the :math:`R_{\pm}`-picture, which is a bit less native to our contact Morse theory but easier to manipulate, especially when combined with front projections. In a nutshell, the :math:`R_{\pm}`-picture describes the changes in :math:`R_{\pm} (\Sigma_t)`, as well as how they are glued together along :math:`\Gamma(\Sigma_t)`, as :math:`\Sigma_t|_{\xi}` goes through a :math:`\pi_1`-switch.
+
+
+.. sidebar:: :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch
+
+    .. figure:: static/pi1-handles.svg
+        :width: 400px
+
+The picture on the right-hand-side illustrates a completely general :math:`\pi_1`-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the :ref:`family Morse theory <A family Morse theory on hypersurfaces>`, here we need to keep track of several level sets (in :math:`\Sigma`) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered.
+
+The upper-left corner represents a part of :math:`\Sigma` relevant to the :math:`\pi_1`-switch. Namely, there are two index-:math:`n` critical points :math:`p_n^+` and :math:`p_n^-`, and the corresponding Legendrian spheres :math:`\Lambda_+^u, \Lambda_-^s \subset \Gamma`. Here the superscripts :math:`u` and :math:`s` denote unstable and stable, respectively. Moreover, there is a small ball in :math:`\Gamma` which intersects :math:`\Lambda_+^u` and :math:`\Lambda_-^s` in a disk, respectively, such that the :math:`\Lambda_+^u`-disk is slightly below the :math:`\Lambda_-^s`-disk, where "below" is measured against the positive co-orientation of :math:`\xi|_{\Gamma}`. This small ball is magnified in the picture, and the "below"-ness is shown as an undercrossing when the :math:`\Lambda`'s appear to be :math:`1`-dimensional.
 
 tbc...
 
@@ -276,11 +316,14 @@ tbc...
 
 .. [#gradient] Morse theory is topological in nature and doesn't care about metric very much. In particular, it's more correct and convenient but unfortunately also more cumbersome to use `gradient-like vector fields <https://en.wikipedia.org/wiki/Gradient-like_vector_field>`_ instead.
 
-.. [#falseBelieve] Ironically, the failure of Giroux's argument in dimensions greater than three went so far to even form a consensus that hypersurfaces in higher-dimensional contact manifolds are intractable and hopeless. It was at least the case when I entered the subject as a graduate student. From my own experience, there is nothing better than breaking false believes.
+.. [#falseBelieve] Ironically, the failure of Giroux's argument in dimensions :math:`> 3` and other "experts' insights" went so far to even form a consensus that hypersurfaces in higher-dimensional contact manifolds are intractable and hopeless. It was at least the case when I entered the subject as a graduate student. See, for example, what my back-then-advisor had to say about `this <https://youtu.be/xuw9f4huYjk?t=2820>`_. From my own experience, there is nothing better than breaking false believes even if I was one of the believers.
 
-.. [#contactSubmfd] Regular level sets in a Morse hypersurface provide a rich source of examples of contact submanifolds. However, they don't carry themselves much information about the original contact manifold.
+.. [#contactSubmfd] Regular level sets in a Morse hypersurface provide a rich source of examples of contact submanifolds. However, they don't carry in themselves much information about the original contact manifold.
 
 .. [#pi2labels] The :math:`\pi_2`-switches are labeled by alphabetic letters at a random order because I don't have a better naming strategy.
+
+.. [#pi2a_morse_sign] One has to make (obviously) consistent choices of signs for the critical points.
+
 
 .. rubric:: References
 
