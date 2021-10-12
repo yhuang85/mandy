@@ -287,6 +287,9 @@ The creation of simple :math:`\pi_1`-switches is very much a procedure of creati
     .. image:: static/pi2a-morse.svg
         :width: 400px
 
+Trivial :math:`\pi_1`-switches
+++++++++++++++++++++++++++++++
+
 Let's start with the simplest scenario of a trivial :math:`\pi_1`-switch, which can be created by a :math:`\pi_2`-switch as shown in the right-hand-side picture.
 
 .. note::
@@ -305,9 +308,31 @@ The above Morse picture about the creation of trivial :math:`\pi_1`-switches is 
     .. figure:: static/pi1-handles.svg
         :width: 400px
 
-The picture on the right-hand-side illustrates a completely general :math:`\pi_1`-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the :ref:`family Morse theory <A family Morse theory on hypersurfaces>`, here we need to keep track of several level sets (in :math:`\Sigma`) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered.
+The picture on the right-hand-side illustrates a completely general :math:`\pi_1`-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the :ref:`family Morse theory <A family Morse theory on hypersurfaces>`, here we need to keep track of several level sets (in :math:`\Sigma`) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered. Note that the gradient vector field (i.e., the characteristic foliation) always flows upwards (indicating that I'm not a physicist).
 
-The upper-left corner represents a part of :math:`\Sigma` relevant to the :math:`\pi_1`-switch. Namely, there are two index-:math:`n` critical points :math:`p_n^+` and :math:`p_n^-`, and the corresponding Legendrian spheres :math:`\Lambda_+^u, \Lambda_-^s \subset \Gamma`. Here the superscripts :math:`u` and :math:`s` denote unstable and stable, respectively. Moreover, there is a small ball in :math:`\Gamma` which intersects :math:`\Lambda_+^u` and :math:`\Lambda_-^s` in a disk, respectively, such that the :math:`\Lambda_+^u`-disk is slightly below the :math:`\Lambda_-^s`-disk, where "below" is measured against the positive co-orientation of :math:`\xi|_{\Gamma}`. This small ball is magnified in the picture, and the "below"-ness is shown as an undercrossing when the :math:`\Lambda`'s appear to be :math:`1`-dimensional.
+The upper-left corner represents a part of :math:`\Sigma` relevant to the :math:`\pi_1`-switch. Namely, there are two index-:math:`n` critical points :math:`p_n^+` and :math:`p_n^-`, and the corresponding Legendrian spheres :math:`\Lambda_+^u, \Lambda_-^s \subset \Gamma`. Here the superscripts :math:`u` and :math:`s` denote unstable and stable, respectively. Moreover, there is a small ball in :math:`\Gamma` which intersects both :math:`\Lambda_+^u` and :math:`\Lambda_-^s` in a disk such that the :math:`\Lambda_+^u`-disk is slightly below the :math:`\Lambda_-^s`-disk, where "below" is measured against the positive co-orientation of :math:`\xi|_{\Gamma}`. This small ball is magnified in the picture, and the "below"-ness is shown as an undercrossing when the :math:`\Lambda`'s appear to be :math:`1`-dimensional.
+
+The passage to the upper-right corner is nothing but swapping the critical values of :math:`p_n^+` and :math:`p_n^-`. Note that the small ball from above carries over to the new intermediate level set :math:`Y`, inside of which the :math:`\Lambda_+^s`-disk is slightly below the :math:`\Lambda_-^u`-disk.
+
+The passage from the upper-right to the lower-right corner is where the :math:`\pi_1`-switch really takes place. Namely, we (contact) isotop :math:`\Lambda_+^s` up across :math:`\Lambda_-^u` within the small ball such that at exactly one moment, they :math:`\xi|_Y`-transversely intersect in a point. To keep things somewhat symmetric, we denote the resulting Legendrian spheres :math:`\Lambda_+^{s, \uparrow}` and :math:`\Lambda_-^{u, \downarrow}` as if :math:`\Lambda_-^u` is simultaneously lowered while :math:`\Lambda_+^s` is raised.
+
+Finally, the passage from the lower-right to the lower-left corner swaps :math:`p_n^+` and :math:`p_n^-` back and leave in between a new level set :math:`\Gamma'`. We can describe the new decomposition :math:`\Sigma = R'_+ \cup_{\Gamma'} R'_-` in terms of the old one as follows.
+
+    As a Weinstein manifold, :math:`R'_+` is obtained from :math:`R_+` by removing the handle corresponding to :math:`p_n^+` and attach a handle along :math:`(\Lambda_+^u \uplus \Lambda_-^s)^{\uparrow}`. Similarly :math:`R'_-` is obtained from :math:`R_-` by removing the handle corresponding to :math:`p_n^-` and attach a handle along :math:`(\Lambda_+^u \uplus \Lambda_-^s)^{\downarrow}`. Here :math:`\uplus`, which joins two Legendrians spheres into one, is an artifact of Legendrian handle slides and can be found in p. 17 of [HH18]_. Finally since :math:`R'_{\pm}` share the same boundary :math:`\Gamma'`, it admits two equivalent Legendrian surgery descriptions, and an explicit equivalence in terms of a contact isotopy.
+
+.. sidebar:: :math:`R_{\pm}`-picture of a trivial :math:`\pi_1`-switch
+
+    .. figure:: static/trivial-p1-handles.svg
+        :width: 400px
+
+Now that we are done with a somewhat tedious detour into the :math:`R_{\pm}`-picture of a general :math:`\pi_1`-switch, let's turn back to the trivial :math:`\pi_1`-switch. On the right-hand-side, we draw the :math:`R_{\pm}`-picture of a trivial :math:`\pi_1`-switch using the front projection. Specifically, the top figure illustrates the relative position between :math:`\Lambda_+` and :math:`\Lambda_-`, which is the standard Legendrian unknot, corresponding to critical points :math:`p_n^{\pm}`, respectively, in :math:`\Gamma`. Here we drop the superscripts :math:`u, s` from the :math:`\Lambda`'s because it's obvious from the context. Moreover, it's arranged so that :math:`\Lambda_+` and :math:`\Lambda_-` intersect :math:`\xi|_{\Gamma}`-transversely at a point, instead of :math:`\Lambda_+` being slightly below :math:`\Lambda_-` as in the general :math:`\pi_1`-switch picture above. This serves the sole purpose of attracting our attention to around the intersection point, and one can always go back to the general picture by pushing :math:`\Lambda_+` down (or :math:`\Lambda_-` up) slightly.
+
+The two figures at the bottom represent the new :math:`\Gamma'` after the trivial :math:`\pi_1`-switch from the perspectives of :math:`R'_+` and :math:`R'_-`, respectively. As a sanity check, one can easily see that :math:`\Gamma'` is indeed isomorphic to the original :math:`\Gamma`. Trivial :math:`\pi_1`-switches, as its name suggests, are quite boring. But when combined with :math:`\pi_2^b`-switches, one can produce many nontrivial :math:`\pi_1`-switches. This is our next step.
+
+Simple :math:`\pi_1`-switches derived from the trivial ones
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 
 tbc...
 
@@ -337,8 +362,8 @@ tbc...
 
 .. [Gi03] E\. Giroux\. `Géométrie de contact: de la dimension trois vers les dimensions supérieures <https://arxiv.org/abs/math/0305129>`_
 
-.. [HH18] K\. Honda and Y\. Huang\. `Bypass attachments in higher-dimensional contact topology <https://arxiv.org/abs/1803.09142>`_
+.. [HH18] K\. Honda and Y\. Huang\. `Bypass attachments in higher-dimensional contact topology <https://arxiv.org/abs/1803.09142v2>`_
 
-.. [HH19] K\. Honda and Y\. Huang\. `Convex hypersurface theory in contact topology <https://arxiv.org/abs/1907.06025>`_
+.. [HH19] K\. Honda and Y\. Huang\. `Convex hypersurface theory in contact topology <https://arxiv.org/abs/1907.06025v2>`_
 
 .. [Ho99] K\. Honda\. `On the classification of tight contact structures I <https://arxiv.org/abs/math/9910127>`_

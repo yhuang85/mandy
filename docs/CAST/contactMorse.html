@@ -287,6 +287,26 @@
      </span>
      -switches
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#trivial-pi-1-switches">
+       Trivial
+       <span class="math notranslate nohighlight">
+        \(\pi_1\)
+       </span>
+       -switches
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simple-pi-1-switches-derived-from-the-trivial-ones">
+       Simple
+       <span class="math notranslate nohighlight">
+        \(\pi_1\)
+       </span>
+       -switches derived from the trivial ones
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -525,6 +545,8 @@
 <p class="sidebar-title">Morse picture of the <span class="math notranslate nohighlight">\(\pi_2^a\)</span>-switch</p>
 <a class="reference internal image-reference" href="../_images/pi2a-morse.svg"><img alt="../_images/pi2a-morse.svg" src="../_images/pi2a-morse.svg" width="400px" /></a>
 </aside>
+<section id="trivial-pi-1-switches">
+<h4>Trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#trivial-pi-1-switches" title="Permalink to this headline">¶</a></h4>
 <p>Let’s start with the simplest scenario of a trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch, which can be created by a <span class="math notranslate nohighlight">\(\pi_2\)</span>-switch as shown in the right-hand-side picture.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -541,8 +563,25 @@
 <a class="reference internal image-reference" href="../_images/pi1-handles.svg"><img alt="../_images/pi1-handles.svg" src="../_images/pi1-handles.svg" width="400px" /></a>
 </figure>
 </aside>
-<p>The picture on the right-hand-side illustrates a completely general <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the <a class="reference internal" href="#a-family-morse-theory-on-hypersurfaces"><span class="std std-ref">family Morse theory</span></a>, here we need to keep track of several level sets (in <span class="math notranslate nohighlight">\(\Sigma\)</span>) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered.</p>
-<p>The upper-left corner represents a part of <span class="math notranslate nohighlight">\(\Sigma\)</span> relevant to the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch. Namely, there are two index-<span class="math notranslate nohighlight">\(n\)</span> critical points <span class="math notranslate nohighlight">\(p_n^+\)</span> and <span class="math notranslate nohighlight">\(p_n^-\)</span>, and the corresponding Legendrian spheres <span class="math notranslate nohighlight">\(\Lambda_+^u, \Lambda_-^s \subset \Gamma\)</span>. Here the superscripts <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(s\)</span> denote unstable and stable, respectively. Moreover, there is a small ball in <span class="math notranslate nohighlight">\(\Gamma\)</span> which intersects <span class="math notranslate nohighlight">\(\Lambda_+^u\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-^s\)</span> in a disk, respectively, such that the <span class="math notranslate nohighlight">\(\Lambda_+^u\)</span>-disk is slightly below the <span class="math notranslate nohighlight">\(\Lambda_-^s\)</span>-disk, where “below” is measured against the positive co-orientation of <span class="math notranslate nohighlight">\(\xi|_{\Gamma}\)</span>. This small ball is magnified in the picture, and the “below”-ness is shown as an undercrossing when the <span class="math notranslate nohighlight">\(\Lambda\)</span>’s appear to be <span class="math notranslate nohighlight">\(1\)</span>-dimensional.</p>
+<p>The picture on the right-hand-side illustrates a completely general <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the <a class="reference internal" href="#a-family-morse-theory-on-hypersurfaces"><span class="std std-ref">family Morse theory</span></a>, here we need to keep track of several level sets (in <span class="math notranslate nohighlight">\(\Sigma\)</span>) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered. Note that the gradient vector field (i.e., the characteristic foliation) always flows upwards (indicating that I’m not a physicist).</p>
+<p>The upper-left corner represents a part of <span class="math notranslate nohighlight">\(\Sigma\)</span> relevant to the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch. Namely, there are two index-<span class="math notranslate nohighlight">\(n\)</span> critical points <span class="math notranslate nohighlight">\(p_n^+\)</span> and <span class="math notranslate nohighlight">\(p_n^-\)</span>, and the corresponding Legendrian spheres <span class="math notranslate nohighlight">\(\Lambda_+^u, \Lambda_-^s \subset \Gamma\)</span>. Here the superscripts <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(s\)</span> denote unstable and stable, respectively. Moreover, there is a small ball in <span class="math notranslate nohighlight">\(\Gamma\)</span> which intersects both <span class="math notranslate nohighlight">\(\Lambda_+^u\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-^s\)</span> in a disk such that the <span class="math notranslate nohighlight">\(\Lambda_+^u\)</span>-disk is slightly below the <span class="math notranslate nohighlight">\(\Lambda_-^s\)</span>-disk, where “below” is measured against the positive co-orientation of <span class="math notranslate nohighlight">\(\xi|_{\Gamma}\)</span>. This small ball is magnified in the picture, and the “below”-ness is shown as an undercrossing when the <span class="math notranslate nohighlight">\(\Lambda\)</span>’s appear to be <span class="math notranslate nohighlight">\(1\)</span>-dimensional.</p>
+<p>The passage to the upper-right corner is nothing but swapping the critical values of <span class="math notranslate nohighlight">\(p_n^+\)</span> and <span class="math notranslate nohighlight">\(p_n^-\)</span>. Note that the small ball from above carries over to the new intermediate level set <span class="math notranslate nohighlight">\(Y\)</span>, inside of which the <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span>-disk is slightly below the <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span>-disk.</p>
+<p>The passage from the upper-right to the lower-right corner is where the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch really takes place. Namely, we (contact) isotop <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> up across <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span> within the small ball such that at exactly one moment, they <span class="math notranslate nohighlight">\(\xi|_Y\)</span>-transversely intersect in a point. To keep things somewhat symmetric, we denote the resulting Legendrian spheres <span class="math notranslate nohighlight">\(\Lambda_+^{s, \uparrow}\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-^{u, \downarrow}\)</span> as if <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span> is simultaneously lowered while <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> is raised.</p>
+<p>Finally, the passage from the lower-right to the lower-left corner swaps <span class="math notranslate nohighlight">\(p_n^+\)</span> and <span class="math notranslate nohighlight">\(p_n^-\)</span> back and leave in between a new level set <span class="math notranslate nohighlight">\(\Gamma'\)</span>. We can describe the new decomposition <span class="math notranslate nohighlight">\(\Sigma = R'_+ \cup_{\Gamma'} R'_-\)</span> in terms of the old one as follows.</p>
+<blockquote>
+<div><p>As a Weinstein manifold, <span class="math notranslate nohighlight">\(R'_+\)</span> is obtained from <span class="math notranslate nohighlight">\(R_+\)</span> by removing the handle corresponding to <span class="math notranslate nohighlight">\(p_n^+\)</span> and attach a handle along <span class="math notranslate nohighlight">\((\Lambda_+^u \uplus \Lambda_-^s)^{\uparrow}\)</span>. Similarly <span class="math notranslate nohighlight">\(R'_-\)</span> is obtained from <span class="math notranslate nohighlight">\(R_-\)</span> by removing the handle corresponding to <span class="math notranslate nohighlight">\(p_n^-\)</span> and attach a handle along <span class="math notranslate nohighlight">\((\Lambda_+^u \uplus \Lambda_-^s)^{\downarrow}\)</span>. Here <span class="math notranslate nohighlight">\(\uplus\)</span>, which joins two Legendrians spheres into one, is an artifact of Legendrian handle slides and can be found in p. 17 of <a class="reference internal" href="#hh18" id="id25"><span>[HH18]</span></a>. Finally since <span class="math notranslate nohighlight">\(R'_{\pm}\)</span> share the same boundary <span class="math notranslate nohighlight">\(\Gamma'\)</span>, it admits two equivalent Legendrian surgery descriptions, and an explicit equivalence in terms of a contact isotopy.</p>
+</div></blockquote>
+<aside class="sidebar">
+<p class="sidebar-title"><span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of a trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/trivial-p1-handles.svg"><img alt="../_images/trivial-p1-handles.svg" src="../_images/trivial-p1-handles.svg" width="400px" /></a>
+</figure>
+</aside>
+<p>Now that we are done with a somewhat tedious detour into the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of a general <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch, let’s turn back to the trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch. On the right-hand-side, we draw the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of a trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch using the front projection. Specifically, the top figure illustrates the relative position between <span class="math notranslate nohighlight">\(\Lambda_+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-\)</span>, which is the standard Legendrian unknot, corresponding to critical points <span class="math notranslate nohighlight">\(p_n^{\pm}\)</span>, respectively, in <span class="math notranslate nohighlight">\(\Gamma\)</span>. Here we drop the superscripts <span class="math notranslate nohighlight">\(u, s\)</span> from the <span class="math notranslate nohighlight">\(\Lambda\)</span>’s because it’s obvious from the context. Moreover, it’s arranged so that <span class="math notranslate nohighlight">\(\Lambda_+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-\)</span> intersect <span class="math notranslate nohighlight">\(\xi|_{\Gamma}\)</span>-transversely at a point, instead of <span class="math notranslate nohighlight">\(\Lambda_+\)</span> being slightly below <span class="math notranslate nohighlight">\(\Lambda_-\)</span> as in the general <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch picture above. This serves the sole purpose of attracting our attention to around the intersection point, and one can always go back to the general picture by pushing <span class="math notranslate nohighlight">\(\Lambda_+\)</span> down (or <span class="math notranslate nohighlight">\(\Lambda_-\)</span> up) slightly.</p>
+<p>The two figures at the bottom represent the new <span class="math notranslate nohighlight">\(\Gamma'\)</span> after the trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch from the perspectives of <span class="math notranslate nohighlight">\(R'_+\)</span> and <span class="math notranslate nohighlight">\(R'_-\)</span>, respectively. As a sanity check, one can easily see that <span class="math notranslate nohighlight">\(\Gamma'\)</span> is indeed isomorphic to the original <span class="math notranslate nohighlight">\(\Gamma\)</span>. Trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches, as its name suggests, are quite boring. But when combined with <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-switches, one can produce many nontrivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches. This is our next step.</p>
+</section>
+<section id="simple-pi-1-switches-derived-from-the-trivial-ones">
+<h4>Simple <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches derived from the trivial ones<a class="headerlink" href="#simple-pi-1-switches-derived-from-the-trivial-ones" title="Permalink to this headline">¶</a></h4>
 <p>tbc…</p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
@@ -579,16 +618,17 @@
 <dt class="label" id="gi03"><span class="brackets">Gi03</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>,<a href="#id16">3</a>)</span></dt>
 <dd><p>E. Giroux. <a class="reference external" href="https://arxiv.org/abs/math/0305129">Géométrie de contact: de la dimension trois vers les dimensions supérieures</a></p>
 </dd>
-<dt class="label" id="hh18"><span class="brackets">HH18</span><span class="fn-backref">(<a href="#id8">1</a>,<a href="#id13">2</a>,<a href="#id20">3</a>)</span></dt>
-<dd><p>K. Honda and Y. Huang. <a class="reference external" href="https://arxiv.org/abs/1803.09142">Bypass attachments in higher-dimensional contact topology</a></p>
+<dt class="label" id="hh18"><span class="brackets">HH18</span><span class="fn-backref">(<a href="#id8">1</a>,<a href="#id13">2</a>,<a href="#id20">3</a>,<a href="#id25">4</a>)</span></dt>
+<dd><p>K. Honda and Y. Huang. <a class="reference external" href="https://arxiv.org/abs/1803.09142v2">Bypass attachments in higher-dimensional contact topology</a></p>
 </dd>
 <dt class="label" id="hh19"><span class="brackets">HH19</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id14">2</a>,<a href="#id23">3</a>)</span></dt>
-<dd><p>K. Honda and Y. Huang. <a class="reference external" href="https://arxiv.org/abs/1907.06025">Convex hypersurface theory in contact topology</a></p>
+<dd><p>K. Honda and Y. Huang. <a class="reference external" href="https://arxiv.org/abs/1907.06025v2">Convex hypersurface theory in contact topology</a></p>
 </dd>
 <dt class="label" id="ho99"><span class="brackets"><a class="fn-backref" href="#id19">Ho99</a></span></dt>
 <dd><p>K. Honda. <a class="reference external" href="https://arxiv.org/abs/math/9910127">On the classification of tight contact structures I</a></p>
 </dd>
 </dl>
+</section>
 </section>
 </section>
 </section>
