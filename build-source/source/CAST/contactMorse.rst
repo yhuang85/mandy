@@ -282,7 +282,7 @@ The creation of simple :math:`\pi_1`-switches is very much a procedure of creati
 
     The only :math:`\pi_2`-switch which is not involved in the above procedure is the :math:`\pi_2^c`-switch. Rather than bridging :math:`\pi_1`-switches, it serves the function of generating certain contact topological "pseudo-isotopes" of :math:`1`-parameter families of Morse hypersurfaces.
 
-.. sidebar:: Morse picture of the :math:`\pi_2^a`-switch
+.. sidebar:: Morse picture of a :math:`\pi_2^a`-switch
 
     .. image:: static/pi2a-morse.svg
         :width: 400px
@@ -327,12 +327,32 @@ Finally, the passage from the lower-right to the lower-left corner swaps :math:`
 
 Now that we are done with a somewhat tedious detour into the :math:`R_{\pm}`-picture of a general :math:`\pi_1`-switch, let's turn back to the trivial :math:`\pi_1`-switch. On the right-hand-side, we draw the :math:`R_{\pm}`-picture of a trivial :math:`\pi_1`-switch using the front projection. Specifically, the top figure illustrates the relative position between :math:`\Lambda_+` and :math:`\Lambda_-`, which is the standard Legendrian unknot, corresponding to critical points :math:`p_n^{\pm}`, respectively, in :math:`\Gamma`. Here we drop the superscripts :math:`u, s` from the :math:`\Lambda`'s because it's obvious from the context. Moreover, it's arranged so that :math:`\Lambda_+` and :math:`\Lambda_-` intersect :math:`\xi|_{\Gamma}`-transversely at a point, instead of :math:`\Lambda_+` being slightly below :math:`\Lambda_-` as in the general :math:`\pi_1`-switch picture above. This serves the sole purpose of attracting our attention to around the intersection point, and one can always go back to the general picture by pushing :math:`\Lambda_+` down (or :math:`\Lambda_-` up) slightly.
 
-The two figures at the bottom represent the new :math:`\Gamma'` after the trivial :math:`\pi_1`-switch from the perspectives of :math:`R'_+` and :math:`R'_-`, respectively. As a sanity check, one can easily see that :math:`\Gamma'` is indeed isomorphic to the original :math:`\Gamma`. Trivial :math:`\pi_1`-switches, as its name suggests, are quite boring. But when combined with :math:`\pi_2^b`-switches, one can produce many nontrivial :math:`\pi_1`-switches. This is our next step.
+The two figures at the bottom represent the new :math:`\Gamma'` after the trivial :math:`\pi_1`-switch from the perspectives of :math:`R'_+` and :math:`R'_-`, respectively. As a sanity check, one can easily see that :math:`\Gamma'` is indeed isomorphic to the original :math:`\Gamma`. Here the :math:`(\pm 1)` beside the Legendrians are coefficients of Legendrian surgeries, and correspond to removing and adding a (index-:math:`n`) critical point, respectively.
+
+Trivial :math:`\pi_1`-switches, as its name suggests, are quite boring. But when combined with :math:`\pi_2^b`-switches, they can produce many nontrivial :math:`\pi_1`-switches. This is our next step.
 
 Simple :math:`\pi_1`-switches derived from the trivial ones
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+.. sidebar:: Morse picture of a :math:`\pi_2^b`-switch
 
+    .. image:: static/pi2b-morse.svg
+        :width: 400px
+
+The picture on the right illustrates a general :math:`\pi_2^b`-switch, where each two adjacent ovals represent two disjoint regions on :math:`\Sigma`. The square in the middle is, as before, the parameter space :math:`I^2_{s, t}` and the red dot represents the critical moment when there exist simultaneously two flow lines from index-:math:`n` critical points :math:`p_n^-, q_n^-` to :math:`p_n^+, q_n^+`, respectively. The passage from the left side :math:`\Sigma^0_t|_{\xi}`, to the right side :math:`\Sigma^1_t|_{\xi}, t \in I`, changes the order of which two :math:`\pi_1`-switches occur. It is therefore also known as the *far communitivity* of two :math:`\pi_1`-switches, which are in a sense disjoint from each other.
+
+Although it's possible to generate nontrivial :math:`\pi_1`-switches from the trivial one in contact :math:`3`-manifolds, they are quite different from the higher dimensional cases. So let's assume :math:`\dim \Sigma \geq 4` from now on. All pictures that will be drawn actually assumes :math:`\dim \Sigma = 4`, i.e., :math:`\dim \Gamma = 3`. It's not clear at the moment if contact topology in dimension :math:`5` is anyhow different from the even higher dimensional ones.
+
+The plan for generating new :math:`\pi_1`-switches from the trivial one is straightforward. Namely, we'll construct two disjoint :math:`\pi_1`-switches :math:`\Delta_1, \Delta_2` such that :math:`\Delta_1` is trivial and :math:`\Delta_2` becomes trivial after :math:`\Delta_1`. However, after swapping the order, neither :math:`\Delta_2` nor :math:`\Delta_1` is trivial anymore.
+
+.. sidebar:: Simple :math:`\pi_1`-switch from :math:`\pi_2^b`-switch
+
+    .. image:: static/trivial-rotation.svg
+        :width: 400px
+
+On the right is a not-particularly-good-looking illustration of the above plan. Namely, in the upper-left corner, we draw the relevant Legendrian spheres :math:`\Lambda^1_{\pm}` and :math:`\Lambda^2_{\pm}` corresponding to the two trivial :math:`\pi_1`-switches :math:`\Delta_1` (black) and :math:`\Delta_2` (blue), respectively. Although :math:`\Delta_1` is obviously trivial, it's not immediately clear that :math:`\Delta_2` is also trivial after :math:`\Delta_1`. The bottom figure shows, from the perspective of :math:`R^1_+`, that it's indeed the case where ":math:`\cong`" represents a Legendrian isotopy (via a handle slide).
+
+By swapping the two :math:`\pi_1`-switches (and forget about :math:`\Delta_1`), we get on the upper-right corner the derived :math:`\pi_1`-switch :math:`\Delta_2` which is quite general since there is no additional restrictions on :math:`\Lambda^2_-` outside of the local picture except that it must belong to the stable manifold of a negative index-:math:`n` critical point. Note that this requirement doesn't contradicts our setup in the upper-left corner since :math:`\Lambda^1_-` and :math:`\Lambda^2_-` are not linked as Legendrians.
 
 tbc...
 
