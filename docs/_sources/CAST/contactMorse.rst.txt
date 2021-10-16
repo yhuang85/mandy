@@ -251,6 +251,7 @@ By analogy with the :math:`\pi_1`-switch, here is a complete list of :math:`\pi_
 * (:math:`\pi_2^d`-switch) There exist a negative index-:math:`n` critical point :math:`p_n^-` and a positive :math:`p_n^+`, such that there exists a trajectory from :math:`p_n^-` to :math:`p_n^+` which is not transversely cut out, but rather has a first-order tangency. Namely, let :math:`Y \subset \Sigma_{t_0}^{s_0}` be a regular level set between :math:`p_n^-` and :math:`p_n^+`, and :math:`\Lambda_{\pm} \subset Y` be Legendrian spheres just as in the above discussion at the :math:`\pi_1`-level. Then the unique intersection :math:`q = \Lambda_+ \cap \Lambda_-` satisfies the following
 
   .. math::
+      :label: xiDegenerate
 
       \dim(T_q \Lambda_+ \cap T_q \Lambda_-) = 1.
 
@@ -273,7 +274,9 @@ So far the theory has been dry and obscure. We need examples to make it sensible
 :math:`R_{\pm}`-picture of :math:`\pi_1`-switches
 *************************************************
 
-The Morse picture of :math:`\pi_1`-switches is conceptually clear but can be difficult to use in practice. So let's explain a different approach, called the :math:`R_{\pm}`-picture, which is a bit less native to our contact Morse theory but is easier to manipulate, especially when combined with front projections. In a nutshell, the :math:`R_{\pm}`-picture describes the changes in :math:`R_{\pm} (\Sigma_t)`, as well as how they are glued together along :math:`\Gamma(\Sigma_t)`, as :math:`\Sigma_t|_{\xi}` goes through a :math:`\pi_1`-switch.
+The Morse picture of :math:`\pi_1`-switches is conceptually clear but can be difficult to use in practice. So let's introduce a slightly different approach, called the :math:`R_{\pm}`-picture, which focuses less on the (Morse) gradient vector field and more on the critical points, making it easier to manipulate, especially when combined with front projections. In a nutshell, the :math:`R_{\pm}`-picture describes the changes in :math:`R_{\pm} (\Sigma_t)`, as well as how they are glued together along :math:`\Gamma(\Sigma_t)`, as :math:`\Sigma_t|_{\xi}` goes through a :math:`\pi_1`-switch.
+
+.. _r-pm-figure-of-pi-1-switch:
 
 .. sidebar:: :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch
 
@@ -291,6 +294,12 @@ The passage from the upper-right to the lower-right corner is where the :math:`\
 Finally, the passage from the lower-right to the lower-left corner swaps :math:`p_n^+` and :math:`p_n^-` back and leave in between a new level set :math:`\Gamma'`. We can describe the new decomposition :math:`\Sigma = R'_+ \cup_{\Gamma'} R'_-` in terms of the old one as follows.
 
     As a Weinstein manifold, :math:`R'_+` is obtained from :math:`R_+` by removing the handle corresponding to :math:`p_n^+` and attach a handle along :math:`(\Lambda_+^u \uplus \Lambda_-^s)^{\uparrow}`. Similarly :math:`R'_-` is obtained from :math:`R_-` by removing the handle corresponding to :math:`p_n^-` and attach a handle along :math:`(\Lambda_+^u \uplus \Lambda_-^s)^{\downarrow}`. Here :math:`\uplus`, which joins two Legendrians spheres into one, is an artifact of Legendrian handle slides and can be found in p. 17 of [HH18]_. Finally since :math:`R'_{\pm}` share the same boundary :math:`\Gamma'`, it admits two equivalent Legendrian surgery descriptions, and an explicit equivalence in terms of a contact isotopy.
+
+.. _note-y-picture:
+
+.. note::
+
+    The :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch put some emphasis on the evolution of the decomposition :eq:`hypersurfaceDecomposition` assuming :math:`\Sigma` is invariant. Such emphasis is not always necessary given the local nature of :math:`\pi_1`-switches. In this case we may simply remember the second dashed arrow in the :math:`R_{\pm}`-:ref:`picture <r-pm-figure-of-pi-1-switch>` above, and call it the :math:`Y`-picture since it records what happens in the level set :math:`Y`.
 
 Simple and trivial :math:`\pi_1`-switches
 *****************************************
@@ -369,6 +378,19 @@ Since this type of simple :math:`\pi_1`-switches exists at the vicinity of any (
 
 Simple :math:`\pi_1`-switches from :math:`\pi_2^d`-switch
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+This is probably the first feature of our contact Morse theory which only exists in dimensions :math:`\geq 5`. In particular, it's not possible to draw the Morse picture of a :math:`\pi_2^d`-switch in :math:`2` dimensions as in the previous cases because of the degenerate intersection :eq:`xiDegenerate`. Therefore we'll jump directly to the :math:`R_{\pm}`-picture, or actually, the :math:`Y`-:ref:`picture <note-y-picture>` since we won't bother keeping track of the changes in :math:`R_{\pm}`.
+
+.. sidebar:: :math:`Y`-picture of a :math:`\pi_2^d`-switch
+
+    .. image:: static/pi2d-morse.svg
+        :width: 400px
+
+The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xiDegenerate`.
+
+While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions. Moreover, by construction, we have the following special feature of such :math:`\pi_1`-switches:
+
+    Any simple :math:`\pi_1`-switch generated from a :math:`\pi_2^d`-switch comes with a (left) inverse, which is another :math:`\pi_1`-switch such that the composition of the two gives the :math:`I`-invariant contact structure.
 
 tbc...
 
