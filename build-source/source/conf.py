@@ -77,6 +77,14 @@ html_theme_options = {
     ],
     "navigation_depth": 4,
     "show_prev_next": False,
+    "use_edit_page_button": True,
+}
+
+html_context = {
+    "github_user": "yhuang85",
+    "github_repo": "mandy",
+    "github_version": "main",
+    "doc_path": "build-source/source",
 }
 
 mathjax3_config = {

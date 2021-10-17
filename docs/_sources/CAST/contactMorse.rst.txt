@@ -301,8 +301,8 @@ Finally, the passage from the lower-right to the lower-left corner swaps :math:`
 
     The :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch put some emphasis on the evolution of the decomposition :eq:`hypersurfaceDecomposition` assuming :math:`\Sigma` is invariant. Such emphasis is not always necessary given the local nature of :math:`\pi_1`-switches. In this case we may simply remember the second dashed arrow in the :math:`R_{\pm}`-:ref:`picture <r-pm-figure-of-pi-1-switch>` above, and call it the :math:`Y`-picture since it records what happens in the level set :math:`Y`.
 
-Simple and trivial :math:`\pi_1`-switches
-*****************************************
+Simple :math:`\pi_1`-switches
+*****************************
 
 Recall :math:`\pi_1`-switches are exactly where the contact germs on a :math:`1`-parameter family of Morse hypersurfaces change. They don't come for free for otherwise contact topology would be completely trivial. It's generally difficult to verify the existence of a particular :math:`\pi_1`-switch inside a given contact manifold. However, there exists a class of :math:`\pi_1`-switches which can always be found at the vicinity of any (invariant) Morse hypersurface. These :math:`\pi_1`-switches are called the *simple* ones and are the subject of discussion in this section.
 
@@ -368,11 +368,15 @@ The plan for generating new :math:`\pi_1`-switches from the trivial one is strai
 
 On the right is a not-particularly-good-looking illustration of the above plan. Namely, in the upper-left corner, we draw the relevant Legendrian spheres :math:`\Lambda^1_{\pm}` and :math:`\Lambda^2_{\pm}` corresponding to the two trivial :math:`\pi_1`-switches :math:`\Delta_1` (black) and :math:`\Delta_2` (blue), respectively. Although :math:`\Delta_1` is obviously trivial, it's not immediately clear that :math:`\Delta_2` is also trivial after :math:`\Delta_1`. The bottom figure shows, from the perspective of :math:`R^1_+`, that it's indeed the case where ":math:`\cong`" represents a Legendrian isotopy (via a handle slide).
 
-By swapping the two :math:`\pi_1`-switches (and forget about :math:`\Delta_1`), we get on the upper-right corner the derived :math:`\pi_1`-switch :math:`\Delta_2` which is quite general since there is no additional restrictions on :math:`\Lambda^2_-` outside of the local picture except that it must belong to the stable manifold of a negative index-:math:`n` critical point. Note that this requirement doesn't contradict our setup in the upper-left corner since :math:`\Lambda^1_-` and :math:`\Lambda^2_-` are not linked as Legendrians.
+By swapping the two :math:`\pi_1`-switches (and forget about :math:`\Delta_1`), we get on the upper-right corner the derived :math:`\pi_1`-switch :math:`\Delta_2` which is quite general since there is no additional restrictions on :math:`\Lambda^2_-` outside of the local picture except that it must belong to the stable manifold of a negative index-:math:`n` critical point. Note that this requirement doesn't contradict our setup in the upper-left corner since :math:`\Lambda^1_-` and :math:`\Lambda^2_-` are not linked as Legendrians. The following noteworthy property of such derived simple :math:`\pi_1`-switches is a direct consequence of definition.
+
+.. _left-inverse:
+
+    Any simple :math:`\pi_1`-switch derived from a trivial one via a :math:`\pi_2^b`-switch admits a (left) inverse in the sense that the composition of the two gives the :math:`I`-invariant contact structure.
 
 .. note::
 
-    The :math:`\pi_2^b`-switch assumes nothing about the involved :math:`\pi_1`-switches. Hence one can further derive new :math:`\pi_1`-switches from, for example, the simples ones or any (for some reason) existing :math:`\pi_1`-switches.
+    The :math:`\pi_2^b`-switch itself assumes nothing about the involved :math:`\pi_1`-switches, although we've been working under triviality assumptions. Hence one can further derive new :math:`\pi_1`-switches from, for example, the simples ones or any (for some reason) existing :math:`\pi_1`-switches.
 
 Since this type of simple :math:`\pi_1`-switches exists at the vicinity of any (Morse) hypersurface, we'll explore in later examples how it may be used to detect flexibility of contact structures.
 
@@ -386,11 +390,21 @@ This is probably the first feature of our contact Morse theory which only exists
     .. image:: static/pi2d-morse.svg
         :width: 400px
 
-The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xiDegenerate`.
+The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` (instead of the hypersurface :math:`\Sigma`) in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xiDegenerate`.
 
-While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions. Moreover, by construction, we have the following special feature of such :math:`\pi_1`-switches:
+While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two (i.e., the lower-half of the right vertical side) will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions. Moreover, by construction, the so-generated :math:`\pi_1`-switches also satisfy the :ref:`existence-of-left-inverse property <left-inverse>`, i.e., the upper-half of the right vertical side being the left inverse. This motivates the following curious question.
 
-    Any simple :math:`\pi_1`-switch generated from a :math:`\pi_2^d`-switch comes with a (left) inverse, which is another :math:`\pi_1`-switch such that the composition of the two gives the :math:`I`-invariant contact structure.
+.. admonition:: Question
+    :class: hint
+
+    Is the :math:`\pi_2^d`-generation of :math:`\pi_1`-switches a special case of the :math:`\pi_2^b`-generation from the trivial :math:`\pi_1`-switches?
+
+.. _flexibility:
+
+:math:`\pi_1`-switches and flexibility
+**************************************
+
+As mentioned before, in general :math:`\pi_1`-switches do not come for free because it would otherwise equate contact topology with just smooth topology. However, there is a subclass of contact structures which carry no more information than the underlying smooth structures, or more precisely, the underlying algebraic topology if one takes into account of the almost complex structures on the contact hyperplanes. This subclass of contact structures were shown to exist and were given the name *overtwisted* contact structures by Eliashberg [El89]_ in dimension :math:`3` and by M\. Borman, Eliashberg, and E\. Murphy [BEM14]_ in general. Again, none of these developments are relevant to our discussion of contact Morse theory here, and we shall look for our own flexibility of contact structures from a Morse theoretic viewpoint. Of course, it won't hurt to keep in mind that it's known (to some people) that a class of contact structures are quite flexible and carry no more information than an almost complex structure on the (stable) tangent bundle.
 
 tbc...
 
@@ -410,9 +424,13 @@ tbc...
 
 .. rubric:: References
 
+.. [BEM14] M\. Borman and Y\. Eliashberg and E\. Murphy\. `Existence and classification of overtwisted contact structures in all dimensions <https://arxiv.org/abs/1404.6157v2>`_
+
 .. [Don96] S\. Donaldson\. `Symplectic submanifolds and almost-complex geometry <https://projecteuclid.org/journals/journal-of-differential-geometry/volume-44/issue-4/Symplectic-submanifolds-and-almost-complex-geometry/10.4310/jdg/1214459407.full>`_
 
 .. [EG91] Y\. Eliashberg and M\. Gromov\. `Convex symplectic manifolds <https://www.ihes.fr/~gromov/symplecticmanifolds/163/>`_
+
+.. [El89] Y\. Eliashberg\. `Classification of overtwisted contact structures on 3-manifolds <http://bogomolov-lab.ru/G-sem/eliashberg-tight-overtwisted.pdf>`_
 
 .. [Gi91] E\. Giroux\. `Convexité en topologie de contact <https://link.springer.com/article/10.1007%2FBF02566670>`_
 
