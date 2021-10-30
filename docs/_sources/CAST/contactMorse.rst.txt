@@ -269,14 +269,14 @@ Examples
 
 So far the theory has been dry and obscure. We need examples to make it sensible but as for any other theories, there is a high risk of breaking it by testing against the reality. So let's do it.
 
-.. _r-pm-picture-of-pi-1-switches:
+.. _section_r_pm_picture_of_pi_1_switches:
 
 :math:`R_{\pm}`-picture of :math:`\pi_1`-switches
 *************************************************
 
 The Morse picture of :math:`\pi_1`-switches is conceptually clear but can be difficult to use in practice. So let's introduce a slightly different approach, called the :math:`R_{\pm}`-picture, which focuses less on the (Morse) gradient vector field and more on the critical points, making it easier to manipulate, especially when combined with front projections. In a nutshell, the :math:`R_{\pm}`-picture describes the changes in :math:`R_{\pm} (\Sigma_t)`, as well as how they are glued together along :math:`\Gamma(\Sigma_t)`, as :math:`\Sigma_t|_{\xi}` goes through a :math:`\pi_1`-switch.
 
-.. _r-pm-figure-of-pi-1-switch:
+.. _figure_r_pm_picture_of_pi_1_switch:
 
 .. sidebar:: :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch
 
@@ -295,11 +295,11 @@ Finally, the passage from the lower-right to the lower-left corner swaps :math:`
 
     As a Weinstein manifold, :math:`R'_+` is obtained from :math:`R_+` by removing the handle corresponding to :math:`p_n^+` and attach a handle along :math:`(\Lambda_+^u \uplus \Lambda_-^s)^{\uparrow}`. Similarly :math:`R'_-` is obtained from :math:`R_-` by removing the handle corresponding to :math:`p_n^-` and attach a handle along :math:`(\Lambda_+^u \uplus \Lambda_-^s)^{\downarrow}`. Here :math:`\uplus`, which joins two Legendrians spheres into one, is an artifact of Legendrian handle slides and can be found in p. 17 of [HH18]_. Finally since :math:`R'_{\pm}` share the same boundary :math:`\Gamma'`, it admits two equivalent Legendrian surgery descriptions, and an explicit equivalence in terms of a contact isotopy.
 
-.. _note-y-picture:
+.. _note_y_picture:
 
 .. note::
 
-    The :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch put some emphasis on the evolution of the decomposition :eq:`hypersurfaceDecomposition` assuming :math:`\Sigma` is invariant. Such emphasis is not always necessary given the local nature of :math:`\pi_1`-switches. In this case we may simply remember the second dashed arrow in the :math:`R_{\pm}`-:ref:`picture <r-pm-figure-of-pi-1-switch>` above, and call it the :math:`Y`-picture since it records what happens in the level set :math:`Y`.
+    The :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch put some emphasis on the evolution of the decomposition :eq:`hypersurfaceDecomposition` assuming :math:`\Sigma` is invariant. Such emphasis is not always necessary given the local nature of :math:`\pi_1`-switches. In this case we may simply remember the second dashed arrow in the :math:`R_{\pm}`-:ref:`picture <figure_r_pm_picture_of_pi_1_switch>` above, and call it the :math:`Y`-picture since it records what happens in the level set :math:`Y`.
 
 Simple :math:`\pi_1`-switches
 *****************************
@@ -337,7 +337,7 @@ Specifically, the square in the middle represents the parameter space :math:`I^2
     .. figure:: static/trivial-p1-handles.svg
         :width: 400px
 
-Let's turn the Morse picture of the trivial :math:`\pi_1`-switch into the :math:`R_{\pm}`-picture as shown on the right. Specifically, the top figure illustrates the relative position between :math:`\Lambda_+` and :math:`\Lambda_-`, which is the standard Legendrian unknot, corresponding to critical points :math:`p_n^{\pm}`, respectively, in :math:`\Gamma`. In contrast to the :ref:`general picture <r-pm-picture-of-pi-1-switches>`, we drop the superscripts :math:`u, s` from the :math:`\Lambda`'s here because it's obvious from the context. Moreover, it's arranged so that :math:`\Lambda_+` and :math:`\Lambda_-` intersect :math:`\xi|_{\Gamma}`-transversely at a point, instead of :math:`\Lambda_+` being slightly below :math:`\Lambda_-`. This serves the sole purpose of attracting our attention to around the intersection point, and one can always go back to the other picture by pushing :math:`\Lambda_+` down (or :math:`\Lambda_-` up) slightly.
+Let's turn the Morse picture of the trivial :math:`\pi_1`-switch into the :math:`R_{\pm}`-picture as shown on the right. Specifically, the top figure illustrates the relative position between :math:`\Lambda_+` and :math:`\Lambda_-`, which is the standard Legendrian unknot, corresponding to critical points :math:`p_n^{\pm}`, respectively, in :math:`\Gamma`. In contrast to the :ref:`general picture <section_r_pm_picture_of_pi_1_switches>`, we drop the superscripts :math:`u, s` from the :math:`\Lambda`'s here because it's obvious from the context. Moreover, it's arranged so that :math:`\Lambda_+` and :math:`\Lambda_-` intersect :math:`\xi|_{\Gamma}`-transversely at a point, instead of :math:`\Lambda_+` being slightly below :math:`\Lambda_-`. This serves the sole purpose of attracting our attention to around the intersection point, and one can always go back to the other picture by pushing :math:`\Lambda_+` down (or :math:`\Lambda_-` up) slightly.
 
 The two figures at the bottom represent the new :math:`\Gamma'` after the trivial :math:`\pi_1`-switch from the perspectives of :math:`R'_+` and :math:`R'_-`, respectively. As a sanity check, one can easily see that :math:`\Gamma'` is indeed isomorphic to the original :math:`\Gamma`. Here the :math:`(\pm 1)` beside the Legendrians are coefficients of Legendrian surgeries, and correspond to removing and adding a (index-:math:`n`) critical point, respectively.
 
@@ -351,7 +351,7 @@ Simple :math:`\pi_1`-switches derived from the trivial ones
     .. image:: static/pi2b-morse.svg
         :width: 400px
 
-The picture on the right illustrates a general :math:`\pi_2^b`-switch, where each two adjacent ovals represent two disjoint regions on :math:`\Sigma`. The square in the middle is, as before, the parameter space :math:`I^2_{s, t}` and the red dot represents the critical moment when there exist simultaneously two flow lines from index-:math:`n` critical points :math:`p_n^-, q_n^-` to :math:`p_n^+, q_n^+`, respectively. The passage from the left side :math:`\Sigma^0_t|_{\xi}`, to the right side :math:`\Sigma^1_t|_{\xi}, t \in I`, changes the order of which two :math:`\pi_1`-switches occur. It is therefore also known as the *far communitivity* of two :math:`\pi_1`-switches, which are in a sense disjoint from each other.
+The picture on the right illustrates a general :math:`\pi_2^b`-switch, where each two adjacent ovals represent two disjoint regions on :math:`\Sigma`. The square in the middle is, as before, the parameter space :math:`I^2_{s, t}` and the red dot represents the critical moment when there exist simultaneously two flow lines from index-:math:`n` critical points :math:`p_n^-, q_n^-` to :math:`p_n^+, q_n^+`, respectively. The passage from the left side :math:`\Sigma^0_t|_{\xi}`, to the right side :math:`\Sigma^1_t|_{\xi}, t \in I`, changes the order of which two :math:`\pi_1`-switches occur. It is therefore also known as the *far commutativity* of two :math:`\pi_1`-switches, which are in a sense disjoint from each other.
 
 Although it's possible to generate nontrivial :math:`\pi_1`-switches from the trivial one in contact :math:`3`-manifolds, they are quite different from the higher dimensional cases. So let's assume :math:`\dim \Sigma \geq 4`, i.e., :math:`\dim M \geq 5`, from now on.
 
@@ -360,6 +360,8 @@ Although it's possible to generate nontrivial :math:`\pi_1`-switches from the tr
     While :math:`3`-dimensional contact topology is somewhat special, it's not clear at the moment if the :math:`5`-dimensional case is fundamentally different from the even higher dimensional ones.
 
 The plan for generating new :math:`\pi_1`-switches from the trivial one is straightforward. Namely, we'll construct two disjoint :math:`\pi_1`-switches :math:`\Delta_1, \Delta_2` such that :math:`\Delta_1` is trivial and :math:`\Delta_2` becomes trivial after :math:`\Delta_1`. However, after swapping the order, neither :math:`\Delta_2` nor :math:`\Delta_1` is trivial anymore.
+
+.. _figure_simple_pi_1_switch_from_pi_2b_switch:
 
 .. sidebar:: Simple :math:`\pi_1`-switch from :math:`\pi_2^b`-switch
 
@@ -370,7 +372,7 @@ On the right is a not-particularly-good-looking illustration of the above plan. 
 
 By swapping the two :math:`\pi_1`-switches (and forget about :math:`\Delta_1`), we get on the upper-right corner the derived :math:`\pi_1`-switch :math:`\Delta_2` which is quite general since there is no additional restrictions on :math:`\Lambda^2_-` outside of the local picture except that it must belong to the stable manifold of a negative index-:math:`n` critical point. Note that this requirement doesn't contradict our setup in the upper-left corner since :math:`\Lambda^1_-` and :math:`\Lambda^2_-` are not linked as Legendrians. The following noteworthy property of such derived simple :math:`\pi_1`-switches is a direct consequence of definition.
 
-.. _left-inverse:
+.. _left_inverse:
 
     Any simple :math:`\pi_1`-switch derived from a trivial one via a :math:`\pi_2^b`-switch admits a (left) inverse in the sense that the composition of the two gives the :math:`I`-invariant contact structure.
 
@@ -383,7 +385,7 @@ Since this type of simple :math:`\pi_1`-switches exists at the vicinity of any (
 Simple :math:`\pi_1`-switches from :math:`\pi_2^d`-switch
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This is probably the first feature of our contact Morse theory which only exists in dimensions :math:`\geq 5`. In particular, it's not possible to draw the Morse picture of a :math:`\pi_2^d`-switch in :math:`2` dimensions as in the previous cases because of the degenerate intersection :eq:`xiDegenerate`. Therefore we'll jump directly to the :math:`R_{\pm}`-picture, or actually, the :math:`Y`-:ref:`picture <note-y-picture>` since we won't bother keeping track of the changes in :math:`R_{\pm}`.
+This is probably the first feature of our contact Morse theory which only exists in dimensions :math:`\geq 5`. In particular, it's not possible to draw the Morse picture of a :math:`\pi_2^d`-switch in :math:`2` dimensions as in the previous cases because of the degenerate intersection :eq:`xiDegenerate`. Therefore we'll jump directly to the :math:`R_{\pm}`-picture, or actually, the :math:`Y`-:ref:`picture <note_y_picture>` since we won't bother keeping track of the changes in :math:`R_{\pm}`.
 
 .. sidebar:: :math:`Y`-picture of a :math:`\pi_2^d`-switch
 
@@ -392,19 +394,71 @@ This is probably the first feature of our contact Morse theory which only exists
 
 The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` (instead of the hypersurface :math:`\Sigma`) in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xiDegenerate`.
 
-While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two (i.e., the lower-half of the right vertical side) will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions. Moreover, by construction, the so-generated :math:`\pi_1`-switches also satisfy the :ref:`existence-of-left-inverse property <left-inverse>`, i.e., the upper-half of the right vertical side being the left inverse. This motivates the following curious question.
+While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two (i.e., the lower-half of the right vertical side) will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions. Moreover, by construction, the so-generated :math:`\pi_1`-switches also satisfy the :ref:`existence-of-left-inverse property <left_inverse>`, i.e., the upper-half of the right vertical side being the left inverse. This motivates the following curious question.
 
 .. admonition:: Question
     :class: hint
 
     Is the :math:`\pi_2^d`-generation of :math:`\pi_1`-switches a special case of the :math:`\pi_2^b`-generation from the trivial :math:`\pi_1`-switches?
 
-.. _flexibility:
+.. _section_flexibility:
 
 :math:`\pi_1`-switches and flexibility
 **************************************
 
 As mentioned before, in general :math:`\pi_1`-switches do not come for free because it would otherwise equate contact topology with just smooth topology. However, there is a subclass of contact structures which carry no more information than the underlying smooth structures, or more precisely, the underlying algebraic topology if one takes into account of the almost complex structures on the contact hyperplanes. This subclass of contact structures were shown to exist and were given the name *overtwisted* contact structures by Eliashberg [El89]_ in dimension :math:`3` and by M\. Borman, Eliashberg, and E\. Murphy [BEM14]_ in general. Again, none of these developments are relevant to our discussion of contact Morse theory here, and we shall look for our own flexibility of contact structures from a Morse theoretic viewpoint. Of course, it won't hurt to keep in mind that it's known (to some people) that a class of contact structures are quite flexible and carry no more information than an almost complex structure on the (stable) tangent bundle.
+
+Flexible hypersurfaces
+++++++++++++++++++++++
+
+Let's start by explaining the very first sentence of the previous paragraph. Recall that a :math:`\pi_1`-switch involves a pair of critical points :math:`p_n^{\pm}` of :math:`\Sigma|_{\xi}`, a level set :math:`\Gamma`, and respectively the unstable and stable Legendrian spheres :math:`\Lambda_{\pm} \subset \Gamma` of :math:`p_n^{\pm}`, which :math:`\xi|_{\Gamma}`-transversely intersect at one point. All these data together will be called the *initial data* of the :math:`\pi_1`-switch.
+
+.. _flexible_hypersurface:
+
+     A (Morse) hypersurface :math:`\Sigma` is said to be *flexible* if the :math:`\pi_1`-switch exists in the (invariant) neighborhood of :math:`\Sigma` for any initial data, again, modulo Weinstein homotopies of :math:`R_{\pm} (\Sigma)`.
+
+.. note::
+
+    The above flexibility of :math:`\Sigma` doesn't quite justify the claim that the invariant contact structure on :math:`\Sigma \times I` knows nothing more than the homotopy classes of the underlying (stable) almost complex structures, i.e., overtwisted, although it should if everything works out as expected.
+
+In dimension :math:`3`, a simple criterion due to Giroux completely characterizes when the contact germ on a (convex) surface :math:`\Sigma` is overtwisted in terms of the dividing set, but it's not particularly instructive for higher dimensional cases and has nothing to do with Morse theory. However, when interpreted in Honda's theory of bypasses, one can rephrase Giroux's criterion as saying that there exists a trivial bypass which is also overtwisted. Here a trivial bypass is the same as a trivial :math:`\pi_1`-switch but we're missing the definition of an overtwisted :math:`\pi_1`-switch. Nonetheless, this perspective provides a good motivation to our attempt at understanding flexibility of hypersurfaces in this example.
+
+A flexible configuration
+++++++++++++++++++++++++
+
+.. sidebar:: A flexible hypersurface
+
+    .. image:: static/flexible-hypersurface.svg
+        :width: 400px
+
+At the moment, we don't know exactly when a hypersurface :math:`\Sigma` is :ref:`flexible <flexible_hypersurface>`. But let's look at a rather special configuration on :math:`\Sigma` in terms of the decomposition :math:`\Sigma = R_+ \cup_{\Gamma} R_-` as shown on the right, which we claim to be flexible. However, this picture requires some explanation to make sense.
+
+First of all, we need a way to describe :math:`R_{\pm}` by specifying (some of) the handles, and at the same time to describe how they are glued together along :math:`\Gamma`. The most obvious choice is to describe everything within :math:`\Gamma`. Below are the key points of such a description.
+
+* The conditions on :math:`R_+` and :math:`R_-` are not symmetric, although their roles may be swapped. We choose to view :math:`\Gamma = \p R_-`.
+
+* The :math:`(+1)`-labeled Legendrian unknot (red) indicates the existence of a (trivial) :math:`(n-1)`-handle in :math:`R_-`. Specifically, the unknot bounds a :math:`(n+1)`-ball (shaded) in the front projection, which actually represents a :math:`(n+1)`-sphere which is the co-core sphere of the :math:`(n-1)`-handle.
+
+* The :math:`(-1)`-labeled Legendrian sphere (blue) indicates that :math:`\Gamma` is obtained from a sub-level set in :math:`R_-` by a :math:`n`-handle attachment along the sphere.
+
+* The only condition on :math:`R_+` is that the (black) unknot is the co-core sphere of a :math:`n`-handle in :math:`R_+`. Note that the corresponding condition is necessarily false for :math:`R_-`. Hence :math:`R_+` and :math:`R_-` are not symmetric.
+
+It remains to show the so configured :math:`\Sigma` is indeed flexible enough to allow for any :math:`\pi_1`-switch to exist.
+
+.. sidebar:: Generate arbitrary :math:`\pi_1`-switches
+
+    .. image:: static/flexible-rotations.svg
+        :width: 400px
+
+This is a fairly straightforward application of our Morse theoretic techniques for generating and manipulating :math:`\pi_1`-switches. The three major steps in showing the existence of any :math:`\pi_1`-switch is shown on the right. Let's go through them one-by-one.
+
+The top row is the only place where our specific flexible configuration is involved. We start with the trivial :math:`\pi_1`-switch where :math:`\Lambda_-` is the standard unknot and the legitimacy of :math:`\Lambda_+` is guaranteed by our assumption above. Then we perform a :math:`\pi_2^b`-:ref:`switch <figure_simple_pi_1_switch_from_pi_2b_switch>` (aka far-commutativity) to arrive at a derived :math:`\pi_1`-switch that looks almost like the trivial one. Namely, the new :math:`\Lambda_-` remains as the unknot, but instead of sitting on top of :math:`\Lambda_+` as in the trivial case, it hangs below :math:`\Lambda_-` as shown in the rightmost figure of the first row. Such a :math:`\pi_1`-switch is known as an "overtwisted bypass" in [HH18]_.
+
+The second row follows the first by showing, in addition, that :math:`\Lambda_+` may also be made the standard unknot. This is done by another explicit :math:`\pi_2^b`-switch such that the sought-after :math:`\pi_1`-switch associated with the blue initial data becomes trivial after the first :math:`\pi_1`-switch, which is an abstraction of the one produced in the first row.
+
+The third row also follows from the first by another explicit :math:`\pi_2^b`-switch. Instead of keeping a "parallel copy" of :math:`\Lambda^1_-` and view the :math:`\pi_2^b`-switch in :math:`R_-` as in the second row, here we keep a "parallel copy" of :math:`\Lambda^1_+` and view it in :math:`R_+`. In this case, there are no further restrictions on :math:`\Lambda^2_-` except, of course, that it has to be the stable sphere of a negative index-:math:`n` critical point.
+
+Combine the three moves together, one can show that :math:`\pi_1`-switches exists at the vicinity of :math:`\Sigma` for any initial data. In other words, such :math:`\Sigma` is :ref:`flexible <flexible_hypersurface>` as claimed.
 
 tbc...
 
@@ -428,18 +482,18 @@ tbc...
 
 .. [Don96] S\. Donaldson\. `Symplectic submanifolds and almost-complex geometry <https://projecteuclid.org/journals/journal-of-differential-geometry/volume-44/issue-4/Symplectic-submanifolds-and-almost-complex-geometry/10.4310/jdg/1214459407.full>`_
 
-.. [EG91] Y\. Eliashberg and M\. Gromov\. `Convex symplectic manifolds <https://www.ihes.fr/~gromov/symplecticmanifolds/163/>`_
+.. [EG91] Y\. Eliashberg and M\. Gromov\. `Convex symplectic manifolds <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/976.pdf>`_
 
 .. [El89] Y\. Eliashberg\. `Classification of overtwisted contact structures on 3-manifolds <http://bogomolov-lab.ru/G-sem/eliashberg-tight-overtwisted.pdf>`_
 
-.. [Gi91] E\. Giroux\. `Convexité en topologie de contact <https://link.springer.com/article/10.1007%2FBF02566670>`_
+.. [Gi91] E\. Giroux\. `Convexité en topologie de contact <https://eudml.org/doc/140253>`_
 
-.. [Gi99] E\. Giroux\. `Structures de contact en dimension trois et bifurcations des feuilletages de surfaces <https://arxiv.org/abs/math/9908178>`_
+.. [Gi99] E\. Giroux\. `Structures de contact en dimension trois et bifurcations des feuilletages de surfaces <https://arxiv.org/abs/math/9908178v1>`_
 
-.. [Gi03] E\. Giroux\. `Géométrie de contact: de la dimension trois vers les dimensions supérieures <https://arxiv.org/abs/math/0305129>`_
+.. [Gi03] E\. Giroux\. `Géométrie de contact: de la dimension trois vers les dimensions supérieures <https://arxiv.org/abs/math/0305129v1>`_
 
 .. [HH18] K\. Honda and Y\. Huang\. `Bypass attachments in higher-dimensional contact topology <https://arxiv.org/abs/1803.09142v2>`_
 
 .. [HH19] K\. Honda and Y\. Huang\. `Convex hypersurface theory in contact topology <https://arxiv.org/abs/1907.06025v2>`_
 
-.. [Ho99] K\. Honda\. `On the classification of tight contact structures I <https://arxiv.org/abs/math/9910127>`_
+.. [Ho99] K\. Honda\. `On the classification of tight contact structures I <https://arxiv.org/abs/math/9910127v3>`_
