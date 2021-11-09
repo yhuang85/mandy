@@ -14,4 +14,6 @@ The Github page is served from the **docs** folder, which is automatically gener
 
 - [Pydata-Sphinx-Theme](https://github.com/pydata/pydata-sphinx-theme) is used to style the website.
 
+- [Inkscape](https://inkscape.org) is used to draw pictures in the format of SVG files.
+
 - Since Github page can only be rendered under certain path (I use **main/docs**), I followed suggestions in this [post](https://www.docslikecode.com/articles/github-pages-python-sphinx/) to organize folders in this repo.
