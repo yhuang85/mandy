@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Rigidity and Flexibility of CoLegendrians in dimension \(5\) &#8212; Mandy&#39;s wonderland</title>
+    <title>Rigidity and Flexibility of coLegendrians in dimension \(5\) &#8212; Mandy&#39;s wonderland</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.f8312eac34e2432659a6ef7e609c047e.css" rel="stylesheet">
@@ -149,7 +149,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Rigidity and Flexibility of CoLegendrians in dimension
+     Rigidity and Flexibility of coLegendrians in dimension
      <span class="math notranslate nohighlight">
       \(5\)
      </span>
@@ -182,6 +182,11 @@
    (Co)Legendrians in Morse theory
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flexibility-of-colegendrians">
+   Flexibility of coLegendrians
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -211,17 +216,26 @@
               <div>
                 
   <section id="rigidity-and-flexibility-of-colegendrians-in-dimension-5">
-<h1>Rigidity and Flexibility of CoLegendrians in dimension <span class="math notranslate nohighlight">\(5\)</span><a class="headerlink" href="#rigidity-and-flexibility-of-colegendrians-in-dimension-5" title="Permalink to this headline">¶</a></h1>
+<h1>Rigidity and Flexibility of coLegendrians in dimension <span class="math notranslate nohighlight">\(5\)</span><a class="headerlink" href="#rigidity-and-flexibility-of-colegendrians-in-dimension-5" title="Permalink to this headline">¶</a></h1>
 <p>The primary goal of this article is to explore the basic properties of coLegendrians in contact <span class="math notranslate nohighlight">\(5\)</span>-manifolds, including how they look like, how to find them and how to manipulate them. Ideally, we’d also like to see how they interact with Legendrians, e.g., how they may play a role in the classification of Legendrians. We’ll surely touch upon this point, but at this moment, I don’t exactly know how far it goes.</p>
 <p>Everything we shall talk about in this article belong to the realm of contact Morse theory. So let’s start by introducing the major roles and the context. Since contact Morse theory is the one stage on which all stories will be told and we’ll not be talking about the usual (i.e., topological) Morse theory, we often drop “contact” from the theory to be less wordy.</p>
 <section id="co-legendrians-in-morse-theory">
 <h2>(Co)Legendrians in Morse theory<a class="headerlink" href="#co-legendrians-in-morse-theory" title="Permalink to this headline">¶</a></h2>
 <p>Given a contact <span class="math notranslate nohighlight">\(5\)</span>-manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span>, a <em>Legendrian</em> <span class="math notranslate nohighlight">\(\Lambda \subset M\)</span> is a submanifold such that <span class="math notranslate nohighlight">\(T_x\Lambda \subset \xi_x\)</span> for all <span class="math notranslate nohighlight">\(x \in M\)</span>. For now, let’s assume <span class="math notranslate nohighlight">\(\Lambda\)</span> is smooth, but as E. Murphy argued in <a class="reference internal" href="#mur12" id="id1"><span>[Mur12]</span></a>, it may become necessary, or at least beneficial, to consider also (mildly) singular submanifolds, in which case one has to, of course, make sense of <span class="math notranslate nohighlight">\(T\Lambda\)</span> at singularities.</p>
-<p>Similarly, a <span class="math notranslate nohighlight">\(3\)</span>-submanifold <span class="math notranslate nohighlight">\(Y \subset M\)</span> is a <em>coLegendrian</em> if <span class="math notranslate nohighlight">\(T_x Y \cap \xi_x \subset \xi_x\)</span> is coisotropic for all <span class="math notranslate nohighlight">\(x \in Y\)</span> with respect to the natural (linear) symplectic structure on <span class="math notranslate nohighlight">\(\xi\)</span>. More concretely, there are two scenarios here. Namely, when the intersection is transverse, <span class="math notranslate nohighlight">\(T_x Y \cap \xi_x \subset \xi_x\)</span> is Lagrangian, otherwise <span class="math notranslate nohighlight">\(T_x Y = T_x Y \cap \xi_x \subset \xi_x\)</span> is coisotropic. A geometrically intuitive, but possibly also useless, way to think about such <span class="math notranslate nohighlight">\(Y\)</span> is that it naturally comes with a singular codimension-<span class="math notranslate nohighlight">\(1\)</span> foliation whose leaves are Legendrians and the singularities are precisely where the transversality fails. As in the case of Legendrians, we’ll also encounter coLegendrians which are not everywhere smooth.</p>
+<p>Similarly, a <span class="math notranslate nohighlight">\(3\)</span>-submanifold <span class="math notranslate nohighlight">\(Y \subset M\)</span> is a <em>coLegendrian</em> if <span class="math notranslate nohighlight">\(T_x Y \cap \xi_x \subset \xi_x\)</span> is coisotropic for all <span class="math notranslate nohighlight">\(x \in Y\)</span> with respect to the natural (linear) symplectic structure on <span class="math notranslate nohighlight">\(\xi\)</span>. More concretely, there are two scenarios here. Namely, when the intersection is transverse, <span class="math notranslate nohighlight">\(T_x Y \cap \xi_x \subset \xi_x\)</span> is Lagrangian, otherwise <span class="math notranslate nohighlight">\(T_x Y \subset \xi_x\)</span> is coisotropic. A geometrically intuitive, but possibly also useless, way to think about such <span class="math notranslate nohighlight">\(Y\)</span> is that it naturally comes with a singular codimension-<span class="math notranslate nohighlight">\(1\)</span> foliation whose leaves are Legendrians and the singularities are precisely where the transversality fails. As in the case of Legendrians, we’ll also encounter coLegendrians which are not everywhere smooth.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>None of the submanifolds considered in this article are parametrized, i.e., they are regarded as subsets of, say, <span class="math notranslate nohighlight">\(M\)</span> rather than maps into <span class="math notranslate nohighlight">\(M\)</span>.</p>
 </div>
+<p>To put everything in the context of Morse theory, we shall make the following assumption.</p>
+<blockquote id="morse-assumption">
+<div><p>All Legendrians <span class="math notranslate nohighlight">\(\Lambda\)</span> are assumed to be contained in an ambient Morse hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> such that <span class="math notranslate nohighlight">\(\Lambda_{\xi} \coloneqq \Sigma_{\xi}|_{\Lambda}\)</span> is tangent to <span class="math notranslate nohighlight">\(\Lambda\)</span> and restricts to a Morse vector field on <span class="math notranslate nohighlight">\(\Lambda\)</span>. The same holds for all coLegendrians.</p>
+</div></blockquote>
+<p>A few remarks are in order regarding the above assumption. First of all, we don’t in general care about the ambient <span class="math notranslate nohighlight">\(\Sigma\)</span>, so it generally won’t even be mentioned in what follows. Secondly, the above assumption fit in the context of family Morse theory by thinking of a coLegendrian <span class="math notranslate nohighlight">\(Y = \Lambda \times [0, 1]\)</span> as a “discretized” isotopy from <span class="math notranslate nohighlight">\(\Lambda_0\)</span> to <span class="math notranslate nohighlight">\(\Lambda_1\)</span>, such that <span class="math notranslate nohighlight">\((\Lambda_0)_{\xi}\)</span> and <span class="math notranslate nohighlight">\((\Lambda_1)_{\xi}\)</span> are allowed to have birth-death type critical points, aside from the nondegenerate ones. Finally, such Morse data on (co)Legendrians amounts to additional choices which we shall always carry along. For example, a Legendrian may be contained in different hypersurfaces and hence inherits different Morse structures. They shall be considered different even through it’s the very same Legendrian. On the other hand, being a Morse coLegendrian demands, in particular, trivial normal bundle, which is not necessarily satisfied by all coLegendrians. As a result, we simply don’t consider those with nontrivial normal bundles.</p>
+<p>Recall that a Morse hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> admits a decomposition <span class="math notranslate nohighlight">\(\Sigma = R_+(\Sigma) \cup_{\Gamma(\Sigma)} R_-(\Sigma)\)</span> such that <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span> are built out of the positive/negative handles, and <span class="math notranslate nohighlight">\(\Gamma(\Sigma)\)</span> is a level set in the middle. A good thing about (co)Legendrians satisfying the above <a class="reference internal" href="#morse-assumption"><span class="std std-ref">assumption</span></a> is that they inherit similar decompositions. For example, a Legendrian <span class="math notranslate nohighlight">\(\Lambda\)</span> can be decomposed as <span class="math notranslate nohighlight">\(\Lambda = R_+(\Lambda) \cup_{\Gamma(\Lambda)} R_-(\Lambda)\)</span> such that <span class="math notranslate nohighlight">\(R_{\pm} (\Lambda)\)</span> are built out of the positive/negative handles given by <span class="math notranslate nohighlight">\(\Lambda_{\xi} = \Sigma_{\xi}|_{\Lambda}\)</span>. In particular, <span class="math notranslate nohighlight">\(\Gamma(\Lambda) \subset \Gamma(\Sigma)\)</span> is in general a Legendrian link inside a contact <span class="math notranslate nohighlight">\(3\)</span>-manifold. Once again, let’s emphasize that such a decomposition depends on the embedding <span class="math notranslate nohighlight">\(\Lambda \subset \Sigma\)</span>. Similarly, for a coLegendrian <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(\Gamma(Y) \subset \Gamma(\Sigma)\)</span> is a surface which we will always arrange/assume to be Morse. In other words, we will work within an environment such that the Morse theory descends to lower-dimensional submanifolds in a recursive manner. We will call any of the above <span class="math notranslate nohighlight">\(\Gamma\)</span> a <em>dividing set</em>, so a dividing set can be a contact manifold, a hypersurface or a Legendrian, depending on the context.</p>
+</section>
+<section id="flexibility-of-colegendrians">
+<h2>Flexibility of coLegendrians<a class="headerlink" href="#flexibility-of-colegendrians" title="Permalink to this headline">¶</a></h2>
 <p>tbc…</p>
 <p class="rubric">References</p>
 <dl class="citation">
