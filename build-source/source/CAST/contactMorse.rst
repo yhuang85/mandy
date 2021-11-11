@@ -460,7 +460,10 @@ The third row also follows from the first by another explicit :math:`\pi_2^b`-sw
 
 Combine the three moves together, one can show that :math:`\pi_1`-switches exists at the vicinity of :math:`\Sigma` for any initial data. In other words, such :math:`\Sigma` is :ref:`flexible <flexible_hypersurface>` as claimed.
 
-tbc...
+Epilogue
+--------
+
+In this article, we tried to explain what contact Morse theory is about, including both the general idea on how it suppose to be used to understand contact manifolds and the main objects of interests. We then went through a limited number of examples to illustrate the most basic Morse-theoretic operations in the contact setting. Such limitation is largely due to my own limited understanding of the theory at the moment of writing. It's likely that many other mathematical articles that I'm going to write in this site will serve the purpose of improving such an understanding, and therefore they may all be called "Applications of contact Morse theory".
 
 
 .. rubric:: Footnotes
