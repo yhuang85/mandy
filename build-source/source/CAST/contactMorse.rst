@@ -1,3 +1,5 @@
+.. _contact_morse_theory_rst:
+
 How to do Morse theory in contact topology?
 ===========================================
 
@@ -62,7 +64,7 @@ Symplectic handles
 Back to contact
 ***************
 
-The compatibility between a contact manifold :math:`(M, \xi)` and a Morse function :math:`f: M \to \RR`, by analogy, asks the flow of :math:`X \coloneqq \nabla f` to preserve :math:`\xi`.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, E. Giroux [Gi03]_ argued that every (closed) contact manifold admits a compatible Morse function.
+The compatibility between a contact manifold :math:`(M, \xi)` and a Morse function :math:`f: M \to \RR`, by analogy, asks the flow of :math:`X \coloneqq \nabla f` to preserve :math:`\xi`.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, E. Giroux [Gir03]_ argued that every (closed) contact manifold admits a compatible Morse function.
 
 The regular level sets and critical points of a contact Morse function look quite different from the symplectic case, mostly because the compatibility condition now reads :math:`\Lcal_X \alpha = g \alpha` where :math:`\xi = \ker \alpha` is a contact form and :math:`g` can be *any* function. In particular, the flow of :math:`X` doesn't have to expand the contact volume at all.
 
@@ -80,7 +82,7 @@ Contact regular level sets
 
     * We will rewrite the decomposition :eq:`hypersurfaceDecomposition` as :math:`\Sigma = R_+ \cup_{\Gamma} R_-` to highlight the viewpoint that :math:`\Sigma` can be obtained by gluing (closures of) :math:`R_{\pm}` along the common boundary :math:`\Gamma`.
 
-    * It's shown in [Gi91]_ that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in :eq:`hypersurfaceDecomposition`. Such hypersurfaces are named *convex* by following conventions in [EG91]_ which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn't make any sense in the contact world. Indeed, they're more of a "flat" kind because the contact structure is invariant in the transverse direction. This is the main reason why we don't use the term "convex hypersurface" in this article. Another reason for not considering hypersurfaces like :eq:`hypersurfaceDecomposition` in general is that the domains :math:`R_{\pm}` are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the :ref:`second blend<Second Blend of Morse Theory with Contact Structures>`.
+    * It's shown in [Gir91]_ that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in :eq:`hypersurfaceDecomposition`. Such hypersurfaces are named *convex* by following conventions in [EG91]_ which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn't make any sense in the contact world. Indeed, they're more of a "flat" kind because the contact structure is invariant in the transverse direction. This is the main reason why we don't use the term "convex hypersurface" in this article. Another reason for not considering hypersurfaces like :eq:`hypersurfaceDecomposition` in general is that the domains :math:`R_{\pm}` are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the :ref:`second blend<Second Blend of Morse Theory with Contact Structures>`.
 
 Contact handles
     Assuming :math:`\dim M = 2n+1` and :math:`k \leq n`, an index-:math:`k` contact handle always takes the following standard form
@@ -100,7 +102,7 @@ Contact handles
 Summary
 *******
 
-The fact that every (closed) contact manifold admits a compatible Morse function means that one can build any contact manifold from the standard-looking contact handles. However, it doesn't really give us much more grip on the contact manifold itself because such handle decompositions are by no means unique. Indeed, most of the power of Morse theory lies in the ability to connect different choices of Morse functions by homotopies. Such homotopies or more generally the flexibility of contact Morse functions are unfortunately not available from [Gi03]_ due to the global nature of the argument, which is more-or-less a replica of an argument of S. Donaldson [Don96]_ for symplectic manifolds which are far more rigid.
+The fact that every (closed) contact manifold admits a compatible Morse function means that one can build any contact manifold from the standard-looking contact handles. However, it doesn't really give us much more grip on the contact manifold itself because such handle decompositions are by no means unique. Indeed, most of the power of Morse theory lies in the ability to connect different choices of Morse functions by homotopies. Such homotopies or more generally the flexibility of contact Morse functions are unfortunately not available from [Gir03]_ due to the global nature of the argument, which is more-or-less a replica of an argument of S. Donaldson [Don96]_ for symplectic manifolds which are far more rigid.
 
 We will follow a completely different path to build a hopefully more useful contact Morse theory. The main tools will be hypersurfaces and characteristic foliations on them. These tools are native to contact topology and were extensively used by D. Bennequin, Eliashberg, Giroux among many others for various purposes in the early days of the subject.
 
@@ -146,7 +148,7 @@ where :math:`\xi = \ker\alpha` is a contact form. Moreover, when both :math:`\Si
 
 Now the job of characterizing a contact structure on :math:`\Sigma \times I` boils down to characterizing the evolution of the contact germs on :math:`\Sigma \times t` for :math:`t \in I`, which, in turn, boils down to characterizing the evolution of a :math:`1`-parameter family of vector fields :math:`(\Sigma \times t)_{\xi}, t \in I`.
 
-In the case of :math:`\dim M = 3`, the above job was successfully done by Giroux in [Gi91]_ and [Gi99]_, where he applied the results of such analysis to classify contact structures on a number of :math:`3`-manifolds. However, Giroux's argument from these two papers are rather specific to dimension :math:`3` and are of little use in higher dimensions [#falseBelieve]_. Specifically, the study of characteristic foliations on a :math:`2`-dimensional surface falls into a much bigger subject of studying dynamics of generic vector fields on surfaces. Rather mature and comprehensive theories on the later subject, such as the `Poincaré-Bendixson theorem <https://en.wikipedia.org/wiki/Poincar%C3%A9%E2%80%93Bendixson_theorem>`_, was developed long before contact topology was even recognized as an independent subject. However, it's indeed hopeless to track down every single trajectory of a generic vector field in dimensions greater than two due to the ubiquity of chaotic behavior.
+In the case of :math:`\dim M = 3`, the above job was successfully done by Giroux in [Gir91]_ and [Gir99]_, where he applied the results of such analysis to classify contact structures on a number of :math:`3`-manifolds. However, Giroux's argument from these two papers are rather specific to dimension :math:`3` and are of little use in higher dimensions [#falseBelieve]_. Specifically, the study of characteristic foliations on a :math:`2`-dimensional surface falls into a much bigger subject of studying dynamics of generic vector fields on surfaces. Rather mature and comprehensive theories on the later subject, such as the `Poincaré-Bendixson theorem <https://en.wikipedia.org/wiki/Poincar%C3%A9%E2%80%93Bendixson_theorem>`_, was developed long before contact topology was even recognized as an independent subject. However, it's indeed hopeless to track down every single trajectory of a generic vector field in dimensions greater than two due to the ubiquity of chaotic behavior.
 
 The challenge is, therefore, to ensure the controllability of :math:`\Sigma_{\xi}` (e.g., as the gradient vector field of a Morse function) on sufficiently generic hypersurfaces :math:`\Sigma`. The basic idea is to wiggle :math:`\Sigma` almost everywhere to create attractors, built out of Morse critical points, which destroy any potential global dynamics of :math:`\Sigma_{\xi}`. The actual implementation of this idea is nearly perfect in dimension :math:`3` but much less so in higher dimensions. The details can be found in [HH18]_ and [HH19]_.
 
@@ -177,7 +179,7 @@ For example, the usual Morse theory is fully-established in the category of smoo
 Topological skeleta
 *******************
 
-Recall that although the existence of contact Morse functions, in abundance as a matter of fact, was established in [Gi03]_, nearly no flexibility is available for these rather abstract functions, which makes it hardly useful in practice. On the other hand, one cannot expect genericity to hold in the sense of usual transversality theory as in the smooth case because contact structures are by no means generic in that sense.
+Recall that although the existence of contact Morse functions, in abundance as a matter of fact, was established in [Gir03]_, nearly no flexibility is available for these rather abstract functions, which makes it hardly useful in practice. On the other hand, one cannot expect genericity to hold in the sense of usual transversality theory as in the smooth case because contact structures are by no means generic in that sense.
 
 As a matter of fact, it makes little sense to even look for (generic) homotopies between contact Morse functions because it violates the first principle of separation between topological and contact topological considerations. Instead, let's emphasize once again that the decomposition :eq:`heegaardDecomposition` is always the first step when decomposing a contact manifold :math:`(M, \xi)`. Recall that the contact handlebodies :math:`H_1, H_2 \subset M` are uniquely determined by the corresponding isotropic skeleta, which also capture the topology of :math:`M`. For this reason, we introduce the following terminology:
 
@@ -229,7 +231,7 @@ Extending the definitions of :math:`Y` and :math:`\Lambda_{\pm}` to all :math:`t
 
 .. note::
 
-    Historically speaking, a :math:`\pi_1`-switch is trivially a special case of "bifurcations" considered by Giroux in his dynamical convex surface theory [Gi99]_, and less trivially a special case of "bypass attachments" considered by Honda in his combinatorial convex surface theory [Ho99]_, both in dimension :math:`3`. The later was generalized to all dimensions in [HH18]_. In particular, the decomposition :eq:`heegaardDecomposition` indeed gives rise to a contact Morse function. However, none of these developments are relevant here and we don't even care about general contact Morse functions per se.
+    Historically speaking, a :math:`\pi_1`-switch is trivially a special case of "bifurcations" considered by Giroux in his dynamical convex surface theory [Gir99]_, and less trivially a special case of "bypass attachments" considered by Honda in his combinatorial convex surface theory [Hon99]_, both in dimension :math:`3`. The later was generalized to all dimensions in [HH18]_. In particular, the decomposition :eq:`heegaardDecomposition` indeed gives rise to a contact Morse function. However, none of these developments are relevant here and we don't even care about general contact Morse functions per se.
 
 Besides :math:`\pi_1`-switches, there are many other :math:`\pi_1`-level Morse theoretic degenerations, such as creation and elimination of critical points, that may happen in the family :math:`\Sigma_t|_{\xi}, t \in I`. However, these phenomena may happen either within :math:`R_+` or :math:`R_-`, and they belong to the subject of Weinstein homotopies, whose general understanding is completely out of reach by the current technology.
 
@@ -406,7 +408,7 @@ While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we
 :math:`\pi_1`-switches and flexibility
 **************************************
 
-As mentioned before, in general :math:`\pi_1`-switches do not come for free because it would otherwise equate contact topology with just smooth topology. However, there is a subclass of contact structures which carry no more information than the underlying smooth structures, or more precisely, the underlying algebraic topology if one takes into account of the almost complex structures on the contact hyperplanes. This subclass of contact structures were shown to exist and were given the name *overtwisted* contact structures by Eliashberg [El89]_ in dimension :math:`3` and by M\. Borman, Eliashberg, and E\. Murphy [BEM14]_ in general. Again, none of these developments are relevant to our discussion of contact Morse theory here, and we shall look for our own flexibility of contact structures from a Morse theoretic viewpoint. Of course, it won't hurt to keep in mind that it's known (to some people) that a class of contact structures are quite flexible and carry no more information than an almost complex structure on the (stable) tangent bundle.
+As mentioned before, in general :math:`\pi_1`-switches do not come for free because it would otherwise equate contact topology with just smooth topology. However, there is a subclass of contact structures which carry no more information than the underlying smooth structures, or more precisely, the underlying algebraic topology if one takes into account of the almost complex structures on the contact hyperplanes. This subclass of contact structures were shown to exist and were given the name *overtwisted* contact structures by Eliashberg [Eli89]_ in dimension :math:`3` and by M\. Borman, Eliashberg, and E\. Murphy [BEM14]_ in general. Again, none of these developments are relevant to our discussion of contact Morse theory here, and we shall look for our own flexibility of contact structures from a Morse theoretic viewpoint. Of course, it won't hurt to keep in mind that it's known (to some people) that a class of contact structures are quite flexible and carry no more information than an almost complex structure on the (stable) tangent bundle.
 
 Flexible hypersurfaces
 ++++++++++++++++++++++
@@ -487,16 +489,16 @@ In this article, we tried to explain what contact Morse theory is about, includi
 
 .. [EG91] Y\. Eliashberg and M\. Gromov\. `Convex symplectic manifolds <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/976.pdf>`_
 
-.. [El89] Y\. Eliashberg\. `Classification of overtwisted contact structures on 3-manifolds <http://bogomolov-lab.ru/G-sem/eliashberg-tight-overtwisted.pdf>`_
+.. [Eli89] Y\. Eliashberg\. `Classification of overtwisted contact structures on 3-manifolds <http://bogomolov-lab.ru/G-sem/eliashberg-tight-overtwisted.pdf>`_
 
-.. [Gi91] E\. Giroux\. `Convexité en topologie de contact <https://eudml.org/doc/140253>`_
+.. [Gir91] E\. Giroux\. `Convexité en topologie de contact <https://eudml.org/doc/140253>`_
 
-.. [Gi99] E\. Giroux\. `Structures de contact en dimension trois et bifurcations des feuilletages de surfaces <https://arxiv.org/abs/math/9908178v1>`_
+.. [Gir99] E\. Giroux\. `Structures de contact en dimension trois et bifurcations des feuilletages de surfaces <https://arxiv.org/abs/math/9908178v1>`_
 
-.. [Gi03] E\. Giroux\. `Géométrie de contact: de la dimension trois vers les dimensions supérieures <https://arxiv.org/abs/math/0305129v1>`_
+.. [Gir03] E\. Giroux\. `Géométrie de contact: de la dimension trois vers les dimensions supérieures <https://arxiv.org/abs/math/0305129v1>`_
 
 .. [HH18] K\. Honda and Y\. Huang\. `Bypass attachments in higher-dimensional contact topology <https://arxiv.org/abs/1803.09142v2>`_
 
 .. [HH19] K\. Honda and Y\. Huang\. `Convex hypersurface theory in contact topology <https://arxiv.org/abs/1907.06025v2>`_
 
-.. [Ho99] K\. Honda\. `On the classification of tight contact structures I <https://arxiv.org/abs/math/9910127v3>`_
+.. [Hon99] K\. Honda\. `On the classification of tight contact structures I <https://arxiv.org/abs/math/9910127v3>`_
