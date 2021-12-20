@@ -95,8 +95,9 @@ mathjax3_config = {
             # \op(x) == \operatorname(x)
             'op': ['\\operatorname {#1}', 1],
             'p': '{\\partial}',
-            'std': '{\\operatorname{std}}',
             'dist': '{\\operatorname{dist}}',
+            'ind': '{\\operatorname{ind}}',
+            'std': '{\\operatorname{std}}',
         },
         'packages': {
             '[+]': [

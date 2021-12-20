@@ -35,13 +35,15 @@ From the perspective of the usual *h*-principle established by M. Gromov in [Gro
 
 It's therefore quite a pleasing fact that by applying the folding techniques developed in [HH19]_, one can argue that any :math:`Y \subset M` with trivial normal bundle can be :math:`C^0`-approximated by a (homeomorphic) coLegendrian, which we still denote by :math:`Y`. However, the so constructed :math:`Y` is a topological approximation which is not necessarily smoothly embedded. Indeed, suppose :math:`\Sigma` is the (Morse) hypersurface containing :math:`Y`, then :math:`Y_{\xi} \coloneqq \Sigma_{\xi}|_Y` is tangent to :math:`Y` in the sense that any flow line of :math:`\Sigma_{\xi}` which intersects :math:`Y` is completely contained in :math:`Y`, and is itself a Morse vector field on :math:`Y`. One can verify that :math:`Y` indeed satisfies the coLegendrian condition where it's smooth.
 
+.. _coLeg_cone:
+
 .. sidebar:: An coLegendrian cone
 
     .. image:: static/cone.svg
         :align: center
         :width: 200px
 
-Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singularities of :math:`Y` are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption :math:`\dim M = 5` is that by further wiggling :math:`\Sigma`, one can approximate :math:`Y` by a coLegendrian with only isolated cone singularities at index :math:`0` and :math:`3` (when viewed inside :math:`Y`) critical points. More precisely, those are cones over (smooth and Morse) :math:`2`-spheres in :math:`(S^3, \xi_{\std}) = \p (B^4, \omega_{std})`. A schematic picture of such a cone is drawn on the right-hand-side, where :math:`O \in B^4` is the origin, and the shaded cone represents (part of) :math:`Y`. The procedure of simplifying singularities on :math:`Y` is explained in [Hua20]_.
+Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singularities of :math:`Y` are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption :math:`\dim M = 5` is that by further wiggling :math:`\Sigma`, one can approximate :math:`Y` by a coLegendrian with only isolated cone singularities withinh index :math:`0` and :math:`3` (when viewed inside :math:`Y`) critical points. More precisely, those are cones over (smooth and Morse) :math:`2`-spheres in :math:`(S^3, \xi_{\std}) = \p (B^4, \omega_{std})`. A schematic picture of such a cone is drawn on the right-hand-side, where :math:`O \in B^4` is the origin, and the shaded cone represents (part of) :math:`Y`. The procedure of simplifying singularities on :math:`Y` is explained in [Hua20]_.
 
 .. admonition:: Todo
     :class: warning
@@ -53,9 +55,47 @@ The above discussion applies to both the closed case where :math:`\p Y = \varnot
 Building Blocks
 ---------------
 
-Now that the flexibility discussed above guarantees the existence of coLegendrians, let's move on to understand the inner structure of :math:`Y`. This is rather straightforward since :math:`Y_{\xi}` defines a handle decomposition of :math:`Y` and the handles are slices of standard Weinstein handles.
+Now that the flexibility discussed above guarantees the existence of coLegendrians, let's move on to understand the inner structure of :math:`Y`. This is rather straightforward since :math:`Y_{\xi}` defines a handle decomposition of :math:`Y` and the handles are slices of standard Weinstein handles. However, since we're dealing with a "nested" Morse theory, it's necessary to differentiate Morse indices with respect to the ambient manifold. For example, one same critical point :math:`x \in \Lambda \subset Y \subset \Sigma` might have index :math:`0` when considered in :math:`\Lambda`, and index :math:`1` in :math:`Y`, and index :math:`2` in :math:`\Sigma`. This is reflected in the following notations: :math:`\ind_{\Lambda} (x) = 0, \ind_Y (x) = 1`, and :math:`\ind_{\Sigma} (x) = 2`.
+
+.. note::
+
+    In addition to showing that any :math:`Y \subset \Sigma` can be approximated by a coLegendrian, it's further showed in [Hua20]_ that such an approximation can either be made repelling in the normal direction, i.e., :math:`\ind_Y (x) = \ind_{\Sigma} (x)` for all critical points :math:`x \in Y`, or be made attracting in the normal direction, i.e., :math:`\ind_Y (x) + 1 = \ind_{\Sigma} (x)` for all critical points :math:`x \in Y`. These additional arrangements may be convenient sometimes, but we decide not to bake them into the initial :ref:`assumptions <morse_assumption>` of coLegendrians to allow more flexibility.
+
+Since coLegendrians are the main objects of interest in the article, we'll implicitly assume unspecified indices are :math:`Y`-indices and specify :math:`\Lambda` and :math:`\Sigma`-indices as needed in what follows.
+
+Since :math:`\dim Y = 3`, it's built out of :math:`0,1,2`, and :math:`3`-handle. Assume :math:`\partial Y = \varnothing` for the time being. The :math:`0` and :math:`3`-handles are :ref:`cones <coLeg_cone>` over (Morse) :math:`2`-spheres in :math:`(S^3, \xi_{std})`. It remains to describe the :math:`1` and :math:`2`-handles, in both signs. Let's describe the positive :math:`1`-handle :math:`H_1^+` and :math:`2`-handle :math:`H_2^+`, and note that the negative :math:`H_1^-` and :math:`H_2^-` are dual to :math:`H_2^+` and :math:`H_1^+` (by reversing the Morse vector fields), respectively.
+
+.. sidebar:: coLegendrian handles :math:`H_1^+` and :math:`H_2^+`
+
+    .. image:: static/one-and-two-handles-5d.svg
+        :align: center
+        :width: 200px
+
+Recall that :math:`H_1^+` and :math:`H_2^+` are slices of Weinstein :math:`1` and :math:`2`-handles, respectively. While :math:`H_2^+` is essentially unambiguous, there are choices one can make when defining :math:`H_1^+` as a :math:`3`-d slice of a Weinstein :math:`1`-handle. It turns out that one only needs the ones depicted on the right to build any coLegendrian. In the picture, the coLegendrian handles are drawn as solid cylinders, and the attaching regions, i.e., where the Morse vector fields point inward, are colored in green. The characteristic foliations on :math:`\p_{\pm} H` are also drawn, where :math:`\p_- H` are the attaching regions. In particular :math:`H_1^+` is attached along a pair of disks surrounding a source and a sink, respectively, and :math:`H_2^+` is a attached along an annulus surrounding a pair of positive and negative saddles :math:`h_{\pm}` together with the two separatrices flowing from :math:`h_-` to :math:`h_+`.
+
+By reversing the Morse vector fields, :math:`H_1^-` (dual to :math:`H_2^+`) is attached along a pair of disks with linear foliation, and :math:`H_2^-` (dual to :math:`H_1^+`) is attached along an annular neighborhood of a transverse loop.
+
+.. important::
+
+    Note that :math:`H_2^+` is attached long a Legendrian loop with :math:`\op{tb} = 1`. It implies, for example, that :math:`H_2^+` cannot be attached directly to a :math:`0`-handle without passing through any :math:`1`-handles since no :math:`S^2 \subset (S^3, \xi_{\std})` can contain a :math:`\op{tb} = 1` loop. This is one of the main sources of the rigidity of coLegendrians as we will explain below.
+
+Finally, let's briefly comment on the case where :math:`\p Y` is a Legendrian. In this case, one has to include also "halves" of the above listed coLegendrian handles. For example, if an index :math:`0` critical point :math:`p_0 \in \p Y`, then a neighborhood of :math:`p_0` is modeled on a cone over a disk :math:`D^2 \subset (S^3, \xi_{\std})` with Legendrian boundary :math:`\p D^2`. Moreover, :math:`\Lambda = \p Y` is smooth at :math:`p_0` if and only if :math:`\p D^2` is the standard unknot.
+
+Rigidity
+--------
+
+Topologically speaking, a coLegendrian :math:`Y` is a :math:`3`-manifold equipped with a Morse function whose critical points are signed so that the indexes of positive critical points are at most :math:`2` and the indexes of the negative ones are at least :math:`1`. Moreover, since the ambient :math:`\Sigma_{\xi}` is always assumed to be generic, we assume in addition that there is no flow lines in :math:`Y` from a negative critical point to a positive one. This assumption allows us to define the dividing set :math:`\Gamma_Y` as a level set separating the critical points of opposite signs. At this point, :math:`\Gamma_Y \subset Y` can be just about any embedded surface. This turns out to be *not* the case due to constraints imposed by the contact structure, and we call this phenomenon the rigidity of coLegendrians.
+
+Rigidity of coLegendrians is far from being understood, let alone applications towards better understanding contact manifolds themselves. Our modest goal here is to show the following
+
+    If :math:`Y` is a closed coLegendrian, then :math:`\Gamma_Y` is connected. If, in addition, :math:`\Gamma_Y \cong S^2`, then :math:`Y \cong S^3` and is standard up to Weinstein homotopy, i.e., the Morse vector field on :math:`Y` has two critical points: a (positive) maximum and a (negative) minimum.
+
+.. note::
+
+    In an analogous story in contact :math:`3`-manifolds, where the notion of coLegendrians collides with that of surfaces :math:`\Sigma`, Giroux argued that, in fact, the contact germ on :math:`\Sigma` is uniquely determined by (the isotopy class of) the dividing set :math:`\Gamma`, which is a transverse link. But the topology of :math:`\Gamma` certainly doesn't dictate the topology of :math:`\Sigma`, or *vice versa*, in any case.
 
 tbc...
+
 
 .. rubric:: References
 
