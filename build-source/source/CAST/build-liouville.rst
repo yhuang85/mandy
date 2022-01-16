@@ -16,8 +16,8 @@ A Toy Model
 
 It's hard to imagine, out of nowhere, how the (Liouville) mapping tori should look like, not to mention how they fit together. So we shall start by describing a concrete example, which was first studied by Y. Mitsumatsu [Mit95]_, and then examine its anatomy.
 
-Description of the Liouville domain
-***********************************
+Description of the toy Liouville domain
+***************************************
 
 Consider the following :math:`4`-manifold
 
@@ -62,7 +62,7 @@ This can be achieved by setting :math:`c = a_- / a_+` and :math:`C = \log a_+` (
 
 One can easily compute the Liouville vector field :math:`X = \p_s`. Now the quadruple :math:`(W, \omega, \lambda, X)` isn't quite a Liouville domain for two reasons: first, :math:`W` has corners, and second, :math:`X` is tangent to :math:`\p (W|_{s=0}) \times [0, C]` -- as highlighted by the shaded region in the right-handle-side picture. Both issues can be resolved at once by a corner-rounding procedure highlighted by the blue arc in the "magnified" (and straightened) picture.
 
-Now in this example :math:`W` has a particular nice, but by no means general, property that :math:`X` is completely tangent to a :math:`3`-submanifold :math:`Y \coloneqq W|_{t = 0}` and is pointing away from :math:`Y` in the normal directions. This :math:`Y` is itself a mapping torus defined by :math:`A \in \op{Aut}(T^2)`, and is schematically drawn as the thick loop in the picture. This allows us to first decompose :math:`Y` before moving on to the (visually) more challenging case of :math:`W`.
+Now in this example :math:`W` has a particularly nice, but by no means general, property that :math:`X` is completely tangent to a :math:`3`-submanifold :math:`Y \coloneqq W|_{t = 0}` and is pointing away from :math:`Y` in the normal directions. This :math:`Y` is itself a mapping torus defined by :math:`A \in \op{Aut}(T^2)`, and is schematically drawn as the thick loop in the picture. This allows us to first decompose :math:`Y` before moving on to the (visually) more challenging case of :math:`W`.
 
 The anatomy of :math:`Y`
 ************************
@@ -75,7 +75,65 @@ Recall that :math:`Y = T^2 \times [0,C] / (x, y, 0) \sim (A(x, y), C)` which com
 #. Flow each such disk in the direction of :math:`\p_s` until it hits itself again to form what we'll call a *flow tube*.
 #. At this point, we have decomposed :math:`Y` into a bunch of flow tubes. But just as explained in the previous section, the boundary of a flow tube has "sides" which are completely tangent to :math:`\p_s`. We need to "tilt" the sides to make the flow tubes less degenerate from the dynamics point of view.
 
-Let's carry out the plan. For the first step, we have a fairly obvious candidate :math:`T^2_0 \coloneqq  T^2 \times \{0\}` and we will take it as the preferred cross section.
+Let's carry out the plan. For the first step, there is a fairly obvious candidate :math:`T^2_0 \coloneqq  T^2 \times \{0\}` which we will take as the preferred cross section. For the second step we take also what we think is the simplest to work with.
+
+.. _fig_a_decomposition_of_torus:
+
+.. sidebar:: A decomposition of :math:`T^2_0`
+
+    .. image:: static/torus-decomposition.svg
+        :width: 400px
+
+On the right we decompose :math:`T^2_0` into four rectangles :math:`S_y, S_b, S_p` and :math:`S_g`, distinguished by four colors yellow, brown, purple and green, respectively. As usual :math:`T^2_0` is drawn as a square such that the top and the bottom edges are identified, so are the left and the right edges. Underneath, we also draw the images under :math:`A` of all four rectangles, as well as how they overlap with the original ones, respectively. Moreover, the edges of the :math:`S`'s are colored to indicate the adjacent rectangles.
+
+In this particular scenario, one can see that there are essentially two types of flow tubes, with different topologies. Indeed, the brown flow tube is topologically a solid torus since :math:`S_b \cap A(S_b)` is connected. On the other hand, the other three flow tubes are genus :math:`2` handlebodies since :math:`S \cap A(S)` has two components, where :math:`S \in \{ S_y, S_p, S_g \}`. In the picture, besides the obvious overlaps, pairs of regions with the same color, which are translations of each other, are also identified in the flow tube. This completes step three.
+
+Description of a single flow tube
++++++++++++++++++++++++++++++++++
+
+In the following, we will denote a flow tube by :math:`\tau(S)`. Then, obviously, the Liouville vector field :math:`X` is pointing out along :math:`S \setminus A(S)`, pointing in along :math:`A(S) \setminus S`, and tangential along the side :math:`\p S \times [0, C]`, which we need to tilt. As a piece of terminology, we will refer to the regions where :math:`X` is pointing out as **positive** and the regions where :math:`X` is pointing in as **negative**.
+
+In general, we can divide the tilting procedure into two types: the uniform and the mixed. Roughly speaking, after uniform tilting, :math:`\p S \times [0, C]` becomes entirely transverse to :math:`X`, but after mixed tilting, :math:`\p S \times [0, C]` further decomposes into two regions so that :math:`X` is outward-pointing along one region, inward-pointing along the other, and remains tangential along the borderline. In this section, we will only use the uniform tilting for simplicity, but as we will see in the actual decomposition of :math:`W` in the next section, mixed tilting is inevitable.
+
+.. sidebar:: The flow tube :math:`\tau(S_b)`
+
+    .. image:: static/3d-mapping-torus-1.svg
+        :width: 400px
+
+To work out the details, let's start with the slightly simpler :math:`\tau(S_b)`. The picture on the right depicts how step four is carried out for :math:`\tau(S_b)`. Namely, it consists of two sub-steps -- first tilt and then round corners. The leftmost figure shows the original :math:`\tau(S_b)`, where the red region is negative, the blue region is positive, and the gray regions on the top and bottom are identified by :math:`A`. The passage to the middle figure is the process of a uniform tilting. Here we have two choices: either shrink or expand :math:`S_b` as :math:`s` runs from :math:`0` to :math:`C`. The later is chosen in the picture, which turns the entire :math:`\p S_b \times [0, C]` negative. Finally we round the corners: Most of the borderlines between the red and blue regions can be rounded to *folds*, except for four points -- highlighted as thick dots in the middle figure -- which are rounded to *cusps* as shown in the rightmost figure.
+
+.. note::
+    The names of "folds" and "cusps" are borrowed from singularity theory of smooth maps or transversality theory of R. Thom. In fact, there is a rabbit hole of singularities characterized by certain "stratification" scheme which leads to nothing but a mess. It's fair to say, at this point, that either we can manage so that all flow tubes possess only folds and cusps or the sought-after decompositions are simply useless.
+
+To summarize, we have transformed :math:`\tau(S_b)` into a (smooth) solid torus whose boundary admits a decomposition
+
+.. math::
+
+    \p \tau(S_b) = R_+ \cup R_-
+
+into positive and negative regions such that  :math:`R_+` is the disjoint union of two disks, each of which has a boundary :math:`S^1` which can be further decomposed into two semicircles along a :math:`0`-sphere as follows
+
+.. math::
+    :label: eq_two_cusps
+
+    S^1 = U_0 \cup_{S^0} U_1
+
+Here the two semicircles :math:`U_0, U_1` are folds and the two points :math:`S^0` are cusps. If, on the contrary, we had decided to shrink :math:`S_b` as :math:`s` runs from :math:`0` to :math:`C`, the side :math:`\p S_b \times [0, C]` would have become entirely positive. We would then end up with a different :math:`\tau(S_b)` where the descriptions of :math:`R_{\pm}` switch places.
+
+The descriptions of the other three :math:`\tau(S_y), \tau(S_p)` and :math:`\tau(S_g)` are not so different even though they have different topologies than :math:`\tau(S_b)`. Let's go through :math:`\tau(S_y)` quickly to further familiarize ourselves with this procedure.
+
+.. sidebar:: The flow tube  :math:`\tau(S_y)` (before tilting)
+
+    .. image:: static/3d-mapping-torus-2.svg
+        :width: 400px
+
+On the right we have the very similar picture of :math:`\tau(S_y)` where the red region is negative, the blue region is positive, and the side is tangent to :math:`X`. Note that the blue region also consists of two pieces, although the tiny triangular piece at the lower-right corner of :math:`S_y` is not easy to see. Unfortunately :math:`A(S_y)` is drawn in two pieces, where the ":math:`\cdots`" symbols are supposed to indicate the appropriate identifications. One should compare with the :ref:`picture <fig_a_decomposition_of_torus>` of :math:`S_y` and its image under :math:`A`.
+
+Depending on how the side is (uniformly) tilted, the resulting :math:`\tau(S_y)` will turn out to be different. For example, if we slightly shrink :math:`S_y` as :math:`s` runs from :math:`0` to :math:`C`, then in the corresponding :math:`R_- \subset \p \tau(S_y)` consists of two (topologically speaking) disk components. One of them is just like the one described by :eq:`eq_two_cusps`, and the other will have four arcs of folds and four cusps, which are marked by thick dots in the picture as before.
+
+Fit flow tubes together
++++++++++++++++++++++++
+
 
 
 .. rubric:: References
