@@ -91,9 +91,9 @@ In this particular scenario, one can see that there are essentially two types of
 Description of a single flow tube
 +++++++++++++++++++++++++++++++++
 
-In the following, we will denote a flow tube by :math:`\tau(S)`. Then, obviously, the Liouville vector field :math:`X` is pointing out along :math:`S \setminus A(S)`, pointing in along :math:`A(S) \setminus S`, and tangential along the side :math:`\p S \times [0, C]`, which we need to tilt. As a piece of terminology, we will refer to the regions where :math:`X` is pointing out as **positive** and the regions where :math:`X` is pointing in as **negative**.
+In the following, we will denote a flow tube by :math:`\tau(S)`. Then, obviously, the Liouville vector field :math:`X` is pointing out along :math:`S \setminus A(S)`, pointing in along :math:`A(S) \setminus S`, and tangential along the side :math:`\p S \times [0, C]`, which we need to tilt. As a piece of terminology, we will refer to the regions where :math:`X` is pointing out as *positive* and the regions where :math:`X` is pointing in as *negative*.
 
-In general, we can divide the tilting procedure into two types: the uniform and the mixed. Roughly speaking, after uniform tilting, :math:`\p S \times [0, C]` becomes entirely transverse to :math:`X`, but after mixed tilting, :math:`\p S \times [0, C]` further decomposes into two regions so that :math:`X` is outward-pointing along one region, inward-pointing along the other, and remains tangential along the borderline. In this section, we will only use the uniform tilting for simplicity, but as we will see in the actual decomposition of :math:`W` in the next section, mixed tilting is inevitable.
+In general, we can divide the tilting procedure into two types: the uniform and the mixed. Roughly speaking, after uniform tilting, :math:`\p S \times [0, C]` becomes entirely transverse to :math:`X`, but after mixed tilting, :math:`\p S \times [0, C]` further decomposes into two regions so that :math:`X` is outward-pointing along one region, inward-pointing along the other, and remains tangential along the borderline. Although uniform tilting may appear to be easier to visualize, as we will see, when several flow tubes stuck together, it's not always possible to avoid mixed tilting. So to keep things as simple as possible, we shall start with uniform tilting and deal with mixed tilting when it gets in the way.
 
 .. sidebar:: The flow tube :math:`\tau(S_b)`
 
@@ -116,9 +116,11 @@ into positive and negative regions such that  :math:`R_+` is the disjoint union 
 .. math::
     :label: eq_two_cusps
 
-    S^1 = U_0 \cup_{S^0} U_1
+    S^1 = U_+ \cup_{S^0} U_-
 
-Here the two semicircles :math:`U_0, U_1` are folds and the two points :math:`S^0` are cusps. If, on the contrary, we had decided to shrink :math:`S_b` as :math:`s` runs from :math:`0` to :math:`C`, the side :math:`\p S_b \times [0, C]` would have become entirely positive. We would then end up with a different :math:`\tau(S_b)` where the descriptions of :math:`R_{\pm}` switch places.
+Here the two semicircles :math:`U_+, U_-` are folds so that :math:`X` points from :math:`R_{\pm}` to :math:`R_{\mp}` along :math:`U_{\pm}`, respectively, and the two points :math:`S^0` are cusps.
+
+If, on the contrary, we had decided to shrink :math:`S_b` as :math:`s` runs from :math:`0` to :math:`C`, the side :math:`\p S_b \times [0, C]` would have become entirely positive. We would then end up with a different :math:`\tau(S_b)` where the descriptions of :math:`R_{\pm}` switch places.
 
 The descriptions of the other three :math:`\tau(S_y), \tau(S_p)` and :math:`\tau(S_g)` are not so different even though they have different topologies than :math:`\tau(S_b)`. Let's go through :math:`\tau(S_y)` quickly to further familiarize ourselves with this procedure.
 
@@ -134,6 +136,40 @@ Depending on how the side is (uniformly) tilted, the resulting :math:`\tau(S_y)`
 Fit flow tubes together
 +++++++++++++++++++++++
 
+Now that we understand the structures - mostly importantly the singularities - of individual flow tubes, it's time to fit them together. In this procedure, as we will see, old singularities may disappear and new ones may emerge, but the basic principle remains the same: we will keep the species of possible singularities to only folds and cusps.
+
+When two flow tubes stuck together, a part of their boundaries overlap and it's the most crucial to understand the behavior near the boundary of this overlapping region. To illustrate the possible scenarios, we shall take a close look at how :math:`\tau(S_b)` and :math:`\tau(S_y)` are fit together. We assume that the following uniform tilting strategy:
+
+    :math:`S_b` is expanding and :math:`S_y` is shrinking as :math:`s` runs from :math:`0` to :math:`C`,
+
+so that they fit each other along the overlapping boundaries.
+
+.. sidebar:: The overlap between :math:`\tau(S_b)` and :math:`\tau(S_y)`
+
+    .. image:: static/3d-fit-brown-yellow.svg
+        :width: 400px
+
+It turns out that :math:`\p \tau(S_b) \cap \p \tau(S_y)` is a union of two annuli, whose boundary circles are depicted as the thickened line segments in the right-hand-side picture. Note that the segments parallel (at least before tilting) to the :math:`s`-direction, which are needed to join the endpoints to complete the boundary circles, are not drawn in the picture. Moreover, the two magnified regions on the left-hand-side are duplicate of each other by the identification.
+
+Since our models are essentially made out of linear objects, e.g., polygons, it's actually easier not to round the corners just for the sake of ending up with smooth objects. There should however be no difficulty in going back-and-forth between previously encountered objects such as folds and cusps and their (piecewise) linear models.
+
+In light of the above remark, we can see, in fact, that the components of :math:`\p (\p \tau(S_b) \cap \p \tau(S_y))`, i.e., the thickened lines in the above picture, are all piecewise linear. This allows us to investigate the gluing patterns near the line segments (*edges*) and the corners (*vertices*) separately. In the above picture, the vertices are labeled by :math:`a, b, \cdots, p` and the edges will be denoted by, for example :math:`\overline{ab}`.
+
+.. sidebar:: Fit along edges
+
+    .. image:: static/3d-fit-edges.svg
+        :width: 400px
+
+Let's start with the simpler case of fit-along-edges. There are essentially two scenarios as depicted in right-hand-side picture, where the reference vector field :math:`X` is assumed to be vertical. Namely, either the two meeting surfaces have no tangencies (with respect to :math:`X`) along the edge but the gluing results in a fold tangency as shown on the left-hand-side or one of the meeting surface have a fold tangency and the result of gluing has no singularity as shown on the right-hand-side. We call the edge in the first scenario *obtuse*, and in the second scenario *acute*. Here the meeting surfaces are the boundaries of :math:`3`-dimensional objects which are not explicitly specified in the picture -- they are unambiguously determined as the two sides of the overlapping part.
+
+In the case of fitting :math:`\tau(S_b)` and :math:`\tau(S_y)` together, the edges :math:`\overline{ab}` and :math:`\overline{bc}` are acute, while the edge :math:`\overline{ca}` (which is almost parallel to the :math:`s`-direction) is obtuse, for example.
+
+.. sidebar:: Fit around vertices
+
+    .. image:: static/3d-fit-vertices.svg
+        :width: 400px
+
+Now we move on to the scenarios of fit-around-vertices as illustrated in the picture to the right. The vertices are where the edges meet, so it's the easiest to organize by the types of edges involved, whether they are transverse (to :math:`X`) or folds or cusps. For example, on the upper-left corner we have a transverse sheet meeting with a folded sheet, and end up with a cusp -- hence the name (TF-C), read as *Transverse-Fold-to-Cusp*. Similarly, on the upper-right corner we have two folds fit together and end up with a new fold -- hence (FF-F). The bottom two look similar to each other except that the assembling pieces are different, and so are the results. Indeed, one can even make a third assemble which should be (TF-C), which shall look a bit different, but turns out to be equivalent to the one on the upper-left corner. Finally, we note that other combinations of T, F, and C are either trivial (e.g., (TF-T) -- equivalent to an acute edge) or impossible (e.g., (TT-T)), and therefore we do not draw pictures for them.
 
 
 .. rubric:: References
