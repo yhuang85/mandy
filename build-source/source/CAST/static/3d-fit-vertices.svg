@@ -29,7 +29,7 @@
      inkscape:snap-intersection-paths="true"
      inkscape:snap-smooth-nodes="true"
      inkscape:zoom="1.2063276"
-     inkscape:cx="294.69607"
+     inkscape:cx="635.39954"
      inkscape:cy="317.07805"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
@@ -1035,7 +1035,7 @@
          id="tspan20783"
          style="stroke-width:0.264583"
          x="-478.11478"
-         y="92.785591">(TF-C)</tspan></text>
+         y="92.785591">TF-C</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10.5833px;line-height:1.25;font-family:serif;-inkscape-font-specification:serif;stroke-width:0.264583"
@@ -1046,7 +1046,7 @@
          id="tspan33563"
          style="stroke-width:0.264583"
          x="-314.93497"
-         y="92.785591">(FF-F)</tspan></text>
+         y="92.785591">FF-F</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10.5833px;line-height:1.25;font-family:serif;-inkscape-font-specification:serif;stroke-width:0.264583"
@@ -1057,7 +1057,7 @@
          id="tspan36933"
          style="stroke-width:0.264583"
          x="-478.11478"
-         y="183.9362">(TC-F)</tspan></text>
+         y="183.9362">TC-F</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10.5833px;line-height:1.25;font-family:serif;-inkscape-font-specification:serif;stroke-width:0.264583"
@@ -1068,7 +1068,7 @@
          id="tspan39841"
          style="stroke-width:0.264583"
          x="-315.81088"
-         y="183.9362">(FC-T)</tspan></text>
+         y="183.9362">FC-T</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m -334.17409,45.956779 -14.5245,32.110985 69.62741,-17.59693"

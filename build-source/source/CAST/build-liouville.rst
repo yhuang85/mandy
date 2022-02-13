@@ -144,6 +144,8 @@ When two flow tubes stuck together, a part of their boundaries overlap and it's 
 
 so that they fit each other along the overlapping boundaries.
 
+.. _fig_overlap_between_Sb_and_Sy:
+
 .. sidebar:: The overlap between :math:`\tau(S_b)` and :math:`\tau(S_y)`
 
     .. image:: static/3d-fit-brown-yellow.svg
@@ -155,6 +157,8 @@ Since our models are essentially made out of linear objects, e.g., polygons, it'
 
 In light of the above remark, we can see, in fact, that the components of :math:`\p (\p \tau(S_b) \cap \p \tau(S_y))`, i.e., the thickened lines in the above picture, are all piecewise linear. This allows us to investigate the gluing patterns near the line segments (*edges*) and the corners (*vertices*) separately. In the above picture, the vertices are labeled by :math:`a, b, \cdots, p` and the edges will be denoted by, for example :math:`\overline{ab}`.
 
+.. _fig_fit_along_edges:
+
 .. sidebar:: Fit along edges
 
     .. image:: static/3d-fit-edges.svg
@@ -164,13 +168,34 @@ Let's start with the simpler case of fit-along-edges. There are essentially two 
 
 In the case of fitting :math:`\tau(S_b)` and :math:`\tau(S_y)` together, the edges :math:`\overline{ab}` and :math:`\overline{bc}` are acute, while the edge :math:`\overline{ca}` (which is almost parallel to the :math:`s`-direction) is obtuse, for example.
 
+.. _fig_fit_vertices:
+
 .. sidebar:: Fit around vertices
 
     .. image:: static/3d-fit-vertices.svg
         :width: 400px
 
-Now we move on to the scenarios of fit-around-vertices as illustrated in the picture to the right. The vertices are where the edges meet, so it's the easiest to organize by the types of edges involved, whether they are transverse (to :math:`X`) or folds or cusps. For example, on the upper-left corner we have a transverse sheet meeting with a folded sheet, and end up with a cusp -- hence the name (TF-C), read as *Transverse-Fold-to-Cusp*. Similarly, on the upper-right corner we have two folds fit together and end up with a new fold -- hence (FF-F). The bottom two look similar to each other except that the assembling pieces are different, and so are the results. Indeed, one can even make a third assemble which should be (TF-C), which shall look a bit different, but turns out to be equivalent to the one on the upper-left corner. Finally, we note that other combinations of T, F, and C are either trivial (e.g., (TF-T) -- equivalent to an acute edge) or impossible (e.g., (TT-T)), and therefore we do not draw pictures for them.
+Now we move on to the scenarios of fit-around-vertices as illustrated in the picture to the right. The vertices are where the edges meet, so it's the easiest to organize by the types of edges involved, whether they are transverse (to :math:`X`) or folds or cusps. For example, on the upper-left corner we have a transverse sheet meeting with a folded sheet, and end up with a cusp -- hence the name TF-C, read as *Transverse-Fold-to-Cusp*. Similarly, on the upper-right corner we have two folds fit together and end up with a new fold -- hence FF-F. The bottom two look similar to each other except that the assembling pieces are different, and so are the results. Indeed, one can even make a third assemble which should be TF-C, which shall look a bit different, but turns out to be equivalent to the one on the upper-left corner. Finally, we note that other combinations of T, F, and C are either trivial (e.g., TF-T is equivalent to an acute edge) or impossible (e.g., TT-T), and therefore we do not draw pictures for them.
 
+Let's apply our classification of the vertices to the :ref:`overlap <fig_overlap_between_Sb_and_Sy>` between :math:`\tau(S_b)` and :math:`\tau(S_y)`. For example, the vertex :math:`a` lies on a fold when viewed in :math:`\tau(S_b)`, and on a transverse face when in :math:`\tau(S_y)`. Therefore it's a TF-C type vertex, and one expects a cusp at :math:`a` after fitting :math:`\tau(S_b)` and :math:`\tau(S_y)` together, which is indeed the case. Similarly, the vertex :math:`b` lies at the interface of a fold and a cusp, and is henceforth a FC-T type vertex. It's hopefully clear at this point that the process of fitting together flow tubes, at least in the generic cases, is rather mechanical and straightforward. However, we're still missing one scenario where the so-called uniform tilting becomes inadequate in fitting more flow tubes together. We shall then wrap up this section with a discussion of the mixed tilting scenario.
+
+.. sidebar:: Mixed tilting becomes necessary
+
+    .. image:: static/torus-decomposition-tilted.svg
+        :width: 400px
+
+Suppose :math:`\tau(S_b)` and :math:`\tau(S_y)` have been glued together, and we will try to fit in :math:`\tau(S_g)` next. Recall that our chose to uniformly tilt the sides of :math:`\tau(S_b)` and :math:`\tau(S_y)` such that :math:`S_b` is shrinking and :math:`S_y` is expanding as :math:`s` runs from :math:`C` down to :math:`0`. In the picture to the right, we draw the decompositions of the cross section :math:`T^2` at the gluing level :math:`s=C` and at a level :math:`s=C-\epsilon` slightly below it. It's clear from the picture that :math:`S_g` (i.e., the green region) has a mixed (tilting) behavior along the boundary -- the vertical sides which are adjacent to :math:`S_b` is expanding, and the horizontal sides which are (partially) adjacent to :math:`S_y` are shrinking, as :math:`s` runs from :math:`C` to :math:`0`. Similar mixed tilting occurs when we fit the last piece :math:`\tau(S_p)` in as well.
+
+After a moment of thoughts, it should become clear that such mixed tilting introduces nothing new. Namely, one can think of the "vertex" where the expanding side meets the shrinking side as a vertex just as in the case of fitting two flow tubes together considered above -- especially the TF-C type vertex.
+
+Summary
++++++++
+
+Let's summarize our knowledge so far about the decomposition of the mapping torus :math:`Y` into a collection of flow tubes as follows.
+
+* Each flow tube :math:`\tau(S)` is a solid handlebody whose boundary can be decomposed as :math:`\p \tau(S) = R_+ \cup R_-` such that :math:`X` is outward-pointing along :math:`R_+` and inward-pointing along :math:`R_-`. Moreover, the borderline :math:`\p R_+ = \p R_-` can be thought of as a polygon whose edges are folds and vertices are cusps.
+
+* When two flow tubes :math:`\tau(S_1)` and :math:`\tau(S_2)` fit together, they are glued along a region :math:`K \coloneqq \p \tau(S_1) \cap \p \tau(S_2)`. The boundary :math:`\p K` can, again, be thought of as a polygon such that the edges are either :ref:`acute or obtuse <fig_fit_along_edges>`, and the vertices are one of the four types :ref:`TF-C, TC-F, FC-T and FF-F <fig_fit_vertices>`.
 
 .. rubric:: References
 
