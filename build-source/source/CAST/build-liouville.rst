@@ -22,12 +22,14 @@ Description of the toy Liouville domain
 Consider the following :math:`4`-manifold
 
 .. math::
+    :label: toy_liouville_domain
 
     W \coloneqq (T^2 \times [-1, 1]) \times [0, C] / (x, y, t, 0) \sim (\phi(x, y, t), C), \quad\forall (x, y, t) \in T^2 \times [-1, 1].
 
 where :math:`T^2 = \RR^2 / \ZZ^2`, :math:`C > 0` is a constant to be determined later, and :math:`\phi: T^2 \times [-1, 1] \to T^2 \times [-1, 1]` is a linear map defined by
 
 .. math::
+    :label: toy_monodromy
 
     \phi = \begin{pmatrix}
         A & 0 \\
@@ -64,8 +66,9 @@ One can easily compute the Liouville vector field :math:`X = \p_s`. Now the quad
 
 Now in this example :math:`W` has a particularly nice, but by no means general, property that :math:`X` is completely tangent to a :math:`3`-submanifold :math:`Y \coloneqq W|_{t = 0}` and is pointing away from :math:`Y` in the normal directions. This :math:`Y` is itself a mapping torus defined by :math:`A \in \op{Aut}(T^2)`, and is schematically drawn as the thick loop in the picture. This allows us to first decompose :math:`Y` before moving on to the (visually) more challenging case of :math:`W`.
 
-The anatomy of :math:`Y`
-************************
+The anatomy of :math:`Y^3`
+**************************
+
 Strictly speaking, one can jump directly to the anatomy of the original :math:`W`. But the fact that we can only visualize things up to three dimensions makes this section a good warm-up for all the techniques we shall need in the :math:`4`-dimensional case.
 
 Recall that :math:`Y = T^2 \times [0,C] / (x, y, 0) \sim (A(x, y), C)` which comes with the restricted Liouville vector field :math:`\p_s` where :math:`s \in [0, C]`. The plan to dissect :math:`Y` involves the following steps:
@@ -103,7 +106,7 @@ In general, we can divide the tilting procedure into two types: the uniform and 
 To work out the details, let's start with the slightly simpler :math:`\tau(S_b)`. The picture on the right depicts how step four is carried out for :math:`\tau(S_b)`. Namely, it consists of two sub-steps -- first tilt and then round corners. The leftmost figure shows the original :math:`\tau(S_b)`, where the red region is negative, the blue region is positive, and the gray regions on the top and bottom are identified by :math:`A`. The passage to the middle figure is the process of a uniform tilting. Here we have two choices: either shrink or expand :math:`S_b` as :math:`s` runs from :math:`0` to :math:`C`. The later is chosen in the picture, which turns the entire :math:`\p S_b \times [0, C]` negative. Finally we round the corners: Most of the borderlines between the red and blue regions can be rounded to *folds*, except for four points -- highlighted as thick dots in the middle figure -- which are rounded to *cusps* as shown in the rightmost figure.
 
 .. note::
-    The names of "folds" and "cusps" are borrowed from singularity theory of smooth maps or transversality theory of R. Thom. In fact, there is a rabbit hole of singularities characterized by certain "stratification" scheme which leads to nothing but a mess. It's fair to say, at this point, that either we can manage so that all flow tubes possess only folds and cusps or the sought-after decompositions are simply useless.
+    The names of "folds" and "cusps" are borrowed from singularity theory of smooth maps or transversality theory of `R. Thom <https://en.wikipedia.org/wiki/Ren%C3%A9_Thom>`_. In fact, there is a rabbit hole of singularities/tangencies characterized by certain "stratification" scheme. Although it's not our interest to explore these structures in any systematic way, they will find us in one way or another and we shall have no choice but to follow the path in front of us. The first time we will be forced to face tangencies "deeper" than folds and cusps is when we try to decompose :math:`W^4`.
 
 To summarize, we have transformed :math:`\tau(S_b)` into a (smooth) solid torus whose boundary admits a decomposition
 
@@ -195,7 +198,71 @@ Let's summarize our knowledge so far about the decomposition of the mapping toru
 
 * Each flow tube :math:`\tau(S)` is a solid handlebody whose boundary can be decomposed as :math:`\p \tau(S) = R_+ \cup R_-` such that :math:`X` is outward-pointing along :math:`R_+` and inward-pointing along :math:`R_-`. Moreover, the borderline :math:`\p R_+ = \p R_-` can be thought of as a polygon whose edges are folds and vertices are cusps.
 
-* When two flow tubes :math:`\tau(S_1)` and :math:`\tau(S_2)` fit together, they are glued along a region :math:`K \coloneqq \p \tau(S_1) \cap \p \tau(S_2)`. The boundary :math:`\p K` can, again, be thought of as a polygon such that the edges are either :ref:`acute or obtuse <fig_fit_along_edges>`, and the vertices are one of the four types :ref:`TF-C, TC-F, FC-T and FF-F <fig_fit_vertices>`.
+* When two flow tubes :math:`\tau(S_1)` and :math:`\tau(S_2)` fit together, they are glued along a region :math:`K \coloneqq \p \tau(S_1) \cap \p \tau(S_2)`. The boundary :math:`\p K` can, again, be thought of as a polygon such that the edges are :ref:`either acute or obtuse <fig_fit_along_edges>`, and the vertices are one of the four types: :ref:`TF-C, TC-F, FC-T and FF-F <fig_fit_vertices>`.
+
+
+The anatomy of :math:`W^4`
+**************************
+
+We're now ready to take on the real objects of interests -- the building blocks of the :math:`4`-dimensional Liouville domain :math:`W`, which are nothing but the :math:`4`-dimensional flow tubes. Let's also note that all the discussions so far have been purely topological, i.e., we haven't touched on any symplectic and/or contact structures at all. Indeed, we shall continue to discuss the relative positions between :math:`X` and the flow tubes before turning into symplectic and/or contact aspects of the story.
+
+Description of a single flow tube
++++++++++++++++++++++++++++++++++
+
+Recall that in the :math:`3`-dimensional case, a flow tube :math:`\tau(S)` is a partial mapping tori based on a square :math:`S \subset T^2`. Now in the :math:`4`-dimensional case, we need to upgrade :math:`S` to a cube :math:`S \times [-1, 1]` equipped with the standard contact structure, where the :math:`[-1, 1]` factor comes from :eq:`toy_liouville_domain`. To keep notations simple and consistent, let's adopt the following renaming convention:
+
+    We will from now on write :math:`S` in place of :math:`S \times [-1, 1]` for the :math:`3`-dimensional cube. Inheriting from the :math:`3`-dimensional case, we cover the transverse slice :math:`T^2 \times [-1, 1] = S_b \cup S_y \cup S_g \cup S_p` by four cubes.
+
+.. sidebar:: The flow tube :math:`\tau(S_b)` at :math:`s=C` with uniform tilting
+
+    .. image:: static/4d-mapping-torus-section-uniform-titling.svg
+        :width: 400px
+
+In the picture on the right, we draw the (most important) section of :math:`\tau(S_b)` at :math:`s=C`. Here we lose, unfortunately, the luxury to draw the :math:`s`-direction because it's the :math:`4`-th dimension. However, the familiarity with the :math:`3`-dimensional case should help with the imagination of the :math:`s`-direction and its tilting as well!
+
+As before, the Liouville vector field :math:`X` is outward-pointing along a, topological speaking, solid torus :math:`S_b \setminus \phi(S_b)`, and inward-pointing along the two balls :math:`\phi(S_b) \setminus S_b`. Here :math:`\phi` is defined in :eq:`toy_monodromy`. Moreover :math:`X` is tangent to :math:`\p S_b \times [0, C]`, which needs to be tilted in some way which we now elaborate.
+
+Let's start with the naive but simple approach where :math:`S_b` is assumed to be expanding as :math:`s` runs from :math:`0` to :math:`C`. This is the direct analog of the :math:`3`-dimensional :math:`\tau(S_b)` discussed in the previous section. As a consequence, the side :math:`\p S_b \times [0, C]` joins the negative part. The borderline between :math:`R_+` and :math:`R_-` is therefore the boundary of (the closure of) :math:`S_b \setminus \phi(S_b)`, which is a torus. Moreover, the torus itself is split into two annuli by :math:`\p S_b \cap \p \phi(S_b)`, depicted as the blue circles in the above picture, such that :math:`X` defines folds along the annuli and cusps along the circles. It might worth noting that we have so far managed to keep only folds and cusps, even though they may come in families. This turns out to be a luxury that we are about to leave behind.
+
+The above uniform tilting, albeit simple, isn't quite a building block we need for :math:`W`. Indeed, the fact that a part of :math:`\p \tau(S_b)` lies on :math:`\p W` demands that the :math:`t`-direction is necessarily shrinking as :math:`s: 0 \to C`. So we will adopt the following mixed tilting strategy:
+
+.. _block_mixed_tilting_instruction_4d:
+
+    As :math:`s: 0 \to C`, :math:`S_b` is shrinking along the top and bottom sides :math:`t = \pm 1` and expanding along the rest of :math:`\p S_b`.
+
+Of course the decomposition :math:`\p \tau(S_b) = R_+ \cup R_-` has changed by the mixed tilting. Namely, :math:`R_+` becomes the union of the following two pieces:
+
+* :math:`S_b \setminus \phi(S_b)` at :math:`s=C`;
+* :math:`\p S_b|_{t = \pm 1} \times [0, C]` where :math:`\p S_b|_{t = \pm 1}` denotes the top and bottom sides of :math:`S_b`.
+
+Topologically speaking :math:`R_+` is now a genus :math:`3` handlebody, and therefore the borderline between :math:`R_+` and :math:`R_-` is a genus :math:`3` surface. However, the topological types of these objects are not our main interests -- we are interested in the relative position between :math:`X` and :math:`\p \tau(S_b)`. We know that :math:`X` is tangent to :math:`\p \tau(S_b)` along :math:`\p R_+ = \p R_-`, but the exact form of tangency turns out to be more complicated than just folds and cusps.
+
+.. _fig_mixed_tilting_4d:
+
+.. sidebar:: The flow tube :math:`\tau(S_b)` at :math:`s=C` with mixed tilting
+
+    .. image:: static/4d-mapping-torus-section-mixed-tilting.svg
+        :width: 400px
+
+It follows from the :ref:`instruction <block_mixed_tilting_instruction_4d>` of the mixed tilting that there are two separating loops (actually, polygons) :math:`\gamma_1, \gamma_2 \subset \p R_+`, which are depicted blue in the picture to the right, such that :math:`\p R_+` are folds away from them. As we will see shortly, there are cusps and even one-level deeper tangencies along :math:`\gamma_1` and :math:`\gamma_2`. In what follows, we shall consider only :math:`\gamma_1` as the typical case.
+
+To avoid getting lost in the many strata, let's paint the region bounded by :math:`\gamma_1` in green. Since we cannot visualize :math:`4`-dimensional objects, the best bet to look at :math:`3`-dimensional slices. To this end, let's pick two points :math:`a, b \in \gamma_1` around the upper-left corner. Moreover, take :math:`2`-dimensional slices at :math:`a, b` perpendicular to the corresponding edges of :math:`\gamma_1`, respectively. These are represented by small shaded squares in the picture.
+
+Now we add the :math:`s`-direction to the slices as shown in the lower part of the picture, where the green arcs are the intersections between the slices and the green regions enclosed by :math:`\gamma_1`, respectively. The rest of the picture should be straightforward as it simply reduces to the :math:`3`-dimensional case. In particular, it's obvious that both :math:`a` and :math:`b` are cusps. However, they are cusps in "different directions" -- a fact that forces the corner of :math:`\gamma_1` between :math:`a` and :math:`b` (marked by a fat dot in the picture) to be a type of tangency which is neither a fold nor a cusp, namely, it's yet one-level deeper in the hierarchy.
+
+For the moment, we shall live with the unexplained "deeper tangency" and summarize what we know about the relative position between :math:`X` and :math:`\tau(S_b)` as follows:
+
+* :math:`X` is pointing into :math:`\tau(S_b)` along the interior of :math:`R_+`, which happens to be a genus :math:`3` handlebody, and pointing out along the interior of :math:`R_-` (whose topology we didn't bother to find out), and is tangential along :math:`\p R_+ = \p R_-`.
+
+* There are two loops :math:`\gamma_1, \gamma_2 \subset \p R_+` away from which there are folds.
+
+* There is a finite number (which happens to be :math:`8` in this case) of points on :math:`\gamma_1 \cup \gamma_2` away from which there are cusps.
+
+* These points on :math:`\gamma_1 \cup \gamma_2`, which are marked by the fat dots in the above :ref:`picture <fig_mixed_tilting_4d>` are tangencies which we haven't explored yet.
+
+It should be clear at this point that although we managed to work out most of the tangencies/transversalities between :math:`X` and :math:`\p \tau(S_b)`, it's getting quite messy already at the level of describing one single flow tube, not to say the headaches we must face when we have to fit many of them together. Therefore, in order to go further, we must pause our planned-next-step of fitting flow tubes together, and re-examine the perspective from which we look at the relative position between :math:`X` and :math:`\p \tau(S_b)`
+
+
 
 .. rubric:: References
 
