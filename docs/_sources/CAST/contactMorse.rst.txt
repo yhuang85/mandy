@@ -312,9 +312,10 @@ The creation of simple :math:`\pi_1`-switches is very much a procedure of creati
 
     There are at least three ways to create simple :math:`\pi_1`-switches: the first uses :math:`\pi_2^a`-switch to create the trivial ones, the second relies on the first and uses in addition :math:`\pi_2^b`-switch to create simple but nontrivial ones, and lastly the third is independent of the previous two and use just :math:`\pi_2^d`-switch.
 
-.. note::
+.. admonition:: TODO
+    :class: attention
 
-    The only :math:`\pi_2`-switch which is not involved in the above procedure is the :math:`\pi_2^c`-switch. Rather than bridging :math:`\pi_1`-switches, it serves the function of generating certain contact topological "pseudo-isotopes" of :math:`1`-parameter families of Morse hypersurfaces.
+    The only :math:`\pi_2`-switch which is not involved in the above procedure is the :math:`\pi_2^c`-switch. I initially thought that it generates only certain contact topological "pseudo-isotopes" of Morse hypersurfaces, and therefore doesn't interact with :math:`\pi_1`-switches. It has been pointed out to me by J. Breen and K. Honda that this is *not* the case. Indeed, :math:`\pi_2^c`-switches can bridge two sequences of :math:`\pi_1`-switches, and are equally important as the other :math:`\pi_2`-switches. Details about :math:`\pi_2^c`-switches and how they may improve our understanding of contact Morse theory are to be carried out.
 
 .. sidebar:: Morse picture of a :math:`\pi_2^a`-switch
 
