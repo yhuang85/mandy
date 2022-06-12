@@ -242,11 +242,12 @@ Topologically speaking :math:`R_+` is now a genus :math:`3` handlebody, and ther
 .. sidebar:: The flow tube :math:`\tau(S_b)` at :math:`s=C` with mixed tilting
 
     .. image:: static/4d-mapping-torus-section-mixed-tilting.svg
+        :align: center
         :width: 400px
 
 It follows from the :ref:`instruction <block_mixed_tilting_instruction_4d>` of the mixed tilting that there are two separating loops (actually, polygons) :math:`\gamma_1, \gamma_2 \subset \p R_+`, which are depicted blue in the picture to the right, such that :math:`\p R_+` are folds away from them. As we will see shortly, there are cusps and even one-level deeper tangencies along :math:`\gamma_1` and :math:`\gamma_2`. In what follows, we shall consider only :math:`\gamma_1` as the typical case.
 
-To avoid getting lost in the many strata, let's paint the region bounded by :math:`\gamma_1` in green. Since we cannot visualize :math:`4`-dimensional objects, the best bet to look at :math:`3`-dimensional slices. To this end, let's pick two points :math:`a, b \in \gamma_1` around the upper-left corner. Moreover, take :math:`2`-dimensional slices at :math:`a, b` perpendicular to the corresponding edges of :math:`\gamma_1`, respectively. These are represented by small shaded squares in the picture.
+To avoid getting lost in the many strata, let's paint the region bounded by :math:`\gamma_1` in green. Since we cannot visualize :math:`4`-dimensional objects, the best bet to look at :math:`3`-dimensional slices. To this end, let's pick two points :math:`a, b \in \gamma_1` around the upper-left corner. Moreover, take :math:`2`-dimensional slices at :math:`a, b` transverse to the corresponding edges of :math:`\gamma_1`, respectively. These are represented by small shaded squares in the picture.
 
 Now we add the :math:`s`-direction to the slices as shown in the lower part of the picture, where the green arcs are the intersections between the slices and the green regions enclosed by :math:`\gamma_1`, respectively. The rest of the picture should be straightforward as it simply reduces to the :math:`3`-dimensional case. In particular, it's obvious that both :math:`a` and :math:`b` are cusps. However, they are cusps in "different directions" -- a fact that forces the corner of :math:`\gamma_1` between :math:`a` and :math:`b` (marked by a fat dot in the picture) to be a type of tangency which is neither a fold nor a cusp, namely, it's yet one-level deeper in the hierarchy.
 
@@ -262,6 +263,33 @@ For the moment, we shall live with the unexplained "deeper tangency" and summari
 
 It should be clear at this point that although we managed to work out most of the tangencies/transversalities between :math:`X` and :math:`\p \tau(S_b)`, it's getting quite messy already at the level of describing one single flow tube, not to say the headaches we must face when we have to fit many of them together. Therefore, in order to go further, we must pause our planned-next-step of fitting flow tubes together, and re-examine the perspective from which we look at the relative position between :math:`X` and :math:`\p \tau(S_b)`
 
+From straight vector field to flat surface
+++++++++++++++++++++++++++++++++++++++++++
+
+So far we have been keeping the Liouville vector field straight -- it goes straight up. This appears to be a natural perspective since the flow tubes are mapping tori by definition. However, when it comes to understanding the relative position between :math:`X` and the boundary of a flow tube :math:`\p \tau(S)`, it's not really necessary to remember the fact that :math:`\tau(S)` is a mapping torus. Indeed, we shall replace :math:`\p \tau(S)` by a general (hyper)surface :math:`\Sigma` of dimension :math:`2` and :math:`3`, and recover all the local models of tangencies considered before. The main feature of this approach is that we shall keep :math:`\Sigma` flat while letting :math:`X` "draw" the tangencies.
+
+.. sidebar:: Two viewpoints of local tangencies
+
+    .. image:: static/3d-vector-field-local-model.svg
+        :width: 400px
+
+Let's start with the case :math:`\dim \Sigma = 2`. Here we have two types of tangencies: folds and cusps, which are depicted in the picture to the right. Specifically, on the left, we arrange so that :math:`X` is vertical, and on the right, we arrange so that :math:`\Sigma` is flat. In either perspective, we can see a stratification
+
+.. math::
+
+    \Sigma = \Sigma^{(0)} \cup \Sigma^{(1)} \cup \Sigma^{(2)}
+
+such that the following hold:
+
+* :math:`\Sigma^{(0)}` has codimension :math:`0` (i.e., surfaces) and is transverse to :math:`X`.
+
+* :math:`\Sigma^{(1)}` has codimension :math:`1` (i.e., lines) along which :math:`X` is tangent to :math:`\Sigma^{(0)}` and transverse to :math:`\Sigma^{(1)}`. These are folds.
+
+* :math:`\Sigma^{(2)}` has codimension :math:`2` (i.e., points) at which :math:`X` is tangent to :math:`\Sigma^{(1)}`. These are cusps.
+
+In the flat-surface model, we can see that near a fold, :math:`\Sigma^{(0)}` are the left and right half spaces, which meet along the middle line :math:`\Sigma^{(1)}`, and there is no :math:`\Sigma^{(2)}`. Near a cusp, :math:`\Sigma^{(0)}` are again two half spaces, but the borderline consists of edges :math:`\Sigma^{(1)}` and vertices :math:`\Sigma^{(2)}`.
+
+Next, let's look at how two surfaces fit together. We've seen both the :ref:`edge-fitting <fig_fit_along_edges>` and the :ref:`vertex-fitting <fig_fit_vertices>` before in the straight-vector-field model, and now we will redo everything in the flat-surface model.
 
 
 .. rubric:: References
