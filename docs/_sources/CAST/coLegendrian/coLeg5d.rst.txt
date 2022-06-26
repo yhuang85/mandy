@@ -45,7 +45,7 @@ It's therefore quite a pleasing fact that by applying the folding techniques dev
 
 Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singularities of :math:`Y` are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption :math:`\dim M = 5` is that by further wiggling :math:`\Sigma`, one can approximate :math:`Y` by a coLegendrian with only isolated cone singularities withinh index :math:`0` and :math:`3` (when viewed inside :math:`Y`) critical points. More precisely, those are cones over (smooth and Morse) :math:`2`-spheres in :math:`(S^3, \xi_{\std}) = \p (B^4, \omega_{std})`. A schematic picture of such a cone is drawn on the right-hand-side, where :math:`O \in B^4` is the origin, and the shaded cone represents (part of) :math:`Y`. The procedure of simplifying singularities on :math:`Y` is explained in [Hua20]_.
 
-.. admonition:: Todo
+.. admonition:: TODO
     :class: warning
 
     The structural theory of coLegendrians is so far only developed for contact :math:`5`-manifolds because (1) I'm out of time, and (2) its development may require a more thorough understanding of :math:`5`-dimensional contact topology due to the recursive nature of contact Morse theory. Nonetheless, it's expected that higher dimensional coLegendrians possess singularities more complex than just the isolated cones.
@@ -98,7 +98,15 @@ and the **sphere rigidity**:
 
     The analogous statements in dimension :math:`3` are false. Namely, there is no correlation between the topology of a coLegendrian (i.e., a surface) and the topology of its dividing set (i.e., a transverse link).
 
-The proofs of the above two rigidity statements both rely on the simple fact that :math:`\op{tb}(\gamma) < 0` for any Legendrian :math:`\gamma \subset S^2 \subset (S^3, \xi_{\std})`. [#tb_ineq]_ Let's start with the simpler statement about the connectedness of :math:`\Gamma_Y`. Suppose, on the contrary, that :math:`R_+(Y)` has more than one connected component, and let :math:`K \subset R_+(Y)` be a component. The plan is to consider the "closure" :math:`\overline{K}` of :math:`K` defined by the (topological) closure of all flow lines of :math:`Y_{\xi} \coloneqq \Sigma_{\xi}|_Y` emanating from :math:`K`, and argue that such :math:`\overline{K}` cannot exist.
+The proofs of the above two rigidity statements both rely on the simple fact that :math:`\op{tb}(\gamma) < 0` for any Legendrian :math:`\gamma \subset S^2 \subset (S^3, \xi_{\std})`. [#tb_ineq]_ Let's start with the simpler statement about the connectedness of :math:`\Gamma_Y`. Suppose, on the contrary, that :math:`R_+(Y)` has more than one connected component, and let :math:`K \subset R_+(Y)` be a component. By construction, :math:`\p K` is a surface transverse to the characteristic foliation :math:`Y_{\xi}`. The idea is to extend :math:`K` following :math:`Y_{\xi}` as much as possible, i.e., we'd like to consider the closure of all the trajectories of :math:`Y_{\xi}` flowing out of :math:`\p K`, denoted by :math:`\overline{K}`, and draw a contradiction. In practice, the trajectories are packed into (coLegendrian) handles, so we shall keep attaching (partial) handles to :math:`K` until we run into trouble.
+
+.. sidebar:: Borderline between transverse and tangent boundaries
+
+    .. image:: static/tb-nonnegative.svg
+        :align: center
+        :width: 200px
+
+Since :math:`K` is not the only component, there must be at least one :math:`H_1^-` which connects :math:`K` to another (positive) component. Then within :math:`\overline{K}`, only half of the :math:`H_1^-`, cut by the unstable disk, are attached to :math:`K`. Let :math:`K_1` be the resulting domain. Then :math:`\p K_1` can be decomposed into the transverse part :math:`\p_{\tau} K_1` and the tangent part :math:`\p_t K_1`, which is nothing but the unstable disk of :math:`H_1^-`. Now :math:`\p_{\tau} K_1` can be viewed as a surface in a contact :math:`3`-manifold with a Legendrian boundary :math:`\gamma` with :math:`\op{tb} (\gamma) = 1`. The characteristic foliation on :math:`\p_{\tau} K_1` near :math:`\gamma` is shown on the left-hand-side in the picture on the right, where :math:`\gamma` is drawn in blue. Now if no :math:`2`-handles pass through :math:`H_1^-`, then :math:`\gamma` must lie on the boundary of a :math:`3`-handle, i.e., a :math:`2`-sphere in :math:`(S^3, \xi_{\std})`, and this is impossible. On the other hand, if there are :math:`2`-handles passing through :math:`H_1^-`, then we land in the situation shown on the right-hand-side of the picture, where there is a :math:`\op{tb} = 0` Legendrian (depicted also in blue) which must lie on the boundary of a :math:`S^2 \subset (S^3, \xi_{std})` as before. This is not possible either and we run into a contradiction where the only way out is that the very first half-attached :math:`H_1^-` shouldn't exist in the first place. This is equivalent to the statement that :math:`\Gamma_Y` is connected.
 
 tbc...
 
