@@ -91,6 +91,7 @@ mathjax3_config = {
     'tex': {
         'macros': {
             'RR': '{\\mathbb R}',
+            'ZZ': '{\\mathbb Z}',
             'Lcal': '{\\mathcal L}',
             # \op(x) == \operatorname(x)
             'op': ['\\operatorname {#1}', 1],

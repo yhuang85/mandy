@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Legendrians and coLegendrians &#8212; Mandy&#39;s wonderland</title>
+    <title>How to build Liouville domains? &#8212; Mandy&#39;s wonderland</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.f8312eac34e2432659a6ef7e609c047e.css" rel="stylesheet">
@@ -36,8 +36,8 @@
     <script>window.MathJax = {"tex": {"macros": {"RR": "{\\mathbb R}", "ZZ": "{\\mathbb Z}", "Lcal": "{\\mathcal L}", "op": ["\\operatorname {#1}", 1], "p": "{\\partial}", "dist": "{\\operatorname{dist}}", "ind": "{\\operatorname{ind}}", "std": "{\\operatorname{std}}"}, "packages": {"[+]": ["mathtools"]}}, "loader": {"load": ["[tex]/mathtools"]}}</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Rigidity and flexibility of coLegendrians in dimension \(5\)" href="coLeg5d.html" />
-    <link rel="prev" title="How to do Morse theory in contact topology?" href="../contactMorse.html" />
+    <link rel="next" title="The first building block" href="first_model.html" />
+    <link rel="prev" title="Rigidity and flexibility of coLegendrians in dimension \(5\)" href="../coLegendrian/coLeg5d.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,18 +137,18 @@
    How to do Morse theory in contact topology?
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../coLegendrian/index.html">
    Legendrians and coLegendrians
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="coLeg5d.html">
+    <a class="reference internal" href="../coLegendrian/coLeg5d.html">
      Rigidity and flexibility of coLegendrians in dimension
      <span class="math notranslate nohighlight">
       \(5\)
@@ -157,18 +157,18 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../build_liouville/index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    How to build Liouville domains?
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../build_liouville/first_model.html">
+    <a class="reference internal" href="first_model.html">
      The first building block
     </a>
    </li>
@@ -198,7 +198,7 @@
                 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/CAST/coLegendrian/index.rst">
+    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/CAST/build_liouville/index.rst">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -217,21 +217,28 @@
               
               <div>
                 
-  <section id="legendrians-and-colegendrians">
-<h1>Legendrians and coLegendrians<a class="headerlink" href="#legendrians-and-colegendrians" title="Permalink to this headline">¶</a></h1>
-<p>Legendrians and coLegendrians are probably two of the most important classes of submanifolds in contact topology, and might also play a key role in the eventual understanding of contact structures in general.</p>
-<p>On the one hand, Legendrian submanifolds are extensively studied both in dimension <span class="math notranslate nohighlight">\(3\)</span> and higher, mostly through the technique of holomorphic curves. As explained in <a class="reference internal" href="#gro85" id="id1"><span>[Gro85]</span></a>, such technique distinguishes contact (and symplectic) topology from usual smooth topology, and therefore establishes them as independent subjects. However, it most likely won’t lead you to any actual understanding of the subject due to the abstract nature of the argument.</p>
-<p>CoLegendrians, on the other hand, are studied by nobody but myself. They are rather special submanifolds which are <span class="math notranslate nohighlight">\(1\)</span> dimension higher than the Legendrians and are foliated by Legendrians in a generally singular manner. In a sense, it’s a natural generalization of the idea of studying Legendrian knots via bounding surfaces in dimension <span class="math notranslate nohighlight">\(3\)</span>, which were extensively explored by pioneers of contact topology. But, as we’ll see, coLegendrians in higher dimensions behave drastically different from their <span class="math notranslate nohighlight">\(2\)</span>-dimensional siblings.</p>
-<p>The hope is to understand Legendrians via the interplay with coLegendrians, but of course, the chance of success is slim but better than nothing. We’ll focus on contact manifolds of dimensions at least <span class="math notranslate nohighlight">\(5\)</span> but sometimes we’ll also touch upon contact <span class="math notranslate nohighlight">\(3\)</span>-manifolds because the number is, after all, close to <span class="math notranslate nohighlight">\(5\)</span>.</p>
+  <section id="how-to-build-liouville-domains">
+<h1>How to build Liouville domains?<a class="headerlink" href="#how-to-build-liouville-domains" title="Permalink to this headline">¶</a></h1>
+<p>A <em>Liouville domain</em> <span class="math notranslate nohighlight">\((W, \omega)\)</span> is by definition a compact exact symplectic manifold with convex boundary. Namely, we demand the existence of a <em>Liouville form</em> <span class="math notranslate nohighlight">\(\lambda\)</span> such that <span class="math notranslate nohighlight">\(\omega = d\lambda\)</span> and a <em>Liouville vector field</em> <span class="math notranslate nohighlight">\(X\)</span> – defined by <span class="math notranslate nohighlight">\(\iota_X \omega = \lambda\)</span> – such that <span class="math notranslate nohighlight">\(X\)</span> is everywhere outward pointing along <span class="math notranslate nohighlight">\(\p W\)</span>. The question we will try to answer here is simply</p>
+<blockquote>
+<div><p>Which (compact with boundary) manifolds carry a Liouville structure?</p>
+</div></blockquote>
+<p>There are obvious and not-so-obvious conditions that <span class="math notranslate nohighlight">\(W\)</span> must satisfy to become a Liouville domain. An obvious and general condition is that <span class="math notranslate nohighlight">\(W\)</span> must carry an almost complex structure. On the other hand, there are not-so-obvious and rather ad hoc conditions such as that <span class="math notranslate nohighlight">\(W\)</span> must not be <span class="math notranslate nohighlight">\(S^3 \times [0,1]\)</span>, even though it does carry an almost complex structure. The later constraint comes from some rather complicated geometric analysis (e.g. pseudo-holomorphic curves or mathematical gauge theory) which works only in dimension <span class="math notranslate nohighlight">\(4\)</span>.</p>
+<p>There is one noteworthy special case when <span class="math notranslate nohighlight">\((W, \omega, \lambda, X)\)</span> carries one additional assumption that <span class="math notranslate nohighlight">\(X\)</span> is gradient-like for a Morse function <span class="math notranslate nohighlight">\(f: W \to \RR\)</span>. In this case <span class="math notranslate nohighlight">\(f\)</span> induces a handle decomposition of <span class="math notranslate nohighlight">\(W\)</span> where the handles come with standard symplectic structures. Such a symplectic structure on <span class="math notranslate nohighlight">\(W\)</span> is called a <em>Weinstein structure</em> and such <span class="math notranslate nohighlight">\(W\)</span> is called a  <em>Weinstein domain</em>. Now the good news is that the existence of Weinstein structures are completely characterized by the work of Eliashberg <a class="reference internal" href="#eli90" id="id1"><span>[Eli90]</span></a>:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(W\)</span> carries a Weinstein structure if and only if it is almost complex and has no topology above half of its dimension.</p>
+</div></blockquote>
+<p>The bad news, however, is also obvious from the above statement: The severe constraint on the topology of <span class="math notranslate nohighlight">\(W\)</span> is by no means necessary for the general existence of Liouville structures.</p>
+<p>It is the goal of this series to find out what is really needed to build Liouville domains.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="coLeg5d.html">Rigidity and flexibility of coLegendrians in dimension <span class="math notranslate nohighlight">\(5\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="first_model.html">The first building block</a></li>
 </ul>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="gro85"><span class="brackets"><a class="fn-backref" href="#id1">Gro85</a></span></dt>
-<dd><p>M. Gromov. <a class="reference external" href="https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/945.pdf">Pseudo holomorphic curves in symplectic manifolds</a></p>
+<dt class="label" id="eli90"><span class="brackets"><a class="fn-backref" href="#id1">Eli90</a></span></dt>
+<dd><p>Y. Eliashberg. Topological characterization of Stein manifolds of dimension &gt; 2</p>
 </dd>
 </dl>
 </section>
