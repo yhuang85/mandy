@@ -72,7 +72,7 @@ html_theme_options = {
         {
             "name": "GitHub",
             "url": "https://github.com/yhuang85/mandy",
-                    "icon": "fab fa-github-square",
+            "icon": "fab fa-github-square",
         }
     ],
     "navigation_depth": 4,

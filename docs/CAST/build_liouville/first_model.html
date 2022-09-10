@@ -188,9 +188,19 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-main-ideas">
+   The Main Ideas
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -225,7 +235,29 @@
 </div></blockquote>
 <p>The essential difference between a Liouville structure and a Weinstein structure is that the dynamics of the Liouville vector field <span class="math notranslate nohighlight">\(X\)</span> for the former can be much more complex than then later, which is necessarily a gradient vector field. In fact, all previously known Liouville domains that are not Weinstein came as “one piece”, namely, they came out of some global constructions where no understanding of the dynamics of <span class="math notranslate nohighlight">\(X\)</span> was necessary. These examples, especially their topological complexity, led to an impression that Liouville structures are genuinely global and cannot be built by simple local pieces. While this impression may well turn out to be true, we shall force the issue by constructing some local building blocks that have relatively simple topology (and dynamics). This effort grew out of the general believe that if a structure cannot be understood locally, it cannot be understood at all.</p>
 <p>To appreciate the necessary complexity of a Liouville vector field <span class="math notranslate nohighlight">\(X\)</span>, it must be pointed out that the most troublesome orbits are not the closed ones, for they can easily be “Morsified”, but rather those that are “trapped”: They neither close up nor leave the domain in any time. It is therefore easy to imagine that the most basic building blocks of a Liouville structure should look like a mapping torus. This idea was explored <a class="reference external" href="https://arxiv.org/abs/1910.14132">here</a>, but unfortunately, Liouville structures were constructed again as “one piece” and no indication was given as for how this idea may be used to construct a (Liouville) building block. The reason for this is that I didn’t know how to make to mapping torus simple: The section of the mapping torus was topologically complicated and so was the monodromy. It is the goal of this article to achieve what I couldn’t achieve before: the mapping torus should really just be a solid torus <span class="math notranslate nohighlight">\(S^1 \times D^{2n-1}\)</span>, topologically speaking. Of course, it’s crucial to also specify the “attaching region” on the boundary of the solid torus where <span class="math notranslate nohighlight">\(X\)</span> is inward-pointing. This attaching region should also be topologically simple and yet have sufficiently high-dimensional topology so it cannot possibly be Weinstein. Everything shall become obvious when the construction is carried out later, but as an example, when <span class="math notranslate nohighlight">\(n=2\)</span>, the attaching region will be a thickened torus.</p>
+<p>This article is (tentatively) organized as follows. We first outline the idea of the construction, then the details will be worked out in dimension <span class="math notranslate nohighlight">\(4\)</span>, and finally in all dimensions.</p>
+<section id="the-main-ideas">
+<h2>The Main Ideas<a class="headerlink" href="#the-main-ideas" title="Permalink to this headline">¶</a></h2>
+<p>Our little Liouville piece will look like a mapping torus, namely, it’s topologically a product <span class="math notranslate nohighlight">\(Y \times [0,1]\)</span> with the two ends <span class="math notranslate nohighlight">\(Y_i \coloneqq Y \times \{i\}, i=0, 1\)</span>, somehow glued together. It’s common in topology to identify the ends by a (possibly partially defined) map <span class="math notranslate nohighlight">\(Y_1 \to Y_0\)</span>, known as the <em>monodromy</em>. This is <em>not</em> suitable to our purposes, and we shall describe our mapping tori in a way where the monodromy is not explicit as follows.</p>
+<p>Mapping tori can in general have complicated topology, which we are not interested in. Hence we shall for the rest of the article assume the following two conditions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> is (topologically) a ball embedded in <span class="math notranslate nohighlight">\(\RR^{2n-1}\)</span>.</p></li>
+<li><p>The mapping torus is specified by an embedding <span class="math notranslate nohighlight">\(\phi: Y_1 \to \RR^{2n-1}\)</span>. Here the target <span class="math notranslate nohighlight">\(\RR^{2n-1}\)</span> contains <span class="math notranslate nohighlight">\(Y_0\)</span>. Note that the map <span class="math notranslate nohighlight">\(\phi\)</span> is not, but can be translated into, the monodromy. <a class="footnote-reference brackets" href="#dumb-tori" id="id1">1</a></p></li>
+</ul>
+<p>So far the discussions are completely topological. To bring the Liouville structure into the picture, we shall postulate another two conditions:</p>
+<ul class="simple">
+<li><p>The Liouville vector field <span class="math notranslate nohighlight">\(X\)</span> is parallel to <span class="math notranslate nohighlight">\(\p_s\)</span> where <span class="math notranslate nohighlight">\(s \in [0,1]\)</span>.</p></li>
+<li><p>The contact structure on <span class="math notranslate nohighlight">\(\RR^{2n-1}\)</span> is standard.</p></li>
+</ul>
+<p>Since the contact form grows in the direction of <span class="math notranslate nohighlight">\(X = \p_s\)</span>, it’s necessary that the contact form on <span class="math notranslate nohighlight">\(Y_1\)</span> is “greater than” that on <span class="math notranslate nohighlight">\(Y_0\)</span>, at least over the overlap. In other words, if <span class="math notranslate nohighlight">\(\alpha\)</span> is the (standard) contact form on <span class="math notranslate nohighlight">\(\RR^{2n-1}\)</span>, then <span class="math notranslate nohighlight">\(\phi^\ast (\alpha) = g \alpha\)</span> where <span class="math notranslate nohighlight">\(g \geq 1\)</span>.</p>
 <p>tbc</p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="dumb-tori"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>It’s, strictly speaking, possible that <span class="math notranslate nohighlight">\(\phi(Y_1)\)</span> completely misses <span class="math notranslate nohighlight">\(Y_0\)</span>, in which case one may not wish to call the result a mapping torus. But this is just a dumb case that we’ll never encounter.</p>
+</dd>
+</dl>
+</section>
 </section>
 
 
