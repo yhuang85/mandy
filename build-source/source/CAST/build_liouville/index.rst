@@ -7,7 +7,7 @@ A *Liouville domain* :math:`(W, \omega)` is by definition a compact exact symple
 
 There are obvious and not-so-obvious conditions that :math:`W` must satisfy to become a Liouville domain. An obvious and general condition is that :math:`W` must carry an almost complex structure. On the other hand, there are not-so-obvious and rather ad hoc conditions such as that :math:`W` must not be :math:`S^3 \times [0,1]`, even though it does carry an almost complex structure. The later constraint comes from some rather complicated geometric analysis (e.g. pseudo-holomorphic curves or mathematical gauge theory) which works only in dimension :math:`4`.
 
-There is one noteworthy special case when :math:`(W, \omega, \lambda, X)` carries one additional assumption that :math:`X` is gradient-like for a Morse function :math:`f: W \to \RR`. In this case :math:`f` induces a handle decomposition of :math:`W` where the handles come with standard symplectic structures. Such a symplectic structure on :math:`W` is called a *Weinstein structure* and such :math:`W` is called a  *Weinstein domain*. Now the good news is that the existence of Weinstein structures are completely characterized by the work of Eliashberg [Eli90]_:
+There is one noteworthy special case when :math:`(W, \omega, \lambda, X)` carries one additional assumption that :math:`X` is gradient-like for a Morse function :math:`f: W \to \RR`. In this case :math:`f` induces a handle decomposition of :math:`W` where the handles come with standard symplectic structures. Such a symplectic structure on :math:`W` is called a *Weinstein structure* and such :math:`W` is called a  *Weinstein domain*. Now the good news is that the existence of Weinstein structures are completely characterized by the work of `Eliashberg <https://www.worldscientific.com/doi/10.1142/S0129167X90000034>`_:
 
     :math:`W` carries a Weinstein structure if and only if it is almost complex and has no topology above half of its dimension.
 
@@ -20,7 +20,3 @@ It is the goal of this series to find out what is really needed to build Liouvil
     :maxdepth: 2
 
     first_model
-
-.. rubric:: References
-
-.. [Eli90] Y\. Eliashberg\. Topological characterization of Stein manifolds of dimension > 2

@@ -10,7 +10,7 @@ Everything we shall talk about in this article belong to the realm of :ref:`cont
 Morse-theoretic Setup
 ---------------------
 
-Given a contact :math:`5`-manifold :math:`(M, \xi)`, a *Legendrian* :math:`\Lambda \subset M` is a submanifold such that :math:`T_x\Lambda \subset \xi_x` is Lagrangian for all :math:`x \in \Lambda` with respect to the natural (linear) symplectic structure on :math:`\xi`. For now, let's assume :math:`\Lambda` is smooth, but as E. Murphy argued in [Mur12]_, it may become necessary, or at least beneficial, to consider also (mildly) singular submanifolds, in which case one has to, of course, make sense of :math:`T\Lambda` at singularities.
+Given a contact :math:`5`-manifold :math:`(M, \xi)`, a *Legendrian* :math:`\Lambda \subset M` is a submanifold such that :math:`T_x\Lambda \subset \xi_x` is Lagrangian for all :math:`x \in \Lambda` with respect to the natural (linear) symplectic structure on :math:`\xi`. For now, let's assume :math:`\Lambda` is smooth, but as argued by `E. Murphy <https://arxiv.org/abs/1201.2245>`__, it may become necessary, or at least beneficial, to consider also (mildly) singular submanifolds, in which case one has to, of course, make sense of :math:`T\Lambda` at singularities.
 
 Similarly, a :math:`3`-submanifold :math:`Y \subset M` is a *coLegendrian* if :math:`T_x Y \cap \xi_x \subset \xi_x` is coisotropic for all :math:`x \in Y`. More concretely, there are two scenarios here. Namely, when the intersection is transverse, :math:`T_x Y \cap \xi_x \subset \xi_x` is Lagrangian, otherwise :math:`T_x Y \subset \xi_x` is coisotropic. A geometrically intuitive, but possibly also useless, way to think about such :math:`Y` is that it naturally comes with a singular codimension-:math:`1` foliation whose leaves are Legendrians and the singularities are precisely where the transversality fails. As in the case of Legendrians, we'll also encounter coLegendrians which are not everywhere smooth.
 
@@ -31,9 +31,9 @@ Recall that a Morse hypersurface :math:`\Sigma` admits a decomposition :math:`\S
 Flexibility
 -----------
 
-From the perspective of the usual *h*-principle established by M. Gromov in [Gro86]_, one wouldn't expect to be able to approximate a smoothly embedded :math:`3`-submanifold :math:`Y \subset M` (say with trivial normal bundle) by coLegendrian, simply because :math:`\dim Y > \tfrac{1}{2} \dim M`. However, whether such an expectation is correct or not doesn't really matter because a general coLegendrian is as useless as a general (say, convex in the sense of E. Giroux) hypersurface due to intractability.
+From the perspective of the usual *h*-principle established by `M. Gromov <https://link.springer.com/book/10.1007/978-3-662-02267-2>`__, one wouldn't expect to be able to approximate a smoothly embedded :math:`3`-submanifold :math:`Y \subset M` (say with trivial normal bundle) by coLegendrian, simply because :math:`\dim Y > \tfrac{1}{2} \dim M`. However, whether such an expectation is correct or not doesn't really matter because a general coLegendrian is as useless as a general (say, convex in the sense of E. Giroux) hypersurface due to intractability.
 
-It's therefore quite a pleasing fact that by applying the folding techniques developed in [HH19]_, one can argue that any :math:`Y \subset M` with trivial normal bundle can be :math:`C^0`-approximated by a (homeomorphic) coLegendrian, which we still denote by :math:`Y`. However, the so constructed :math:`Y` is a topological approximation which is not necessarily smoothly embedded. Indeed, suppose :math:`\Sigma` is the (Morse) hypersurface containing :math:`Y`, then :math:`Y_{\xi} \coloneqq \Sigma_{\xi}|_Y` is tangent to :math:`Y` in the sense that any flow line of :math:`\Sigma_{\xi}` which intersects :math:`Y` is completely contained in :math:`Y`, and is itself a Morse vector field on :math:`Y`. One can verify that :math:`Y` indeed satisfies the coLegendrian condition where it's smooth.
+It's therefore quite a pleasing fact that by applying the folding techniques developed `here <https://arxiv.org/abs/1907.06025v2>`__, one can argue that any :math:`Y \subset M` with trivial normal bundle can be :math:`C^0`-approximated by a (homeomorphic) coLegendrian, which we still denote by :math:`Y`. However, the so constructed :math:`Y` is a topological approximation which is not necessarily smoothly embedded. Indeed, suppose :math:`\Sigma` is the (Morse) hypersurface containing :math:`Y`, then :math:`Y_{\xi} \coloneqq \Sigma_{\xi}|_Y` is tangent to :math:`Y` in the sense that any flow line of :math:`\Sigma_{\xi}` which intersects :math:`Y` is completely contained in :math:`Y`, and is itself a Morse vector field on :math:`Y`. One can verify that :math:`Y` indeed satisfies the coLegendrian condition where it's smooth.
 
 .. _coLeg_cone:
 
@@ -43,7 +43,7 @@ It's therefore quite a pleasing fact that by applying the folding techniques dev
         :align: center
         :width: 200px
 
-Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singularities of :math:`Y` are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption :math:`\dim M = 5` is that by further wiggling :math:`\Sigma`, one can approximate :math:`Y` by a coLegendrian with only isolated cone singularities withinh index :math:`0` and :math:`3` (when viewed inside :math:`Y`) critical points. More precisely, those are cones over (smooth and Morse) :math:`2`-spheres in :math:`(S^3, \xi_{\std}) = \p (B^4, \omega_{std})`. A schematic picture of such a cone is drawn on the right-hand-side, where :math:`O \in B^4` is the origin, and the shaded cone represents (part of) :math:`Y`. The procedure of simplifying singularities on :math:`Y` is explained in [Hua20]_.
+Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singularities of :math:`Y` are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption :math:`\dim M = 5` is that by further wiggling :math:`\Sigma`, one can approximate :math:`Y` by a coLegendrian with only isolated cone singularities withinh index :math:`0` and :math:`3` (when viewed inside :math:`Y`) critical points. More precisely, those are cones over (smooth and Morse) :math:`2`-spheres in :math:`(S^3, \xi_{\std}) = \p (B^4, \omega_{std})`. A schematic picture of such a cone is drawn on the right-hand-side, where :math:`O \in B^4` is the origin, and the shaded cone represents (part of) :math:`Y`. The procedure of simplifying singularities on :math:`Y` is explained `here <https://arxiv.org/abs/2006.11844>`__.
 
 .. admonition:: TODO
     :class: warning
@@ -59,7 +59,7 @@ Now that the flexibility discussed above guarantees the existence of coLegendria
 
 .. note::
 
-    In addition to showing that any :math:`Y \subset \Sigma` can be approximated by a coLegendrian, it's further showed in [Hua20]_ that such an approximation can either be made repelling in the normal direction, i.e., :math:`\ind_Y (x) = \ind_{\Sigma} (x)` for all critical points :math:`x \in Y`, or be made attracting in the normal direction, i.e., :math:`\ind_Y (x) + 1 = \ind_{\Sigma} (x)` for all critical points :math:`x \in Y`. These additional arrangements may be convenient sometimes, but we decide not to bake them into the initial :ref:`assumptions <morse_assumption>` of coLegendrians to allow more flexibility.
+    In addition to showing that any :math:`Y \subset \Sigma` can be approximated by a coLegendrian, it's further showed `here <https://arxiv.org/abs/2006.11844>`__ that such an approximation can either be made repelling in the normal direction, i.e., :math:`\ind_Y (x) = \ind_{\Sigma} (x)` for all critical points :math:`x \in Y`, or be made attracting in the normal direction, i.e., :math:`\ind_Y (x) + 1 = \ind_{\Sigma} (x)` for all critical points :math:`x \in Y`. These additional arrangements may be convenient sometimes, but we decide not to bake them into the initial :ref:`assumptions <morse_assumption>` of coLegendrians to allow more flexibility.
 
 Since coLegendrians are the main objects of interest in the article, we'll implicitly assume unspecified indices are :math:`Y`-indices and specify :math:`\Lambda` and :math:`\Sigma`-indices as needed in what follows.
 
@@ -113,14 +113,3 @@ tbc...
 .. rubric:: Footnotes
 
 .. [#tb_ineq] This inequality was first discovered by D. Bennequin to argue that there exists more than one contact structures on :math:`\RR^3`. One can prove it using (parametrized) :ref:`contact Morse theory <contact_morse_theory_rst>` by showing that the only possible Morse configuration on :math:`S^2 \subset (\RR^3, \xi_{\std})` is the standard one, modulo Weinstein homotopy.
-
-
-.. rubric:: References
-
-.. [Gro86] M\. Gromov\. `Partial differential relations <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/248.pdf>`_
-
-.. [HH19] K\. Honda and Y\. Huang\. `Convex hypersurface theory in contact topology <https://arxiv.org/abs/1907.06025v2>`_
-
-.. [Hua20] Y\. Huang\. `Existence of coLegendrians in contact 5-manifolds <https://arxiv.org/abs/2006.11844v1>`_
-
-.. [Mur12] E\. Murphy\. `Loose Legendrian embeddings in high dimensional contact manifolds <https://arxiv.org/abs/1201.2245v5>`_
