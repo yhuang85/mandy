@@ -1,2 +1,16 @@
 The first building block
 ========================
+
+    *I consider that I understand an equation when I can predict the properties of its solutions, without actually solving it.*
+
+    Paul Dirac
+
+The essential difference between a Liouville structure and a Weinstein structure is that the dynamics of the Liouville vector field :math:`X` for the former can be much more complex than then later, which is necessarily a gradient vector field. In fact, all previously known Liouville domains that are not Weinstein came as "one piece", namely, they came out of some global constructions where no understanding of the dynamics of :math:`X` was necessary. These examples, especially their topological complexity, led to an impression that Liouville structures are genuinely global and cannot be built by simple local pieces. While this impression may well turn out to be true, we shall force the issue by constructing some local building blocks that have relatively simple topology (and dynamics). This effort grew out of the general believe that if a structure cannot be understood locally, it cannot be understood at all.
+
+To appreciate the necessary complexity of a Liouville vector field :math:`X`, it must be pointed out that the most troublesome orbits are not the closed ones, for they can easily be "Morsified", but rather those that are "trapped": They neither close up nor leave the domain in any time. It is therefore easy to imagine that the most basic building blocks of a Liouville structure should look like a mapping torus. This idea was explored in [Hua20]_ but unfortunately, Liouville structures were constructed again as "one piece" and no indication was given as for how this idea may be used to construct a (Liouville) building block. The reason for this is that I didn't know how to make to mapping torus simple: The section of the mapping torus was topologically complicated and so was the monodromy. It is the goal of this article to achieve what I couldn't achieve before: the mapping torus should really just be a solid torus :math:`S^1 \times D^{2n-1}`, topologically speaking. Of course, it's crucial to also specify the "attaching region" on the boundary of the solid torus where :math:`X` is inward-pointing. This attaching region should also be topologically simple and yet have sufficiently high-dimensional topology so it cannot possibly be Weinstein. Everything shall become obvious when the construction is carried out later, but as an example, when :math:`n=2`, the attaching region will be a thickened torus.
+
+tbc
+
+.. rubric:: References
+
+.. [Hua20] Y\. Huang\. `A dynamical construction of Liouville domains <https://arxiv.org/abs/1910.14132>`_
