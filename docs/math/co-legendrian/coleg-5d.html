@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Rigidity and flexibility of coLegendrians in dimension \(5\) &#8212; Mandy&#39;s wonderland</title>
+    <title>CoLegendrians in dimension five &#8212; Mandy&#39;s wonderland</title>
   
   
   
@@ -43,8 +43,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'math/co-legendrian/coleg-5d';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Physics" href="../../physics/index.html" />
-    <link rel="prev" title="Legendrians and coLegendrians" href="index.html" />
+    <link rel="next" title="4. Bypass attachment revisited" href="../bypass.html" />
+    <link rel="prev" title="3. Legendrians and coLegendrians" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -204,7 +204,7 @@
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
   
   <div class="sidebar-header-items sidebar-primary__section">
@@ -279,27 +279,6 @@
   </div>
 
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
-    <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact and Symplectic Topology</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../contact-structure-3d.html">What’s a contact structure in 3D?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contact-morse-theory.html">How to do Morse theory in contact topology?</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Legendrians and coLegendrians</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Rigidity and flexibility of coLegendrians in dimension <span class="math notranslate nohighlight">\(5\)</span></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</nav>
-    </div>
-  </div>
-  
 
   
   <div class="sidebar-end-items sidebar-primary__section">
@@ -324,8 +303,12 @@
             
             <article class="bd-article" role="main">
               
-  <section id="rigidity-and-flexibility-of-colegendrians-in-dimension-5">
-<span id="coleg-5d-rst"></span><h1>Rigidity and flexibility of coLegendrians in dimension <span class="math notranslate nohighlight">\(5\)</span><a class="headerlink" href="#rigidity-and-flexibility-of-colegendrians-in-dimension-5" title="Permalink to this heading">#</a></h1>
+  <section id="colegendrians-in-dimension-five">
+<span id="coleg-5d-rst"></span><h1>CoLegendrians in dimension five<a class="headerlink" href="#colegendrians-in-dimension-five" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Work in progress</p>
+</div>
 <p>The primary goal of this article is to explore the basic properties of coLegendrians in contact <span class="math notranslate nohighlight">\(5\)</span>-manifolds, including how they look like, how to find them and how to manipulate them. Ideally, we’d also like to see how they interact with Legendrians, e.g., how they may play a role in the classification of Legendrians. We’ll surely touch upon this point, but at this moment, I don’t exactly know how far it goes.</p>
 <p>Everything we shall talk about in this article belong to the realm of <a class="reference internal" href="../contact-morse-theory.html#contact-morse-theory-rst"><span class="std std-ref">contact Morse theory</span></a>. So let’s start by introducing the major roles and the context. Since contact Morse theory is the one stage on which all stories will be told and we’ll not be talking about the usual (i.e., topological) Morse theory, we often drop “contact” from the theory to be less wordy.</p>
 <section id="morse-theoretic-setup">
@@ -349,7 +332,9 @@
 <p>It’s therefore quite a pleasing fact that by applying the folding techniques developed in <a class="reference internal" href="../../bib.html#hh19" id="id3"><span>[HH19]</span></a>, one can argue that any <span class="math notranslate nohighlight">\(Y \subset M\)</span> with trivial normal bundle can be <span class="math notranslate nohighlight">\(C^0\)</span>-approximated by a (homeomorphic) coLegendrian, which we still denote by <span class="math notranslate nohighlight">\(Y\)</span>. However, the so constructed <span class="math notranslate nohighlight">\(Y\)</span> is a topological approximation which is not necessarily smoothly embedded. Indeed, suppose <span class="math notranslate nohighlight">\(\Sigma\)</span> is the (Morse) hypersurface containing <span class="math notranslate nohighlight">\(Y\)</span>, then <span class="math notranslate nohighlight">\(Y_{\xi} \coloneqq \Sigma_{\xi}|_Y\)</span> is tangent to <span class="math notranslate nohighlight">\(Y\)</span> in the sense that any flow line of <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> which intersects <span class="math notranslate nohighlight">\(Y\)</span> is completely contained in <span class="math notranslate nohighlight">\(Y\)</span>, and is itself a Morse vector field on <span class="math notranslate nohighlight">\(Y\)</span>. One can verify that <span class="math notranslate nohighlight">\(Y\)</span> indeed satisfies the coLegendrian condition wherever it’s smooth.</p>
 <aside class="sidebar" id="coleg-cone">
 <p class="sidebar-title">An coLegendrian cone</p>
-<a class="reference internal image-reference" href="../../_images/cone.svg"><img alt="../../_images/cone.svg" class="align-center" src="../../_images/cone.svg" width="200px" /></a>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/cone.svg"><img alt="../../_images/cone.svg" src="../../_images/cone.svg" width="150px" /></a>
+</figure>
 </aside>
 <p>Since <span class="math notranslate nohighlight">\(Y \subset \Sigma\)</span> is tangent to <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span>, the singularities of <span class="math notranslate nohighlight">\(Y\)</span> are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption <span class="math notranslate nohighlight">\(\dim M = 5\)</span> is that by further wiggling <span class="math notranslate nohighlight">\(\Sigma\)</span>, one can approximate <span class="math notranslate nohighlight">\(Y\)</span> by a coLegendrian with only isolated cone singularities of index <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(3\)</span> (when viewed inside <span class="math notranslate nohighlight">\(Y\)</span>) critical points. More precisely, those are cones over (smooth and Morse) <span class="math notranslate nohighlight">\(2\)</span>-spheres in <span class="math notranslate nohighlight">\((S^3, \xi_{\std}) = \p (B^4, \omega_{std})\)</span>. A schematic picture of such a cone is drawn on the right-hand-side, where <span class="math notranslate nohighlight">\(O \in B^4\)</span> is the origin, and the shaded cone represents (part of) <span class="math notranslate nohighlight">\(Y\)</span>. The procedure of simplifying singularities on <span class="math notranslate nohighlight">\(Y\)</span> is explained in <a class="reference internal" href="../../bib.html#hua20" id="id4"><span>[Hua20]</span></a>.</p>
 <div class="warning admonition">
@@ -369,7 +354,8 @@
 <p>Since <span class="math notranslate nohighlight">\(\dim Y = 3\)</span>, it’s built out of <span class="math notranslate nohighlight">\(0,1,2\)</span>, and <span class="math notranslate nohighlight">\(3\)</span>-handle. Assume <span class="math notranslate nohighlight">\(\partial Y = \varnothing\)</span> for the time being. The <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(3\)</span>-handles are <a class="reference internal" href="#coleg-cone"><span class="std std-ref">cones</span></a> over (Morse) <span class="math notranslate nohighlight">\(2\)</span>-spheres in <span class="math notranslate nohighlight">\((S^3, \xi_{std})\)</span>. It remains to describe the <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span>-handles, in both signs. Let’s describe the positive <span class="math notranslate nohighlight">\(1\)</span>-handle <span class="math notranslate nohighlight">\(H_1^+\)</span> and <span class="math notranslate nohighlight">\(2\)</span>-handle <span class="math notranslate nohighlight">\(H_2^+\)</span>, and note that the negative <span class="math notranslate nohighlight">\(H_1^-\)</span> and <span class="math notranslate nohighlight">\(H_2^-\)</span> are dual to <span class="math notranslate nohighlight">\(H_2^+\)</span> and <span class="math notranslate nohighlight">\(H_1^+\)</span> (by reversing the Morse vector fields), respectively.</p>
 <aside class="sidebar">
 <p class="sidebar-title">coLegendrian handles <span class="math notranslate nohighlight">\(H_1^+\)</span> and <span class="math notranslate nohighlight">\(H_2^+\)</span></p>
-<a class="reference internal image-reference" href="../../_images/one-and-two-handles-5d.svg"><img alt="../../_images/one-and-two-handles-5d.svg" class="align-center" src="../../_images/one-and-two-handles-5d.svg" width="200px" /></a>
+<figure class="align-center">
+<img alt="../../_images/one-and-two-handles-5d.svg" src="../../_images/one-and-two-handles-5d.svg" /></figure>
 </aside>
 <p>Recall that <span class="math notranslate nohighlight">\(H_1^+\)</span> and <span class="math notranslate nohighlight">\(H_2^+\)</span> are slices of Weinstein <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span>-handles, respectively. While <span class="math notranslate nohighlight">\(H_2^+\)</span> is essentially unambiguous, there are choices one can make when defining <span class="math notranslate nohighlight">\(H_1^+\)</span> as a <span class="math notranslate nohighlight">\(3\)</span>-d slice of a Weinstein <span class="math notranslate nohighlight">\(1\)</span>-handle. It turns out that one only needs the ones depicted on the right to build any coLegendrian. In the picture, the coLegendrian handles are drawn as solid cylinders, and the attaching regions, i.e., where the Morse vector fields point inward, are colored in green. The characteristic foliations on <span class="math notranslate nohighlight">\(\p_{\pm} H\)</span> are also drawn, where <span class="math notranslate nohighlight">\(\p_- H\)</span> are the attaching regions. In particular <span class="math notranslate nohighlight">\(H_1^+\)</span> is attached along a pair of disks surrounding a source and a sink, respectively, and <span class="math notranslate nohighlight">\(H_2^+\)</span> is a attached along an annulus surrounding a pair of positive and negative saddles <span class="math notranslate nohighlight">\(h_{\pm}\)</span> together with the two separatrices flowing from <span class="math notranslate nohighlight">\(h_-\)</span> to <span class="math notranslate nohighlight">\(h_+\)</span>.</p>
 <p>By reversing the Morse vector fields, <span class="math notranslate nohighlight">\(H_1^-\)</span> (dual to <span class="math notranslate nohighlight">\(H_2^+\)</span>) is attached along a pair of disks with linear foliation, and <span class="math notranslate nohighlight">\(H_2^-\)</span> (dual to <span class="math notranslate nohighlight">\(H_1^+\)</span>) is attached along an annular neighborhood of a transverse loop.</p>
@@ -397,7 +383,8 @@
 <p>The proofs of the above two rigidity statements both rely on the simple fact that <span class="math notranslate nohighlight">\(\op{tb}(\gamma) &lt; 0\)</span> for any Legendrian <span class="math notranslate nohighlight">\(\gamma \subset S^2 \subset (S^3, \xi_{\std})\)</span>. <a class="footnote-reference brackets" href="#tb-ineq" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Let’s start with the simpler statement about the connectedness of <span class="math notranslate nohighlight">\(\Gamma_Y\)</span>. Suppose, on the contrary, that <span class="math notranslate nohighlight">\(R_+(Y)\)</span> has more than one connected component, and let <span class="math notranslate nohighlight">\(K \subset R_+(Y)\)</span> be a component. By construction, <span class="math notranslate nohighlight">\(\p K\)</span> is a surface transverse to the characteristic foliation <span class="math notranslate nohighlight">\(Y_{\xi}\)</span>. The idea is to extend <span class="math notranslate nohighlight">\(K\)</span> following <span class="math notranslate nohighlight">\(Y_{\xi}\)</span> as much as possible, i.e., we’d like to consider the closure of all the trajectories of <span class="math notranslate nohighlight">\(Y_{\xi}\)</span> flowing out of <span class="math notranslate nohighlight">\(\p K\)</span>, denoted by <span class="math notranslate nohighlight">\(\overline{K}\)</span>, and draw a contradiction. In practice, the trajectories are packed into (coLegendrian) handles, so we shall keep attaching (partial) handles to <span class="math notranslate nohighlight">\(K\)</span> until we run into trouble.</p>
 <aside class="sidebar">
 <p class="sidebar-title">Borderline between transverse and tangent boundaries</p>
-<a class="reference internal image-reference" href="../../_images/tb-nonnegative.svg"><img alt="../../_images/tb-nonnegative.svg" class="align-center" src="../../_images/tb-nonnegative.svg" width="200px" /></a>
+<figure class="align-center">
+<img alt="../../_images/tb-nonnegative.svg" src="../../_images/tb-nonnegative.svg" /></figure>
 </aside>
 <p>Since <span class="math notranslate nohighlight">\(K\)</span> is not the only component, there must be at least one <span class="math notranslate nohighlight">\(H_1^-\)</span> which connects <span class="math notranslate nohighlight">\(K\)</span> to another (positive) component. Then within <span class="math notranslate nohighlight">\(\overline{K}\)</span>, only half of the <span class="math notranslate nohighlight">\(H_1^-\)</span>, cut by the unstable disk, are attached to <span class="math notranslate nohighlight">\(K\)</span>. Let <span class="math notranslate nohighlight">\(K_1\)</span> be the resulting domain. Then <span class="math notranslate nohighlight">\(\p K_1\)</span> can be decomposed into the transverse part <span class="math notranslate nohighlight">\(\p_{\tau} K_1\)</span> and the tangent part <span class="math notranslate nohighlight">\(\p_t K_1\)</span>, which is nothing but the unstable disk of <span class="math notranslate nohighlight">\(H_1^-\)</span>. Now <span class="math notranslate nohighlight">\(\p_{\tau} K_1\)</span> can be viewed as a surface in a contact <span class="math notranslate nohighlight">\(3\)</span>-manifold with a Legendrian boundary <span class="math notranslate nohighlight">\(\gamma\)</span> with <span class="math notranslate nohighlight">\(\op{tb} (\gamma) = 1\)</span>. The characteristic foliation on <span class="math notranslate nohighlight">\(\p_{\tau} K_1\)</span> near <span class="math notranslate nohighlight">\(\gamma\)</span> is shown on the left-hand-side in the picture on the right, where <span class="math notranslate nohighlight">\(\gamma\)</span> is drawn in blue. Now if no <span class="math notranslate nohighlight">\(2\)</span>-handles pass through <span class="math notranslate nohighlight">\(H_1^-\)</span>, then <span class="math notranslate nohighlight">\(\gamma\)</span> must lie on the boundary of a <span class="math notranslate nohighlight">\(3\)</span>-handle, i.e., a <span class="math notranslate nohighlight">\(2\)</span>-sphere in <span class="math notranslate nohighlight">\((S^3, \xi_{\std})\)</span>, and this is impossible. On the other hand, if there are <span class="math notranslate nohighlight">\(2\)</span>-handles passing through <span class="math notranslate nohighlight">\(H_1^-\)</span>, the characteristic foliation on <span class="math notranslate nohighlight">\(\p_{\tau} K_1\)</span> near <span class="math notranslate nohighlight">\(\gamma\)</span> may become more complicated. But in any case, a piece of <span class="math notranslate nohighlight">\(\gamma\)</span> will be completed to a Legendrian with <span class="math notranslate nohighlight">\(\op{tb} \geq 0\)</span> after all the (partial) <span class="math notranslate nohighlight">\(2\)</span>-handle attachments. An example is shown on the right-hand-side of the picture, where a <span class="math notranslate nohighlight">\(\op{tb} = 0\)</span> Legendrian (depicted also in blue) must lie on the boundary of a <span class="math notranslate nohighlight">\(S^2 \subset (S^3, \xi_{std})\)</span> as before. This is also impossible and we run into a contradiction where the only way out is that the very first half-attached <span class="math notranslate nohighlight">\(H_1^-\)</span> shouldn’t exist in the first place. This is equivalent to the statement that <span class="math notranslate nohighlight">\(\Gamma_Y\)</span> is connected.</p>
 <p>tbc…</p>

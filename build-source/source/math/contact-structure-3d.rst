@@ -1,5 +1,5 @@
-What's a contact structure in 3D?
-=================================
+Contact structures in 3D seen from inside
+=========================================
 
 We try to explain what a contact structure is in a :math:`3`-dimensional space from an intrinsic viewpoint, i.e., we pretend to live inside the contact 3-space without any knowledge of what an outside universe means. This article is heavily influenced by M. Gromov's paper [Gro92]_.
 

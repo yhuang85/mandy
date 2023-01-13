@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>How to do Morse theory in contact topology? &#8212; Mandy&#39;s wonderland</title>
+    <title>2. Morse theory in contact topology &#8212; Mandy&#39;s wonderland</title>
   
   
   
@@ -43,8 +43,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'math/contact-morse-theory';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Legendrians and coLegendrians" href="co-legendrian/index.html" />
-    <link rel="prev" title="What’s a contact structure in 3D?" href="contact-structure-3d.html" />
+    <link rel="next" title="3. Legendrians and coLegendrians" href="co-legendrian/index.html" />
+    <link rel="prev" title="1. Contact structures in 3D seen from inside" href="contact-structure-3d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -204,7 +204,7 @@
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
   
   <div class="sidebar-header-items sidebar-primary__section">
@@ -279,27 +279,6 @@
   </div>
 
   
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">
-    Section Navigation
-  </p>
-  <div class="bd-toc-item navbar-nav">
-    <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact and Symplectic Topology</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="contact-structure-3d.html">What’s a contact structure in 3D?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to do Morse theory in contact topology?</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="co-legendrian/index.html">Legendrians and coLegendrians</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="co-legendrian/coleg-5d.html">Rigidity and flexibility of coLegendrians in dimension <span class="math notranslate nohighlight">\(5\)</span></a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</nav>
-    </div>
-  </div>
-  
 
   
   <div class="sidebar-end-items sidebar-primary__section">
@@ -324,8 +303,8 @@
             
             <article class="bd-article" role="main">
               
-  <section id="how-to-do-morse-theory-in-contact-topology">
-<span id="contact-morse-theory-rst"></span><h1>How to do Morse theory in contact topology?<a class="headerlink" href="#how-to-do-morse-theory-in-contact-topology" title="Permalink to this heading">#</a></h1>
+  <section id="morse-theory-in-contact-topology">
+<span id="contact-morse-theory-rst"></span><h1><span class="section-number">2. </span>Morse theory in contact topology<a class="headerlink" href="#morse-theory-in-contact-topology" title="Permalink to this heading">#</a></h1>
 <p>In this article, we explain how to cut any contact manifold into simple pieces as well as how to manipulate them from a Morse-theoretic viewpoint. The math of this article is based on many years of collaboration with K. Honda, but the interpretations are mostly mine. Moreover, the focus will be on ideas rather than technical details: one can hardly find any proofs here.</p>
 <section id="morse-theory-in-topology">
 <h2>Morse Theory in Topology<a class="headerlink" href="#morse-theory-in-topology" title="Permalink to this heading">#</a></h2>
@@ -524,9 +503,8 @@
 <p>The Morse picture of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches is conceptually clear but can be difficult to use in practice. So let’s introduce a slightly different approach, called the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture, which focuses less on the (Morse) gradient vector field and more on the critical points, making it easier to manipulate, especially when combined with front projections. In a nutshell, the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture describes the changes in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma_t)\)</span>, as well as how they are glued together along <span class="math notranslate nohighlight">\(\Gamma(\Sigma_t)\)</span>, as <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}\)</span> goes through a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch.</p>
 <aside class="sidebar" id="figure-r-pm-picture-of-pi-1-switch">
 <p class="sidebar-title"><span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../_images/pi1-handles.svg"><img alt="../_images/pi1-handles.svg" src="../_images/pi1-handles.svg" width="400px" /></a>
-</figure>
+<figure class="align-center">
+<img alt="../_images/pi1-handles.svg" src="../_images/pi1-handles.svg" /></figure>
 </aside>
 <p>The picture on the right-hand-side illustrates a completely general <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the <a class="reference internal" href="#a-family-morse-theory-on-hypersurfaces"><span class="std std-ref">family Morse theory</span></a>, here we need to keep track of several level sets (in <span class="math notranslate nohighlight">\(\Sigma\)</span>) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered. Note that the gradient vector field (i.e., the characteristic foliation) always flows upwards (indicating that I’m not a physicist).</p>
 <p>The upper-left corner represents a part of <span class="math notranslate nohighlight">\(\Sigma\)</span> relevant to the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch. Namely, there are two index-<span class="math notranslate nohighlight">\(n\)</span> critical points <span class="math notranslate nohighlight">\(p_n^+\)</span> and <span class="math notranslate nohighlight">\(p_n^-\)</span>, and the corresponding Legendrian spheres <span class="math notranslate nohighlight">\(\Lambda_+^u, \Lambda_-^s \subset \Gamma\)</span>. Here the superscripts <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(s\)</span> denote unstable and stable, respectively. Moreover, there is a small ball in <span class="math notranslate nohighlight">\(\Gamma\)</span> which intersects both <span class="math notranslate nohighlight">\(\Lambda_+^u\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-^s\)</span> in a disk such that the <span class="math notranslate nohighlight">\(\Lambda_+^u\)</span>-disk is slightly below the <span class="math notranslate nohighlight">\(\Lambda_-^s\)</span>-disk, where “below” is measured against the positive co-orientation of <span class="math notranslate nohighlight">\(\xi|_{\Gamma}\)</span>. This small ball is magnified in the picture, and the “below”-ness is shown as an under-crossing when the <span class="math notranslate nohighlight">\(\Lambda\)</span>’s appear to be <span class="math notranslate nohighlight">\(1\)</span>-dimensional.</p>
@@ -554,7 +532,8 @@
 </div>
 <aside class="sidebar">
 <p class="sidebar-title">Morse picture of a <span class="math notranslate nohighlight">\(\pi_2^a\)</span>-switch</p>
-<a class="reference internal image-reference" href="../_images/pi2a-morse.svg"><img alt="../_images/pi2a-morse.svg" src="../_images/pi2a-morse.svg" width="400px" /></a>
+<figure class="align-center">
+<img alt="../_images/pi2a-morse.svg" src="../_images/pi2a-morse.svg" /></figure>
 </aside>
 <section id="trivial-pi-1-switches">
 <h4>Trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#trivial-pi-1-switches" title="Permalink to this heading">#</a></h4>
@@ -569,9 +548,8 @@
 </div></blockquote>
 <aside class="sidebar">
 <p class="sidebar-title"><span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of a trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../_images/trivial-p1-handles.svg"><img alt="../_images/trivial-p1-handles.svg" src="../_images/trivial-p1-handles.svg" width="400px" /></a>
-</figure>
+<figure class="align-center">
+<img alt="../_images/trivial-p1-handles.svg" src="../_images/trivial-p1-handles.svg" /></figure>
 </aside>
 <p>Let’s turn the Morse picture of the trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch into the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture as shown on the right. Specifically, the top figure illustrates the relative position between <span class="math notranslate nohighlight">\(\Lambda_+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-\)</span>, which is the standard Legendrian unknot, corresponding to critical points <span class="math notranslate nohighlight">\(p_n^{\pm}\)</span>, respectively, in <span class="math notranslate nohighlight">\(\Gamma\)</span>. In contrast to the <a class="reference internal" href="#section-r-pm-picture-of-pi-1-switches"><span class="std std-ref">general picture</span></a>, we drop the superscripts <span class="math notranslate nohighlight">\(u, s\)</span> from the <span class="math notranslate nohighlight">\(\Lambda\)</span>’s here because it’s obvious from the context. Moreover, it’s arranged so that <span class="math notranslate nohighlight">\(\Lambda_+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-\)</span> intersect <span class="math notranslate nohighlight">\(\xi|_{\Gamma}\)</span>-transversely at a point, instead of <span class="math notranslate nohighlight">\(\Lambda_+\)</span> being slightly below <span class="math notranslate nohighlight">\(\Lambda_-\)</span>. This serves the sole purpose of attracting our attention to around the intersection point, and one can always go back to the other picture by pushing <span class="math notranslate nohighlight">\(\Lambda_+\)</span> down (or <span class="math notranslate nohighlight">\(\Lambda_-\)</span> up) slightly.</p>
 <p>The two figures at the bottom represent the new <span class="math notranslate nohighlight">\(\Gamma'\)</span> after the trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch from the perspectives of <span class="math notranslate nohighlight">\(R'_+\)</span> and <span class="math notranslate nohighlight">\(R'_-\)</span>, respectively. As a sanity check, one can easily see that <span class="math notranslate nohighlight">\(\Gamma'\)</span> is indeed isomorphic to the original <span class="math notranslate nohighlight">\(\Gamma\)</span>. Here the <span class="math notranslate nohighlight">\((\pm 1)\)</span> beside the Legendrians are coefficients of Legendrian surgeries, and correspond to removing and adding a (index-<span class="math notranslate nohighlight">\(n\)</span>) critical point, respectively.</p>
@@ -581,7 +559,8 @@
 <h4>Simple <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches derived from the trivial ones<a class="headerlink" href="#simple-pi-1-switches-derived-from-the-trivial-ones" title="Permalink to this heading">#</a></h4>
 <aside class="sidebar">
 <p class="sidebar-title">Morse picture of a <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-switch</p>
-<a class="reference internal image-reference" href="../_images/pi2b-morse.svg"><img alt="../_images/pi2b-morse.svg" src="../_images/pi2b-morse.svg" width="400px" /></a>
+<figure class="align-center">
+<img alt="../_images/pi2b-morse.svg" src="../_images/pi2b-morse.svg" /></figure>
 </aside>
 <p>The picture on the right illustrates a general <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-switch, where each two adjacent ovals represent two disjoint regions on <span class="math notranslate nohighlight">\(\Sigma\)</span>. The square in the middle is, as before, the parameter space <span class="math notranslate nohighlight">\(I^2_{s, t}\)</span> and the red dot represents the critical moment when there exist simultaneously two flow lines from index-<span class="math notranslate nohighlight">\(n\)</span> critical points <span class="math notranslate nohighlight">\(p_n^-, q_n^-\)</span> to <span class="math notranslate nohighlight">\(p_n^+, q_n^+\)</span>, respectively. The passage from the left side <span class="math notranslate nohighlight">\(\Sigma^0_t|_{\xi}\)</span>, to the right side <span class="math notranslate nohighlight">\(\Sigma^1_t|_{\xi}, t \in I\)</span>, changes the order of which two <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches occur. It is therefore also known as the <em>far commutativity</em> of two <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches, which are in a sense disjoint from each other.</p>
 <p>Although it’s possible to generate nontrivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from the trivial one in contact <span class="math notranslate nohighlight">\(3\)</span>-manifolds, they are quite different from the higher dimensional cases. So let’s assume <span class="math notranslate nohighlight">\(\dim \Sigma \geq 4\)</span>, i.e., <span class="math notranslate nohighlight">\(\dim M \geq 5\)</span>, from now on.</p>
@@ -592,7 +571,8 @@
 <p>The plan for generating new <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from the trivial one is straightforward. Namely, we’ll construct two disjoint <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches <span class="math notranslate nohighlight">\(\Delta_1, \Delta_2\)</span> such that <span class="math notranslate nohighlight">\(\Delta_1\)</span> is trivial and <span class="math notranslate nohighlight">\(\Delta_2\)</span> becomes trivial after <span class="math notranslate nohighlight">\(\Delta_1\)</span>. However, after swapping the order, neither <span class="math notranslate nohighlight">\(\Delta_2\)</span> nor <span class="math notranslate nohighlight">\(\Delta_1\)</span> is trivial anymore.</p>
 <aside class="sidebar" id="figure-simple-pi-1-switch-from-pi-2b-switch">
 <p class="sidebar-title">Simple <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch from <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-switch</p>
-<a class="reference internal image-reference" href="../_images/trivial-rotation.svg"><img alt="../_images/trivial-rotation.svg" src="../_images/trivial-rotation.svg" width="400px" /></a>
+<figure class="align-center">
+<img alt="../_images/trivial-rotation.svg" src="../_images/trivial-rotation.svg" /></figure>
 </aside>
 <p>On the right is a not-particularly-good-looking illustration of the above plan. Namely, in the upper-left corner, we draw the relevant Legendrian spheres <span class="math notranslate nohighlight">\(\Lambda^1_{\pm}\)</span> and <span class="math notranslate nohighlight">\(\Lambda^2_{\pm}\)</span> corresponding to the two trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches <span class="math notranslate nohighlight">\(\Delta_1\)</span> (black) and <span class="math notranslate nohighlight">\(\Delta_2\)</span> (blue), respectively. Although <span class="math notranslate nohighlight">\(\Delta_1\)</span> is obviously trivial, it’s not immediately clear that <span class="math notranslate nohighlight">\(\Delta_2\)</span> is also trivial after <span class="math notranslate nohighlight">\(\Delta_1\)</span>. The bottom figure shows, from the perspective of <span class="math notranslate nohighlight">\(R^1_+\)</span>, that it’s indeed the case where “<span class="math notranslate nohighlight">\(\cong\)</span>” represents a Legendrian isotopy (via a handle slide).</p>
 <p>By swapping the two <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches (and forget about <span class="math notranslate nohighlight">\(\Delta_1\)</span>), we get on the upper-right corner the derived <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch <span class="math notranslate nohighlight">\(\Delta_2\)</span> which is quite general since there is no additional restrictions on <span class="math notranslate nohighlight">\(\Lambda^2_-\)</span> outside of the local picture except that it must belong to the stable manifold of a negative index-<span class="math notranslate nohighlight">\(n\)</span> critical point. Note that this requirement doesn’t contradict our setup in the upper-left corner since <span class="math notranslate nohighlight">\(\Lambda^1_-\)</span> and <span class="math notranslate nohighlight">\(\Lambda^2_-\)</span> are not linked as Legendrians. The following noteworthy property of such derived simple <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches is a direct consequence of definition.</p>
@@ -610,7 +590,8 @@
 <p>This is probably the first feature of our contact Morse theory which only exists in dimensions <span class="math notranslate nohighlight">\(\geq 5\)</span>. In particular, it’s not possible to draw the Morse picture of a <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switch in <span class="math notranslate nohighlight">\(2\)</span> dimensions as in the previous cases because of the degenerate intersection <a class="reference internal" href="#equation-xidegenerate">(4)</a>. Therefore we’ll jump directly to the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture, or actually, the <span class="math notranslate nohighlight">\(Y\)</span>-<a class="reference internal" href="#note-y-picture"><span class="std std-ref">picture</span></a> since we won’t bother keeping track of the changes in <span class="math notranslate nohighlight">\(R_{\pm}\)</span>.</p>
 <aside class="sidebar">
 <p class="sidebar-title"><span class="math notranslate nohighlight">\(Y\)</span>-picture of a <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switch</p>
-<a class="reference internal image-reference" href="../_images/pi2d-morse.svg"><img alt="../_images/pi2d-morse.svg" src="../_images/pi2d-morse.svg" width="400px" /></a>
+<figure class="align-center">
+<img alt="../_images/pi2d-morse.svg" src="../_images/pi2d-morse.svg" /></figure>
 </aside>
 <p>The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space <span class="math notranslate nohighlight">\(I^2_{s, t}\)</span>. However, it’s not a Morse picture, and each oval represents a view in the level set <span class="math notranslate nohighlight">\(Y\)</span> (instead of the hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span>) in which live the unstable Legendrian sphere <span class="math notranslate nohighlight">\(\Lambda_+\)</span> (blue) of a positive critical point <span class="math notranslate nohighlight">\(p_n^+\)</span> and the stable Legendrian sphere <span class="math notranslate nohighlight">\(\Lambda_-\)</span> (black) of a negative <span class="math notranslate nohighlight">\(p_n^-\)</span>, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switch, where <span class="math notranslate nohighlight">\(\Lambda_+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-\)</span> intersect degenerately according to <a class="reference internal" href="#equation-xidegenerate">(4)</a>.</p>
 <p>While nothing happens along the left vertical side <span class="math notranslate nohighlight">\(\Sigma_t^0|_{\xi}\)</span>, we see two <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches appearing on the right vertical side <span class="math notranslate nohighlight">\(\Sigma_t^1|_{\xi}\)</span> as <span class="math notranslate nohighlight">\(\Lambda_+\)</span> moves up across <span class="math notranslate nohighlight">\(\Lambda_-\)</span>. The first <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch among the two (i.e., the lower-half of the right vertical side) will be referred to as <em>a simple</em> <span class="math notranslate nohighlight">\(\pi_1\)</span>-<em>switch generated from a</em> <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-<em>switch</em>. Note that all we need in this construction is a pair of critical points <span class="math notranslate nohighlight">\(p_n^{\pm}\)</span> without any additional conditions. Moreover, by construction, the so-generated <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches also satisfy the <a class="reference internal" href="#left-inverse"><span class="std std-ref">existence-of-left-inverse property</span></a>, i.e., the upper-half of the right vertical side being the left inverse. This motivates the following curious question.</p>
@@ -639,7 +620,8 @@
 <h4>A flexible configuration<a class="headerlink" href="#a-flexible-configuration" title="Permalink to this heading">#</a></h4>
 <aside class="sidebar">
 <p class="sidebar-title">A flexible hypersurface</p>
-<a class="reference internal image-reference" href="../_images/flexible-hypersurface.svg"><img alt="../_images/flexible-hypersurface.svg" src="../_images/flexible-hypersurface.svg" width="400px" /></a>
+<figure class="align-center">
+<img alt="../_images/flexible-hypersurface.svg" src="../_images/flexible-hypersurface.svg" /></figure>
 </aside>
 <p>At the moment, we don’t know exactly when a hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> is <a class="reference internal" href="#flexible-hypersurface"><span class="std std-ref">flexible</span></a>. But let’s look at a rather special configuration on <span class="math notranslate nohighlight">\(\Sigma\)</span> in terms of the decomposition <span class="math notranslate nohighlight">\(\Sigma = R_+ \cup_{\Gamma} R_-\)</span> as shown on the right, which we claim to be flexible. However, this picture requires some explanation to make sense.</p>
 <p>First of all, we need a way to describe <span class="math notranslate nohighlight">\(R_{\pm}\)</span> by specifying (some of) the handles, and at the same time to describe how they are glued together along <span class="math notranslate nohighlight">\(\Gamma\)</span>. The most obvious choice is to describe everything within <span class="math notranslate nohighlight">\(\Gamma\)</span>. Below are the key points of such a description.</p>
@@ -652,7 +634,8 @@
 <p>It remains to show the so configured <span class="math notranslate nohighlight">\(\Sigma\)</span> is indeed flexible enough to allow for any <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch to exist.</p>
 <aside class="sidebar">
 <p class="sidebar-title">Generate arbitrary <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches</p>
-<a class="reference internal image-reference" href="../_images/flexible-rotations.svg"><img alt="../_images/flexible-rotations.svg" src="../_images/flexible-rotations.svg" width="400px" /></a>
+<figure class="align-center">
+<img alt="../_images/flexible-rotations.svg" src="../_images/flexible-rotations.svg" /></figure>
 </aside>
 <p>This is a fairly straightforward application of our Morse theoretic techniques for generating and manipulating <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches. The three major steps in showing the existence of any <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch is shown on the right. Let’s go through them one-by-one.</p>
 <p>The top row is the only place where our specific flexible configuration is involved. We start with the trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch where <span class="math notranslate nohighlight">\(\Lambda_-\)</span> is the standard unknot and the legitimacy of <span class="math notranslate nohighlight">\(\Lambda_+\)</span> is guaranteed by our assumption above. Then we perform a <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-<a class="reference internal" href="#figure-simple-pi-1-switch-from-pi-2b-switch"><span class="std std-ref">switch</span></a> (aka far-commutativity) to arrive at a derived <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch that looks almost like the trivial one. Namely, the new <span class="math notranslate nohighlight">\(\Lambda_-\)</span> remains as the unknot, but instead of sitting on top of <span class="math notranslate nohighlight">\(\Lambda_+\)</span> as in the trivial case, it hangs below <span class="math notranslate nohighlight">\(\Lambda_-\)</span> as shown in the rightmost figure of the first row. Such a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch is known as an “overtwisted bypass” in <a class="reference internal" href="../bib.html#hh18" id="id22"><span>[HH18]</span></a>.</p>

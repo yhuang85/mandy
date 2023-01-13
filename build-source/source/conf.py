@@ -87,6 +87,10 @@ html_context = {
 	"doc_path": "build-source/source",
 }
 
+html_sidebars = {
+	"**": []
+}
+
 mathjax3_config = {
 	'tex': {
 		'macros': {

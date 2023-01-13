@@ -1,7 +1,7 @@
 Bibliography
 ============
 
-.. rubric:: Bibliography
+.. rubric:: Mathematics
 
 .. [BEM14] M\. Borman, Eliashberg, and E\. Murphy\. *Existence and classification of overtwisted contact structures in all dimensions*. `arXiv <https://arxiv.org/abs/1404.6157>`__
 
@@ -20,6 +20,8 @@ Bibliography
 .. [Gro92] M\. Gromov\. *Carnot-Carathéodory spaces seen from within*. `pdf <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/carnot_caratheodory.pdf>`__
 
 .. [Hon99] K\. Honda\. *On the classification of tight contact structures I*. `arXiv <https://arxiv.org/abs/math/9910127>`__
+
+.. [Hon00] K\. Honda\. *On the classification of tight contact structures II* `pdf <https://www.math.ucla.edu/~honda/tight2.pdf>`__
 
 .. [Hua20] Y\. Huang\. *Existence of coLegendrians in contact 5-manifolds*. `arXiv <https://arxiv.org/abs/2006.11844>`__
 

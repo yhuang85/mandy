@@ -10,7 +10,7 @@ Last updated: |today|
 	:hidden:
 	:titlesonly:
 	:maxdepth: 2
-	
+
 	math/index
 	physics/index
 	bib

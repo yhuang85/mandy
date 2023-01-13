@@ -1,7 +1,11 @@
 .. _coleg_5d_rst:
 
-Rigidity and flexibility of coLegendrians in dimension :math:`5`
-================================================================
+CoLegendrians in dimension five
+===============================
+
+.. note::
+
+    Work in progress
 
 The primary goal of this article is to explore the basic properties of coLegendrians in contact :math:`5`-manifolds, including how they look like, how to find them and how to manipulate them. Ideally, we'd also like to see how they interact with Legendrians, e.g., how they may play a role in the classification of Legendrians. We'll surely touch upon this point, but at this moment, I don't exactly know how far it goes.
 
@@ -39,9 +43,9 @@ It's therefore quite a pleasing fact that by applying the folding techniques dev
 
 .. sidebar:: An coLegendrian cone
 
-    .. image:: static/cone.svg
+    .. figure:: static/cone.svg
         :align: center
-        :width: 200px
+        :width: 150px
 
 Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singularities of :math:`Y` are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption :math:`\dim M = 5` is that by further wiggling :math:`\Sigma`, one can approximate :math:`Y` by a coLegendrian with only isolated cone singularities of index :math:`0` and :math:`3` (when viewed inside :math:`Y`) critical points. More precisely, those are cones over (smooth and Morse) :math:`2`-spheres in :math:`(S^3, \xi_{\std}) = \p (B^4, \omega_{std})`. A schematic picture of such a cone is drawn on the right-hand-side, where :math:`O \in B^4` is the origin, and the shaded cone represents (part of) :math:`Y`. The procedure of simplifying singularities on :math:`Y` is explained in [Hua20]_.
 
@@ -67,9 +71,8 @@ Since :math:`\dim Y = 3`, it's built out of :math:`0,1,2`, and :math:`3`-handle.
 
 .. sidebar:: coLegendrian handles :math:`H_1^+` and :math:`H_2^+`
 
-    .. image:: static/one-and-two-handles-5d.svg
+    .. figure:: static/one-and-two-handles-5d.svg
         :align: center
-        :width: 200px
 
 Recall that :math:`H_1^+` and :math:`H_2^+` are slices of Weinstein :math:`1` and :math:`2`-handles, respectively. While :math:`H_2^+` is essentially unambiguous, there are choices one can make when defining :math:`H_1^+` as a :math:`3`-d slice of a Weinstein :math:`1`-handle. It turns out that one only needs the ones depicted on the right to build any coLegendrian. In the picture, the coLegendrian handles are drawn as solid cylinders, and the attaching regions, i.e., where the Morse vector fields point inward, are colored in green. The characteristic foliations on :math:`\p_{\pm} H` are also drawn, where :math:`\p_- H` are the attaching regions. In particular :math:`H_1^+` is attached along a pair of disks surrounding a source and a sink, respectively, and :math:`H_2^+` is a attached along an annulus surrounding a pair of positive and negative saddles :math:`h_{\pm}` together with the two separatrices flowing from :math:`h_-` to :math:`h_+`.
 
@@ -102,9 +105,8 @@ The proofs of the above two rigidity statements both rely on the simple fact tha
 
 .. sidebar:: Borderline between transverse and tangent boundaries
 
-    .. image:: static/tb-nonnegative.svg
+    .. figure:: static/tb-nonnegative.svg
         :align: center
-        :width: 200px
 
 Since :math:`K` is not the only component, there must be at least one :math:`H_1^-` which connects :math:`K` to another (positive) component. Then within :math:`\overline{K}`, only half of the :math:`H_1^-`, cut by the unstable disk, are attached to :math:`K`. Let :math:`K_1` be the resulting domain. Then :math:`\p K_1` can be decomposed into the transverse part :math:`\p_{\tau} K_1` and the tangent part :math:`\p_t K_1`, which is nothing but the unstable disk of :math:`H_1^-`. Now :math:`\p_{\tau} K_1` can be viewed as a surface in a contact :math:`3`-manifold with a Legendrian boundary :math:`\gamma` with :math:`\op{tb} (\gamma) = 1`. The characteristic foliation on :math:`\p_{\tau} K_1` near :math:`\gamma` is shown on the left-hand-side in the picture on the right, where :math:`\gamma` is drawn in blue. Now if no :math:`2`-handles pass through :math:`H_1^-`, then :math:`\gamma` must lie on the boundary of a :math:`3`-handle, i.e., a :math:`2`-sphere in :math:`(S^3, \xi_{\std})`, and this is impossible. On the other hand, if there are :math:`2`-handles passing through :math:`H_1^-`, the characteristic foliation on :math:`\p_{\tau} K_1` near :math:`\gamma` may become more complicated. But in any case, a piece of :math:`\gamma` will be completed to a Legendrian with :math:`\op{tb} \geq 0` after all the (partial) :math:`2`-handle attachments. An example is shown on the right-hand-side of the picture, where a :math:`\op{tb} = 0` Legendrian (depicted also in blue) must lie on the boundary of a :math:`S^2 \subset (S^3, \xi_{std})` as before. This is also impossible and we run into a contradiction where the only way out is that the very first half-attached :math:`H_1^-` shouldn't exist in the first place. This is equivalent to the statement that :math:`\Gamma_Y` is connected.
 

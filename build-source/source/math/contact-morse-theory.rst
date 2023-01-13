@@ -1,7 +1,7 @@
 .. _contact_morse_theory_rst:
 
-How to do Morse theory in contact topology?
-===========================================
+Morse theory in contact topology
+================================
 
 In this article, we explain how to cut any contact manifold into simple pieces as well as how to manipulate them from a Morse-theoretic viewpoint. The math of this article is based on many years of collaboration with K. Honda, but the interpretations are mostly mine. Moreover, the focus will be on ideas rather than technical details: one can hardly find any proofs here.
 
@@ -281,8 +281,8 @@ The Morse picture of :math:`\pi_1`-switches is conceptually clear but can be dif
 
 .. sidebar:: :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch
 
-	.. figure:: static/pi1-handles.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/pi1-handles.svg
+		:align: center
 
 The picture on the right-hand-side illustrates a completely general :math:`\pi_1`-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the :ref:`family Morse theory <A family Morse theory on hypersurfaces>`, here we need to keep track of several level sets (in :math:`\Sigma`) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered. Note that the gradient vector field (i.e., the characteristic foliation) always flows upwards (indicating that I'm not a physicist).
 
@@ -318,8 +318,8 @@ The creation of simple :math:`\pi_1`-switches is very much a procedure of creati
 
 .. sidebar:: Morse picture of a :math:`\pi_2^a`-switch
 
-	.. image:: static/pi2a-morse.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/pi2a-morse.svg
+		:align: center
 
 Trivial :math:`\pi_1`-switches
 ++++++++++++++++++++++++++++++
@@ -336,8 +336,8 @@ Specifically, the square in the middle represents the parameter space :math:`I^2
 
 .. sidebar:: :math:`R_{\pm}`-picture of a trivial :math:`\pi_1`-switch
 
-	.. figure:: static/trivial-p1-handles.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/trivial-p1-handles.svg
+		:align: center
 
 Let's turn the Morse picture of the trivial :math:`\pi_1`-switch into the :math:`R_{\pm}`-picture as shown on the right. Specifically, the top figure illustrates the relative position between :math:`\Lambda_+` and :math:`\Lambda_-`, which is the standard Legendrian unknot, corresponding to critical points :math:`p_n^{\pm}`, respectively, in :math:`\Gamma`. In contrast to the :ref:`general picture <section_r_pm_picture_of_pi_1_switches>`, we drop the superscripts :math:`u, s` from the :math:`\Lambda`'s here because it's obvious from the context. Moreover, it's arranged so that :math:`\Lambda_+` and :math:`\Lambda_-` intersect :math:`\xi|_{\Gamma}`-transversely at a point, instead of :math:`\Lambda_+` being slightly below :math:`\Lambda_-`. This serves the sole purpose of attracting our attention to around the intersection point, and one can always go back to the other picture by pushing :math:`\Lambda_+` down (or :math:`\Lambda_-` up) slightly.
 
@@ -350,8 +350,8 @@ Simple :math:`\pi_1`-switches derived from the trivial ones
 
 .. sidebar:: Morse picture of a :math:`\pi_2^b`-switch
 
-	.. image:: static/pi2b-morse.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/pi2b-morse.svg
+		:align: center
 
 The picture on the right illustrates a general :math:`\pi_2^b`-switch, where each two adjacent ovals represent two disjoint regions on :math:`\Sigma`. The square in the middle is, as before, the parameter space :math:`I^2_{s, t}` and the red dot represents the critical moment when there exist simultaneously two flow lines from index-:math:`n` critical points :math:`p_n^-, q_n^-` to :math:`p_n^+, q_n^+`, respectively. The passage from the left side :math:`\Sigma^0_t|_{\xi}`, to the right side :math:`\Sigma^1_t|_{\xi}, t \in I`, changes the order of which two :math:`\pi_1`-switches occur. It is therefore also known as the *far commutativity* of two :math:`\pi_1`-switches, which are in a sense disjoint from each other.
 
@@ -367,8 +367,8 @@ The plan for generating new :math:`\pi_1`-switches from the trivial one is strai
 
 .. sidebar:: Simple :math:`\pi_1`-switch from :math:`\pi_2^b`-switch
 
-	.. image:: static/trivial-rotation.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/trivial-rotation.svg
+		:align: center
 
 On the right is a not-particularly-good-looking illustration of the above plan. Namely, in the upper-left corner, we draw the relevant Legendrian spheres :math:`\Lambda^1_{\pm}` and :math:`\Lambda^2_{\pm}` corresponding to the two trivial :math:`\pi_1`-switches :math:`\Delta_1` (black) and :math:`\Delta_2` (blue), respectively. Although :math:`\Delta_1` is obviously trivial, it's not immediately clear that :math:`\Delta_2` is also trivial after :math:`\Delta_1`. The bottom figure shows, from the perspective of :math:`R^1_+`, that it's indeed the case where ":math:`\cong`" represents a Legendrian isotopy (via a handle slide).
 
@@ -391,8 +391,8 @@ This is probably the first feature of our contact Morse theory which only exists
 
 .. sidebar:: :math:`Y`-picture of a :math:`\pi_2^d`-switch
 
-	.. image:: static/pi2d-morse.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/pi2d-morse.svg
+		:align: center
 
 The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` (instead of the hypersurface :math:`\Sigma`) in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xiDegenerate`.
 
@@ -430,8 +430,8 @@ A flexible configuration
 
 .. sidebar:: A flexible hypersurface
 
-	.. image:: static/flexible-hypersurface.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/flexible-hypersurface.svg
+		:align: center
 
 At the moment, we don't know exactly when a hypersurface :math:`\Sigma` is :ref:`flexible <flexible_hypersurface>`. But let's look at a rather special configuration on :math:`\Sigma` in terms of the decomposition :math:`\Sigma = R_+ \cup_{\Gamma} R_-` as shown on the right, which we claim to be flexible. However, this picture requires some explanation to make sense.
 
@@ -449,8 +449,8 @@ It remains to show the so configured :math:`\Sigma` is indeed flexible enough to
 
 .. sidebar:: Generate arbitrary :math:`\pi_1`-switches
 
-	.. image:: static/flexible-rotations.svg
-		:width: 400px
+	.. figure:: static/contact-morse-theory/flexible-rotations.svg
+		:align: center
 
 This is a fairly straightforward application of our Morse theoretic techniques for generating and manipulating :math:`\pi_1`-switches. The three major steps in showing the existence of any :math:`\pi_1`-switch is shown on the right. Let's go through them one-by-one.
 

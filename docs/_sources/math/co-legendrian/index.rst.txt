@@ -1,3 +1,5 @@
+.. _leg_and_coleg:
+
 Legendrians and coLegendrians
 =============================
 
@@ -10,7 +12,7 @@ CoLegendrians, on the other hand, are studied by nobody but myself. They are rat
 The hope is to understand Legendrians via the interplay with coLegendrians, but of course, the chance of success is slim but better than nothing. We'll focus on contact manifolds of dimensions at least :math:`5` but sometimes we'll also touch upon contact :math:`3`-manifolds because the number is, after all, close to :math:`5`.
 
 .. toctree::
-    :titlesonly:
-    :maxdepth: 2
+	:titlesonly:
+	:maxdepth: 2
 
-    coleg-5d
+	CoLegendrians in dimension five <coleg-5d>
