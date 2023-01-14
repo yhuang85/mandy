@@ -21,7 +21,7 @@ Bibliography
 
 .. [Hon99] K\. Honda\. *On the classification of tight contact structures I*. `arXiv <https://arxiv.org/abs/math/9910127>`__
 
-.. [Hon00] K\. Honda\. *On the classification of tight contact structures II* `pdf <https://www.math.ucla.edu/~honda/tight2.pdf>`__
+.. [Hon00] K\. Honda\. *On the classification of tight contact structures II*. `pdf <https://www.math.ucla.edu/~honda/tight2.pdf>`__
 
 .. [Hua20] Y\. Huang\. *Existence of coLegendrians in contact 5-manifolds*. `arXiv <https://arxiv.org/abs/2006.11844>`__
 
