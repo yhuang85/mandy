@@ -14,6 +14,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import string
 
 # -- Project information -----------------------------------------------------
 
@@ -88,20 +89,20 @@ html_context = {
 }
 
 html_sidebars = {
+	# Hide primary sidebar
 	"**": []
 }
 
 mathjax3_config = {
 	'tex': {
 		'macros': {
-			'RR': '{\\mathbb R}',
-			'ZZ': '{\\mathbb Z}',
-			'Lcal': '{\\mathcal L}',
 			'op': ['\\operatorname {#1}', 1],
 			'p': '{\\partial}',
-			'dist': '{\\operatorname{dist}}',
-			'ind': '{\\operatorname{ind}}',
-			'std': '{\\operatorname{std}}',
+			'ps': ['\\prescript {#1}{#2}{#3}', 3],
+			'psup': ['\\prescript {#1}{}{#2}', 2],
+			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std']},
+			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
+			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},
 		},
 		'packages': {
 			'[+]': [

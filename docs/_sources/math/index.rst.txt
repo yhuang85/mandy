@@ -11,7 +11,7 @@ The only piece of mathematics that I had been working on as a professional is ab
 	:numbered: 1
 	:maxdepth: 1
 
-	Contact structures in 3D seen from inside <contact-structure-3d>
+	Contact structures in 3D seen from within <contact-structure-3d>
 	Morse theory in contact topology <contact-morse-theory>
 	Legendrians and coLegendrians <co-legendrian/index>
 	Bypass attachment revisited <bypass>

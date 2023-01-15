@@ -10,7 +10,7 @@ Morse Theory in Topology
 
 The most basic and general idea of Morse theory is to understand global properties of a topological space by cutting it into simple pieces and keep track of the assemble process. There are many variations and complications that might sneak behind the simply looking idea. For example, the topological space itself may be `singular <https://en.wikipedia.org/wiki/Stratified_Morse_theory>`__ or `infinite dimensional <https://en.wikipedia.org/wiki/Floer_homology>`__, and the "simple pieces" and "assemble process" may take very `different forms <https://en.wikipedia.org/wiki/Triangulation_(topology)>`__.
 
-We will be concerned with the most classical Morse theory here, where spaces are smooth finite-dimensional manifolds :math:`M` and decompositions of :math:`M` are given by the so-called Morse functions :math:`f: M \to \RR`, which are nothing but *generic* smooth functions. More precisely, the only data we care about :math:`f` is a sequence of *singular values*
+We will be concerned with the most classical Morse theory here, where spaces are smooth finite-dimensional manifolds :math:`M` and decompositions of :math:`M` are given by the so-called Morse functions :math:`f: M \to \Rbb`, which are nothing but *generic* smooth functions. More precisely, the only data we care about :math:`f` is a sequence of *singular values*
 
 .. math::
 
@@ -33,7 +33,7 @@ First Blend of Morse Theory with Contact Structures
 A Symplectic detour
 *******************
 
-Let's actually start by talking about the attempt of blending Morse theory into symplectic topology initiated by Y. Eliashberg and M. Gromov in [EG91]_. Let :math:`(W, \omega)` be a symplectic manifold and :math:`f: W \to \RR` be a Morse function. The most obvious guess of a compatibility condition between :math:`f` and :math:`\omega`, at least from a Morse theoretic viewpoint, would be that the flow of the gradient vector field :math:`\nabla f \eqqcolon X`, with respect to some metric [#gradient]_ , preserves :math:`\omega`. This is not a very good guess though since :math:`X` would then necessarily be volume preserving, and in turn :math:`f` can have neither local minima nor maxima.
+Let's actually start by talking about the attempt of blending Morse theory into symplectic topology initiated by Y. Eliashberg and M. Gromov in [EG91]_. Let :math:`(W, \omega)` be a symplectic manifold and :math:`f: W \to \Rbb` be a Morse function. The most obvious guess of a compatibility condition between :math:`f` and :math:`\omega`, at least from a Morse theoretic viewpoint, would be that the flow of the gradient vector field :math:`\nabla f \eqqcolon X`, with respect to some metric [#gradient]_ , preserves :math:`\omega`. This is not a very good guess though since :math:`X` would then necessarily be volume preserving, and in turn :math:`f` can have neither local minima nor maxima.
 
 It's somewhat unfortunate that no reasonable compatibility condition exists between :math:`f` and :math:`\omega` which would simply allow :math:`f` to simultaneously possess local minima and maxima as a usual smooth function does. The compromise, which is by no means obvious, is to ask :math:`X` to exponentially expand :math:`\omega`, i.e., :math:`\Lcal_X \omega = \omega`. Quite obviously such thing cannot exist on a closed manifold since :math:`X` exponentially expands the volume. In fact, with a bit more work, one realizes that the Morse index of any critical point of :math:`f` cannot exceed :math:`\tfrac{1}{2} \dim W`. In some sense, we just compromised half of the topology.
 
@@ -61,7 +61,7 @@ Symplectic handles
 Back to contact
 ***************
 
-The compatibility between a contact manifold :math:`(M, \xi)` and a Morse function :math:`f: M \to \RR`, by analogy, asks the flow of :math:`X \coloneqq \nabla f` to preserve :math:`\xi`.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, Giroux argued in [Gir02]_ that every (closed) contact manifold admits a compatible Morse function.
+The compatibility between a contact manifold :math:`(M, \xi)` and a Morse function :math:`f: M \to \Rbb`, by analogy, asks the flow of :math:`X \coloneqq \nabla f` to preserve :math:`\xi`.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, Giroux argued in [Gir02]_ that every (closed) contact manifold admits a compatible Morse function.
 
 The regular level sets and critical points of a contact Morse function look quite different from the symplectic case, mostly because the compatibility condition now reads :math:`\Lcal_X \alpha = g \alpha` where :math:`\xi = \ker \alpha` is a contact form and :math:`g` can be *any* function. In particular, the flow of :math:`X` doesn't have to expand the contact volume at all.
 
@@ -113,7 +113,7 @@ The main ideas in the attempt to understanding contact structures via Morse theo
 Separation of contact structure and topology
 ********************************************
 
-The first key principle in the development of contact Morse theory is to separate the contact topological problem from the purely topological problem. Specifically, given a contact manifold :math:`(M, \xi)`, we always start from just any Morse function :math:`f: M \to \RR`. Suppose :math:`\dim M = 2n+1`, then :math:`f` induces a decomposition
+The first key principle in the development of contact Morse theory is to separate the contact topological problem from the purely topological problem. Specifically, given a contact manifold :math:`(M, \xi)`, we always start from just any Morse function :math:`f: M \to \Rbb`. Suppose :math:`\dim M = 2n+1`, then :math:`f` induces a decomposition
 
 .. math::
 	:label: heegaard-decomposition

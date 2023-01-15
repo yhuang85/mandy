@@ -116,4 +116,4 @@ tbc...
 
 .. rubric:: Footnotes
 
-.. [#tb_ineq] This inequality was first discovered by D. Bennequin to argue that there exists more than one contact structures on :math:`\RR^3`. One can prove it using (parametrized) :ref:`contact Morse theory <contact_morse_theory_rst>` by showing that the only possible Morse configuration on :math:`S^2 \subset (\RR^3, \xi_{\std})` is the standard one, modulo Weinstein homotopy.
+.. [#tb_ineq] This inequality was first discovered by D. Bennequin to argue that there exists more than one contact structures on :math:`\Rbb^3`. One can prove it using (parametrized) :ref:`contact Morse theory <contact_morse_theory_rst>` by showing that the only possible Morse configuration on :math:`S^2 \subset (\Rbb^3, \xi_{\std})` is the standard one, modulo Weinstein homotopy.
