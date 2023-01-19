@@ -56,6 +56,8 @@ Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singulari
 
 The above discussion applies to both the closed case where :math:`\p Y = \varnothing` and the case where :math:`\Lambda \coloneqq \p Y` is a Legendrian. In the later case, we also allow :math:`\Lambda` to possess cone singularities, and we'll explicitly say that :math:`\Lambda` is smooth otherwise.
 
+.. _coleg_5d_building_blocks:
+
 Building Blocks
 ---------------
 

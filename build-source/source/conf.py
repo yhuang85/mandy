@@ -107,12 +107,14 @@ mathjax3_config = {
 		'packages': {
 			'[+]': [
 				'mathtools',
+				'unicode',
 			],
 		}
 	},
 	'loader': {
 		'load': [
 			'[tex]/mathtools',
+			'[tex]/unicode',
 		],
 	}
 }
