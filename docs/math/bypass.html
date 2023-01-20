@@ -305,10 +305,6 @@
               
   <section id="bypass-attachment-revisited">
 <h1><span class="section-number">4. </span>Bypass attachment revisited<a class="headerlink" href="#bypass-attachment-revisited" title="Permalink to this heading">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Work in progress</p>
-</div>
 <p>Bypass attachment is an operation introduced by K. Honda in <a class="reference internal" href="../bib.html#hon99" id="id1"><span>[Hon99]</span></a> to catch the most fundamental “phase changes” among a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of surfaces in a contact <span class="math notranslate nohighlight">\(3\)</span>-manifold. It is in effect equivalent to E. Giroux’s “bifurcations” of characteristic foliations studied in <a class="reference internal" href="../bib.html#gir99" id="id2"><span>[Gir99]</span></a>. The difference between the two approaches, however, is that a bypass attachment is performed by really attaching a “bypass”, which is a certain half-disk with Legendrian boundary, to the surface, while a bifurcation of vector field is an abstract phenomenon that can most likely only be observed and difficult to find if we have something specific in mind. Indeed, there exist tools such as the “imbalance principle” from <a class="reference internal" href="../bib.html#hon99" id="id3"><span>[Hon99]</span></a> and the “bypass sliding” (aka. “bypass rotation”) from <a class="reference internal" href="../bib.html#hon00" id="id4"><span>[Hon00]</span></a>  which are designed to find bypasses.</p>
 <p>Although the generalization of Giroux’s bifurcation to hypersurfaces in higher-dimensional contact manifolds is rather straightforward <a class="footnote-reference brackets" href="#pi1-switch" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, at least under the assumption of characteristic foliations being Morse, how a higher-dimensional bypass should look like turns out to be less obvious. A rather ugly model of such a thing – called <span class="math notranslate nohighlight">\(\Delta\)</span> – was worked out in <a class="reference internal" href="../bib.html#hh18" id="id6"><span>[HH18]</span></a> (Figure 7.2.3 on page 45): it’s more-or-less a half-ball with certain Legendrian foliation inside and a partially Legendrian boundary. The reason <span class="math notranslate nohighlight">\(\p \Delta\)</span> not being completely Legendrian was that I couldn’t then make it smooth, even with corners. Basically you cannot have three Legendrian planes <a class="footnote-reference brackets" href="#leg-plane" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> intersect like a corner between the walls in your room. This psychological barrier disappears when we think of a bypass as a coLegendrian. They are not meant to be smooth: they come with cone singularities! The rest of the article will be devoted to spelling out the details. It would be a bonus if the more elegant construction of higher-dimensional bypasses will lead to a better understanding of contact manifolds, but that is unclear at this point.</p>
 <div class="admonition note">
@@ -362,7 +358,7 @@
 <p>What we have described above is actually how a hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> can be attached to a bypass <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span>, but this is not how it usually works in practice. So let’s turn things around and describe how <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> is attached to <span class="math notranslate nohighlight">\(\Sigma\)</span>. All we need are the following two pieces of data on <span class="math notranslate nohighlight">\(\Sigma\)</span>:</p>
 <ol class="arabic simple">
 <li><p>A Legendrian <span class="math notranslate nohighlight">\(\Theta\)</span>-graph ⊖ <span class="math notranslate nohighlight">\(\subset \Gamma_{\Sigma}\)</span> such that the contact planes make a half turn from one singular point of the ⊖ to the other through every one of the three connecting paths, i.e., the ◠ , the ⎯ , and the  ◡ . Note that this is equivalent to saying that ⊖ has a ribbon neighborhood whose dividing set looks like the one shown in the <a class="reference internal" href="#fig-bypass-attachment-5d"><span class="std std-ref">figure</span></a> above.</p></li>
-<li><p>The upper and lower closed semicircles of ⊖ bound Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm}\)</span>, respectively.</p></li>
+<li><p>The upper and lower closed semicircles of ⊖ bound Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span>, respectively.</p></li>
 </ol>
 <p>With these data at hand, we can then attach <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> to <span class="math notranslate nohighlight">\(\Sigma\)</span> so that the flat bottom of <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> matches exactly the union of ⊖ and the two Lagrangian disks.</p>
 </section>
@@ -387,13 +383,30 @@
 <p>Now comes the interesting question: can we attach <span class="math notranslate nohighlight">\(\psup{5}{\Delta}^{\ast}\)</span> to a hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> in the same way that an actual bypass is attached? The answer is, interestingly enough, yes! Indeed, just as in the case of the actual bypass, all we need is a realization of a ribbon neighborhood of the Legendrian <span class="math notranslate nohighlight">\(\Theta\)</span>-graph ⊖<span class="math notranslate nohighlight">\(^{\ast} \subset \Gamma_{\Sigma}\)</span> as shown in the right-hand-side of the <a class="reference internal" href="#fig-fake-bypass-5d"><span class="std std-ref">picture</span></a> above. At first sight, it might appear that such a ribbon neighborhood cannot exist in <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span> if, for example, the outer-circle ○ <span class="math notranslate nohighlight">\(\subset\)</span> ⊖<span class="math notranslate nohighlight">\(^{\ast}\)</span> is topologically unknotted because its Thurston-Bennequin number <span class="math notranslate nohighlight">\(\op{tb}(\)</span>○<span class="math notranslate nohighlight">\() = 0\)</span> relative to the ribbon framing. But this is an illusion because the ribbon framing does not have to be the same as the <a class="reference external" href="https://en.wikipedia.org/wiki/Self-linking_number">Seifert framing</a>, if the later is defined at all.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>When we attach either a bypass or a fake bypass to a hypersurface, the choice of the ribbon neighborhood of the Legendrian ⊖ in <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span> is not completely arbitrary, although <span class="math notranslate nohighlight">\(\op{tb}(\)</span>○<span class="math notranslate nohighlight">\()\)</span> is <span class="math notranslate nohighlight">\(-1\)</span> for the bypass attachment and <span class="math notranslate nohighlight">\(0\)</span> for the fake bypass attachment. Namely, the <span class="math notranslate nohighlight">\(\op{tb}\)</span> of both the upper and lower closed semicircles of ⊖ must be <span class="math notranslate nohighlight">\(-1\)</span>. This guarantees that the ribbon framing extends to the Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm}\)</span>, respectively.</p>
+<p>When we attach either a bypass or a fake bypass to a hypersurface, the choice of the ribbon neighborhood of the Legendrian ⊖ in <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span> is not completely arbitrary, although <span class="math notranslate nohighlight">\(\op{tb}(\)</span>○<span class="math notranslate nohighlight">\()\)</span> is <span class="math notranslate nohighlight">\(-1\)</span> for the bypass attachment and <span class="math notranslate nohighlight">\(0\)</span> for the fake bypass attachment. Namely, the <span class="math notranslate nohighlight">\(\op{tb}\)</span> of both the upper and lower closed semicircles of ⊖ must be <span class="math notranslate nohighlight">\(-1\)</span>. This guarantees that the ribbon framing extends to the Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span>, respectively.</p>
 </div>
 <p>The above restriction is quite strong but there is yet another possibility for the ribbon neighborhood where <span class="math notranslate nohighlight">\(\op{tb}(\)</span>○<span class="math notranslate nohighlight">\() = -2\)</span>. It is not the purpose of this article to exhaust all possibilities of bypass-like objects. But the discussion of the fake bypass has hopefully deepened our understanding of the bypass itself.</p>
 </section>
 <section id="back-to-the-old-bypass">
 <h3>Back to the Old Bypass<a class="headerlink" href="#back-to-the-old-bypass" title="Permalink to this heading">#</a></h3>
-<p>tbc…</p>
+<p>The bypass attachment described in <a class="reference internal" href="../bib.html#hh18" id="id14"><span>[HH18]</span></a>, albeit ugly, has an important virtue that it is compatible with the back-then-not-defined contact Morse theory. So let’s briefly recall its setup here. We need the following two pieces of data for the attachment:</p>
+<ol class="arabic simple">
+<li><p>Two Legendrian knots <span class="math notranslate nohighlight">\(\Lambda_{\pm} \subset \Gamma_{\Sigma}\)</span> which <span class="math notranslate nohighlight">\(\xi\)</span>-transversely intersect <a class="footnote-reference brackets" href="#xi-transverse" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> in one point. Here <span class="math notranslate nohighlight">\(\xi\)</span> denotes the (induced) contact structure on <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> bound Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span>, respectively.</p></li>
+</ol>
+<aside class="sidebar">
+<p class="sidebar-title">Transition to the old bypass</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/connect-old-bypass-5d.svg"><img alt="../_images/connect-old-bypass-5d.svg" src="../_images/connect-old-bypass-5d.svg" width="400px" /></a>
+</figure>
+</aside>
+<p>Thinking of <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> as the upper and lower semicircles in ⊖, the second condition poses no issue. The issue, however, is that in ⊖ they do not <span class="math notranslate nohighlight">\(\xi\)</span>-transversely intersect, rather, they overlap along the horizontal diameter in ⊖. Using the fact that the contact planes make a half turn from one end of the diameter to the other end, we can continuously deform <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> by shrinking the diameter to a point as shown in the picture to the right so that they become <span class="math notranslate nohighlight">\(\xi\)</span>-transverse. Here in either (i) or (ii), the horizontal line from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span> is the diameter in ⊖, the blue and green segments are parts of <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> respectively, the red dot represents the intersection with the dividing set on the ribbon at <span class="math notranslate nohighlight">\(t=0\)</span>, and the time <span class="math notranslate nohighlight">\(t\)</span> runs from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. At <span class="math notranslate nohighlight">\(t=1\)</span>, the diameter shrinks down to the red dot, at which <span class="math notranslate nohighlight">\(\Lambda_+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-\)</span> intersect <span class="math notranslate nohighlight">\(\xi\)</span>-transversely.</p>
+<p>It turns out that there are two ways to shrink the diameter to the middle point, and they are shown as (i) and (ii) in the picture. But of course, we end up with the same bypass attachment, i.e., contactomorphic to the one we started with.</p>
+</section>
+</section>
+<section id="bypass-in-general">
+<h2>Bypass in General<a class="headerlink" href="#bypass-in-general" title="Permalink to this heading">#</a></h2>
+<p>As promised before, the definition of bypass (attachment) in dimensions greater than <span class="math notranslate nohighlight">\(5\)</span> poses no new difficulties. Namely, the construction in (contact) dimension <span class="math notranslate nohighlight">\(2n+1\)</span> is simply a suspension of the construction in dimension <span class="math notranslate nohighlight">\(2n-1\)</span>. For example, since the bypass <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> is not smooth and has two cone singularities, it follows that <span class="math notranslate nohighlight">\(\psup{7}{\Delta}\)</span> has an <span class="math notranslate nohighlight">\(S^1\)</span>-worth of cone-type singularities, which is expected from the general structure theory of coLegendrians. However, since such a theory has not yet been developed, we shall leave the discussion of bypasses in general dimensions to a later time, if there is anything truly new.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="pi1-switch" role="note">
@@ -424,8 +437,11 @@
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">7</a><span class="fn-bracket">]</span></span>
 <p>The handles are necessarily partial because the singularities all lie on <span class="math notranslate nohighlight">\(\p (\psup{5}{\Delta}^{\ast})\)</span>. For handles of middle indexes, i.e., neither <span class="math notranslate nohighlight">\(0\)</span> nor <span class="math notranslate nohighlight">\(\dim (\psup{5}{\Delta}^{\ast})\)</span>, we shall indicate whether it is a half or a quarter handle.</p>
 </aside>
+<aside class="footnote brackets" id="xi-transverse" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">8</a><span class="fn-bracket">]</span></span>
+<p>Let <span class="math notranslate nohighlight">\(p \coloneqq \Lambda_+ \cap \Lambda_-\)</span> be the intersection point. Then <span class="math notranslate nohighlight">\(\xi\)</span>-transversality means <span class="math notranslate nohighlight">\(T_p \Lambda_+ \oplus T_p \Lambda_- = \xi_p\)</span>.</p>
 </aside>
-</section>
+</aside>
 </section>
 </section>
 
@@ -484,6 +500,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bypass-in-general">
+   Bypass in General
+  </a>
  </li>
 </ul>
 

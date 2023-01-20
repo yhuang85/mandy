@@ -1,10 +1,6 @@
 Bypass attachment revisited
 ===========================
 
-.. note::
-
-	Work in progress
-
 Bypass attachment is an operation introduced by K. Honda in [Hon99]_ to catch the most fundamental "phase changes" among a :math:`1`-parameter family of surfaces in a contact :math:`3`-manifold. It is in effect equivalent to E. Giroux's "bifurcations" of characteristic foliations studied in [Gir99]_. The difference between the two approaches, however, is that a bypass attachment is performed by really attaching a "bypass", which is a certain half-disk with Legendrian boundary, to the surface, while a bifurcation of vector field is an abstract phenomenon that can most likely only be observed and difficult to find if we have something specific in mind. Indeed, there exist tools such as the "imbalance principle" from [Hon99]_ and the "bypass sliding" (aka. "bypass rotation") from [Hon00]_  which are designed to find bypasses.
 
 Although the generalization of Giroux's bifurcation to hypersurfaces in higher-dimensional contact manifolds is rather straightforward [#pi1_switch]_, at least under the assumption of characteristic foliations being Morse, how a higher-dimensional bypass should look like turns out to be less obvious. A rather ugly model of such a thing -- called :math:`\Delta` -- was worked out in [HH18]_ (Figure 7.2.3 on page 45): it's more-or-less a half-ball with certain Legendrian foliation inside and a partially Legendrian boundary. The reason :math:`\p \Delta` not being completely Legendrian was that I couldn't then make it smooth, even with corners. Basically you cannot have three Legendrian planes [#leg_plane]_ intersect like a corner between the walls in your room. This psychological barrier disappears when we think of a bypass as a coLegendrian. They are not meant to be smooth: they come with cone singularities! The rest of the article will be devoted to spelling out the details. It would be a bonus if the more elegant construction of higher-dimensional bypasses will lead to a better understanding of contact manifolds, but that is unclear at this point.
@@ -77,7 +73,7 @@ What we have described above is actually how a hypersurface :math:`\Sigma` can b
 
 1. A Legendrian :math:`\Theta`-graph |Theta| :math:`\subset \Gamma_{\Sigma}` such that the contact planes make a half turn from one singular point of the |Theta| to the other through every one of the three connecting paths, i.e., the |upper_circle| , the |hline| , and the  |lower_circle| . Note that this is equivalent to saying that |Theta| has a ribbon neighborhood whose dividing set looks like the one shown in the :ref:`figure <fig_bypass_attachment_5d>` above.
 
-2. The upper and lower closed semicircles of |Theta| bound Lagrangian disks in :math:`R_{\pm}`, respectively.
+2. The upper and lower closed semicircles of |Theta| bound Lagrangian disks in :math:`R_{\pm} (\Sigma)`, respectively.
 
 With these data at hand, we can then attach :math:`\psup{5}{\Delta}` to :math:`\Sigma` so that the flat bottom of :math:`\psup{5}{\Delta}` matches exactly the union of |Theta| and the two Lagrangian disks.
 
@@ -109,14 +105,32 @@ Now comes the interesting question: can we attach :math:`\psup{5}{\Delta}^{\ast}
 
 .. important::
 
-	When we attach either a bypass or a fake bypass to a hypersurface, the choice of the ribbon neighborhood of the Legendrian |Theta| in :math:`\Gamma_{\Sigma}` is not completely arbitrary, although :math:`\op{tb}(`\ |circle|\ :math:`)` is :math:`-1` for the bypass attachment and :math:`0` for the fake bypass attachment. Namely, the :math:`\op{tb}` of both the upper and lower closed semicircles of |Theta| must be :math:`-1`. This guarantees that the ribbon framing extends to the Lagrangian disks in :math:`R_{\pm}`, respectively.
+	When we attach either a bypass or a fake bypass to a hypersurface, the choice of the ribbon neighborhood of the Legendrian |Theta| in :math:`\Gamma_{\Sigma}` is not completely arbitrary, although :math:`\op{tb}(`\ |circle|\ :math:`)` is :math:`-1` for the bypass attachment and :math:`0` for the fake bypass attachment. Namely, the :math:`\op{tb}` of both the upper and lower closed semicircles of |Theta| must be :math:`-1`. This guarantees that the ribbon framing extends to the Lagrangian disks in :math:`R_{\pm} (\Sigma)`, respectively.
 
 The above restriction is quite strong but there is yet another possibility for the ribbon neighborhood where :math:`\op{tb}(`\ |circle|\ :math:`) = -2`. It is not the purpose of this article to exhaust all possibilities of bypass-like objects. But the discussion of the fake bypass has hopefully deepened our understanding of the bypass itself.
 
 Back to the Old Bypass
 **********************
 
-tbc...
+The bypass attachment described in [HH18]_, albeit ugly, has an important virtue that it is compatible with the back-then-not-defined contact Morse theory. So let's briefly recall its setup here. We need the following two pieces of data for the attachment:
+
+1. Two Legendrian knots :math:`\Lambda_{\pm} \subset \Gamma_{\Sigma}` which :math:`\xi`-transversely intersect [#xi_transverse]_ in one point. Here :math:`\xi` denotes the (induced) contact structure on :math:`\Gamma_{\Sigma}`.
+2. :math:`\Lambda_{\pm}` bound Lagrangian disks in :math:`R_{\pm} (\Sigma)`, respectively.
+
+.. sidebar:: Transition to the old bypass
+
+	.. figure:: static/bypass/connect-old-bypass-5d.svg
+		:align: center
+		:width: 400px
+
+Thinking of :math:`\Lambda_{\pm}` as the upper and lower semicircles in |Theta|, the second condition poses no issue. The issue, however, is that in |Theta| they do not :math:`\xi`-transversely intersect, rather, they overlap along the horizontal diameter in |Theta|. Using the fact that the contact planes make a half turn from one end of the diameter to the other end, we can continuously deform :math:`\Lambda_{\pm}` by shrinking the diameter to a point as shown in the picture to the right so that they become :math:`\xi`-transverse. Here in either (i) or (ii), the horizontal line from :math:`a` to :math:`b` is the diameter in |Theta|, the blue and green segments are parts of :math:`\Lambda_{\pm}` respectively, the red dot represents the intersection with the dividing set on the ribbon at :math:`t=0`, and the time :math:`t` runs from :math:`0` to :math:`1`. At :math:`t=1`, the diameter shrinks down to the red dot, at which :math:`\Lambda_+` and :math:`\Lambda_-` intersect :math:`\xi`-transversely.
+
+It turns out that there are two ways to shrink the diameter to the middle point, and they are shown as (i) and (ii) in the picture. But of course, we end up with the same bypass attachment, i.e., contactomorphic to the one we started with.
+
+Bypass in General
+-----------------
+
+As promised before, the definition of bypass (attachment) in dimensions greater than :math:`5` poses no new difficulties. Namely, the construction in (contact) dimension :math:`2n+1` is simply a suspension of the construction in dimension :math:`2n-1`. For example, since the bypass :math:`\psup{5}{\Delta}` is not smooth and has two cone singularities, it follows that :math:`\psup{7}{\Delta}` has an :math:`S^1`-worth of cone-type singularities, which is expected from the general structure theory of coLegendrians. However, since such a theory has not yet been developed, we shall leave the discussion of bypasses in general dimensions to a later time, if there is anything truly new.
 
 
 .. rubric:: Footnotes
@@ -134,6 +148,8 @@ tbc...
 .. [#fake_bypass] The fake bypass seems to be the more natural candidate of a bypass because it looks more like the :ref:`3D bypass <fig_bypass_attachment_3d>` :math:`\psup{3}{\Delta}` in terms of their dividing sets.
 
 .. [#partial_handles] The handles are necessarily partial because the singularities all lie on :math:`\p (\psup{5}{\Delta}^{\ast})`. For handles of middle indexes, i.e., neither :math:`0` nor :math:`\dim (\psup{5}{\Delta}^{\ast})`, we shall indicate whether it is a half or a quarter handle.
+
+.. [#xi_transverse] Let :math:`p \coloneqq \Lambda_+ \cap \Lambda_-` be the intersection point. Then :math:`\xi`-transversality means :math:`T_p \Lambda_+ \oplus T_p \Lambda_- = \xi_p`.
 
 
 .. Unicode substitutions
