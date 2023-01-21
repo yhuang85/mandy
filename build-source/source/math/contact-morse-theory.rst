@@ -30,7 +30,7 @@ Morse theory aims at recognizing manifolds by their handle decompositions. Most 
 First Blend of Morse Theory with Contact Structures
 ---------------------------------------------------
 
-A Symplectic detour
+A symplectic detour
 *******************
 
 Let's actually start by talking about the attempt of blending Morse theory into symplectic topology initiated by Y. Eliashberg and M. Gromov in [EG91]_. Let :math:`(W, \omega)` be a symplectic manifold and :math:`f: W \to \Rbb` be a Morse function. The most obvious guess of a compatibility condition between :math:`f` and :math:`\omega`, at least from a Morse theoretic viewpoint, would be that the flow of the gradient vector field :math:`\nabla f \eqqcolon X`, with respect to some metric [#gradient]_ , preserves :math:`\omega`. This is not a very good guess though since :math:`X` would then necessarily be volume preserving, and in turn :math:`f` can have neither local minima nor maxima.
@@ -39,23 +39,27 @@ It's somewhat unfortunate that no reasonable compatibility condition exists betw
 
 Recall the two major players in the usual Morse theory are regular level sets and critical points (or equivalently, handles). Not surprisingly, they receive additional structures from the compatibility condition with a symplectic structure.
 
-Symplectic regular level sets
-	For any regular value :math:`c`, the regular level set :math:`\Sigma \coloneqq f^{-1} (c) \subset (W, \omega)` is a contact manifold with contact form :math:`\alpha \coloneqq i_X \omega`.
+Regular level sets
+++++++++++++++++++
+
+For any regular value :math:`c`, the regular level set :math:`\Sigma \coloneqq f^{-1} (c) \subset (W, \omega)` is a contact manifold with contact form :math:`\alpha \coloneqq i_X \omega`.
 
 Symplectic handles
-	Assuming :math:`\dim W = 2n`, an index-:math:`k` handle corresponds to an index-:math:`k` critical point always takes the following standard form
+++++++++++++++++++
 
-	.. math::
+Assuming :math:`\dim W = 2n`, an index-:math:`k` handle corresponds to an index-:math:`k` critical point always takes the following standard form
 
-		\begin{aligned}
-			H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n},
+.. math::
 
-			\omega|_{H_k} &= \sum_{i=1}^{2n} dx_i \wedge dy_i,
+	\begin{aligned}
+		H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n},
 
-			X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ).
-		\end{aligned}
+		\omega|_{H_k} &= \sum_{i=1}^{2n} dx_i \wedge dy_i,
 
-	Such handles are known as *Weinstein handles* because A. Weinstein first wrote down these normal forms. A particularly important special case is when :math:`k = n` and we we call these handles *critical* because only these handles actually carry nontrivial symplectic information.
+		X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ).
+	\end{aligned}
+
+Such handles are known as *Weinstein handles* because A. Weinstein first wrote down these normal forms. A particularly important special case is when :math:`k = n` and we we call these handles *critical* because only these handles actually carry nontrivial symplectic information.
 
 
 Back to contact
@@ -65,36 +69,40 @@ The compatibility between a contact manifold :math:`(M, \xi)` and a Morse functi
 
 The regular level sets and critical points of a contact Morse function look quite different from the symplectic case, mostly because the compatibility condition now reads :math:`\Lcal_X \alpha = g \alpha` where :math:`\xi = \ker \alpha` is a contact form and :math:`g` can be *any* function. In particular, the flow of :math:`X` doesn't have to expand the contact volume at all.
 
-Contact regular level sets
-	A regular level set :math:`\Sigma \subset (M, \xi)` can be decomposed into three pieces
+Regular level sets
+++++++++++++++++++
 
-	.. math::
-		:label: hypersurface-decomposition
+A regular level set :math:`\Sigma \subset (M, \xi)` can be decomposed into three pieces
 
-		\Sigma = R_+ \cup \Gamma \cup R_-,
+.. math::
+	:label: hypersurface-decomposition
 
-	where :math:`\Gamma = \{ \alpha (X) = 0 \}` and :math:`R_{\pm} = \{ \pm \alpha (X) > 0 \}`, respectively. It turns out that :math:`(\Gamma, \xi|_{\Gamma})` is itself a contact manifold of dimension :math:`\dim M - 2`, i.e., it's a codimension-:math:`2` contact submanifold of :math:`(M, \xi)`. Moreover :math:`( R_{\pm}, d\alpha|_{R_{\pm}} )` are symplectic manifolds. However, they don't necessarily carry a Morse structure as described above.
+	\Sigma = R_+ \cup \Gamma \cup R_-,
+
+where :math:`\Gamma = \{ \alpha (X) = 0 \}` and :math:`R_{\pm} = \{ \pm \alpha (X) > 0 \}`, respectively. It turns out that :math:`(\Gamma, \xi|_{\Gamma})` is itself a contact manifold of dimension :math:`\dim M - 2`, i.e., it's a codimension-:math:`2` contact submanifold of :math:`(M, \xi)`. Moreover :math:`( R_{\pm}, d\alpha|_{R_{\pm}} )` are symplectic manifolds. However, they don't necessarily carry a Morse structure as described above.
 
 .. note::
 
 	* We will rewrite the decomposition :eq:`hypersurface-decomposition` as :math:`\Sigma = R_+ \cup_{\Gamma} R_-` to highlight the viewpoint that :math:`\Sigma` can be obtained by gluing (closures of) :math:`R_{\pm}` along the common boundary :math:`\Gamma`.
 
-	* It's shown by `Giroux <https://eudml.org/doc/140253>`__ that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in :eq:`hypersurface-decomposition`. Such hypersurfaces were named *convex* by Eliashberg and Gromov in a `paper <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/976.pdf>`__ which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn't make any sense in the contact world. Indeed, they're more of a "flat" kind because the contact structure is invariant in the transverse direction. This is the main reason why we don't use the term "convex hypersurface" in this article. Another reason for not considering hypersurfaces like :eq:`hypersurface-decomposition` in general is that the domains :math:`R_{\pm}` are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the :ref:`second blend<Second Blend of Morse Theory with Contact Structures>`.
+	* It's shown by `Giroux <https://eudml.org/doc/140253>`__ that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in :eq:`hypersurface-decomposition`. Such hypersurfaces were named *convex* by Eliashberg and Gromov in a `paper <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/976.pdf>`__ which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn't make any sense in the contact world. Indeed, they're more of a "flat" kind because the contact structure is invariant in the transverse direction. This is the main reason why we don't use the term "convex hypersurface" in this article. Another reason for not considering hypersurfaces like :eq:`hypersurface-decomposition` in general is that the domains :math:`R_{\pm}` are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the :ref:`second blend <section_2nd_blend_morse_contact>`.
 
 Contact handles
-	Assuming :math:`\dim M = 2n+1` and :math:`k \leq n`, an index-:math:`k` contact handle always takes the following standard form
++++++++++++++++
 
-	.. math::
+Assuming :math:`\dim M = 2n+1` and :math:`k \leq n`, an index-:math:`k` contact handle always takes the following standard form
 
-		\begin{aligned}
-			H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n} \times [-1, 1]_z,
+.. math::
 
-			\alpha|_{H_k} &= dz - \sum_{i=1}^n y_i dx_i,
+	\begin{aligned}
+		H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n} \times [-1, 1]_z,
 
-			X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ) + z dz.
-		\end{aligned}
+		\alpha|_{H_k} &= dz - \sum_{i=1}^n y_i dx_i,
 
-	Note that :math:`X|_{H_k}` exponentially expands the contact volume in the above model. For :math:`k \geq n+1`, one can simply reverse the signs of :math:`X|_{H_k}` in the above equation, in which case :math:`X|_{H_k}` exponentially contracts the contact volume. These handles will just be called contact handles since nobody was interested in registering them as trademarks.
+		X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ) + z dz.
+	\end{aligned}
+
+Note that :math:`X|_{H_k}` exponentially expands the contact volume in the above model. For :math:`k \geq n+1`, one can simply reverse the signs of :math:`X|_{H_k}` in the above equation, in which case :math:`X|_{H_k}` exponentially contracts the contact volume. These handles will just be called contact handles since nobody was interested in registering them as trademarks.
 
 Summary
 *******
@@ -103,7 +111,7 @@ The fact that every (closed) contact manifold admits a compatible Morse function
 
 We will follow a completely different path to build a hopefully more useful contact Morse theory. The main tools will be hypersurfaces and characteristic foliations on them. These tools are native to contact topology and were extensively used by D. Bennequin, Eliashberg, Giroux among many others for various purposes in the early days of the subject.
 
-.. _main_ideas:
+.. _section_main_ideas:
 
 The Main Ideas
 --------------
@@ -156,6 +164,7 @@ Summary
 
 Every (closed) contact manifold can be decomposed into three pieces: two standard contact handlebodies and a product :math:`\Sigma \times I`. The contact structure :math:`\xi|_{\Sigma \times I}` can be understood via the :math:`1`-parameter family of characteristic foliations :math:`\Sigma_t|_{\xi} \coloneqq (\Sigma \times t)_{\xi}` for :math:`t \in I`. The characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I`, can be made Morse by a :math:`C^0`-small perturbation. Thus the problem is finally reduced to understanding a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. More details about implementing these ideas will be explained in the next section.
 
+.. _section_2nd_blend_morse_contact:
 
 Second Blend of Morse Theory with Contact Structures
 ----------------------------------------------------
@@ -186,10 +195,12 @@ As a matter of fact, it makes little sense to even look for (generic) homotopies
 
 Of course, one contact manifold may have many different topological skeleta, and it's far from obvious how two choices are related to each other in a Morse theoretic way. However, such difficulty doesn't bother us, at least for now, since we're not really interested in the topology of :math:`M`. Indeed, it'd already be a great success of contact Morse theory if one could get some insights into contact structures on :math:`S^{2n+1}, n \geq 2`.
 
+.. _section_family_morse:
+
 A family Morse theory on hypersurfaces
 **************************************
 
-Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :eq:`heegaard-decomposition`. As explained in the :ref:`main ideas <main_ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels. As a convention, all explicitly mentioned (Morse) critical points are assumed to be nondegenerate unless otherwise specified.
+Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :eq:`heegaard-decomposition`. As explained in the :ref:`main ideas <section_main_ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels. As a convention, all explicitly mentioned (Morse) critical points are assumed to be nondegenerate unless otherwise specified.
 
 :math:`\pi_0`-level
 +++++++++++++++++++
@@ -211,7 +222,7 @@ Suppose :math:`\Sigma_0, \Sigma_1` are Morse, where :math:`\Sigma_t \coloneqq \S
 
 Due to genericity and the index constraint on Weinstein handles, :math:`\Sigma_t` may fail to be invariant only when there is a (unique) trajectory of :math:`\Sigma_t|_{\xi}` from a negative index-:math:`n` critical point :math:`p_n^-` to a positive index-:math:`n` critical point :math:`p_n^+`, assuming :math:`\dim \Sigma = 2n`. Moreover, such failure may happen for only finitely many :math:`t \in I`, which we call the :math:`\pi_1`-*critical moments*.
 
-	Depending on the context, a :math:`\pi_1`-*switch* at a :math:`\pi_1`-critical moment :math:`t_0 \in I` refers to either one of the following:
+	Depending on the context, a :math:`\pi_1`-*switch* at a :math:`\pi_1`-critical moment :math:`t_0 \in I` can refer to any one of the following:
 
 	* The (transversely cut out) trajectory from :math:`p_n^-` to :math:`p_n^+`.
 	* The hypersurface :math:`\Sigma_{t_0}`.
@@ -220,7 +231,7 @@ Due to genericity and the index constraint on Weinstein handles, :math:`\Sigma_t
 Topological speaking, the difference between :math:`\Sigma_{t_0 - \epsilon}` and :math:`\Sigma_{t_0 + \epsilon}` is a handle slide of a negative :math:`n`-handle over a positive :math:`n`-handle. However, not every topological handle slide of this kind can be realized as a :math:`\pi_1`-switch, even after assuming all isotopies involved in the handle slide are contact isotopies. Namely, suppose :math:`Y \subset \Sigma_{t_0}` is a regular level set between :math:`p_n^-` and :math:`p_n^+` such that the unstable manifold of :math:`p_n^-` intersects :math:`Y` along a Legendrian sphere :math:`\Lambda_-` and the stable manifold of :math:`p_n^+` intersects :math:`Y` along :math:`\Lambda_+`. Here we recall :math:`Y` is naturally a contact submanifold. [#contact_submfd]_ Then :math:`\Lambda_{\pm}` intersect :math:`\xi|_Y`-transversely at exactly one point :math:`q` (on the :math:`\pi_1`-switch), i.e.,
 
 .. math::
-	:label: xiTransverse
+	:label: xi-transverse
 
 	T_q \Lambda_+ \oplus T_q \Lambda_- = (\xi|_Y)_q.
 
@@ -252,11 +263,11 @@ By analogy with the :math:`\pi_1`-switch, here is a complete list of :math:`\pi_
 * (:math:`\pi_2^d`-switch) There exist a negative index-:math:`n` critical point :math:`p_n^-` and a positive :math:`p_n^+`, such that there exists a trajectory from :math:`p_n^-` to :math:`p_n^+` which is not transversely cut out, but rather has a first-order tangency. Namely, let :math:`Y \subset \Sigma_{t_0}^{s_0}` be a regular level set between :math:`p_n^-` and :math:`p_n^+`, and :math:`\Lambda_{\pm} \subset Y` be Legendrian spheres just as in the above discussion at the :math:`\pi_1`-level. Then the unique intersection :math:`q = \Lambda_+ \cap \Lambda_-` satisfies the following
 
   .. math::
-	  :label: xiDegenerate
+	  :label: xi-degenerate
 
 	  \dim(T_q \Lambda_+ \cap T_q \Lambda_-) = 1.
 
-  This should be compared with the :math:`\xi|_Y`-transversality condition :eq:`xiTransverse`.
+  This should be compared with the :math:`\xi|_Y`-transversality condition :eq:`xi-transverse`.
 
 
 Summary
@@ -285,7 +296,7 @@ The Morse picture of :math:`\pi_1`-switches is conceptually clear but can be dif
 		:align: center
 		:width: 400px
 
-The picture on the right-hand-side illustrates a completely general :math:`\pi_1`-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the :ref:`family Morse theory <A family Morse theory on hypersurfaces>`, here we need to keep track of several level sets (in :math:`\Sigma`) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered. Note that the gradient vector field (i.e., the characteristic foliation) always flows upwards (indicating that I'm not a physicist).
+The picture on the right-hand-side illustrates a completely general :math:`\pi_1`-switch decomposed into three steps, i.e., the three dashed arrows, which we now explain. Unlike the previous discussions in the :ref:`family Morse theory <section_family_morse>`, here we need to keep track of several level sets (in :math:`\Sigma`) at once and both stable and unstable manifolds of the critical points. So the notations will unfortunately become a bit more cluttered. Note that the gradient vector field (i.e., the characteristic foliation) always flows upwards (indicating that I'm not a physicist).
 
 The upper-left corner represents a part of :math:`\Sigma` relevant to the :math:`\pi_1`-switch. Namely, there are two index-:math:`n` critical points :math:`p_n^+` and :math:`p_n^-`, and the corresponding Legendrian spheres :math:`\Lambda_+^u, \Lambda_-^s \subset \Gamma`. Here the superscripts :math:`u` and :math:`s` denote unstable and stable, respectively. Moreover, there is a small ball in :math:`\Gamma` which intersects both :math:`\Lambda_+^u` and :math:`\Lambda_-^s` in a disk such that the :math:`\Lambda_+^u`-disk is slightly below the :math:`\Lambda_-^s`-disk, where "below" is measured against the positive co-orientation of :math:`\xi|_{\Gamma}`. This small ball is magnified in the picture, and the "below"-ness is shown as an under-crossing when the :math:`\Lambda`'s appear to be :math:`1`-dimensional.
 
@@ -303,19 +314,12 @@ Finally, the passage from the lower-right to the lower-left corner swaps :math:`
 
 	The :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch put some emphasis on the evolution of the decomposition :eq:`hypersurface-decomposition` assuming :math:`\Sigma` is invariant. Such emphasis is not always necessary given the local nature of :math:`\pi_1`-switches. In this case we may simply remember the second dashed arrow in the :math:`R_{\pm}`-:ref:`picture <figure_r_pm_picture_of_pi_1_switch>` above, and call it the :math:`Y`-picture since it records what happens in the level set :math:`Y`.
 
-Simple :math:`\pi_1`-switches
-*****************************
+Free :math:`\pi_1`-switches
+***************************
 
-Recall :math:`\pi_1`-switches are exactly where the contact germs on a :math:`1`-parameter family of Morse hypersurfaces change. They don't come for free for otherwise contact topology would be completely trivial. It's generally difficult to verify the existence of a particular :math:`\pi_1`-switch inside a given contact manifold. However, there exists a class of :math:`\pi_1`-switches which can always be found at the vicinity of any (invariant) Morse hypersurface. These :math:`\pi_1`-switches are called the *simple* ones and are the subject of discussion in this section.
+Recall :math:`\pi_1`-switches are exactly where the contact germs on a :math:`1`-parameter family of Morse hypersurfaces change. They don't come for free in general for otherwise contact topology would be no different than just topology. It's generally difficult to verify the existence of a particular :math:`\pi_1`-switch inside a given contact manifold. However, there exists a class of :math:`\pi_1`-switches which can always be found at the vicinity of any (invariant) Morse hypersurface. These :math:`\pi_1`-switches are called the *free* ones and are the subject of discussion in this section.
 
-The creation of simple :math:`\pi_1`-switches is very much a procedure of creating something out of nothing, and not surprisingly, it relies on certain :math:`\pi_2`-switches. Since :math:`\pi_2`-switches are directionless, all creations can be reversed to eliminations, which we'll omit.
-
-	There are at least three ways to create simple :math:`\pi_1`-switches: the first uses :math:`\pi_2^a`-switch to create the trivial ones, the second relies on the first and uses in addition :math:`\pi_2^b`-switch to create simple but nontrivial ones, and lastly the third is independent of the previous two and use just :math:`\pi_2^d`-switch.
-
-.. admonition:: TODO
-	:class: attention
-
-	The only :math:`\pi_2`-switch which is not involved in the above procedure is the :math:`\pi_2^c`-switch. I initially thought that it generates only certain contact topological "pseudo-isotopes" of Morse hypersurfaces, and therefore doesn't interact with :math:`\pi_1`-switches. It has been pointed out to me by J. Breen and Honda that this is *not* the case. Indeed, :math:`\pi_2^c`-switches can bridge two sequences of :math:`\pi_1`-switches, and are equally important as the other :math:`\pi_2`-switches. Details about :math:`\pi_2^c`-switches and how they may improve our understanding of contact Morse theory are to be carried out.
+The creation of free :math:`\pi_1`-switches is very much a procedure of creating something out of nothing. Not surprisingly, it involves certain :math:`\pi_2`-switches. Since :math:`\pi_2`-switches are directionless, all creations can be reversed to eliminations, which we'll omit.
 
 .. sidebar:: Morse picture of a :math:`\pi_2^a`-switch
 
@@ -326,15 +330,15 @@ The creation of simple :math:`\pi_1`-switches is very much a procedure of creati
 Trivial :math:`\pi_1`-switches
 ++++++++++++++++++++++++++++++
 
-Let's start with the simplest scenario of a trivial :math:`\pi_1`-switch, which can be created by a :math:`\pi_2`-switch as shown in the right-hand-side picture.
+Let's start with the simplest scenario of a trivial :math:`\pi_1`-switch, which can be created by a :math:`\pi_2^a`-switch as shown in the right-hand-side picture.
 
 .. note::
 
-	All pictures will be drawn in dimension :math:`2`, but are supposed to illustrate the general situation in any dimension. For example, saddles usually represent index-:math:`n` critical points (assuming :math:`\dim \Sigma = 2n`).
+	All pictures will be drawn in dimension :math:`2`, but are supposed to illustrate the general situation in any dimension. For example, saddles usually represent index-:math:`n` critical points, assuming :math:`\dim \Sigma = 2n`.
 
 Specifically, the square in the middle represents the parameter space :math:`I^2_{s,t}` where :math:`s` is horizontal and :math:`t` is vertical. The red dot at the center of :math:`I^2` and the corresponding Morse vector field represents the critical moment when the :math:`\pi_2^a`-switch takes place. The left-side of :math:`I^2` represents a Morse homotopy :math:`\Sigma_t^0|_{\xi}` which contains no critical moments, i.e., there are no :math:`\pi_1`-switches. However, the right-side of :math:`I^2` represents a Morse homotopy :math:`\Sigma_t^1|_{\xi}` which contains exactly one :math:`\pi_1`-switch [#pi2a_morse_sign]_. Scanning from left to right, one could say that a :math:`\pi_1`-switch is born via a :math:`\pi_2^a`-switch.
 
-	The so created :math:`\pi_1`-switch is said to be *trivial* since the corresponding contact structure on :math:`\Sigma \times I` is isotropic, relative to the boundaries, to the :math:`I`-invariant one (modulo Weinstein homotopies of :math:`R_{\pm}` as usual).
+	The so-created :math:`\pi_1`-switch is said to be *trivial* since the corresponding contact structure on :math:`\Sigma \times I` is isotopic, relative to the boundaries, to the :math:`I`-invariant one (modulo Weinstein homotopies of :math:`R_{\pm}` as usual).
 
 .. sidebar:: :math:`R_{\pm}`-picture of a trivial :math:`\pi_1`-switch
 
@@ -348,8 +352,8 @@ The two figures at the bottom represent the new :math:`\Gamma'` after the trivia
 
 Trivial :math:`\pi_1`-switches, as its name suggests, are quite boring. But when combined with :math:`\pi_2^b`-switches, they can produce many nontrivial :math:`\pi_1`-switches. This is our next step.
 
-Simple :math:`\pi_1`-switches derived from the trivial ones
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Derived :math:`\pi_1`-switches from the trivial one
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. sidebar:: Morse picture of a :math:`\pi_2^b`-switch
 
@@ -359,17 +363,11 @@ Simple :math:`\pi_1`-switches derived from the trivial ones
 
 The picture on the right illustrates a general :math:`\pi_2^b`-switch, where each two adjacent ovals represent two disjoint regions on :math:`\Sigma`. The square in the middle is, as before, the parameter space :math:`I^2_{s, t}` and the red dot represents the critical moment when there exist simultaneously two flow lines from index-:math:`n` critical points :math:`p_n^-, q_n^-` to :math:`p_n^+, q_n^+`, respectively. The passage from the left side :math:`\Sigma^0_t|_{\xi}`, to the right side :math:`\Sigma^1_t|_{\xi}, t \in I`, changes the order of which two :math:`\pi_1`-switches occur. It is therefore also known as the *far commutativity* of two :math:`\pi_1`-switches, which are in a sense disjoint from each other.
 
-Although it's possible to generate nontrivial :math:`\pi_1`-switches from the trivial one in contact :math:`3`-manifolds, they are quite different from the higher dimensional cases. So let's assume :math:`\dim \Sigma \geq 4`, i.e., :math:`\dim M \geq 5`, from now on.
-
-.. note::
-
-	While :math:`3`-dimensional contact topology is somewhat special, it's not clear at the moment if the :math:`5`-dimensional case is fundamentally different from the even higher dimensional ones.
-
 The plan for generating new :math:`\pi_1`-switches from the trivial one is straightforward. Namely, we'll construct two disjoint :math:`\pi_1`-switches :math:`\Delta_1, \Delta_2` such that :math:`\Delta_1` is trivial and :math:`\Delta_2` becomes trivial after :math:`\Delta_1`. However, after swapping the order, neither :math:`\Delta_2` nor :math:`\Delta_1` is trivial anymore.
 
 .. _figure_simple_pi_1_switch_from_pi_2b_switch:
 
-.. sidebar:: Simple :math:`\pi_1`-switch from :math:`\pi_2^b`-switch
+.. sidebar:: Free :math:`\pi_1`-switch from :math:`\pi_2^b`-switch
 
 	.. figure:: static/contact-morse-theory/trivial-rotation.svg
 		:align: center
@@ -377,22 +375,22 @@ The plan for generating new :math:`\pi_1`-switches from the trivial one is strai
 
 On the right is a not-particularly-good-looking illustration of the above plan. Namely, in the upper-left corner, we draw the relevant Legendrian spheres :math:`\Lambda^1_{\pm}` and :math:`\Lambda^2_{\pm}` corresponding to the two trivial :math:`\pi_1`-switches :math:`\Delta_1` (black) and :math:`\Delta_2` (blue), respectively. Although :math:`\Delta_1` is obviously trivial, it's not immediately clear that :math:`\Delta_2` is also trivial after :math:`\Delta_1`. The bottom figure shows, from the perspective of :math:`R^1_+`, that it's indeed the case where ":math:`\cong`" represents a Legendrian isotopy (via a handle slide).
 
-By swapping the two :math:`\pi_1`-switches (and forget about :math:`\Delta_1`), we get on the upper-right corner the derived :math:`\pi_1`-switch :math:`\Delta_2` which is quite general since there is no additional restrictions on :math:`\Lambda^2_-` outside of the local picture except that it must belong to the stable manifold of a negative index-:math:`n` critical point. Note that this requirement doesn't contradict our setup in the upper-left corner since :math:`\Lambda^1_-` and :math:`\Lambda^2_-` are not linked as Legendrians. The following noteworthy property of such derived simple :math:`\pi_1`-switches is a direct consequence of definition.
-
-.. _left_inverse:
-
-	Any simple :math:`\pi_1`-switch derived from a trivial one via a :math:`\pi_2^b`-switch admits a (left) inverse in the sense that the composition of the two gives the :math:`I`-invariant contact structure.
+By swapping the two :math:`\pi_1`-switches (and forget about :math:`\Delta_1`), we get on the upper-right corner the derived :math:`\pi_1`-switch :math:`\Delta_2` which is quite general since there is no additional restrictions on :math:`\Lambda^2_-` outside of the local picture except that it must belong to the stable manifold of a negative index-:math:`n` critical point. Note that this requirement doesn't contradict our setup in the upper-left corner since :math:`\Lambda^1_-` and :math:`\Lambda^2_-` are not linked as Legendrians.
 
 .. note::
 
-	The :math:`\pi_2^b`-switch itself assumes nothing about the involved :math:`\pi_1`-switches, although we've been working under triviality assumptions. Hence one can further derive new :math:`\pi_1`-switches from, for example, the simples ones or any (for some reason) existing :math:`\pi_1`-switches.
+	1. Any free :math:`\pi_1`-switch derived from a trivial one via a :math:`\pi_2^b`-switch admits a left inverse in the sense that the composition of the two gives the :math:`I`-invariant contact structure.
 
-Since this type of simple :math:`\pi_1`-switches exists at the vicinity of any (Morse) hypersurface, we'll explore in later examples how it may be used to detect flexibility of contact structures.
+	2. The :math:`\pi_2^b`-switch itself assumes nothing about the involved :math:`\pi_1`-switches. Hence it's possible to derive new :math:`\pi_1`-switches from the ones that are for some reason known to exist, regardless of whether the later are trivial or not. In particular, there exist an abundance of :math:`\pi_1`-switches that are iteratively derived from the trivial one. They may all be called "free" since they can always be found within an invariant neighborhood of a hypersurface.
+
+We shall later use this type of free :math:`\pi_1`-switches to detect flexibilities of contact structures near a hypersurface.
+
+WIP...
 
 Simple :math:`\pi_1`-switches from :math:`\pi_2^d`-switch
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This is probably the first feature of our contact Morse theory which only exists in dimensions :math:`\geq 5`. In particular, it's not possible to draw the Morse picture of a :math:`\pi_2^d`-switch in :math:`2` dimensions as in the previous cases because of the degenerate intersection :eq:`xiDegenerate`. Therefore we'll jump directly to the :math:`R_{\pm}`-picture, or actually, the :math:`Y`-:ref:`picture <note_y_picture>` since we won't bother keeping track of the changes in :math:`R_{\pm}`.
+This is probably the first feature of our contact Morse theory which only exists in dimensions :math:`\geq 5`. In particular, it's not possible to draw the Morse picture of a :math:`\pi_2^d`-switch in :math:`2` dimensions as in the previous cases because of the degenerate intersection :eq:`xi-degenerate`. Therefore we'll jump directly to the :math:`R_{\pm}`-picture, or actually, the :math:`Y`-:ref:`picture <note_y_picture>` since we won't bother keeping track of the changes in :math:`R_{\pm}`.
 
 .. sidebar:: :math:`Y`-picture of a :math:`\pi_2^d`-switch
 
@@ -400,14 +398,9 @@ This is probably the first feature of our contact Morse theory which only exists
 		:align: center
 		:width: 400px
 
-The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` (instead of the hypersurface :math:`\Sigma`) in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xiDegenerate`.
+The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` (instead of the hypersurface :math:`\Sigma`) in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xi-degenerate`.
 
-While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two (i.e., the lower-half of the right vertical side) will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions. Moreover, by construction, the so-generated :math:`\pi_1`-switches also satisfy the :ref:`existence-of-left-inverse property <left_inverse>`, i.e., the upper-half of the right vertical side being the left inverse. This motivates the following curious question.
-
-.. admonition:: Question
-	:class: hint
-
-	Is the :math:`\pi_2^d`-generation of :math:`\pi_1`-switches a special case of the :math:`\pi_2^b`-generation from the trivial :math:`\pi_1`-switches?
+While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two (i.e., the lower-half of the right vertical side) will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions.
 
 .. _section_flexibility:
 
