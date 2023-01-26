@@ -258,7 +258,11 @@ By analogy with the :math:`\pi_1`-switch, here is a complete list of :math:`\pi_
 
 * (:math:`\pi_2^b`-switch) There exist two index-:math:`n` negative critical points :math:`p_n^-, q_n^-` and two positive :math:`p_n^+, q_n^+`, such that there are exactly two transversely cut out trajectories: one from :math:`p_n^-` to :math:`p_n^+` and the other from :math:`q_n^-` to :math:`q_n^+`.
 
+.. _bullet_pi2c_switch:
+
 * (:math:`\pi_2^c`-switch) There exist a negative index-:math:`(n+1)` critical point :math:`p_{n+1}^-` and a positive index-:math:`n` critical point :math:`p_n^+` and a unique trajectory from :math:`p_{n+1}^-` to :math:`p_n^+` which is transversely cut out with respect to a :math:`2`-dimensional family :math:`\Sigma_t^s|_{\xi}` for :math:`(s, t)` close to :math:`(s_0, t_0)`.
+
+.. _bullet_pi2d_switch:
 
 * (:math:`\pi_2^d`-switch) There exist a negative index-:math:`n` critical point :math:`p_n^-` and a positive :math:`p_n^+`, such that there exists a trajectory from :math:`p_n^-` to :math:`p_n^+` which is not transversely cut out, but rather has a first-order tangency. Namely, let :math:`Y \subset \Sigma_{t_0}^{s_0}` be a regular level set between :math:`p_n^-` and :math:`p_n^+`, and :math:`\Lambda_{\pm} \subset Y` be Legendrian spheres just as in the above discussion at the :math:`\pi_1`-level. Then the unique intersection :math:`q = \Lambda_+ \cap \Lambda_-` satisfies the following
 
@@ -317,18 +321,20 @@ Finally, the passage from the lower-right to the lower-left corner swaps :math:`
 Free :math:`\pi_1`-switches
 ***************************
 
-Recall :math:`\pi_1`-switches are exactly where the contact germs on a :math:`1`-parameter family of Morse hypersurfaces change. They don't come for free in general for otherwise contact topology would be no different than just topology. It's generally difficult to verify the existence of a particular :math:`\pi_1`-switch inside a given contact manifold. However, there exists a class of :math:`\pi_1`-switches which can always be found at the vicinity of any (invariant) Morse hypersurface. These :math:`\pi_1`-switches are called the *free* ones and are the subject of discussion in this section.
+Recall :math:`\pi_1`-switches are exactly where the contact germs on a :math:`1`-parameter family of Morse hypersurfaces change. They don't come for free in general for otherwise contact topology would be no different than just topology. It's generally difficult to verify the existence of a particular :math:`\pi_1`-switch inside a given contact manifold. However, there exists a class of :math:`\pi_1`-switches which can always be found at the vicinity of any (invariant) Morse hypersurface. These :math:`\pi_1`-switches are called *free*, and are the subject of discussion in this section.
 
 The creation of free :math:`\pi_1`-switches is very much a procedure of creating something out of nothing. Not surprisingly, it involves certain :math:`\pi_2`-switches. Since :math:`\pi_2`-switches are directionless, all creations can be reversed to eliminations, which we'll omit.
+
+.. _section_trivial_pi1_switches:
+
+Trivial :math:`\pi_1`-switches
+++++++++++++++++++++++++++++++
 
 .. sidebar:: Morse picture of a :math:`\pi_2^a`-switch
 
 	.. figure:: static/contact-morse-theory/pi2a-morse.svg
 		:align: center
 		:width: 400px
-
-Trivial :math:`\pi_1`-switches
-++++++++++++++++++++++++++++++
 
 Let's start with the simplest scenario of a trivial :math:`\pi_1`-switch, which can be created by a :math:`\pi_2^a`-switch as shown in the right-hand-side picture.
 
@@ -351,6 +357,8 @@ Let's turn the Morse picture of the trivial :math:`\pi_1`-switch into the :math:
 The two figures at the bottom represent the new :math:`\Gamma'` after the trivial :math:`\pi_1`-switch from the perspectives of :math:`R'_+` and :math:`R'_-`, respectively. As a sanity check, one can easily see that :math:`\Gamma'` is indeed isomorphic to the original :math:`\Gamma`. Here the :math:`(\pm 1)` beside the Legendrians are coefficients of Legendrian surgeries, and correspond to removing and adding a (index-:math:`n`) critical point, respectively.
 
 Trivial :math:`\pi_1`-switches, as its name suggests, are quite boring. But when combined with :math:`\pi_2^b`-switches, they can produce many nontrivial :math:`\pi_1`-switches. This is our next step.
+
+.. _section_derived_pi1_switches:
 
 Derived :math:`\pi_1`-switches from the trivial one
 +++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -379,18 +387,48 @@ By swapping the two :math:`\pi_1`-switches (and forget about :math:`\Delta_1`), 
 
 .. note::
 
-	1. Any free :math:`\pi_1`-switch derived from a trivial one via a :math:`\pi_2^b`-switch admits a left inverse in the sense that the composition of the two gives the :math:`I`-invariant contact structure.
+	1. Any free :math:`\pi_1`-switch derived from a trivial one via a :math:`\pi_2^b`-switch admits a right inverse in the sense that a :math:`\pi_1`-switch can be post-composed to produce the :math:`I`-invariant contact structure.
 
 	2. The :math:`\pi_2^b`-switch itself assumes nothing about the involved :math:`\pi_1`-switches. Hence it's possible to derive new :math:`\pi_1`-switches from the ones that are for some reason known to exist, regardless of whether the later are trivial or not. In particular, there exist an abundance of :math:`\pi_1`-switches that are iteratively derived from the trivial one. They may all be called "free" since they can always be found within an invariant neighborhood of a hypersurface.
 
 We shall later use this type of free :math:`\pi_1`-switches to detect flexibilities of contact structures near a hypersurface.
 
-WIP...
+Free :math:`\pi_1`-switches from nowhere
+++++++++++++++++++++++++++++++++++++++++
 
-Simple :math:`\pi_1`-switches from :math:`\pi_2^d`-switch
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+As we have learned from the discussions above, free :math:`\pi_1`-switches can be created out of the trivial one using the so-called far-commutativity. What we shall do in this section is the opposite. Namely, we shall construct free :math:`\pi_1`-switches without any reference to :math:`\pi_2`-switches, and from this we shall retrospectively argue that the trivial :math:`\pi_1`-switch exists.
 
-This is probably the first feature of our contact Morse theory which only exists in dimensions :math:`\geq 5`. In particular, it's not possible to draw the Morse picture of a :math:`\pi_2^d`-switch in :math:`2` dimensions as in the previous cases because of the degenerate intersection :eq:`xi-degenerate`. Therefore we'll jump directly to the :math:`R_{\pm}`-picture, or actually, the :math:`Y`-:ref:`picture <note_y_picture>` since we won't bother keeping track of the changes in :math:`R_{\pm}`.
+Since we plan not to use any :math:`\pi_2`-switches, we need to go back to the root of contact Morse theory to see why some :math:`\pi_1`-switches always exist. Recall the :math:`Y`-:ref:`picture <note_y_picture>` of :math:`\pi_1`-switch where :math:`Y \subset \Sigma` is a level set separating the two critical points :math:`p_n^{\pm}`. Moreover, the corresponding Legendrian spheres :math:`\Lambda_+^s` from :math:`p_n^+` and :math:`\Lambda_-^u` from :math:`p_n^-` in :math:`Y` are relatively positioned as shown in this :ref:`picture <figure_r_pm_picture_of_pi_1_switch>` such that :math:`\Lambda_+^s` is slightly "below" :math:`\Lambda_-^u`. Then the :math:`\pi_1`-switch amounts to isotoping :math:`\Lambda_+^s` up across :math:`\Lambda_-^u`.
+
+If :math:`Y` were to have an arbitrarily large (standard) neighborhood, then one can always perturb :math:`\Sigma` near -- but away from -- :math:`Y` to change the characteristic foliation :math:`\Sigma_{\xi}` so that it effectively raises :math:`\Lambda_+^s` up across :math:`\Lambda_-^u` [#bump_switch]_. However, in reality, one can only assume a finite neighborhood size of :math:`Y` depending on :math:`\Sigma` or rather the contact structure at the vicinity of it. Let :math:`\phi_t: Y \to Y`, :math:`t \in [0,1]`, be the contact isotopy induced by the perturbation such that  :math:`\phi_0 = \op{id}` and :math:`\phi_1` raises :math:`\Lambda_+^s` up across :math:`\Lambda_-^u`. Then we can define an "action" of such an isotopy by
+
+.. math::
+
+	A(\phi) \coloneqq \max_{x \in Y} \int_0^1 \alpha(\dot{\phi}_t(x)) dt
+
+where :math:`\alpha` denotes the contact form on :math:`Y`. It turns out that the possible magnitude of :math:`A(\phi)` is constrained by the neighborhood size of :math:`Y`. This is to say that an isotopy :math:`\phi_t` can be arranged by a small perturbation of :math:`\Sigma` near :math:`Y` if and only if the action :math:`A(\phi)` is sufficiently small.
+
+In dimension :math:`3`, the above discussion leads to nothing because :math:`Y` in this case is a transverse knot (or link), and hence there is a positive lower bound on :math:`A(\phi)` for any :math:`\phi_t` that lifts :math:`\Lambda_+^s` (in this case :math:`0`-dimensional) up across :math:`\Lambda_-^u`. So we get no free :math:`\pi_1`-switch without knowing *a priori* that the neighborhood size :math:`Y` is sufficiently large. This is not the case in dimensions at least :math:`5`.
+
+.. sidebar:: Free :math:`\pi_1`-switch from a "small" isotopy
+
+	.. figure:: static/contact-morse-theory/finger-move.svg
+		:align: center
+		:width: 400px
+
+In the picture to the right, we show an example of an isotopy with small action. Namely, we draw an isotropic arc (which is Legendrian if :math:`\dim Y = 3`) from :math:`\Lambda_-^u` to a place arbitrarily close to :math:`\Lambda_+^s`. Then the contact isotopy :math:`\phi_t` basically makes a finger move that guides :math:`\Lambda_-^s` towards :math:`\Lambda_+^u`, with arbitrarily small action. In this way we have shown that there exist :math:`\pi_1`-switches between *any* pairs of :math:`\Lambda_{\pm}`. Of course, we cannot in general pre-decide the isotopy :math:`\phi_t` that actually determines tha :math:`\pi_1`-switch, for otherwise we would've arrived at the absurd conclusion that all :math:`\pi_1`-switches are free.
+
+Finally we wrap up the discussions of free :math:`\pi_1`-switches with the following conclusion.
+
+	Both the :ref:`trivial <section_trivial_pi1_switches>` :math:`\pi_1`-switches and the :ref:`derived <section_derived_pi1_switches>` ones can be obtained by the finger move construction without any reference to :math:`\pi_2`-switches. Nonetheless, the :math:`\pi_2^b`-switches (or the far commutativity) can be used to produce new :math:`\pi_1`-switches from existing ones even if the later are not free.
+
+More relations between :math:`\pi_1`-switches
+*********************************************
+
+It is the nature of Morse theory that :math:`\pi_2`-switches give rise to equivalence relations between :math:`\pi_1`-switches. Indeed we have examined through the investigation of free :math:`\pi_1`-switches the equivalence relations induced by :math:`\pi_2^a` and :math:`\pi_2^b`-switches. In this section we shall go through the rest, namely the :math:`\pi_2^c` and :math:`\pi_2^d`-switches. It turns out that :math:`\pi_2^d`-switches are easier to deal with, so we shall consider them first.
+
+Relations from :math:`\pi_2^d`-switches
++++++++++++++++++++++++++++++++++++++++
 
 .. sidebar:: :math:`Y`-picture of a :math:`\pi_2^d`-switch
 
@@ -398,9 +436,16 @@ This is probably the first feature of our contact Morse theory which only exists
 		:align: center
 		:width: 400px
 
-The figure on the right should look generally familiar now. In particular, the square in the middle represents the parameter space :math:`I^2_{s, t}`. However, it's not a Morse picture, and each oval represents a view in the level set :math:`Y` (instead of the hypersurface :math:`\Sigma`) in which live the unstable Legendrian sphere :math:`\Lambda_+` (blue) of a positive critical point :math:`p_n^+` and the stable Legendrian sphere :math:`\Lambda_-` (black) of a negative :math:`p_n^-`, both drawn in the front projection. As usual, the red dot at the center represents the critical moment of the :math:`\pi_2^d`-switch, where :math:`\Lambda_+` and :math:`\Lambda_-` intersect degenerately according to :eq:`xi-degenerate`.
+To the right we have the usual :math:`2`-parameter family of :math:`\Lambda_+^s` and :math:`\Lambda_-^u` in :math:`Y` -- drawn in the front projection -- around a :math:`\pi_2^d`-:ref:`switch <bullet_pi2d_switch>`. The :math:`\pi_2^d`-switch happens exactly at the red dot where :math:`\Lambda_+^s` and :math:`\Lambda_-^u` intersect, not transversely but following :eq:`xi-degenerate`. If we let :math:`s, t` parametrize the hypersurfaces as before, then we see an equivalence relation between the :math:`I`-invariant contact structure on :math:`\Sigma^0_t, t \in I`, on the left and the composition of two :math:`\pi_1`-switches on :math:`\Sigma^1_t, t \in I`, on the right. Therefore we can say that a :math:`\pi_2^d`-switch creates or cancels a pair of :math:`\pi_1`-switches.
 
-While nothing happens along the left vertical side :math:`\Sigma_t^0|_{\xi}`, we see two :math:`\pi_1`-switches appearing on the right vertical side :math:`\Sigma_t^1|_{\xi}` as :math:`\Lambda_+` moves up across :math:`\Lambda_-`. The first :math:`\pi_1`-switch among the two (i.e., the lower-half of the right vertical side) will be referred to as *a simple* :math:`\pi_1`-*switch generated from a* :math:`\pi_2^d`-*switch*. Note that all we need in this construction is a pair of critical points :math:`p_n^{\pm}` without any additional conditions.
+Note that there is nothing special about the configuration of :math:`\Lambda_+^s` and :math:`\Lambda_-^u` at either the bottom :math:`t=0` or the top :math:`t=1` of the parameter space. They can for example always be arranged using the finger moves introduced above. It means, in particular, that even more free :math:`\pi_1`-switches can be produced this way by the very existence of :math:`\pi_2^d`-switches.
+
+Relations from :math:`\pi_2^c`-switches [#pi2c_switch_error]_
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The :math:`\pi_2^c`-:ref:`switch <bullet_pi2c_switch>` is the most special among the other :math:`\pi_2`-switches because it involves critical points *not* of the middle index. For this reason, we choose to describe the :math:`\pi_2^c`-switch on a level set that is neither :math:`\Gamma` nor :math:`Y` as we used to do. Namely, we would like to lift the critical value of :math:`p_n^+` above :math:`p_{n+1}^-` and therefore also above all the :math:`p_n^-`'s. Here we recall the assumption that there is no flow lines from :math:`p_n^+` to :math:`p_{n+1}^-` in the first place, for otherwise there cannot be a :math:`\pi_2^c`-switch between the pair.
+
+WIP...
 
 .. _section_flexibility:
 
@@ -480,3 +525,7 @@ In this article, we tried to explain what contact Morse theory is about, includi
 .. [#pi2labels] The :math:`\pi_2`-switches are labeled by alphabetic letters at a random order because I don't have a better naming strategy.
 
 .. [#pi2a_morse_sign] One has to make (obviously) consistent choices of signs for the critical points.
+
+.. [#bump_switch] Details about this construction -- in fact, a discussion about the entire free :math:`\pi_1`-switch -- can be found in this `blog post <https://yhuangmath.wordpress.com/2021/05/29/trivia#bypass-everywhere>`__.
+
+.. [#pi2c_switch_error] I once thought the :math:`\pi_2^c`-switch has only something to do with pseudo-isotopies of the Morse theory on :math:`\Sigma`. The fact that this is wrong was brought to my attention by K. Honda and J. Breen.
