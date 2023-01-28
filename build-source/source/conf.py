@@ -33,7 +33,6 @@ release = '0.1'
 # ones.
 extensions = [
 	'sphinx.ext.mathjax',
-	'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -50,7 +49,6 @@ language = 'en'
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
-suppress_warnings = ['autosectionlabel.*']
 
 
 # -- Options for HTML output -------------------------------------------------
