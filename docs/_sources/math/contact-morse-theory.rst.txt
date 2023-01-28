@@ -443,9 +443,21 @@ Note that there is nothing special about the configuration of :math:`\Lambda_+^s
 Relations from :math:`\pi_2^c`-switches [#pi2c_switch_error]_
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The :math:`\pi_2^c`-:ref:`switch <bullet_pi2c_switch>` is the most special among the other :math:`\pi_2`-switches because it involves critical points *not* of the middle index. For this reason, we choose to describe the :math:`\pi_2^c`-switch on a level set that is neither :math:`\Gamma` nor :math:`Y` as we used to do. Namely, we would like to lift the critical value of :math:`p_n^+` above :math:`p_{n+1}^-` and therefore also above all the :math:`p_n^-`'s. Here we recall the assumption that there is no flow lines from :math:`p_n^+` to :math:`p_{n+1}^-` in the first place, for otherwise there cannot be a :math:`\pi_2^c`-switch between the pair.
+The :math:`\pi_2^c`-:ref:`switch <bullet_pi2c_switch>` is the most special among the other :math:`\pi_2`-switches because it involves critical points *not* of the middle index. It is for this reason that we will describe it using the :math:`Y`-picture where :math:`Y` is a level set that separates :math:`p_n^+` on one side and :math:`p_{n+1}^-` together with all the :math:`p_n^-`'s it interacts with on the other side. For the sake of simplicity, let's focus on the case where the contact dimension is :math:`5`, i.e., :math:`n=2`. The general case poses in principle [#higher_dim_is_harder]_ no extra difficulty but the picture becomes much harder to draw.
 
-WIP...
+.. sidebar:: :math:`Y`-picture of a :math:`\pi_2^c`-switch (schematic)
+
+	.. figure:: static/contact-morse-theory/pi2c-morse.svg
+		:align: center
+		:width: 400px
+
+In the picture to the right, we first draw a solid ball around :math:`\Lambda^u(p_{n+1}^-)` -- the red dot -- which is the intersection between the unstable manifold of :math:`p_{n+1}^-` and :math:`Y`. Note that :math:`\Lambda^u(p_{n+1}^-)` is only isotropic (and not Legendrian even though we still use the letter :math:`\Lambda`) for index reasons.
+
+Using the usual :math:`s, t` coordinates on the parameter space, we then draw schematically the Legendrian :math:`\Lambda^s(p_n^+)` at :math:`t=0` for all :math:`s` as the thickened solid curve. As :math:`t` runs from :math:`0` to :math:`1`, the semicircle part of :math:`\Lambda^s(p_n^+)` swings upwards in the direction of the green arrows either through the left hemisphere at :math:`s=0` or through the right hemisphere at :math:`s=1`, and ends up at the dashed curve. It's not hard to imagine that at :math:`s=1/2`, the semicircle part of :math:`\Lambda^s(p_n^+)` just sweeps through the longitudinal great disk and comes across :math:`\Lambda^s(p_n^+)` at exactly :math:`t=1/2`.
+
+Finally we draw the unstable Legendrian :math:`\Lambda_-^u`'s (the blue lines) corresponding to the :math:`p_n^-`'s that emanate flow lines towards :math:`p_{n+1}^-`. It's now obvious how a :math:`\pi_2^c`-switch gives rise to an equivalence relation between :math:`\pi_1`-switches. Namely, we have one sequence of :math:`\pi_1`-switches at :math:`s=0` on the one side, and another sequence of :math:`\pi_1`-switches at :math:`s=1` on the other side. Note, however, that it is not necessary to have a nonempty sequence on either side. In particular, when both sides are empty, we obtain a pseudo-isotopy [#pi2c_switch_error]_ between :math:`\Sigma_{t, s=0}` and :math:`\Sigma_{t, s=1}`.
+
+The discussion so far should give us at least a conceptual understanding of the consequences of :math:`\pi_2^c`-switches. We shall wrap it up by explaining why the picture above is "schematic". It appears in the picture that :math:`\Lambda^s(p_n^+)` -- ignoring the part away from the neighborhood of :math:`\Lambda^u(p_{n+1}^-)` -- sweeps out the embedded solid ball as :math:`s, t` run through the entire parameter space. However, in reality, the region swept out by :math:`\Lambda^s(p_n^+)` is not going to be an embedded ball essentially because contact structure is not an `isotropic <https://en.wikipedia.org/wiki/Isotropic_manifold>`__ structure. Since it's neither difficult nor instructive to figure out what really should happen around a :math:`\pi_2^c`-switch, we shall leave it to a future time when it turns out to be necessary.
 
 .. _section_flexibility:
 
@@ -529,3 +541,5 @@ In this article, we tried to explain what contact Morse theory is about, includi
 .. [#bump_switch] Details about this construction -- in fact, a discussion about the entire free :math:`\pi_1`-switch -- can be found in this `blog post <https://yhuangmath.wordpress.com/2021/05/29/trivia#bypass-everywhere>`__.
 
 .. [#pi2c_switch_error] I once thought the :math:`\pi_2^c`-switch has only something to do with pseudo-isotopies of the Morse theory on :math:`\Sigma`. The fact that this is wrong was brought to my attention by K. Honda and J. Breen.
+
+.. [#higher_dim_is_harder] It is likely that in practice contact topology becomes more difficult as dimension increases.
