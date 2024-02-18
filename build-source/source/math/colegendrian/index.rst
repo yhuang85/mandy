@@ -13,6 +13,7 @@ The hope is to understand Legendrians via the interplay with coLegendrians, but 
 
 .. toctree::
 	:titlesonly:
-	:maxdepth: 2
+	:maxdepth: 1
 
 	CoLegendrians in dimension five <coleg-5d>
+	Bypass attachment revisited <bypass>

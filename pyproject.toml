@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "mandy"
+version = "0.1.0"
+description = ""
+authors = ["Yang Huang <hymath@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+sphinx = "^7.2.6"
+sphinx-autobuild = "^2024.2.4"
+pydata-sphinx-theme = "^0.15.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

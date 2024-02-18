@@ -30,3 +30,12 @@ Bibliography
 .. [HH19] K\. Honda and Y\. Huang\. *Convex hypersurface theory in contact topology*. `arXiv <https://arxiv.org/abs/1907.06025>`__
 
 .. [Mur12] E\. Murphy\. *Loose Legendrian embeddings in high dimensional contact manifolds*. `arXiv <https://arxiv.org/abs/1201.2245>`__
+
+
+.. rubric:: Physics
+
+.. [Wei95] S\. Weinberg\. *The Quantum Theory of Fields Volume 1: Foundations* `doi <https://doi.org/10.1017/CBO9781139644167>`__
+
+.. [Wei96] S\. Weinberg\. *The Quantum Theory of Fields Volume 2: Modern Applications* `doi <https://doi.org/10.1017/CBO9781139644174>`__
+
+.. [Wei00] S\. Weinberg\. *The Quantum Theory of Fields Volume 3: Supersymmetry* `doi <https://doi.org/10.1017/CBO9781139644198>`__

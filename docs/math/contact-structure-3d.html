@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Contact structures in 3D seen from within &#8212; Mandy&#39;s wonderland</title>
+    <title>Contact structures in 3D seen from within &#8212; Mandy&#39;s wonderland</title>
   
   
   
@@ -16,108 +18,125 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>window.MathJax = {"tex": {"macros": {"op": ["\\operatorname {#1}", 1], "p": "{\\partial}", "ps": ["\\prescript {#1}{#2}{#3}", 3], "psup": ["\\prescript {#1}{}{#2}", 2], "dist": "{\\operatorname{dist}}", "ind": "{\\operatorname{ind}}", "std": "{\\operatorname{std}}", "abb": "{\\mathbb a}", "bbb": "{\\mathbb b}", "cbb": "{\\mathbb c}", "dbb": "{\\mathbb d}", "ebb": "{\\mathbb e}", "fbb": "{\\mathbb f}", "gbb": "{\\mathbb g}", "hbb": "{\\mathbb h}", "ibb": "{\\mathbb i}", "jbb": "{\\mathbb j}", "kbb": "{\\mathbb k}", "lbb": "{\\mathbb l}", "mbb": "{\\mathbb m}", "nbb": "{\\mathbb n}", "obb": "{\\mathbb o}", "pbb": "{\\mathbb p}", "qbb": "{\\mathbb q}", "rbb": "{\\mathbb r}", "sbb": "{\\mathbb s}", "tbb": "{\\mathbb t}", "ubb": "{\\mathbb u}", "vbb": "{\\mathbb v}", "wbb": "{\\mathbb w}", "xbb": "{\\mathbb x}", "ybb": "{\\mathbb y}", "zbb": "{\\mathbb z}", "Abb": "{\\mathbb A}", "Bbb": "{\\mathbb B}", "Cbb": "{\\mathbb C}", "Dbb": "{\\mathbb D}", "Ebb": "{\\mathbb E}", "Fbb": "{\\mathbb F}", "Gbb": "{\\mathbb G}", "Hbb": "{\\mathbb H}", "Ibb": "{\\mathbb I}", "Jbb": "{\\mathbb J}", "Kbb": "{\\mathbb K}", "Lbb": "{\\mathbb L}", "Mbb": "{\\mathbb M}", "Nbb": "{\\mathbb N}", "Obb": "{\\mathbb O}", "Pbb": "{\\mathbb P}", "Qbb": "{\\mathbb Q}", "Rbb": "{\\mathbb R}", "Sbb": "{\\mathbb S}", "Tbb": "{\\mathbb T}", "Ubb": "{\\mathbb U}", "Vbb": "{\\mathbb V}", "Wbb": "{\\mathbb W}", "Xbb": "{\\mathbb X}", "Ybb": "{\\mathbb Y}", "Zbb": "{\\mathbb Z}", "acal": "{\\mathcal a}", "bcal": "{\\mathcal b}", "ccal": "{\\mathcal c}", "dcal": "{\\mathcal d}", "ecal": "{\\mathcal e}", "fcal": "{\\mathcal f}", "gcal": "{\\mathcal g}", "hcal": "{\\mathcal h}", "ical": "{\\mathcal i}", "jcal": "{\\mathcal j}", "kcal": "{\\mathcal k}", "lcal": "{\\mathcal l}", "mcal": "{\\mathcal m}", "ncal": "{\\mathcal n}", "ocal": "{\\mathcal o}", "pcal": "{\\mathcal p}", "qcal": "{\\mathcal q}", "rcal": "{\\mathcal r}", "scal": "{\\mathcal s}", "tcal": "{\\mathcal t}", "ucal": "{\\mathcal u}", "vcal": "{\\mathcal v}", "wcal": "{\\mathcal w}", "xcal": "{\\mathcal x}", "ycal": "{\\mathcal y}", "zcal": "{\\mathcal z}", "Acal": "{\\mathcal A}", "Bcal": "{\\mathcal B}", "Ccal": "{\\mathcal C}", "Dcal": "{\\mathcal D}", "Ecal": "{\\mathcal E}", "Fcal": "{\\mathcal F}", "Gcal": "{\\mathcal G}", "Hcal": "{\\mathcal H}", "Ical": "{\\mathcal I}", "Jcal": "{\\mathcal J}", "Kcal": "{\\mathcal K}", "Lcal": "{\\mathcal L}", "Mcal": "{\\mathcal M}", "Ncal": "{\\mathcal N}", "Ocal": "{\\mathcal O}", "Pcal": "{\\mathcal P}", "Qcal": "{\\mathcal Q}", "Rcal": "{\\mathcal R}", "Scal": "{\\mathcal S}", "Tcal": "{\\mathcal T}", "Ucal": "{\\mathcal U}", "Vcal": "{\\mathcal V}", "Wcal": "{\\mathcal W}", "Xcal": "{\\mathcal X}", "Ycal": "{\\mathcal Y}", "Zcal": "{\\mathcal Z}"}, "packages": {"[+]": ["mathtools", "unicode"]}}, "loader": {"load": ["[tex]/mathtools", "[tex]/unicode"]}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'math/contact-structure-3d';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Morse theory in contact topology" href="contact-morse-theory.html" />
+    <link rel="next" title="Legendrians and coLegendrians" href="colegendrian/index.html" />
     <link rel="prev" title="Mathematics" href="index.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
+</form></div>
   </div>
-
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
+    <span class="fa-solid fa-bars"></span>
   </label>
-  <div id="navbar-start">
-    
-    
   
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
+  
 
 <a class="navbar-brand logo" href="../index.html">
-
   
   
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/dms.png" class="logo__image only-light" alt="Mandy's wonderland - Home"/>
+    <script>document.write(`<img src="../_static/dms.png" class="logo__image only-dark" alt="Mandy's wonderland - Home"/>`);</script>
   
   
-
-  
-    <img src="../_static/dms.png" class="logo__image only-light" alt="Logo image">
-    <img src="../_static/dms.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
+</a></div>
     
   </div>
-
   
   <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Mathematics
@@ -138,32 +157,43 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
+  </ul>
+</nav></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-        <div class="navbar-end-item navbar-persistent--container">
+        <div class="navbar-item navbar-persistent--container">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -172,53 +202,59 @@
           
           
           
-          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
+    
   </div>
-
-
   
   
     <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
-  </label>
+    </label>
   
-
 </div>
-  </nav>
+
+    </header>
   
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
+      
+      
       <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
       <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
         
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Mathematics
@@ -239,27 +275,29 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
-      
+  </ul>
+</nav></div>
+        
       </div>
     
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
 
-    
-    
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -268,46 +306,73 @@
           
           
           
-          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
-      </ul>
+</ul></div>
+        
       </div>
-      
-    </div>
     
   </div>
-
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-            </div>
-            
-            
-            <article class="bd-article" role="main">
+          <div class="bd-content">
+            <div class="bd-article-container">
               
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Mathematics</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Contact...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="contact-structures-in-3d-seen-from-within">
-<h1><span class="section-number">1. </span>Contact structures in 3D seen from within<a class="headerlink" href="#contact-structures-in-3d-seen-from-within" title="Permalink to this heading">#</a></h1>
+<h1>Contact structures in 3D seen from within<a class="headerlink" href="#contact-structures-in-3d-seen-from-within" title="Link to this heading">#</a></h1>
 <p>We try to explain what a contact structure is in a <span class="math notranslate nohighlight">\(3\)</span>-dimensional space from an intrinsic viewpoint, i.e., we pretend to live inside the contact 3-space without any knowledge of what an outside universe means. This article is heavily influenced by M. Gromov’s paper <a class="reference internal" href="../bib.html#gro92" id="id1"><span>[Gro92]</span></a>.</p>
 <section id="space-and-dimension">
-<h2>Space and Dimension<a class="headerlink" href="#space-and-dimension" title="Permalink to this heading">#</a></h2>
+<h2>Space and Dimension<a class="headerlink" href="#space-and-dimension" title="Link to this heading">#</a></h2>
 <p>Contact structure is a structure living in a space. So let’s first talk about spaces.</p>
 <p>It may be either the choice of god or the perception of our kind that we all live in a space. Since the time we looked into the sky, the earth, or the ocean, we never stopped wondering, physically or mentally, about the mysterious space around us.</p>
 <p>When talking about spaces, one of the first things that come to is the so-called <em>dimension</em>, or in more plain terms: how big is it? There is no universally agreed definition of what a dimension is. There really shouldn’t be one since every definition has to serve a particular purpose and no definition makes sense as a standalone. Here are two definitions of dimensions that are relevant to contact structures.</p>
@@ -330,7 +395,7 @@
 </div>
 </section>
 <section id="homogeneity-of-space">
-<h2>Homogeneity of Space<a class="headerlink" href="#homogeneity-of-space" title="Permalink to this heading">#</a></h2>
+<h2>Homogeneity of Space<a class="headerlink" href="#homogeneity-of-space" title="Link to this heading">#</a></h2>
 <p>All the above definitions of dimensions are local in nature, i.e., The dimension measures the size of a space at the vicinity of every point. It is therefore entirely possible that the dimension of a space jumps from point to point, and it doesn’t even have to be continuous. Given a space <span class="math notranslate nohighlight">\(V\)</span> and a point <span class="math notranslate nohighlight">\(p \in V\)</span>, let’s write <span class="math notranslate nohighlight">\(\dim_p(V)\)</span> for the dimension of <span class="math notranslate nohighlight">\(V\)</span> at <span class="math notranslate nohighlight">\(p\)</span>, whose definition may be any one of the above.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -338,7 +403,7 @@
 </div>
 </section>
 <section id="agreement-of-dimensions">
-<h2>Agreement of Dimensions<a class="headerlink" href="#agreement-of-dimensions" title="Permalink to this heading">#</a></h2>
+<h2>Agreement of Dimensions<a class="headerlink" href="#agreement-of-dimensions" title="Link to this heading">#</a></h2>
 <p>For a space <span class="math notranslate nohighlight">\(V\)</span>, let’s write <span class="math notranslate nohighlight">\(\op{Vdim}(V)\)</span> for its visual dimension and <span class="math notranslate nohighlight">\(\op{Mdim}(V)\)</span> for its measure dimension. For “usual” spaces <span class="math notranslate nohighlight">\(V\)</span>, one can expect <span class="math notranslate nohighlight">\(\op{Vdim}(V) = \op{Mdim}(V)\)</span>. For example, we have <span class="math notranslate nohighlight">\(\op{Vdim}(\Rbb^3)=3\)</span> obviously, and also <span class="math notranslate nohighlight">\(\op{Mdim}(\Rbb^3)=3\)</span> since <span class="math notranslate nohighlight">\(\op{Vol}(B^3(r)) = \tfrac{4}{3}\pi r^3\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -347,7 +412,7 @@
 <p>It’s not immediately obvious what kind of spaces would have unequal visual and measure dimensions. Contact structures, especially in dimension <span class="math notranslate nohighlight">\(3\)</span>, provide good examples of such “weird” spaces. Indeed, we’re not even interested in the underlying topology of the space, which will always be <span class="math notranslate nohighlight">\(\Rbb^3\)</span>.</p>
 </section>
 <section id="distribution-and-conductivity">
-<h2>Distribution and Conductivity<a class="headerlink" href="#distribution-and-conductivity" title="Permalink to this heading">#</a></h2>
+<h2>Distribution and Conductivity<a class="headerlink" href="#distribution-and-conductivity" title="Link to this heading">#</a></h2>
 <p>In <span class="math notranslate nohighlight">\(\Rbb^3\)</span>, one can freely walk in all <span class="math notranslate nohighlight">\(3\)</span> independent directions if no further constraints are enforced. However, it’s not hard to imagine that a live being, for whatever reason, is disallowed to move in certain directions. From now on this live being will be called Mandy. Then for all Mandy knows, the visual dimension, aka the degree of freedom, may well be less than <span class="math notranslate nohighlight">\(3\)</span> even though from the viewpoint of an outsider, the space itself has not changed at all.</p>
 <p>Constraints like these are called distributions. More formally, a distribution <span class="math notranslate nohighlight">\(D\)</span> on <span class="math notranslate nohighlight">\(\Rbb^3\)</span> is a choice of subspace at every point, i.e., <span class="math notranslate nohighlight">\(D(x) \subset T_x \Rbb^3 \cong \Rbb^3\)</span> is a linear subspace for every <span class="math notranslate nohighlight">\(x \in \Rbb^3\)</span>. Then dimension <span class="math notranslate nohighlight">\(\dim D(x)\)</span> is called the <em>rank</em> of <span class="math notranslate nohighlight">\(D\)</span> at <span class="math notranslate nohighlight">\(x\)</span>. To make life a bit easier, we will always work under the following two assumptions:</p>
 <ul class="simple">
@@ -381,7 +446,7 @@
 </div>
 </section>
 <section id="disagreement-of-dimensions">
-<h2>Disagreement of Dimensions<a class="headerlink" href="#disagreement-of-dimensions" title="Permalink to this heading">#</a></h2>
+<h2>Disagreement of Dimensions<a class="headerlink" href="#disagreement-of-dimensions" title="Link to this heading">#</a></h2>
 <p>Obviously <span class="math notranslate nohighlight">\(\op{Vdim} (\Rbb^3, D_{\std}) = 2\)</span> and it’s our goal here to compute <span class="math notranslate nohighlight">\(\op{Mdim} (\Rbb^3, D_{\std})\)</span>. To this end, we need a metric on <span class="math notranslate nohighlight">\(\Rbb^3\)</span> so that we can measure length and volume. The particular choice of metric is not super important here and we will stick to the Euclidean metric for simplicity.</p>
 <p>We shall compute <span class="math notranslate nohighlight">\(\op{Mdim}(\Rbb^3, D_{\std})\)</span> near the origin as follows. Consider a small cube</p>
 <div class="math notranslate nohighlight">
@@ -409,11 +474,11 @@
 <p>Hence <span class="math notranslate nohighlight">\(\op{Mdim} (\Rbb^3, D_{\std}) = 4\)</span>, at least near the origin.</p>
 </section>
 <section id="homogeneity-of-contact-structures">
-<h2>Homogeneity of Contact Structures<a class="headerlink" href="#homogeneity-of-contact-structures" title="Permalink to this heading">#</a></h2>
+<h2>Homogeneity of Contact Structures<a class="headerlink" href="#homogeneity-of-contact-structures" title="Link to this heading">#</a></h2>
 <p>It turns out that contact structures are far more homogeneous than just having constant measure dimension. Indeed, a <a class="reference external" href="https://en.wikipedia.org/wiki/Darboux%27s_theorem">theorem</a> of Darboux asserts that any contact structure (which we haven’t defined yet) is locally isomorphic to the standard <span class="math notranslate nohighlight">\((\Rbb^3, D_{\std})\)</span>, hence the name. It follows that <span class="math notranslate nohighlight">\(\op{Mdim} (\Rbb^3, D_{\std}) = 4\)</span> after all <a class="footnote-reference brackets" href="#darboux-redundant" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> .</p>
 </section>
 <section id="more-distributions">
-<h2>More Distributions<a class="headerlink" href="#more-distributions" title="Permalink to this heading">#</a></h2>
+<h2>More Distributions<a class="headerlink" href="#more-distributions" title="Link to this heading">#</a></h2>
 <p>Inspired by the definition of <span class="math notranslate nohighlight">\(D_{\std}\)</span>, let’s consider the following sequence of distributions</p>
 <div class="math notranslate nohighlight">
 \[D_k \coloneqq \ker (dz - y^k dx), \quad k \geq 1,\]</div>
@@ -440,38 +505,38 @@
 <p>It turns out that <span class="math notranslate nohighlight">\((\Rbb^3, D_k)\)</span> is not homogeneous when <span class="math notranslate nohighlight">\(k&gt;1\)</span>. In particular, the measure dimension equals <span class="math notranslate nohighlight">\(k+3\)</span> at points with <span class="math notranslate nohighlight">\(y = 0\)</span> and equals <span class="math notranslate nohighlight">\(4\)</span> as in the case of contact structures otherwise. We omit the details here as the computations are exactly the same.</p>
 </section>
 <section id="what-is-a-contact-structure-anyway">
-<h2>What is a Contact Structure Anyway?<a class="headerlink" href="#what-is-a-contact-structure-anyway" title="Permalink to this heading">#</a></h2>
+<h2>What is a Contact Structure Anyway?<a class="headerlink" href="#what-is-a-contact-structure-anyway" title="Link to this heading">#</a></h2>
 <p>In fact, the distributions <span class="math notranslate nohighlight">\(D_k, k &gt; 1\)</span>, are locally isomorphic to <span class="math notranslate nohighlight">\(D_{\std}\)</span> on the region where <span class="math notranslate nohighlight">\(y \neq 0\)</span>. Moreover, it doesn’t seem possible to have a distribution on <span class="math notranslate nohighlight">\(\Rbb^3\)</span> whose measure dimension is <em>everywhere</em> greater than <span class="math notranslate nohighlight">\(4\)</span>.</p>
 <p>Based on these observations, we can finally propose an intrinsic characterization of contact structures as follows:</p>
 <p>A contact structure on a <span class="math notranslate nohighlight">\(3\)</span>-dimensional space is a rank-<span class="math notranslate nohighlight">\(2\)</span> distribution, which makes the measure dimension homogeneous and greater than <span class="math notranslate nohighlight">\(3\)</span> everywhere.</p>
 <p>Of course, one can easily find formal definition of <a class="reference external" href="https://en.wikipedia.org/wiki/Contact_geometry">contact structures</a>. But the point of the above heuristic (which may not even be correct!) is that if you, at some point in your life <a class="footnote-reference brackets" href="#drunk" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> ,  start suspecting whether you live in a contact world because you can only move in <span class="math notranslate nohighlight">\(2\)</span> directions instead of the usual <span class="math notranslate nohighlight">\(3\)</span>, you can find it out simply by measuring volume of tiny little balls.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="three-not-big" role="note">
+<aside class="footnote brackets" id="three-not-big" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>Dimension 3 is not large enough.</p>
 </aside>
-<aside class="footnote brackets" id="stokes-1" role="note">
+<aside class="footnote brackets" id="stokes-1" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
 <p>The easiest way to find such a curve is to invoke Stokes’ theorem.</p>
 </aside>
-<aside class="footnote brackets" id="cube" role="note">
+<aside class="footnote brackets" id="cube" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
 <p>A cube of side length <span class="math notranslate nohighlight">\(r\)</span> is just a convenient substitute for a ball of radius <span class="math notranslate nohighlight">\(r\)</span>.</p>
 </aside>
-<aside class="footnote brackets" id="stokes-2" role="note">
+<aside class="footnote brackets" id="stokes-2" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
 <p>By Stokes’ theorem <span class="math notranslate nohighlight">\(A = z(C) - z(O) = r_z\)</span>.</p>
 </aside>
-<aside class="footnote brackets" id="darboux-redundant" role="note">
+<aside class="footnote brackets" id="darboux-redundant" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
 <p>The reference to Darboux’s theorem is a perfect example of laziness as one can directly verify the constancy of <span class="math notranslate nohighlight">\(\op{Mdim} (\Rbb^3, D_{\std})\)</span> by essentially the same computation.</p>
 </aside>
-<aside class="footnote brackets" id="measure" role="note">
+<aside class="footnote brackets" id="measure" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">6</a><span class="fn-bracket">]</span></span>
 <p>Here we’re using the Euclidean measure.</p>
 </aside>
-<aside class="footnote brackets" id="drunk" role="note">
+<aside class="footnote brackets" id="drunk" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">7</a><span class="fn-bracket">]</span></span>
 <p>Most likely when you are sufficiently drunk.</p>
 </aside>
@@ -480,145 +545,117 @@
 </section>
 
 
-            </article>
-            
-            
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+                </article>
               
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#space-and-dimension">
-   Space and Dimension
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homogeneity-of-space">
-   Homogeneity of Space
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#agreement-of-dimensions">
-   Agreement of Dimensions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#distribution-and-conductivity">
-   Distribution and Conductivity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#disagreement-of-dimensions">
-   Disagreement of Dimensions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#homogeneity-of-contact-structures">
-   Homogeneity of Contact Structures
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-distributions">
-   More Distributions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-contact-structure-anyway">
-   What is a Contact Structure Anyway?
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-<div class="toc-item">
-  
-<div id="searchbox"></div>
-</div>
-
-<div class="toc-item">
-  
-
-<div class="tocsection editthispage">
-    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/math/contact-structure-3d.rst">
-        <i class="fa-solid fa-pencil"></i> Edit this page
-    </a>
-</div>
-
-</div>
-
-<div class="toc-item">
-  
-<div class="tocsection sourcelink">
-    <a href="../_sources/math/contact-structure-3d.rst.txt">
-        <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-</div>
-
-</div>
-
+              
+              
+              
+              
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#space-and-dimension">Space and Dimension</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity-of-space">Homogeneity of Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agreement-of-dimensions">Agreement of Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-and-conductivity">Distribution and Conductivity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disagreement-of-dimensions">Disagreement of Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homogeneity-of-contact-structures">Homogeneity of Contact Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-distributions">More Distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-contact-structure-anyway">What is a Contact Structure Anyway?</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/math/contact-structure-3d.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/math/contact-structure-3d.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
             
           </div>
-        </footer>
+          <footer class="bd-footer-content">
+            
+          </footer>
         
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-  <footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
   
-  <div class="footer-item">
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
     
-<p class="copyright">
-
-    &copy; Copyright 2021, Mandy.<br>
-
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    <p class="theme-version">
-    Built with the
-    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
-        PyData Sphinx Theme
-    </a>
-    0.12.0.
-</p>
-  </div>
-  
-  <div class="footer-item">
+      © Copyright 2021, Mandy.
+      <br/>
     
-<p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
-</p>
+  </p>
+</div>
+      
+        <div class="footer-item">
 
-  </div>
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
   
 </div>
+
   </footer>
   </body>
 </html>

@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Morse theory in contact topology &#8212; Mandy&#39;s wonderland</title>
+    <title>Morse theory in contact topology &#8212; Mandy&#39;s wonderland</title>
   
   
   
@@ -16,108 +18,125 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>window.MathJax = {"tex": {"macros": {"op": ["\\operatorname {#1}", 1], "p": "{\\partial}", "ps": ["\\prescript {#1}{#2}{#3}", 3], "psup": ["\\prescript {#1}{}{#2}", 2], "dist": "{\\operatorname{dist}}", "ind": "{\\operatorname{ind}}", "std": "{\\operatorname{std}}", "abb": "{\\mathbb a}", "bbb": "{\\mathbb b}", "cbb": "{\\mathbb c}", "dbb": "{\\mathbb d}", "ebb": "{\\mathbb e}", "fbb": "{\\mathbb f}", "gbb": "{\\mathbb g}", "hbb": "{\\mathbb h}", "ibb": "{\\mathbb i}", "jbb": "{\\mathbb j}", "kbb": "{\\mathbb k}", "lbb": "{\\mathbb l}", "mbb": "{\\mathbb m}", "nbb": "{\\mathbb n}", "obb": "{\\mathbb o}", "pbb": "{\\mathbb p}", "qbb": "{\\mathbb q}", "rbb": "{\\mathbb r}", "sbb": "{\\mathbb s}", "tbb": "{\\mathbb t}", "ubb": "{\\mathbb u}", "vbb": "{\\mathbb v}", "wbb": "{\\mathbb w}", "xbb": "{\\mathbb x}", "ybb": "{\\mathbb y}", "zbb": "{\\mathbb z}", "Abb": "{\\mathbb A}", "Bbb": "{\\mathbb B}", "Cbb": "{\\mathbb C}", "Dbb": "{\\mathbb D}", "Ebb": "{\\mathbb E}", "Fbb": "{\\mathbb F}", "Gbb": "{\\mathbb G}", "Hbb": "{\\mathbb H}", "Ibb": "{\\mathbb I}", "Jbb": "{\\mathbb J}", "Kbb": "{\\mathbb K}", "Lbb": "{\\mathbb L}", "Mbb": "{\\mathbb M}", "Nbb": "{\\mathbb N}", "Obb": "{\\mathbb O}", "Pbb": "{\\mathbb P}", "Qbb": "{\\mathbb Q}", "Rbb": "{\\mathbb R}", "Sbb": "{\\mathbb S}", "Tbb": "{\\mathbb T}", "Ubb": "{\\mathbb U}", "Vbb": "{\\mathbb V}", "Wbb": "{\\mathbb W}", "Xbb": "{\\mathbb X}", "Ybb": "{\\mathbb Y}", "Zbb": "{\\mathbb Z}", "acal": "{\\mathcal a}", "bcal": "{\\mathcal b}", "ccal": "{\\mathcal c}", "dcal": "{\\mathcal d}", "ecal": "{\\mathcal e}", "fcal": "{\\mathcal f}", "gcal": "{\\mathcal g}", "hcal": "{\\mathcal h}", "ical": "{\\mathcal i}", "jcal": "{\\mathcal j}", "kcal": "{\\mathcal k}", "lcal": "{\\mathcal l}", "mcal": "{\\mathcal m}", "ncal": "{\\mathcal n}", "ocal": "{\\mathcal o}", "pcal": "{\\mathcal p}", "qcal": "{\\mathcal q}", "rcal": "{\\mathcal r}", "scal": "{\\mathcal s}", "tcal": "{\\mathcal t}", "ucal": "{\\mathcal u}", "vcal": "{\\mathcal v}", "wcal": "{\\mathcal w}", "xcal": "{\\mathcal x}", "ycal": "{\\mathcal y}", "zcal": "{\\mathcal z}", "Acal": "{\\mathcal A}", "Bcal": "{\\mathcal B}", "Ccal": "{\\mathcal C}", "Dcal": "{\\mathcal D}", "Ecal": "{\\mathcal E}", "Fcal": "{\\mathcal F}", "Gcal": "{\\mathcal G}", "Hcal": "{\\mathcal H}", "Ical": "{\\mathcal I}", "Jcal": "{\\mathcal J}", "Kcal": "{\\mathcal K}", "Lcal": "{\\mathcal L}", "Mcal": "{\\mathcal M}", "Ncal": "{\\mathcal N}", "Ocal": "{\\mathcal O}", "Pcal": "{\\mathcal P}", "Qcal": "{\\mathcal Q}", "Rcal": "{\\mathcal R}", "Scal": "{\\mathcal S}", "Tcal": "{\\mathcal T}", "Ucal": "{\\mathcal U}", "Vcal": "{\\mathcal V}", "Wcal": "{\\mathcal W}", "Xcal": "{\\mathcal X}", "Ycal": "{\\mathcal Y}", "Zcal": "{\\mathcal Z}"}, "packages": {"[+]": ["mathtools", "unicode"]}}, "loader": {"load": ["[tex]/mathtools", "[tex]/unicode"]}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'math/contact-morse-theory';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Legendrians and coLegendrians" href="colegendrian/index.html" />
-    <link rel="prev" title="1. Contact structures in 3D seen from within" href="contact-structure-3d.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+    <link rel="next" title="Physics" href="../physics/index.html" />
+    <link rel="prev" title="Bypass attachment revisited" href="colegendrian/bypass.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
+</form></div>
   </div>
-
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
+    <span class="fa-solid fa-bars"></span>
   </label>
-  <div id="navbar-start">
-    
-    
   
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
+  
 
 <a class="navbar-brand logo" href="../index.html">
-
   
   
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/dms.png" class="logo__image only-light" alt="Mandy's wonderland - Home"/>
+    <script>document.write(`<img src="../_static/dms.png" class="logo__image only-dark" alt="Mandy's wonderland - Home"/>`);</script>
   
   
-
-  
-    <img src="../_static/dms.png" class="logo__image only-light" alt="Logo image">
-    <img src="../_static/dms.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
+</a></div>
     
   </div>
-
   
   <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Mathematics
@@ -138,32 +157,43 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
+  </ul>
+</nav></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-        <div class="navbar-end-item navbar-persistent--container">
+        <div class="navbar-item navbar-persistent--container">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -172,53 +202,59 @@
           
           
           
-          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
+    
   </div>
-
-
   
   
     <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
-  </label>
+    </label>
   
-
 </div>
-  </nav>
+
+    </header>
   
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
+      
+      
       <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
       <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
         
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="index.html">
                         Mathematics
@@ -239,27 +275,29 @@
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
-      
+  </ul>
+</nav></div>
+        
       </div>
     
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
 
-    
-    
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -268,46 +306,73 @@
           
           
           
-          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
-      </ul>
+</ul></div>
+        
       </div>
-      
-    </div>
     
   </div>
-
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-            </div>
-            
-            
-            <article class="bd-article" role="main">
+          <div class="bd-content">
+            <div class="bd-article-container">
               
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Mathematics</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Morse...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="morse-theory-in-contact-topology">
-<span id="contact-morse-theory-rst"></span><h1><span class="section-number">2. </span>Morse theory in contact topology<a class="headerlink" href="#morse-theory-in-contact-topology" title="Permalink to this heading">#</a></h1>
+<span id="contact-morse-theory-rst"></span><h1>Morse theory in contact topology<a class="headerlink" href="#morse-theory-in-contact-topology" title="Link to this heading">#</a></h1>
 <p>In this article, we explain how to cut any contact manifold into simple pieces as well as how to manipulate them from a Morse-theoretic viewpoint. The math of this article is based on many years of collaboration with K. Honda, but the interpretations are mostly mine. Moreover, the focus will be on ideas rather than technical details: one can hardly find any proofs here.</p>
 <section id="morse-theory-in-topology">
-<h2>Morse Theory in Topology<a class="headerlink" href="#morse-theory-in-topology" title="Permalink to this heading">#</a></h2>
+<h2>Morse Theory in Topology<a class="headerlink" href="#morse-theory-in-topology" title="Link to this heading">#</a></h2>
 <p>The most basic and general idea of Morse theory is to understand global properties of a topological space by cutting it into simple pieces and keep track of the assemble process. There are many variations and complications that might sneak behind the simply looking idea. For example, the topological space itself may be <a class="reference external" href="https://en.wikipedia.org/wiki/Stratified_Morse_theory">singular</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Floer_homology">infinite dimensional</a>, and the “simple pieces” and “assemble process” may take very <a class="reference external" href="https://en.wikipedia.org/wiki/Triangulation_(topology)">different forms</a>.</p>
 <p>We will be concerned with the most classical Morse theory here, where spaces are smooth finite-dimensional manifolds <span class="math notranslate nohighlight">\(M\)</span> and decompositions of <span class="math notranslate nohighlight">\(M\)</span> are given by the so-called Morse functions <span class="math notranslate nohighlight">\(f: M \to \Rbb\)</span>, which are nothing but <em>generic</em> smooth functions. More precisely, the only data we care about <span class="math notranslate nohighlight">\(f\)</span> is a sequence of <em>singular values</em></p>
 <div class="math notranslate nohighlight">
@@ -320,18 +385,18 @@
 </div></blockquote>
 </section>
 <section id="first-blend-of-morse-theory-with-contact-structures">
-<span id="first-blend"></span><h2>First Blend of Morse Theory with Contact Structures<a class="headerlink" href="#first-blend-of-morse-theory-with-contact-structures" title="Permalink to this heading">#</a></h2>
+<span id="first-blend"></span><h2>First Blend of Morse Theory with Contact Structures<a class="headerlink" href="#first-blend-of-morse-theory-with-contact-structures" title="Link to this heading">#</a></h2>
 <section id="a-symplectic-detour">
-<h3>A symplectic detour<a class="headerlink" href="#a-symplectic-detour" title="Permalink to this heading">#</a></h3>
+<h3>A symplectic detour<a class="headerlink" href="#a-symplectic-detour" title="Link to this heading">#</a></h3>
 <p>Let’s actually start by talking about the attempt of blending Morse theory into symplectic topology initiated by Y. Eliashberg and M. Gromov in <a class="reference internal" href="../bib.html#eg91" id="id1"><span>[EG91]</span></a>. Let <span class="math notranslate nohighlight">\((W, \omega)\)</span> be a symplectic manifold and <span class="math notranslate nohighlight">\(f: W \to \Rbb\)</span> be a Morse function. The most obvious guess of a compatibility condition between <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>, at least from a Morse theoretic viewpoint, would be that the flow of the gradient vector field <span class="math notranslate nohighlight">\(\nabla f \eqqcolon X\)</span>, with respect to some metric <a class="footnote-reference brackets" href="#gradient" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> , preserves <span class="math notranslate nohighlight">\(\omega\)</span>. This is not a very good guess though since <span class="math notranslate nohighlight">\(X\)</span> would then necessarily be volume preserving, and in turn <span class="math notranslate nohighlight">\(f\)</span> can have neither local minima nor maxima.</p>
 <p>It’s somewhat unfortunate that no reasonable compatibility condition exists between <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> which would simply allow <span class="math notranslate nohighlight">\(f\)</span> to simultaneously possess local minima and maxima as a usual smooth function does. The compromise, which is by no means obvious, is to ask <span class="math notranslate nohighlight">\(X\)</span> to exponentially expand <span class="math notranslate nohighlight">\(\omega\)</span>, i.e., <span class="math notranslate nohighlight">\(\Lcal_X \omega = \omega\)</span>. Quite obviously such thing cannot exist on a closed manifold since <span class="math notranslate nohighlight">\(X\)</span> exponentially expands the volume. In fact, with a bit more work, one realizes that the Morse index of any critical point of <span class="math notranslate nohighlight">\(f\)</span> cannot exceed <span class="math notranslate nohighlight">\(\tfrac{1}{2} \dim W\)</span>. In some sense, we just compromised half of the topology.</p>
 <p>Recall the two major players in the usual Morse theory are regular level sets and critical points (or equivalently, handles). Not surprisingly, they receive additional structures from the compatibility condition with a symplectic structure.</p>
 <section id="regular-level-sets">
-<h4>Regular level sets<a class="headerlink" href="#regular-level-sets" title="Permalink to this heading">#</a></h4>
+<h4>Regular level sets<a class="headerlink" href="#regular-level-sets" title="Link to this heading">#</a></h4>
 <p>For any regular value <span class="math notranslate nohighlight">\(c\)</span>, the regular level set <span class="math notranslate nohighlight">\(\Sigma \coloneqq f^{-1} (c) \subset (W, \omega)\)</span> is a contact manifold with contact form <span class="math notranslate nohighlight">\(\alpha \coloneqq i_X \omega\)</span>.</p>
 </section>
 <section id="symplectic-handles">
-<h4>Symplectic handles<a class="headerlink" href="#symplectic-handles" title="Permalink to this heading">#</a></h4>
+<h4>Symplectic handles<a class="headerlink" href="#symplectic-handles" title="Link to this heading">#</a></h4>
 <p>Assuming <span class="math notranslate nohighlight">\(\dim W = 2n\)</span>, an index-<span class="math notranslate nohighlight">\(k\)</span> handle corresponds to an index-<span class="math notranslate nohighlight">\(k\)</span> critical point always takes the following standard form</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{aligned}
@@ -341,14 +406,14 @@
 </section>
 </section>
 <section id="back-to-contact">
-<h3>Back to contact<a class="headerlink" href="#back-to-contact" title="Permalink to this heading">#</a></h3>
+<h3>Back to contact<a class="headerlink" href="#back-to-contact" title="Link to this heading">#</a></h3>
 <p>The compatibility between a contact manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span> and a Morse function <span class="math notranslate nohighlight">\(f: M \to \Rbb\)</span>, by analogy, asks the flow of <span class="math notranslate nohighlight">\(X \coloneqq \nabla f\)</span> to preserve <span class="math notranslate nohighlight">\(\xi\)</span>.  This turns out to be a much more flexible condition than its symplectic counterpart. Indeed, Giroux argued in <a class="reference internal" href="../bib.html#gir02" id="id3"><span>[Gir02]</span></a> that every (closed) contact manifold admits a compatible Morse function.</p>
 <p>The regular level sets and critical points of a contact Morse function look quite different from the symplectic case, mostly because the compatibility condition now reads <span class="math notranslate nohighlight">\(\Lcal_X \alpha = g \alpha\)</span> where <span class="math notranslate nohighlight">\(\xi = \ker \alpha\)</span> is a contact form and <span class="math notranslate nohighlight">\(g\)</span> can be <em>any</em> function. In particular, the flow of <span class="math notranslate nohighlight">\(X\)</span> doesn’t have to expand the contact volume at all.</p>
 <section id="id4">
-<h4>Regular level sets<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<h4>Regular level sets<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>A regular level set <span class="math notranslate nohighlight">\(\Sigma \subset (M, \xi)\)</span> can be decomposed into three pieces</p>
 <div class="math notranslate nohighlight" id="equation-hypersurface-decomposition">
-<span class="eqno">(1)<a class="headerlink" href="#equation-hypersurface-decomposition" title="Permalink to this equation">#</a></span>\[\Sigma = R_+ \cup \Gamma \cup R_-,\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-hypersurface-decomposition" title="Link to this equation">#</a></span>\[\Sigma = R_+ \cup \Gamma \cup R_-,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma = \{ \alpha (X) = 0 \}\)</span> and <span class="math notranslate nohighlight">\(R_{\pm} = \{ \pm \alpha (X) &gt; 0 \}\)</span>, respectively. It turns out that <span class="math notranslate nohighlight">\((\Gamma, \xi|_{\Gamma})\)</span> is itself a contact manifold of dimension <span class="math notranslate nohighlight">\(\dim M - 2\)</span>, i.e., it’s a codimension-<span class="math notranslate nohighlight">\(2\)</span> contact submanifold of <span class="math notranslate nohighlight">\((M, \xi)\)</span>. Moreover <span class="math notranslate nohighlight">\(( R_{\pm}, d\alpha|_{R_{\pm}} )\)</span> are symplectic manifolds. However, they don’t necessarily carry a Morse structure as described above.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -359,7 +424,7 @@
 </div>
 </section>
 <section id="contact-handles">
-<h4>Contact handles<a class="headerlink" href="#contact-handles" title="Permalink to this heading">#</a></h4>
+<h4>Contact handles<a class="headerlink" href="#contact-handles" title="Link to this heading">#</a></h4>
 <p>Assuming <span class="math notranslate nohighlight">\(\dim M = 2n+1\)</span> and <span class="math notranslate nohighlight">\(k \leq n\)</span>, an index-<span class="math notranslate nohighlight">\(k\)</span> contact handle always takes the following standard form</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{aligned}
@@ -369,19 +434,19 @@
 </section>
 </section>
 <section id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
 <p>The fact that every (closed) contact manifold admits a compatible Morse function means that one can build any contact manifold from the standard-looking contact handles. However, it doesn’t really give us much more grip on the contact manifold itself because such handle decompositions are by no means unique. Indeed, most of the power of Morse theory lies in the ability to connect different choices of Morse functions by homotopies. Such homotopies or more generally the flexibility of contact Morse functions are unfortunately not available from <a class="reference external" href="https://arxiv.org/abs/math/0305129">Giroux’s argument</a> due to the global nature of the argument, which is more-or-less a replica of an argument of <a class="reference external" href="https://projecteuclid.org/journals/journal-of-differential-geometry/volume-44/issue-4/Symplectic-submanifolds-and-almost-complex-geometry/10.4310/jdg/1214459407.full">S. Donaldson</a> for symplectic manifolds which are far more rigid.</p>
 <p>We will follow a completely different path to build a hopefully more useful contact Morse theory. The main tools will be hypersurfaces and characteristic foliations on them. These tools are native to contact topology and were extensively used by D. Bennequin, Eliashberg, Giroux among many others for various purposes in the early days of the subject.</p>
 </section>
 </section>
 <section id="the-main-ideas">
-<span id="section-main-ideas"></span><h2>The Main Ideas<a class="headerlink" href="#the-main-ideas" title="Permalink to this heading">#</a></h2>
+<span id="section-main-ideas"></span><h2>The Main Ideas<a class="headerlink" href="#the-main-ideas" title="Link to this heading">#</a></h2>
 <p>The main ideas in the attempt to understanding contact structures via Morse theory were introduced in <a class="reference internal" href="../bib.html#hh18" id="id5"><span>[HH18]</span></a> and <a class="reference internal" href="../bib.html#hh19" id="id6"><span>[HH19]</span></a>, which we briefly recall now.</p>
 <section id="separation-of-contact-structure-and-topology">
-<h3>Separation of contact structure and topology<a class="headerlink" href="#separation-of-contact-structure-and-topology" title="Permalink to this heading">#</a></h3>
+<h3>Separation of contact structure and topology<a class="headerlink" href="#separation-of-contact-structure-and-topology" title="Link to this heading">#</a></h3>
 <p>The first key principle in the development of contact Morse theory is to separate the contact topological problem from the purely topological problem. Specifically, given a contact manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span>, we always start from just any Morse function <span class="math notranslate nohighlight">\(f: M \to \Rbb\)</span>. Suppose <span class="math notranslate nohighlight">\(\dim M = 2n+1\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> induces a decomposition</p>
 <div class="math notranslate nohighlight" id="equation-heegaard-decomposition">
-<span class="eqno">(2)<a class="headerlink" href="#equation-heegaard-decomposition" title="Permalink to this equation">#</a></span>\[M = H_1 \cup (\Sigma \times I) \cup H_2, \quad I \coloneqq [0,1],\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-heegaard-decomposition" title="Link to this equation">#</a></span>\[M = H_1 \cup (\Sigma \times I) \cup H_2, \quad I \coloneqq [0,1],\]</div>
 <p>where <span class="math notranslate nohighlight">\(H_1\)</span> is a neighborhood of the union of the stable manifolds of all critical points of <span class="math notranslate nohighlight">\(f\)</span> of index at most <span class="math notranslate nohighlight">\(n\)</span>, and similarly <span class="math notranslate nohighlight">\(H_2\)</span> is a neighborhood of the union of the unstable manifolds of all critical points of <span class="math notranslate nohighlight">\(f\)</span> of index at least <span class="math notranslate nohighlight">\(n+1\)</span>, and finally <span class="math notranslate nohighlight">\(\Sigma\)</span> may be identified with either <span class="math notranslate nohighlight">\(\p H_1\)</span> or <span class="math notranslate nohighlight">\(\p H_2\)</span>. Such a decomposition is nothing but a higher-dimensional analogue of the <a class="reference external" href="https://en.wikipedia.org/wiki/Heegaard_splitting">Heegaard decomposition</a> for 3-manifolds.</p>
 <p>The reason for decomposing <span class="math notranslate nohighlight">\(M\)</span> as in <a class="reference internal" href="#equation-heegaard-decomposition">(2)</a> is because the contact structures <span class="math notranslate nohighlight">\(\xi|_{H_1}, \xi|_{H_2}\)</span> can be made standard by Gromov’s <em>h</em>-principle on isotropic/Legendrian approximations. Namely, the stable manifold of all critical points of index at most <span class="math notranslate nohighlight">\(n\)</span> can be <span class="math notranslate nohighlight">\(C^0\)</span>-approximated by isotropic submanifolds. It follows that <span class="math notranslate nohighlight">\(H_1\)</span> becomes a neighborhood of a CW-complex built out of isotropic cells, which in turns carries a standard contact structure. The same holds for <span class="math notranslate nohighlight">\(H_2\)</span> by reversing the direction of <span class="math notranslate nohighlight">\(\nabla f\)</span>. Finally, the complement of <span class="math notranslate nohighlight">\(H_1 \cup H_2\)</span> in <span class="math notranslate nohighlight">\(M\)</span> is a product <span class="math notranslate nohighlight">\(\Sigma \times I\)</span>, which, in some sense, carries all the information about <span class="math notranslate nohighlight">\(\xi\)</span>.</p>
 <p>To summarize, the decomposition <a class="reference internal" href="#equation-heegaard-decomposition">(2)</a> serves the purpose of separating contact topology from pure topology as follows:</p>
@@ -395,7 +460,7 @@
 </div>
 </section>
 <section id="morsify-the-characteristic-foliation">
-<h3>Morsify the characteristic foliation<a class="headerlink" href="#morsify-the-characteristic-foliation" title="Permalink to this heading">#</a></h3>
+<h3>Morsify the characteristic foliation<a class="headerlink" href="#morsify-the-characteristic-foliation" title="Link to this heading">#</a></h3>
 <p>Given any hypersurface <span class="math notranslate nohighlight">\(\Sigma \in (M, \xi)\)</span>, the <em>characteristic foliation</em> <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> is a line field defined by</p>
 <div class="math notranslate nohighlight">
 \[\Sigma_{\xi} \coloneqq \ker (d\alpha|_{T\Sigma \cap \xi}),\]</div>
@@ -405,12 +470,12 @@
 <p>The challenge is, therefore, to ensure the controllability of <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> (e.g., as the gradient vector field of a Morse function) on sufficiently generic hypersurfaces <span class="math notranslate nohighlight">\(\Sigma\)</span>. The basic idea is to wiggle <span class="math notranslate nohighlight">\(\Sigma\)</span> almost everywhere to create attractors, built out of Morse critical points, which destroy any potential global dynamics of <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span>. The actual implementation of this idea is nearly perfect in dimension <span class="math notranslate nohighlight">\(3\)</span> but much less so in higher dimensions. The details can be found in <a class="reference internal" href="../bib.html#hh19" id="id9"><span>[HH19]</span></a>.</p>
 </section>
 <section id="id10">
-<h3>Summary<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>Summary<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>Every (closed) contact manifold can be decomposed into three pieces: two standard contact handlebodies and a product <span class="math notranslate nohighlight">\(\Sigma \times I\)</span>. The contact structure <span class="math notranslate nohighlight">\(\xi|_{\Sigma \times I}\)</span> can be understood via the <span class="math notranslate nohighlight">\(1\)</span>-parameter family of characteristic foliations <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi} \coloneqq (\Sigma \times t)_{\xi}\)</span> for <span class="math notranslate nohighlight">\(t \in I\)</span>. The characteristic foliations <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}, t \in I\)</span>, can be made Morse by a <span class="math notranslate nohighlight">\(C^0\)</span>-small perturbation. Thus the problem is finally reduced to understanding a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of Morse functions on <span class="math notranslate nohighlight">\(\Sigma\)</span>. More details about implementing these ideas will be explained in the next section.</p>
 </section>
 </section>
 <section id="second-blend-of-morse-theory-with-contact-structures">
-<span id="section-2nd-blend-morse-contact"></span><h2>Second Blend of Morse Theory with Contact Structures<a class="headerlink" href="#second-blend-of-morse-theory-with-contact-structures" title="Permalink to this heading">#</a></h2>
+<span id="section-2nd-blend-morse-contact"></span><h2>Second Blend of Morse Theory with Contact Structures<a class="headerlink" href="#second-blend-of-morse-theory-with-contact-structures" title="Link to this heading">#</a></h2>
 <p>Recall in the first blend of Morse theory with contact structures, the result is a decomposition of <span class="math notranslate nohighlight">\((M, \xi)\)</span> into a bunch of contact handles. This approach appears to be somewhat useless since there is no way (that I know of) to connect two contact Morse functions through a family of contact Morse functions.</p>
 <p>Instead, we’ll use the ideas outlined above to build a contact Morse theory which works in families. To facilitate the exposition, let’s use the following convention to indicate the dimension of the family of Morse functions under consideration. We say a Morse theory (of whatever flavor) is established at</p>
 <ul class="simple">
@@ -425,7 +490,7 @@
 </div>
 <p>For example, the usual Morse theory is fully-established in the category of smooth functions and provides deep insights into the structure of smooth manifolds via <a class="reference external" href="https://en.wikipedia.org/wiki/Cerf_theory">Cerf theory</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/H-cobordism">h-cobordism theorem</a> and so on. In the contact category, we need to at least impose one additional compatibility condition between functions and contact structures: the gradient vector field must preserve the contact structure. However, as we’ll see, this condition alone is not enough to build a useful (family) contact Morse theory.</p>
 <section id="topological-skeleta">
-<h3>Topological skeleta<a class="headerlink" href="#topological-skeleta" title="Permalink to this heading">#</a></h3>
+<h3>Topological skeleta<a class="headerlink" href="#topological-skeleta" title="Link to this heading">#</a></h3>
 <p>Recall that although the existence of contact Morse functions, in abundance as a matter of fact, was established in <a class="reference internal" href="../bib.html#gir02" id="id11"><span>[Gir02]</span></a>, nearly no flexibility is available for these rather abstract functions, which makes it hardly useful in practice. On the other hand, one cannot expect genericity to hold in the sense of usual transversality theory as in the smooth case because contact structures are by no means generic in that sense.</p>
 <p>As a matter of fact, it makes little sense to even look for (generic) homotopies between contact Morse functions because it violates the first principle of separation between topological and contact topological considerations. Instead, let’s emphasize once again that the decomposition <a class="reference internal" href="#equation-heegaard-decomposition">(2)</a> is always the first step when decomposing a contact manifold <span class="math notranslate nohighlight">\((M, \xi)\)</span>. Recall that the contact handlebodies <span class="math notranslate nohighlight">\(H_1, H_2 \subset M\)</span> are uniquely determined by the corresponding isotropic skeleta, which also capture the topology of <span class="math notranslate nohighlight">\(M\)</span>. For this reason, we introduce the following terminology:</p>
 <blockquote>
@@ -434,10 +499,10 @@
 <p>Of course, one contact manifold may have many different topological skeleta, and it’s far from obvious how two choices are related to each other in a Morse theoretic way. However, such difficulty doesn’t bother us, at least for now, since we’re not really interested in the topology of <span class="math notranslate nohighlight">\(M\)</span>. Indeed, it’d already be a great success of contact Morse theory if one could get some insights into contact structures on <span class="math notranslate nohighlight">\(S^{2n+1}, n \geq 2\)</span>.</p>
 </section>
 <section id="a-family-morse-theory-on-hypersurfaces">
-<span id="section-family-morse"></span><h3>A family Morse theory on hypersurfaces<a class="headerlink" href="#a-family-morse-theory-on-hypersurfaces" title="Permalink to this heading">#</a></h3>
+<span id="section-family-morse"></span><h3>A family Morse theory on hypersurfaces<a class="headerlink" href="#a-family-morse-theory-on-hypersurfaces" title="Link to this heading">#</a></h3>
 <p>Away from the topological skeleta, the contact manifold reduces to a product <span class="math notranslate nohighlight">\(\Sigma \times I\)</span> as in <a class="reference internal" href="#equation-heegaard-decomposition">(2)</a>. As explained in the <a class="reference internal" href="#section-main-ideas"><span class="std std-ref">main ideas</span></a>, up to a <span class="math notranslate nohighlight">\(C^0\)</span>-small perturbation, the characteristic foliations <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}, t \in I\)</span> can be realized as the gradient of a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of Morse functions on <span class="math notranslate nohighlight">\(\Sigma\)</span>. It is this Morse theory which can be made “generic” and work in families. In what follows, we’ll spell out the details of this Morse theory on hypersurfaces at <span class="math notranslate nohighlight">\(\pi_0, \pi_1\)</span>, and <span class="math notranslate nohighlight">\(\pi_2\)</span>-levels. As a convention, all explicitly mentioned (Morse) critical points are assumed to be nondegenerate unless otherwise specified.</p>
 <section id="pi-0-level">
-<h4><span class="math notranslate nohighlight">\(\pi_0\)</span>-level<a class="headerlink" href="#pi-0-level" title="Permalink to this heading">#</a></h4>
+<h4><span class="math notranslate nohighlight">\(\pi_0\)</span>-level<a class="headerlink" href="#pi-0-level" title="Link to this heading">#</a></h4>
 <p>The <span class="math notranslate nohighlight">\(\pi_0\)</span>-level Morse theory means that for any <span class="math notranslate nohighlight">\(t_0 \in I\)</span>, the hypersurface <span class="math notranslate nohighlight">\(\Sigma = \Sigma_{t_0}\)</span> can be <span class="math notranslate nohighlight">\(C^0\)</span>-perturbed such that <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> is Morse. Let <span class="math notranslate nohighlight">\(p \in \Sigma\)</span> be a critical point. Then we say <span class="math notranslate nohighlight">\(p\)</span> is <em>positive</em> if <span class="math notranslate nohighlight">\(T_p \Sigma = \xi_p\)</span> as oriented vector spaces and <em>negative</em> if <span class="math notranslate nohighlight">\(T_p \Sigma = -\xi_p\)</span>. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold <span class="math notranslate nohighlight">\(R_+ \subset \Sigma\)</span>, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the <a class="reference internal" href="#first-blend"><span class="std std-ref">first blend</span></a>. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold <span class="math notranslate nohighlight">\(R_- \subset \Sigma\)</span>. Denoting the remaining borderline between <span class="math notranslate nohighlight">\(R_+\)</span> and <span class="math notranslate nohighlight">\(R_-\)</span> by <span class="math notranslate nohighlight">\(\Gamma\)</span>, we arrive at the familiar <span class="math notranslate nohighlight">\(\Sigma = R_+ \cup_{\Gamma} R_-\)</span> which appeared as the structure of a regular level set in <a class="reference internal" href="#equation-hypersurface-decomposition">(1)</a>.</p>
 <blockquote>
 <div><p>We say a hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> is <em>Morse</em> if <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> is Morse. Moreover, genericity is always appropriately understood according to the <span class="math notranslate nohighlight">\(\pi_k\)</span>-level of the Morse theory under discussion.</p>
@@ -448,7 +513,7 @@
 </div>
 </section>
 <section id="pi-1-level">
-<h4><span class="math notranslate nohighlight">\(\pi_1\)</span>-level<a class="headerlink" href="#pi-1-level" title="Permalink to this heading">#</a></h4>
+<h4><span class="math notranslate nohighlight">\(\pi_1\)</span>-level<a class="headerlink" href="#pi-1-level" title="Link to this heading">#</a></h4>
 <p>Suppose <span class="math notranslate nohighlight">\(\Sigma_0, \Sigma_1\)</span> are Morse, where <span class="math notranslate nohighlight">\(\Sigma_t \coloneqq \Sigma \times t, t \in I\)</span>. This is indeed the case when they are boundaries of standard neighborhoods of the isotropic skeleta <span class="math notranslate nohighlight">\(H_0, H_1\)</span>. Then the <span class="math notranslate nohighlight">\(\pi_1\)</span>-level Morse theory means that, up to a <span class="math notranslate nohighlight">\(C^0\)</span>-small perturbation, the <span class="math notranslate nohighlight">\(1\)</span>-parameter family <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}\)</span> can be realized as the gradient of a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of Morse functions. It turns out that for most of the time <span class="math notranslate nohighlight">\(t \in I\)</span>, the contact germ on <span class="math notranslate nohighlight">\(\Sigma_t\)</span> doesn’t change, up to isotopy.</p>
 <blockquote>
 <div><p>We say a Morse hypersurface is <em>invariant</em> if the contact germ is invariant in the transverse direction. This is equivalent to, as it turns out, the nonexistence of flow lines from negative critical points to positive critical points.</p>
@@ -464,7 +529,7 @@
 </div></blockquote>
 <p>Topological speaking, the difference between <span class="math notranslate nohighlight">\(\Sigma_{t_0 - \epsilon}\)</span> and <span class="math notranslate nohighlight">\(\Sigma_{t_0 + \epsilon}\)</span> is a handle slide of a negative <span class="math notranslate nohighlight">\(n\)</span>-handle over a positive <span class="math notranslate nohighlight">\(n\)</span>-handle. However, not every topological handle slide of this kind can be realized as a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch, even after assuming all isotopies involved in the handle slide are contact isotopies. Namely, suppose <span class="math notranslate nohighlight">\(Y \subset \Sigma_{t_0}\)</span> is a regular level set between <span class="math notranslate nohighlight">\(p_n^-\)</span> and <span class="math notranslate nohighlight">\(p_n^+\)</span> such that the unstable manifold of <span class="math notranslate nohighlight">\(p_n^-\)</span> intersects <span class="math notranslate nohighlight">\(Y\)</span> along a Legendrian sphere <span class="math notranslate nohighlight">\(\Lambda_-\)</span> and the stable manifold of <span class="math notranslate nohighlight">\(p_n^+\)</span> intersects <span class="math notranslate nohighlight">\(Y\)</span> along <span class="math notranslate nohighlight">\(\Lambda_+\)</span>. Here we recall <span class="math notranslate nohighlight">\(Y\)</span> is naturally a contact submanifold. <a class="footnote-reference brackets" href="#contact-submfd" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> Then <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> intersect <span class="math notranslate nohighlight">\(\xi|_Y\)</span>-transversely at exactly one point <span class="math notranslate nohighlight">\(q\)</span> (on the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch), i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-xi-transverse">
-<span class="eqno">(3)<a class="headerlink" href="#equation-xi-transverse" title="Permalink to this equation">#</a></span>\[T_q \Lambda_+ \oplus T_q \Lambda_- = (\xi|_Y)_q.\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-xi-transverse" title="Link to this equation">#</a></span>\[T_q \Lambda_+ \oplus T_q \Lambda_- = (\xi|_Y)_q.\]</div>
 <p>Extending the definitions of <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> to all <span class="math notranslate nohighlight">\(t\)</span> close to <span class="math notranslate nohighlight">\(t_0\)</span>, we require that <span class="math notranslate nohighlight">\(\Lambda_+\)</span> is slightly “below” <span class="math notranslate nohighlight">\(\Lambda_-\)</span>, measured against the positive co-orientation of <span class="math notranslate nohighlight">\(\xi|_Y\)</span>, near <span class="math notranslate nohighlight">\(q\)</span> for <span class="math notranslate nohighlight">\(t &lt; t_0\)</span> and “above” for <span class="math notranslate nohighlight">\(t &gt; t_0\)</span>.</p>
 <blockquote>
 <div><p>In plain words, the handle slide corresponding to a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch isotopes <span class="math notranslate nohighlight">\(\Lambda_+\)</span> up across <span class="math notranslate nohighlight">\(\Lambda_-\)</span> as <span class="math notranslate nohighlight">\(t\)</span> passes over <span class="math notranslate nohighlight">\(t_0\)</span>.</p>
@@ -477,7 +542,7 @@
 <p>To summarize, the <span class="math notranslate nohighlight">\(\pi_1\)</span>-level contact Morse theory asserts that, modulo Weinstein homotopies, any contact structure on <span class="math notranslate nohighlight">\(\Sigma \times I\)</span> can be realized as a finite sequence of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches.</p>
 </section>
 <section id="pi-2-level">
-<h4><span class="math notranslate nohighlight">\(\pi_2\)</span>-level<a class="headerlink" href="#pi-2-level" title="Permalink to this heading">#</a></h4>
+<h4><span class="math notranslate nohighlight">\(\pi_2\)</span>-level<a class="headerlink" href="#pi-2-level" title="Link to this heading">#</a></h4>
 <p>The <span class="math notranslate nohighlight">\(\pi_2\)</span>-level contact Morse theory aims at connecting two realizations of the same <span class="math notranslate nohighlight">\((\Sigma \times I, \xi)\)</span> as <span class="math notranslate nohighlight">\(1\)</span>-parameter families of Morse functions on <span class="math notranslate nohighlight">\(\Sigma\)</span>. It’s therefore inappropriate to ignore the <span class="math notranslate nohighlight">\(C^0\)</span>-perturbation part and pretend that the realizing hypersurface foliation is just <span class="math notranslate nohighlight">\(\Sigma_t = \Sigma \times t, t \in I\)</span>. For the sake of distinction, let <span class="math notranslate nohighlight">\(\Sigma^0_t, t \in I\)</span>, and <span class="math notranslate nohighlight">\(\Sigma^1_t, t \in I\)</span>, be two different foliations realizing <span class="math notranslate nohighlight">\(\pi_1\)</span>-level Morse theories as explained above. Namely, modulo Weinstein homotopies, the <span class="math notranslate nohighlight">\(1\)</span>-parameter families <span class="math notranslate nohighlight">\(\Sigma^0_t|_{\xi}\)</span> and <span class="math notranslate nohighlight">\(\Sigma^1_t|_{\xi}\)</span> give rise to two compositions of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches. Therefore, the goal is, roughly speaking, to connect different compositions of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches which define the same contact structure, in a Morse theoretic way.</p>
 <p>By analogy with the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch, here is a complete list of <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches which at some point breaks the invariance of the contact germ. First of all, we need to work on the <span class="math notranslate nohighlight">\(2\)</span>-dimensional parameter space <span class="math notranslate nohighlight">\((s, t) \in I^2\)</span>, where <span class="math notranslate nohighlight">\(t\)</span> shall always parametrize the foliations and <span class="math notranslate nohighlight">\(s\)</span> parametrizes the homotopies. At a <span class="math notranslate nohighlight">\(\pi_2\)</span>-critical moment <span class="math notranslate nohighlight">\((s_0, t_0) \in I^2\)</span>, one of the following scenarios may happen: <a class="footnote-reference brackets" href="#pi2labels" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
 <ul class="simple">
@@ -490,22 +555,22 @@
 <ul id="bullet-pi2d-switch">
 <li><p>(<span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switch) There exist a negative index-<span class="math notranslate nohighlight">\(n\)</span> critical point <span class="math notranslate nohighlight">\(p_n^-\)</span> and a positive <span class="math notranslate nohighlight">\(p_n^+\)</span>, such that there exists a trajectory from <span class="math notranslate nohighlight">\(p_n^-\)</span> to <span class="math notranslate nohighlight">\(p_n^+\)</span> which is not transversely cut out, but rather has a first-order tangency. Namely, let <span class="math notranslate nohighlight">\(Y \subset \Sigma_{t_0}^{s_0}\)</span> be a regular level set between <span class="math notranslate nohighlight">\(p_n^-\)</span> and <span class="math notranslate nohighlight">\(p_n^+\)</span>, and <span class="math notranslate nohighlight">\(\Lambda_{\pm} \subset Y\)</span> be Legendrian spheres just as in the above discussion at the <span class="math notranslate nohighlight">\(\pi_1\)</span>-level. Then the unique intersection <span class="math notranslate nohighlight">\(q = \Lambda_+ \cap \Lambda_-\)</span> satisfies the following</p>
 <div class="math notranslate nohighlight" id="equation-xi-degenerate">
-<span class="eqno">(4)<a class="headerlink" href="#equation-xi-degenerate" title="Permalink to this equation">#</a></span>\[\dim(T_q \Lambda_+ \cap T_q \Lambda_-) = 1.\]</div>
+<span class="eqno">(4)<a class="headerlink" href="#equation-xi-degenerate" title="Link to this equation">#</a></span>\[\dim(T_q \Lambda_+ \cap T_q \Lambda_-) = 1.\]</div>
 <p>This should be compared with the <span class="math notranslate nohighlight">\(\xi|_Y\)</span>-transversality condition <a class="reference internal" href="#equation-xi-transverse">(3)</a>.</p>
 </li>
 </ul>
 </section>
 </section>
 <section id="id17">
-<h3>Summary<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>Summary<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>We start with the definition of topological skeleta, which serve the purpose of separating topology from contact structures. Then we proceed with a description of the sought-after contact Morse theory on hypersurfaces from <span class="math notranslate nohighlight">\(\pi_0\)</span> to <span class="math notranslate nohighlight">\(\pi_2\)</span>-level. The <span class="math notranslate nohighlight">\(\pi_0\)</span>-level is the foundation for everything that follows and technically speaking, it involves all the (good and bad) techniques established in <a class="reference internal" href="../bib.html#hh19" id="id18"><span>[HH19]</span></a>. The <span class="math notranslate nohighlight">\(\pi_1\)</span>-level reduces the study of contact structures to the study of finite sequences of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches. Finally, the <span class="math notranslate nohighlight">\(\pi_2\)</span>-level provides a complete list of moves one needs to compare two different sequences of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches. In principle, one could continue to build <span class="math notranslate nohighlight">\(\pi_k\)</span>-level contact Morse theory for <span class="math notranslate nohighlight">\(k \geq 3\)</span>. We choose not to do that for two reasons: first, as far as the classification of contact structures is concerned, the <span class="math notranslate nohighlight">\(\pi_2\)</span>-level Morse theory suffices, and second, there is no significant technical advancement already from <span class="math notranslate nohighlight">\(\pi_0\)</span>-level up.</p>
 </section>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <p>So far the theory has been dry and obscure. We need examples to make it sensible but as for any other theories, there is a high risk of breaking it by testing against the reality. So let’s do it.</p>
 <section id="r-pm-picture-of-pi-1-switches">
-<span id="section-r-pm-picture-of-pi-1-switches"></span><h3><span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#r-pm-picture-of-pi-1-switches" title="Permalink to this heading">#</a></h3>
+<span id="section-r-pm-picture-of-pi-1-switches"></span><h3><span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#r-pm-picture-of-pi-1-switches" title="Link to this heading">#</a></h3>
 <p>The Morse picture of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches is conceptually clear but can be difficult to use in practice. So let’s introduce a slightly different approach, called the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture, which focuses less on the (Morse) gradient vector field and more on the critical points, making it easier to manipulate, especially when combined with front projections. In a nutshell, the <span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture describes the changes in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma_t)\)</span>, as well as how they are glued together along <span class="math notranslate nohighlight">\(\Gamma(\Sigma_t)\)</span>, as <span class="math notranslate nohighlight">\(\Sigma_t|_{\xi}\)</span> goes through a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch.</p>
 <aside class="sidebar" id="figure-r-pm-picture-of-pi-1-switch">
 <p class="sidebar-title"><span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch</p>
@@ -527,11 +592,11 @@
 </div>
 </section>
 <section id="free-pi-1-switches">
-<h3>Free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#free-pi-1-switches" title="Permalink to this heading">#</a></h3>
+<h3>Free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#free-pi-1-switches" title="Link to this heading">#</a></h3>
 <p>Recall <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches are exactly where the contact germs on a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of Morse hypersurfaces change. They don’t come for free in general for otherwise contact topology would be no different than just topology. It’s generally difficult to verify the existence of a particular <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch inside a given contact manifold. However, there exists a class of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches which can always be found at the vicinity of any (invariant) Morse hypersurface. These <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches are called <em>free</em>, and are the subject of discussion in this section.</p>
 <p>The creation of free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches is very much a procedure of creating something out of nothing. Not surprisingly, it involves certain <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches. Since <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches are directionless, all creations can be reversed to eliminations, which we’ll omit.</p>
 <section id="trivial-pi-1-switches">
-<span id="section-trivial-pi1-switches"></span><h4>Trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#trivial-pi-1-switches" title="Permalink to this heading">#</a></h4>
+<span id="section-trivial-pi1-switches"></span><h4>Trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#trivial-pi-1-switches" title="Link to this heading">#</a></h4>
 <aside class="sidebar">
 <p class="sidebar-title">Morse picture of a <span class="math notranslate nohighlight">\(\pi_2^a\)</span>-switch</p>
 <figure class="align-center">
@@ -558,7 +623,7 @@
 <p>Trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches, as its name suggests, are quite boring. But when combined with <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-switches, they can produce many nontrivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches. This is our next step.</p>
 </section>
 <section id="derived-pi-1-switches-from-the-trivial-one">
-<span id="section-derived-pi1-switches"></span><h4>Derived <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from the trivial one<a class="headerlink" href="#derived-pi-1-switches-from-the-trivial-one" title="Permalink to this heading">#</a></h4>
+<span id="section-derived-pi1-switches"></span><h4>Derived <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from the trivial one<a class="headerlink" href="#derived-pi-1-switches-from-the-trivial-one" title="Link to this heading">#</a></h4>
 <aside class="sidebar">
 <p class="sidebar-title">Morse picture of a <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-switch</p>
 <figure class="align-center">
@@ -585,7 +650,7 @@
 <p>We shall later use this type of free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches to detect flexibilities of contact structures near a hypersurface.</p>
 </section>
 <section id="free-pi-1-switches-from-nowhere">
-<h4>Free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from nowhere<a class="headerlink" href="#free-pi-1-switches-from-nowhere" title="Permalink to this heading">#</a></h4>
+<h4>Free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from nowhere<a class="headerlink" href="#free-pi-1-switches-from-nowhere" title="Link to this heading">#</a></h4>
 <p>As we have learned from the discussions above, free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches can be created out of the trivial one using the so-called far-commutativity. What we shall do in this section is the opposite. Namely, we shall construct free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches without any reference to <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches, and from this we shall retrospectively argue that the trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch exists.</p>
 <p>Since we plan not to use any <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches, we need to go back to the root of contact Morse theory to see why some <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches always exist. Recall the <span class="math notranslate nohighlight">\(Y\)</span>-<a class="reference internal" href="#note-y-picture"><span class="std std-ref">picture</span></a> of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch where <span class="math notranslate nohighlight">\(Y \subset \Sigma\)</span> is a level set separating the two critical points <span class="math notranslate nohighlight">\(p_n^{\pm}\)</span>. Moreover, the corresponding Legendrian spheres <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> from <span class="math notranslate nohighlight">\(p_n^+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span> from <span class="math notranslate nohighlight">\(p_n^-\)</span> in <span class="math notranslate nohighlight">\(Y\)</span> are relatively positioned as shown in this <a class="reference internal" href="#figure-r-pm-picture-of-pi-1-switch"><span class="std std-ref">picture</span></a> such that <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> is slightly “below” <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span>. Then the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch amounts to isotoping <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> up across <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(Y\)</span> were to have an arbitrarily large (standard) neighborhood, then one can always perturb <span class="math notranslate nohighlight">\(\Sigma\)</span> near – but away from – <span class="math notranslate nohighlight">\(Y\)</span> to change the characteristic foliation <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> so that it effectively raises <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> up across <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span> <a class="footnote-reference brackets" href="#bump-switch" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. However, in reality, one can only assume a finite neighborhood size of <span class="math notranslate nohighlight">\(Y\)</span> depending on <span class="math notranslate nohighlight">\(\Sigma\)</span> or rather the contact structure at the vicinity of it. Let <span class="math notranslate nohighlight">\(\phi_t: Y \to Y\)</span>, <span class="math notranslate nohighlight">\(t \in [0,1]\)</span>, be the contact isotopy induced by the perturbation such that  <span class="math notranslate nohighlight">\(\phi_0 = \op{id}\)</span> and <span class="math notranslate nohighlight">\(\phi_1\)</span> raises <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> up across <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span>. Then we can define an “action” of such an isotopy by</p>
@@ -607,10 +672,10 @@
 </section>
 </section>
 <section id="more-relations-between-pi-1-switches">
-<h3>More relations between <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#more-relations-between-pi-1-switches" title="Permalink to this heading">#</a></h3>
+<h3>More relations between <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches<a class="headerlink" href="#more-relations-between-pi-1-switches" title="Link to this heading">#</a></h3>
 <p>It is the nature of Morse theory that <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches give rise to equivalence relations between <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches. Indeed we have examined through the investigation of free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches the equivalence relations induced by <span class="math notranslate nohighlight">\(\pi_2^a\)</span> and <span class="math notranslate nohighlight">\(\pi_2^b\)</span>-switches. In this section we shall go through the rest, namely the <span class="math notranslate nohighlight">\(\pi_2^c\)</span> and <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switches. It turns out that <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switches are easier to deal with, so we shall consider them first.</p>
 <section id="relations-from-pi-2-d-switches">
-<h4>Relations from <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switches<a class="headerlink" href="#relations-from-pi-2-d-switches" title="Permalink to this heading">#</a></h4>
+<h4>Relations from <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switches<a class="headerlink" href="#relations-from-pi-2-d-switches" title="Link to this heading">#</a></h4>
 <aside class="sidebar">
 <p class="sidebar-title"><span class="math notranslate nohighlight">\(Y\)</span>-picture of a <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switch</p>
 <figure class="align-center">
@@ -621,7 +686,7 @@
 <p>Note that there is nothing special about the configuration of <span class="math notranslate nohighlight">\(\Lambda_+^s\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-^u\)</span> at either the bottom <span class="math notranslate nohighlight">\(t=0\)</span> or the top <span class="math notranslate nohighlight">\(t=1\)</span> of the parameter space. They can for example always be arranged using the finger moves introduced above. It means, in particular, that even more free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches can be produced this way by the very existence of <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switches.</p>
 </section>
 <section id="relations-from-pi-2-c-switches">
-<h4>Relations from <span class="math notranslate nohighlight">\(\pi_2^c\)</span>-switches <a class="footnote-reference brackets" href="#pi2c-switch-error" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a><a class="headerlink" href="#relations-from-pi-2-c-switches" title="Permalink to this heading">#</a></h4>
+<h4>Relations from <span class="math notranslate nohighlight">\(\pi_2^c\)</span>-switches <a class="footnote-reference brackets" href="#pi2c-switch-error" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a><a class="headerlink" href="#relations-from-pi-2-c-switches" title="Link to this heading">#</a></h4>
 <p>The <span class="math notranslate nohighlight">\(\pi_2^c\)</span>-<a class="reference internal" href="#bullet-pi2c-switch"><span class="std std-ref">switch</span></a> is the most special among the other <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches because it involves critical points <em>not</em> of the middle index. It is for this reason that we will describe it using the <span class="math notranslate nohighlight">\(Y\)</span>-picture where <span class="math notranslate nohighlight">\(Y\)</span> is a level set that separates <span class="math notranslate nohighlight">\(p_n^+\)</span> on one side and <span class="math notranslate nohighlight">\(p_{n+1}^-\)</span> together with all the <span class="math notranslate nohighlight">\(p_n^-\)</span>‘s it interacts with on the other side. For the sake of simplicity, let’s focus on the case where the contact dimension is <span class="math notranslate nohighlight">\(5\)</span>, i.e., <span class="math notranslate nohighlight">\(n=2\)</span>. The general case poses in principle <a class="footnote-reference brackets" href="#higher-dim-is-harder" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> no extra difficulty but the picture becomes much harder to draw.</p>
 <aside class="sidebar">
 <p class="sidebar-title"><span class="math notranslate nohighlight">\(Y\)</span>-picture of a <span class="math notranslate nohighlight">\(\pi_2^c\)</span>-switch (schematic)</p>
@@ -636,10 +701,10 @@
 </section>
 </section>
 <section id="pi-1-switches-and-flexibility">
-<span id="section-flexibility"></span><h3><span class="math notranslate nohighlight">\(\pi_1\)</span>-switches and flexibility<a class="headerlink" href="#pi-1-switches-and-flexibility" title="Permalink to this heading">#</a></h3>
+<span id="section-flexibility"></span><h3><span class="math notranslate nohighlight">\(\pi_1\)</span>-switches and flexibility<a class="headerlink" href="#pi-1-switches-and-flexibility" title="Link to this heading">#</a></h3>
 <p>As mentioned before, in general <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches do not come for free because it would otherwise equate contact topology with just smooth topology. However, there is a subclass of contact structures which carry no more information than the underlying smooth structures, or more precisely, the underlying algebraic topology if one takes into account of the almost complex structures on the contact hyperplanes. This subclass of contact structures was shown to exist and was given the name <em>overtwisted</em> contact structures by Eliashberg <a class="reference internal" href="../bib.html#eli89" id="id25"><span>[Eli89]</span></a> in dimension <span class="math notranslate nohighlight">\(3\)</span> and by M. Borman, Eliashberg, and E. Murphy <a class="reference internal" href="../bib.html#bem14" id="id26"><span>[BEM14]</span></a> in general. Again, none of these developments are relevant to our discussion of contact Morse theory here, and we shall look for our own flexibility of contact structures from a Morse theoretic viewpoint. Of course, it won’t hurt to keep in mind that it’s known (to some people) that a class of contact structures are quite flexible and carry no more information than an almost complex structure on the (stable) tangent bundle.</p>
 <section id="flexible-hypersurfaces">
-<h4>Flexible hypersurfaces<a class="headerlink" href="#flexible-hypersurfaces" title="Permalink to this heading">#</a></h4>
+<h4>Flexible hypersurfaces<a class="headerlink" href="#flexible-hypersurfaces" title="Link to this heading">#</a></h4>
 <p>Let’s start by explaining the very first sentence of the previous paragraph. Recall that a <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch involves a pair of critical points <span class="math notranslate nohighlight">\(p_n^{\pm}\)</span> of <span class="math notranslate nohighlight">\(\Sigma|_{\xi}\)</span>, a level set <span class="math notranslate nohighlight">\(\Gamma\)</span>, and respectively the unstable and stable Legendrian spheres <span class="math notranslate nohighlight">\(\Lambda_{\pm} \subset \Gamma\)</span> of <span class="math notranslate nohighlight">\(p_n^{\pm}\)</span>, which <span class="math notranslate nohighlight">\(\xi|_{\Gamma}\)</span>-transversely intersect at one point. All these data together will be called the <em>initial data</em> of the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch.</p>
 <blockquote id="flexible-hypersurface">
 <div><p>A (Morse) hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> is said to be <em>flexible</em> if the <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch exists in the (invariant) neighborhood of <span class="math notranslate nohighlight">\(\Sigma\)</span> for any initial data, again, modulo Weinstein homotopies of <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span>.</p>
@@ -651,7 +716,7 @@
 <p>In dimension <span class="math notranslate nohighlight">\(3\)</span>, a simple criterion due to Giroux completely characterizes when the contact germ on a (convex) surface <span class="math notranslate nohighlight">\(\Sigma\)</span> is overtwisted in terms of the dividing set, but it’s not particularly instructive for higher dimensional cases and has nothing to do with Morse theory. However, when interpreted in Honda’s theory of bypasses, one can rephrase Giroux’s criterion as saying that there exists a trivial bypass which is also overtwisted. Here a trivial bypass is the same as a trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch but we’re missing the definition of an overtwisted <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch. Nonetheless, this perspective provides a good motivation to our attempt at understanding flexibility of hypersurfaces in this example.</p>
 </section>
 <section id="a-flexible-configuration">
-<h4>A flexible configuration<a class="headerlink" href="#a-flexible-configuration" title="Permalink to this heading">#</a></h4>
+<h4>A flexible configuration<a class="headerlink" href="#a-flexible-configuration" title="Link to this heading">#</a></h4>
 <aside class="sidebar">
 <p class="sidebar-title">A flexible hypersurface</p>
 <figure class="align-center">
@@ -682,40 +747,40 @@
 </section>
 </section>
 <section id="epilogue">
-<h2>Epilogue<a class="headerlink" href="#epilogue" title="Permalink to this heading">#</a></h2>
+<h2>Epilogue<a class="headerlink" href="#epilogue" title="Link to this heading">#</a></h2>
 <p>In this article, we tried to explain what contact Morse theory is about, including both the general idea on how it suppose to be used to understand contact manifolds and the main objects of interests. We then went through a limited number of examples to illustrate the most basic Morse-theoretic operations in the contact setting. Such limitation is largely due to my own limited understanding of the theory at the moment of writing. It’s likely that many other mathematical articles that I’m going to write in this site will serve the purpose of improving such an understanding, and therefore they may all be called “Applications of contact Morse theory”.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="gradient" role="note">
+<aside class="footnote brackets" id="gradient" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
 <p>Morse theory is topological in nature and doesn’t care about metric very much. In particular, it’s more correct and convenient but unfortunately also more cumbersome to use <a class="reference external" href="https://en.wikipedia.org/wiki/Gradient-like_vector_field">gradient-like vector fields</a> instead.</p>
 </aside>
-<aside class="footnote brackets" id="false-believe" role="note">
+<aside class="footnote brackets" id="false-believe" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
 <p>Ironically, the failure of Giroux’s argument in dimensions <span class="math notranslate nohighlight">\(&gt; 3\)</span> and other “experts’ insights” went so far to even form a consensus that hypersurfaces in higher-dimensional contact manifolds are intractable and hopeless. It was at least the case when I entered the subject as a graduate student. See, for example, what my back-then-advisor had to say about <a class="reference external" href="https://youtu.be/xuw9f4huYjk?t=2820">this</a>. From my own experience, there is nothing better than breaking false believes even if I was one of the believers.</p>
 </aside>
-<aside class="footnote brackets" id="contact-submfd" role="note">
+<aside class="footnote brackets" id="contact-submfd" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">3</a><span class="fn-bracket">]</span></span>
 <p>Regular level sets in a Morse hypersurface provide a rich source of examples of contact submanifolds. However, they don’t carry in themselves much information about the original contact manifold.</p>
 </aside>
-<aside class="footnote brackets" id="pi2labels" role="note">
+<aside class="footnote brackets" id="pi2labels" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
 <p>The <span class="math notranslate nohighlight">\(\pi_2\)</span>-switches are labeled by alphabetic letters at a random order because I don’t have a better naming strategy.</p>
 </aside>
-<aside class="footnote brackets" id="pi2a-morse-sign" role="note">
+<aside class="footnote brackets" id="pi2a-morse-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">5</a><span class="fn-bracket">]</span></span>
 <p>One has to make (obviously) consistent choices of signs for the critical points.</p>
 </aside>
-<aside class="footnote brackets" id="bump-switch" role="note">
+<aside class="footnote brackets" id="bump-switch" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">6</a><span class="fn-bracket">]</span></span>
 <p>Details about this construction – in fact, a discussion about the entire free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switch – can be found in this <a class="reference external" href="https://yhuangmath.wordpress.com/2021/05/29/trivia#bypass-everywhere">blog post</a>.</p>
 </aside>
-<aside class="footnote brackets" id="pi2c-switch-error" role="note">
+<aside class="footnote brackets" id="pi2c-switch-error" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id22">1</a>,<a role="doc-backlink" href="#id24">2</a>)</span>
 <p>I once thought the <span class="math notranslate nohighlight">\(\pi_2^c\)</span>-switch has only something to do with pseudo-isotopies of the Morse theory on <span class="math notranslate nohighlight">\(\Sigma\)</span>. The fact that this is wrong was brought to my attention by K. Honda and J. Breen.</p>
 </aside>
-<aside class="footnote brackets" id="higher-dim-is-harder" role="note">
+<aside class="footnote brackets" id="higher-dim-is-harder" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">8</a><span class="fn-bracket">]</span></span>
 <p>It is likely that in practice contact topology becomes more difficult as dimension increases.</p>
 </aside>
@@ -724,337 +789,162 @@
 </section>
 
 
-            </article>
-            
-            
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+                </article>
               
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#morse-theory-in-topology">
-   Morse Theory in Topology
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-blend-of-morse-theory-with-contact-structures">
-   First Blend of Morse Theory with Contact Structures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-symplectic-detour">
-     A symplectic detour
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#regular-level-sets">
-       Regular level sets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#symplectic-handles">
-       Symplectic handles
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#back-to-contact">
-     Back to contact
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Regular level sets
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#contact-handles">
-       Contact handles
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#summary">
-     Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-main-ideas">
-   The Main Ideas
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#separation-of-contact-structure-and-topology">
-     Separation of contact structure and topology
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#morsify-the-characteristic-foliation">
-     Morsify the characteristic foliation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#second-blend-of-morse-theory-with-contact-structures">
-   Second Blend of Morse Theory with Contact Structures
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#topological-skeleta">
-     Topological skeleta
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-family-morse-theory-on-hypersurfaces">
-     A family Morse theory on hypersurfaces
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pi-0-level">
-       <span class="math notranslate nohighlight">
-        \(\pi_0\)
-       </span>
-       -level
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pi-1-level">
-       <span class="math notranslate nohighlight">
-        \(\pi_1\)
-       </span>
-       -level
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pi-2-level">
-       <span class="math notranslate nohighlight">
-        \(\pi_2\)
-       </span>
-       -level
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id17">
-     Summary
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples">
-   Examples
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-pm-picture-of-pi-1-switches">
-     <span class="math notranslate nohighlight">
-      \(R_{\pm}\)
-     </span>
-     -picture of
-     <span class="math notranslate nohighlight">
-      \(\pi_1\)
-     </span>
-     -switches
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#free-pi-1-switches">
-     Free
-     <span class="math notranslate nohighlight">
-      \(\pi_1\)
-     </span>
-     -switches
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#trivial-pi-1-switches">
-       Trivial
-       <span class="math notranslate nohighlight">
-        \(\pi_1\)
-       </span>
-       -switches
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#derived-pi-1-switches-from-the-trivial-one">
-       Derived
-       <span class="math notranslate nohighlight">
-        \(\pi_1\)
-       </span>
-       -switches from the trivial one
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#free-pi-1-switches-from-nowhere">
-       Free
-       <span class="math notranslate nohighlight">
-        \(\pi_1\)
-       </span>
-       -switches from nowhere
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-relations-between-pi-1-switches">
-     More relations between
-     <span class="math notranslate nohighlight">
-      \(\pi_1\)
-     </span>
-     -switches
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#relations-from-pi-2-d-switches">
-       Relations from
-       <span class="math notranslate nohighlight">
-        \(\pi_2^d\)
-       </span>
-       -switches
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#relations-from-pi-2-c-switches">
-       Relations from
-       <span class="math notranslate nohighlight">
-        \(\pi_2^c\)
-       </span>
-       -switches
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pi-1-switches-and-flexibility">
-     <span class="math notranslate nohighlight">
-      \(\pi_1\)
-     </span>
-     -switches and flexibility
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#flexible-hypersurfaces">
-       Flexible hypersurfaces
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-flexible-configuration">
-       A flexible configuration
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#epilogue">
-   Epilogue
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-<div class="toc-item">
-  
-<div id="searchbox"></div>
-</div>
-
-<div class="toc-item">
-  
-
-<div class="tocsection editthispage">
-    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/math/contact-morse-theory.rst">
-        <i class="fa-solid fa-pencil"></i> Edit this page
-    </a>
-</div>
-
-</div>
-
-<div class="toc-item">
-  
-<div class="tocsection sourcelink">
-    <a href="../_sources/math/contact-morse-theory.rst.txt">
-        <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-</div>
-
-</div>
-
+              
+              
+              
+              
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#morse-theory-in-topology">Morse Theory in Topology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-blend-of-morse-theory-with-contact-structures">First Blend of Morse Theory with Contact Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-symplectic-detour">A symplectic detour</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regular-level-sets">Regular level sets</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symplectic-handles">Symplectic handles</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-contact">Back to contact</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Regular level sets</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contact-handles">Contact handles</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-main-ideas">The Main Ideas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#separation-of-contact-structure-and-topology">Separation of contact structure and topology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#morsify-the-characteristic-foliation">Morsify the characteristic foliation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-blend-of-morse-theory-with-contact-structures">Second Blend of Morse Theory with Contact Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#topological-skeleta">Topological skeleta</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-family-morse-theory-on-hypersurfaces">A family Morse theory on hypersurfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pi-0-level"><span class="math notranslate nohighlight">\(\pi_0\)</span>-level</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pi-1-level"><span class="math notranslate nohighlight">\(\pi_1\)</span>-level</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pi-2-level"><span class="math notranslate nohighlight">\(\pi_2\)</span>-level</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-pm-picture-of-pi-1-switches"><span class="math notranslate nohighlight">\(R_{\pm}\)</span>-picture of <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#free-pi-1-switches">Free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trivial-pi-1-switches">Trivial <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-pi-1-switches-from-the-trivial-one">Derived <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from the trivial one</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#free-pi-1-switches-from-nowhere">Free <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches from nowhere</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-relations-between-pi-1-switches">More relations between <span class="math notranslate nohighlight">\(\pi_1\)</span>-switches</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-from-pi-2-d-switches">Relations from <span class="math notranslate nohighlight">\(\pi_2^d\)</span>-switches</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-from-pi-2-c-switches">Relations from <span class="math notranslate nohighlight">\(\pi_2^c\)</span>-switches </a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pi-1-switches-and-flexibility"><span class="math notranslate nohighlight">\(\pi_1\)</span>-switches and flexibility</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#flexible-hypersurfaces">Flexible hypersurfaces</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-flexible-configuration">A flexible configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epilogue">Epilogue</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/math/contact-morse-theory.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/math/contact-morse-theory.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
             
           </div>
-        </footer>
+          <footer class="bd-footer-content">
+            
+          </footer>
         
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-  <footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
   
-  <div class="footer-item">
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
     
-<p class="copyright">
-
-    &copy; Copyright 2021, Mandy.<br>
-
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    <p class="theme-version">
-    Built with the
-    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
-        PyData Sphinx Theme
-    </a>
-    0.12.0.
-</p>
-  </div>
-  
-  <div class="footer-item">
+      © Copyright 2021, Mandy.
+      <br/>
     
-<p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
-</p>
+  </p>
+</div>
+      
+        <div class="footer-item">
 
-  </div>
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
   
 </div>
+
   </footer>
   </body>
 </html>

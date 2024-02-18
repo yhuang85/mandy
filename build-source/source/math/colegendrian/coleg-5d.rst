@@ -43,7 +43,7 @@ It's therefore quite a pleasing fact that by applying the folding techniques dev
 
 .. sidebar:: An coLegendrian cone
 
-    .. figure:: static/cone.svg
+    .. figure:: static/coleg-5d/cone.svg
         :align: center
         :width: 150px
 
@@ -73,7 +73,7 @@ Since :math:`\dim Y = 3`, it's built out of :math:`0,1,2`, and :math:`3`-handle.
 
 .. sidebar:: coLegendrian handles :math:`H_1^+` and :math:`H_2^+`
 
-    .. figure:: static/one-and-two-handles-5d.svg
+    .. figure:: static/coleg-5d/one-and-two-handles-5d.svg
         :align: center
         :width: 400px
 
@@ -108,7 +108,7 @@ The proofs of the above two rigidity statements both rely on the simple fact tha
 
 .. sidebar:: Borderline between transverse and tangent boundaries
 
-    .. figure:: static/tb-nonnegative.svg
+    .. figure:: static/coleg-5d/tb-nonnegative.svg
         :align: center
         :width: 400px
 

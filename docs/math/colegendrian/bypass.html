@@ -1,12 +1,14 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Bypass attachment revisited &#8212; Mandy&#39;s wonderland</title>
+    <title>Bypass attachment revisited &#8212; Mandy&#39;s wonderland</title>
   
   
   
@@ -16,154 +18,182 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>window.MathJax = {"tex": {"macros": {"op": ["\\operatorname {#1}", 1], "p": "{\\partial}", "ps": ["\\prescript {#1}{#2}{#3}", 3], "psup": ["\\prescript {#1}{}{#2}", 2], "dist": "{\\operatorname{dist}}", "ind": "{\\operatorname{ind}}", "std": "{\\operatorname{std}}", "abb": "{\\mathbb a}", "bbb": "{\\mathbb b}", "cbb": "{\\mathbb c}", "dbb": "{\\mathbb d}", "ebb": "{\\mathbb e}", "fbb": "{\\mathbb f}", "gbb": "{\\mathbb g}", "hbb": "{\\mathbb h}", "ibb": "{\\mathbb i}", "jbb": "{\\mathbb j}", "kbb": "{\\mathbb k}", "lbb": "{\\mathbb l}", "mbb": "{\\mathbb m}", "nbb": "{\\mathbb n}", "obb": "{\\mathbb o}", "pbb": "{\\mathbb p}", "qbb": "{\\mathbb q}", "rbb": "{\\mathbb r}", "sbb": "{\\mathbb s}", "tbb": "{\\mathbb t}", "ubb": "{\\mathbb u}", "vbb": "{\\mathbb v}", "wbb": "{\\mathbb w}", "xbb": "{\\mathbb x}", "ybb": "{\\mathbb y}", "zbb": "{\\mathbb z}", "Abb": "{\\mathbb A}", "Bbb": "{\\mathbb B}", "Cbb": "{\\mathbb C}", "Dbb": "{\\mathbb D}", "Ebb": "{\\mathbb E}", "Fbb": "{\\mathbb F}", "Gbb": "{\\mathbb G}", "Hbb": "{\\mathbb H}", "Ibb": "{\\mathbb I}", "Jbb": "{\\mathbb J}", "Kbb": "{\\mathbb K}", "Lbb": "{\\mathbb L}", "Mbb": "{\\mathbb M}", "Nbb": "{\\mathbb N}", "Obb": "{\\mathbb O}", "Pbb": "{\\mathbb P}", "Qbb": "{\\mathbb Q}", "Rbb": "{\\mathbb R}", "Sbb": "{\\mathbb S}", "Tbb": "{\\mathbb T}", "Ubb": "{\\mathbb U}", "Vbb": "{\\mathbb V}", "Wbb": "{\\mathbb W}", "Xbb": "{\\mathbb X}", "Ybb": "{\\mathbb Y}", "Zbb": "{\\mathbb Z}", "acal": "{\\mathcal a}", "bcal": "{\\mathcal b}", "ccal": "{\\mathcal c}", "dcal": "{\\mathcal d}", "ecal": "{\\mathcal e}", "fcal": "{\\mathcal f}", "gcal": "{\\mathcal g}", "hcal": "{\\mathcal h}", "ical": "{\\mathcal i}", "jcal": "{\\mathcal j}", "kcal": "{\\mathcal k}", "lcal": "{\\mathcal l}", "mcal": "{\\mathcal m}", "ncal": "{\\mathcal n}", "ocal": "{\\mathcal o}", "pcal": "{\\mathcal p}", "qcal": "{\\mathcal q}", "rcal": "{\\mathcal r}", "scal": "{\\mathcal s}", "tcal": "{\\mathcal t}", "ucal": "{\\mathcal u}", "vcal": "{\\mathcal v}", "wcal": "{\\mathcal w}", "xcal": "{\\mathcal x}", "ycal": "{\\mathcal y}", "zcal": "{\\mathcal z}", "Acal": "{\\mathcal A}", "Bcal": "{\\mathcal B}", "Ccal": "{\\mathcal C}", "Dcal": "{\\mathcal D}", "Ecal": "{\\mathcal E}", "Fcal": "{\\mathcal F}", "Gcal": "{\\mathcal G}", "Hcal": "{\\mathcal H}", "Ical": "{\\mathcal I}", "Jcal": "{\\mathcal J}", "Kcal": "{\\mathcal K}", "Lcal": "{\\mathcal L}", "Mcal": "{\\mathcal M}", "Ncal": "{\\mathcal N}", "Ocal": "{\\mathcal O}", "Pcal": "{\\mathcal P}", "Qcal": "{\\mathcal Q}", "Rcal": "{\\mathcal R}", "Scal": "{\\mathcal S}", "Tcal": "{\\mathcal T}", "Ucal": "{\\mathcal U}", "Vcal": "{\\mathcal V}", "Wcal": "{\\mathcal W}", "Xcal": "{\\mathcal X}", "Ycal": "{\\mathcal Y}", "Zcal": "{\\mathcal Z}"}, "packages": {"[+]": ["mathtools", "unicode"]}}, "loader": {"load": ["[tex]/mathtools", "[tex]/unicode"]}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'math/bypass';</script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Physics" href="../physics/index.html" />
-    <link rel="prev" title="CoLegendrians in dimension five" href="colegendrian/coleg-5d.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+    <script>DOCUMENTATION_OPTIONS.pagename = 'math/colegendrian/bypass';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Morse theory in contact topology" href="../contact-morse-theory.html" />
+    <link rel="prev" title="CoLegendrians in dimension five" href="coleg-5d.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
   <label class="overlay overlay-primary" for="__primary"></label>
-
   
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
   <label class="overlay overlay-secondary" for="__secondary"></label>
-
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
+</form></div>
   </div>
-
   
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
+    <span class="fa-solid fa-bars"></span>
   </label>
-  <div id="navbar-start">
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
     
     
-  
-
-
-<a class="navbar-brand logo" href="../index.html">
-
-  
-  
+      
+    
+    
+    <img src="../../_static/dms.png" class="logo__image only-light" alt="Mandy's wonderland - Home"/>
+    <script>document.write(`<img src="../../_static/dms.png" class="logo__image only-dark" alt="Mandy's wonderland - Home"/>`);</script>
   
   
-  
-  
-  
-
-  
-    <img src="../_static/dms.png" class="logo__image only-light" alt="Logo image">
-    <img src="../_static/dms.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
+</a></div>
     
   </div>
-
   
   <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
+    
+    <div class="me-auto navbar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                      <a class="nav-link nav-internal" href="../index.html">
                         Mathematics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../physics/index.html">
+                      <a class="nav-link nav-internal" href="../../physics/index.html">
                         Physics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../bib.html">
+                      <a class="nav-link nav-internal" href="../../bib.html">
                         Bibliography
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
+  </ul>
+</nav></div>
       
     </div>
-
-    <div id="navbar-end">
+    
+    
+    <div class="navbar-header-items__end">
       
-        <div class="navbar-end-item navbar-persistent--container">
+        <div class="navbar-item navbar-persistent--container">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -172,94 +202,102 @@
           
           
           
-          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
-      </ul>
-      </div>
+</ul></div>
       
     </div>
+    
   </div>
-
-
   
   
     <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
-  </label>
+    </label>
   
-
 </div>
-  </nav>
+
+    </header>
   
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
+      
+      
       <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
+
   
   <div class="sidebar-header-items sidebar-primary__section">
     
     
       <div class="sidebar-header-items__center">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
         
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                      <a class="nav-link nav-internal" href="../index.html">
                         Mathematics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../physics/index.html">
+                      <a class="nav-link nav-internal" href="../../physics/index.html">
                         Physics
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../bib.html">
+                      <a class="nav-link nav-internal" href="../../bib.html">
                         Bibliography
                       </a>
                     </li>
                 
-    </ul>
-</nav>
-      </div>
-      
+  </ul>
+</nav></div>
+        
       </div>
     
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
 
-    
-    
-    <div class="sidebar-header-items__end">
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
         <li class="nav-item">
           
           
@@ -268,59 +306,89 @@
           
           
           
-          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fab fa-github-square fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
         </li>
-      </ul>
+</ul></div>
+        
       </div>
-      
-    </div>
     
   </div>
-
   
-
   
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
-    </div>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-
   
   <div id="rtd-footer-container"></div>
 
+
       </div>
+      
       <main id="main-content" class="bd-main">
         
         
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-            </div>
-            
-            
-            <article class="bd-article" role="main">
+          <div class="bd-content">
+            <div class="bd-article-container">
               
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Mathematics</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Legendrians and coLegendrians</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Bypass...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="bypass-attachment-revisited">
-<h1><span class="section-number">4. </span>Bypass attachment revisited<a class="headerlink" href="#bypass-attachment-revisited" title="Permalink to this heading">#</a></h1>
-<p>Bypass attachment is an operation introduced by K. Honda in <a class="reference internal" href="../bib.html#hon99" id="id1"><span>[Hon99]</span></a> to catch the most fundamental “phase changes” among a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of surfaces in a contact <span class="math notranslate nohighlight">\(3\)</span>-manifold. It is in effect equivalent to E. Giroux’s “bifurcations” of characteristic foliations studied in <a class="reference internal" href="../bib.html#gir99" id="id2"><span>[Gir99]</span></a>. The difference between the two approaches, however, is that a bypass attachment is performed by really attaching a “bypass”, which is a certain half-disk with Legendrian boundary, to the surface, while a bifurcation of vector field is an abstract phenomenon that can most likely only be observed and difficult to find if we have something specific in mind. Indeed, there exist tools such as the “imbalance principle” from <a class="reference internal" href="../bib.html#hon99" id="id3"><span>[Hon99]</span></a> and the “bypass sliding” (aka. “bypass rotation”) from <a class="reference internal" href="../bib.html#hon00" id="id4"><span>[Hon00]</span></a>  which are designed to find bypasses.</p>
-<p>Although the generalization of Giroux’s bifurcation to hypersurfaces in higher-dimensional contact manifolds is rather straightforward <a class="footnote-reference brackets" href="#pi1-switch" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, at least under the assumption of characteristic foliations being Morse, how a higher-dimensional bypass should look like turns out to be less obvious. A rather ugly model of such a thing – called <span class="math notranslate nohighlight">\(\Delta\)</span> – was worked out in <a class="reference internal" href="../bib.html#hh18" id="id6"><span>[HH18]</span></a> (Figure 7.2.3 on page 45): it’s more-or-less a half-ball with certain Legendrian foliation inside and a partially Legendrian boundary. The reason <span class="math notranslate nohighlight">\(\p \Delta\)</span> not being completely Legendrian was that I couldn’t then make it smooth, even with corners. Basically you cannot have three Legendrian planes <a class="footnote-reference brackets" href="#leg-plane" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> intersect like a corner between the walls in your room. This psychological barrier disappears when we think of a bypass as a coLegendrian. They are not meant to be smooth: they come with cone singularities! The rest of the article will be devoted to spelling out the details. It would be a bonus if the more elegant construction of higher-dimensional bypasses will lead to a better understanding of contact manifolds, but that is unclear at this point.</p>
+<h1>Bypass attachment revisited<a class="headerlink" href="#bypass-attachment-revisited" title="Link to this heading">#</a></h1>
+<p>Bypass attachment is an operation introduced by K. Honda in <a class="reference internal" href="../../bib.html#hon99" id="id1"><span>[Hon99]</span></a> to catch the most fundamental “phase changes” among a <span class="math notranslate nohighlight">\(1\)</span>-parameter family of surfaces in a contact <span class="math notranslate nohighlight">\(3\)</span>-manifold. It is in effect equivalent to E. Giroux’s “bifurcations” of characteristic foliations studied in <a class="reference internal" href="../../bib.html#gir99" id="id2"><span>[Gir99]</span></a>. The difference between the two approaches, however, is that a bypass attachment is performed by really attaching a “bypass”, which is a certain half-disk with Legendrian boundary, to the surface, while a bifurcation of vector field is an abstract phenomenon that can most likely only be observed and difficult to find if we have something specific in mind. Indeed, there exist tools such as the “imbalance principle” from <a class="reference internal" href="../../bib.html#hon99" id="id3"><span>[Hon99]</span></a> and the “bypass sliding” (aka. “bypass rotation”) from <a class="reference internal" href="../../bib.html#hon00" id="id4"><span>[Hon00]</span></a>  which are designed to find bypasses.</p>
+<p>Although the generalization of Giroux’s bifurcation to hypersurfaces in higher-dimensional contact manifolds is rather straightforward <a class="footnote-reference brackets" href="#pi1-switch" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, at least under the assumption of characteristic foliations being Morse, how a higher-dimensional bypass should look like turns out to be less obvious. A rather ugly model of such a thing – called <span class="math notranslate nohighlight">\(\Delta\)</span> – was worked out in <a class="reference internal" href="../../bib.html#hh18" id="id6"><span>[HH18]</span></a> (Figure 7.2.3 on page 45): it’s more-or-less a half-ball with certain Legendrian foliation inside and a partially Legendrian boundary. The reason <span class="math notranslate nohighlight">\(\p \Delta\)</span> not being completely Legendrian was that I couldn’t then make it smooth, even with corners. Basically you cannot have three Legendrian planes <a class="footnote-reference brackets" href="#leg-plane" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> intersect like a corner between the walls in your room. This psychological barrier disappears when we think of a bypass as a coLegendrian. They are not meant to be smooth: they come with cone singularities! The rest of the article will be devoted to spelling out the details. It would be a bonus if the more elegant construction of higher-dimensional bypasses will lead to a better understanding of contact manifolds, but that is unclear at this point.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The rest of this article assumes familiarity with Honda’s bypass theory in dimension <span class="math notranslate nohighlight">\(3\)</span> and coLegendrians and contact Morse theory in general in higher dimensions.</p>
 </div>
 <section id="bypass-in-dimension-3">
-<h2>Bypass in Dimension <span class="math notranslate nohighlight">\(3\)</span><a class="headerlink" href="#bypass-in-dimension-3" title="Permalink to this heading">#</a></h2>
+<h2>Bypass in Dimension <span class="math notranslate nohighlight">\(3\)</span><a class="headerlink" href="#bypass-in-dimension-3" title="Link to this heading">#</a></h2>
 <aside class="sidebar" id="fig-bypass-attachment-3d">
 <p class="sidebar-title">Bypass attachment in 3D</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/bypass-3d.svg"><img alt="../_images/bypass-3d.svg" src="../_images/bypass-3d.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="../../_images/bypass-3d.svg"><img alt="../../_images/bypass-3d.svg" src="../../_images/bypass-3d.svg" width="400px" /></a>
 </figure>
 </aside>
 <p>We start by reviewing the definition of a bypass in dimension <span class="math notranslate nohighlight">\(3\)</span>. In the picture to the right, a bypass <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> <a class="footnote-reference brackets" href="#bypass-subscript" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> – topologically a half-disk – is standing on a (generic) Morse surface <span class="math notranslate nohighlight">\(\Sigma\)</span> along the diameter. Moreover, the characteristic foliation on <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> is drawn, together with four singularities divided into two groups with opposite signs: three of one sign (green) and the other of the opposite sign (blue). Finally, the dividing set <span class="math notranslate nohighlight">\(\Gamma\)</span> on both <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> and <span class="math notranslate nohighlight">\(\Sigma\)</span> are drawn in red.</p>
-<p>Now the bypass <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> can be “attached” to <span class="math notranslate nohighlight">\(\Sigma\)</span> to form a new surface <span class="math notranslate nohighlight">\(\Sigma'\)</span>, which is topologically isotopic to <span class="math notranslate nohighlight">\(\Sigma\)</span> but contact-topologically different in general. The original recipe for such an “attachment” as described in <a class="reference internal" href="../bib.html#hon99" id="id9"><span>[Hon99]</span></a> is to first slightly thicken <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> and then round the corners. This procedure is then realized to be equivalent to first attaching a (contact) <span class="math notranslate nohighlight">\(1\)</span>-handle whose core-disk is the semicircle part of <span class="math notranslate nohighlight">\(\p (\psup{3}{\Delta})\)</span>, and then a cancelling <span class="math notranslate nohighlight">\(2\)</span>-handle whose core-disk is really a copy of <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> itself. We might on the one hand prefer the later viewpoint because it’s in line with Morse theory, but on the other hand, we don’t really care how bypasses are attached as long as there is some recipe, and in any case, we already know everything about the contact structure of a bypass attachment via the contact Morse theory on <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
+<p>Now the bypass <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> can be “attached” to <span class="math notranslate nohighlight">\(\Sigma\)</span> to form a new surface <span class="math notranslate nohighlight">\(\Sigma'\)</span>, which is topologically isotopic to <span class="math notranslate nohighlight">\(\Sigma\)</span> but contact-topologically different in general. The original recipe for such an “attachment” as described in <a class="reference internal" href="../../bib.html#hon99" id="id9"><span>[Hon99]</span></a> is to first slightly thicken <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> and then round the corners. This procedure is then realized to be equivalent to first attaching a (contact) <span class="math notranslate nohighlight">\(1\)</span>-handle whose core-disk is the semicircle part of <span class="math notranslate nohighlight">\(\p (\psup{3}{\Delta})\)</span>, and then a cancelling <span class="math notranslate nohighlight">\(2\)</span>-handle whose core-disk is really a copy of <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> itself. We might on the one hand prefer the later viewpoint because it’s in line with Morse theory, but on the other hand, we don’t really care how bypasses are attached as long as there is some recipe, and in any case, we already know everything about the contact structure of a bypass attachment via the contact Morse theory on <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
 <p>To wrap up our recollection of the bypass theory in dimension <span class="math notranslate nohighlight">\(3\)</span>, let’s remind ourselves that in this dimension, the dividing sets play a dominant role due to Giroux’s convex surface theory. In particular, it doesn’t really matter how the characteristic foliation on <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> looks like as long as the dividing set <span class="math notranslate nohighlight">\(\Gamma_{\psup{3}{\Delta}}\)</span> is correct. This is <em>not</em> the case in higher dimensions, where dividing sets contain much less information. Indeed, our choice of the characteristic foliation on <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> is deliberate and important: it is (generically) the characteristic foliation on the core-disk of a <span class="math notranslate nohighlight">\(2\)</span>-handle.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -328,29 +396,29 @@
 </div>
 </section>
 <section id="bypass-in-dimension-5">
-<h2>Bypass in Dimension <span class="math notranslate nohighlight">\(5\)</span><a class="headerlink" href="#bypass-in-dimension-5" title="Permalink to this heading">#</a></h2>
+<h2>Bypass in Dimension <span class="math notranslate nohighlight">\(5\)</span><a class="headerlink" href="#bypass-in-dimension-5" title="Link to this heading">#</a></h2>
 <p>Instead of moving onto bypasses in any dimension, let’s first try to understand it in dimension <span class="math notranslate nohighlight">\(5\)</span> for two reasons: first, it’s easier to visualize a <span class="math notranslate nohighlight">\(3\)</span>-dimensional bypass and second, the even higher dimensional cases are not any harder once we understand the <span class="math notranslate nohighlight">\(5\)</span>-dimensional case.</p>
 <section id="construction-as-a-standalone">
-<h3>Construction as A Standalone<a class="headerlink" href="#construction-as-a-standalone" title="Permalink to this heading">#</a></h3>
+<h3>Construction as A Standalone<a class="headerlink" href="#construction-as-a-standalone" title="Link to this heading">#</a></h3>
 <aside class="sidebar" id="fig-bypass-5d">
 <p class="sidebar-title">Bypass in 5D</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/bypass-5d.svg"><img alt="../_images/bypass-5d.svg" src="../_images/bypass-5d.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="../../_images/bypass-5d.svg"><img alt="../../_images/bypass-5d.svg" src="../../_images/bypass-5d.svg" width="400px" /></a>
 </figure>
 </aside>
 <p>We start by describing a standalone bypass <span class="math notranslate nohighlight">\(\ps{5}{}{\Delta}\)</span> as a coLegendrian which is not attached to anything. It turns out that <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> is topologically just a <a class="reference external" href="https://en.wikipedia.org/wiki/Suspension_(topology)">suspension</a> of <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> as shown in the picture to the right <a class="footnote-reference brackets" href="#bypass-wordpress" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. In fact, the restricted Morse vector field on <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> simply has one (half) source and one (half) sink, both lying on <span class="math notranslate nohighlight">\(\p (\psup{5}{\Delta})\)</span>, so that all flow lines come from the source and end at the sink. The source and the sink are depicted as the blue and the green dots in the picture. Finally, the dividing set <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta}}\)</span> is precisely a copy of <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span>, which is drawn as the red half-disk.</p>
 <p>Recall that every coLegendrian lives inside an ambient Morse hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span> by definition, although it is typically unimportant how <span class="math notranslate nohighlight">\(\Sigma\)</span> looks like away from the coLegendrian. Let’s now put our so-far topological description of <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> into this context by choosing a particularly simple hypersurface <span class="math notranslate nohighlight">\(\Sigma \cong S^4\)</span> such that both <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma) \cong B^4\)</span> are equipped with the standard (radial) Liouville vector field. In particular <span class="math notranslate nohighlight">\(\Gamma_{\Sigma} \cong (S^3, \xi_{\std})\)</span>. If we now pick a bypass <span class="math notranslate nohighlight">\(\psup{3}{\Delta} \subset \Gamma_{\Sigma}\)</span>, then <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> is simply the totality of all flow lines of the characteristic foliation <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span> passing through <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span>, which is topologically a suspension of <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span>.</p>
 </section>
 <section id="attachment-to-a-hypersurface">
-<h3>Attachment to A Hypersurface<a class="headerlink" href="#attachment-to-a-hypersurface" title="Permalink to this heading">#</a></h3>
+<h3>Attachment to A Hypersurface<a class="headerlink" href="#attachment-to-a-hypersurface" title="Link to this heading">#</a></h3>
 <p>Our real interest lies in how a bypass <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> can be attached to a hypersurface <span class="math notranslate nohighlight">\(\Sigma\)</span>. The basic setup for the attachment is that the ambient hypersurface at the vicinity of <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> – denoted by <span class="math notranslate nohighlight">\(\psup{5}{\Delta_h}\)</span> – stands on <span class="math notranslate nohighlight">\(\Sigma\)</span>, just like in the attachment of <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> discussed <a class="reference internal" href="#fig-bypass-attachment-3d"><span class="std std-ref">above</span></a>. In particular, we have <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> standing on <span class="math notranslate nohighlight">\(\Sigma\)</span> along the “flat bottom”, i.e., the suspension of the diameter part of <span class="math notranslate nohighlight">\(\p (\psup{3}{\Delta})\)</span>, and henceforth <span class="math notranslate nohighlight">\(\psup{5}{\Delta_h}\)</span> standing along a thickening of it.</p>
 <aside class="sidebar" id="fig-bypass-attachment-5d">
 <p class="sidebar-title">Bypass attachment in 5D</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/bypass-5d-attach.svg"><img alt="../_images/bypass-5d-attach.svg" src="../_images/bypass-5d-attach.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="../../_images/bypass-5d-attach.svg"><img alt="../../_images/bypass-5d-attach.svg" src="../../_images/bypass-5d-attach.svg" width="400px" /></a>
 </figure>
 </aside>
-<p>Let’s first examine how the dividing sets <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta_h}}\)</span> and <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span> intersect. The basic principle is that the singular loci of the Legendrian foliation <span class="math notranslate nohighlight">\(\Fcal\)</span> in <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> – restricted to the flat bottom – is exactly <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta}} \cap \Gamma_{\Sigma}\)</span> because it is where the contact structure <span class="math notranslate nohighlight">\(\xi\)</span> is tangent to <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> <a class="footnote-reference brackets" href="#dividing-set-ortho" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. Since <span class="math notranslate nohighlight">\(\Fcal\)</span> is the suspension of the characteristic foliation on <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span>, it follows that <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta}} \cap \Gamma_{\Sigma}\)</span> is a Legendrian <span class="math notranslate nohighlight">\(\Theta\)</span>-graph in <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span>, and <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta_h}} \cap \Gamma_{\Sigma}\)</span> is a ribbon neighborhood of it as shown in the picture to the right. Moreover, the triangles <span class="math notranslate nohighlight">\(\triangle{abc}\)</span> and <span class="math notranslate nohighlight">\(\triangle{abd}\)</span> – making the flat bottom of <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> – are identified with Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span> respectively. Now we know exactly how a bypass – as a coLegendrian – is attached to a hypersurface, at least in dimension <span class="math notranslate nohighlight">\(5\)</span>. The result of such an attachment is well-understood in <a class="reference internal" href="contact-morse-theory.html#contact-morse-theory-rst"><span class="std std-ref">contact Morse theory</span></a>, so we shall not repeat.</p>
+<p>Let’s first examine how the dividing sets <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta_h}}\)</span> and <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span> intersect. The basic principle is that the singular loci of the Legendrian foliation <span class="math notranslate nohighlight">\(\Fcal\)</span> in <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> – restricted to the flat bottom – is exactly <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta}} \cap \Gamma_{\Sigma}\)</span> because it is where the contact structure <span class="math notranslate nohighlight">\(\xi\)</span> is tangent to <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> <a class="footnote-reference brackets" href="#dividing-set-ortho" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. Since <span class="math notranslate nohighlight">\(\Fcal\)</span> is the suspension of the characteristic foliation on <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span>, it follows that <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta}} \cap \Gamma_{\Sigma}\)</span> is a Legendrian <span class="math notranslate nohighlight">\(\Theta\)</span>-graph in <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span>, and <span class="math notranslate nohighlight">\(\Gamma_{\psup{5}{\Delta_h}} \cap \Gamma_{\Sigma}\)</span> is a ribbon neighborhood of it as shown in the picture to the right. Moreover, the triangles <span class="math notranslate nohighlight">\(\triangle{abc}\)</span> and <span class="math notranslate nohighlight">\(\triangle{abd}\)</span> – making the flat bottom of <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> – are identified with Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span> respectively. Now we know exactly how a bypass – as a coLegendrian – is attached to a hypersurface, at least in dimension <span class="math notranslate nohighlight">\(5\)</span>. The result of such an attachment is well-understood in <a class="reference internal" href="../contact-morse-theory.html#contact-morse-theory-rst"><span class="std std-ref">contact Morse theory</span></a>, so we shall not repeat.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the above analysis, there is no assumption that the Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span> are compatible with (i.e., tangent to) the Morse vector field <span class="math notranslate nohighlight">\(\Sigma_{\xi}\)</span>, and this is indeed not necessary. Bypass attachments at this level of generality are the basic building blocks of a contact Morse function (i.e., a Morse function whose gradient flow preserves <span class="math notranslate nohighlight">\(\xi\)</span>) and <em>not</em> of a contact Morse theory which lives on (families of) hypersurfaces. However, for all we concern, there is no loss by assuming that all these Lagrangians are compatible with the Morse theory on <span class="math notranslate nohighlight">\(\Sigma\)</span>.</p>
@@ -363,15 +431,15 @@
 <p>With these data at hand, we can then attach <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> to <span class="math notranslate nohighlight">\(\Sigma\)</span> so that the flat bottom of <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> matches exactly the union of ⊖ and the two Lagrangian disks.</p>
 </section>
 <section id="a-fake-bypass">
-<h3>A Fake Bypass<a class="headerlink" href="#a-fake-bypass" title="Permalink to this heading">#</a></h3>
+<h3>A Fake Bypass<a class="headerlink" href="#a-fake-bypass" title="Link to this heading">#</a></h3>
 <p>If all that is desired is to define a bypass and describe how it can be attached to a hypersurface, then we are already done, at least in dimension <span class="math notranslate nohighlight">\(5\)</span>. But we would like to <em>understand</em> a bit more about this construction, and the best way to do so is to make mistakes. So here is one “mistake” – which I shall call a “fake bypass” – that had confused me a lot. Surprisingly as it turns out, we shall also learn something new from it.</p>
 <aside class="sidebar" id="fig-fake-bypass-5d">
 <p class="sidebar-title">A fake bypass in 5D</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/bypass-5d-fake.svg"><img alt="../_images/bypass-5d-fake.svg" src="../_images/bypass-5d-fake.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="../../_images/bypass-5d-fake.svg"><img alt="../../_images/bypass-5d-fake.svg" src="../../_images/bypass-5d-fake.svg" width="400px" /></a>
 </figure>
 </aside>
-<p>The starting point is to question if the standalone bypass as constructed <a class="reference internal" href="#fig-bypass-5d"><span class="std std-ref">above</span></a> is unique. It turns out not to be the case. On the left-hand-side of the picture to the right, we have a coLegendrian <span class="math notranslate nohighlight">\(\psup{5}{\Delta}^{\ast}\)</span> – the fake bypass <a class="footnote-reference brackets" href="#fake-bypass" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> – with six singularities <span class="math notranslate nohighlight">\(a, b, c, d, e, f\)</span> (ignore the zoomed-in half-disk about <span class="math notranslate nohighlight">\(b\)</span> for the moment). The first five are of one sign and the last of the opposite sign. Using the theory of <a class="reference internal" href="colegendrian/coleg-5d.html#coleg-5d-building-blocks"><span class="std std-ref">handle decompositions</span></a> of coLegendrians, we can for example build such a <span class="math notranslate nohighlight">\(\psup{5}{\Delta}^{\ast}\)</span> from the following partial handles <a class="footnote-reference brackets" href="#partial-handles" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> :</p>
+<p>The starting point is to question if the standalone bypass as constructed <a class="reference internal" href="#fig-bypass-5d"><span class="std std-ref">above</span></a> is unique. It turns out not to be the case. On the left-hand-side of the picture to the right, we have a coLegendrian <span class="math notranslate nohighlight">\(\psup{5}{\Delta}^{\ast}\)</span> – the fake bypass <a class="footnote-reference brackets" href="#fake-bypass" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> – with six singularities <span class="math notranslate nohighlight">\(a, b, c, d, e, f\)</span> (ignore the zoomed-in half-disk about <span class="math notranslate nohighlight">\(b\)</span> for the moment). The first five are of one sign and the last of the opposite sign. Using the theory of <a class="reference internal" href="coleg-5d.html#coleg-5d-building-blocks"><span class="std std-ref">handle decompositions</span></a> of coLegendrians, we can for example build such a <span class="math notranslate nohighlight">\(\psup{5}{\Delta}^{\ast}\)</span> from the following partial handles <a class="footnote-reference brackets" href="#partial-handles" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> :</p>
 <ol class="arabic simple">
 <li><p>Two (positive) <span class="math notranslate nohighlight">\(0\)</span>-handles corresponding to <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
 <li><p>One (positive) half-<span class="math notranslate nohighlight">\(1\)</span>-handle corresponding to <span class="math notranslate nohighlight">\(e\)</span> which connects <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
@@ -388,8 +456,8 @@
 <p>The above restriction is quite strong but there is yet another possibility for the ribbon neighborhood where <span class="math notranslate nohighlight">\(\op{tb}(\)</span>○<span class="math notranslate nohighlight">\() = -2\)</span>. It is not the purpose of this article to exhaust all possibilities of bypass-like objects. But the discussion of the fake bypass has hopefully deepened our understanding of the bypass itself.</p>
 </section>
 <section id="back-to-the-old-bypass">
-<h3>Back to the Old Bypass<a class="headerlink" href="#back-to-the-old-bypass" title="Permalink to this heading">#</a></h3>
-<p>The bypass attachment described in <a class="reference internal" href="../bib.html#hh18" id="id14"><span>[HH18]</span></a>, albeit ugly, has an important virtue that it is compatible with the back-then-not-defined contact Morse theory. So let’s briefly recall its setup here. We need the following two pieces of data for the attachment:</p>
+<h3>Back to the Old Bypass<a class="headerlink" href="#back-to-the-old-bypass" title="Link to this heading">#</a></h3>
+<p>The bypass attachment described in <a class="reference internal" href="../../bib.html#hh18" id="id14"><span>[HH18]</span></a>, albeit ugly, has an important virtue that it is compatible with the back-then-not-defined contact Morse theory. So let’s briefly recall its setup here. We need the following two pieces of data for the attachment:</p>
 <ol class="arabic simple">
 <li><p>Two Legendrian knots <span class="math notranslate nohighlight">\(\Lambda_{\pm} \subset \Gamma_{\Sigma}\)</span> which <span class="math notranslate nohighlight">\(\xi\)</span>-transversely intersect <a class="footnote-reference brackets" href="#xi-transverse" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> in one point. Here <span class="math notranslate nohighlight">\(\xi\)</span> denotes the (induced) contact structure on <span class="math notranslate nohighlight">\(\Gamma_{\Sigma}\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> bound Lagrangian disks in <span class="math notranslate nohighlight">\(R_{\pm} (\Sigma)\)</span>, respectively.</p></li>
@@ -397,7 +465,7 @@
 <aside class="sidebar">
 <p class="sidebar-title">Transition to the old bypass</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/connect-old-bypass-5d.svg"><img alt="../_images/connect-old-bypass-5d.svg" src="../_images/connect-old-bypass-5d.svg" width="400px" /></a>
+<a class="reference internal image-reference" href="../../_images/connect-old-bypass-5d.svg"><img alt="../../_images/connect-old-bypass-5d.svg" src="../../_images/connect-old-bypass-5d.svg" width="400px" /></a>
 </figure>
 </aside>
 <p>Thinking of <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> as the upper and lower semicircles in ⊖, the second condition poses no issue. The issue, however, is that in ⊖ they do not <span class="math notranslate nohighlight">\(\xi\)</span>-transversely intersect, rather, they overlap along the horizontal diameter in ⊖. Using the fact that the contact planes make a half turn from one end of the diameter to the other end, we can continuously deform <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> by shrinking the diameter to a point as shown in the picture to the right so that they become <span class="math notranslate nohighlight">\(\xi\)</span>-transverse. Here in either (i) or (ii), the horizontal line from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span> is the diameter in ⊖, the blue and green segments are parts of <span class="math notranslate nohighlight">\(\Lambda_{\pm}\)</span> respectively, the red dot represents the intersection with the dividing set on the ribbon at <span class="math notranslate nohighlight">\(t=0\)</span>, and the time <span class="math notranslate nohighlight">\(t\)</span> runs from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(1\)</span>. At <span class="math notranslate nohighlight">\(t=1\)</span>, the diameter shrinks down to the red dot, at which <span class="math notranslate nohighlight">\(\Lambda_+\)</span> and <span class="math notranslate nohighlight">\(\Lambda_-\)</span> intersect <span class="math notranslate nohighlight">\(\xi\)</span>-transversely.</p>
@@ -405,39 +473,39 @@
 </section>
 </section>
 <section id="bypass-in-general">
-<h2>Bypass in General<a class="headerlink" href="#bypass-in-general" title="Permalink to this heading">#</a></h2>
+<h2>Bypass in General<a class="headerlink" href="#bypass-in-general" title="Link to this heading">#</a></h2>
 <p>As promised before, the definition of bypass (attachment) in dimensions greater than <span class="math notranslate nohighlight">\(5\)</span> poses no new difficulties. Namely, the construction in (contact) dimension <span class="math notranslate nohighlight">\(2n+1\)</span> is simply a suspension of the construction in dimension <span class="math notranslate nohighlight">\(2n-1\)</span>. For example, since the bypass <span class="math notranslate nohighlight">\(\psup{5}{\Delta}\)</span> is not smooth and has two cone singularities, it follows that <span class="math notranslate nohighlight">\(\psup{7}{\Delta}\)</span> has an <span class="math notranslate nohighlight">\(S^1\)</span>-worth of cone-type singularities, which is expected from the general structure theory of coLegendrians. However, since such a theory has not yet been developed, we shall leave the discussion of bypasses in general dimensions to a later time, if there is anything truly new.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="pi1-switch" role="note">
+<aside class="footnote brackets" id="pi1-switch" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
-<p>It is a handle slide in contact Morse theory as illustrated in this <a class="reference internal" href="contact-morse-theory.html#figure-r-pm-picture-of-pi-1-switch"><span class="std std-ref">picture</span></a>.</p>
+<p>It is a handle slide in contact Morse theory as illustrated in this <a class="reference internal" href="../contact-morse-theory.html#figure-r-pm-picture-of-pi-1-switch"><span class="std std-ref">picture</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="leg-plane" role="note">
+<aside class="footnote brackets" id="leg-plane" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">2</a><span class="fn-bracket">]</span></span>
 <p>Thinking inside of an ambient contact <span class="math notranslate nohighlight">\(5\)</span>-manifold.</p>
 </aside>
-<aside class="footnote brackets" id="bypass-subscript" role="note">
+<aside class="footnote brackets" id="bypass-subscript" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">3</a><span class="fn-bracket">]</span></span>
 <p>The superscript in <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> indicates that the ambient contact dimension is <span class="math notranslate nohighlight">\(3\)</span>. It could be omitted when we talk about bypasses in any dimension. In general <span class="math notranslate nohighlight">\(\dim (\psup{2n+1}{\Delta}) = n+1\)</span> because it’s a coLegendrian.</p>
 </aside>
-<aside class="footnote brackets" id="bypass-wordpress" role="note">
+<aside class="footnote brackets" id="bypass-wordpress" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">4</a><span class="fn-bracket">]</span></span>
 <p>A very similar-looking – but wrong – picture of a bypass was drawn in <a class="reference external" href="https://yhuangmath.wordpress.com/2021/07/20/flexibility-of-legendrian-2-spheres-in-contact-5-space-iii/">one</a> of my earlier wordpress posts, where I tried to attach it to a Legendrian instead of a hypersurface. While there is nothing wrong attaching a bypass to a Legendrian, it turns out to be more fundamental to understand how it is attached to a hypersurface. Every time I found something out, I found also that I had come close to the correct answer many times without realizing. I cannot tell if it is me being stupid or it is just the way it is, but I have enjoyed this process nonetheless.</p>
 </aside>
-<aside class="footnote brackets" id="dividing-set-ortho" role="note">
+<aside class="footnote brackets" id="dividing-set-ortho" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">5</a><span class="fn-bracket">]</span></span>
 <p>It is often helpful, though not necessary, to think of the dividing set as the locus where the contact hyperplanes are perpendicular to the hypersurface (wrt. an auxillary Riemannian metric).</p>
 </aside>
-<aside class="footnote brackets" id="fake-bypass" role="note">
+<aside class="footnote brackets" id="fake-bypass" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">6</a><span class="fn-bracket">]</span></span>
 <p>The fake bypass seems to be the more natural candidate of a bypass because it looks more like the <a class="reference internal" href="#fig-bypass-attachment-3d"><span class="std std-ref">3D bypass</span></a> <span class="math notranslate nohighlight">\(\psup{3}{\Delta}\)</span> in terms of their dividing sets.</p>
 </aside>
-<aside class="footnote brackets" id="partial-handles" role="note">
+<aside class="footnote brackets" id="partial-handles" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">7</a><span class="fn-bracket">]</span></span>
 <p>The handles are necessarily partial because the singularities all lie on <span class="math notranslate nohighlight">\(\p (\psup{5}{\Delta}^{\ast})\)</span>. For handles of middle indexes, i.e., neither <span class="math notranslate nohighlight">\(0\)</span> nor <span class="math notranslate nohighlight">\(\dim (\psup{5}{\Delta}^{\ast})\)</span>, we shall indicate whether it is a half or a quarter handle.</p>
 </aside>
-<aside class="footnote brackets" id="xi-transverse" role="note">
+<aside class="footnote brackets" id="xi-transverse" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">8</a><span class="fn-bracket">]</span></span>
 <p>Let <span class="math notranslate nohighlight">\(p \coloneqq \Lambda_+ \cap \Lambda_-\)</span> be the intersection point. Then <span class="math notranslate nohighlight">\(\xi\)</span>-transversality means <span class="math notranslate nohighlight">\(T_p \Lambda_+ \oplus T_p \Lambda_- = \xi_p\)</span>.</p>
 </aside>
@@ -446,148 +514,118 @@
 </section>
 
 
-            </article>
-            
-            
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
+                </article>
               
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bypass-in-dimension-3">
-   Bypass in Dimension
-   <span class="math notranslate nohighlight">
-    \(3\)
-   </span>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bypass-in-dimension-5">
-   Bypass in Dimension
-   <span class="math notranslate nohighlight">
-    \(5\)
-   </span>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#construction-as-a-standalone">
-     Construction as A Standalone
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attachment-to-a-hypersurface">
-     Attachment to A Hypersurface
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-fake-bypass">
-     A Fake Bypass
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#back-to-the-old-bypass">
-     Back to the Old Bypass
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bypass-in-general">
-   Bypass in General
-  </a>
- </li>
-</ul>
-
-</nav>
-</div>
-
-<div class="toc-item">
-  
-<div id="searchbox"></div>
-</div>
-
-<div class="toc-item">
-  
-
-<div class="tocsection editthispage">
-    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/math/bypass.rst">
-        <i class="fa-solid fa-pencil"></i> Edit this page
-    </a>
-</div>
-
-</div>
-
-<div class="toc-item">
-  
-<div class="tocsection sourcelink">
-    <a href="../_sources/math/bypass.rst.txt">
-        <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-</div>
-
-</div>
-
+              
+              
+              
+              
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bypass-in-dimension-3">Bypass in Dimension <span class="math notranslate nohighlight">\(3\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bypass-in-dimension-5">Bypass in Dimension <span class="math notranslate nohighlight">\(5\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-as-a-standalone">Construction as A Standalone</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attachment-to-a-hypersurface">Attachment to A Hypersurface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-fake-bypass">A Fake Bypass</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-old-bypass">Back to the Old Bypass</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bypass-in-general">Bypass in General</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/math/colegendrian/bypass.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/math/colegendrian/bypass.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
             
           </div>
-        </footer>
+          <footer class="bd-footer-content">
+            
+          </footer>
         
       </main>
     </div>
   </div>
-
   
-    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-  <footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
   
-  <div class="footer-item">
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
     
-<p class="copyright">
-
-    &copy; Copyright 2021, Mandy.<br>
-
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    <p class="theme-version">
-    Built with the
-    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
-        PyData Sphinx Theme
-    </a>
-    0.12.0.
-</p>
-  </div>
-  
-  <div class="footer-item">
+      © Copyright 2021, Mandy.
+      <br/>
     
-<p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
-</p>
+  </p>
+</div>
+      
+        <div class="footer-item">
 
-  </div>
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
   
 </div>
+
   </footer>
   </body>
 </html>

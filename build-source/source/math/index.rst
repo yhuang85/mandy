@@ -8,10 +8,8 @@ The only piece of mathematics that I had been working on as a professional is ab
 .. toctree::
 	:caption: Contact and Symplectic Topology
 	:titlesonly:
-	:numbered: 1
 	:maxdepth: 1
 
 	Contact structures in 3D seen from within <contact-structure-3d>
-	Morse theory in contact topology <contact-morse-theory>
 	Legendrians and coLegendrians <colegendrian/index>
-	Bypass attachment revisited <bypass>
+	Morse theory in contact topology <contact-morse-theory>
