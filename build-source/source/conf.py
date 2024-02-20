@@ -33,7 +33,11 @@ release = '0.1'
 # ones.
 extensions = [
 	'sphinx.ext.mathjax',
+    'sphinx.ext.todo',
+    'sphinx_design',
 ]
+
+todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
 # templates_path = ['_templates']
@@ -94,16 +98,19 @@ html_sidebars = {
 mathjax3_config = {
 	'tex': {
 		'macros': {
+            'i': '{\\sqrt{-1}}',
 			'op': ['\\operatorname {#1}', 1],
 			'p': '{\\partial}',
 			'ps': ['\\prescript {#1}{#2}{#3}', 3],
 			'psup': ['\\prescript {#1}{}{#2}', 2],
 			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std']},
 			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
+            **{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
 			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},
 		},
 		'packages': {
 			'[+]': [
+                'ams',
 				'mathtools',
 				'unicode',
 			],
@@ -111,6 +118,7 @@ mathjax3_config = {
 	},
 	'loader': {
 		'load': [
+            '[tex]/ams',
 			'[tex]/mathtools',
 			'[tex]/unicode',
 		],
