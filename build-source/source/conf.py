@@ -103,6 +103,7 @@ mathjax3_config = {
 			'p': '{\\partial}',
 			'ps': ['\\prescript {#1}{#2}{#3}', 3],
 			'psup': ['\\prescript {#1}{}{#2}', 2],
+            'blue': ['{\\color{blue} {#1}}', 1],
 			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std']},
 			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
             **{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
@@ -111,6 +112,7 @@ mathjax3_config = {
 		'packages': {
 			'[+]': [
                 'ams',
+                'color',
 				'mathtools',
 				'unicode',
 			],
@@ -119,6 +121,7 @@ mathjax3_config = {
 	'loader': {
 		'load': [
             '[tex]/ams',
+            '[tex]/color',
 			'[tex]/mathtools',
 			'[tex]/unicode',
 		],
