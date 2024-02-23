@@ -505,8 +505,39 @@ Proof of Wigner’s theorem<div class="sd-summary-down docutils">
 </section>
 <section id="lorentz-symmetry">
 <h3>Lorentz symmetry<a class="headerlink" href="#lorentz-symmetry" title="Link to this heading">#</a></h3>
-<p>A particularly prominent continuous symmetry in our physical world is the Lorentz symmetry postulated by Einstein’s special relativity, which supersedes the Galilean symmetry, which is preserved by the Newtonian mechanics.</p>
-</section>
+<p>A particularly prominent continuous symmetry in our physical world is the Lorentz symmetry postulated by Einstein’s special relativity, which supersedes the Galilean symmetry, which is respected by the Newtonian mechanics. Lorentz symmetry is a symmetry that acts on the (flat) spacetime and preserves the so-called <em>proper time</em></p>
+<div class="math notranslate nohighlight" id="equation-proper-time">
+<span class="eqno">(7)<a class="headerlink" href="#equation-proper-time" title="Link to this equation">#</a></span>\[d\tau^2 = dx_0^2 - dx_1^2 - dx_2^2 - dx_3^2 \eqqcolon \eta^{\mu \nu} dx_{\mu} dx_{\nu}\]</div>
+<p>where</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_0\)</span> is also known as the time, and sometimes denoted by <span class="math notranslate nohighlight">\(t\)</span>,</p></li>
+<li><p>the speed of light is set to <span class="math notranslate nohighlight">\(1\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta = \op{diag}(1, -1, -1, -1)\)</span> and the indexes <span class="math notranslate nohighlight">\(\mu, \nu\)</span> run from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(3\)</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will follow the common convention in physics that greek letters such as <span class="math notranslate nohighlight">\(\mu, \nu, \dots\)</span> run from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(3\)</span>, while roman letters such as <span class="math notranslate nohighlight">\(i, j, \dots\)</span> run from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(3\)</span>. Moreover, we often write <span class="math notranslate nohighlight">\(x\)</span> for a spacetime point <span class="math notranslate nohighlight">\((x_0, x_1, x_2, x_3)\)</span>, and <span class="math notranslate nohighlight">\(\xbf\)</span> for a spatial point <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span>.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+Einstein’s special theory of relativity<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Using the notations introduced above, we can rewrite <a class="reference internal" href="#equation-proper-time">(7)</a> as <span class="math notranslate nohighlight">\(d\tau^2 = dt^2 - d\xbf^2\)</span>, so that it’s obvious that if a particle travels at the speed of light in one inertial frame, i.e., <span class="math notranslate nohighlight">\(|d\xbf / dt| = 1\)</span>, and equivalently <span class="math notranslate nohighlight">\(d\tau^2 = 0\)</span>, then it travels at the speed of light in any other inertial frame, in direct contradiction with Newtonian mechanics.</p>
+<p class="sd-card-text">Instead of working with the spacetime coordinates, it can sometimes be convenient to work with the “dual” energy-momentum coordinates, also known as the <em>four momentum</em>. The transition can be done by imagining a particle of mass <span class="math notranslate nohighlight">\(m\)</span>, and defining <span class="math notranslate nohighlight">\(p = (E, \pbf) \coloneqq m dx / d\tau\)</span>. It follows from <a class="reference internal" href="#equation-proper-time">(7)</a> that</p>
+<div class="math notranslate nohighlight">
+\[1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = E^2 - \pbf^2\]</div>
+<p class="sd-card-text">which looks just like <a class="reference internal" href="#equation-proper-time">(7)</a>, and indeed, the mass (in our convention) is invariant in all inertial frames.</p>
+<p class="sd-card-text">One can also recover Newtonian mechanics at the low-speed limit (i.e., <span class="math notranslate nohighlight">\(|\vbf| \ll 1\)</span>) using <span class="math notranslate nohighlight">\(d\tau / dt = \sqrt{1 - \vbf^2}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{eqnarray}
+    \pbf &amp;=&amp; m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(\vbf^3) \\
+    E &amp;=&amp; m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(\vbf^4)
+\end{eqnarray}\end{split}\]</div>
+</div>
+</details></section>
 </section>
 </section>
 

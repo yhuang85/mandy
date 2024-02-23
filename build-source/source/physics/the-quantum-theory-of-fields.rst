@@ -11,7 +11,7 @@ The order of the sections correspond roughly to the order of the chapters of the
 What is a Quantum State?
 ------------------------
 
-Quantum theory postulates that *any* physical state (of the world) can be represented by a *ray* in some complex Hilbert space. It's worth noting that it is the state, rather than the Hilbert space, that we actually care about. Let's write a state as 
+Quantum theory postulates that *any* physical state (of the world) can be represented by a *ray* in some complex Hilbert space. It's worth noting that it is the state, rather than the Hilbert space, that we actually care about. Let's write a state as
 
 .. math::
     [\Psi] \coloneqq \{ c\Psi ~|~ c \in \Cbb \setminus 0 \}
@@ -53,30 +53,30 @@ where :math:`c` is any complex number.
     :animate: fade-in-slide-down
 
     The construction of a realization :math:`U` of :math:`T` takes the following steps.
-    
+
     :Step 1: Fix an orthonormal basis :math:`\Psi_i, i \in \Nbb`, of the Hilbert space.
-    
+
     :Step 2:  For each :math:`\Psi_i`, choose a unit vector :math:`\Psi'_i` such that :math:`P[\Psi_i] = [\Psi'_i]`. Then :math:`\Psi'_i, i \in \Nbb`, also form an orthonormal basis by :eq:`t_preserves_probability`. We'd like to define :math:`U` by asking
-    
+
         .. math::
             :label: u_definition
-            
+
             U\Psi_i = \Psi'_i
-            
+
         for all :math:`i`, and extend by (anti-)linearity. But this is not going to realize :math:`T` in general because we haven't fixed the extra degrees of freedom -- the phases of :math:`\Psi'_i`.
 
     :Step 3: We fix the phases of :math:`\Psi'_k, k \geq 1`, relative to :math:`\Psi'_0`, by asking
 
         .. math::
             T[\Psi_0 + \Psi_k] = [\Psi'_0 + \Psi'_k].
-    
+
         To see why this is possible, note first that :math:`T[\Psi_0 + \Psi_k] = [\alpha \Psi'_0 + \beta \Psi'_k]`, where :math:`\alpha, \beta` are phase factors, due to :eq:`t_preserves_probability` and the basis being orthonormal. Now :math:`[\alpha \Psi'_0 + \beta \Psi'_k] = [\Psi'_0 + (\beta/\alpha) \Psi'_k]` and we can absorb the phase :math:`\beta/\alpha` into the definition of :math:`\Psi'_k`. This is indeed the best one can do, because the last one degree of freedom, which is to multiply all :math:`\Psi'_i` by a phase, cannot be fixed.
-    
+
     :Step 4: We have so far specified the value of :math:`U` on all of :math:`\Psi_i, i \geq 0`, and :math:`\Psi_0 + \Psi_k, k \geq 1`. Notice that all the coefficients of :math:`\Psi` are real. It is therefore instructive to ask what :math:`\Psi_0 + \i \Psi_1` should be. By the same argument as in the previous step, we can write
 
         .. math::
             T[\Psi_0 + \i \Psi_1] = [\Psi'_0 + c \Psi'_1]
-        
+
         where :math:`c` is a phase. Let's apply :eq:`t_preserves_probability` once again as follows
 
         .. math::
@@ -84,9 +84,9 @@ where :math:`c` is any complex number.
                 &= \left| \left( T[\Psi_0 + \i \Psi_1], T[\Psi_0 + \Psi_1] \right) \right| \\
                 &= \left| \left( [\Psi'_0 + c \Psi'_1], [\Psi'_0 + \Psi'_1] \right) \right| \\
                 &= |1 + c|
-        
+
         It follows that :math:`c = \pm\i`, which correspond to :math:`U` being (complex) linear or anti-linear, respectively.
-    
+
     At this point, we can extend :math:`U` to either a linear or anti-linear map of the Hilbert space. But we'll not be bothered about any further formal argument, including showing that (anti-)linearity must be coupled with (anti-)unitarity, respectively.
 
 .. note::
@@ -94,7 +94,7 @@ where :math:`c` is any complex number.
 
     .. math::
         (\Psi, A\Phi) = (A^{\dagger} \Psi, \Phi)
-    
+
     for all any two state vectors :math:`\Psi` and :math:`\Phi`. On the other hand, the adjoint of an anti-linear :math:`A` is another anti-linear :math:`A^{\dagger}` such that
 
     .. math::
@@ -189,7 +189,38 @@ We conclude the general discussion about continuous symmetry by considering a sp
 Lorentz symmetry
 ****************
 
-A particularly prominent continuous symmetry in our physical world is the Lorentz symmetry postulated by Einstein's special relativity, which supersedes the Galilean symmetry, which is preserved by the Newtonian mechanics.
+A particularly prominent continuous symmetry in our physical world is the Lorentz symmetry postulated by Einstein's special relativity, which supersedes the Galilean symmetry, which is respected by the Newtonian mechanics. Lorentz symmetry is a symmetry that acts on the (flat) spacetime and preserves the so-called *proper time*
 
-..
-    Obviously, it makes no sense to describe a state of the whole world. On the contrary, it's a good start to try to describe the state(s) of possibly the simplest physical object: one particle. But what is a particle anyway? The answer to this seemingly innocent question is really not that easy.
+.. math::
+    :label: proper_time
+
+    d\tau^2 = dx_0^2 - dx_1^2 - dx_2^2 - dx_3^2 \eqqcolon \eta^{\mu \nu} dx_{\mu} dx_{\nu}
+
+where
+
+1. :math:`x_0` is also known as the time, and sometimes denoted by :math:`t`,
+2. the speed of light is set to :math:`1`, and
+3. :math:`\eta = \op{diag}(1, -1, -1, -1)` and the indexes :math:`\mu, \nu` run from :math:`0` to :math:`3`.
+
+.. note::
+    We will follow the common convention in physics that greek letters such as :math:`\mu, \nu, \dots` run from :math:`0` to :math:`3`, while roman letters such as :math:`i, j, \dots` run from :math:`1` to :math:`3`. Moreover, we often write :math:`x` for a spacetime point :math:`(x_0, x_1, x_2, x_3)`, and :math:`\xbf` for a spatial point :math:`(x_1, x_2, x_3)`.
+
+.. dropdown:: Einstein's special theory of relativity
+    :animate: fade-in-slide-down
+
+    Using the notations introduced above, we can rewrite :eq:`proper_time` as :math:`d\tau^2 = dt^2 - d\xbf^2`, so that it's obvious that if a particle travels at the speed of light in one inertial frame, i.e., :math:`|d\xbf / dt| = 1`, and equivalently :math:`d\tau^2 = 0`, then it travels at the speed of light in any other inertial frame, in direct contradiction with Newtonian mechanics.
+
+    Instead of working with the spacetime coordinates, it can sometimes be convenient to work with the "dual" energy-momentum coordinates, also known as the *four momentum*. The transition can be done by imagining a particle of mass :math:`m`, and defining :math:`p = (E, \pbf) \coloneqq m dx / d\tau`. It follows from :eq:`proper_time` that
+
+    .. math::
+        1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = E^2 - \pbf^2
+
+    which looks just like :eq:`proper_time`, and indeed, the mass (in our convention) is invariant in all inertial frames.
+
+    One can also recover Newtonian mechanics at the low-speed limit (i.e., :math:`|\vbf| \ll 1`) using :math:`d\tau / dt = \sqrt{1 - \vbf^2}` as follows
+
+    .. math::
+        \begin{eqnarray}
+            \pbf &=& m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(\vbf^3) \\
+            E &=& m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(\vbf^4)
+        \end{eqnarray}

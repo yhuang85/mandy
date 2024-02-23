@@ -14,7 +14,7 @@ The Github page is served from the **docs** folder, which is automatically gener
 - Since Github page can only be rendered under certain path (I use **main/docs**), I followed suggestions in this [post](https://www.docslikecode.com/articles/github-pages-python-sphinx/) to organize folders in this repo.
 
 ## Work with the repo
-- Run `poetry install` from the root folder to install the dependencies.
+- Run `poetry install --no-root` from the root folder to install the dependencies.
 
 - Run `poetry run make livehtml` from the folder **build-source** to view the changes live on `localhost:8000`.
 
