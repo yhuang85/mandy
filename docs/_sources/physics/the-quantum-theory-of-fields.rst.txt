@@ -33,7 +33,7 @@ What is a Symmetry?
 We start with a *symmetry transformation*, by which we mean a transformation that preserves all quantities that one can ever measure about a system. Since it is the probabilities, rather than the states themselves, that are measurable, one is led to define a quantum symmetry transformation as a transformation of states :math:`T` such that
 
 .. math::
-    :label: t_preserves_probability
+    :label: eq_t_preserves_probability
 
     P(T[\Psi] \to T[\Phi]) = P([\Psi] \to [\Phi])
 
@@ -56,10 +56,10 @@ where :math:`c` is any complex number.
 
     :Step 1: Fix an orthonormal basis :math:`\Psi_i, i \in \Nbb`, of the Hilbert space.
 
-    :Step 2:  For each :math:`\Psi_i`, choose a unit vector :math:`\Psi'_i` such that :math:`P[\Psi_i] = [\Psi'_i]`. Then :math:`\Psi'_i, i \in \Nbb`, also form an orthonormal basis by :eq:`t_preserves_probability`. We'd like to define :math:`U` by asking
+    :Step 2:  For each :math:`\Psi_i`, choose a unit vector :math:`\Psi'_i` such that :math:`P[\Psi_i] = [\Psi'_i]`. Then :math:`\Psi'_i, i \in \Nbb`, also form an orthonormal basis by :eq:`eq_t_preserves_probability`. We'd like to define :math:`U` by asking
 
         .. math::
-            :label: u_definition
+            :label: eq_u_definition
 
             U\Psi_i = \Psi'_i
 
@@ -70,14 +70,14 @@ where :math:`c` is any complex number.
         .. math::
             T[\Psi_0 + \Psi_k] = [\Psi'_0 + \Psi'_k].
 
-        To see why this is possible, note first that :math:`T[\Psi_0 + \Psi_k] = [\alpha \Psi'_0 + \beta \Psi'_k]`, where :math:`\alpha, \beta` are phase factors, due to :eq:`t_preserves_probability` and the basis being orthonormal. Now :math:`[\alpha \Psi'_0 + \beta \Psi'_k] = [\Psi'_0 + (\beta/\alpha) \Psi'_k]` and we can absorb the phase :math:`\beta/\alpha` into the definition of :math:`\Psi'_k`. This is indeed the best one can do, because the last one degree of freedom, which is to multiply all :math:`\Psi'_i` by a phase, cannot be fixed.
+        To see why this is possible, note first that :math:`T[\Psi_0 + \Psi_k] = [\alpha \Psi'_0 + \beta \Psi'_k]`, where :math:`\alpha, \beta` are phase factors, due to :eq:`eq_t_preserves_probability` and the basis being orthonormal. Now :math:`[\alpha \Psi'_0 + \beta \Psi'_k] = [\Psi'_0 + (\beta/\alpha) \Psi'_k]` and we can absorb the phase :math:`\beta/\alpha` into the definition of :math:`\Psi'_k`. This is indeed the best one can do, because the last one degree of freedom, which is to multiply all :math:`\Psi'_i` by a phase, cannot be fixed.
 
     :Step 4: We have so far specified the value of :math:`U` on all of :math:`\Psi_i, i \geq 0`, and :math:`\Psi_0 + \Psi_k, k \geq 1`. Notice that all the coefficients of :math:`\Psi` are real. It is therefore instructive to ask what :math:`\Psi_0 + \i \Psi_1` should be. By the same argument as in the previous step, we can write
 
         .. math::
             T[\Psi_0 + \i \Psi_1] = [\Psi'_0 + c \Psi'_1]
 
-        where :math:`c` is a phase. Let's apply :eq:`t_preserves_probability` once again as follows
+        where :math:`c` is a phase. Let's apply :eq:`eq_t_preserves_probability` once again as follows
 
         .. math::
             \sqrt{2} &= \left| \left( [\Psi_0 + \i \Psi_1], [\Psi_0 + \Psi_1] \right) \right| \\
@@ -105,13 +105,13 @@ where :math:`c` is any complex number.
 In general we're not interested in just one symmetry transformation, but rather a group -- whether continuous or discrete -- of symmetry transformations, or just symmetry for short. In particular, if :math:`T_1, T_2` are two symmetry transformations, then we'd like :math:`T_2 T_1` to also be a symmetry transformation. In light of the :math:`U`-realization of symmetry transformations discussed above, we can rephrase this condition as
 
 .. math::
-    :label: u_depends_on_psi
+    :label: eq_u_depends_on_psi
 
     U(T_2 T_1) \Psi = e^{\i \theta(T_1, T_2, \Psi)} U(T_2) U(T_1) \Psi
 
 where :math:`\theta(T_1, T_2, \Psi)` is an angle, which depends a priori on :math:`T_1, T_2`, and :math:`\Psi`.
 
-It turns out, however, the angle :math:`\theta(T_1, T_2, \Psi)` cannot depend on the state because if we apply :eq:`u_depends_on_psi` to the sum of two linearly independent state vectors :math:`\Psi_A + \Psi_B`, then we'll find
+It turns out, however, the angle :math:`\theta(T_1, T_2, \Psi)` cannot depend on the state because if we apply :eq:`eq_u_depends_on_psi` to the sum of two linearly independent state vectors :math:`\Psi_A + \Psi_B`, then we'll find
 
 .. math::
     e^{\pm \i \theta(\Psi_A)} \Psi_A + e^{\pm \i \theta(\Psi_B)} \Psi_B = e^{\pm \i \theta(\Psi_A + \Psi_B)} (\Psi_A + \Psi_B)
@@ -126,27 +126,29 @@ which says nothing but the independence of :math:`\theta` on :math:`\Psi`.
 .. todo::
     While the argument here appears to be purely mathematical, Weinberg pointed out in the book the potential inabilities to create a state like :math:`\Psi_A + \Psi_B`. More precisely, he mentioned the general believe that it's impossible to prepare a superposition of two states, one with integer total angular momentum and the other with half-integer total angular momentum, in which case there will be a "super-selection rule" between different classes of states. After all, one Hilbert space may just not be enough to describe all states. It'd be nice to elaborate a bit more on the super-selection rules.
 
-We can now simplify :eq:`u_depends_on_psi` to the following
+We can now simplify :eq:`eq_u_depends_on_psi` to the following
 
 .. math::
-    :label: u_not_depend_on_psi
+    :label: eq_u_not_depend_on_psi
 
     U(T_2 T_1) = e^{\i \theta(T_1, T_2)} U(T_2) U(T_1)
 
 which, in mathematical terms, says that :math:`U` furnishes a *projective representation* of :math:`T`, or a representation up to a phase. It becomes a genuine representation if the phase is constantly one.
 
-.. important::
-    We always assume that :math:`U` furnishes a genuine representation of :math:`T` since, as it turns out, the phase factor in :eq:`u_not_depend_on_psi` is more of a mathematical artifact than something that bears any physical significance.
+.. note::
+    We always assume that :math:`U` furnishes a genuine representation of :math:`T` since, as it turns out, the phase factor in :eq:`eq_u_not_depend_on_psi` is more of a mathematical artifact than something that bears any physical significance.
+
+.. _sec_continuous_symmetry:
 
 Continuous symmetry
-*******************
+^^^^^^^^^^^^^^^^^^^
 
 Besides a handful of important discrete symmetries such as the time, charge, and parity conjugations, most of the interesting symmetries come in a continuous family, mathematically known as *Lie groups*. Note that continuous symmetries are necessarily unitary (and linear) because they can be continuously deformed into the identity, which is obviously unitary.
 
 In fact, it will be of great importance to just look at the symmetry up to the first order at the identity transformation, mathematically known as the *Lie algebra*. Let :math:`\theta` be an element in the Lie algebra such that :math:`T(\theta) = 1 + \theta` up to the first order. We can expand :math:`U(T(\theta))` in a power series as follows
 
 .. math::
-    :label: u_expansion
+    :label: eq_u_expansion
 
     U(T(\theta)) = 1 + \i \theta^a u_a + \tfrac{1}{2} \theta^a \theta^b u_{ab} + \cdots
 
@@ -179,48 +181,163 @@ Next, note that :math:`u_{ab} = u_{ba}` since they are just partial derivatives.
 
 where the bracket is known as the *Lie bracket* and :math:`\Gamma^c_{ab}` are known as the *structure constants*.
 
-We conclude the general discussion about continuous symmetry by considering a special, but important, case when :math:`T` is additive in the sense that :math:`T(\eta) T(\theta) = T(\eta + \theta)`. Notable examples of such symmetry include translations and rotations about a fixed axis. In this case :math:`f` vanishes, and it follows from :eq:`u_expansion` that
+We conclude the general discussion about continuous symmetry by considering a special, but important, case when :math:`T` is additive in the sense that :math:`T(\eta) T(\theta) = T(\eta + \theta)`. Notable examples of such symmetry include translations and rotations about a fixed axis. In this case :math:`f` vanishes, and it follows from :eq:`eq_u_expansion` that
 
 .. math::
-    :label: u_abelian_as_exponential
+    :label: eq_u_abelian_as_exponential
 
     U(T(\theta)) = \lim_{N \to \infty} (U(T(\theta / N)))^N = \lim_{N \to \infty} (1 + \i \theta^a u_a / N)^N = \op{exp}(\i \theta^a u_a)
 
 Lorentz symmetry
-****************
+^^^^^^^^^^^^^^^^
 
-A particularly prominent continuous symmetry in our physical world is the Lorentz symmetry postulated by Einstein's special relativity, which supersedes the Galilean symmetry, which is respected by the Newtonian mechanics. Lorentz symmetry is a symmetry that acts on the (flat) spacetime and preserves the so-called *proper time*
+A particularly prominent continuous symmetry in our physical world is the Lorentz symmetry postulated by Einstein's special relativity, which supersedes the Galilean symmetry, which is respected by the Newtonian mechanics. We shall start from the classical theory of Lorentz symmetry, and then quantize it following the procedure discussed in the previous section.
+
+Classical Lorentz symmetry
+++++++++++++++++++++++++++
+
+Classical Lorentz symmetry is a symmetry that acts on the (flat) spacetime and preserves the so-called *proper time*
 
 .. math::
-    :label: proper_time
+    :label: eq_proper_time
 
-    d\tau^2 = dx_0^2 - dx_1^2 - dx_2^2 - dx_3^2 \eqqcolon \eta^{\mu \nu} dx_{\mu} dx_{\nu}
+    d\tau^2 = dx_0^2 - dx_1^2 - dx_2^2 - dx_3^2 \eqqcolon -\eta^{\mu \nu} dx_{\mu} dx_{\nu}
 
 where
 
-1. :math:`x_0` is also known as the time, and sometimes denoted by :math:`t`,
+1. :math:`x_0` is also known as the time, and sometimes denoted by :math:`t`, and
 2. the speed of light is set to :math:`1`, and
-3. :math:`\eta = \op{diag}(1, -1, -1, -1)` and the indexes :math:`\mu, \nu` run from :math:`0` to :math:`3`.
+3. :math:`\eta = \op{diag}(-1, 1, 1, 1)` and the indexes :math:`\mu, \nu` run from :math:`0` to :math:`3`.
 
 .. note::
-    We will follow the common convention in physics that greek letters such as :math:`\mu, \nu, \dots` run from :math:`0` to :math:`3`, while roman letters such as :math:`i, j, \dots` run from :math:`1` to :math:`3`. Moreover, we often write :math:`x` for a spacetime point :math:`(x_0, x_1, x_2, x_3)`, and :math:`\xbf` for a spatial point :math:`(x_1, x_2, x_3)`.
+    1. We will follow the common convention in physics that greek letters such as :math:`\mu, \nu, \dots` run from :math:`0` to :math:`3`, while roman letters such as :math:`i, j, \dots` run from :math:`1` to :math:`3`.
+    2. We often write :math:`x` for a spacetime point :math:`(x_0, x_1, x_2, x_3)`, and :math:`\xbf` for a spatial point :math:`(x_1, x_2, x_3)`.
+    3. Matrix/Tensor indexes can will be raised or lowered using :math:`\eta`. For example :math:`dx^0 = \eta^{0 \mu} dx_{\mu} = -dx_0`.
 
 .. dropdown:: Einstein's special theory of relativity
     :animate: fade-in-slide-down
 
-    Using the notations introduced above, we can rewrite :eq:`proper_time` as :math:`d\tau^2 = dt^2 - d\xbf^2`, so that it's obvious that if a particle travels at the speed of light in one inertial frame, i.e., :math:`|d\xbf / dt| = 1`, and equivalently :math:`d\tau^2 = 0`, then it travels at the speed of light in any other inertial frame, in direct contradiction with Newtonian mechanics.
+    Using the notations introduced above, we can rewrite :eq:`eq_proper_time` as :math:`d\tau^2 = dt^2 - d\xbf^2`, so that it's obvious that if a particle travels at the speed of light in one inertial frame, i.e., :math:`|d\xbf / dt| = 1`, and equivalently :math:`d\tau = 0`, then it travels at the speed of light in any other inertial frame, in direct contradiction with Newtonian mechanics.
 
-    Instead of working with the spacetime coordinates, it can sometimes be convenient to work with the "dual" energy-momentum coordinates, also known as the *four momentum*. The transition can be done by imagining a particle of mass :math:`m`, and defining :math:`p = (E, \pbf) \coloneqq m dx / d\tau`. It follows from :eq:`proper_time` that
+    Instead of working with the spacetime coordinates, it can sometimes be convenient to work with the "dual" energy-momentum coordinates, also known as the *four momentum*. The transition can be done by imagining a particle of mass :math:`m`, and defining :math:`p = (E, \pbf) \coloneqq m dx / d\tau`. It follows from :eq:`eq_proper_time` that
 
     .. math::
-        1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = E^2 - \pbf^2
+        1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 = E^2 - \pbf^2
 
-    which looks just like :eq:`proper_time`, and indeed, the mass (in our convention) is invariant in all inertial frames.
+    which looks just like :eq:`eq_proper_time`, and indeed, the mass (in our convention) is invariant in all inertial frames.
 
     One can also recover Newtonian mechanics at the low-speed limit (i.e., :math:`|\vbf| \ll 1`) using :math:`d\tau / dt = \sqrt{1 - \vbf^2}` as follows
 
     .. math::
-        \begin{eqnarray}
-            \pbf &=& m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(\vbf^3) \\
-            E &=& m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(\vbf^4)
-        \end{eqnarray}
+
+        \pbf &= m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(|\vbf|^3) \\
+        E &= m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(|\vbf|^4)
+
+More precisely, by a Lorentz transformation we mean an inhomogeneous linear transformation
+
+.. math::
+    L(\Lambda, a)x \coloneqq \Lambda x + a
+
+which consists of a homogeneous part :math:`\Lambda` and a translation by :math:`a`. The proper time is obviously preserved by any translation, and also by :math:`\Lambda` if
+
+.. math::
+    :label: eq_homogeneous_lorentz_transformation
+
+    \eta^{\mu \nu} dx_{\mu} dx_{\nu} = \eta^{\mu \nu} \Lambda^{\sigma}_{\mu} \Lambda^{\kappa}_{\nu} dx_{\sigma} dx_{\kappa} \
+    ~\Longrightarrow~ \eta^{\mu \nu} = \eta^{\sigma \kappa} \Lambda^{\mu}_{\sigma} \Lambda^{\nu}_{\kappa}
+
+for any :math:`\mu, \nu`. Moreover the group law is given by
+
+.. math::
+    L(\Lambda', a') L(\Lambda, a) x = L(\Lambda', a')(\Lambda x + a) = \Lambda' \Lambda x + \Lambda' a + a' = L(\Lambda' \Lambda, a' + \Lambda' a) x
+
+Taking determinant on :eq:`eq_homogeneous_lorentz_transformation` implies that :math:`\op{det}(\Lambda) = \pm 1`, and setting :math:`\mu = \nu = 0` implies that
+
+.. math::
+    1 = (\Lambda^0_0)^2 - \Lambda^0_i \Lambda^0_i ~\Longrightarrow~ \left| \Lambda^0_0 \right| \geq 1
+
+It follows that the homogeneous Lorentz group has four components. In particular, the one with :math:`\op{det}(\Lambda) = 1` and :math:`\Lambda^0_0 \geq 1` is the most common used and is given a name: *proper orthochronous* Lorentz group. Nonetheless, one can map one component to another by composing with either a time reversal transformation
+
+.. math::
+    \Tcal: (t, \xbf) \mapsto (-t, \xbf)
+
+or a space reversal transformation
+
+.. math::
+    \Pcal: (t, \xbf) \mapsto (t, -\xbf)
+
+or both.
+
+So far everything have been rather abstract, but in fact, the (homogeneous) Lorentz group can be understood quite intuitively. There are basically two building blocks: one is a rotation in the :math:`3`-space, which says that the space is homogeneous in all (spatial) directions, and the other is a so-called *boost*, which says that, as G. Galileo originally noted, one cannot tell if a system is stationary or is moving in a constant velocity without making a reference to outside of the system. To spell out the details, let's consider a stationary frame with :math:`d\xbf = 0` and a moving frame with :math:`d\xbf' / dt' = \vbf`. Then the transformation :math:`dx' = \Lambda dx` can be simplified as
+
+.. math::
+    dt' = \Lambda^0_0 dt, \quad dx'_i = \Lambda^0_i dt ~\Longrightarrow~ \Lambda^0_i = v_i \Lambda^0_0
+
+Then using :eq:`eq_homogeneous_lorentz_transformation`, we get
+
+.. math::
+    1 = -\eta^{\mu \nu} \Lambda^0_{\mu} \Lambda^0_{\nu} = (\Lambda^0_0)^2 - \Lambda^0_i \Lambda^0_i = (1 - \vbf^2) (\Lambda^0_0)^2 \
+    ~\Longrightarrow~ \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}}
+
+assuming :math:`\Lambda` is proper orthochronous. It's customary to write :math:`\gamma \coloneqq 1 / \sqrt{1 - \vbf^2}` so that
+
+.. math::
+    :label: eq_lambda_boost
+
+    \Lambda^0_0 = \gamma, \quad \Lambda^0_i = \gamma v_i
+
+The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely determined because a composition with a (spatial) rotation about the direction of :math:`\vbf` has no effect on :math:`\vbf`. To make it easier, one can apply a rotation so that :math:`\vbf` aligns with the :math:`3`-axis. Then an obvious choice of :math:`\Lambda` is given by
+
+.. math::
+    :label: eq_lambda_in_3_axis
+
+    \Lambda = \begin{bmatrix}
+            \gamma & 0 & 0 & -\gamma v_3 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            \gamma v_3 & 0 & 0 & \gamma
+        \end{bmatrix}
+
+which can be spelled out to the following possibly more intuitive expressions
+
+.. math::
+    t' &= \gamma (t - v_3 x_3), \\
+    x'_1 &= x_1, \\
+    x'_2 &= x_2, \\
+    x'_3 &= \gamma (x_3 + v_3 t).
+
+It's now obvious that
+
+1. a stationary point in the original frame is moving with constant velocity :math:`\vbf` (which is :math:`v_3` in this special case) in the prime-frame as planned, and
+2. time appears to flow slower in the moving frame because :math:`\gamma < 1`, and
+3. length appears to be shorter in the moving frame, again because :math:`\gamma < 1`.
+
+Finally, one can apply a rotation to :eq:`eq_lambda_in_3_axis` to get the general formulae
+
+.. math::
+    \Lambda_{ij} = \delta_{ij} + \frac{v_i v_j}{\vbf^2} (\gamma - 1)
+
+for :math:`1 \leq i, j \leq 3`, which together with :eq:`eq_lambda_boost` gives the general formula for :math:`\Lambda`.
+
+.. note::
+    Any Lorentz transformation can be written as the composition of a boost followed by a rotation.
+
+Quantum Lorentz symmetry
+++++++++++++++++++++++++
+
+We will quantize the Lorentz symmetry :math:`L(\Lambda, a)` by looking for unitarity representations :math:`U(\Lambda, a)`. As discussed in the section of :ref:`Continuous symmetry <sec_continuous_symmetry>`, we proceed by looking for infinitesimal symmetries. First of all, let's expand :math:`\Lambda` as
+
+.. math::
+    \Lambda_{\mu}^{\nu} = \delta_{\mu}^{\nu} + \omega_{\mu}^{\nu} + \cdots
+
+where :math:`\delta` is the Kronecker delta, and *not* a tensor. It follows from :math:`\eta^{\mu \nu} = \eta^{\sigma \kappa} \Lambda^{\mu}_{\sigma} \Lambda^{\nu}_{\kappa}` that
+
+.. math::
+    \eta^{\mu \nu} &= \eta^{\sigma \kappa} (\delta_{\sigma}^{\mu} + \omega_{\sigma}^{\mu} + \cdots) (\delta_{\kappa}^{\nu} + \omega_{\kappa}^{\nu} + \cdots) \\
+        &= \eta^{\mu \nu} + \omega^{\mu}_{\sigma} \eta^{\sigma \nu} + \omega^{\nu}_{\kappa} \eta^{\kappa \mu} + \cdots \\
+        &= \eta^{\mu \nu} + \omega^{\mu \nu} + \omega^{\nu \mu} + \cdots
+
+Comparing the first order terms shows that :math:`\omega^{\mu \nu} = -\omega^{\nu \mu}` is anti-symmetric. It is therefore more convenient to use :math:`\omega^{\mu \nu}`, rather than :math:`\omega_{\mu}^{\nu}`, as the infinitesimal parameters of the expansion of :math:`\Lambda`.
+
+.. note::
+    A count of free parameters shows that the inhomogeneous Lorentz symmetry has :math:`10` degrees of freedom, :math:`4` of which come from the translation, and the rest :math:`6` come from the rank-:math:`2` anti-symmetric tensor :math:`\omega`.
