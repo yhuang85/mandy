@@ -13,8 +13,11 @@ The most basic and general idea of Morse theory is to understand global properti
 We will be concerned with the most classical Morse theory here, where spaces are smooth finite-dimensional manifolds :math:`M` and decompositions of :math:`M` are given by the so-called Morse functions :math:`f: M \to \Rbb`, which are nothing but *generic* smooth functions. More precisely, the only data we care about :math:`f` is a sequence of *singular values*
 
 .. math::
+	:nowrap:
 
-	\dots < c_{k-1} < c_k < c_{k+1} < \dots
+	\begin{equation*}
+		\dots < c_{k-1} < c_k < c_{k+1} < \dots
+	\end{equation*}
 
 i.e., the values at critical points where :math:`df=0`, which is bounded on both sides if :math:`M` is compact.
 
@@ -50,14 +53,15 @@ Symplectic handles
 Assuming :math:`\dim W = 2n`, an index-:math:`k` handle corresponds to an index-:math:`k` critical point always takes the following standard form
 
 .. math::
+	:nowrap:
 
-	\begin{aligned}
-		H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n},
+	\begin{align*}
+		H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n} \\
 
-		\omega|_{H_k} &= \sum_{i=1}^{2n} dx_i \wedge dy_i,
+		\omega|_{H_k} &= \sum_{i=1}^{2n} dx_i \wedge dy_i \\
 
-		X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ).
-	\end{aligned}
+		X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ) \\
+	\end{align*}
 
 Such handles are known as *Weinstein handles* because A. Weinstein first wrote down these normal forms. A particularly important special case is when :math:`k = n` and we we call these handles *critical* because only these handles actually carry nontrivial symplectic information.
 
@@ -75,17 +79,20 @@ Regular level sets
 A regular level set :math:`\Sigma \subset (M, \xi)` can be decomposed into three pieces
 
 .. math::
-	:label: hypersurface-decomposition
+	:nowrap:
 
-	\Sigma = R_+ \cup \Gamma \cup R_-,
+	\begin{equation}
+		\Sigma = R_+ \cup \Gamma \cup R_-
+		\label{eq_hypersurface_decomposition}
+	\end{equation}
 
 where :math:`\Gamma = \{ \alpha (X) = 0 \}` and :math:`R_{\pm} = \{ \pm \alpha (X) > 0 \}`, respectively. It turns out that :math:`(\Gamma, \xi|_{\Gamma})` is itself a contact manifold of dimension :math:`\dim M - 2`, i.e., it's a codimension-:math:`2` contact submanifold of :math:`(M, \xi)`. Moreover :math:`( R_{\pm}, d\alpha|_{R_{\pm}} )` are symplectic manifolds. However, they don't necessarily carry a Morse structure as described above.
 
 .. note::
 
-	* We will rewrite the decomposition :eq:`hypersurface-decomposition` as :math:`\Sigma = R_+ \cup_{\Gamma} R_-` to highlight the viewpoint that :math:`\Sigma` can be obtained by gluing (closures of) :math:`R_{\pm}` along the common boundary :math:`\Gamma`.
+	* We will rewrite the decomposition :math:`\eqref{eq_hypersurface_decomposition}` as :math:`\Sigma = R_+ \cup_{\Gamma} R_-` to highlight the viewpoint that :math:`\Sigma` can be obtained by gluing (closures of) :math:`R_{\pm}` along the common boundary :math:`\Gamma`.
 
-	* It's shown by `Giroux <https://eudml.org/doc/140253>`__ that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in :eq:`hypersurface-decomposition`. Such hypersurfaces were named *convex* by Eliashberg and Gromov in a `paper <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/976.pdf>`__ which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn't make any sense in the contact world. Indeed, they're more of a "flat" kind because the contact structure is invariant in the transverse direction. This is the main reason why we don't use the term "convex hypersurface" in this article. Another reason for not considering hypersurfaces like :eq:`hypersurface-decomposition` in general is that the domains :math:`R_{\pm}` are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the :ref:`second blend <section_2nd_blend_morse_contact>`.
+	* It's shown by `Giroux <https://eudml.org/doc/140253>`__ that any hypersurface transverse to a (locally defined) contact vector field admits a decomposition as in :math:`\eqref{eq_hypersurface_decomposition}`. Such hypersurfaces were named *convex* by Eliashberg and Gromov in a `paper <https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/976.pdf>`__ which covers both symplectic and contact cases. However, while convexity makes perfect sense in the symplectic world (e.g. it synchronizes well with convexities in complex and Riemannian geometry wherever these subjects overlap), it doesn't make any sense in the contact world. Indeed, they're more of a "flat" kind because the contact structure is invariant in the transverse direction. This is the main reason why we don't use the term "convex hypersurface" in this article. Another reason for not considering hypersurfaces like :math:`\eqref{eq_hypersurface_decomposition}` in general is that the domains :math:`R_{\pm}` are not necessarily Morse-theory friendly, i.e., they may be Liouville and not Weinstein. More about the later point will be elaborated in the :ref:`second blend <section_2nd_blend_morse_contact>`.
 
 Contact handles
 +++++++++++++++
@@ -93,14 +100,15 @@ Contact handles
 Assuming :math:`\dim M = 2n+1` and :math:`k \leq n`, an index-:math:`k` contact handle always takes the following standard form
 
 .. math::
+	:nowrap:
 
-	\begin{aligned}
-		H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n} \times [-1, 1]_z,
+	\begin{align*}
+		H_k &= [-1, 1]^k_{x_1, \cdots, x_k} \times [-1, 1]^{2n-k}_{x_{k+1}, \cdots, x_n, y_1, \cdots, y_n} \times [-1, 1]_z \\
 
-		\alpha|_{H_k} &= dz - \sum_{i=1}^n y_i dx_i,
+		\alpha|_{H_k} &= dz - \sum_{i=1}^n y_i dx_i \\
 
-		X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ) + z dz.
-	\end{aligned}
+		X|_{H_k} &= \sum_{i=1}^k ( -x_i \p_{x_i} + 2y_i \p_{y_i} ) + \frac{1}{2} \sum_{j=k+1}^{2n} ( x_j \p_{x_j} + y_j \p_{y_j} ) + z dz \\
+	\end{align*}
 
 Note that :math:`X|_{H_k}` exponentially expands the contact volume in the above model. For :math:`k \geq n+1`, one can simply reverse the signs of :math:`X|_{H_k}` in the above equation, in which case :math:`X|_{H_k}` exponentially contracts the contact volume. These handles will just be called contact handles since nobody was interested in registering them as trademarks.
 
@@ -124,15 +132,18 @@ Separation of contact structure and topology
 The first key principle in the development of contact Morse theory is to separate the contact topological problem from the purely topological problem. Specifically, given a contact manifold :math:`(M, \xi)`, we always start from just any Morse function :math:`f: M \to \Rbb`. Suppose :math:`\dim M = 2n+1`, then :math:`f` induces a decomposition
 
 .. math::
-	:label: heegaard-decomposition
+	:nowrap:
 
-	M = H_1 \cup (\Sigma \times I) \cup H_2, \quad I \coloneqq [0,1],
+	\begin{equation}
+		M = H_1 \cup (\Sigma \times I) \cup H_2, \quad I \coloneqq [0,1]
+		\label{eq_heegaard_decomposition}
+	\end{equation}
 
 where :math:`H_1` is a neighborhood of the union of the stable manifolds of all critical points of :math:`f` of index at most :math:`n`, and similarly :math:`H_2` is a neighborhood of the union of the unstable manifolds of all critical points of :math:`f` of index at least :math:`n+1`, and finally :math:`\Sigma` may be identified with either :math:`\p H_1` or :math:`\p H_2`. Such a decomposition is nothing but a higher-dimensional analogue of the `Heegaard decomposition <https://en.wikipedia.org/wiki/Heegaard_splitting>`__ for 3-manifolds.
 
-The reason for decomposing :math:`M` as in :eq:`heegaard-decomposition` is because the contact structures :math:`\xi|_{H_1}, \xi|_{H_2}` can be made standard by Gromov's *h*-principle on isotropic/Legendrian approximations. Namely, the stable manifold of all critical points of index at most :math:`n` can be :math:`C^0`-approximated by isotropic submanifolds. It follows that :math:`H_1` becomes a neighborhood of a CW-complex built out of isotropic cells, which in turns carries a standard contact structure. The same holds for :math:`H_2` by reversing the direction of :math:`\nabla f`. Finally, the complement of :math:`H_1 \cup H_2` in :math:`M` is a product :math:`\Sigma \times I`, which, in some sense, carries all the information about :math:`\xi`.
+The reason for decomposing :math:`M` as in :math:`\eqref{eq_heegaard_decomposition}` is because the contact structures :math:`\xi|_{H_1}, \xi|_{H_2}` can be made standard by Gromov's *h*-principle on isotropic/Legendrian approximations. Namely, the stable manifold of all critical points of index at most :math:`n` can be :math:`C^0`-approximated by isotropic submanifolds. It follows that :math:`H_1` becomes a neighborhood of a CW-complex built out of isotropic cells, which in turns carries a standard contact structure. The same holds for :math:`H_2` by reversing the direction of :math:`\nabla f`. Finally, the complement of :math:`H_1 \cup H_2` in :math:`M` is a product :math:`\Sigma \times I`, which, in some sense, carries all the information about :math:`\xi`.
 
-To summarize, the decomposition :eq:`heegaard-decomposition` serves the purpose of separating contact topology from pure topology as follows:
+To summarize, the decomposition :math:`\eqref{eq_heegaard_decomposition}` serves the purpose of separating contact topology from pure topology as follows:
 
 * The handlebodies :math:`H_1, H_2` knows all about the topology of :math:`M` but nothing about :math:`\xi`.
 
@@ -140,7 +151,7 @@ To summarize, the decomposition :eq:`heegaard-decomposition` serves the purpose 
 
 .. note::
 
-	The handlebodies :math:`H_1, H_2` in :eq:`heegaard-decomposition` are by no means unique, although the (restricted) contact structures are uniquely determined by their topological type.
+	The handlebodies :math:`H_1, H_2` in :math:`\eqref{eq_heegaard_decomposition}` are by no means unique, although the (restricted) contact structures are uniquely determined by their topological type.
 
 Morsify the characteristic foliation
 ************************************
@@ -148,8 +159,11 @@ Morsify the characteristic foliation
 Given any hypersurface :math:`\Sigma \in (M, \xi)`, the *characteristic foliation* :math:`\Sigma_{\xi}` is a line field defined by
 
 .. math::
+	:nowrap:
 
-	\Sigma_{\xi} \coloneqq \ker (d\alpha|_{T\Sigma \cap \xi}),
+	\begin{equation*}
+		\Sigma_{\xi} \coloneqq \ker (d\alpha|_{T\Sigma \cap \xi})
+	\end{equation*}
 
 where :math:`\xi = \ker\alpha` is a contact form. Moreover, when both :math:`\Sigma` and :math:`\xi` are oriented, which will always be the case here, so is :math:`\Sigma_{\xi}` and it becomes a vector field (without any significance on the magnitude). Characteristic foliations play a crucial role in this story because they, to a great extent which will become clear later, uniquely determines the contact germ on :math:`\Sigma`.
 
@@ -189,7 +203,7 @@ Topological skeleta
 
 Recall that although the existence of contact Morse functions, in abundance as a matter of fact, was established in [Gir02]_, nearly no flexibility is available for these rather abstract functions, which makes it hardly useful in practice. On the other hand, one cannot expect genericity to hold in the sense of usual transversality theory as in the smooth case because contact structures are by no means generic in that sense.
 
-As a matter of fact, it makes little sense to even look for (generic) homotopies between contact Morse functions because it violates the first principle of separation between topological and contact topological considerations. Instead, let's emphasize once again that the decomposition :eq:`heegaard-decomposition` is always the first step when decomposing a contact manifold :math:`(M, \xi)`. Recall that the contact handlebodies :math:`H_1, H_2 \subset M` are uniquely determined by the corresponding isotropic skeleta, which also capture the topology of :math:`M`. For this reason, we introduce the following terminology:
+As a matter of fact, it makes little sense to even look for (generic) homotopies between contact Morse functions because it violates the first principle of separation between topological and contact topological considerations. Instead, let's emphasize once again that the decomposition :math:`\eqref{eq_heegaard_decomposition}` is always the first step when decomposing a contact manifold :math:`(M, \xi)`. Recall that the contact handlebodies :math:`H_1, H_2 \subset M` are uniquely determined by the corresponding isotropic skeleta, which also capture the topology of :math:`M`. For this reason, we introduce the following terminology:
 
 	Up to a negligible ambiguity, either :math:`H_1, H_2` or their skeleta are called *topological skeleta* of :math:`(M, \xi)`.
 
@@ -200,12 +214,12 @@ Of course, one contact manifold may have many different topological skeleta, and
 A family Morse theory on hypersurfaces
 **************************************
 
-Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :eq:`heegaard-decomposition`. As explained in the :ref:`main ideas <section_main_ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels. As a convention, all explicitly mentioned (Morse) critical points are assumed to be nondegenerate unless otherwise specified.
+Away from the topological skeleta, the contact manifold reduces to a product :math:`\Sigma \times I` as in :math:`\eqref{eq_heegaard_decomposition}`. As explained in the :ref:`main ideas <section_main_ideas>`, up to a :math:`C^0`-small perturbation, the characteristic foliations :math:`\Sigma_t|_{\xi}, t \in I` can be realized as the gradient of a :math:`1`-parameter family of Morse functions on :math:`\Sigma`. It is this Morse theory which can be made "generic" and work in families. In what follows, we'll spell out the details of this Morse theory on hypersurfaces at :math:`\pi_0, \pi_1`, and :math:`\pi_2`-levels. As a convention, all explicitly mentioned (Morse) critical points are assumed to be nondegenerate unless otherwise specified.
 
 :math:`\pi_0`-level
 +++++++++++++++++++
 
-The :math:`\pi_0`-level Morse theory means that for any :math:`t_0 \in I`, the hypersurface :math:`\Sigma = \Sigma_{t_0}` can be :math:`C^0`-perturbed such that :math:`\Sigma_{\xi}` is Morse. Let :math:`p \in \Sigma` be a critical point. Then we say :math:`p` is *positive* if :math:`T_p \Sigma = \xi_p` as oriented vector spaces and *negative* if :math:`T_p \Sigma = -\xi_p`. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold :math:`R_+ \subset \Sigma`, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the :ref:`first blend <first_blend>`. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold :math:`R_- \subset \Sigma`. Denoting the remaining borderline between :math:`R_+` and :math:`R_-` by :math:`\Gamma`, we arrive at the familiar :math:`\Sigma = R_+ \cup_{\Gamma} R_-` which appeared as the structure of a regular level set in :eq:`hypersurface-decomposition`.
+The :math:`\pi_0`-level Morse theory means that for any :math:`t_0 \in I`, the hypersurface :math:`\Sigma = \Sigma_{t_0}` can be :math:`C^0`-perturbed such that :math:`\Sigma_{\xi}` is Morse. Let :math:`p \in \Sigma` be a critical point. Then we say :math:`p` is *positive* if :math:`T_p \Sigma = \xi_p` as oriented vector spaces and *negative* if :math:`T_p \Sigma = -\xi_p`. It turns out that the stable manifolds of the positive critical points build up a Weinstein manifold :math:`R_+ \subset \Sigma`, i.e., a symplectic manifold built out of (finitely many) Weinstein handles explained in the :ref:`first blend <first_blend>`. Likewise, the unstable manifolds of the negative critical points build up another Weinstein manifold :math:`R_- \subset \Sigma`. Denoting the remaining borderline between :math:`R_+` and :math:`R_-` by :math:`\Gamma`, we arrive at the familiar :math:`\Sigma = R_+ \cup_{\Gamma} R_-` which appeared as the structure of a regular level set in :math:`\eqref{eq_hypersurface_decomposition}`.
 
 	We say a hypersurface :math:`\Sigma` is *Morse* if :math:`\Sigma_{\xi}` is Morse. Moreover, genericity is always appropriately understood according to the :math:`\pi_k`-level of the Morse theory under discussion.
 
@@ -231,9 +245,12 @@ Due to genericity and the index constraint on Weinstein handles, :math:`\Sigma_t
 Topological speaking, the difference between :math:`\Sigma_{t_0 - \epsilon}` and :math:`\Sigma_{t_0 + \epsilon}` is a handle slide of a negative :math:`n`-handle over a positive :math:`n`-handle. However, not every topological handle slide of this kind can be realized as a :math:`\pi_1`-switch, even after assuming all isotopies involved in the handle slide are contact isotopies. Namely, suppose :math:`Y \subset \Sigma_{t_0}` is a regular level set between :math:`p_n^-` and :math:`p_n^+` such that the unstable manifold of :math:`p_n^-` intersects :math:`Y` along a Legendrian sphere :math:`\Lambda_-` and the stable manifold of :math:`p_n^+` intersects :math:`Y` along :math:`\Lambda_+`. Here we recall :math:`Y` is naturally a contact submanifold. [#contact_submfd]_ Then :math:`\Lambda_{\pm}` intersect :math:`\xi|_Y`-transversely at exactly one point :math:`q` (on the :math:`\pi_1`-switch), i.e.,
 
 .. math::
-	:label: xi-transverse
+	:nowrap:
 
-	T_q \Lambda_+ \oplus T_q \Lambda_- = (\xi|_Y)_q.
+	\begin{equation}
+		T_q \Lambda_+ \oplus T_q \Lambda_- = (\xi|_Y)_q
+		\label{eq_xi_transverse}
+	\end{equation}
 
 Extending the definitions of :math:`Y` and :math:`\Lambda_{\pm}` to all :math:`t` close to :math:`t_0`, we require that :math:`\Lambda_+` is slightly "below" :math:`\Lambda_-`, measured against the positive co-orientation of :math:`\xi|_Y`, near :math:`q` for :math:`t < t_0` and "above" for :math:`t > t_0`.
 
@@ -241,7 +258,7 @@ Extending the definitions of :math:`Y` and :math:`\Lambda_{\pm}` to all :math:`t
 
 .. note::
 
-	Historically speaking, a :math:`\pi_1`-switch is trivially a special case of "bifurcations" considered by Giroux [Gir99]_ in his dynamical convex surface theory, and less trivially a special case of the so-called "bypass attachments" considered by Honda [Hon99]_ in his combinatorial convex surface theory, both in dimension :math:`3`. The later was generalized to all dimensions in [HH18]_. In particular, the decomposition :eq:`heegaard-decomposition` indeed gives rise to a contact Morse function. However, none of these developments are relevant here and we don't even care about general contact Morse functions per se.
+	Historically speaking, a :math:`\pi_1`-switch is trivially a special case of "bifurcations" considered by Giroux [Gir99]_ in his dynamical convex surface theory, and less trivially a special case of the so-called "bypass attachments" considered by Honda [Hon99]_ in his combinatorial convex surface theory, both in dimension :math:`3`. The later was generalized to all dimensions in [HH18]_. In particular, the decomposition :math:`\eqref{eq_heegaard_decomposition}` indeed gives rise to a contact Morse function. However, none of these developments are relevant here and we don't even care about general contact Morse functions per se.
 
 Besides :math:`\pi_1`-switches, there are many other :math:`\pi_1`-level Morse theoretic degenerations, such as creation and elimination of critical points, that may happen in the family :math:`\Sigma_t|_{\xi}, t \in I`. However, these phenomena may happen either within :math:`R_+` or :math:`R_-`, and they belong to the subject of Weinstein homotopies, whose general understanding is completely out of reach by the current technology.
 
@@ -266,12 +283,15 @@ By analogy with the :math:`\pi_1`-switch, here is a complete list of :math:`\pi_
 
 * (:math:`\pi_2^d`-switch) There exist a negative index-:math:`n` critical point :math:`p_n^-` and a positive :math:`p_n^+`, such that there exists a trajectory from :math:`p_n^-` to :math:`p_n^+` which is not transversely cut out, but rather has a first-order tangency. Namely, let :math:`Y \subset \Sigma_{t_0}^{s_0}` be a regular level set between :math:`p_n^-` and :math:`p_n^+`, and :math:`\Lambda_{\pm} \subset Y` be Legendrian spheres just as in the above discussion at the :math:`\pi_1`-level. Then the unique intersection :math:`q = \Lambda_+ \cap \Lambda_-` satisfies the following
 
-  .. math::
-	  :label: xi-degenerate
+	.. math::
+		:nowrap:
 
-	  \dim(T_q \Lambda_+ \cap T_q \Lambda_-) = 1.
+		\begin{equation}
+			\dim(T_q \Lambda_+ \cap T_q \Lambda_-) = 1
+			\label{eq_xi_degenerate}
+		\end{equation}
 
-  This should be compared with the :math:`\xi|_Y`-transversality condition :eq:`xi-transverse`.
+  This should be compared with the :math:`\xi|_Y`-transversality condition :math:`\eqref{eq_xi_transverse}`.
 
 
 Summary
@@ -316,7 +336,7 @@ Finally, the passage from the lower-right to the lower-left corner swaps :math:`
 
 .. note::
 
-	The :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch put some emphasis on the evolution of the decomposition :eq:`hypersurface-decomposition` assuming :math:`\Sigma` is invariant. Such emphasis is not always necessary given the local nature of :math:`\pi_1`-switches. In this case we may simply remember the second dashed arrow in the :math:`R_{\pm}`-:ref:`picture <figure_r_pm_picture_of_pi_1_switch>` above, and call it the :math:`Y`-picture since it records what happens in the level set :math:`Y`.
+	The :math:`R_{\pm}`-picture of a :math:`\pi_1`-switch put some emphasis on the evolution of the decomposition :math:`\eqref{eq_hypersurface_decomposition}` assuming :math:`\Sigma` is invariant. Such emphasis is not always necessary given the local nature of :math:`\pi_1`-switches. In this case we may simply remember the second dashed arrow in the :math:`R_{\pm}`-:ref:`picture <figure_r_pm_picture_of_pi_1_switch>` above, and call it the :math:`Y`-picture since it records what happens in the level set :math:`Y`.
 
 Free :math:`\pi_1`-switches
 ***************************
@@ -403,8 +423,11 @@ Since we plan not to use any :math:`\pi_2`-switches, we need to go back to the r
 If :math:`Y` were to have an arbitrarily large (standard) neighborhood, then one can always perturb :math:`\Sigma` near -- but away from -- :math:`Y` to change the characteristic foliation :math:`\Sigma_{\xi}` so that it effectively raises :math:`\Lambda_+^s` up across :math:`\Lambda_-^u` [#bump_switch]_. However, in reality, one can only assume a finite neighborhood size of :math:`Y` depending on :math:`\Sigma` or rather the contact structure at the vicinity of it. Let :math:`\phi_t: Y \to Y`, :math:`t \in [0,1]`, be the contact isotopy induced by the perturbation such that  :math:`\phi_0 = \op{id}` and :math:`\phi_1` raises :math:`\Lambda_+^s` up across :math:`\Lambda_-^u`. Then we can define an "action" of such an isotopy by
 
 .. math::
+	:nowrap:
 
-	A(\phi) \coloneqq \max_{x \in Y} \int_0^1 \alpha(\dot{\phi}_t(x)) dt
+	\begin{equation*}
+		A(\phi) \coloneqq \max_{x \in Y} \int_0^1 \alpha(\dot{\phi}_t(x)) dt
+	\end{equation*}
 
 where :math:`\alpha` denotes the contact form on :math:`Y`. It turns out that the possible magnitude of :math:`A(\phi)` is constrained by the neighborhood size of :math:`Y`. This is to say that an isotopy :math:`\phi_t` can be arranged by a small perturbation of :math:`\Sigma` near :math:`Y` if and only if the action :math:`A(\phi)` is sufficiently small.
 
@@ -436,7 +459,7 @@ Relations from :math:`\pi_2^d`-switches
 		:align: center
 		:width: 400px
 
-To the right we have the usual :math:`2`-parameter family of :math:`\Lambda_+^s` and :math:`\Lambda_-^u` in :math:`Y` -- drawn in the front projection -- around a :math:`\pi_2^d`-:ref:`switch <bullet_pi2d_switch>`. The :math:`\pi_2^d`-switch happens exactly at the red dot where :math:`\Lambda_+^s` and :math:`\Lambda_-^u` intersect, not transversely but following :eq:`xi-degenerate`. If we let :math:`s, t` parametrize the hypersurfaces as before, then we see an equivalence relation between the :math:`I`-invariant contact structure on :math:`\Sigma^0_t, t \in I`, on the left and the composition of two :math:`\pi_1`-switches on :math:`\Sigma^1_t, t \in I`, on the right. Therefore we can say that a :math:`\pi_2^d`-switch creates or cancels a pair of :math:`\pi_1`-switches.
+To the right we have the usual :math:`2`-parameter family of :math:`\Lambda_+^s` and :math:`\Lambda_-^u` in :math:`Y` -- drawn in the front projection -- around a :math:`\pi_2^d`-:ref:`switch <bullet_pi2d_switch>`. The :math:`\pi_2^d`-switch happens exactly at the red dot where :math:`\Lambda_+^s` and :math:`\Lambda_-^u` intersect, not transversely but following :math:`\eqref{eq_xi_degenerate}`. If we let :math:`s, t` parametrize the hypersurfaces as before, then we see an equivalence relation between the :math:`I`-invariant contact structure on :math:`\Sigma^0_t, t \in I`, on the left and the composition of two :math:`\pi_1`-switches on :math:`\Sigma^1_t, t \in I`, on the right. Therefore we can say that a :math:`\pi_2^d`-switch creates or cancels a pair of :math:`\pi_1`-switches.
 
 Note that there is nothing special about the configuration of :math:`\Lambda_+^s` and :math:`\Lambda_-^u` at either the bottom :math:`t=0` or the top :math:`t=1` of the parameter space. They can for example always be arranged using the finger moves introduced above. It means, in particular, that even more free :math:`\pi_1`-switches can be produced this way by the very existence of :math:`\pi_2^d`-switches.
 
