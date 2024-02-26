@@ -116,7 +116,8 @@ mathjax3_config = {
 				'mathtools',
 				'unicode',
 			],
-		}
+		},
+        'tags': 'ams',
 	},
 	'loader': {
 		'load': [
