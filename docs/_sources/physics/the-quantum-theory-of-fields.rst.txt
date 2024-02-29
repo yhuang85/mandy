@@ -370,7 +370,7 @@ or a space reversal transformation
 
 or both.
 
-So far everything have been rather abstract, but in fact, the (homogeneous) Lorentz group can be understood quite intuitively. There are basically two building blocks: one is a rotation in the :math:`3`-space, which says that the space is homogeneous in all (spatial) directions, and the other is a so-called *boost*, which says that, as G. Galileo originally noted, one cannot tell if a system is stationary or is moving in a constant velocity without making a reference to outside of the system. To spell out the details, let's consider a stationary frame with :math:`d\xbf = 0` and a moving frame with :math:`d\xbf' / dt' = \vbf`. Then the transformation :math:`dx' = \Lambda dx` can be simplified as
+So far everything have been rather abstract, but in fact, the (homogeneous) Lorentz group can be understood quite intuitively. There are basically two building blocks: one is a rotation in the :math:`3`-space, which says that the space is homogeneous in all (spatial) directions, and the other is a so-called *boost*, which says that, as G. Galileo originally noted, one cannot tell if a system is at rest or is moving in a constant velocity without making a reference to outside of the system. To spell out the details, let's consider a rest frame with :math:`d\xbf = 0` and a moving frame with :math:`d\xbf' / dt' = \vbf`. Then the transformation :math:`dx' = \Lambda dx` can be simplified as
 
 .. math::
 	:nowrap:
@@ -404,42 +404,51 @@ The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely d
 .. math::
 	:nowrap:
 
-	\begin{equation}
-		\Lambda = \begin{bmatrix}
-				\gamma & 0 & 0 & -\gamma v_3 \\
-				0 & 1 & 0 & 0 \\
-				0 & 0 & 1 & 0 \\
-				\gamma v_3 & 0 & 0 & \gamma
-			\end{bmatrix}
+	\begin{alignat}{2}
+		t' &=  \Lambda_0^{\mu} x_{\mu} &&= \gamma (t - v_3 x_3)  \nonumber \\
+		x'_1 &= \Lambda_1^{\mu} x_{\mu} &&= x_1  \nonumber \\
+		x'_2 &= \Lambda_2^{\mu} x_{\mu} &&= x_2  \nonumber \\
+		x'_3 &= \Lambda_3^{\mu} x_{\mu} &&= \gamma (x_3 - v_3 t)
 		\label{eq_lambda_in_3_axis}
-	\end{equation}
+	\end{alignat}
 
-which can be spelled out to the following possibly more intuitive expressions
+.. dropdown:: Time dilation and length contraction
+	:animate: fade-in-slide-down
 
-.. math::
-	:nowrap:
+	A few consequences can be drawn from the boost transformation, most notably the effects of time dilation and length contraction. The time dilation, i.e., a clock ticks slower in a moving frame than in a rest frame, is quite obvious from :math:`\eqref{eq_lambda_boost}` and the fact that :math:`\gamma > 1`. But the length contraction requires some elaboration.
 
-	\begin{align*}
-		t' &= \gamma (t - v_3 x_3), \\
-		x'_1 &= x_1, \\
-		x'_2 &= x_2, \\
-		x'_3 &= \gamma (x_3 + v_3 t).
-	\end{align*}
+	To be more concrete, let's consider a rode of some fixed length. To measure the length, the measurement must be done *simultaneously* at the two ends of the rod. This constraint causes not much trouble in a rest frame, but must be taken care of in a moving frame since being simultaneous is not a Lorentz invariant property. Let :math:`x = (t, \xbf)` and :math:`y = (t', \ybf)` be the two endpoints of the rod in the rest frame, so that the length is :math:`|\xbf - \ybf|` regardless of whether :math:`t` and :math:`t'` are the same or not. Under the Lorentz transformation defined in :math:`\eqref{eq_lambda_in_3_axis}`, they become
 
-It's now obvious that
+	.. math::
+		:nowrap:
 
-1. a stationary point in the original frame is moving with constant velocity :math:`\vbf` (which is :math:`v_3` in this special case) in the prime-frame as planned, and
-2. time appears to flow slower in the moving frame because :math:`\gamma < 1`, and
-3. length appears to be shorter in the moving frame, again because :math:`\gamma < 1`.
+		\begin{align*}
+			\Lambda x &= (\gamma (t - v_3 x_3), x_1, x_2, \gamma(x_3 - v_3 t))  \\
+			\Lambda y &= (\gamma (t' - v_3 y_3), y_1, y_2, \gamma(y_3 - v_3 t'))
+		\end{align*}
+
+	respectively. Setting the equal-time condition :math:`(\Lambda x)_0 = (\Lambda y)_0` gives :math:`t' = t - v_3 (x_3 - y_3)`. Substituting it into :math:`(\Lambda x)_3` and :math:`(\Lambda y)_3` then gives
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			|(\Lambda x)_3 - (\Lambda y)_3| = \gamma |x_3 - y_3 - v_3^2 (x_3 - y_3)| = \frac{|x_3 - y_3|}{\gamma} < |x_3 - y_3|
+		\end{equation*}
+
+	This calculation says that the length of rod is contracted in the direction of movement.
+
+	It should be emphasized that such contraction of length can only be observed in a frame where the rod is moving. Imagine for example a scenario where you're given a square box with equal sides while standing still, then after some unconscious period of time, e.g., sleeping, you wake up with the same box in hand, and you'd like to know if you're now moving. If you happen to have heard of such contraction of length, you might try to measure the sides of the box again. If one of the sides suddenly becomes shorter, then you know not only that you're moving, but also the direction of movement! This is of course absurd because the box is still at rest relative to you.
 
 Finally, one can apply a rotation to :math:`\eqref{eq_lambda_in_3_axis}` to get the general formulae
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Lambda_{ij} = \delta_{ij} + \frac{v_i v_j}{\vbf^2} (\gamma - 1)
-	\end{equation*}
+		\label{eq_general_lambda_in_spacetime}
+	\end{equation}
 
 for :math:`1 \leq i, j \leq 3`, which together with :math:`\eqref{eq_lambda_boost}` gives the general formula for :math:`\Lambda`.
 
@@ -580,7 +589,7 @@ These are some rather tedious and error-prone calculations. But in the end, we s
 One-Particle States
 -------------------
 
-One neat application of our knowledge about Lorentz symmetry is to classify (free) one-particle states according to their transformation laws under (inhomogeneous) Lorentz transformations.
+One neat application of our knowledge about Lorentz symmetry is to classify (free) one-particle states according to their transformation laws under (inhomogeneous) Lorentz transformations. Throughout this section, the Lorentz transformations will be assumed to be proper orthochronous, i.e., :math:`\op{det}(\Lambda) = 1` and :math:`\Lambda_0^0 \geq 1`.
 
 In order to do so, we need some labels to identify states, which are typically conserved quantities. According to the commutation relations between :math:`H, \Pbf` and :math:`\Jbf` obtained in the previous section, we see that :math:`p = (H, \Pbf)` consists of mutually commutative conserved components, but not :math:`\Jbf`. Hence we can write our one-particle states as :math:`\Psi_{p, \sigma}` such that
 
@@ -617,10 +626,31 @@ that :math:`U(\Lambda) \Psi_{p, \sigma}` has :math:`4`-momentum :math:`\Lambda p
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		U(\Lambda) \Psi_{p, \sigma} = C_{\sigma}^{\sigma'} (\Lambda, p) \Psi_{\Lambda p, \sigma'}
-	\end{equation*}
+		\label{eq_lorentz_acts_on_p_and_sigma}
+	\end{equation}
 
 where :math:`C(\Lambda, p)` furnishes, for each fixed :math:`p`, a representation of :math:`\Lambda`.
 
-Next we'd like to remove the dependency of :math:`C` on :math:`p` since, after all, it is :math:`\Lambda` that carries the symmetry. We can achieve this by noticing that :math:`U(\Lambda)` acts on the :math:`p`-orbits of :math:`\Lambda` transitively. The :math:`p`-orbits of :math:`\Lambda`, in turn, is uniquely determined by the value of :math:`p^2`.
+Next we'd like to remove the dependency of :math:`C` on :math:`p` since, after all, it is :math:`\Lambda` that carries the symmetry. We can achieve this by noticing that :math:`U(\Lambda)` acts on the :math:`\Lambda`-orbits of :math:`p` transitively. The :math:`\Lambda`-orbits of :math:`p`, in turn, are uniquely determined by the value of :math:`p^2`, and in the case of :math:`p^2 \geq 0`, also by the sign of :math:`p_0`. We can therefore pick a convenient representative :math:`k` for each case as follows
+
++--------------------------------+-----------------------+----------+
+| Case                           | Standard :math:`k`    | Physical |
++================================+=======================+==========+
+| :math:`p^2 = M^2 > 0,~p_0 > 0` | :math:`(M, 0, 0, 0)`  | Yes      |
++--------------------------------+-----------------------+----------+
+| :math:`p^2 = M^2 > 0,~p_0 < 0` | :math:`(-M, 0, 0, 0)` | No       |
++--------------------------------+-----------------------+----------+
+| :math:`p^2 = 0,~p_0 > 0`       | :math:`(1, 0, 0, 1)`  | Yes      |
++--------------------------------+-----------------------+----------+
+| :math:`p^2 = 0,~p_0 = 0`       | :math:`(0, 0, 0, 0)`  | Yes      |
++--------------------------------+-----------------------+----------+
+| :math:`p^2 = 0,~p_0 < 0`       | :math:`(-1, 0, 0, 1)` | No       |
++--------------------------------+-----------------------+----------+
+| :math:`p^2 = -N^2 < 0`         | :math:`(0, N, 0, 0)`  | No       |
++--------------------------------+-----------------------+----------+
+
+It turns out that only three of these cases are realized physically, and they correspond to the cases of a massive particle of mass :math:`M`, a massless particle and the vacuum, respectively. Since there is not much to say about the vacuum state, there are only two cases that we need to investigate.
+
+With the choices of the standard :math:`k` in hand, we need to make one more set of choices. Namely, we will choose for each :math:`p` a standard Lorentz transformation :math:`L(p)` such that :math:`L(p) k = p`. Such :math:`L(p)` for a massive particle has been chosen in :math:`\eqref{eq_general_lambda_in_spacetime}`, albeit in spacetime coordinates, and we'll also handle the case of massless particles later.
