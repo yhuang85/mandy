@@ -388,7 +388,7 @@ document.write(`
 <blockquote>
 <div><p>Throughout this post we always assume that state vectors are normalized so that <span class="math notranslate nohighlight">\(||\Psi|| = 1\)</span>.</p>
 </div></blockquote>
-<p>In fact, we don’t really care about the states themselves either, because they are more of an abstraction rather than something one can physically measure. What we do care about are the (Hermitian) inner products between state vectors, denoted by <span class="math notranslate nohighlight">\((\Psi, \Phi)\)</span>. According to the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Copenhagen_interpretation">Copenhagen interpretation</a> of quantum mechanics, such inner product represents an <em>amplitude</em>, i.e., its squared norm gives the probability of finding a state <span class="math notranslate nohighlight">\([\Psi]\)</span> in <span class="math notranslate nohighlight">\([\Phi]\)</span> if we ever perform a measurement. We can write this statement as an equation as follows:</p>
+<p>In fact, we don’t really care about the states themselves either, because they are more of an abstraction rather than something one can physically measure. What we do care about are the (Hermitian) inner products between state vectors, denoted by <span class="math notranslate nohighlight">\((\Psi, \Phi)\)</span>. According to the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Copenhagen_interpretation">Copenhagen interpretation</a> of quantum mechanics, such inner product represents an <em>amplitude</em>, i.e., its squared norm gives the probability of finding a state <span class="math notranslate nohighlight">\([\Psi]\)</span> in <span class="math notranslate nohighlight">\([\Phi]\)</span> if we ever perform a measurement. We can write this statement as an equation as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         P([\Psi] \to [\Phi]) = |(\Psi, \Phi)|^2
@@ -626,7 +626,7 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">A few consequences can be drawn from the boost transformation, most notably the effects of time dilation and length contraction. The time dilation, i.e., a clock ticks slower in a moving frame than in a rest frame, is quite obvious from <span class="math notranslate nohighlight">\(\eqref{eq_lambda_boost}\)</span> and the fact that <span class="math notranslate nohighlight">\(\gamma &gt; 1\)</span>. But the length contraction requires some elaboration.</p>
+<p class="sd-card-text">A few consequences can be drawn from the boost transformation, most notably the effects of <a class="reference external" href="https://en.wikipedia.org/wiki/Time_dilation">time dilation</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Length_contraction">length contraction</a>. The time dilation, i.e., a clock ticks slower in a moving frame than in a rest frame, is quite obvious from <span class="math notranslate nohighlight">\(\eqref{eq_lambda_boost}\)</span> and the fact that <span class="math notranslate nohighlight">\(\gamma &gt; 1\)</span>. But the length contraction requires some elaboration.</p>
 <p class="sd-card-text">To be more concrete, let’s consider a rode of some fixed length. To measure the length, the measurement must be done <em>simultaneously</em> at the two ends of the rod. This constraint causes not much trouble in a rest frame, but must be taken care of in a moving frame since being simultaneous is not a Lorentz invariant property. Let <span class="math notranslate nohighlight">\(x = (t, \xbf)\)</span> and <span class="math notranslate nohighlight">\(y = (t', \ybf)\)</span> be the two endpoints of the rod in the rest frame, so that the length is <span class="math notranslate nohighlight">\(|\xbf - \ybf|\)</span> regardless of whether <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t'\)</span> are the same or not. Under the Lorentz transformation defined in <span class="math notranslate nohighlight">\(\eqref{eq_lambda_in_3_axis}\)</span>, they become</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -735,6 +735,8 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 \begin{equation*}
         P_{\mu} \Psi_{p, \sigma} = p_{\mu}
 \end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\sigma\)</span> are additional labels such as spin components that we will later specify.</p>
+<section id="reduction-to-the-little-group">
+<h3>Reduction to the little group<a class="headerlink" href="#reduction-to-the-little-group" title="Link to this heading">#</a></h3>
 <p>Let’s first consider translations <span class="math notranslate nohighlight">\(U(1, a)\)</span>. Since translations form an abelian group, it follows from <span class="math notranslate nohighlight">\(\eqref{eq_additive_symmetry}\)</span> that</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -747,10 +749,10 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 \end{equation*}</div><p>that <span class="math notranslate nohighlight">\(U(\Lambda) \Psi_{p, \sigma}\)</span> has <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(\Lambda p\)</span>. Therefore we can write</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        U(\Lambda) \Psi_{p, \sigma} = C_{\sigma}^{\sigma'} (\Lambda, p) \Psi_{\Lambda p, \sigma'}
+        U(\Lambda) \Psi_{p, \sigma} = C_{\sigma \sigma'} (\Lambda, p) \Psi_{\Lambda p, \sigma'}
         \label{eq_lorentz_acts_on_p_and_sigma}
-\end{equation}</div><p>where <span class="math notranslate nohighlight">\(C(\Lambda, p)\)</span> furnishes, for each fixed <span class="math notranslate nohighlight">\(p\)</span>, a representation of <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
-<p>Next we’d like to remove the dependency of <span class="math notranslate nohighlight">\(C\)</span> on <span class="math notranslate nohighlight">\(p\)</span> since, after all, it is <span class="math notranslate nohighlight">\(\Lambda\)</span> that carries the symmetry. We can achieve this by noticing that <span class="math notranslate nohighlight">\(U(\Lambda)\)</span> acts on the <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span> transitively. The <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span>, in turn, are uniquely determined by the value of <span class="math notranslate nohighlight">\(p^2\)</span>, and in the case of <span class="math notranslate nohighlight">\(p^2 \geq 0\)</span>, also by the sign of <span class="math notranslate nohighlight">\(p_0\)</span>. We can therefore pick a convenient representative <span class="math notranslate nohighlight">\(k\)</span> for each case as follows</p>
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> furnishes a representation of <span class="math notranslate nohighlight">\(\Lambda\)</span> and <span class="math notranslate nohighlight">\(p\)</span> under straightforward transformation rules, and an implicit summation over <span class="math notranslate nohighlight">\(\sigma'\)</span> is assumed although it’s not a <span class="math notranslate nohighlight">\(4\)</span>-index.</p>
+<p>Next we’d like to remove the dependency of <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> on <span class="math notranslate nohighlight">\(p\)</span> since, after all, it is <span class="math notranslate nohighlight">\(\Lambda\)</span> that carries the symmetry. We can achieve this by noticing that <span class="math notranslate nohighlight">\(U(\Lambda)\)</span> acts on the <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span> transitively. The <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span>, in turn, are uniquely determined by the value of <span class="math notranslate nohighlight">\(p^2\)</span>, and in the case of <span class="math notranslate nohighlight">\(p^2 \geq 0\)</span>, also by the sign of <span class="math notranslate nohighlight">\(p_0\)</span>. We can therefore pick a convenient representative <span class="math notranslate nohighlight">\(k\)</span> for each case as follows</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Case</p></th>
@@ -786,7 +788,61 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 </tbody>
 </table>
 <p>It turns out that only three of these cases are realized physically, and they correspond to the cases of a massive particle of mass <span class="math notranslate nohighlight">\(M\)</span>, a massless particle and the vacuum, respectively. Since there is not much to say about the vacuum state, there are only two cases that we need to investigate.</p>
-<p>With the choices of the standard <span class="math notranslate nohighlight">\(k\)</span> in hand, we need to make one more set of choices. Namely, we will choose for each <span class="math notranslate nohighlight">\(p\)</span> a standard Lorentz transformation <span class="math notranslate nohighlight">\(L(p)\)</span> such that <span class="math notranslate nohighlight">\(L(p) k = p\)</span>. Such <span class="math notranslate nohighlight">\(L(p)\)</span> for a massive particle has been chosen in <span class="math notranslate nohighlight">\(\eqref{eq_general_lambda_in_spacetime}\)</span>, albeit in spacetime coordinates, and we’ll also handle the case of massless particles later.</p>
+<p>With the choices of the standard <span class="math notranslate nohighlight">\(k\)</span> in hand, we need to make one more set of choices. Namely, we will choose for each <span class="math notranslate nohighlight">\(p\)</span> a standard Lorentz transformation <span class="math notranslate nohighlight">\(L(p)\)</span> such that <span class="math notranslate nohighlight">\(L(p) k = p\)</span>. Such <span class="math notranslate nohighlight">\(L(p)\)</span> for a massive particle has been chosen in <span class="math notranslate nohighlight">\(\eqref{eq_general_lambda_in_spacetime}\)</span>, albeit in spacetime coordinates, and we’ll also handle the case of massless particles later. Once these choices have been made, we can <em>define</em></p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Psi_{p, \sigma} \coloneqq N(p) U(L(p)) \Psi_{k, \sigma}
+        \label{eq_def_of_one_particle_psi}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(N(p)\)</span> is a normalization factor to be determined later. In this way, we’ve also determined how <span class="math notranslate nohighlight">\(\sigma\)</span> depends on <span class="math notranslate nohighlight">\(p\)</span>. Applying <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_acts_on_p_and_sigma}\)</span> to <span class="math notranslate nohighlight">\(\eqref{eq_def_of_one_particle_psi}\)</span> we can refactor the terms as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Lambda) \Psi_{p, \sigma} = N(p) U(\Lambda) U(L(p)) \Psi_{k, \sigma} = \
+        N(p) U(L(\Lambda p)) U(L(\Lambda p)^{-1} \Lambda L(p)) \Psi_{k, \sigma}
+        \label{eq_def_of_one_particle_psi_refactored}
+\end{equation}</div><p>so that <span class="math notranslate nohighlight">\(L(\Lambda p)^{-1} \Lambda L(p)\)</span> maps <span class="math notranslate nohighlight">\(k\)</span> to itself, and hence <span class="math notranslate nohighlight">\(U(L(\Lambda p)^{-1} \Lambda L(p))\)</span> acts solely on <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
+<p>At this point, we have reduced the problem to the classification of representations of the so-called <em>little group</em> defined as the subgroup of (proper orthochronous) Lorentz transformations <span class="math notranslate nohighlight">\(W\)</span> that fixes <span class="math notranslate nohighlight">\(k\)</span>, i.e., <span class="math notranslate nohighlight">\(W_{\mu}^{\nu} k_{\nu} = k_{\mu}\)</span>. More precisely, the task now is to find (unitary) representations <span class="math notranslate nohighlight">\(D(W)\)</span> such that <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}\)</span>. Once this is done, we can define</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        U(W) \Psi_{k, \sigma} &amp;\coloneqq D_{\sigma \sigma'}(W) \Psi_{k, \sigma'}  \label{eq_d_repr_of_little_group} \\
+        W(\Lambda, p) &amp;\coloneqq L(\Lambda p)^{-1} \Lambda L(p)  \label{eq_w_from_l}
+\end{align}</div><p>and substitute them into <span class="math notranslate nohighlight">\(\eqref{eq_def_of_one_particle_psi_refactored}\)</span> to get</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        U(\Lambda) \Psi_{p, \sigma} &amp;\xlongequal{\eqref{eq_w_from_l}} N(p) U(L(\Lambda p)) U(W(\Lambda, p)) \Psi_{k, \sigma}  \nonumber \\
+                &amp;\xlongequal{\eqref{eq_d_repr_of_little_group}} N(p) D_{\sigma \sigma'}(W(\Lambda, p)) U(L(\Lambda p)) \Psi_{k, \sigma'}  \nonumber \\
+                &amp;\xlongequal{\eqref{eq_def_of_one_particle_psi}} \frac{N(p)}{N(\Lambda p)} D_{\sigma \sigma'}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}
+                \label{eq_little_group_acts_on_p_and_sigma}
+\end{align}</div><p>which gives the sought-after coefficients <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_acts_on_p_and_sigma}\)</span>.</p>
+<p>It remains now, as far as the general discussion is concerned, to settle the normalization factor <span class="math notranslate nohighlight">\(N(p)\)</span>. Indeed, it’d not have been needed at all if we’d like <span class="math notranslate nohighlight">\(\Psi_{p, \sigma}\)</span> be to orthonormal in the sense that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        (\Psi_{p', \sigma'}, \Psi_{p, \sigma}) = \delta_{\sigma' \sigma} \delta(p' - p)
+        \label{eq_psi_p4_sigma_orthonormal}
+\end{equation}</div><p>where the first delta is the Kronecker delta (for discrete indexes) and the second is the Dirac delta (for continuous indexes), since they are eigenvectors of the (Hermitian) operator <span class="math notranslate nohighlight">\(P\)</span>. All we need is <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}\)</span> being unitary as is obvious from <span class="math notranslate nohighlight">\(\eqref{eq_little_group_acts_on_p_and_sigma}\)</span>.</p>
+<p>However, the Dirac delta in <span class="math notranslate nohighlight">\(\eqref{eq_psi_p4_sigma_orthonormal}\)</span> is tricky to use since <span class="math notranslate nohighlight">\(p\)</span> is constrained to the so-called <em>mass shell</em>, i.e., <span class="math notranslate nohighlight">\(p_0 &gt; 0\)</span> plus <span class="math notranslate nohighlight">\(p^2 = M^2\)</span> in the massive case and <span class="math notranslate nohighlight">\(p^2 = 0\)</span> in the massless case. Hence the actual normalization we’d like to impose on the one-particle states is, instead of <span class="math notranslate nohighlight">\(\eqref{eq_psi_p4_sigma_orthonormal}\)</span>, the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        (\Psi_{p', \sigma'}, \Psi_{p, \sigma}) = \delta_{\sigma' \sigma} \delta(\pbf' - \pbf)
+        \label{eq_psi_p3_sigma_orthonormal}
+\end{equation}</div><p>Since <span class="math notranslate nohighlight">\(\Psi_{p, \sigma}\)</span> can be derived from <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> by <span class="math notranslate nohighlight">\(\eqref{eq_def_of_one_particle_psi}\)</span>, we can first ask <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> to be orthonormal in the sense of <span class="math notranslate nohighlight">\(\eqref{eq_psi_p3_sigma_orthonormal}\)</span>, where the Dirac delta plays no role, and then figure out how integration works on the mass shell (because Dirac delta is defined by integrals against test functions).</p>
+<p>As far as the mass shell integration is concerned, we can temporarily unify the massive and massless cases by allowing <span class="math notranslate nohighlight">\(M \geq 0\)</span>. Consider a general mass shell integral of an arbitrary test function <span class="math notranslate nohighlight">\(f(p)\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \int d^4 p ~\delta(p^2 - M^2) \theta(p_0) f(p) &amp;= \int d^3\pbf dp_0 ~\delta(p_0^2 - \pbf^2 - M^2) \theta(p_0) f(p_0, \pbf) \\
+                &amp;= \int d^3\pbf ~\frac{f\left( \sqrt{\pbf^2 + M^2}, \pbf \right)}{2 \sqrt{\pbf^2 + M^2}}
+\end{align*}</div><p>where <span class="math notranslate nohighlight">\(\theta(p_0)\)</span> is the step function defined to be <span class="math notranslate nohighlight">\(0\)</span> if <span class="math notranslate nohighlight">\(p_0 \leq 0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> if <span class="math notranslate nohighlight">\(p_0 &gt; 1\)</span>. It follows that the Lorentz-invariant volume element in the <span class="math notranslate nohighlight">\(3\)</span>-momentum space is <span class="math notranslate nohighlight">\(d^3\pbf / \sqrt{\pbf^2 + M^2}\)</span>. We can use it to find the Lorentz-invariant Dirac delta as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        f(\pbf') &amp;\eqqcolon \int d^3\pbf ~\delta(\pbf' - \pbf) f(\pbf) \\
+                &amp;= \int \frac{d^3\pbf}{\sqrt{\pbf^2 + M^2}} p_0 \delta(\pbf' - \pbf) f(\pbf)
+\end{align*}</div><p>It follows from Lorentz invariance that <span class="math notranslate nohighlight">\(p_0 \delta(\pbf' - \pbf) = k_0 \delta(\kbf' - \kbf)\)</span>. Hence we can finally establish <span class="math notranslate nohighlight">\(\eqref{eq_psi_p3_sigma_orthonormal}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        (\Psi_{p', \sigma'}, \Psi_{p, \sigma}) &amp;= N(p) N(p')^{\ast} (U(L(p')) \Psi_{k', \sigma'}, U(L(p)) \Psi_{k, \sigma}) \\
+                &amp;= |N(p)|^2 \delta_{\sigma' \sigma} \delta(\kbf' - \kbf) \\
+                &amp;= \delta_{\sigma' \sigma} \delta(\pbf' - \pbf)
+\end{align*}</div><p>if we define <span class="math notranslate nohighlight">\(N(p) = \sqrt{k_0 / p_0}\)</span>.</p>
+</section>
 </section>
 </section>
 
@@ -822,7 +878,10 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-particle-states">One-Particle States</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-particle-states">One-Particle States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-to-the-little-group">Reduction to the little group</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
