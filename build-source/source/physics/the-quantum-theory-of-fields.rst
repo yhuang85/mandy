@@ -97,13 +97,13 @@ where :math:`c` is any complex number.
 
 		To see why this is possible, note first that :math:`T[\Psi_0 + \Psi_k] = [\alpha \Psi'_0 + \beta \Psi'_k]`, where :math:`\alpha, \beta` are phase factors, due to :math:`\eqref{eq_t_preserves_probability}` and the basis being orthonormal. Now :math:`[\alpha \Psi'_0 + \beta \Psi'_k] = [\Psi'_0 + (\beta/\alpha) \Psi'_k]` and we can absorb the phase :math:`\beta/\alpha` into the definition of :math:`\Psi'_k`. This is indeed the best one can do, because the last one degree of freedom, which is to multiply all :math:`\Psi'_i` by a phase, cannot be fixed.
 
-	:Step 4: We have so far specified the value of :math:`U` on all of :math:`\Psi_i, i \geq 0`, and :math:`\Psi_0 + \Psi_k, k \geq 1`. Notice that all the coefficients of :math:`\Psi` are real. It is therefore instructive to ask what :math:`\Psi_0 + \i \Psi_1` should be. By the same argument as in the previous step, we can write
+	:Step 4: We have so far specified the value of :math:`U` on all of :math:`\Psi_i, i \geq 0`, and :math:`\Psi_0 + \Psi_k, k \geq 1`. Notice that all the coefficients of :math:`\Psi` are real. It is therefore instructive to ask what :math:`\Psi_0 + \ifrak \Psi_1` should be. By the same argument as in the previous step, we can write
 
 		.. math::
 			:nowrap:
 
 			\begin{equation*}
-				T[\Psi_0 + \i \Psi_1] = [\Psi'_0 + c \Psi'_1]
+				T[\Psi_0 + \ifrak \Psi_1] = [\Psi'_0 + c \Psi'_1]
 			\end{equation*}
 
 		where :math:`c` is a phase. Let's apply :math:`\eqref{eq_t_preserves_probability}` once again as follows
@@ -112,8 +112,8 @@ where :math:`c` is any complex number.
 			:nowrap:
 
 			\begin{align*}
-				\sqrt{2} &= \left| \left( [\Psi_0 + \i \Psi_1], [\Psi_0 + \Psi_1] \right) \right| \\
-					&= \left| \left( T[\Psi_0 + \i \Psi_1], T[\Psi_0 + \Psi_1] \right) \right| \\
+				\sqrt{2} &= \left| \left( [\Psi_0 + \ifrak \Psi_1], [\Psi_0 + \Psi_1] \right) \right| \\
+					&= \left| \left( T[\Psi_0 + \ifrak \Psi_1], T[\Psi_0 + \Psi_1] \right) \right| \\
 					&= \left| \left( [\Psi'_0 + c \Psi'_1], [\Psi'_0 + \Psi'_1] \right) \right| \\
 					&= |1 + c|
 			\end{align*}
@@ -149,11 +149,11 @@ In general we're not interested in just one symmetry transformation, but rather 
 	:nowrap:
 
 	\begin{equation}
-		U(T_2 T_1) \Psi = e^{\i \theta(T_1, T_2, \Psi)} U(T_2) U(T_1) \Psi
+		U(T_2 T_1) \Psi = e^{\ifrak \theta(T_1, T_2, \Psi)} U(T_2) U(T_1) \Psi
 		\label{eq_u_depends_on_psi}
 	\end{equation}
 
-where :math:`\theta(T_1, T_2, \Psi)` is an angle, which depends a priori on :math:`T_1, T_2`, and :math:`\Psi`.
+where :math:`\ifrak = \sqrt{-1}`, and :math:`\theta(T_1, T_2, \Psi)` is an angle, which depends a priori on :math:`T_1, T_2`, and :math:`\Psi`.
 
 It turns out, however, the angle :math:`\theta(T_1, T_2, \Psi)` cannot depend on the state because if we apply :math:`\eqref{eq_u_depends_on_psi}` to the sum of two linearly independent state vectors :math:`\Psi_A + \Psi_B`, then we'll find
 
@@ -161,7 +161,7 @@ It turns out, however, the angle :math:`\theta(T_1, T_2, \Psi)` cannot depend on
 	:nowrap:
 
 	\begin{equation*}
-		e^{\pm \i \theta(\Psi_A)} \Psi_A + e^{\pm \i \theta(\Psi_B)} \Psi_B = e^{\pm \i \theta(\Psi_A + \Psi_B)} (\Psi_A + \Psi_B)
+		e^{\pm \ifrak \theta(\Psi_A)} \Psi_A + e^{\pm \ifrak \theta(\Psi_B)} \Psi_B = e^{\pm \ifrak \theta(\Psi_A + \Psi_B)} (\Psi_A + \Psi_B)
 	\end{equation*}
 
 where we have suppressed the dependency of :math:`\theta` on :math:`T`, and the signs correspond to the cases of :math:`U` being linear or anti-linear, respectively. In any case, it follows that
@@ -170,7 +170,7 @@ where we have suppressed the dependency of :math:`\theta` on :math:`T`, and the 
 	:nowrap:
 
 	\begin{equation*}
-		e^{\pm \i \theta(\Psi_A)} = e^{\pm \i \theta(\Psi_B)} = e^{\pm \i \theta(\Psi_A + \Psi_B)}
+		e^{\pm \ifrak \theta(\Psi_A)} = e^{\pm \ifrak \theta(\Psi_B)} = e^{\pm \ifrak \theta(\Psi_A + \Psi_B)}
 	\end{equation*}
 
 which says nothing but the independence of :math:`\theta` on :math:`\Psi`.
@@ -184,7 +184,7 @@ We can now simplify :math:`\eqref{eq_u_depends_on_psi}` to the following
 	:nowrap:
 
 	\begin{equation}
-		U(T_2 T_1) = e^{\i \theta(T_1, T_2)} U(T_2) U(T_1)
+		U(T_2 T_1) = e^{\ifrak \theta(T_1, T_2)} U(T_2) U(T_1)
 		\label{eq_u_not_depend_on_psi}
 	\end{equation}
 
@@ -206,7 +206,7 @@ In fact, it will be of great importance to just look at the symmetry up to the f
 	:nowrap:
 
 	\begin{equation}
-		U(T(\theta)) = 1 + \i \theta^a u_a + \tfrac{1}{2} \theta^a \theta^b u_{ab} + \cdots
+		U(T(\theta)) = 1 + \ifrak \theta^a u_a + \tfrac{1}{2} \theta^a \theta^b u_{ab} + \cdots
 		\label{eq_u_expansion}
 	\end{equation}
 
@@ -218,11 +218,11 @@ Now let :math:`\eta` be another element of the Lie algebra, and expand both side
 	:nowrap:
 
 	\begin{align*}
-	U(T(\eta)) U(T(\theta)) &= \left( 1 + \i \eta^a u_a + \tfrac{1}{2} \eta^a \eta^b u_{ab} + \cdots \right) \left( 1 + \i \theta^a u_a + \tfrac{1}{2} \theta^a \theta^b u_{ab} + \cdots \right) \\
-		&= 1 + \i (\eta^a + \theta^a) u_a \blue{- \eta^a \theta^b u_a u_b} + \cdots \\
+	U(T(\eta)) U(T(\theta)) &= \left( 1 + \ifrak \eta^a u_a + \tfrac{1}{2} \eta^a \eta^b u_{ab} + \cdots \right) \left( 1 + \ifrak \theta^a u_a + \tfrac{1}{2} \theta^a \theta^b u_{ab} + \cdots \right) \\
+		&= 1 + \ifrak (\eta^a + \theta^a) u_a \blue{- \eta^a \theta^b u_a u_b} + \cdots \\
 	\\
 	U(T(\eta) T(\theta)) &= U \left( 1 + \eta + \theta + f_{ab} \eta^a \theta^b + \cdots \right) \\
-		&= 1 + \blue{\i} \left( \eta^c + \theta^c + \blue{f^c_{ab} \eta^a \theta^b} + \cdots \right) \blue{u_c} + \blue{\tfrac{1}{2}} \left( \blue{\eta^a + \theta^a} + \cdots \right) \left( \blue{\eta^b + \theta^b} + \cdots \right) \blue{u_{ab}} + \cdots
+		&= 1 + \blue{\ifrak} \left( \eta^c + \theta^c + \blue{f^c_{ab} \eta^a \theta^b} + \cdots \right) \blue{u_c} + \blue{\tfrac{1}{2}} \left( \blue{\eta^a + \theta^a} + \cdots \right) \left( \blue{\eta^b + \theta^b} + \cdots \right) \blue{u_{ab}} + \cdots
 	\end{align*}
 
 where :math:`f^c_{ab}` are the coefficients of the expansion of :math:`T(f(\eta, \theta)) = T(\eta) T(\theta)`. Equating the coefficients of :math:`\eta^a \theta^b`, i.e., the terms colored in blue, we get
@@ -231,7 +231,7 @@ where :math:`f^c_{ab}` are the coefficients of the expansion of :math:`T(f(\eta,
 	:nowrap:
 
 	\begin{equation*}
-		-u_a u_b = \i f^c_{ab} u_c + u_{ab} \quad \Longrightarrow \quad u_{ab} = -u_a u_b - \i f^c_{ab} u_c.
+		-u_a u_b = \ifrak f^c_{ab} u_c + u_{ab} \quad \Longrightarrow \quad u_{ab} = -u_a u_b - \ifrak f^c_{ab} u_c.
 	\end{equation*}
 
 It implies that one can calculate the higher-order operator :math:`u_{ab}` from the lower-order ones, assuming of course that we know the structure of the symmetry (Lie) group/algebra. In fact, this bootstrapping procedure can be continued to all orders, but we'll not be bothered about the details.
@@ -242,7 +242,7 @@ Next, note that :math:`u_{ab} = u_{ba}` since they are just partial derivatives.
 	:nowrap:
 
 	\begin{equation*}
-		[u_a, u_b] \coloneqq u_a u_b - u_b u_a = \i (f^c_{ba} - f^c_{ab}) u_c \eqqcolon \i \Gamma^c_{ab} u_c
+		[u_a, u_b] \coloneqq u_a u_b - u_b u_a = \ifrak (f^c_{ba} - f^c_{ab}) u_c \eqqcolon \ifrak \Gamma^c_{ab} u_c
 	\end{equation*}
 
 where the bracket is known as the *Lie bracket* and :math:`\Gamma^c_{ab}` are known as the *structure constants*.
@@ -253,7 +253,7 @@ We conclude the general discussion about continuous symmetry by considering a sp
 	:nowrap:
 
 	\begin{equation}
-		U(T(\theta)) = \lim_{N \to \infty} (U(T(\theta / N)))^N = \lim_{N \to \infty} (1 + \i \theta^a u_a / N)^N = \op{exp}(\i \theta^a u_a)
+		U(T(\theta)) = \lim_{N \to \infty} (U(T(\theta / N)))^N = \lim_{N \to \infty} (1 + \ifrak \theta^a u_a / N)^N = \op{exp}(\ifrak \theta^a u_a)
 		\label{eq_additive_symmetry}
 	\end{equation}
 
@@ -489,11 +489,11 @@ We first postulate that :math:`U(1, 0) = 1` is the identity operator because the
 	:nowrap:
 
 	\begin{equation}
-		U(1 + \omega, \epsilon) = 1 - \i \epsilon^{\mu} P_{\mu} + \tfrac{\i}{2} \omega^{\mu \nu} J_{\mu \nu} + \cdots
+		U(1 + \omega, \epsilon) = 1 - \ifrak \epsilon^{\mu} P_{\mu} + \frac{\ifrak}{2} \omega^{\mu \nu} J_{\mu \nu} + \cdots
 		\label{eq_u_lorentz_expansion}
 	\end{equation}
 
-Here we have inserted :math:`\i` as usual so that the unitarity of :math:`U` implies that both :math:`P_{\mu}` and :math:`J_{\mu \nu}` are Hermitian. Moreover, since :math:`\omega^{\mu \nu}` is anti-symmetric, we can assume the same holds for :math:`J_{\mu \nu}`.
+Here we have inserted :math:`\ifrak` as usual so that the unitarity of :math:`U` implies that both :math:`P_{\mu}` and :math:`J_{\mu \nu}` are Hermitian. Moreover, since :math:`\omega^{\mu \nu}` is anti-symmetric, we can assume the same holds for :math:`J_{\mu \nu}`.
 
 Let's evaluate how the expansion transformations under conjugation
 
@@ -505,8 +505,8 @@ Let's evaluate how the expansion transformations under conjugation
 			&= U(\Lambda, a) U(1 + \omega, \epsilon) U(\Lambda^{-1}, -\Lambda^{-1} a) \\
 			&= U(\Lambda, a) U((1 + \omega) \Lambda^{-1}, \epsilon - (1 + \omega) \Lambda^{-1} a) \\
 			&= U(1 + \Lambda \omega \Lambda^{-1}, \Lambda \epsilon - \Lambda \omega \Lambda^{-1} a) \\
-			&= 1 - \i (\Lambda^{\rho}_{\mu} \epsilon^{\mu} - \Lambda^{\rho}_{\mu} \omega^{\mu \nu} \Lambda_{\nu}^{\kappa} a_{\kappa}) P_{\rho} \
-				+ \tfrac{\i}{2} \Lambda^{\rho}_{\mu} \omega^{\mu \nu} \Lambda_{\nu}^{\kappa} J_{\rho \kappa} + \cdots
+			&= 1 - \ifrak (\Lambda^{\rho}_{\mu} \epsilon^{\mu} - \Lambda^{\rho}_{\mu} \omega^{\mu \nu} \Lambda_{\nu}^{\kappa} a_{\kappa}) P_{\rho} \
+				+ \tfrac{\ifrak}{2} \Lambda^{\rho}_{\mu} \omega^{\mu \nu} \Lambda_{\nu}^{\kappa} J_{\rho \kappa} + \cdots
 	\end{align*}
 
 
@@ -530,8 +530,8 @@ Now that we have named all the players (i.e., :math:`H, \Pbf, \Jbf, \Kbf`) in th
 	:nowrap:
 
 	\begin{align*}
-		\left( \delta_{\mu}^{\rho} + \omega_{\mu}^{\rho} \right) P_{\rho} &= \left( 1 - \i \epsilon^{\nu} P_{\nu} + \tfrac{\i}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) P_{\mu} \left( 1 + \i \epsilon^{\nu} P_{\nu} - \tfrac{\i}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
-			&= P_{\mu} - \i \epsilon^{\nu} [P_{\mu}, P_{\nu}] - \tfrac{\i}{2} \omega^{\rho \kappa} [P_{\mu}, J_{\rho \kappa}]
+		\left( \delta_{\mu}^{\rho} + \omega_{\mu}^{\rho} \right) P_{\rho} &= \left( 1 - \ifrak \epsilon^{\nu} P_{\nu} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) P_{\mu} \left( 1 + \ifrak \epsilon^{\nu} P_{\nu} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
+			&= P_{\mu} - \ifrak \epsilon^{\nu} [P_{\mu}, P_{\nu}] - \tfrac{\ifrak}{2} \omega^{\rho \kappa} [P_{\mu}, J_{\rho \kappa}]
 	\end{align*}
 
 Equating the coefficients of :math:`\epsilon` and :math:`\omega` gives the following
@@ -541,7 +541,7 @@ Equating the coefficients of :math:`\epsilon` and :math:`\omega` gives the follo
 
 	\begin{align}
 		[P_{\mu}, P_{\nu}] &= 0  \label{eq_bracket_p4_p4} \\
-		[P_{\mu}, J_{\rho \kappa}] &= -\i (\eta_{\mu \rho} P_{\kappa} - \eta_{\mu \kappa} P_{\rho})  \label{eq_bracket_p4_j4}
+		[P_{\mu}, J_{\rho \kappa}] &= -\ifrak (\eta_{\mu \rho} P_{\kappa} - \eta_{\mu \kappa} P_{\rho})  \label{eq_bracket_p4_j4}
 	\end{align}
 
 where we've used the identity :math:`\omega_{\mu}^{\rho} P_{\rho} = \eta_{\mu \kappa} \omega^{\rho \kappa} P_{\rho} = \tfrac{1}{2} \omega^{\rho \kappa} (\eta_{\mu \kappa} P_{\rho} - \eta_{\mu \rho} P_{\kappa})`. Now :math:`\eqref{eq_j_conjugated_by_u}` (up to first order) becomes
@@ -551,8 +551,8 @@ where we've used the identity :math:`\omega_{\mu}^{\rho} P_{\rho} = \eta_{\mu \k
 
 	\begin{align*}
 		J_{\mu \nu} + \epsilon_{\nu} P_{\mu} - \epsilon_{\mu} P_{\nu} + \omega_{\mu}^{\rho} J_{\rho \nu} + \omega_{\nu}^{\kappa} J_{\mu \kappa} &= (\delta_{\mu}^{\rho} + \omega_{\mu}^{\rho}) (\delta_{\nu}^{\kappa} + \omega_{\nu}^{\kappa}) (J_{\rho \kappa} + \epsilon_{\kappa} P_{\rho} - \epsilon_{\rho} P_{\kappa}) \\
-		&= \left( 1 - \i \epsilon^{\rho} P_{\rho} + \tfrac{\i}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) J_{\mu \nu} \left( 1 + \i \epsilon^{\rho} P_{\rho} - \tfrac{\i}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
-		&= J_{\mu \nu} - \i \epsilon^{\rho} [P_{\rho}, J_{\mu \nu}] + \tfrac{\i}{2} \omega^{\rho \kappa} [J_{\rho \kappa}, J_{\mu \nu}]
+		&= \left( 1 - \ifrak \epsilon^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) J_{\mu \nu} \left( 1 + \ifrak \epsilon^{\rho} P_{\rho} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
+		&= J_{\mu \nu} - \ifrak \epsilon^{\rho} [P_{\rho}, J_{\mu \nu}] + \tfrac{\ifrak}{2} \omega^{\rho \kappa} [J_{\rho \kappa}, J_{\mu \nu}]
 	\end{align*}
 
 Equating the coefficients of :math:`\epsilon` reproduces :math:`\eqref{eq_bracket_p4_j4}`, but equating the coefficients of :math:`\omega` gives the following additional
@@ -561,7 +561,7 @@ Equating the coefficients of :math:`\epsilon` reproduces :math:`\eqref{eq_bracke
 	:nowrap:
 
 	\begin{equation}
-		[J_{\rho \kappa}, J_{\mu \nu}] = -\i (\eta_{\kappa \mu} J_{\rho \nu} - \eta_{\rho \mu} J_{\kappa \nu} + \eta_{\nu \rho} J_{\mu \kappa} - \eta_{\nu \kappa} J_{\mu \rho})
+		[J_{\rho \kappa}, J_{\mu \nu}] = -\ifrak (\eta_{\kappa \mu} J_{\rho \nu} - \eta_{\rho \mu} J_{\kappa \nu} + \eta_{\nu \rho} J_{\mu \kappa} - \eta_{\nu \kappa} J_{\mu \rho})
 		\label{eq_bracket_j4_j4}
 	\end{equation}
 
@@ -573,13 +573,13 @@ Now that we have all the commutator relations, let's reorganize :math:`\eqref{eq
 	\begin{alignat}{2}
 		\text{let } \mu = 0, \nu = i \text{ in \eqref{eq_bracket_p4_p4}} ~&\Longrightarrow~ [H, P_i] &&= 0  \label{eq_hp_commute} \\
 		\text{let } \mu = 0, \rho = j, \kappa = k \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [H, J_i] &&= 0  \label{eq_hj_commute} \\
-		\text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [H, K_i] &&= \i P_i  \nonumber \\
+		\text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [H, K_i] &&= \ifrak P_i  \nonumber \\
 		\text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} ~&\Longrightarrow~ [P_i, P_j] &&= 0  \label{eq_pp_commute} \\
-		\text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [P_i, J_j] &&= \i \epsilon_{ijk} P_k  \nonumber \\
-		\text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [P_i, K_j] &&= \i \delta_{ij} H  \nonumber \\
-		\text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [J_i, J_j] &&= \i \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
-		\text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [J_i, K_j] &&= -\i \epsilon_{ijk} K_k  \nonumber \\
-		\text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [K_i, K_j] &&= -\i \epsilon_{ijk} J_k  \nonumber
+		\text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [P_i, J_j] &&= \ifrak \epsilon_{ijk} P_k  \nonumber \\
+		\text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [P_i, K_j] &&= \ifrak \delta_{ij} H  \nonumber \\
+		\text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [J_i, J_j] &&= \ifrak \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
+		\text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [J_i, K_j] &&= -\ifrak \epsilon_{ijk} K_k  \nonumber \\
+		\text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [K_i, K_j] &&= -\ifrak \epsilon_{ijk} J_k  \nonumber
  	\end{alignat}
 
 where :math:`\epsilon_{ijk}` is totally anti-symmetric with respect to permutations of indexes and satisfies :math:`\epsilon_{123} = 1`.
@@ -611,7 +611,7 @@ Let's first consider translations :math:`U(1, a)`. Since translations form an ab
 	:nowrap:
 
 	\begin{equation*}
-		U(1, a) \Psi_{p, \sigma} = \op{exp}^{\i a^{\mu} P_{\mu}} \Psi_{p, \sigma} = \op{exp}^{\i a^{\mu} p_{\mu}} \Psi_{p, \sigma}
+		U(1, a) \Psi_{p, \sigma} = \op{exp}^{\ifrak a^{\mu} P_{\mu}} \Psi_{p, \sigma} = \op{exp}^{\ifrak a^{\mu} p_{\mu}} \Psi_{p, \sigma}
 	\end{equation*}
 
 Hence it remains to consider the action of homogeneous Lorentz transformations. For the convenience of notation, let's write :math:`U(\Lambda) \coloneqq U(\Lambda, 0)`. We would first like to know how :math:`U(\Lambda)` affects the :math:`4`-momentum. It follows from the following calculation
@@ -726,9 +726,9 @@ However, the Dirac delta in :math:`\eqref{eq_psi_p4_sigma_orthonormal}` is trick
 		\label{eq_psi_p3_sigma_orthonormal}
 	\end{equation}
 
-Since :math:`\Psi_{p, \sigma}` can be derived from :math:`\Psi_{k, \sigma}` by :math:`\eqref{eq_def_of_one_particle_psi}`, we can first ask :math:`\Psi_{k, \sigma}` to be orthonormal in the sense of :math:`\eqref{eq_psi_p3_sigma_orthonormal}`, where the Dirac delta plays no role, and then figure out how integration works on the mass shell (because Dirac delta is defined by integrals against test functions).
+In fact, the problem eventually boils down to how to define the :math:`3`-momentum space Dirac delta in a Lorentz-invariant manner.
 
-As far as the mass shell integration is concerned, we can temporarily unify the massive and massless cases by allowing :math:`M \geq 0`. Consider a general mass shell integral of an arbitrary test function :math:`f(p)`
+Since :math:`\Psi_{p, \sigma}` can be derived from :math:`\Psi_{k, \sigma}` by :math:`\eqref{eq_def_of_one_particle_psi}`, we can first ask :math:`\Psi_{k, \sigma}` to be orthonormal in the sense of :math:`\eqref{eq_psi_p3_sigma_orthonormal}`, where the Dirac delta plays no role, and then figure out how integration works on the mass shell (because Dirac delta is defined by integrals against test functions). As far as the mass shell integration is concerned, we can temporarily unify the massive and massless cases by allowing :math:`M \geq 0`. Consider a general mass shell integral of an arbitrary test function :math:`f(p)`
 
 .. math::
 	:nowrap:
@@ -738,14 +738,14 @@ As far as the mass shell integration is concerned, we can temporarily unify the 
 			&= \int d^3\pbf ~\frac{f\left( \sqrt{\pbf^2 + M^2}, \pbf \right)}{2 \sqrt{\pbf^2 + M^2}}
 	\end{align*}
 
-where :math:`\theta(p_0)` is the step function defined to be :math:`0` if :math:`p_0 \leq 0` and :math:`1` if :math:`p_0 > 1`. It follows that the Lorentz-invariant volume element in the :math:`3`-momentum space is :math:`d^3\pbf / \sqrt{\pbf^2 + M^2}`. We can use it to find the Lorentz-invariant Dirac delta as follows
+where :math:`\theta(p_0)` is the step function defined to be :math:`0` if :math:`p_0 \leq 0` and :math:`1` if :math:`p_0 > 1`. It follows that the Lorentz-invariant volume element in the :math:`3`-momentum space is :math:`d^3\pbf / \sqrt{\pbf^2 + M^2}`. We can use it to find the Lorentz-invariant Dirac delta (marked in blue) as follows
 
 .. math::
 	:nowrap:
 
 	\begin{align*}
 		f(\pbf') &\eqqcolon \int d^3\pbf ~\delta(\pbf' - \pbf) f(\pbf) \\
-			&= \int \frac{d^3\pbf}{\sqrt{\pbf^2 + M^2}} p_0 \delta(\pbf' - \pbf) f(\pbf)
+			&= \int \frac{d^3\pbf}{\sqrt{\pbf^2 + M^2}} \blue{p_0 \delta(\pbf' - \pbf)} f(\pbf)
 	\end{align*}
 
 It follows from Lorentz invariance that :math:`p_0 \delta(\pbf' - \pbf) = k_0 \delta(\kbf' - \kbf)`. Hence we can finally establish :math:`\eqref{eq_psi_p3_sigma_orthonormal}` as follows
@@ -760,3 +760,122 @@ It follows from Lorentz invariance that :math:`p_0 \delta(\pbf' - \pbf) = k_0 \d
 	\end{align*}
 
 if we define :math:`N(p) = \sqrt{k_0 / p_0}`.
+
+Putting everything together, we've obtained the following grand formula for the Lorentz transformation law
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(\Lambda) \Psi_{p, \sigma} = \sqrt{\frac{(\Lambda p)_0}{p_0}} D_{\sigma \sigma'}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}
+	\end{equation}
+
+where :math:`D_{\sigma \sigma'}` is a unitary representation of the little group, and :math:`W(\Lambda, p)` is defined by :math:`\eqref{eq_w_from_l}`.
+
+Massive particle states
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Recall the standard :math:`4`-momentum :math:`k = (M, 0, 0, 0)` in this case. Obviously the little group here is nothing but the :math:`3`-rotation group :math:`SO(3)`. We can work out :math:`D_{\sigma \sigma'}(\Rcal)` by a rotation :math:`\Rcal \in SO(3)` up to first order as follows.
+
+First write :math:`\Rcal^{ij} = \delta^{ij} + \Theta^{ij}` such that :math:`\Theta` is anti-symmetric. Then expand :math:`D_{\sigma \sigma'} (\Rcal)` according to :math:`\eqref{eq_u_lorentz_expansion}` up to first order as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		D_{\sigma \sigma'} (\Rcal) = \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} (J_{ij})_{\sigma \sigma'}
+	\end{equation*}
+
+where :math:`J_{ij}` is a collection of Hermitian operators that satisfy :math:`J_{ij} = -J_{ji}` and the commutation relations :math:`\eqref{eq_jjj_commutation}`. It turns out that there exists an infinite number of such unitary representations indexed by nonnegative half-integers :math:`\jfrak = 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \cdots`, each of which has dimension :math:`2\jfrak + 1`. Choosing the :math:`3`-axis as the preferred axis of (definite) spin, we can summarize the result as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		D^{(\jfrak)}_{\sigma \sigma'} (\Rcal) &= \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} \left( J^{(\jfrak)}_{ij} \right)_{\sigma \sigma'}  \nonumber \\
+		\left( J^{(\jfrak)}_{23} \pm \ifrak J^{(\jfrak)}_{31} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_1 \pm \ifrak J^{(\jfrak)}_2 \right)_{\sigma \sigma'} &= \delta_{\sigma, \sigma' \pm 1} \sqrt{(\jfrak \mp \sigma')(\jfrak \pm \sigma' + 1)}  \label{eq_j1_j2_matrix} \\
+		\left( J^{(\jfrak)}_{12} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_3 \right)_{\sigma \sigma'} &= \sigma \delta_{\sigma \sigma'}  \label{eq_j3_matrix}
+	\end{align}
+
+where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1, \cdots, \jfrak - 1, \jfrak`.
+
+.. dropdown:: Representations of angular momenta
+	:animate: fade-in-slide-down
+
+	Recall from :math:`\eqref{eq_jjj_commutation}` that the (quantum) angular momenta vector :math:`\Jbf` satisfy the commutation relations :math:`[J_i, J_j] = \ifrak \epsilon_{ijk} J_k`. Hence they cannot be simultaneously diagonalized. It's then a convention to use the angular momentum along the :math:`3`-axis to label the spin. The following two identities are straightforward but important
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			[\Jbf^2, J_i] &= 0, ~~i = 1, 2, 3 \\
+			[J_3, J_1 \pm \ifrak J_2] &= \pm (J_1 \pm \ifrak J_2)
+		\end{align*}
+
+	where :math:`\Jbf^2 = J_1^2 + J_2^2 + J_3^2` as usual.
+
+	Now if :math:`\Psi_{\sigma}` is an eigenstate of :math:`J_3` with eigenvalue :math:`\sigma`, then
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			J_3 (J_1 \pm \ifrak J_2) \Psi_{\sigma} = [J_3, J_1 \pm \ifrak J_2] \Psi_{\sigma} + (J_1 \pm \ifrak J_2) J_3 \Psi_{\sigma} = (\sigma \pm 1) \Psi_{\sigma}
+			\label{eq_j1_j2_raises_or_lowers_state}
+		\end{equation}
+
+	In other words, applying :math:`J_1 \pm \ifrak J_2` to any eigenstate of :math:`J_3` raises or lowers the eigenvalue by one, and henceforth they are called *raising* and *lowering* operators, respectively. Moreover, since :math:`\Jbf^2` commutes with :math:`J_3`, we may assume that :math:`\Psi_m` is also an eigenstate of :math:`\Jbf^2`, and since :math:`\Jbf^2` also commutes with :math:`J_1 \pm \ifrak J_2`, the whole series of :math:`J_3`-eigenstates obtained by applying raising and/or lowering operators has the same :math:`\Jbf^2`-eigenvalue.
+
+	We are only interested in eigenstates with finite :math:`\Jbf^2`-eigenvalue. So both the raising and the lowering operations must stop after finite steps. Let :math:`\Psi_{\jfrak}` be the :math:`J_3`-eigenstate with the highest eigenvalue (if there are more than one, the representation is reducible). By repeatedly applying the lowering operator to :math:`\Psi_{\jfrak}`, we'll eventually reach the eigenstate :math:`\Psi_{\jfrak'}` with the lowest eigenvalue. Since the lowering operator decreases the eigenvalue by one, we know that :math:`\jfrak - \jfrak'` must be an integer.
+
+	Let's consider the following two operators
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			(J_1 - \ifrak J_2) (J_1 + \ifrak J_2) &= J_1^2 + J_2^2 + \ifrak [J_1, J_2] = \Jbf^2 - J_3^2 - J_3  \label{eq_j1_j2_mixed_product_plus} \\
+			(J_1 + \ifrak J_2) (J_1 - \ifrak J_2) &= J_1^2 + J_2^2 - \ifrak [J_1, J_2] = \Jbf^2 - J_3^2 + J_3  \label{eq_j1_j2_mixed_product_minus}
+		\end{align}
+
+	Note that the first operator annihilates :math:`\Psi_{\jfrak}` and the second operator annihilates :math:`\Psi_{\jfrak'}` by assumption, which, together with the fact that :math:`\Jbf^2 \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'}`, implies
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\Jbf^2 \Psi_{\jfrak} = (\jfrak^2 + \jfrak) \Psi_{\jfrak} = ((\jfrak')^2 - \jfrak') \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'} ~\Longrightarrow~ \jfrak (\jfrak + 1) = \jfrak' (\jfrak' - 1)
+		\end{equation*}
+
+	The equation has two potential solutions, either :math:`\jfrak' = \jfrak + 1` or :math:`\jfrak = -\jfrak'`. The first option violates the maximality of :math:`\jfrak`, and so we must accept the second option. Since we also know :math:`\jfrak - \jfrak'` must be integral, we conclude that :math:`\jfrak` is itself a half-integer.
+
+	It remains to settle the constant term on the right-hand-side of :math:`\eqref{eq_j1_j2_matrix}`. By :math:`\eqref{eq_j1_j2_raises_or_lowers_state}` we can assume
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma} = \alpha_{\pm}(\jfrak, \sigma) \Psi_{\sigma \pm 1}
+		\end{equation*}
+
+	Applying :math:`\eqref{eq_j1_j2_mixed_product_plus}` and :math:`\eqref{eq_j1_j2_mixed_product_minus}` to :math:`\Psi_{\sigma}` then implies
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\alpha_{\mp} (\jfrak, \sigma \pm 1) \alpha_{\pm} (\jfrak, \sigma) = \jfrak^2 + \jfrak - \sigma^2 \mp \sigma
+		\end{equation*}
+
+	Now we use the fact that :math:`J_i, i = 1, 2, 3`, are Hermitian operators to calculate
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			|\alpha_{\pm} (\jfrak, \sigma)|^2 (\Psi_{\sigma}, \Psi_{\sigma}) &= \left( \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma}, \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma} \right) \\
+				&= \left( \Psi_{\sigma}, \left( J_1^{(\jfrak)} \mp \ifrak J_2^{(\jfrak)} \right) \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma} \right) \\
+				&= (\jfrak^2 + \jfrak - \sigma^2 \mp \sigma) (\Psi_{\sigma}, \Psi_{\sigma})
+		\end{align*}
+
+	It follows that, up to a choice of phase, :math:`\alpha_{\pm} (\jfrak, \sigma) = \sqrt{\jfrak^2 + \jfrak - \sigma^2 \mp \sigma} = \sqrt{(j \mp \sigma)(j \pm \sigma + 1)}`, which confirms :math:`\eqref{eq_j1_j2_matrix}`.
