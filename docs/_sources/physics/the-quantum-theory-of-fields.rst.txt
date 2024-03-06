@@ -307,10 +307,10 @@ where
 	.. math::
 		:nowrap:
 
-		\begin{align*}
-			\pbf &= m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(|\vbf|^3) \\
-			E &= m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(|\vbf|^4)
-		\end{align*}
+		\begin{align}
+			\pbf &= m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(|\vbf|^3)  \label{eq_p_from_v} \\
+			E &= m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(|\vbf|^4)  \nonumber
+		\end{align}
 
 More precisely, by a Lorentz transformation we mean an inhomogeneous linear transformation
 
@@ -384,12 +384,13 @@ Then using :math:`\eqref{eq_homogeneous_lorentz_transformation}`, we get
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		1 = -\eta^{\mu \nu} \Lambda^0_{\mu} \Lambda^0_{\nu} = (\Lambda^0_0)^2 - \Lambda^0_i \Lambda^0_i = (1 - \vbf^2) (\Lambda^0_0)^2 \
-			~\Longrightarrow~ \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}}
-	\end{equation*}
+			~\Longrightarrow~ \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}} \eqqcolon \gamma
+			\label{eq_def_gamma}
+	\end{equation}
 
-assuming :math:`\Lambda` is proper orthochronous. It's customary to write :math:`\gamma \coloneqq 1 / \sqrt{1 - \vbf^2}` so that
+assuming :math:`\Lambda` is proper orthochronous. It follows that
 
 .. math::
 	:nowrap:
@@ -405,10 +406,10 @@ The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely d
 	:nowrap:
 
 	\begin{alignat}{2}
-		t' &=  \Lambda_0^{\mu} x_{\mu} &&= \gamma (t - v_3 x_3)  \nonumber \\
+		t' &=  \Lambda_0^{\mu} x_{\mu} &&= \gamma (t + v_3 x_3)  \nonumber \\
 		x'_1 &= \Lambda_1^{\mu} x_{\mu} &&= x_1  \nonumber \\
 		x'_2 &= \Lambda_2^{\mu} x_{\mu} &&= x_2  \nonumber \\
-		x'_3 &= \Lambda_3^{\mu} x_{\mu} &&= \gamma (x_3 - v_3 t)
+		x'_3 &= \Lambda_3^{\mu} x_{\mu} &&= \gamma (x_3 + v_3 t)
 		\label{eq_lambda_in_3_axis}
 	\end{alignat}
 
@@ -423,11 +424,11 @@ The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely d
 		:nowrap:
 
 		\begin{align*}
-			\Lambda x &= (\gamma (t - v_3 x_3), x_1, x_2, \gamma(x_3 - v_3 t))  \\
-			\Lambda y &= (\gamma (t' - v_3 y_3), y_1, y_2, \gamma(y_3 - v_3 t'))
+			\Lambda x &= (\gamma (t + v_3 x_3), x_1, x_2, \gamma(x_3 + v_3 t))  \\
+			\Lambda y &= (\gamma (t' + v_3 y_3), y_1, y_2, \gamma(y_3 + v_3 t'))
 		\end{align*}
 
-	respectively. Setting the equal-time condition :math:`(\Lambda x)_0 = (\Lambda y)_0` gives :math:`t' = t - v_3 (x_3 - y_3)`. Substituting it into :math:`(\Lambda x)_3` and :math:`(\Lambda y)_3` then gives
+	respectively. Setting the equal-time condition :math:`(\Lambda x)_0 = (\Lambda y)_0` gives :math:`t' = t + v_3 (x_3 - y_3)`. Substituting it into :math:`(\Lambda x)_3` and :math:`(\Lambda y)_3` then gives
 
 	.. math::
 		:nowrap:
@@ -450,7 +451,7 @@ Finally, one can apply a rotation to :math:`\eqref{eq_lambda_in_3_axis}` to get 
 		\label{eq_general_lambda_in_spacetime}
 	\end{equation}
 
-for :math:`1 \leq i, j \leq 3`, which together with :math:`\eqref{eq_lambda_boost}` gives the general formula for :math:`\Lambda`.
+for :math:`1 \leq i, j \leq 3`, which, together with :math:`\eqref{eq_lambda_boost}` and :math:`\Lambda_0^i = \Lambda_i^0,` gives the general formula for :math:`\Lambda`.
 
 .. note::
 	Any Lorentz transformation can be written as the composition of a boost followed by a rotation.
@@ -679,7 +680,16 @@ where :math:`N(p)` is a normalization factor to be determined later. In this way
 
 so that :math:`L(\Lambda p)^{-1} \Lambda L(p)` maps :math:`k` to itself, and hence :math:`U(L(\Lambda p)^{-1} \Lambda L(p))` acts solely on :math:`\sigma`.
 
-At this point, we have reduced the problem to the classification of representations of the so-called *little group* defined as the subgroup of (proper orthochronous) Lorentz transformations :math:`W` that fixes :math:`k`, i.e., :math:`W_{\mu}^{\nu} k_{\nu} = k_{\mu}`. More precisely, the task now is to find (unitary) representations :math:`D(W)` such that :math:`D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}`. Once this is done, we can define
+At this point, we have reduced the problem to the classification of representations of the so-called *little group* defined as the subgroup of (proper orthochronous) Lorentz transformations :math:`W` that fixes :math:`k`, i.e., :math:`W_{\mu}^{\nu} k_{\nu} = k_{\mu}`. Element in the little group is known as `Wigner rotation <https://en.wikipedia.org/wiki/Wigner_rotation>`__ (and hence :math:`W`). More precisely, the task now is to find (unitary) representations :math:`D(W)` such that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}
+	\end{equation*}
+
+Once this is done, we can define
 
 .. math::
 	:nowrap:
@@ -777,7 +787,7 @@ Massive particle states
 
 Recall the standard :math:`4`-momentum :math:`k = (M, 0, 0, 0)` in this case. Obviously the little group here is nothing but the :math:`3`-rotation group :math:`SO(3)`. We can work out :math:`D_{\sigma \sigma'}(\Rcal)` by a rotation :math:`\Rcal \in SO(3)` up to first order as follows.
 
-First write :math:`\Rcal^{ij} = \delta^{ij} + \Theta^{ij}` such that :math:`\Theta` is anti-symmetric. Then expand :math:`D_{\sigma \sigma'} (\Rcal)` according to :math:`\eqref{eq_u_lorentz_expansion}` up to first order as follows
+First write :math:`\Rcal^{ij} = \delta^{ij} + \Theta^{ij}` such that :math:`\Theta` is anti-symmetric. Then expand :math:`D_{\sigma \sigma'} (\Rcal)` similar to :math:`\eqref{eq_u_lorentz_expansion}` up to first order as follows
 
 .. math::
 	:nowrap:
@@ -879,3 +889,47 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 		\end{align*}
 
 	It follows that, up to a choice of phase, :math:`\alpha_{\pm} (\jfrak, \sigma) = \sqrt{\jfrak^2 + \jfrak - \sigma^2 \mp \sigma} = \sqrt{(j \mp \sigma)(j \pm \sigma + 1)}`, which confirms :math:`\eqref{eq_j1_j2_matrix}`.
+
+We end the discussion about massive particle states by working out the little group elements :math:`W(\Lambda, p)` defined by :math:`\eqref{eq_w_from_l}`. To this end, it suffices to work out the standard :math:`L(p)` such that :math:`L(p) k = p`, where :math:`k = (M, 0, 0, 0)`. We have already worked out such a transformation in :math:`\eqref{eq_lambda_boost}` and :math:`\eqref{eq_general_lambda_in_spacetime}` in spacetime coordinates, so we only need to translate it into :math:`4`-momentum coordinates.
+
+Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :math:`\eqref{eq_def_gamma}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} ~\Longrightarrow~ \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M}
+	\end{equation*}
+
+It follows that [#boost_in_p_formula]_
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		L(p)_0^0 &= \gamma \\
+		L(p)_i^0 = L(p)_0^i &= \frac{p_i}{M} \\
+		L(p)_i^j &= \delta_i^j + \frac{p_i p_j}{\pbf^2} (\gamma - 1)
+	\end{align*}
+
+Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:`3`-rotation, then :math:`W(\Rcal, p) = \Rcal` for any :math:`p`. To see this, we'll work out how :math:`W(\Rcal, p)` acts on :math:`(1, \mathbf{0}), (0, \pbf)`, and :math:`(0, \qbf)`, respectively, where :math:`\qbf` is any :math:`3`-vector perpendicular to :math:`\pbf`, as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat*}{2}
+		W(\Rcal, p)(1, \mathbf{0}) &= L(\Rcal p)^{-1} \Rcal (\gamma, \pbf / M) &&= L(\Rcal p)^{-1} (\gamma, \Rcal p / M) &&= (1, \mathbf{0}) \\
+		W(\Rcal, p)(0, \pbf) &= L(\Rcal p)^{-1} \Rcal (\pbf^2 / M, \gamma \pbf) &&= L(\Rcal p)^{-1} (\pbf^2 / M, \gamma \Rcal p) &&= (0, \Rcal \pbf) \\
+		W(\Rcal, p)(0, \qbf) &= L(\Rcal p)^{-1} \Rcal (0, \qbf) &&= L(\Rcal p)^{-1} (0, \Rcal \qbf) &&= (0, \Rcal \qbf)
+	\end{alignat*}
+
+where we have used that fact that :math:`\gamma` is :math:`\Rcal`-invariant.
+
+This observation is important since it implies that non-relativistic calculations about spins, such as the `Clebsch-Gordan coefficients <https://en.wikipedia.org/wiki/Clebsch%E2%80%93Gordan_coefficients>`__, can be literally carried over to the quantum setting.
+
+.. todo::
+	Review Clebsch-Gordan coefficients.
+
+.. rubric:: Footnotes
+
+.. [#boost_in_p_formula] The formula in [Wei95]_ page 68, eq. (2.5.24) is wrong.

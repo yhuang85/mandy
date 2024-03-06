@@ -566,10 +566,10 @@ Einstein’s special theory of relativity<div class="sd-summary-down docutils">
 \end{equation*}</div><p class="sd-card-text">which looks just like <span class="math notranslate nohighlight">\(\eqref{eq_proper_time}\)</span>, and indeed, the mass (in our convention) is invariant in all inertial frames.</p>
 <p class="sd-card-text">One can also recover Newtonian mechanics at the low-speed limit (i.e., <span class="math notranslate nohighlight">\(|\vbf| \ll 1\)</span>) using <span class="math notranslate nohighlight">\(d\tau / dt = \sqrt{1 - \vbf^2}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
-\begin{align*}
-        \pbf &amp;= m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(|\vbf|^3) \\
-        E &amp;= m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(|\vbf|^4)
-\end{align*}</div></div>
+\begin{align}
+        \pbf &amp;= m d\xbf / d\tau = \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(|\vbf|^3)  \label{eq_p_from_v} \\
+        E &amp;= m dt / d\tau = m + \tfrac{1}{2} m \vbf^2 + O(|\vbf|^4)  \nonumber
+\end{align}</div></div>
 </details><p>More precisely, by a Lorentz transformation we mean an inhomogeneous linear transformation</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -603,10 +603,11 @@ Einstein’s special theory of relativity<div class="sd-summary-down docutils">
         dt' = \Lambda^0_0 dt, \quad dx'_i = \Lambda^0_i dt ~\Longrightarrow~ \Lambda^0_i = v_i \Lambda^0_0
 \end{equation*}</div><p>Then using <span class="math notranslate nohighlight">\(\eqref{eq_homogeneous_lorentz_transformation}\)</span>, we get</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         1 = -\eta^{\mu \nu} \Lambda^0_{\mu} \Lambda^0_{\nu} = (\Lambda^0_0)^2 - \Lambda^0_i \Lambda^0_i = (1 - \vbf^2) (\Lambda^0_0)^2 \
-                ~\Longrightarrow~ \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}}
-\end{equation*}</div><p>assuming <span class="math notranslate nohighlight">\(\Lambda\)</span> is proper orthochronous. It’s customary to write <span class="math notranslate nohighlight">\(\gamma \coloneqq 1 / \sqrt{1 - \vbf^2}\)</span> so that</p>
+                ~\Longrightarrow~ \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}} \eqqcolon \gamma
+                \label{eq_def_gamma}
+\end{equation}</div><p>assuming <span class="math notranslate nohighlight">\(\Lambda\)</span> is proper orthochronous. It follows that</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \Lambda^0_0 = \gamma, \quad \Lambda^0_i = \gamma v_i
@@ -614,10 +615,10 @@ Einstein’s special theory of relativity<div class="sd-summary-down docutils">
 \end{equation}</div><p>The other components <span class="math notranslate nohighlight">\(\Lambda^i_j, 1 \leq i, j \leq 3\)</span>, are not uniquely determined because a composition with a (spatial) rotation about the direction of <span class="math notranslate nohighlight">\(\vbf\)</span> has no effect on <span class="math notranslate nohighlight">\(\vbf\)</span>. To make it easier, one can apply a rotation so that <span class="math notranslate nohighlight">\(\vbf\)</span> aligns with the <span class="math notranslate nohighlight">\(3\)</span>-axis. Then an obvious choice of <span class="math notranslate nohighlight">\(\Lambda\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \begin{alignat}{2}
-        t' &amp;=  \Lambda_0^{\mu} x_{\mu} &amp;&amp;= \gamma (t - v_3 x_3)  \nonumber \\
+        t' &amp;=  \Lambda_0^{\mu} x_{\mu} &amp;&amp;= \gamma (t + v_3 x_3)  \nonumber \\
         x'_1 &amp;= \Lambda_1^{\mu} x_{\mu} &amp;&amp;= x_1  \nonumber \\
         x'_2 &amp;= \Lambda_2^{\mu} x_{\mu} &amp;&amp;= x_2  \nonumber \\
-        x'_3 &amp;= \Lambda_3^{\mu} x_{\mu} &amp;&amp;= \gamma (x_3 - v_3 t)
+        x'_3 &amp;= \Lambda_3^{\mu} x_{\mu} &amp;&amp;= \gamma (x_3 + v_3 t)
         \label{eq_lambda_in_3_axis}
 \end{alignat}</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
@@ -630,9 +631,9 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 <p class="sd-card-text">To be more concrete, let’s consider a rode of some fixed length. To measure the length, the measurement must be done <em>simultaneously</em> at the two ends of the rod. This constraint causes not much trouble in a rest frame, but must be taken care of in a moving frame since being simultaneous is not a Lorentz invariant property. Let <span class="math notranslate nohighlight">\(x = (t, \xbf)\)</span> and <span class="math notranslate nohighlight">\(y = (t', \ybf)\)</span> be the two endpoints of the rod in the rest frame, so that the length is <span class="math notranslate nohighlight">\(|\xbf - \ybf|\)</span> regardless of whether <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t'\)</span> are the same or not. Under the Lorentz transformation defined in <span class="math notranslate nohighlight">\(\eqref{eq_lambda_in_3_axis}\)</span>, they become</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        \Lambda x &amp;= (\gamma (t - v_3 x_3), x_1, x_2, \gamma(x_3 - v_3 t))  \\
-        \Lambda y &amp;= (\gamma (t' - v_3 y_3), y_1, y_2, \gamma(y_3 - v_3 t'))
-\end{align*}</div><p class="sd-card-text">respectively. Setting the equal-time condition <span class="math notranslate nohighlight">\((\Lambda x)_0 = (\Lambda y)_0\)</span> gives <span class="math notranslate nohighlight">\(t' = t - v_3 (x_3 - y_3)\)</span>. Substituting it into <span class="math notranslate nohighlight">\((\Lambda x)_3\)</span> and <span class="math notranslate nohighlight">\((\Lambda y)_3\)</span> then gives</p>
+        \Lambda x &amp;= (\gamma (t + v_3 x_3), x_1, x_2, \gamma(x_3 + v_3 t))  \\
+        \Lambda y &amp;= (\gamma (t' + v_3 y_3), y_1, y_2, \gamma(y_3 + v_3 t'))
+\end{align*}</div><p class="sd-card-text">respectively. Setting the equal-time condition <span class="math notranslate nohighlight">\((\Lambda x)_0 = (\Lambda y)_0\)</span> gives <span class="math notranslate nohighlight">\(t' = t + v_3 (x_3 - y_3)\)</span>. Substituting it into <span class="math notranslate nohighlight">\((\Lambda x)_3\)</span> and <span class="math notranslate nohighlight">\((\Lambda y)_3\)</span> then gives</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         |(\Lambda x)_3 - (\Lambda y)_3| = \gamma |x_3 - y_3 - v_3^2 (x_3 - y_3)| = \frac{|x_3 - y_3|}{\gamma} &lt; |x_3 - y_3|
@@ -644,7 +645,7 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 \begin{equation}
         \Lambda_{ij} = \delta_{ij} + \frac{v_i v_j}{\vbf^2} (\gamma - 1)
         \label{eq_general_lambda_in_spacetime}
-\end{equation}</div><p>for <span class="math notranslate nohighlight">\(1 \leq i, j \leq 3\)</span>, which together with <span class="math notranslate nohighlight">\(\eqref{eq_lambda_boost}\)</span> gives the general formula for <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
+\end{equation}</div><p>for <span class="math notranslate nohighlight">\(1 \leq i, j \leq 3\)</span>, which, together with <span class="math notranslate nohighlight">\(\eqref{eq_lambda_boost}\)</span> and <span class="math notranslate nohighlight">\(\Lambda_0^i = \Lambda_i^0,\)</span> gives the general formula for <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Any Lorentz transformation can be written as the composition of a boost followed by a rotation.</p>
@@ -800,7 +801,11 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
         N(p) U(L(\Lambda p)) U(L(\Lambda p)^{-1} \Lambda L(p)) \Psi_{k, \sigma}
         \label{eq_def_of_one_particle_psi_refactored}
 \end{equation}</div><p>so that <span class="math notranslate nohighlight">\(L(\Lambda p)^{-1} \Lambda L(p)\)</span> maps <span class="math notranslate nohighlight">\(k\)</span> to itself, and hence <span class="math notranslate nohighlight">\(U(L(\Lambda p)^{-1} \Lambda L(p))\)</span> acts solely on <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
-<p>At this point, we have reduced the problem to the classification of representations of the so-called <em>little group</em> defined as the subgroup of (proper orthochronous) Lorentz transformations <span class="math notranslate nohighlight">\(W\)</span> that fixes <span class="math notranslate nohighlight">\(k\)</span>, i.e., <span class="math notranslate nohighlight">\(W_{\mu}^{\nu} k_{\nu} = k_{\mu}\)</span>. More precisely, the task now is to find (unitary) representations <span class="math notranslate nohighlight">\(D(W)\)</span> such that <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}\)</span>. Once this is done, we can define</p>
+<p>At this point, we have reduced the problem to the classification of representations of the so-called <em>little group</em> defined as the subgroup of (proper orthochronous) Lorentz transformations <span class="math notranslate nohighlight">\(W\)</span> that fixes <span class="math notranslate nohighlight">\(k\)</span>, i.e., <span class="math notranslate nohighlight">\(W_{\mu}^{\nu} k_{\nu} = k_{\mu}\)</span>. Element in the little group is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Wigner_rotation">Wigner rotation</a> (and hence <span class="math notranslate nohighlight">\(W\)</span>). More precisely, the task now is to find (unitary) representations <span class="math notranslate nohighlight">\(D(W)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}
+\end{equation*}</div><p>Once this is done, we can define</p>
 <div class="math notranslate nohighlight">
 \begin{align}
         U(W) \Psi_{k, \sigma} &amp;\coloneqq D_{\sigma \sigma'}(W) \Psi_{k, \sigma'}  \label{eq_d_repr_of_little_group} \\
@@ -851,7 +856,7 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 <section id="massive-particle-states">
 <h3>Massive particle states<a class="headerlink" href="#massive-particle-states" title="Link to this heading">#</a></h3>
 <p>Recall the standard <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(k = (M, 0, 0, 0)\)</span> in this case. Obviously the little group here is nothing but the <span class="math notranslate nohighlight">\(3\)</span>-rotation group <span class="math notranslate nohighlight">\(SO(3)\)</span>. We can work out <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}(\Rcal)\)</span> by a rotation <span class="math notranslate nohighlight">\(\Rcal \in SO(3)\)</span> up to first order as follows.</p>
-<p>First write <span class="math notranslate nohighlight">\(\Rcal^{ij} = \delta^{ij} + \Theta^{ij}\)</span> such that <span class="math notranslate nohighlight">\(\Theta\)</span> is anti-symmetric. Then expand <span class="math notranslate nohighlight">\(D_{\sigma \sigma'} (\Rcal)\)</span> according to <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span> up to first order as follows</p>
+<p>First write <span class="math notranslate nohighlight">\(\Rcal^{ij} = \delta^{ij} + \Theta^{ij}\)</span> such that <span class="math notranslate nohighlight">\(\Theta\)</span> is anti-symmetric. Then expand <span class="math notranslate nohighlight">\(D_{\sigma \sigma'} (\Rcal)\)</span> similar to <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span> up to first order as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         D_{\sigma \sigma'} (\Rcal) = \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} (J_{ij})_{\sigma \sigma'}
@@ -908,7 +913,37 @@ Representations of angular momenta<div class="sd-summary-down docutils">
                 &amp;= (\jfrak^2 + \jfrak - \sigma^2 \mp \sigma) (\Psi_{\sigma}, \Psi_{\sigma})
 \end{align*}</div><p class="sd-card-text">It follows that, up to a choice of phase, <span class="math notranslate nohighlight">\(\alpha_{\pm} (\jfrak, \sigma) = \sqrt{\jfrak^2 + \jfrak - \sigma^2 \mp \sigma} = \sqrt{(j \mp \sigma)(j \pm \sigma + 1)}\)</span>, which confirms <span class="math notranslate nohighlight">\(\eqref{eq_j1_j2_matrix}\)</span>.</p>
 </div>
-</details></section>
+</details><p>We end the discussion about massive particle states by working out the little group elements <span class="math notranslate nohighlight">\(W(\Lambda, p)\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_w_from_l}\)</span>. To this end, it suffices to work out the standard <span class="math notranslate nohighlight">\(L(p)\)</span> such that <span class="math notranslate nohighlight">\(L(p) k = p\)</span>, where <span class="math notranslate nohighlight">\(k = (M, 0, 0, 0)\)</span>. We have already worked out such a transformation in <span class="math notranslate nohighlight">\(\eqref{eq_lambda_boost}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_general_lambda_in_spacetime}\)</span> in spacetime coordinates, so we only need to translate it into <span class="math notranslate nohighlight">\(4\)</span>-momentum coordinates.</p>
+<p>Using <span class="math notranslate nohighlight">\(\eqref{eq_p_from_v}\)</span>, we can rewrite <span class="math notranslate nohighlight">\(\gamma\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_def_gamma}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} ~\Longrightarrow~ \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M}
+\end{equation*}</div><p>It follows that <a class="footnote-reference brackets" href="#boost-in-p-formula" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        L(p)_0^0 &amp;= \gamma \\
+        L(p)_i^0 = L(p)_0^i &amp;= \frac{p_i}{M} \\
+        L(p)_i^j &amp;= \delta_i^j + \frac{p_i p_j}{\pbf^2} (\gamma - 1)
+\end{align*}</div><p>Finally, we note an important fact that when <span class="math notranslate nohighlight">\(\Lambda = \Rcal\)</span> is a <span class="math notranslate nohighlight">\(3\)</span>-rotation, then <span class="math notranslate nohighlight">\(W(\Rcal, p) = \Rcal\)</span> for any <span class="math notranslate nohighlight">\(p\)</span>. To see this, we’ll work out how <span class="math notranslate nohighlight">\(W(\Rcal, p)\)</span> acts on <span class="math notranslate nohighlight">\((1, \mathbf{0}), (0, \pbf)\)</span>, and <span class="math notranslate nohighlight">\((0, \qbf)\)</span>, respectively, where <span class="math notranslate nohighlight">\(\qbf\)</span> is any <span class="math notranslate nohighlight">\(3\)</span>-vector perpendicular to <span class="math notranslate nohighlight">\(\pbf\)</span>, as follows</p>
+<div class="math notranslate nohighlight">
+\begin{alignat*}{2}
+        W(\Rcal, p)(1, \mathbf{0}) &amp;= L(\Rcal p)^{-1} \Rcal (\gamma, \pbf / M) &amp;&amp;= L(\Rcal p)^{-1} (\gamma, \Rcal p / M) &amp;&amp;= (1, \mathbf{0}) \\
+        W(\Rcal, p)(0, \pbf) &amp;= L(\Rcal p)^{-1} \Rcal (\pbf^2 / M, \gamma \pbf) &amp;&amp;= L(\Rcal p)^{-1} (\pbf^2 / M, \gamma \Rcal p) &amp;&amp;= (0, \Rcal \pbf) \\
+        W(\Rcal, p)(0, \qbf) &amp;= L(\Rcal p)^{-1} \Rcal (0, \qbf) &amp;&amp;= L(\Rcal p)^{-1} (0, \Rcal \qbf) &amp;&amp;= (0, \Rcal \qbf)
+\end{alignat*}</div><p>where we have used that fact that <span class="math notranslate nohighlight">\(\gamma\)</span> is <span class="math notranslate nohighlight">\(\Rcal\)</span>-invariant.</p>
+<p>This observation is important since it implies that non-relativistic calculations about spins, such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Clebsch%E2%80%93Gordan_coefficients">Clebsch-Gordan coefficients</a>, can be literally carried over to the quantum setting.</p>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>Review Clebsch-Gordan coefficients.</p>
+</div>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="boost-in-p-formula" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
+<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id7"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
+</aside>
+</aside>
+</section>
 </section>
 </section>
 
