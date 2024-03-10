@@ -549,6 +549,7 @@ U(T(\eta) T(\theta)) &amp;= U \left( 1 + \eta + \theta + f_{ab} \eta^a \theta^b 
 <li><p>We will follow the common convention in physics that greek letters such as <span class="math notranslate nohighlight">\(\mu, \nu, \dots\)</span> run from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(3\)</span>, while roman letters such as <span class="math notranslate nohighlight">\(i, j, \dots\)</span> run from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(3\)</span>.</p></li>
 <li><p>We often write <span class="math notranslate nohighlight">\(x\)</span> for a spacetime point <span class="math notranslate nohighlight">\((x_0, x_1, x_2, x_3)\)</span>, and <span class="math notranslate nohighlight">\(\xbf\)</span> for a spatial point <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span>.</p></li>
 <li><p>Matrix/Tensor indexes can will be raised or lowered using <span class="math notranslate nohighlight">\(\eta\)</span>. For example <span class="math notranslate nohighlight">\(dx^0 = \eta^{0 \mu} dx_{\mu} = -dx_0\)</span>.</p></li>
+<li><p>Einstein’s summation convention is implicitly applied, i.e., upper and lower indexes of the same label are summed up. <em>The same label that appears both as upper or lower indexes are considered illegal expression.</em> This is particularly important because otherwise we’d run into troublesome expressions such as <span class="math notranslate nohighlight">\(x_{\mu} x_{\mu} = x_0^2 + x_1^2 + x_2^2 + x_3^2\)</span>.</p></li>
 </ol>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
@@ -584,10 +585,17 @@ Einstein’s special theory of relativity<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \begin{equation*}
         L(\Lambda', a') L(\Lambda, a) x = L(\Lambda', a')(\Lambda x + a) = \Lambda' \Lambda x + \Lambda' a + a' = L(\Lambda' \Lambda, \Lambda' a + a') x
-\end{equation*}</div><p>Taking determinant on <span class="math notranslate nohighlight">\(\eqref{eq_homogeneous_lorentz_transformation}\)</span> implies that <span class="math notranslate nohighlight">\(\op{det}(\Lambda) = \pm 1\)</span>, and setting <span class="math notranslate nohighlight">\(\mu = \nu = 0\)</span> implies that</p>
+\end{equation*}</div><p>For later use, let’s also calculate the inverse transformation using <span class="math notranslate nohighlight">\(\eqref{eq_homogeneous_lorentz_transformation}\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \delta_{\sigma}^{\nu} = \eta_{\sigma \mu} \eta^{\mu \nu} = \left(\eta_{\sigma \mu} \eta^{\rho \kappa} \Lambda_{\rho}^{\mu}\right) \Lambda^{\nu}_{\kappa} \
+                ~\Longrightarrow~ (\Lambda^{-1})_{\mu}^{\nu} = \eta_{\mu \sigma} \eta^{\nu \rho} \Lambda_{\rho}^{\sigma} \
+                ~\Longleftrightarrow~ (\Lambda^{-1})^{\mu \nu} = \Lambda^{\nu \mu}
+        \label{eq_lambda_inverse}
+\end{equation}</div><p>Taking determinant on <span class="math notranslate nohighlight">\(\eqref{eq_homogeneous_lorentz_transformation}\)</span> implies that <span class="math notranslate nohighlight">\(\op{det}(\Lambda) = \pm 1\)</span>, and setting <span class="math notranslate nohighlight">\(\mu = \nu = 0\)</span> implies that</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
-        1 = (\Lambda^0_0)^2 - \Lambda^0_i \Lambda^0_i ~\Longrightarrow~ \left| \Lambda^0_0 \right| \geq 1
+        1 = (\Lambda^0_0)^2 - \sum_{i=1}^3 \Lambda^0_i \Lambda^0_i ~\Longrightarrow~ \left| \Lambda^0_0 \right| \geq 1
 \end{equation*}</div><p>It follows that the homogeneous Lorentz group has four components. In particular, the one with <span class="math notranslate nohighlight">\(\op{det}(\Lambda) = 1\)</span> and <span class="math notranslate nohighlight">\(\Lambda^0_0 \geq 1\)</span> is the most common used and is given a name: <em>proper orthochronous</em> Lorentz group. Nonetheless, one can map one component to another by composing with either a time reversal transformation</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -652,7 +660,7 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 </div>
 </section>
 <section id="quantum-lorentz-symmetry">
-<h4>Quantum Lorentz symmetry<a class="headerlink" href="#quantum-lorentz-symmetry" title="Link to this heading">#</a></h4>
+<span id="id5"></span><h4>Quantum Lorentz symmetry<a class="headerlink" href="#quantum-lorentz-symmetry" title="Link to this heading">#</a></h4>
 <p>We will quantize the Lorentz symmetry <span class="math notranslate nohighlight">\(L(\Lambda, a)\)</span> by looking for unitarity representations <span class="math notranslate nohighlight">\(U(\Lambda, a)\)</span>. As discussed in the section of <a class="reference internal" href="#sec-continuous-symmetry"><span class="std std-ref">Continuous symmetry</span></a>, we proceed by looking for infinitesimal symmetries. First of all, let’s expand <span class="math notranslate nohighlight">\(\Lambda\)</span> as</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -663,7 +671,7 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
         \eta^{\mu \nu} &amp;= \eta^{\rho \kappa} (\delta_{\rho}^{\mu} + \omega_{\rho}^{\mu} + \cdots) (\delta_{\kappa}^{\nu} + \omega_{\kappa}^{\nu} + \cdots) \\
                 &amp;= \eta^{\mu \nu} + \eta^{\mu \kappa} \omega^{\nu}_{\kappa} + \eta^{\rho \nu} \omega^{\mu}_{\rho} + \cdots \\
                 &amp;= \eta^{\mu \nu} + \omega^{\mu \nu} + \omega^{\nu \mu} + \cdots
-\end{align*}</div><p>Comparing the first order terms shows that <span class="math notranslate nohighlight">\(\omega^{\mu \nu} = -\omega^{\nu \mu}\)</span> is anti-symmetric. It is therefore more convenient to use <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span>, rather than <span class="math notranslate nohighlight">\(\omega_{\mu}^{\nu}\)</span>, as the infinitesimal parameters of the expansion of <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
+\end{align*}</div><p>Comparing the first order terms shows that <span class="math notranslate nohighlight">\(\omega^{\mu \nu} = -\omega^{\nu \mu}\)</span> is anti-symmetric. It is therefore more convenient to use <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span>, rather than <span class="math notranslate nohighlight">\(\omega_{\mu}^{\nu}\)</span>, as the infinitesimal parameters in the expansion of <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A count of free parameters shows that the inhomogeneous Lorentz symmetry has <span class="math notranslate nohighlight">\(10\)</span> degrees of freedom, <span class="math notranslate nohighlight">\(4\)</span> of which come from the translation, and the rest <span class="math notranslate nohighlight">\(6\)</span> come from the rank-<span class="math notranslate nohighlight">\(2\)</span> anti-symmetric tensor <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
@@ -681,13 +689,16 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
                 &amp;= U(\Lambda, a) U(1 + \omega, \epsilon) U(\Lambda^{-1}, -\Lambda^{-1} a) \\
                 &amp;= U(\Lambda, a) U((1 + \omega) \Lambda^{-1}, \epsilon - (1 + \omega) \Lambda^{-1} a) \\
                 &amp;= U(1 + \Lambda \omega \Lambda^{-1}, \Lambda \epsilon - \Lambda \omega \Lambda^{-1} a) \\
-                &amp;= 1 - \ifrak (\Lambda^{\rho}_{\mu} \epsilon^{\mu} - \Lambda^{\rho}_{\mu} \omega^{\mu \nu} \Lambda_{\nu}^{\kappa} a_{\kappa}) P_{\rho} \
-                        + \tfrac{\ifrak}{2} \Lambda^{\rho}_{\mu} \omega^{\mu \nu} \Lambda_{\nu}^{\kappa} J_{\rho \kappa} + \cdots
-\end{align*}</div><p>where we have used the identity <span class="math notranslate nohighlight">\((\Lambda^{-1})_{\mu \nu} = \Lambda_{\mu \nu}\)</span>. Substituting <span class="math notranslate nohighlight">\(U(1 + \omega, \epsilon)\)</span> with the expansion <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span> and equating the coefficients of <span class="math notranslate nohighlight">\(\epsilon^{\mu}\)</span> and <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span>, we have</p>
+                &amp;= 1 - \ifrak (\Lambda^{\rho}_{\mu} \epsilon^{\mu} - (\Lambda \omega \Lambda^{-1})^{\rho \kappa} a_{\kappa}) P_{\rho} \
+                        + \tfrac{\ifrak}{2} (\Lambda \omega \Lambda^{-1})^{\rho \kappa} J_{\rho \kappa} + \cdots \\
+                &amp;= 1 -\ifrak \epsilon^{\mu} \Lambda_{\mu}^{\rho} P_{\rho} + \tfrac{\ifrak}{2} (\Lambda \omega \Lambda^{-1})^{\rho \kappa} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots \\
+                &amp;= 1 -\ifrak \epsilon^{\mu} \Lambda_{\mu}^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \Lambda^{\rho \mu} \omega_{\mu \nu} \Lambda^{\kappa \nu} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots \\
+                &amp;= 1 -\ifrak \epsilon^{\mu} \Lambda_{\mu}^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \omega^{\mu \nu} (\Lambda^{-1})^{\rho}_{\mu} (\Lambda^{-1})^{\kappa}_{\nu} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots
+\end{align*}</div><p>where we have used <span class="math notranslate nohighlight">\(\eqref{eq_lambda_inverse}\)</span> for <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span>. Substituting <span class="math notranslate nohighlight">\(U(1 + \omega, \epsilon)\)</span> with the expansion <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span> and equating the coefficients of <span class="math notranslate nohighlight">\(\epsilon^{\mu}\)</span> and <span class="math notranslate nohighlight">\(\omega_{\mu \nu}\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \begin{align}
         U(\Lambda, a) P_{\mu} U^{-1}(\Lambda, a) &amp;= \Lambda^{\rho}_{\mu} P_{\rho}  \label{eq_p_conjugated_by_u} \\
-        U(\Lambda, a) J_{\mu \nu} U^{-1}(\Lambda, a) &amp;= \Lambda^{\rho}_{\mu} \Lambda^{\kappa}_{\nu} (J_{\rho \kappa} + a_{\kappa} P_{\rho} - a_{\rho} P_{\kappa})  \label{eq_j_conjugated_by_u}
+        U(\Lambda, a) J_{\mu \nu} U^{-1}(\Lambda, a) &amp;= (\Lambda^{-1})^{\rho}_{\mu} (\Lambda^{-1})^{\kappa}_{\nu} (J_{\rho \kappa} + a_{\kappa} P_{\rho} - a_{\rho} P_{\kappa})  \label{eq_j_conjugated_by_u}
 \end{align}</div><p>where in the second equation, we have also made the right-hand-side anti-symmetric with respect to <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span>. It’s now clear that <span class="math notranslate nohighlight">\(P\)</span> transforms like a vector and is translation invariant, while <span class="math notranslate nohighlight">\(J\)</span> transforms like a <span class="math notranslate nohighlight">\(2\)</span>-tensor only for homogeneous Lorentz transformations and is not translation invariant in general. These are of course as expected since both <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(J\)</span> are quantization of rather familiar objects, which we now spell out.</p>
 <p>We start with <span class="math notranslate nohighlight">\(P\)</span> by writing <span class="math notranslate nohighlight">\(H \coloneqq P_0\)</span> and <span class="math notranslate nohighlight">\(\Pbf \coloneqq (P_1, P_2, P_3)\)</span>. Then <span class="math notranslate nohighlight">\(H\)</span> is the energy operator, also know as the <em>Hamiltonian</em>, and <span class="math notranslate nohighlight">\(\Pbf\)</span> is the momentum <span class="math notranslate nohighlight">\(3\)</span>-vector. Similarly, let’s write <span class="math notranslate nohighlight">\(\Kbf \coloneqq (J_{01}, J_{02}, J_{03})\)</span> and <span class="math notranslate nohighlight">\(\Jbf = (J_{23}, J_{31}, J_{12})\)</span>, as the <em>boost</em> <span class="math notranslate nohighlight">\(3\)</span>-vector and the <em>angular momentum</em> <span class="math notranslate nohighlight">\(3\)</span>-vector, respectively.</p>
 <p>Now that we have named all the players (i.e., <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span>) in the game, it remains to find out their mutual commutation relations since they should form a Lie algebra of the (infinitesimal) Lorentz symmetry. This can be done by applying <span class="math notranslate nohighlight">\(\eqref{eq_p_conjugated_by_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j_conjugated_by_u}\)</span> to <span class="math notranslate nohighlight">\(U(\Lambda, a)\)</span> that is itself infinitesimal. More precisely, keeping up to first order terms, write <span class="math notranslate nohighlight">\(\Lambda_{\mu}^{\nu} = \delta_{\mu}^{\nu} + \omega_{\mu}^{\nu}\)</span> and <span class="math notranslate nohighlight">\(a^{\mu} = \epsilon^{\mu}\)</span> so that <span class="math notranslate nohighlight">\(\eqref{eq_p_conjugated_by_u}\)</span> becomes</p>
@@ -699,17 +710,18 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \begin{align}
         [P_{\mu}, P_{\nu}] &amp;= 0  \label{eq_bracket_p4_p4} \\
-        [P_{\mu}, J_{\rho \kappa}] &amp;= -\ifrak (\eta_{\mu \rho} P_{\kappa} - \eta_{\mu \kappa} P_{\rho})  \label{eq_bracket_p4_j4}
-\end{align}</div><p>where we’ve used the identity <span class="math notranslate nohighlight">\(\omega_{\mu}^{\rho} P_{\rho} = \eta_{\mu \kappa} \omega^{\rho \kappa} P_{\rho} = \tfrac{1}{2} \omega^{\rho \kappa} (\eta_{\mu \kappa} P_{\rho} - \eta_{\mu \rho} P_{\kappa})\)</span>. Now <span class="math notranslate nohighlight">\(\eqref{eq_j_conjugated_by_u}\)</span> (up to first order) becomes</p>
+        [P_{\mu}, J_{\rho \kappa}] &amp;= \ifrak (\eta_{\mu \rho} P_{\kappa} - \eta_{\mu \kappa} P_{\rho})  \label{eq_bracket_p4_j4}
+\end{align}</div><p>where we’ve used the identity <span class="math notranslate nohighlight">\(\omega_{\mu}^{\rho} P_{\rho} = \eta_{\mu \kappa} \omega^{\kappa \rho} P_{\rho} = \tfrac{1}{2} \omega^{\rho \kappa} (\eta_{\mu \rho} P_{\kappa} - \eta_{\mu \kappa} P_{\rho})\)</span>. Next <span class="math notranslate nohighlight">\(\eqref{eq_j_conjugated_by_u}\)</span> (up to first order) becomes</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        J_{\mu \nu} + \epsilon_{\nu} P_{\mu} - \epsilon_{\mu} P_{\nu} + \omega_{\mu}^{\rho} J_{\rho \nu} + \omega_{\nu}^{\kappa} J_{\mu \kappa} &amp;= (\delta_{\mu}^{\rho} + \omega_{\mu}^{\rho}) (\delta_{\nu}^{\kappa} + \omega_{\nu}^{\kappa}) (J_{\rho \kappa} + \epsilon_{\kappa} P_{\rho} - \epsilon_{\rho} P_{\kappa}) \\
-        &amp;= \left( 1 - \ifrak \epsilon^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) J_{\mu \nu} \left( 1 + \ifrak \epsilon^{\rho} P_{\rho} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
-        &amp;= J_{\mu \nu} - \ifrak \epsilon^{\rho} [P_{\rho}, J_{\mu \nu}] + \tfrac{\ifrak}{2} \omega^{\rho \kappa} [J_{\rho \kappa}, J_{\mu \nu}]
+        J_{\mu \nu} + \epsilon_{\nu} P_{\mu} - \epsilon_{\mu} P_{\nu} - \omega_{\mu}^{\rho} J_{\rho \nu} - \omega_{\nu}^{\kappa} J_{\mu \kappa} \
+                &amp;= (\delta_{\mu}^{\rho} - \omega_{\mu}^{\rho}) (\delta_{\nu}^{\kappa} - \omega_{\nu}^{\kappa}) (J_{\rho \kappa} + \epsilon_{\kappa} P_{\rho} - \epsilon_{\rho} P_{\kappa}) \\
+                &amp;= \left( 1 - \ifrak \epsilon^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) J_{\mu \nu} \left( 1 + \ifrak \epsilon^{\rho} P_{\rho} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
+                &amp;= J_{\mu \nu} - \ifrak \epsilon^{\rho} [P_{\rho}, J_{\mu \nu}] + \tfrac{\ifrak}{2} \omega^{\rho \kappa} [J_{\rho \kappa}, J_{\mu \nu}]
 \end{align*}</div><p>Equating the coefficients of <span class="math notranslate nohighlight">\(\epsilon\)</span> reproduces <span class="math notranslate nohighlight">\(\eqref{eq_bracket_p4_j4}\)</span>, but equating the coefficients of <span class="math notranslate nohighlight">\(\omega\)</span> gives the following additional</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        [J_{\rho \kappa}, J_{\mu \nu}] = -\ifrak (\eta_{\kappa \mu} J_{\rho \nu} - \eta_{\rho \mu} J_{\kappa \nu} + \eta_{\nu \rho} J_{\mu \kappa} - \eta_{\nu \kappa} J_{\mu \rho})
+        [J_{\rho \kappa}, J_{\mu \nu}] = \ifrak (\eta_{\rho \mu} J_{\kappa \nu} - \eta_{\kappa \mu} J_{\rho \nu} + \eta_{\nu \rho} J_{\mu \kappa} - \eta_{\nu \kappa} J_{\mu \rho})
         \label{eq_bracket_j4_j4}
 \end{equation}</div><p>Now that we have all the commutator relations, let’s reorganize <span class="math notranslate nohighlight">\(\eqref{eq_bracket_p4_p4}, \eqref{eq_bracket_p4_j4}, \eqref{eq_bracket_j4_j4}\)</span> in terms of <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> as follows</p>
 <div class="math notranslate nohighlight">
@@ -718,13 +730,13 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
         \text{let } \mu = 0, \rho = j, \kappa = k \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [H, J_i] &amp;&amp;= 0  \label{eq_hj_commute} \\
         \text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [H, K_i] &amp;&amp;= \ifrak P_i  \nonumber \\
         \text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} ~&amp;\Longrightarrow~ [P_i, P_j] &amp;&amp;= 0  \label{eq_pp_commute} \\
-        \text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [P_i, J_j] &amp;&amp;= \ifrak \epsilon_{ijk} P_k  \nonumber \\
+        \text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [P_i, J_j] &amp;&amp;= -\ifrak \epsilon_{ijk} P_k  \nonumber \\
         \text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [P_i, K_j] &amp;&amp;= \ifrak \delta_{ij} H  \nonumber \\
         \text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [J_i, J_j] &amp;&amp;= \ifrak \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
-        \text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [J_i, K_j] &amp;&amp;= -\ifrak \epsilon_{ijk} K_k  \nonumber \\
-        \text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [K_i, K_j] &amp;&amp;= -\ifrak \epsilon_{ijk} J_k  \nonumber
-\end{alignat}</div><p>where <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> is totally anti-symmetric with respect to permutations of indexes and satisfies <span class="math notranslate nohighlight">\(\epsilon_{123} = 1\)</span>.</p>
-<p>These are some rather tedious and error-prone calculations. But in the end, we seem to at least get the important pieces right, namely <span class="math notranslate nohighlight">\(\eqref{eq_hp_commute}, \eqref{eq_hj_commute}, \eqref{eq_pp_commute}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_jjj_commutation}\)</span>. Since the time evolution of a physical system is dictated by the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span>, quantities (i.e., observables) that commute with <span class="math notranslate nohighlight">\(H\)</span> are conserved. In particular <span class="math notranslate nohighlight">\(\eqref{eq_hp_commute}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_hj_commute}\)</span> imply that both momentum and angular momentum are conserved. Boosts, on the other hand, are <em>not</em> conserved, and therefore cannot be used to label (stable) physical states. Moreover <span class="math notranslate nohighlight">\(\eqref{eq_pp_commute}\)</span> implies that translations commute with each other (as expected), which is <em>not</em> the case for the angular momenta according to <span class="math notranslate nohighlight">\(\eqref{eq_jjj_commutation}\)</span>. Indeed, they furnish an infinitesimal representation of the <span class="math notranslate nohighlight">\(3\)</span>-rotation group <span class="math notranslate nohighlight">\(SO(3)\)</span>.</p>
+        \text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [J_i, K_j] &amp;&amp;= \ifrak \epsilon_{ijk} K_k  \label{eq_jkk_commutation} \\
+        \text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [K_i, K_j] &amp;&amp;= -\ifrak \epsilon_{ijk} J_k  \label{eq_kkj_commutation}
+\end{alignat}</div><p>where <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> is totally anti-symmetric with respect to permutations of indexes and satisfies <span class="math notranslate nohighlight">\(\epsilon_{123} = 1\)</span>. <a class="footnote-reference brackets" href="#tedious-calc-of-commutations" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>Since the time evolution of a physical system is dictated by the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span>, quantities (i.e., observables) that commute with <span class="math notranslate nohighlight">\(H\)</span> are conserved. In particular <span class="math notranslate nohighlight">\(\eqref{eq_hp_commute}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_hj_commute}\)</span> imply that both momentum and angular momentum are conserved. Boosts, on the other hand, are <em>not</em> conserved, and therefore cannot be used to label (stable) physical states. Moreover <span class="math notranslate nohighlight">\(\eqref{eq_pp_commute}\)</span> implies that translations commute with each other (as expected), which is <em>not</em> the case for the angular momenta according to <span class="math notranslate nohighlight">\(\eqref{eq_jjj_commutation}\)</span>. Indeed, they furnish an infinitesimal representation of the <span class="math notranslate nohighlight">\(3\)</span>-rotation group <span class="math notranslate nohighlight">\(SO(3)\)</span>.</p>
 </section>
 </section>
 </section>
@@ -896,7 +908,7 @@ Representations of angular momenta<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \Jbf^2 \Psi_{\jfrak} = (\jfrak^2 + \jfrak) \Psi_{\jfrak} = ((\jfrak')^2 - \jfrak') \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'} ~\Longrightarrow~ \jfrak (\jfrak + 1) = \jfrak' (\jfrak' - 1)
-\end{equation*}</div><p class="sd-card-text">The equation has two potential solutions, either <span class="math notranslate nohighlight">\(\jfrak' = \jfrak + 1\)</span> or <span class="math notranslate nohighlight">\(\jfrak = -\jfrak'\)</span>. The first option violates the maximality of <span class="math notranslate nohighlight">\(\jfrak\)</span>, and so we must accept the second option. Since we also know <span class="math notranslate nohighlight">\(\jfrak - \jfrak'\)</span> must be integral, we conclude that <span class="math notranslate nohighlight">\(\jfrak\)</span> is itself a half-integer.</p>
+\end{equation*}</div><p class="sd-card-text">The equation has two potential solutions: either <span class="math notranslate nohighlight">\(\jfrak' = \jfrak + 1\)</span> or <span class="math notranslate nohighlight">\(\jfrak = -\jfrak'\)</span>. The first option violates the maximality of <span class="math notranslate nohighlight">\(\jfrak\)</span>, and so we must accept the second option. Since we also know <span class="math notranslate nohighlight">\(\jfrak - \jfrak'\)</span> must be integral, we conclude that <span class="math notranslate nohighlight">\(\jfrak\)</span> is itself a half-integer.</p>
 <p class="sd-card-text">It remains to settle the constant term on the right-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_j1_j2_matrix}\)</span>. By <span class="math notranslate nohighlight">\(\eqref{eq_j1_j2_raises_or_lowers_state}\)</span> we can assume</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -918,7 +930,7 @@ Representations of angular momenta<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} ~\Longrightarrow~ \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M}
-\end{equation*}</div><p>It follows that <a class="footnote-reference brackets" href="#boost-in-p-formula" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+\end{equation*}</div><p>It follows that <a class="footnote-reference brackets" href="#boost-in-p-formula" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         L(p)_0^0 &amp;= \gamma \\
@@ -932,15 +944,105 @@ Representations of angular momenta<div class="sd-summary-down docutils">
         W(\Rcal, p)(0, \qbf) &amp;= L(\Rcal p)^{-1} \Rcal (0, \qbf) &amp;&amp;= L(\Rcal p)^{-1} (0, \Rcal \qbf) &amp;&amp;= (0, \Rcal \qbf)
 \end{alignat*}</div><p>where we have used that fact that <span class="math notranslate nohighlight">\(\gamma\)</span> is <span class="math notranslate nohighlight">\(\Rcal\)</span>-invariant.</p>
 <p>This observation is important since it implies that non-relativistic calculations about spins, such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Clebsch%E2%80%93Gordan_coefficients">Clebsch-Gordan coefficients</a>, can be literally carried over to the quantum setting.</p>
-<div class="admonition-todo admonition" id="id6">
+<div class="admonition-todo admonition" id="id8">
 <p class="admonition-title">Todo</p>
 <p>Review Clebsch-Gordan coefficients.</p>
 </div>
-<p class="rubric">Footnotes</p>
+</section>
+<section id="massless-particle-states">
+<h3>Massless particle states<a class="headerlink" href="#massless-particle-states" title="Link to this heading">#</a></h3>
+<p>Recall the standard <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> for massless particles. Our first task is to work out the little group, i.e., Lorentz transformations <span class="math notranslate nohighlight">\(W\)</span> such that <span class="math notranslate nohighlight">\(Wk = k\)</span>. More precisely, we’ll work out the column vectors of <span class="math notranslate nohighlight">\(W\)</span> by thinking of them as the results of <span class="math notranslate nohighlight">\(W\)</span> acting on the standard basis vectors. Let’s start by <span class="math notranslate nohighlight">\(v \coloneqq (1, 0, 0, 0)\)</span>, and perform the following calculations to <span class="math notranslate nohighlight">\(Wv\)</span> using properties of Lorentz transformation</p>
+<div class="math notranslate nohighlight">
+\begin{alignat}{2}
+        (Wv)^{\mu} (Wv)_{\mu} &amp;= v^{\mu} v_{\mu} &amp;&amp;= 1  \label{eq_vv_is_one} \\
+        (Wv)^{\mu} k_\mu &amp;= v^{\mu} k_{\mu} &amp;&amp;= 1  \label{eq_vk_is_one}
+\end{alignat}</div><p>It follows from <span class="math notranslate nohighlight">\(\eqref{eq_vk_is_one}\)</span> that we can write <span class="math notranslate nohighlight">\(Wv = (1 + c, a, b, c)\)</span>, and then from <span class="math notranslate nohighlight">\(\eqref{eq_vv_is_one}\)</span> that <span class="math notranslate nohighlight">\(c = (a^2 + b^2) / 2\)</span>. Playing similar games to the other basis vectors, we can engineer a particular Lorentz transformation as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        S(a, b) = \begin{bmatrix}
+                1 + c &amp; a &amp; b &amp; -c \\
+                a &amp; 1 &amp; 0 &amp; -a \\
+                b &amp; 0 &amp; 1 &amp; -b \\
+                c &amp; a &amp; b &amp; 1 - c
+        \end{bmatrix}
+\end{equation*}</div><p>which leaves <span class="math notranslate nohighlight">\(k\)</span> invariant, and satisfies <span class="math notranslate nohighlight">\(Sv = Wv\)</span>. It follows that <span class="math notranslate nohighlight">\(S^{-1} W\)</span> must be a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, which can be written as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        R(\theta) = \begin{bmatrix}
+                1 &amp; 0 &amp; 0 &amp; 0 \\
+                0 &amp; \cos\theta &amp; \sin\theta &amp; 0 \\
+                0 &amp; -\sin\theta &amp; \cos\theta &amp; 0 \\
+                0 &amp; 0 &amp; 0 &amp; 1
+        \end{bmatrix}
+\end{equation*}</div><p>Hence we can write any element in the little group as <span class="math notranslate nohighlight">\(W(a, b, \theta) = S(a, b) R(\theta)\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+The little group is <span class="math notranslate nohighlight">\(~E^+(2)\)</span><div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Although not necessary for our purposes here, we’d like to better understand the little group for <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> in terms of more familiar groups. It turns out that it’s isomorphic to the <span class="math notranslate nohighlight">\(2\)</span>-dimensional orientation-preserving <a class="reference external" href="https://en.wikipedia.org/wiki/Euclidean_group">Euclidean group</a> <span class="math notranslate nohighlight">\(E^+(2)\)</span>, i.e., the group of rotations and translations on the plane.</p>
+<p class="sd-card-text">To see this, we go back to the defining property of <span class="math notranslate nohighlight">\(W\)</span> that it fixes <span class="math notranslate nohighlight">\(k\)</span>. It follows that it must also fix the orthogonal complement <span class="math notranslate nohighlight">\(k^{\bot}\)</span> with respect to the bilinear form <span class="math notranslate nohighlight">\(d\tau^2\)</span> defined in <span class="math notranslate nohighlight">\(\eqref{eq_proper_time}\)</span>. Since <span class="math notranslate nohighlight">\(k\)</span> is orthogonal to itself, we can uniquely determine <span class="math notranslate nohighlight">\(W\)</span> by knowing its action on <span class="math notranslate nohighlight">\((1, 1, 0, 1)\)</span> and <span class="math notranslate nohighlight">\((1, 0, 1, 1)\)</span>. Letting <span class="math notranslate nohighlight">\(S(a, b)\)</span> acting on them, we see</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        S(a, b)(1, 1, 0, 1) &amp;= (1 + a, 1, 0, 1 + a) \\
+        S(a, b)(1, 0, 1, 1) &amp;= (1 + b, 0, 1, 1 + b)
+\end{align*}</div><p class="sd-card-text">Hence <span class="math notranslate nohighlight">\(S\)</span> is isomorphic to a <span class="math notranslate nohighlight">\(2\)</span>-dimensional translation group. Moreover, the direction of translation is determined by the rotation on the plane spanned by the second the the third coordinates, which is nothing but <span class="math notranslate nohighlight">\(R\)</span>.</p>
+</div>
+</details><p>As in the massive case, we’ll work out <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}\)</span> up to first order. To this end, note that up to first order</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        W(a, b, \theta)_{\mu}^{\nu} &amp;= \left(1 + \begin{bmatrix}
+                        0 &amp; a &amp; b &amp; 0 \\
+                        a &amp; 0 &amp; 0 &amp; -a \\
+                        b &amp; 0 &amp; 0 &amp; -b \\
+                        0 &amp; a &amp; b &amp; 0
+                \end{bmatrix} \right) \left(1 + \begin{bmatrix}
+                        0 &amp; 0 &amp; 0 &amp; 0 \\
+                        0 &amp; 0 &amp; \theta &amp; 0 \\
+                        0 &amp; -\theta &amp; 0 &amp; 0 \\
+                        0 &amp; 0 &amp; 0 &amp; 0
+                \end{bmatrix} \right) + \cdots \\
+                &amp;= 1 + \begin{bmatrix}
+                        0 &amp; a &amp; b &amp; 0 \\
+                        a &amp; 0 &amp; \theta &amp; -a \\
+                        b &amp; -\theta &amp; 0 &amp; -b \\
+                        0 &amp; a &amp; b &amp; 0
+                \end{bmatrix} + \cdots
+\end{align*}</div><p>where we’ve added the <span class="math notranslate nohighlight">\(4\)</span>-indexes since we recall from discussions in <a class="reference internal" href="#quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a> that we must lift the <span class="math notranslate nohighlight">\(\omega\)</span> index to make it anti-symmetric. We now rewrite</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        W(a, b , \theta)^{\mu \nu} = \eta^{\mu \sigma} W_{\sigma}^{\nu} = 1 + \begin{bmatrix}
+                        0 &amp; -a &amp; -b &amp; 0 \\
+                        a &amp; 0 &amp; \theta &amp; -a \\
+                        b &amp; -\theta &amp; 0 &amp; -b \\
+                        0 &amp; a &amp; b &amp; 0
+                \end{bmatrix} + \cdots
+\end{equation*}</div><p>and spell out the expansion of <span class="math notranslate nohighlight">\(D(a, b, \theta) \coloneqq D(W(a, b, \theta))\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        D(a, b, \theta) = 1 + \ifrak aA + \ifrak bB + \ifrak \theta J_3
+\end{equation*}</div><p>where</p>
+<div class="math notranslate nohighlight">
+\begin{alignat*}{2}
+        A &amp;= -J_{01} - J_{13} &amp;&amp;= -K_1 + J_2 \\
+        B &amp;= -J_{02} - J_{23} &amp;&amp;= -K_2 - J_1
+\end{alignat*}</div><p>Next we use <span class="math notranslate nohighlight">\(\eqref{eq_jjj_commutation}, \eqref{eq_jkk_commutation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_kkj_commutation}\)</span> to calculate commutation relations between <span class="math notranslate nohighlight">\(A, B\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{alignat*}{2}
+        [J_3, A] &amp;= -\ifrak K_2 - \ifrak J_1 &amp;&amp;= \ifrak B \\
+        [J_3, B] &amp;= \ifrak K_1 - \ifrak J_2 &amp;&amp;= -\ifrak A \\
+        [A, B] &amp;= -\ifrak J_3 + \ifrak J_3 &amp;&amp;= 0
+\end{alignat*}</div><p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
+<aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">1</a><span class="fn-bracket">]</span></span>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in the book.</p>
+</aside>
 <aside class="footnote brackets" id="boost-in-p-formula" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
-<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id7"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">2</a><span class="fn-bracket">]</span></span>
+<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id9"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
 </aside>
 </aside>
 </section>
@@ -982,6 +1084,7 @@ Representations of angular momenta<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-particle-states">One-Particle States</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-to-the-little-group">Reduction to the little group</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massive-particle-states">Massive particle states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massless-particle-states">Massless particle states</a></li>
 </ul>
 </li>
 </ul>
