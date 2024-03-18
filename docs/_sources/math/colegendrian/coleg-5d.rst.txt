@@ -49,9 +49,7 @@ It's therefore quite a pleasing fact that by applying the folding techniques dev
 
 Since :math:`Y \subset \Sigma` is tangent to :math:`\Sigma_{\xi}`, the singularities of :math:`Y` are necessarily (families of) cones. A convenient, but also coincidental, consequence of the assumption :math:`\dim M = 5` is that by further wiggling :math:`\Sigma`, one can approximate :math:`Y` by a coLegendrian with only isolated cone singularities of index :math:`0` and :math:`3` (when viewed inside :math:`Y`) critical points. More precisely, those are cones over (smooth and Morse) :math:`2`-spheres in :math:`(S^3, \xi_{\std}) = \p (B^4, \omega_{std})`. A schematic picture of such a cone is drawn on the right-hand-side, where :math:`O \in B^4` is the origin, and the shaded cone represents (part of) :math:`Y`. The procedure of simplifying singularities on :math:`Y` is explained in [Hua20]_.
 
-.. admonition:: TODO
-    :class: warning
-
+.. todo::
     The structural theory of coLegendrians is so far only developed for contact :math:`5`-manifolds because (1) I'm out of time, and (2) its development may require a more thorough understanding of :math:`5`-dimensional contact topology due to the recursive nature of contact Morse theory. Nonetheless, it's expected that higher dimensional coLegendrians possess singularities more complex than just the isolated cones.
 
 The above discussion applies to both the closed case where :math:`\p Y = \varnothing` and the case where :math:`\Lambda \coloneqq \p Y` is a Legendrian. In the later case, we also allow :math:`\Lambda` to possess cone singularities, and we'll explicitly say that :math:`\Lambda` is smooth otherwise.

@@ -22,6 +22,9 @@ Quantum theory postulates that *any* physical state (of the world) can be repres
 
 where :math:`\Psi` is a nonzero vector in the Hilbert space. It is, however, rather inconvenient to have to deal with :math:`[\Psi]` all the time. So instead, we will almost always pick a representative :math:`\Psi`, often out of a natural choice, and call it a *state vector*, and keep in mind that anything physically meaningful must not be sensitive to a scalar multiplication.
 
+.. admonition:: Assumption
+	:class: Important
+
 	Throughout this post we always assume that state vectors are normalized so that :math:`||\Psi|| = 1`.
 
 In fact, we don't really care about the states themselves either, because they are more of an abstraction rather than something one can physically measure. What we do care about are the (Hermitian) inner products between state vectors, denoted by :math:`(\Psi, \Phi)`. According to the so-called `Copenhagen interpretation <https://en.wikipedia.org/wiki/Copenhagen_interpretation>`_ of quantum mechanics, such inner product represents an *amplitude*, i.e., its squared norm gives the probability of finding a state :math:`[\Psi]` in :math:`[\Phi]` if we ever perform a measurement. We can write this statement as an equation as follows
@@ -149,7 +152,7 @@ In general we're not interested in just one symmetry transformation, but rather 
 	:nowrap:
 
 	\begin{equation}
-		U(T_2 T_1) \Psi = e^{\ifrak \theta(T_1, T_2, \Psi)} U(T_2) U(T_1) \Psi
+		U(T_2 T_1) \Psi = \exp(\ifrak \theta(T_1, T_2, \Psi)) U(T_2) U(T_1) \Psi
 		\label{eq_u_depends_on_psi}
 	\end{equation}
 
@@ -161,7 +164,7 @@ It turns out, however, the angle :math:`\theta(T_1, T_2, \Psi)` cannot depend on
 	:nowrap:
 
 	\begin{equation*}
-		e^{\pm \ifrak \theta(\Psi_A)} \Psi_A + e^{\pm \ifrak \theta(\Psi_B)} \Psi_B = e^{\pm \ifrak \theta(\Psi_A + \Psi_B)} (\Psi_A + \Psi_B)
+		\exp(\pm \ifrak \theta(\Psi_A)) \Psi_A + \exp(\pm \ifrak \theta(\Psi_B)) \Psi_B = \exp(\pm \ifrak \theta(\Psi_A + \Psi_B)) (\Psi_A + \Psi_B)
 	\end{equation*}
 
 where we have suppressed the dependency of :math:`\theta` on :math:`T`, and the signs correspond to the cases of :math:`U` being linear or anti-linear, respectively. In any case, it follows that
@@ -170,7 +173,7 @@ where we have suppressed the dependency of :math:`\theta` on :math:`T`, and the 
 	:nowrap:
 
 	\begin{equation*}
-		e^{\pm \ifrak \theta(\Psi_A)} = e^{\pm \ifrak \theta(\Psi_B)} = e^{\pm \ifrak \theta(\Psi_A + \Psi_B)}
+		\exp(\pm \ifrak \theta(\Psi_A)) = \exp(\pm \ifrak \theta(\Psi_B)) = \exp(\pm \ifrak \theta(\Psi_A + \Psi_B))
 	\end{equation*}
 
 which says nothing but the independence of :math:`\theta` on :math:`\Psi`.
@@ -184,14 +187,18 @@ We can now simplify :math:`\eqref{eq_u_depends_on_psi}` to the following
 	:nowrap:
 
 	\begin{equation}
-		U(T_2 T_1) = e^{\ifrak \theta(T_1, T_2)} U(T_2) U(T_1)
+		U(T_2 T_1) = \exp(\ifrak \theta(T_1, T_2)) U(T_2) U(T_1)
 		\label{eq_u_not_depend_on_psi}
 	\end{equation}
 
 which, in mathematical terms, says that :math:`U` furnishes a *projective representation* of :math:`T`, or a representation up to a phase. It becomes a genuine representation if the phase is constantly one.
 
-.. note::
-	We always assume that :math:`U` furnishes a genuine representation of :math:`T` since, as it turns out, the phase factor in :math:`\eqref{eq_u_not_depend_on_psi}` is more of a mathematical artifact than something that bears any physical significance.
+.. _assump_genuine_repr:
+
+.. admonition:: Assumption
+	:class: Important
+
+	We will assume that :math:`U` furnishes a genuine representation of :math:`T` unless otherwise stated, because it's simpler and will be suffice for most scenarios of interest.
 
 .. _sec_continuous_symmetry:
 
@@ -253,7 +260,7 @@ We conclude the general discussion about continuous symmetry by considering a sp
 	:nowrap:
 
 	\begin{equation}
-		U(T(\theta)) = \lim_{N \to \infty} (U(T(\theta / N)))^N = \lim_{N \to \infty} (1 + \ifrak \theta^a u_a / N)^N = \op{exp}(\ifrak \theta^a u_a)
+		U(T(\theta)) = \lim_{N \to \infty} (U(T(\theta / N)))^N = \lim_{N \to \infty} (1 + \ifrak \theta^a u_a / N)^N = \exp(\ifrak \theta^a u_a)
 		\label{eq_additive_symmetry}
 	\end{equation}
 
@@ -368,18 +375,20 @@ It follows that the homogeneous Lorentz group has four components. In particular
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Tcal: (t, \xbf) \mapsto (-t, \xbf)
-	\end{equation*}
+		\label{eq_time_inversion}
+	\end{equation}
 
 or a space reversal transformation
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Pcal: (t, \xbf) \mapsto (t, -\xbf)
-	\end{equation*}
+		\label{eq_space_inversion}
+	\end{equation}
 
 or both.
 
@@ -469,12 +478,12 @@ for :math:`1 \leq i, j \leq 3`, which, together with :math:`\eqref{eq_lambda_boo
 .. note::
 	Any Lorentz transformation can be written as the composition of a boost followed by a rotation.
 
-.. _quantum_lorentz_symmetry:
+.. _sec_quantum_lorentz_symmetry:
 
 Quantum Lorentz symmetry
 ++++++++++++++++++++++++
 
-We will quantize the Lorentz symmetry :math:`L(\Lambda, a)` by looking for unitarity representations :math:`U(\Lambda, a)`. As discussed in the section of :ref:`Continuous symmetry <sec_continuous_symmetry>`, we proceed by looking for infinitesimal symmetries. First of all, let's expand :math:`\Lambda` as
+We will quantize the Lorentz symmetry :math:`L(\Lambda, a)` by looking for unitarity representations :math:`U(\Lambda, a)`. As discussed in :ref:`sec_continuous_symmetry`, we proceed by looking for infinitesimal symmetries. First of all, let's expand :math:`\Lambda` as
 
 .. math::
 	:nowrap:
@@ -631,7 +640,7 @@ Let's first consider translations :math:`U(1, a)`. Since translations form an ab
 	:nowrap:
 
 	\begin{equation*}
-		U(1, a) \Psi_{p, \sigma} = \op{exp}^{\ifrak a^{\mu} P_{\mu}} \Psi_{p, \sigma} = \op{exp}^{\ifrak a^{\mu} p_{\mu}} \Psi_{p, \sigma}
+		U(1, a) \Psi_{p, \sigma} = \exp(\ifrak a^{\mu} P_{\mu}) \Psi_{p, \sigma} = \exp(\ifrak a^{\mu} p_{\mu}) \Psi_{p, \sigma}
 	\end{equation*}
 
 Hence it remains to consider the action of homogeneous Lorentz transformations. For the convenience of notation, let's write :math:`U(\Lambda) \coloneqq U(\Lambda, 0)`. We would first like to know how :math:`U(\Lambda)` affects the :math:`4`-momentum. It follows from the following calculation
@@ -745,7 +754,7 @@ It remains now, as far as the general discussion is concerned, to settle the nor
 
 where the first delta is the Kronecker delta (for discrete indexes) and the second is the Dirac delta (for continuous indexes), since they are eigenvectors of the (Hermitian) operator :math:`P`. All we need is :math:`D_{\sigma \sigma'}` being unitary as is obvious from :math:`\eqref{eq_little_group_acts_on_p_and_sigma}`.
 
-However, the Dirac delta in :math:`\eqref{eq_psi_p4_sigma_orthonormal}` is tricky to use since :math:`p` is constrained to the so-called *mass shell*, i.e., :math:`p_0 > 0` plus :math:`p^2 = M^2` in the massive case and :math:`p^2 = 0` in the massless case. Hence the actual normalization we'd like to impose on the one-particle states is, instead of :math:`\eqref{eq_psi_p4_sigma_orthonormal}`, the following
+However, the Dirac delta in :math:`\eqref{eq_psi_p4_sigma_orthonormal}` is tricky to use since :math:`p` is constrained to the so-called *mass shell*, i.e., :math:`p_0 > 0` together with :math:`p^2 = M^2` in the massive case and :math:`p^2 = 0` in the massless case, respectively. Hence the actual normalization we'd like to impose on the one-particle states is, instead of :math:`\eqref{eq_psi_p4_sigma_orthonormal}`, the following
 
 .. math::
 	:nowrap:
@@ -797,6 +806,7 @@ Putting everything together, we've obtained the following grand formula for the 
 
 	\begin{equation}
 		U(\Lambda) \Psi_{p, \sigma} = \sqrt{\frac{(\Lambda p)_0}{p_0}} D_{\sigma \sigma'}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}
+		\label{eq_lorentz_transformation_formula_for_particle_state}
 	\end{equation}
 
 where :math:`D_{\sigma \sigma'}` is a unitary representation of the little group, and :math:`W(\Lambda, p)` is defined by :math:`\eqref{eq_w_from_l}`.
@@ -828,6 +838,8 @@ where :math:`J_{ij}` is a collection of Hermitian operators that satisfy :math:`
 
 where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1, \cdots, \jfrak - 1, \jfrak`.
 
+.. _dropdown_repr_of_angular_momenta:
+
 .. dropdown:: Representations of angular momenta
 	:animate: fade-in-slide-down
 
@@ -837,7 +849,7 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 		:nowrap:
 
 		\begin{align*}
-			[\Jbf^2, J_i] &= 0, ~~i = 1, 2, 3 \\
+			[\Jbf^2, J_i] &= 0, ~\forall i = 1, 2, 3 \\
 			[J_3, J_1 \pm \ifrak J_2] &= \pm (J_1 \pm \ifrak J_2)
 		\end{align*}
 
@@ -925,11 +937,12 @@ It follows that [#boost_in_p_formula]_
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		L(p)_0^0 &= \gamma \\
-		L(p)_i^0 = L(p)_0^i &= \frac{p_i}{M} \\
+	\begin{align}
+		L(p)_0^0 &= \gamma \nonumber \\
+		L(p)_i^0 = L(p)_0^i &= \frac{p_i}{M} \nonumber \\
 		L(p)_i^j &= \delta_i^j + \frac{p_i p_j}{\pbf^2} (\gamma - 1)
-	\end{align*}
+		\label{eq_L_transformation_for_massive}
+	\end{align}
 
 Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:`3`-rotation, then :math:`W(\Rcal, p) = \Rcal` for any :math:`p`. To see this, we'll work out how :math:`W(\Rcal, p)` acts on :math:`(1, \mathbf{0}), (0, \pbf)`, and :math:`(0, \qbf)`, respectively, where :math:`\qbf` is any :math:`3`-vector perpendicular to :math:`\pbf`, as follows
 
@@ -998,7 +1011,7 @@ Hence we can write any element in the little group as :math:`W(a, b, \theta) = S
 
 	Although not necessary for our purposes here, we'd like to better understand the little group for :math:`k = (1, 0, 0, 1)` in terms of more familiar groups. It turns out that it's isomorphic to the :math:`2`-dimensional orientation-preserving `Euclidean group <https://en.wikipedia.org/wiki/Euclidean_group>`__ :math:`E^+(2)`, i.e., the group of rotations and translations on the plane.
 
-	To see this, we go back to the defining property of :math:`W` that it fixes :math:`k`. It follows that it must also fix the orthogonal complement :math:`k^{\bot}` with respect to the bilinear form :math:`d\tau^2` defined in :math:`\eqref{eq_proper_time}`. Since :math:`k` is orthogonal to itself, we can uniquely determine :math:`W` by knowing its action on :math:`(1, 1, 0, 1)` and :math:`(1, 0, 1, 1)`. Letting :math:`S(a, b)` acting on them, we see
+	To see this, we go back to the defining property of :math:`W` that it fixes :math:`k`. It follows that it must also fix the orthogonal complement :math:`k^{\bot}` with respect to the bilinear form :math:`d\tau^2` defined in :math:`\eqref{eq_proper_time}`. Since :math:`k` is orthogonal to itself, we can uniquely determine :math:`W` by knowing its action on :math:`(1, 1, 0, 1)` and :math:`(1, 0, 1, 1)`. Letting :math:`S(a, b)` act on them, we see
 
 	.. math::
 		:nowrap:
@@ -1009,6 +1022,8 @@ Hence we can write any element in the little group as :math:`W(a, b, \theta) = S
 		\end{align*}
 
 	Hence :math:`S` is isomorphic to a :math:`2`-dimensional translation group. Moreover, the direction of translation is determined by the rotation on the plane spanned by the second the the third coordinates, which is nothing but :math:`R`.
+
+	Note that :math:`E^+ (2)` is not semisimple in the sense that it possesses an abelian normal subgroup. Indeed, it's obvious from the above discussion that a translation conjugated by a rotation is again a translation (in the rotated direction). The non-semisimplicity will have consequences on the representation as we will see below.
 
 As in the massive case, we'll work out :math:`D_{\sigma \sigma'}` up to first order. To this end, note that up to first order
 
@@ -1035,7 +1050,7 @@ As in the massive case, we'll work out :math:`D_{\sigma \sigma'}` up to first or
 			\end{bmatrix} + \cdots
 	\end{align*}
 
-where we've added the :math:`4`-indexes since we recall from discussions in :ref:`quantum_lorentz_symmetry` that we must lift the :math:`\omega` index to make it anti-symmetric. We now rewrite
+where we've added the :math:`4`-indexes since we recall from discussions in :ref:`sec_quantum_lorentz_symmetry` that we must lift the :math:`\omega` index to make it anti-symmetric. We now rewrite
 
 .. math::
 	:nowrap:
@@ -1054,9 +1069,10 @@ and spell out the expansion of :math:`D(a, b, \theta) \coloneqq D(W(a, b, \theta
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		D(a, b, \theta) = 1 + \ifrak aA + \ifrak bB + \ifrak \theta J_3
-	\end{equation*}
+		\label{eq_massless_D_matrix_expansion}
+	\end{equation}
 
 where
 
@@ -1074,10 +1090,112 @@ Next we use :math:`\eqref{eq_jjj_commutation}, \eqref{eq_jkk_commutation}` and :
 	:nowrap:
 
 	\begin{alignat*}{2}
-		[J_3, A] &= -\ifrak K_2 - \ifrak J_1 &&= \ifrak B \\
-		[J_3, B] &= \ifrak K_1 - \ifrak J_2 &&= -\ifrak A \\
-		[A, B] &= -\ifrak J_3 + \ifrak J_3 &&= 0
+		[J_3, A] &= -&&\ifrak K_2 &&- \ifrak J_1 &&= \ifrak B \\
+		[J_3, B] &= &&\ifrak K_1 &&- \ifrak J_2 &&= -\ifrak A \\
+		[A, B] &= -&&\ifrak J_3 &&+ \ifrak J_3 &&= 0
 	\end{alignat*}
+
+Since :math:`A, B` commute, we can use their eigenvalues to label states as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		A \Psi_{k, a, b} &= a \Psi_{k, a, b} \\
+		B \Psi_{k, a, b} &= b \Psi_{k, a, b}
+	\end{align*}
+
+In fact, these states, corresponding to translation symmetries, come in continuous families as shown below
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		AU^{-1}(R(\theta)) \Psi_{a, b, k} &= (a\cos\theta - b\sin\theta)U^{-1}(R(\theta)) \Psi_{a, b, k} \\
+		BU^{-1}(R(\theta)) \Psi_{a, b, k} &= (a\sin\theta + b\cos\theta)U^{-1}(R(\theta)) \Psi_{a, b, k}
+	\end{align*}
+
+According to the book, massless particle states are not observed to come in such :math:`S^1`-families. Hence the only possibility is that :math:`a = b = 0` and the only symmetry left then is :math:`J_3`, which corresponds to a rotation about the :math:`3`-axis.
+
+Unlike the :math:`SO(3)`-symmetry discussed in :ref:`Representations of angular momenta <dropdown_repr_of_angular_momenta>`, representations of :math:`J_3` alone cannot be characterized at the infinitesimal level, which would have resulted in a continuous spectrum. Instead, since a :math:`2\pi`-rotation about the :math:`3`-axis gives the identity transformation, one might expect an integer spectrum for :math:`J_3`. This is indeed the case if we :ref:`assume the representation is genuine <assump_genuine_repr>`. However, since the Lorentz group is not simplify connected (with fundamental group :math:`\Zbb/2`), one may encounter projective representations. Indeed, the :math:`2\pi`-rotation about the :math:`3`-axis represents a generator of the fundamental group, which has order :math:`2`, i.e., only the :math:`4\pi`-rotation about the :math:`3`-axis represents a contractible loop in the Lorentz group (see the `Plate trick <https://en.wikipedia.org/wiki/Plate_trick>`_). As a result, the :math:`J_3`-spectrum actually consists of half-integers, just like the spins. We can therefore write a general massless particle state as :math:`\Psi_{k, \sigma}` such that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		J_3 \Psi_{k, \sigma} = \sigma \Psi_{k, \sigma}
+	\end{equation*}
+
+where :math:`\sigma` are half-integers, known as the *helicity*.
+
+Combining the discussions so far, we can write down the :math:`D`-matrix defined by :math:`\eqref{eq_massless_D_matrix_expansion}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		D_{\sigma \sigma'}(W(a, b, \theta)) = \exp(\ifrak \theta \sigma) \delta_{\sigma \sigma'}
+	\end{equation*}
+
+where we recall :math:`W(a, b, \theta) = L(\Lambda p)^{-1} \Lambda L(p) = S(a, b)R(\theta)`. The Lorentz transformation formula :math:`\eqref{eq_lorentz_transformation_formula_for_particle_state}` for massless particles now becomes
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(\Lambda) \Psi_{p, \sigma} = \sqrt{\frac{(\Lambda p)_0}{p_0}} \exp(\ifrak \theta(\Lambda, p) \sigma) \Psi_{\Lambda p, \sigma}
+		\label{eq_lorentz_transformation_formula_for_massless}
+	\end{equation}
+
+In particular, we see that, unlike the spin of massive particles, helicity is Lorentz invariant (at least under genuine representations). It is reasonable, therefore, to think of massless particles of different helicity as different particle species. Examples include photons with :math:`\sigma = \pm 1` and gravitons with :math:`\sigma = \pm 2`, but *not* (anti-)neutrinos with hypothetical :math:`\sigma = \pm \tfrac{1}{2}` as otherwise stated in the book, which are now known to have a nonzero mass. Here the :math:`\pm` signs are related to the space-inversion symmetry :math:`\eqref{eq_space_inversion}`, which will be discussed in detail later.
+
+In order to use :math:`\eqref{eq_lorentz_transformation_formula_for_massless}` for a general :math:`(\Lambda, p)`, we first need to fix the choices of :math:`L(p)` that takes the standard :math:`k = (1, 0, 0, 1)` to :math:`p`. This can be done in two steps. First apply a (pure) boost along the :math:`3`-axis
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\begin{bmatrix}
+			(p_0^2 + 1) / 2p_0 & 0 & 0 & (p_0^2 - 1) / 2p_0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			(p_0^2 - 1) / 2p_0 & 0 & 0 & (p_0^2 + 1) / 2p_0
+		\end{bmatrix}
+		\begin{bmatrix}
+			1 \\
+			0 \\
+			0 \\
+			1
+		\end{bmatrix} = \begin{bmatrix}
+			p_0 \\
+			0 \\
+			0 \\
+			p_0
+		\end{bmatrix} = \begin{bmatrix}
+			p_0 \\
+			0 \\
+			0 \\
+			|\pbf|
+		\end{bmatrix}
+	\end{equation*}
+
+Then apply a (pure) rotation that takes :math:`(0, 0, |\pbf|)` to :math:`\pbf`. However, in contrast to the massive case :math:`\eqref{eq_L_transformation_for_massive}`, where :math:`L(p)` depends continuously on :math:`p`, there exists no continuous family of rotations that take :math:`(0, 0, |\pbf|)` to any other :math:`3`-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the :math:`3`-axis, which, according to :math:`\eqref{eq_lorentz_transformation_formula_for_massless}`, only produces a physically immaterial phase factor.
+
+.. dropdown:: Polarization of photons
+	:animate: fade-in-slide-down
+
+	General photon states of definite momentum can be written as a superposition
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\Psi_{p, \alpha} \coloneqq \alpha_+ \Psi_{p, +1} + \alpha_- \Psi_{p, -1}
+		\end{equation*}
+
+	such that :math:`|\alpha_+|^2 + |\alpha_-|^2 = 1`. They are not in general Lorentz invariant due to the angle :math:`\theta` presented in the phase factor in :math:`\eqref{eq_lorentz_transformation_formula_for_massless}`. Here the base states :math:`\Psi_{p, \pm 1}` are known as (right and left-handedly) *circularly polarized*, and the other extreme cases where :math:`|\alpha_+| = |\alpha_-|` are known as *linearly polarized*. All other intermediate cases are then called *elliptically polarized*.
+
+	It's not obvious at all why these states are named the way they are, if only viewed as abstract combinations of eigenstates of an abstract operator :math:`J_3`. They are named after analogies, either with `helicity <https://en.wikipedia.org/wiki/Helicity_(particle_physics)>`_ from classical mechanics or with classical electromagnetic fields (in vacuum) from Maxwell's theory.
 
 
 .. rubric:: Footnotes
