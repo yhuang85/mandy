@@ -684,7 +684,12 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 \begin{equation}
         U(1 + \omega, \epsilon) = 1 - \ifrak \epsilon^{\mu} P_{\mu} + \frac{\ifrak}{2} \omega^{\mu \nu} J_{\mu \nu} + \cdots
         \label{eq_u_lorentz_expansion}
-\end{equation}</div><p>Here we have inserted <span class="math notranslate nohighlight">\(\ifrak\)</span> as usual so that the unitarity of <span class="math notranslate nohighlight">\(U\)</span> implies that both <span class="math notranslate nohighlight">\(P_{\mu}\)</span> and <span class="math notranslate nohighlight">\(J_{\mu \nu}\)</span> are Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span> is anti-symmetric, we can assume the same holds for <span class="math notranslate nohighlight">\(J_{\mu \nu}\)</span>.</p>
+\end{equation}</div><p>Here we have inserted <span class="math notranslate nohighlight">\(\ifrak\)</span> as usual so that the unitarity of <span class="math notranslate nohighlight">\(U\)</span> implies that both <span class="math notranslate nohighlight">\(P_{\mu}\)</span> and <span class="math notranslate nohighlight">\(J_{\mu \nu}\)</span> are
+Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span> is anti-symmetric, we can assume the same holds for <span class="math notranslate nohighlight">\(J_{\mu \nu}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since we are expanding <span class="math notranslate nohighlight">\(U(1 + \epsilon)\)</span> which is complex linear, the operators <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(J\)</span> are also complex linear. Hence we can freely move <span class="math notranslate nohighlight">\(\ifrak\)</span> around these operators in calculations that follow. However, this will become an issue when we later consider other operators such as the space and time inversions, which can potentially be either complex linear or anti-linear. In the later case, a sign needs to be added when commuting with the multiplication by <span class="math notranslate nohighlight">\(\ifrak\)</span>.</p>
+</div>
 <p>Let’s evaluate how the expansion transformations under conjugation</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -880,7 +885,7 @@ Time dilation and length contraction<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \begin{align}
         D^{(\jfrak)}_{\sigma \sigma'} (\Rcal) &amp;= \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} \left( J^{(\jfrak)}_{ij} \right)_{\sigma \sigma'}  \nonumber \\
-        \left( J^{(\jfrak)}_{23} \pm \ifrak J^{(\jfrak)}_{31} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_1 \pm \ifrak J^{(\jfrak)}_2 \right)_{\sigma \sigma'} &amp;= \delta_{\sigma, \sigma' \pm 1} \sqrt{(\jfrak \mp \sigma')(\jfrak \pm \sigma' + 1)}  \label{eq_j1_j2_matrix} \\
+        \left( J^{(\jfrak)}_{23} \pm \ifrak J^{(\jfrak)}_{31} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_1 \pm \ifrak J^{(\jfrak)}_2 \right)_{\sigma \sigma'} &amp;= \delta_{\sigma \pm 1, \sigma'} \sqrt{(\jfrak \mp \sigma)(\jfrak \pm \sigma + 1)}  \label{eq_j1_j2_matrix} \\
         \left( J^{(\jfrak)}_{12} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_3 \right)_{\sigma \sigma'} &amp;= \sigma \delta_{\sigma \sigma'}  \label{eq_j3_matrix}
 \end{align}</div><p>where <span class="math notranslate nohighlight">\(\sigma, \sigma'\)</span> run through the values <span class="math notranslate nohighlight">\(-\jfrak, -\jfrak + 1, \cdots, \jfrak - 1, \jfrak\)</span>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="dropdown-repr-of-angular-momenta">
@@ -937,10 +942,9 @@ Representations of angular momenta<div class="sd-summary-down docutils">
 \end{equation*}</div><p>It follows that <a class="footnote-reference brackets" href="#boost-in-p-formula" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        L(p)_0^0 &amp;= \gamma \nonumber \\
-        L(p)_i^0 = L(p)_0^i &amp;= \frac{p_i}{M} \nonumber \\
-        L(p)_i^j &amp;= \delta_i^j + \frac{p_i p_j}{\pbf^2} (\gamma - 1)
-        \label{eq_L_transformation_for_massive}
+        L(p)_0^0 &amp;= \gamma \label{eq_L_transformation_for_massive_1} \\
+        L(p)_i^0 = L(p)_0^i &amp;= \frac{p_i}{M} \label{eq_L_transformation_for_massive_2} \\
+        L(p)_i^j &amp;= \delta_i^j + \frac{p_i p_j}{\pbf^2} (\gamma - 1) \label{eq_L_transformation_for_massive_3}
 \end{align}</div><p>Finally, we note an important fact that when <span class="math notranslate nohighlight">\(\Lambda = \Rcal\)</span> is a <span class="math notranslate nohighlight">\(3\)</span>-rotation, then <span class="math notranslate nohighlight">\(W(\Rcal, p) = \Rcal\)</span> for any <span class="math notranslate nohighlight">\(p\)</span>. To see this, we’ll work out how <span class="math notranslate nohighlight">\(W(\Rcal, p)\)</span> acts on <span class="math notranslate nohighlight">\((1, \mathbf{0}), (0, \pbf)\)</span>, and <span class="math notranslate nohighlight">\((0, \qbf)\)</span>, respectively, where <span class="math notranslate nohighlight">\(\qbf\)</span> is any <span class="math notranslate nohighlight">\(3\)</span>-vector perpendicular to <span class="math notranslate nohighlight">\(\pbf\)</span>, as follows</p>
 <div class="math notranslate nohighlight">
 \begin{alignat*}{2}
@@ -1092,7 +1096,7 @@ The little group is <span class="math notranslate nohighlight">\(~E^+(2)\)</span
                 0 \\
                 |\pbf|
         \end{bmatrix}
-\end{equation*}</div><p>Then apply a (pure) rotation that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. However, in contrast to the massive case <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive}\)</span>, where <span class="math notranslate nohighlight">\(L(p)\)</span> depends continuously on <span class="math notranslate nohighlight">\(p\)</span>, there exists no continuous family of rotations that take <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to any other <span class="math notranslate nohighlight">\(3\)</span>-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, which, according to <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_massless}\)</span>, only produces a physically immaterial phase factor.</p>
+\end{equation*}</div><p>Then apply a (pure) rotation that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. However, in contrast to the massive case <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_1}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_3}\)</span>, where <span class="math notranslate nohighlight">\(L(p)\)</span> depends continuously on <span class="math notranslate nohighlight">\(p\)</span>, there exists no continuous family of rotations that take <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to any other <span class="math notranslate nohighlight">\(3\)</span>-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, which, according to <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_massless}\)</span>, only produces a physically immaterial phase factor.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
 Polarization of photons<div class="sd-summary-down docutils">
@@ -1107,7 +1111,75 @@ Polarization of photons<div class="sd-summary-down docutils">
 \end{equation*}</div><p class="sd-card-text">such that <span class="math notranslate nohighlight">\(|\alpha_+|^2 + |\alpha_-|^2 = 1\)</span>. They are not in general Lorentz invariant due to the angle <span class="math notranslate nohighlight">\(\theta\)</span> presented in the phase factor in <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_massless}\)</span>. Here the base states <span class="math notranslate nohighlight">\(\Psi_{p, \pm 1}\)</span> are known as (right and left-handedly) <em>circularly polarized</em>, and the other extreme cases where <span class="math notranslate nohighlight">\(|\alpha_+| = |\alpha_-|\)</span> are known as <em>linearly polarized</em>. All other intermediate cases are then called <em>elliptically polarized</em>.</p>
 <p class="sd-card-text">It’s not obvious at all why these states are named the way they are, if only viewed as abstract combinations of eigenstates of an abstract operator <span class="math notranslate nohighlight">\(J_3\)</span>. They are named after analogies, either with <a class="reference external" href="https://en.wikipedia.org/wiki/Helicity_(particle_physics)">helicity</a> from classical mechanics or with classical electromagnetic fields (in vacuum) from Maxwell’s theory.</p>
 </div>
-</details><p class="rubric">Footnotes</p>
+</details></section>
+<section id="space-and-time-inversions">
+<h3>Space and time inversions<a class="headerlink" href="#space-and-time-inversions" title="Link to this heading">#</a></h3>
+<p>So far the discussions have been focused on orthochronous (and mostly homogeneous) Lorentz transformations, and in particular, the infinitesimal symmetries at the vicinity of the identity. Now it’s time to take a look at the space and time inversions, defined in <span class="math notranslate nohighlight">\(\eqref{eq_space_inversion}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_time_inversion}\)</span>, which takes us to the other components of the Lorentz group. The main goal is to understand their actions on the one-particle states, that have been worked out in the previous two sections.</p>
+<p>Let’s write</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Pcal) \coloneqq U(\Pcal, 0), \quad U(\Tcal) \coloneqq U(\Tcal, 0)
+\end{equation*}</div><p>for the corresponding quantum symmetry operators, which we haven’t decided whether should be complex linear or anti-linear. The same calculations that led to <span class="math notranslate nohighlight">\(\eqref{eq_p_conjugated_by_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j_conjugated_by_u}\)</span> now give</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        U(\Pcal) \ifrak P_{\mu} U^{-1}(\Pcal) &amp;= \ifrak \Pcal^{\rho}_{\mu} P_{\rho} \label{eq_p_conjugated_by_p} \\
+        U(\Pcal) \ifrak J_{\mu \nu} U^{-1}(\Pcal) &amp;= \ifrak \Pcal^{\rho}_{\mu} \Pcal^{\kappa}_{\nu} J_{\rho \kappa} \label{eq_j_conjugated_by_p} \\
+        U(\Tcal) \ifrak P_{\mu} U^{-1}(\Tcal) &amp;= \ifrak \Tcal^{\rho}_{\mu} P_{\rho} \label{eq_p_conjugated_by_t} \\
+        U(\Tcal) \ifrak J_{\mu \nu} U^{-1}(\Tcal) &amp;= \ifrak \Tcal^{\rho}_{\mu} \Tcal^{\kappa}_{\nu} J_{\rho \kappa} \label{eq_j_conjugated_by_t}
+\end{align}</div><p>The complex (anti-)linearity of <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> and <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> can then be decided by the postulation that physically meaningful energy must not be negative. More precisely, recall that <span class="math notranslate nohighlight">\(P_0\)</span> is the energy operator. Then <span class="math notranslate nohighlight">\(\eqref{eq_p_conjugated_by_p}\)</span> shows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Pcal) \ifrak P_0 U^{-1}(\Pcal) = \ifrak P_0
+\end{equation*}</div><p>If <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> were anti-linear, then <span class="math notranslate nohighlight">\(U(\Pcal) P_0 U^{-1}(\Pcal) = -P_0\)</span>. Then for any state <span class="math notranslate nohighlight">\(\Psi\)</span> with positive energy, i.e., <span class="math notranslate nohighlight">\(P_0 \Psi = p_0 \Psi\)</span>, we would have a state <span class="math notranslate nohighlight">\(U^{-1}(\Pcal) \Psi\)</span> with negative energy <span class="math notranslate nohighlight">\(-p_0\)</span>. Hence we conclude that <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> must be linear. The same argument shows also that <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> must be anti-linear (since <span class="math notranslate nohighlight">\(\Tcal_0^0 = -1\)</span>).</p>
+<p>As before, it’ll be useful to rewrite <span class="math notranslate nohighlight">\(\eqref{eq_p_conjugated_by_p}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_j_conjugated_by_t}\)</span> in terms of <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{alignat}{3}
+        U(\Pcal) &amp;H U^{-1}(\Pcal) &amp;&amp;= &amp;&amp;H \nonumber \\
+        U(\Pcal) &amp;\Pbf U^{-1}(\Pcal) &amp;&amp;= -&amp;&amp;\Pbf \label{eq_p3_conjugated_by_p} \\
+        U(\Pcal) &amp;\Jbf U^{-1}(\Pcal) &amp;&amp;= &amp;&amp;\Jbf \label{eq_j3_conjugated_by_p} \\
+        U(\Pcal) &amp;\Kbf U^{-1}(\Pcal) &amp;&amp;= -&amp;&amp;\Kbf \nonumber \\
+        U(\Tcal) &amp;H U^{-1}(\Tcal) &amp;&amp;= &amp;&amp;H \nonumber \\
+        U(\Tcal) &amp;\Pbf U^{-1}(\Tcal) &amp;&amp;= -&amp;&amp;\Pbf \label{eq_p3_conjugated_by_t} \\
+        U(\Tcal) &amp;\Jbf U^{-1}(\Tcal) &amp;&amp;= -&amp;&amp;\Jbf \label{eq_j3_conjugated_by_t} \\
+        U(\Tcal) &amp;\Kbf U^{-1}(\Tcal) &amp;&amp;= &amp;&amp;\Kbf \nonumber \\
+\end{alignat}</div><p>One can (and should) try to reconcile these implications with commonsense. For example, <span class="math notranslate nohighlight">\(\eqref{eq_p3_conjugated_by_p}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_p3_conjugated_by_t}\)</span> say that the <span class="math notranslate nohighlight">\(3\)</span>-momentum changes direction under either space or time inversion, which is of course as expected. Moreover <span class="math notranslate nohighlight">\(\eqref{eq_j3_conjugated_by_p}\)</span> says that the spin (of for example a basketball) remains the same under space inversion because both the direction of the axis and the handedness of the rotation get reversed simultaneously, but it gets reversed under a time inversion according to <span class="math notranslate nohighlight">\(\eqref{eq_j3_conjugated_by_t}\)</span> because the direction of rotation is reversed if time flows backwards.</p>
+<p>In what follows we will work out the effects of space and time inversions on massive and massless particles, respectively.</p>
+<section id="space-inversion-for-massive-particles">
+<h4>Space inversion for massive particles<a class="headerlink" href="#space-inversion-for-massive-particles" title="Link to this heading">#</a></h4>
+<p>We start by considering a state at rest <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span>, where <span class="math notranslate nohighlight">\(k = (M, 0, 0, 0)\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(J_3\)</span> under one of the spin representations discussed in <a class="reference internal" href="#dropdown-repr-of-angular-momenta"><span class="std std-ref">Representations of angular momenta</span></a>. Since the state is at rest and <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with <span class="math notranslate nohighlight">\(J_3\)</span> according to <span class="math notranslate nohighlight">\(\eqref{eq_j3_conjugated_by_p}\)</span>, we can write</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Pcal) \Psi_{k, \sigma} = \eta \Psi_{k, \sigma}
+        \label{eq_space_inversion_on_massive_standard}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\eta\)</span> is a phase that depends a priori on <span class="math notranslate nohighlight">\(\sigma\)</span>. It turns out, however, that <span class="math notranslate nohighlight">\(\eta\)</span> is actually independent of <span class="math notranslate nohighlight">\(\sigma\)</span>, and hence justifies the notation, since <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with the raising/lowering operators <span class="math notranslate nohighlight">\(J_1 \pm \ifrak J_2\)</span> by <span class="math notranslate nohighlight">\(\eqref{eq_j3_conjugated_by_p}\)</span>.</p>
+<p>To move on to the general case, we recall that the general formula <span class="math notranslate nohighlight">\(\eqref{eq_def_of_one_particle_psi}\)</span> takes the following form</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Psi_{p, \sigma} = \sqrt{\frac{M}{p_0}} U(L(p)) \Psi_{k, \sigma}
+\end{equation*}</div><p>We can calculate as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Pcal) \Psi_{p, \sigma} = \sqrt{\frac{M}{p_0}} U(\Pcal L(p) \Pcal^{-1}) U(\Pcal) \Psi_{k, \sigma} = \eta~\sqrt{\frac{M}{p_0}} U(L(\Pcal p)) \Psi_{k, \sigma} = \eta \Psi_{\Pcal p, \sigma}
+        \label{eq_space_inversion_on_massive_general}
+\end{equation}</div><p>which generalizes <span class="math notranslate nohighlight">\(\eqref{eq_space_inversion_on_massive_standard}\)</span>. Such <span class="math notranslate nohighlight">\(\eta\)</span> is known as the <em>intrinsic parity</em>, which is intrinsic to a particle species.</p>
+</section>
+<section id="time-inversion-for-massive-particles">
+<h4>Time inversion for massive particles<a class="headerlink" href="#time-inversion-for-massive-particles" title="Link to this heading">#</a></h4>
+<p>Consider the same <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> as in the space inversion case. Now since <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> anti-commutes with <span class="math notranslate nohighlight">\(J_3\)</span> according to <span class="math notranslate nohighlight">\(\eqref{eq_j3_conjugated_by_t}\)</span>, we can write</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Tcal) \Psi_{k, \sigma} = \zeta_{\sigma} \Psi_{k, -\sigma}
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\zeta_{\sigma}\)</span> is a phase. Applying the raising/lowering operators and using <span class="math notranslate nohighlight">\(\eqref{eq_j1_j2_matrix}\)</span>, we can calculate the left-hand-side, recalling that <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> is anti-linear, as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        (J_1 \pm \ifrak J_2) U(\Tcal) \Psi_{k, \sigma} &amp;= -U(\Tcal) (J_1 \mp \ifrak J_2) \Psi_{k, \sigma} = -U(\Tcal) \sqrt{(\jfrak \pm \sigma)(\jfrak \mp \sigma + 1)} \Psi_{k, \sigma \mp 1} \\
+        &amp;= -\zeta_{\sigma \mp 1} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}
+\end{align*}</div><p>and the right-hand-side as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        (J_1 \pm \ifrak J_2) \zeta_{\sigma} \Psi_{k, -\sigma} = \zeta_{\sigma} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}
+\end{equation*}</div><p>Equating the two sides, we see that <span class="math notranslate nohighlight">\(\zeta_{\sigma} = -\zeta_{\sigma \pm 1}\)</span>.</p>
+<p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">1</a><span class="fn-bracket">]</span></span>
@@ -1118,6 +1190,7 @@ Polarization of photons<div class="sd-summary-down docutils">
 <p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id8"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 </section>
@@ -1158,6 +1231,11 @@ Polarization of photons<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-to-the-little-group">Reduction to the little group</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massive-particle-states">Massive particle states</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massless-particle-states">Massless particle states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-and-time-inversions">Space and time inversions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#space-inversion-for-massive-particles">Space inversion for massive particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-inversion-for-massive-particles">Time inversion for massive particles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
