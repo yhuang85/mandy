@@ -1073,7 +1073,7 @@ The little group is <span class="math notranslate nohighlight">\(~E^+(2)\)</span
 \end{equation}</div><p>In particular, we see that, unlike the spin of massive particles, helicity is Lorentz invariant (at least under genuine representations). It is reasonable, therefore, to think of massless particles of different helicity as different particle species. Examples include photons with <span class="math notranslate nohighlight">\(\sigma = \pm 1\)</span> and gravitons with <span class="math notranslate nohighlight">\(\sigma = \pm 2\)</span>, but <em>not</em> (anti-)neutrinos with hypothetical <span class="math notranslate nohighlight">\(\sigma = \pm \tfrac{1}{2}\)</span> as otherwise stated in the book, which are now known to have a nonzero mass. Here the <span class="math notranslate nohighlight">\(\pm\)</span> signs are related to the space-inversion symmetry <span class="math notranslate nohighlight">\(\eqref{eq_space_inversion}\)</span>, which will be discussed in detail later.</p>
 <p>In order to use <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_massless}\)</span> for a general <span class="math notranslate nohighlight">\((\Lambda, p)\)</span>, we first need to fix the choices of <span class="math notranslate nohighlight">\(L(p)\)</span> that takes the standard <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> to <span class="math notranslate nohighlight">\(p\)</span>. This can be done in two steps. First apply a (pure) boost along the <span class="math notranslate nohighlight">\(3\)</span>-axis</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \begin{bmatrix}
                 (p_0^2 + 1) / 2p_0 &amp; 0 &amp; 0 &amp; (p_0^2 - 1) / 2p_0 \\
                 0 &amp; 1 &amp; 0 &amp; 0 \\
@@ -1096,7 +1096,8 @@ The little group is <span class="math notranslate nohighlight">\(~E^+(2)\)</span
                 0 \\
                 |\pbf|
         \end{bmatrix}
-\end{equation*}</div><p>Then apply a (pure) rotation that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. However, in contrast to the massive case <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_1}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_3}\)</span>, where <span class="math notranslate nohighlight">\(L(p)\)</span> depends continuously on <span class="math notranslate nohighlight">\(p\)</span>, there exists no continuous family of rotations that take <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to any other <span class="math notranslate nohighlight">\(3\)</span>-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, which, according to <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_massless}\)</span>, only produces a physically immaterial phase factor.</p>
+        \label{eq_massless_boost}
+\end{equation}</div><p>Then apply a (pure) rotation that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. However, in contrast to the massive case <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_1}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_3}\)</span>, where <span class="math notranslate nohighlight">\(L(p)\)</span> depends continuously on <span class="math notranslate nohighlight">\(p\)</span>, there exists no continuous family of rotations that take <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to any other <span class="math notranslate nohighlight">\(3\)</span>-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, which, according to <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_massless}\)</span>, only produces a physically immaterial phase factor.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
 Polarization of photons<div class="sd-summary-down docutils">
@@ -1174,11 +1175,37 @@ Polarization of photons<div class="sd-summary-down docutils">
 \begin{align*}
         (J_1 \pm \ifrak J_2) U(\Tcal) \Psi_{k, \sigma} &amp;= -U(\Tcal) (J_1 \mp \ifrak J_2) \Psi_{k, \sigma} = -U(\Tcal) \sqrt{(\jfrak \pm \sigma)(\jfrak \mp \sigma + 1)} \Psi_{k, \sigma \mp 1} \\
         &amp;= -\zeta_{\sigma \mp 1} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}
-\end{align*}</div><p>and the right-hand-side as follows</p>
+\end{align*}</div><p>where <span class="math notranslate nohighlight">\(\jfrak\)</span> is the particle spin, and the right-hand-side as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         (J_1 \pm \ifrak J_2) \zeta_{\sigma} \Psi_{k, -\sigma} = \zeta_{\sigma} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}
-\end{equation*}</div><p>Equating the two sides, we see that <span class="math notranslate nohighlight">\(\zeta_{\sigma} = -\zeta_{\sigma \pm 1}\)</span>.</p>
+\end{equation*}</div><p>Equating the two sides, we see that <span class="math notranslate nohighlight">\(\zeta_{\sigma} = -\zeta_{\sigma \pm 1}\)</span>. Up to an overall phase, we can set <span class="math notranslate nohighlight">\(\zeta_{\sigma} = (-1)^{\jfrak - \sigma}\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Tcal) \Psi_{k, \sigma} = (-1)^{\jfrak - \sigma} \Psi_{k, -\sigma}
+\end{equation*}</div><p>As in the case of space inversion, the formula generalizes to any <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(p\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Tcal) \Psi_{p, \sigma} = (-1)^{\jfrak - \sigma} \Psi_{p, -\sigma}
+        \label{eq_time_inversion_on_massive_general}
+\end{equation}</div><p>since <span class="math notranslate nohighlight">\(\Tcal L(p) \Tcal^{-1} = L(\Pcal p)\)</span>.</p>
+</section>
+<section id="space-inversion-for-massless-particles">
+<h4>Space inversion for massless particles<a class="headerlink" href="#space-inversion-for-massless-particles" title="Link to this heading">#</a></h4>
+<p>Let’s consider a state <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> with <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> being the helicity, i.e., <span class="math notranslate nohighlight">\(J_3 \Psi_{k, \sigma} = \sigma \Psi_{k, \sigma}\)</span>. Since <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with <span class="math notranslate nohighlight">\(J_3\)</span>, the space inversion preserves <span class="math notranslate nohighlight">\(\sigma\)</span>, just as in the massive case. However, since <span class="math notranslate nohighlight">\(\Pcal\)</span> reverses the direction of motion, the helicity in the direction of motion actually reverses sign.</p>
+<p>Since <span class="math notranslate nohighlight">\(\Pcal\)</span> doesn’t fix <span class="math notranslate nohighlight">\(k\)</span>, it’ll be convenient to introduce an additional rotation <span class="math notranslate nohighlight">\(\Rcal_2\)</span>, which is defined to be a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(2\)</span>-axis, so that <span class="math notranslate nohighlight">\(U(R_2) = \exp(\ifrak \pi J_2)\)</span> and <span class="math notranslate nohighlight">\(R_2 \Pcal k = k\)</span>. Since <span class="math notranslate nohighlight">\(U(R_2)\)</span> flips the sign of <span class="math notranslate nohighlight">\(J_3\)</span>, as can be seen from the very definition of <span class="math notranslate nohighlight">\(J_3\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(R_2 \Pcal) \Psi_{k, \sigma} = \eta_{\sigma} \Psi_{k, -\sigma}
+\end{equation*}</div><p>To move on to the general case, recall that the <span class="math notranslate nohighlight">\(L(p)\)</span> that takes <span class="math notranslate nohighlight">\(k\)</span> to <span class="math notranslate nohighlight">\(p\)</span> consists of a boost <span class="math notranslate nohighlight">\(B\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_massless_boost}\)</span> followed by a (chosen) pure rotation <span class="math notranslate nohighlight">\(R(\pbf)\)</span> that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. We calculate as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        U(\Pcal) \Psi_{p, \sigma} &amp;= p_0^{-1/2} U(\Pcal R(\pbf)B) \Psi_{k, \sigma} \nonumber \\
+                &amp;= p_0^{-1/2} U(R(\pbf) B R_2^{-1}) U(R_2 \Pcal) \Psi_{k, \sigma} \nonumber \\
+                &amp;= p_0^{-1/2} \eta_{\sigma} U(R(\pbf) R_2^{-1} B) \Psi_{k, -\sigma} \nonumber \\
+                &amp;= \eta_{\sigma} \rho \Psi_{\Pcal p, -\sigma}
+                \label{eq_space_inversion_on_massless_undetermined_phase}
+\end{align}</div><p>where <span class="math notranslate nohighlight">\(\rho\)</span> is an extra phase due to the fact that although <span class="math notranslate nohighlight">\(R(\pbf) R_2^{-1}\)</span> takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(-\pbf\)</span>, it may not be the chosen one.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
@@ -1234,6 +1261,7 @@ Polarization of photons<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-and-time-inversions">Space and time inversions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#space-inversion-for-massive-particles">Space inversion for massive particles</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-inversion-for-massive-particles">Time inversion for massive particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#space-inversion-for-massless-particles">Space inversion for massless particles</a></li>
 </ul>
 </li>
 </ul>

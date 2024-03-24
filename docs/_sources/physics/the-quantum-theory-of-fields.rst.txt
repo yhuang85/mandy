@@ -1158,7 +1158,7 @@ In order to use :math:`\eqref{eq_lorentz_transformation_formula_for_massless}` f
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\begin{bmatrix}
 			(p_0^2 + 1) / 2p_0 & 0 & 0 & (p_0^2 - 1) / 2p_0 \\
 			0 & 1 & 0 & 0 \\
@@ -1181,7 +1181,8 @@ In order to use :math:`\eqref{eq_lorentz_transformation_formula_for_massless}` f
 			0 \\
 			|\pbf|
 		\end{bmatrix}
-	\end{equation*}
+		\label{eq_massless_boost}
+	\end{equation}
 
 Then apply a (pure) rotation that takes :math:`(0, 0, |\pbf|)` to :math:`\pbf`. However, in contrast to the massive case :math:`\eqref{eq_L_transformation_for_massive_1}` -- :math:`\eqref{eq_L_transformation_for_massive_3}`, where :math:`L(p)` depends continuously on :math:`p`, there exists no continuous family of rotations that take :math:`(0, 0, |\pbf|)` to any other :math:`3`-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the :math:`3`-axis, which, according to :math:`\eqref{eq_lorentz_transformation_formula_for_massless}`, only produces a physically immaterial phase factor.
 
@@ -1316,7 +1317,7 @@ where :math:`\zeta_{\sigma}` is a phase. Applying the raising/lowering operators
 		&= -\zeta_{\sigma \mp 1} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}
 	\end{align*}
 
-and the right-hand-side as follows
+where :math:`\jfrak` is the particle spin, and the right-hand-side as follows
 
 .. math::
 	:nowrap:
@@ -1325,7 +1326,56 @@ and the right-hand-side as follows
 		(J_1 \pm \ifrak J_2) \zeta_{\sigma} \Psi_{k, -\sigma} = \zeta_{\sigma} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}
 	\end{equation*}
 
-Equating the two sides, we see that :math:`\zeta_{\sigma} = -\zeta_{\sigma \pm 1}`.
+Equating the two sides, we see that :math:`\zeta_{\sigma} = -\zeta_{\sigma \pm 1}`. Up to an overall phase, we can set :math:`\zeta_{\sigma} = (-1)^{\jfrak - \sigma}` so that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Tcal) \Psi_{k, \sigma} = (-1)^{\jfrak - \sigma} \Psi_{k, -\sigma}
+	\end{equation*}
+
+As in the case of space inversion, the formula generalizes to any :math:`4`-momentum :math:`p`
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(\Tcal) \Psi_{p, \sigma} = (-1)^{\jfrak - \sigma} \Psi_{p, -\sigma}
+		\label{eq_time_inversion_on_massive_general}
+	\end{equation}
+
+since :math:`\Tcal L(p) \Tcal^{-1} = L(\Pcal p)`.
+
+Space inversion for massless particles
+++++++++++++++++++++++++++++++++++++++
+
+Let's consider a state :math:`\Psi_{k, \sigma}` with :math:`k = (1, 0, 0, 1)` and :math:`\sigma` being the helicity, i.e., :math:`J_3 \Psi_{k, \sigma} = \sigma \Psi_{k, \sigma}`. Since :math:`U(\Pcal)` commutes with :math:`J_3`, the space inversion preserves :math:`\sigma`, just as in the massive case. However, since :math:`\Pcal` reverses the direction of motion, the helicity in the direction of motion actually reverses sign.
+
+Since :math:`\Pcal` doesn't fix :math:`k`, it'll be convenient to introduce an additional rotation :math:`\Rcal_2`, which is defined to be a :math:`\pi`-rotation about the :math:`2`-axis, so that :math:`U(R_2) = \exp(\ifrak \pi J_2)` and :math:`R_2 \Pcal k = k`. Since :math:`U(R_2)` flips the sign of :math:`J_3`, as can be seen from the very definition of :math:`J_3` in :math:`\eqref{eq_u_lorentz_expansion}`, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(R_2 \Pcal) \Psi_{k, \sigma} = \eta_{\sigma} \Psi_{k, -\sigma}
+	\end{equation*}
+
+To move on to the general case, recall that the :math:`L(p)` that takes :math:`k` to :math:`p` consists of a boost :math:`B` defined by :math:`\eqref{eq_massless_boost}` followed by a (chosen) pure rotation :math:`R(\pbf)` that takes :math:`(0, 0, |\pbf|)` to :math:`\pbf`. We calculate as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U(\Pcal) \Psi_{p, \sigma} &= p_0^{-1/2} U(\Pcal R(\pbf)B) \Psi_{k, \sigma} \nonumber \\
+			&= p_0^{-1/2} U(R(\pbf) B R_2^{-1}) U(R_2 \Pcal) \Psi_{k, \sigma} \nonumber \\
+			&= p_0^{-1/2} \eta_{\sigma} U(R(\pbf) R_2^{-1} B) \Psi_{k, -\sigma} \nonumber \\
+			&= \eta_{\sigma} \rho \Psi_{\Pcal p, -\sigma}
+			\label{eq_space_inversion_on_massless_undetermined_phase}
+	\end{align}
+
+where :math:`\rho` is an extra phase due to the fact that although :math:`R(\pbf) R_2^{-1}` takes :math:`(0, 0, |\pbf|)` to :math:`-\pbf`, it may not be the chosen one.
+
 
 .. rubric:: Footnotes
 
