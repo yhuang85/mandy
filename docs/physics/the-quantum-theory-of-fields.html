@@ -1179,25 +1179,26 @@ Polarization of photons<div class="sd-summary-down docutils">
 <div class="math notranslate nohighlight">
 \begin{equation*}
         (J_1 \pm \ifrak J_2) \zeta_{\sigma} \Psi_{k, -\sigma} = \zeta_{\sigma} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}
-\end{equation*}</div><p>Equating the two sides, we see that <span class="math notranslate nohighlight">\(\zeta_{\sigma} = -\zeta_{\sigma \pm 1}\)</span>. Up to an overall phase, we can set <span class="math notranslate nohighlight">\(\zeta_{\sigma} = (-1)^{\jfrak - \sigma}\)</span> so that</p>
+\end{equation*}</div><p>Equating the two sides, we see that <span class="math notranslate nohighlight">\(\zeta_{\sigma} = -\zeta_{\sigma \pm 1}\)</span>. Up to an overall phase, we can set <span class="math notranslate nohighlight">\(\zeta_{\sigma} = \zeta (-1)^{\jfrak - \sigma}\)</span> so that</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
-        U(\Tcal) \Psi_{k, \sigma} = (-1)^{\jfrak - \sigma} \Psi_{k, -\sigma}
-\end{equation*}</div><p>As in the case of space inversion, the formula generalizes to any <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(p\)</span></p>
+        U(\Tcal) \Psi_{k, \sigma} = \zeta (-1)^{\jfrak - \sigma} \Psi_{k, -\sigma}.
+\end{equation*}</div><p>Here we have chosen to keep the option of a physically inconsequential phase <span class="math notranslate nohighlight">\(\zeta\)</span> open. As in the case of space inversion, the formula generalizes to any <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(p\)</span></p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        U(\Tcal) \Psi_{p, \sigma} = (-1)^{\jfrak - \sigma} \Psi_{p, -\sigma}
+        U(\Tcal) \Psi_{p, \sigma} = \zeta (-1)^{\jfrak - \sigma} \Psi_{p, -\sigma}
         \label{eq_time_inversion_on_massive_general}
 \end{equation}</div><p>since <span class="math notranslate nohighlight">\(\Tcal L(p) \Tcal^{-1} = L(\Pcal p)\)</span>.</p>
 </section>
 <section id="space-inversion-for-massless-particles">
 <h4>Space inversion for massless particles<a class="headerlink" href="#space-inversion-for-massless-particles" title="Link to this heading">#</a></h4>
-<p>Let’s consider a state <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> with <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> being the helicity, i.e., <span class="math notranslate nohighlight">\(J_3 \Psi_{k, \sigma} = \sigma \Psi_{k, \sigma}\)</span>. Since <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with <span class="math notranslate nohighlight">\(J_3\)</span>, the space inversion preserves <span class="math notranslate nohighlight">\(\sigma\)</span>, just as in the massive case. However, since <span class="math notranslate nohighlight">\(\Pcal\)</span> reverses the direction of motion, the helicity in the direction of motion actually reverses sign.</p>
-<p>Since <span class="math notranslate nohighlight">\(\Pcal\)</span> doesn’t fix <span class="math notranslate nohighlight">\(k\)</span>, it’ll be convenient to introduce an additional rotation <span class="math notranslate nohighlight">\(\Rcal_2\)</span>, which is defined to be a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(2\)</span>-axis, so that <span class="math notranslate nohighlight">\(U(R_2) = \exp(\ifrak \pi J_2)\)</span> and <span class="math notranslate nohighlight">\(R_2 \Pcal k = k\)</span>. Since <span class="math notranslate nohighlight">\(U(R_2)\)</span> flips the sign of <span class="math notranslate nohighlight">\(J_3\)</span>, as can be seen from the very definition of <span class="math notranslate nohighlight">\(J_3\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span>, we have</p>
+<p>Let’s consider a state <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> with <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> being the helicity, i.e., <span class="math notranslate nohighlight">\(J_3 \Psi_{k, \sigma} = \sigma \Psi_{k, \sigma}\)</span>. Since <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with <span class="math notranslate nohighlight">\(J_3\)</span>, the space inversion preserves <span class="math notranslate nohighlight">\(\sigma\)</span>, just as in the massive case. However, since <span class="math notranslate nohighlight">\(\Pcal\)</span> reverses the direction of motion, the helicity in the direction of motion actually reverses sign. It follows, in particular, that (massless) particles that respect the space inversion symmetry must come in companion with another particle of opposite helicity.</p>
+<p>To spell out more details, note that since <span class="math notranslate nohighlight">\(\Pcal\)</span> doesn’t fix <span class="math notranslate nohighlight">\(k\)</span>, it’ll be convenient to introduce an additional rotation <span class="math notranslate nohighlight">\(R_2\)</span>, which is defined to be a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(2\)</span>-axis, so that <span class="math notranslate nohighlight">\(U(R_2) = \exp(\ifrak \pi J_2)\)</span> and <span class="math notranslate nohighlight">\(R_2 \Pcal k = k\)</span>. Since <span class="math notranslate nohighlight">\(U(R_2)\)</span> flips the sign of <span class="math notranslate nohighlight">\(J_3\)</span>, as can be seen from the very definition of <span class="math notranslate nohighlight">\(J_3\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         U(R_2 \Pcal) \Psi_{k, \sigma} = \eta_{\sigma} \Psi_{k, -\sigma}
-\end{equation*}</div><p>To move on to the general case, recall that the <span class="math notranslate nohighlight">\(L(p)\)</span> that takes <span class="math notranslate nohighlight">\(k\)</span> to <span class="math notranslate nohighlight">\(p\)</span> consists of a boost <span class="math notranslate nohighlight">\(B\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_massless_boost}\)</span> followed by a (chosen) pure rotation <span class="math notranslate nohighlight">\(R(\pbf)\)</span> that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. We calculate as follows</p>
+\end{equation*}</div><p>where we see indeed that the helicity reverses sign (when <span class="math notranslate nohighlight">\(k\)</span> is fixed).</p>
+<p>To move on to the general case, recall that the <span class="math notranslate nohighlight">\(L(p)\)</span> that takes <span class="math notranslate nohighlight">\(k\)</span> to <span class="math notranslate nohighlight">\(p\)</span> consists of a boost <span class="math notranslate nohighlight">\(B\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_massless_boost}\)</span> followed by a (chosen) pure rotation <span class="math notranslate nohighlight">\(R(\pbf)\)</span> that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. We calculate as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
         U(\Pcal) \Psi_{p, \sigma} &amp;= p_0^{-1/2} U(\Pcal R(\pbf)B) \Psi_{k, \sigma} \nonumber \\
@@ -1206,6 +1207,47 @@ Polarization of photons<div class="sd-summary-down docutils">
                 &amp;= \eta_{\sigma} \rho \Psi_{\Pcal p, -\sigma}
                 \label{eq_space_inversion_on_massless_undetermined_phase}
 \end{align}</div><p>where <span class="math notranslate nohighlight">\(\rho\)</span> is an extra phase due to the fact that although <span class="math notranslate nohighlight">\(R(\pbf) R_2^{-1}\)</span> takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(-\pbf\)</span>, it may not be the chosen one.</p>
+<p>To spell out <span class="math notranslate nohighlight">\(\rho\)</span>, we need to be a bit more specific about <span class="math notranslate nohighlight">\(R(\pbf)\)</span>. Following the usual convention of <a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_coordinate_system">spherical coordinates</a>, we can get from <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span> by first rotate (according to the right-handed rule) about the <span class="math notranslate nohighlight">\(1\)</span>-axis at an angle <span class="math notranslate nohighlight">\(0 \leq \phi \leq \pi\)</span>, known as the polar angle, and then rotate about the <span class="math notranslate nohighlight">\(3\)</span>-axis at an angle <span class="math notranslate nohighlight">\(0 \leq \theta &lt; 2\pi\)</span>, known as the azimuthal angle. Now since we know that <span class="math notranslate nohighlight">\(R(\pbf)R_2^{-1}\)</span> differs from <span class="math notranslate nohighlight">\(R(-\pbf)\)</span> by a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, we can figure the rotation out by examining their actions on some suitably generic <span class="math notranslate nohighlight">\(\pbf\)</span>, for example, the unit vector along the <span class="math notranslate nohighlight">\(2\)</span>-axis, which is fixed by <span class="math notranslate nohighlight">\(R_2\)</span>. In this case <span class="math notranslate nohighlight">\(R(-\pbf)\)</span> is a <span class="math notranslate nohighlight">\(\pi/2\)</span>-rotation about the <span class="math notranslate nohighlight">\(1\)</span>-axis, while <span class="math notranslate nohighlight">\(R(\pbf)R_2^{-1}\)</span> is the same <span class="math notranslate nohighlight">\(\pi/2\)</span>-rotation by the <span class="math notranslate nohighlight">\(1\)</span>-axis, followed by a a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis. Therefore we conclude that the difference is a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis. In other words, we should have <span class="math notranslate nohighlight">\(\rho = \exp(-\ifrak \pi \sigma)\)</span>. However, recalling that the helicity <span class="math notranslate nohighlight">\(\sigma\)</span> may be a half-integer (thought not yet being found in Nature), there is a sign difference between <span class="math notranslate nohighlight">\(\pm \pi\)</span>-rotations about the <span class="math notranslate nohighlight">\(3\)</span>-axis. Without going into further details, we write down the general formula the space inversion as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Pcal) \Psi_{p, \sigma} = \eta_{\sigma} \exp(\mp \ifrak \pi \sigma) \Psi_{\Pcal p, -\sigma}
+        \label{eq_space_inversion_on_massless_general}
+\end{equation}</div><p>where the sign depends on the sign of <span class="math notranslate nohighlight">\(p_2\)</span> (which can be seen by playing the same game as above with the negative unit vector along the <span class="math notranslate nohighlight">\(2\)</span>-axis).</p>
+</section>
+<section id="time-inversion-for-massless-particles">
+<h4>Time inversion for massless particles<a class="headerlink" href="#time-inversion-for-massless-particles" title="Link to this heading">#</a></h4>
+<p>Let <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> as usual and consider the state <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span>. Since <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> anti-commutes with both <span class="math notranslate nohighlight">\(\Pbf\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span> by <span class="math notranslate nohighlight">\(\eqref{eq_p3_conjugated_by_t}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j3_conjugated_by_t}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Tcal) \Psi_{k, \sigma} = \Psi_{\Pcal k, -\sigma}.
+\end{equation*}</div><p>Composing with the rotation <span class="math notranslate nohighlight">\(R_2\)</span> as in the previous section to fix <span class="math notranslate nohighlight">\(k\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(R_2 \Tcal) \Psi_{k, \sigma} = \zeta_{\sigma} \Psi_{k, \sigma}
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\zeta_{\sigma}\)</span> is (yet another) phase. We see that, unlike the space inversion, the time inversion doesn’t produce a doublet of opposite helicity. Processing as in the space inversion case, one can derive the following general formula similar to <span class="math notranslate nohighlight">\(\eqref{eq_space_inversion_on_massless_general}\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Tcal) \Psi_{p, \sigma} = \zeta_{\sigma} \exp(\pm \ifrak \pi \sigma) \Psi_{\Pcal p, \sigma}
+        \label{eq_time_inversion_on_massless_general}
+\end{equation}</div><p>where the sign depends on the sign of <span class="math notranslate nohighlight">\(p_2\)</span> as before.</p>
+</section>
+<section id="kramers-degeneracy">
+<h4>Kramers’ degeneracy<a class="headerlink" href="#kramers-degeneracy" title="Link to this heading">#</a></h4>
+<p>We end our discussion about space and time inversions of one-particle states with an interesting observation on the squared time inversion <span class="math notranslate nohighlight">\(U(\Tcal)^2\)</span>. It follows from both <span class="math notranslate nohighlight">\(\eqref{eq_time_inversion_on_massive_general}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_time_inversion_on_massless_general}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Tcal)^2 \Psi_{p, \sigma} = (-1)^{2 s} \Psi_{p, \sigma}
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(s \in \tfrac{1}{2} \Zbb\)</span> equals the spin <span class="math notranslate nohighlight">\(\jfrak\)</span> in the massive case and the absolute helicity <span class="math notranslate nohighlight">\(|\sigma|\)</span> in the massless case.</p>
+<p>Hence in a non-interacting system consisting of an odd number of half-integer spin/helicity particles and any number of integer spin/helicity particles, we have</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Tcal)^2 \Psi = -\Psi. \label{eq_time_inversion_squared_reverse_sign}
+\end{equation}</div><p>Now for any eigenstate <span class="math notranslate nohighlight">\(\Psi\)</span> of the Hamiltonian, there is an accompanying eigenstate <span class="math notranslate nohighlight">\(U(\Tcal) \Psi\)</span> since <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> commutes with the Hamiltonian. The key observation then is that they are necessarily different states! To see this, let’s suppose otherwise that <span class="math notranslate nohighlight">\(U(\Tcal) \Psi = \zeta \Psi\)</span> represent the same state, where <span class="math notranslate nohighlight">\(\zeta\)</span> is a phase. Then</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Tcal)^2 \Psi = U(\Tcal) \zeta \Psi = \zeta^{\ast} U(\Tcal) \Psi = |\zeta|^2 \Psi = \Psi
+\end{equation*}</div><p>contradicts <span class="math notranslate nohighlight">\(\eqref{eq_time_inversion_squared_reverse_sign}\)</span>.</p>
+<p>As a conclusion, we see that for such systems, any energy eigenvalue has at least a two-fold degeneracy. This is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Kramers%27_theorem">Kramers’ degeneracy</a>.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
@@ -1214,7 +1256,7 @@ Polarization of photons<div class="sd-summary-down docutils">
 </aside>
 <aside class="footnote brackets" id="boost-in-p-formula" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">2</a><span class="fn-bracket">]</span></span>
-<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id8"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
+<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id9"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
 </aside>
 </aside>
 </section>
@@ -1262,6 +1304,8 @@ Polarization of photons<div class="sd-summary-down docutils">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#space-inversion-for-massive-particles">Space inversion for massive particles</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-inversion-for-massive-particles">Time inversion for massive particles</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#space-inversion-for-massless-particles">Space inversion for massless particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-inversion-for-massless-particles">Time inversion for massless particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kramers-degeneracy">Kramers’ degeneracy</a></li>
 </ul>
 </li>
 </ul>
