@@ -643,11 +643,12 @@ Let's first consider translations :math:`U(1, a)`. Since translations form an ab
 .. math::
 	:nowrap:
 
-	\begin{equation*}
-		U(1, a) \Psi_{p, \sigma} = \exp(\ifrak a^{\mu} P_{\mu}) \Psi_{p, \sigma} = \exp(\ifrak a^{\mu} p_{\mu}) \Psi_{p, \sigma}
-	\end{equation*}
+	\begin{equation}
+		U(1, a) \Psi_{p, \sigma} = \exp(-\ifrak a^{\mu} P_{\mu}) \Psi_{p, \sigma} = \exp(-\ifrak a^{\mu} p_{\mu}) \Psi_{p, \sigma}
+		\label{eq_translation_formula_for_particle_state}
+	\end{equation}
 
-Hence it remains to consider the action of homogeneous Lorentz transformations. For the convenience of notation, let's write :math:`U(\Lambda) \coloneqq U(\Lambda, 0)`. We would first like to know how :math:`U(\Lambda)` affects the :math:`4`-momentum. It follows from the following calculation
+where the minus sign comes from our choice of expansion :math:`\eqref{eq_u_lorentz_expansion}`. Hence it remains to consider the action of homogeneous Lorentz transformations. For the convenience of notation, let's write :math:`U(\Lambda) \coloneqq U(\Lambda, 0)`. We would first like to know how :math:`U(\Lambda)` affects the :math:`4`-momentum. It follows from the following calculation
 
 .. math::
 	:nowrap:
@@ -1459,6 +1460,170 @@ Now for any eigenstate :math:`\Psi` of the Hamiltonian, there is an accompanying
 contradicts :math:`\eqref{eq_time_inversion_squared_reverse_sign}`.
 
 As a conclusion, we see that for such systems, any energy eigenvalue has at least a two-fold degeneracy. This is known as `Kramers' degeneracy <https://en.wikipedia.org/wiki/Kramers%27_theorem>`_.
+
+Scattering Theory
+-----------------
+
+Physics would have been rather boring if nothing interacts, like the free particles that we have been studying so far. On the flip side, physics would have been impossible if we try to know exactly what happens in the interactions. The middle ground, where we assume that the particles are non-interacting long before and after the interaction, and something mysterious happened in between, is called scattering theory.
+
+Non-interacting many-particles state
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We shall, as always, start from the easiest part of the theory, which is clearly the non-interacting parts. Recall our grand formulae for the Lorentz transformation on one-particle state :math:`\eqref{eq_translation_formula_for_particle_state}` and :math:`\eqref{eq_lorentz_transformation_formula_for_particle_state}`. For a non-interacting many-particles system, it's conceivable to assume that the Lorentz transformation law is simply a direct product of the individual particles as follows (recall that :math:`U(\Lambda, a) = U(1, a) U(\Lambda, 0)`)
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U(\Lambda, a) \Psi_{p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots} =&~ \exp(-\ifrak a^{\mu} ((\Lambda p_1)_{\mu} + (\Lambda p_2)_{\mu} + \cdots)) \nonumber \\
+		&\times \sqrt{\frac{(\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p_1)_0 (p_2)_0 \cdots}} \nonumber \\
+		&\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma_1 \sigma'_1}(W_1(\Lambda, p_1)) D_{\sigma_2 \sigma'_2}(W_2(\Lambda, p_2)) \cdots \Psi_{\Lambda p_1, \sigma'_1, n_1; \Lambda p_2, \sigma'_2, n_2; \cdots}
+		\label{eq_lorentz_transformation_formula_for_many_free_particles}
+	\end{align}
+
+where the first component is the translation transformation :math:`\eqref{eq_translation_formula_for_particle_state}`, the second component is the normalization factor, and the third component is the little group representation, and the :math:`\sigma`'s are either the spin-:math:`z` component for massive particles or the helicity for massless particles, and the :math:`n`'s are additional (discrete) labels such as mass, charge, spin, etc.
+
+Notice that by writing a many-particles state as :math:`\Psi_{p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots}`, we have given the particles an order, which is by no means unique. Hence the normalization of these states must take permutations into account as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\left( \Psi_{p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots}, \Psi_{p'_1, \sigma'_1, n'_1; p'_2, \sigma'_2, n'_2; \cdots} \right) = \delta^3(\pbf_1 - \pbf'_1) \delta_{\sigma_1 \sigma'_1} \delta_{n_1 n'_1} \delta^3(\pbf_2 - \pbf'_2) \delta_{\sigma_2 \sigma'_2} \delta_{n_2 n'_2} \pm \text{permutations}
+		\label{eq_many_particles_state_normalization_rough}
+	\end{equation}
+
+The sign in front of the permutations has to do with the species of the particles, which will be discussed later. Note that although there are many terms in :math:`\eqref{eq_many_particles_state_normalization_rough}`, there is at most one nonzero term, which happens exactly when the two states differ by a permutation.
+
+To suppress the annoyingly many subscripts in the states, we shall use letters such as :math:`\alpha, \beta, \cdots` to denote the compound index such as :math:`(p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots)`, so that, for example, :math:`\eqref{eq_many_particles_state_normalization_rough}` can be simplified as
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left( \Psi_{\alpha}, \Psi_{\alpha'} \right) = \delta(\alpha - \alpha')
+	\end{equation*}
+
+where the integral volume element reads
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\int d\alpha \cdots = \sum_{\sigma_1, n_1; \sigma_2, n_2; \cdots} \int d^3 \pbf_1 d^3 \pbf_2 \cdots
+	\end{equation*}
+
+We have postulated that the transformation law :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}` works for non-interacting particles, but in fact, it's also only possible for non-interacting particles. One way to see this is through an energy calculation by letting :math:`\Lambda = 1` and :math:`a = (\tau, 0, 0, 0)` in :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}` to see that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\exp(\ifrak \tau E_{\alpha}) \Psi_{\alpha} = \exp(\ifrak \tau H) \Psi_{\alpha} = \exp(\ifrak \tau (E_1 + E_2 + \cdots)) \Psi_{\alpha} ~\Longrightarrow~ E_\alpha = E_1 + E_2 + \cdots
+	\end{equation*}
+
+where :math:`E_i \coloneqq (p_i)_0` is the energy of the :math:`i`-th particle. There is obviously no energy left for any interaction.
+
+*In* and *Out* states
+^^^^^^^^^^^^^^^^^^^^^
+
+As mentioned earlier, scattering theory is concerned with a scenario where interactions happen within a finite time period, long before and after which the system can be regarded as non-interacting. We can therefore define the *in* and *out* states as :math:`\Psi^{\pm}_{\alpha}`, where :math:`\alpha` is the compound index as defined in the previous section, such that the states appear to be non-interacting with the prescribed particle states when *observed* at :math:`t \to \mp \infty`, respectively.
+
+Now it's time to bring forward an implicit assumption on the quantum states that we've been studying so far: they're defined in one chosen inertial frame. Indeed, the Lorentz transformation law :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}` tells us exactly how to transform the state to any other frame. States of this sort are called `Heisenberg picture <https://en.wikipedia.org/wiki/Heisenberg_picture>`_ states: they contain the entire history/future of the system and are not dynamical in time as opposed to the so-called `Schrödinger picture <https://en.wikipedia.org/wiki/Schr%C3%B6dinger_picture>`_ states.
+
+Back to the scattering scenario, let's imagine a reference observer :math:`\Ocal`, who at :math:`t = 0` observes that the system is in a state :math:`\Psi`. Then imagine another observer :math:`\Ocal'` at rest with respect to :math:`\Ocal`, who sets his clock :math:`t' = 0` when :math:`t = \tau`, in other words :math:`t' = t - \tau`. Then from the viewpoint of :math:`\Ocal'`, the time-:math:`0` state should look like :math:`\exp(-\ifrak \tau H) \Psi`. It follows that the state :math:`\Psi`, viewed long before and long after the reference :math:`t = 0`, should look like :math:`\exp(-\ifrak \tau H) \Psi` for :math:`\tau \to \mp\infty`, respectively.
+
+It follows that energy eigenstates such as :math:`\Psi_{\alpha}` will look the same at all time because :math:`\exp(-\ifrak \tau H) \Psi_{\alpha} = \exp(-\ifrak \tau E_{\alpha}) \Psi_{\alpha}` creates merely an inconsequential phase factor. This is one form of the uncertainty principle: if the energy is definitely known, then the time is completely unknown. Therefore we must consider a localized packet (or superposition) of states as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\int d\alpha ~g(\alpha) \Psi_{\alpha}
+	\end{equation*}
+
+where :math:`g(\alpha)` is a reasonably smooth function (e.g. without poles) which is non-vanishing within a finite range of energies. We can then demand that the time limits
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\exp(-\ifrak \tau H) \int d\alpha ~g(\alpha) \Psi_{\alpha}^{\pm} = \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm}
+	\end{equation*}
+
+as :math:`\tau \to \mp\infty`, respectively, approach the corresponding superpositions of non-interacting particle states.
+
+To be more precise, let's split the Hamiltonian into the free part and the interaction part as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		H = H_0 + V  \label{eq_h_as_h0_plus_v}
+	\end{equation}
+
+such that the energy eigenstates :math:`\Phi_{\alpha}` of :math:`H_0` (in the same frame as :math:`\Psi_{\alpha}^{\pm}`) transform according to :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}`. Then the asymptotic freeness translates into the following conditions
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\lim_{\tau \to \mp\infty} \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm} = \lim_{\tau \to \mp\infty} \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha}
+		\label{eq_in_out_states_asymptotic_by_energy}
+	\end{equation}
+
+or equivalently in terms of the Hamiltonians
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\lim_{\tau \to \mp\infty} \exp(-\ifrak \tau H) \int d\alpha ~g(\alpha) \Psi_{\alpha}^{\pm} = \lim_{\tau \to \mp\infty} \exp(-\ifrak \tau H_0) \int d\alpha ~g(\alpha) \Phi_{\alpha}
+		\label{eq_in_out_states_asymptotic_by_hamiltonian}
+	\end{equation}
+
+This motivates the following definition
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Omega(\tau) \coloneqq \exp(\ifrak \tau H) \exp(-\ifrak \tau H_0)
+		\label{eq_defn_of_Omega}
+	\end{equation}
+
+so that :math:`\Psi_{\alpha}^{\pm} = \Omega(\mp\infty) \Phi_{\alpha}`, at least formally. Moreover, since :math:`\Omega` is unitary, the *in* and *out* states :math:`\Psi_{\alpha}^{\pm}` are normalized as long as :math:`\Phi_{\alpha}` are normalized.
+
+In practice it will be assumed that the interaction term :math:`V` in :math:`\eqref{eq_h_as_h0_plus_v}` is relatively small so that a formal solution as power series in :math:`V` may be meaningful. As the first step, let's try to apply :math:`\eqref{eq_h_as_h0_plus_v}` to :math:`\Psi_{\alpha}^{\pm}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		E_{\alpha} \Psi_{\alpha}^{\pm} = H \Psi_{\alpha}^{\pm} = (H_0 + V) \Psi_{\alpha}^{\pm} ~\Longrightarrow~ (E_{\alpha} - H_0) \Psi_{\alpha}^{\pm} = V \Psi_{\alpha}^{\pm}
+	\end{equation*}
+
+Note that :math:`\Phi_{\alpha}` is also annihilated by :math:`E_{\alpha} - H_0`. Considering the asymptotic :math:`\eqref{eq_in_out_states_asymptotic_by_energy}` or :math:`\eqref{eq_in_out_states_asymptotic_by_hamiltonian}`, it's reasonable to guess the following formal solution
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Psi_{\alpha}^{\pm} = \Phi_{\alpha} + (E_{\alpha} - H_0 \pm \ifrak \epsilon)^{-1} V \Psi_{\alpha}^{\pm}
+		\label{eq_lippmann_schwinger_mixed}
+	\end{equation}
+
+where the infinitesimal :math:`\pm \ifrak \epsilon` is a mathematical trick added to avoid division by zero, and the signs will be justified momentarily. In order to express :math:`\Psi_{\alpha}^{\pm}` in terms of :math:`\Psi_{\alpha}`, let's expand the right-hand-side of :math:`\eqref{eq_lippmann_schwinger_mixed}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Psi_{\alpha}^{\pm} = \Phi_{\alpha} + \int d\beta ~\frac{(\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - H_0 \pm \ifrak \epsilon}
+		\label{eq_lippmann_schwinger_pure}
+	\end{equation}
+
+This is known as the `Lippmann-Schwinger equations <https://en.wikipedia.org/wiki/Lippmann%E2%80%93Schwinger_equation>`_.
 
 
 .. rubric:: Footnotes
