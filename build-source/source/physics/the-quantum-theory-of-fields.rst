@@ -1524,10 +1524,10 @@ We have postulated that the transformation law :math:`\eqref{eq_lorentz_transfor
 
 where :math:`E_i \coloneqq (p_i)_0` is the energy of the :math:`i`-th particle. There is obviously no energy left for any interaction.
 
-*In* and *Out* states
-^^^^^^^^^^^^^^^^^^^^^
+In- and out-states
+^^^^^^^^^^^^^^^^^^
 
-As mentioned earlier, scattering theory is concerned with a scenario where interactions happen within a finite time period, long before and after which the system can be regarded as non-interacting. We can therefore define the *in* and *out* states as :math:`\Psi^{\pm}_{\alpha}`, where :math:`\alpha` is the compound index as defined in the previous section, such that the states appear to be non-interacting with the prescribed particle states when *observed* at :math:`t \to \mp \infty`, respectively.
+As mentioned earlier, scattering theory is concerned with a scenario where interactions happen within a finite time period, long before and after which the system can be regarded as non-interacting. We can therefore define the in-state :math:`\Psi_{\alpha}^-` and the out-state :math:`\Psi_{\alpha}^+`, where :math:`\alpha` is the compound index as defined in the previous section, such that the states appear to be non-interacting with the prescribed particle states when *observed* at :math:`t \to \mp \infty`, respectively. [#in_out_state_sign_convention]_
 
 Now it's time to bring forward an implicit assumption on the quantum states that we've been studying so far: they're defined in one chosen inertial frame. Indeed, the Lorentz transformation law :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}` tells us exactly how to transform the state to any other frame. States of this sort are called `Heisenberg picture <https://en.wikipedia.org/wiki/Heisenberg_picture>`_ states: they contain the entire history/future of the system and are not dynamical in time as opposed to the so-called `Schrödinger picture <https://en.wikipedia.org/wiki/Schr%C3%B6dinger_picture>`_ states.
 
@@ -1551,7 +1551,7 @@ where :math:`g(\alpha)` is a reasonably smooth function (e.g. without poles) whi
 		\exp(-\ifrak \tau H) \int d\alpha ~g(\alpha) \Psi_{\alpha}^{\pm} = \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm}
 	\end{equation*}
 
-as :math:`\tau \to \mp\infty`, respectively, approach the corresponding superpositions of non-interacting particle states.
+as :math:`\tau \to \pm\infty`, respectively, approach the corresponding superpositions of non-interacting particle states.
 
 To be more precise, let's split the Hamiltonian into the free part and the interaction part as follows
 
@@ -1568,7 +1568,7 @@ such that the energy eigenstates :math:`\Phi_{\alpha}` of :math:`H_0` (in the sa
 	:nowrap:
 
 	\begin{equation}
-		\lim_{\tau \to \mp\infty} \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm} = \lim_{\tau \to \mp\infty} \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha}
+		\lim_{\tau \to \pm\infty} \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm} = \lim_{\tau \to \pm\infty} \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha}
 		\label{eq_in_out_states_asymptotic_by_energy}
 	\end{equation}
 
@@ -1578,7 +1578,7 @@ or equivalently in terms of the Hamiltonians
 	:nowrap:
 
 	\begin{equation}
-		\lim_{\tau \to \mp\infty} \exp(-\ifrak \tau H) \int d\alpha ~g(\alpha) \Psi_{\alpha}^{\pm} = \lim_{\tau \to \mp\infty} \exp(-\ifrak \tau H_0) \int d\alpha ~g(\alpha) \Phi_{\alpha}
+		\lim_{\tau \to \pm\infty} \exp(-\ifrak \tau H) \int d\alpha ~g(\alpha) \Psi_{\alpha}^{\pm} = \lim_{\tau \to \pm\infty} \exp(-\ifrak \tau H_0) \int d\alpha ~g(\alpha) \Phi_{\alpha}
 		\label{eq_in_out_states_asymptotic_by_hamiltonian}
 	\end{equation}
 
@@ -1592,7 +1592,7 @@ This motivates the following definition
 		\label{eq_defn_of_Omega}
 	\end{equation}
 
-so that :math:`\Psi_{\alpha}^{\pm} = \Omega(\mp\infty) \Phi_{\alpha}`, at least formally. Moreover, since :math:`\Omega` is unitary, the *in* and *out* states :math:`\Psi_{\alpha}^{\pm}` are normalized as long as :math:`\Phi_{\alpha}` are normalized.
+so that :math:`\Psi_{\alpha}^{\pm} = \Omega(\pm\infty) \Phi_{\alpha}`, at least formally. Moreover, since :math:`\Omega` is unitary, the in- and out-states :math:`\Psi_{\alpha}^{\pm}` are normalized as long as :math:`\Phi_{\alpha}` are normalized.
 
 In practice it will be assumed that the interaction term :math:`V` in :math:`\eqref{eq_h_as_h0_plus_v}` is relatively small so that a formal solution as power series in :math:`V` may be meaningful. As the first step, let's try to apply :math:`\eqref{eq_h_as_h0_plus_v}` to :math:`\Psi_{\alpha}^{\pm}` as follows
 
@@ -1609,25 +1609,123 @@ Note that :math:`\Phi_{\alpha}` is also annihilated by :math:`E_{\alpha} - H_0`.
 	:nowrap:
 
 	\begin{equation}
-		\Psi_{\alpha}^{\pm} = \Phi_{\alpha} + (E_{\alpha} - H_0 \pm \ifrak \epsilon)^{-1} V \Psi_{\alpha}^{\pm}
+		\Psi_{\alpha}^{\pm} = \Phi_{\alpha} + (E_{\alpha} - H_0 \mp \ifrak \epsilon)^{-1} V \Psi_{\alpha}^{\pm}
 		\label{eq_lippmann_schwinger_mixed}
 	\end{equation}
 
-where the infinitesimal :math:`\pm \ifrak \epsilon` is a mathematical trick added to avoid division by zero, and the signs will be justified momentarily. In order to express :math:`\Psi_{\alpha}^{\pm}` in terms of :math:`\Psi_{\alpha}`, let's expand the right-hand-side of :math:`\eqref{eq_lippmann_schwinger_mixed}` as follows
+where the infinitesimal :math:`\mp \ifrak \epsilon` is a mathematical trick added to avoid division by zero, and the signs will be justified momentarily. One can obviously apply :math:`\eqref{eq_lippmann_schwinger_mixed}` recursively to get an expansion of :math:`\Psi_{\alpha}^{\pm}` as a power series in :math:`V`, and we shall come back to this point later. In order to express :math:`\Psi_{\alpha}^{\pm}` in terms of :math:`\Phi_{\alpha}`, let's expand the right-hand-side of :math:`\eqref{eq_lippmann_schwinger_mixed}` as follows
 
 .. math::
 	:nowrap:
 
 	\begin{equation}
-		\Psi_{\alpha}^{\pm} = \Phi_{\alpha} + \int d\beta ~\frac{(\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - H_0 \pm \ifrak \epsilon}
+		\Psi_{\alpha}^{\pm} = \Phi_{\alpha} + \int d\beta ~\frac{(\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon}
 		\label{eq_lippmann_schwinger_pure}
 	\end{equation}
 
-This is known as the `Lippmann-Schwinger equations <https://en.wikipedia.org/wiki/Lippmann%E2%80%93Schwinger_equation>`_.
+Both :math:`\eqref{eq_lippmann_schwinger_mixed}` and :math:`\eqref{eq_lippmann_schwinger_pure}` are known as the `Lippmann-Schwinger equation <https://en.wikipedia.org/wiki/Lippmann%E2%80%93Schwinger_equation>`_.
 
+Now let's justify the term :math:`\pm \ifrak \epsilon` by showing that :math:`\eqref{eq_lippmann_schwinger_pure}` indeed satisfies the asymptotic condition :math:`\eqref{eq_in_out_states_asymptotic_by_energy}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm} \
+			&= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha} \
+     			+ \int d\alpha d\beta ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon} \nonumber \\
+		    &= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha} \
+   			    + \int d\beta ~\Phi_{\beta} \blue{\int d\alpha ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm})}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon}}  \label{eq_packet_expansion_by_lippmann_schwinger}
+ 	\end{align}
+
+Now the integral colored in blue can be integrated over :math:`E_{\alpha}` by a contour that runs from :math:`-\infty` to :math:`+\infty`, followed by a semicircle at infinity, in the upper-half-plane in the case of :math:`\Psi_{\alpha}^-` and the lower-half-plane in the case of :math:`\Psi_{\alpha}^+`, back to :math:`-\infty`. In either case, the sign in :math:`\mp \ifrak \epsilon` is chosen so that the integrant has no poles with infinitesimally small imaginary part, though both :math:`g(\alpha)` and :math:`(\Phi_{\beta}, V \Psi_{\alpha}^{\pm})`, viewed as complex functions, may have poles with finite imaginary parts. It follows then from the residual theorem and the damping factor :math:`\exp(-\ifrak \tau E_{\alpha})` as :math:`\tau \to \pm\infty` that the integral in blue vanishes, as desired.
+
+S-matrix and its symmetry
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The `S-matrix <https://en.wikipedia.org/wiki/S-matrix>`_ defined by
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{\beta \alpha} \coloneqq \left( \Psi_{\beta}^+, \Psi_{\alpha}^- \right)
+		\label{eq_defn_s_matrix_by_in_and_out_states}
+	\end{equation}
+
+records the probability amplitude of finding the out-state :math:`\Psi_{\beta}^+` given the in-state :math:`\Psi_{\alpha}^-`. Note that since the in- and out-states both form an orthonormal basis of the same Hilbert space, the S-matrix is unitary. However, the way :math:`S` is defined in :math:`\eqref{eq_defn_s_matrix_by_in_and_out_states}` disqualifies it as an operator on the Hilbert space. Therefore it's convenient to convert both in- and out-states to the free states and define the *S-operator* by
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		(\Phi_{\beta}, S \Phi_{\alpha}) \coloneqq S_{\beta \alpha}
+	\end{equation}
+
+Using :math:`\eqref{eq_defn_of_Omega}` we see that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		S_{\beta \alpha} = (\Omega(\infty) \Phi_{\beta}, \Omega(-\infty) \Phi_{\alpha}) = (\Phi_{\beta}, \Omega^{\dagger}(\infty) \Omega(-\infty) \Phi_{\alpha}) ~\Longrightarrow~ S = \Omega^{\dagger}(\infty) \Omega(-\infty) \eqqcolon U(\infty, -\infty)
+	\end{equation*}
+
+where
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(\tau_1, \tau_0) = \exp(\ifrak \tau_1 H_0) \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0)
+		\label{eq_defn_u_operator}
+	\end{equation}
+
+The most straightforward way to calculate :math:`S_{\beta \alpha}` is probably to use :math:`\eqref{eq_lippmann_schwinger_pure}` directly. However. this turns out to be rather complicated, and doesn't lead to a simple result. Instead, we shall follow a rather smart trick from the book as follows. First let's calculate the asymptotic of the in-packet as :math:`\tau \to \infty` (but omitting the :math:`\lim_{\tau \to \infty}` symbol) using :math:`\eqref{eq_packet_expansion_by_lippmann_schwinger}`
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^- \
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} + \int d\beta ~\Phi_{\beta} \int d\alpha \
+				\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)}{E_{\alpha} - E_{\beta} + \ifrak \epsilon}  \nonumber \\
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} \
+     			- 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)  \nonumber \\
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \left( g(\beta) - 2\pi\ifrak \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \right)  \nonumber \\
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right)  \label{eq_positive_limit_of_in_state_by_lippmann_schwinger}
+	\end{align}
+
+where we've used the residue theorem again in the second equality. Next expand the left-hand-side of the equation, i.e., the :math:`\tau \to \infty` limit of the in-packet in terms of the out-states
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^- \
+			&= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \int d\beta ~(\Psi_{\beta}^+, \Psi_{\alpha}^-) \Psi_{\beta}^+  \nonumber \\
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Psi_{\beta}^+ \int d\alpha ~g(\alpha) S_{\beta \alpha}  \nonumber \\
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \blue{S_{\beta \alpha}}
+			\label{eq_positive_limit_of_in_state_by_expanding_out_states}
+	\end{align}
+
+where we've used the fact that the S-matrix contains a :math:`\delta(E_{\alpha} - E_{\beta})` factor by energy conservation in the second equality, and the defining property :math:`\eqref{eq_in_out_states_asymptotic_by_energy}` of the out-state in the third equality.
+
+Equating the blue terms from :math:`\eqref{eq_positive_limit_of_in_state_by_lippmann_schwinger}` and :math:`\eqref{eq_positive_limit_of_in_state_by_expanding_out_states}`, we've derived the following formula
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{\beta \alpha} = \delta(\alpha - \beta) - 2\pi\ifrak (\Phi_\beta, V \Psi_{\alpha}^-)
+	\end{equation}
+
+Up to the first order of :math:`V`, one can replace the :math:`\Psi_{\alpha}^-` on the right-hand-side by :math:`\Phi_{\alpha}`, and arrive at the `Born approximation <https://en.wikipedia.org/wiki/Born_approximation>`_ of the S-matrix.
 
 .. rubric:: Footnotes
 
 .. [#tedious_calc_of_commutations] These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in the book.
 
 .. [#boost_in_p_formula] The formula in [Wei95]_ page 68, eq. (2.5.24) is wrong.
+
+.. [#in_out_state_sign_convention] I really don't like the sign convention of the in- and out-states in the book, even though Weinberg said that it's become a tradition. So our convention is the opposite to the one used in the book.
