@@ -264,6 +264,8 @@ We conclude the general discussion about continuous symmetry by considering a sp
 		\label{eq_additive_symmetry}
 	\end{equation}
 
+.. _sec_lorentz_symmetry:
+
 Lorentz symmetry
 ^^^^^^^^^^^^^^^^
 
@@ -428,11 +430,10 @@ The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely d
 	:nowrap:
 
 	\begin{alignat}{2}
-		t' &=  \Lambda_0^{\mu} x_{\mu} &&= \gamma (t + v_3 x_3)  \nonumber \\
+		t' &=  \Lambda_0^{\mu} x_{\mu} &&= \gamma (t + v_3 x_3)  \label{eq_lambda_in_3_axis} \\
 		x'_1 &= \Lambda_1^{\mu} x_{\mu} &&= x_1  \nonumber \\
 		x'_2 &= \Lambda_2^{\mu} x_{\mu} &&= x_2  \nonumber \\
-		x'_3 &= \Lambda_3^{\mu} x_{\mu} &&= \gamma (x_3 + v_3 t)
-		\label{eq_lambda_in_3_axis}
+		x'_3 &= \Lambda_3^{\mu} x_{\mu} &&= \gamma (x_3 + v_3 t) \nonumber
 	\end{alignat}
 
 .. dropdown:: Time dilation and length contraction
@@ -739,10 +740,9 @@ and substitute them into :math:`\eqref{eq_def_of_one_particle_psi_refactored}` t
 	:nowrap:
 
 	\begin{align}
-		U(\Lambda) \Psi_{p, \sigma} &\xlongequal{\eqref{eq_w_from_l}} N(p) U(L(\Lambda p)) U(W(\Lambda, p)) \Psi_{k, \sigma}  \nonumber \\
+		U(\Lambda) \Psi_{p, \sigma} &\xlongequal{\eqref{eq_w_from_l}} N(p) U(L(\Lambda p)) U(W(\Lambda, p)) \Psi_{k, \sigma} \label{eq_little_group_acts_on_p_and_sigma} \\
 			&\xlongequal{\eqref{eq_d_repr_of_little_group}} N(p) D_{\sigma \sigma'}(W(\Lambda, p)) U(L(\Lambda p)) \Psi_{k, \sigma'}  \nonumber \\
-			&\xlongequal{\eqref{eq_def_of_one_particle_psi}} \frac{N(p)}{N(\Lambda p)} D_{\sigma \sigma'}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}
-			\label{eq_little_group_acts_on_p_and_sigma}
+			&\xlongequal{\eqref{eq_def_of_one_particle_psi}} \frac{N(p)}{N(\Lambda p)} D_{\sigma \sigma'}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'} \nonumber
 	\end{align}
 
 which gives the sought-after coefficients :math:`C_{\sigma \sigma'}` in :math:`\eqref{eq_lorentz_acts_on_p_and_sigma}`.
@@ -1370,11 +1370,10 @@ To move on to the general case, recall that the :math:`L(p)` that takes :math:`k
 	:nowrap:
 
 	\begin{align}
-		U(\Pcal) \Psi_{p, \sigma} &= p_0^{-1/2} U(\Pcal R(\pbf)B) \Psi_{k, \sigma} \nonumber \\
+		U(\Pcal) \Psi_{p, \sigma} &= p_0^{-1/2} U(\Pcal R(\pbf)B) \Psi_{k, \sigma} \label{eq_space_inversion_on_massless_undetermined_phase} \\
 			&= p_0^{-1/2} U(R(\pbf) B R_2^{-1}) U(R_2 \Pcal) \Psi_{k, \sigma} \nonumber \\
 			&= p_0^{-1/2} \eta_{\sigma} U(R(\pbf) R_2^{-1} B) \Psi_{k, -\sigma} \nonumber \\
-			&= \eta_{\sigma} \rho \Psi_{\Pcal p, -\sigma}
-			\label{eq_space_inversion_on_massless_undetermined_phase}
+			&= \eta_{\sigma} \rho \Psi_{\Pcal p, -\sigma} \nonumber
 	\end{align}
 
 where :math:`\rho` is an extra phase due to the fact that although :math:`R(\pbf) R_2^{-1}` takes :math:`(0, 0, |\pbf|)` to :math:`-\pbf`, it may not be the chosen one.
@@ -1475,27 +1474,28 @@ We shall, as always, start from the easiest part of the theory, which is clearly
 	:nowrap:
 
 	\begin{align}
-		U(\Lambda, a) \Psi_{p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots} =&~ \exp(-\ifrak a^{\mu} ((\Lambda p_1)_{\mu} + (\Lambda p_2)_{\mu} + \cdots)) \nonumber \\
+		U(\Lambda, a) \Psi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&~ \exp(-\ifrak a^{\mu} ((\Lambda p_1)_{\mu} + (\Lambda p_2)_{\mu} + \cdots)) \
+		\label{eq_lorentz_transformation_formula_for_many_free_particles} \\
 		&\times \sqrt{\frac{(\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p_1)_0 (p_2)_0 \cdots}} \nonumber \\
-		&\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma_1 \sigma'_1}(W_1(\Lambda, p_1)) D_{\sigma_2 \sigma'_2}(W_2(\Lambda, p_2)) \cdots \Psi_{\Lambda p_1, \sigma'_1, n_1; \Lambda p_2, \sigma'_2, n_2; \cdots}
-		\label{eq_lorentz_transformation_formula_for_many_free_particles}
+		&\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma_1 \sigma'_1}(W_1(\Lambda, p_1)) D_{\sigma_2 \sigma'_2}(W_2(\Lambda, p_2)) \cdots \nonumber \\
+		&\times \Psi_{\Lambda p_1, \sigma'_1, n_1; ~\Lambda p_2, \sigma'_2, n_2; ~\cdots} \nonumber
 	\end{align}
 
 where the first component is the translation transformation :math:`\eqref{eq_translation_formula_for_particle_state}`, the second component is the normalization factor, and the third component is the little group representation, and the :math:`\sigma`'s are either the spin-:math:`z` component for massive particles or the helicity for massless particles, and the :math:`n`'s are additional (discrete) labels such as mass, charge, spin, etc.
 
-Notice that by writing a many-particles state as :math:`\Psi_{p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots}`, we have given the particles an order, which is by no means unique. Hence the normalization of these states must take permutations into account as follows
+Notice that by writing a many-particles state as :math:`\Psi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots}`, we have given the particles an order, which is by no means unique. Hence the normalization of these states must take permutations into account as follows
 
 .. math::
 	:nowrap:
 
 	\begin{equation}
-		\left( \Psi_{p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots}, \Psi_{p'_1, \sigma'_1, n'_1; p'_2, \sigma'_2, n'_2; \cdots} \right) = \delta^3(\pbf_1 - \pbf'_1) \delta_{\sigma_1 \sigma'_1} \delta_{n_1 n'_1} \delta^3(\pbf_2 - \pbf'_2) \delta_{\sigma_2 \sigma'_2} \delta_{n_2 n'_2} \pm \text{permutations}
+		\left( \Psi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots}, \Psi_{p'_1, \sigma'_1, n'_1; ~p'_2, \sigma'_2, n'_2; ~\cdots} \right) = \delta^3(\pbf_1 - \pbf'_1) \delta_{\sigma_1 \sigma'_1} \delta_{n_1 n'_1} \delta^3(\pbf_2 - \pbf'_2) \delta_{\sigma_2 \sigma'_2} \delta_{n_2 n'_2} \pm \text{permutations}
 		\label{eq_many_particles_state_normalization_rough}
 	\end{equation}
 
 The sign in front of the permutations has to do with the species of the particles, which will be discussed later. Note that although there are many terms in :math:`\eqref{eq_many_particles_state_normalization_rough}`, there is at most one nonzero term, which happens exactly when the two states differ by a permutation.
 
-To suppress the annoyingly many subscripts in the states, we shall use letters such as :math:`\alpha, \beta, \cdots` to denote the compound index such as :math:`(p_1, \sigma_1, n_1; p_2, \sigma_2, n_2; \cdots)`, so that, for example, :math:`\eqref{eq_many_particles_state_normalization_rough}` can be simplified as
+To suppress the annoyingly many sub-indexes in the states, we shall use letters such as :math:`\alpha, \beta, \cdots` to denote the compound index such as :math:`(p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots)`, so that, for example, :math:`\eqref{eq_many_particles_state_normalization_rough}` can be simplified as
 
 .. math::
 	:nowrap:
@@ -1510,7 +1510,7 @@ where the integral volume element reads
 	:nowrap:
 
 	\begin{equation*}
-		\int d\alpha \cdots = \sum_{\sigma_1, n_1; \sigma_2, n_2; \cdots} \int d^3 \pbf_1 d^3 \pbf_2 \cdots
+		\int d\alpha \cdots = \sum_{\sigma_1, n_1; ~\sigma_2, n_2; ~\cdots} \int d^3 \pbf_1 d^3 \pbf_2 \cdots
 	\end{equation*}
 
 We have postulated that the transformation law :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}` works for non-interacting particles, but in fact, it's also only possible for non-interacting particles. One way to see this is through an energy calculation by letting :math:`\Lambda = 1` and :math:`a = (\tau, 0, 0, 0)` in :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}` to see that
@@ -1633,9 +1633,9 @@ Now let's justify the term :math:`\pm \ifrak \epsilon` by showing that :math:`\e
 	\begin{align}
 		\int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm} \
 			&= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha} \
-     			+ \int d\alpha d\beta ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon} \nonumber \\
+     			+ \int d\alpha d\beta ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon} \label{eq_packet_expansion_by_lippmann_schwinger} \\
 		    &= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha} \
-   			    + \int d\beta ~\Phi_{\beta} \blue{\int d\alpha ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm})}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon}}  \label{eq_packet_expansion_by_lippmann_schwinger}
+   			    + \int d\beta ~\Phi_{\beta} \blue{\int d\alpha ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm})}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon}} \nonumber
  	\end{align}
 
 Now the integral colored in blue can be integrated over :math:`E_{\alpha}` by a contour that runs from :math:`-\infty` to :math:`+\infty`, followed by a semicircle at infinity, in the upper-half-plane in the case of :math:`\Psi_{\alpha}^-` and the lower-half-plane in the case of :math:`\Psi_{\alpha}^+`, back to :math:`-\infty`. In either case, the sign in :math:`\mp \ifrak \epsilon` is chosen so that the integrant has no poles with infinitesimally small imaginary part, though both :math:`g(\alpha)` and :math:`(\Phi_{\beta}, V \Psi_{\alpha}^{\pm})`, viewed as complex functions, may have poles with finite imaginary parts. It follows then from the residual theorem and the damping factor :math:`\exp(-\ifrak \tau E_{\alpha})` as :math:`\tau \to \pm\infty` that the integral in blue vanishes, as desired.
@@ -1653,13 +1653,13 @@ The `S-matrix <https://en.wikipedia.org/wiki/S-matrix>`_ defined by
 		\label{eq_defn_s_matrix_by_in_and_out_states}
 	\end{equation}
 
-records the probability amplitude of finding the out-state :math:`\Psi_{\beta}^+` given the in-state :math:`\Psi_{\alpha}^-`. Note that since the in- and out-states both form an orthonormal basis of the same Hilbert space, the S-matrix is unitary. However, the way :math:`S` is defined in :math:`\eqref{eq_defn_s_matrix_by_in_and_out_states}` disqualifies it as an operator on the Hilbert space. Therefore it's convenient to convert both in- and out-states to the free states and define the *S-operator* by
+records the probability amplitude of finding the out-state :math:`\Psi_{\beta}^+` given the in-state :math:`\Psi_{\alpha}^-`. Note that since the in- and out-states both form an orthonormal basis of the same Hilbert space, the S-matrix is unitary. However, the way :math:`S` is defined in :math:`\eqref{eq_defn_s_matrix_by_in_and_out_states}` disqualifies it as an operator on the Hilbert space. Therefore it'll be convenient to convert both in- and out-states to the free states and define the *S-operator* by
 
 .. math::
 	:nowrap:
 
 	\begin{equation}
-		(\Phi_{\beta}, S \Phi_{\alpha}) \coloneqq S_{\beta \alpha}
+		(\Phi_{\beta}, S \Phi_{\alpha}) \coloneqq S_{\beta \alpha} \label{eq_defn_s_operator}
 	\end{equation}
 
 Using :math:`\eqref{eq_defn_of_Omega}` we see that
@@ -1681,7 +1681,7 @@ where
 		\label{eq_defn_u_operator}
 	\end{equation}
 
-The most straightforward way to calculate :math:`S_{\beta \alpha}` is probably to use :math:`\eqref{eq_lippmann_schwinger_pure}` directly. However. this turns out to be rather complicated, and doesn't lead to a simple result. Instead, we shall follow a rather smart trick from the book as follows. First let's calculate the asymptotic of the in-packet as :math:`\tau \to \infty` (but omitting the :math:`\lim_{\tau \to \infty}` symbol) using :math:`\eqref{eq_packet_expansion_by_lippmann_schwinger}`
+The most straightforward way to calculate :math:`S_{\beta \alpha}` is probably to use :math:`\eqref{eq_lippmann_schwinger_pure}` directly. However. this turns out to be rather involved, and doesn't lead to a simple result. The issue is that we don't really want to convert both the in- and out-states to the non-interacting states, but rather to push, say, the in-states from the far past to the far future and compare with the out-states. To spell out the details, let's first calculate the asymptotic of the in-packet as :math:`\tau \to \infty` (but omitting the :math:`\lim_{\tau \to \infty}` symbol) using :math:`\eqref{eq_packet_expansion_by_lippmann_schwinger}`
 
 .. math::
 	:nowrap:
@@ -1696,7 +1696,7 @@ The most straightforward way to calculate :math:`S_{\beta \alpha}` is probably t
 			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right)  \label{eq_positive_limit_of_in_state_by_lippmann_schwinger}
 	\end{align}
 
-where we've used the residue theorem again in the second equality. Next expand the left-hand-side of the equation, i.e., the :math:`\tau \to \infty` limit of the in-packet in terms of the out-states
+where we've used the residue theorem again in the second equality. Next expand the left-hand-side of the equation in terms of the out-states and then let :math:`\tau \to \infty`
 
 .. math::
 	:nowrap:
@@ -1717,10 +1717,78 @@ Equating the blue terms from :math:`\eqref{eq_positive_limit_of_in_state_by_lipp
 	:nowrap:
 
 	\begin{equation}
-		S_{\beta \alpha} = \delta(\alpha - \beta) - 2\pi\ifrak (\Phi_\beta, V \Psi_{\alpha}^-)
+		S_{\beta \alpha} = \delta(\beta - \alpha) - 2\pi\ifrak (\Phi_\beta, V \Psi_{\alpha}^-)
+		\label{eq_s_matrix_pre_born_approx}
 	\end{equation}
 
-Up to the first order of :math:`V`, one can replace the :math:`\Psi_{\alpha}^-` on the right-hand-side by :math:`\Phi_{\alpha}`, and arrive at the `Born approximation <https://en.wikipedia.org/wiki/Born_approximation>`_ of the S-matrix.
+Up to the first order in :math:`V`, one can replace :math:`\Psi_{\alpha}^-` on the right-hand-side by :math:`\Phi_{\alpha}` and arrive at the so-called `Born approximation <https://en.wikipedia.org/wiki/Born_approximation>`_ of the S-matrix.
+
+Lorentz symmetry
+++++++++++++++++
+
+Recall that in :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}`, or really in :ref:`Lorentz symmetry of one-particle states <sec_lorentz_symmetry>`, we understood how Lorentz transformations act on particle states. Now we'd like to understand how they act on the S-matrix. Of course, since :math:`U(\Lambda, a)` is unitary, we always have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		S_{\beta \alpha} = (\Psi_{\beta}^+, \Psi_{\alpha}^-) = \left( U(\Lambda, a) \Psi_{\beta}^+, U(\Lambda, a) \Psi_{\alpha}^- \right)
+	\end{equation*}
+
+but this is *not* what we mean by Lorentz symmetry. What we do want to know is, just like in :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}`, how Lorentz transformation acts on the particle states, i.e., the (compound) indexes :math:`\alpha` and :math:`\beta`. Now although :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}` doesn't work for general (interacting) states, it does work for, say, :math:`\Psi_{\alpha}^-` in the :math:`\tau \to -\infty` limit because of the asymptotic freeness. By Lorentz we mean that :math:`U(\Lambda, a)` acts the same way on both in- and out-states. In other words, we'll be looking for some :math:`U(\Lambda, a)` such that the following general formula holds.
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		S_{p'_1, \sigma'_1, n'_1; ~p'_2, \sigma'_2, n'_2; ~\cdots, ~~p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} = \
+			&\blue{\exp\left( \ifrak a^{\mu} \Lambda_{\mu}^{\nu} \left( (p'_1)_{\nu} + (p'_2)_{\nu} + \cdots - (p_1)_{\nu} - (p_2)_{\nu} - \cdots \right) \right)}  \nonumber \\
+			&\times \sqrt{\frac{(\Lambda p'_1)_0 (\Lambda p'_2)_0 \cdots (\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p'_1)_0 (p'_2)_0 \cdots (p_1)_0 (p_2)_0 \cdots}}  \nonumber \\
+			&\times \sum_{\underline{\sigma}'_1 \underline{\sigma}'_2 \cdots} D_{\sigma'_1 \underline{\sigma}'_1} (W(\Lambda, p'_1)) D_{\sigma'_2 \underline{\sigma}'_2} (W(\Lambda, p'_2)) \cdots  \nonumber \\
+			&\times \sum_{\underline{\sigma}_1 \underline{\sigma}_2 \cdots} D_{\sigma_1 \underline{\sigma}_1} (W(\Lambda, p_1)) D_{\sigma_2 \underline{\sigma}_2} (W(\Lambda, p_2)) \cdots  \nonumber \\
+			&\times S_{\Lambda p'_1, \underline{\sigma}'_1, n'_1; ~\Lambda p'_2, \underline{\sigma}'_2, n'_2; ~\cdots, ~~\Lambda p_1, \underline{\sigma}_1, n_1; ~\Lambda p_2, \underline{\sigma}_2, n_2, ~\cdots}
+			\label{eq_lorentz_transformation_formula_for_s_matrix}
+	\end{align}
+
+where we've used primes to distinguish between labels from in- and out-states, and underlines to distinguish between labels, specifically the spin-:math:`z` or helicity, before and after the Lorentz transformation.
+
+Since the left-hand-side doesn't depend on the translation parameter :math:`a`, the blue term on the right-hand-side must be :math:`1`. In other words,
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		p_1 + p_2 + \cdots = p'_1 + p'_2 + \cdots
+	\end{equation*}
+
+which is nothing but the conservation of (total) momentum. Note that a special case, which is the energy conservation, has already been used in the derivation of :math:`\eqref{eq_positive_limit_of_in_state_by_expanding_out_states}` from the previous section.
+
+As a consequence, we can now extract a delta function from the S-matrix as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{\beta \alpha} \eqqcolon \delta(\beta - \alpha) - 2\pi\ifrak M_{\beta \alpha} \delta^4 (p_{\beta} - p_{\alpha})
+		\label{eq_s_matrix_with_m}
+	\end{equation}
+
+which should be compared with :math:`\eqref{eq_s_matrix_pre_born_approx}`.
+
+Back to the core question of this section, how in the world can one engineer a magic :math:`U(\Lambda, a)` to satisfy the monstrous :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}`? One cannot. But remember that :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}` is readily satisfied for non-interacting particles. It follows that if we consider instead the S-operator defined by :math:`\eqref{eq_defn_s_operator}`, and let :math:`U_0(\Lambda, a)` be the Lorentz transformation on free particles defined by :math:`\eqref{eq_lorentz_transformation_formula_for_many_free_particles}`, then :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}` would be satisfied if :math:`U_0(\Lambda, a)` commutes with :math:`S`. Indeed, using shorthand notations, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		S_{\beta \alpha} = \left( \Phi_{\beta}, S \Phi_{\alpha} \right) \
+			= \left( U_0 \Phi_{\beta}, U_0 S \Phi_{\alpha} \right) \
+			= \left( U_0 \Phi_{\beta}, S U_0 \Phi_{\alpha} \right) \
+			= \cdots \times S_{\underline{\beta \alpha}}
+	\end{equation*}
+
+where :math:`\cdots` denotes the coefficients on the right-hand-side of :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}` and the sub-indexes :math:`\underline{\beta \alpha}` is short for the compound index on the right-hand-side of :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}`.
+
 
 .. rubric:: Footnotes
 
