@@ -736,10 +736,10 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \begin{alignat}{2}
         \text{let } \mu = 0, \nu = i \text{ in \eqref{eq_bracket_p4_p4}} ~&amp;\Longrightarrow~ [H, P_i] &amp;&amp;= 0  \label{eq_hp_commute} \\
         \text{let } \mu = 0, \rho = j, \kappa = k \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [H, J_i] &amp;&amp;= 0  \label{eq_hj_commute} \\
-        \text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [H, K_i] &amp;&amp;= \ifrak P_i  \nonumber \\
+        \text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [H, K_i] &amp;&amp;= \ifrak P_i  \label{eq_hkp_commutation} \\
         \text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} ~&amp;\Longrightarrow~ [P_i, P_j] &amp;&amp;= 0  \label{eq_pp_commute} \\
         \text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [P_i, J_j] &amp;&amp;= -\ifrak \epsilon_{ijk} P_k  \nonumber \\
-        \text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [P_i, K_j] &amp;&amp;= \ifrak \delta_{ij} H  \nonumber \\
+        \text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} ~&amp;\Longrightarrow~ [P_i, K_j] &amp;&amp;= \ifrak \delta_{ij} H  \label{eq_pkh_commutation} \\
         \text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [J_i, J_j] &amp;&amp;= \ifrak \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
         \text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [J_i, K_j] &amp;&amp;= \ifrak \epsilon_{ijk} K_k  \label{eq_jkk_commutation} \\
         \text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&amp;\Longrightarrow~ [K_i, K_j] &amp;&amp;= -\ifrak \epsilon_{ijk} J_k  \label{eq_kkj_commutation}
@@ -1291,9 +1291,10 @@ Polarization of photons<div class="sd-summary-down docutils">
 <p>Back to the scattering scenario, let’s imagine a reference observer <span class="math notranslate nohighlight">\(\Ocal\)</span>, who at <span class="math notranslate nohighlight">\(t = 0\)</span> observes that the system is in a state <span class="math notranslate nohighlight">\(\Psi\)</span>. Then imagine another observer <span class="math notranslate nohighlight">\(\Ocal'\)</span> at rest with respect to <span class="math notranslate nohighlight">\(\Ocal\)</span>, who sets his clock <span class="math notranslate nohighlight">\(t' = 0\)</span> when <span class="math notranslate nohighlight">\(t = \tau\)</span>, in other words <span class="math notranslate nohighlight">\(t' = t - \tau\)</span>. Then from the viewpoint of <span class="math notranslate nohighlight">\(\Ocal'\)</span>, the time-<span class="math notranslate nohighlight">\(0\)</span> state should look like <span class="math notranslate nohighlight">\(\exp(-\ifrak \tau H) \Psi\)</span>. It follows that the state <span class="math notranslate nohighlight">\(\Psi\)</span>, viewed long before and long after the reference <span class="math notranslate nohighlight">\(t = 0\)</span>, should look like <span class="math notranslate nohighlight">\(\exp(-\ifrak \tau H) \Psi\)</span> for <span class="math notranslate nohighlight">\(\tau \to \mp\infty\)</span>, respectively.</p>
 <p>It follows that energy eigenstates such as <span class="math notranslate nohighlight">\(\Psi_{\alpha}\)</span> will look the same at all time because <span class="math notranslate nohighlight">\(\exp(-\ifrak \tau H) \Psi_{\alpha} = \exp(-\ifrak \tau E_{\alpha}) \Psi_{\alpha}\)</span> creates merely an inconsequential phase factor. This is one form of the uncertainty principle: if the energy is definitely known, then the time is completely unknown. Therefore we must consider a localized packet (or superposition) of states as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \int d\alpha ~g(\alpha) \Psi_{\alpha}
-\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(g(\alpha)\)</span> is a reasonably smooth function (e.g. without poles) which is non-vanishing within a finite range of energies. We can then demand that the time limits</p>
+        \label{eq_psi_packet}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(g(\alpha)\)</span> is a reasonably smooth function (e.g. without poles) which is non-vanishing within a finite range of energies. We can then demand that the time limits</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \exp(-\ifrak \tau H) \int d\alpha ~g(\alpha) \Psi_{\alpha}^{\pm} = \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm}
@@ -1356,9 +1357,10 @@ Polarization of photons<div class="sd-summary-down docutils">
         (\Phi_{\beta}, S \Phi_{\alpha}) \coloneqq S_{\beta \alpha} \label{eq_defn_s_operator}
 \end{equation}</div><p>Using <span class="math notranslate nohighlight">\(\eqref{eq_defn_of_Omega}\)</span> we see that</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         S_{\beta \alpha} = (\Omega(\infty) \Phi_{\beta}, \Omega(-\infty) \Phi_{\alpha}) = (\Phi_{\beta}, \Omega^{\dagger}(\infty) \Omega(-\infty) \Phi_{\alpha}) ~\Longrightarrow~ S = \Omega^{\dagger}(\infty) \Omega(-\infty) \eqqcolon U(\infty, -\infty)
-\end{equation*}</div><p>where</p>
+        \label{eq_s_operator_by_u}
+\end{equation}</div><p>where</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         U(\tau_1, \tau_0) = \exp(\ifrak \tau_1 H_0) \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0)
@@ -1368,19 +1370,19 @@ Polarization of photons<div class="sd-summary-down docutils">
 \begin{align}
         \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^- \
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} + \int d\beta ~\Phi_{\beta} \int d\alpha \
-                        \frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)}{E_{\alpha} - E_{\beta} + \ifrak \epsilon}  \nonumber \\
+                        \frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)}{E_{\alpha} - E_{\beta} + \ifrak \epsilon}  \label{eq_positive_limit_of_in_state_by_lippmann_schwinger} \\
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} \
                 - 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)  \nonumber \\
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \left( g(\beta) - 2\pi\ifrak \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \right)  \nonumber \\
-                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right)  \label{eq_positive_limit_of_in_state_by_lippmann_schwinger}
+                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right) \nonumber
 \end{align}</div><p>where we’ve used the residue theorem again in the second equality. Next expand the left-hand-side of the equation in terms of the out-states and then let <span class="math notranslate nohighlight">\(\tau \to \infty\)</span></p>
 <div class="math notranslate nohighlight">
 \begin{align}
         \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^- \
-                &amp;= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \int d\beta ~(\Psi_{\beta}^+, \Psi_{\alpha}^-) \Psi_{\beta}^+  \nonumber \\
-                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Psi_{\beta}^+ \int d\alpha ~g(\alpha) S_{\beta \alpha}  \nonumber \\
-                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \blue{S_{\beta \alpha}}
-                \label{eq_positive_limit_of_in_state_by_expanding_out_states}
+                &amp;= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \int d\beta ~(\Psi_{\beta}^+, \Psi_{\alpha}^-) \Psi_{\beta}^+
+                \label{eq_positive_limit_of_in_state_by_expanding_out_states} \\
+                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Psi_{\beta}^+ \int d\alpha ~g(\alpha) S_{\beta \alpha} \nonumber \\
+                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \blue{S_{\beta \alpha}} \nonumber
 \end{align}</div><p>where we’ve used the fact that the S-matrix contains a <span class="math notranslate nohighlight">\(\delta(E_{\alpha} - E_{\beta})\)</span> factor by energy conservation in the second equality, and the defining property <span class="math notranslate nohighlight">\(\eqref{eq_in_out_states_asymptotic_by_energy}\)</span> of the out-state in the third equality.</p>
 <p>Equating the blue terms from <span class="math notranslate nohighlight">\(\eqref{eq_positive_limit_of_in_state_by_lippmann_schwinger}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_positive_limit_of_in_state_by_expanding_out_states}\)</span>, we’ve derived the following formula</p>
 <div class="math notranslate nohighlight">
@@ -1424,6 +1426,74 @@ Polarization of photons<div class="sd-summary-down docutils">
                 = \left( U_0 \Phi_{\beta}, S U_0 \Phi_{\alpha} \right) \
                 = \cdots \times S_{\underline{\beta \alpha}}
 \end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\cdots\)</span> denotes the coefficients on the right-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_s_matrix}\)</span> and the sub-indexes <span class="math notranslate nohighlight">\(\underline{\beta \alpha}\)</span> is short for the compound index on the right-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_s_matrix}\)</span>.</p>
+<p>In order for <span class="math notranslate nohighlight">\(S\)</span> to commute with <span class="math notranslate nohighlight">\(U_0(\Lambda, a)\)</span>, it suffices that it commutes with the infinitesimal generators of <span class="math notranslate nohighlight">\(U_0(\Lambda, a)\)</span>, namely,</p>
+<div class="math notranslate nohighlight">
+\begin{alignat}{2}
+        &amp;[H_0, S] &amp;&amp;= 0    \label{eq_h0_s_commute} \\
+        &amp;[\Pbf_0, S] &amp;&amp;= 0 \label{eq_p30_s_commute} \\
+        &amp;[\Jbf_0, S] &amp;&amp;= 0 \label{eq_j30_s_commute} \\
+        &amp;[\Kbf_0, S] &amp;&amp;= 0 \label{eq_k30_s_commute}
+\end{alignat}</div><p>where <span class="math notranslate nohighlight">\(H_0, \Pbf_0, \Jbf_0, \Kbf_0\)</span> are discussed in <a class="reference internal" href="#sec-quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a> and satisfy the commutation relations <span class="math notranslate nohighlight">\(\eqref{eq_hp_commute}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_kkj_commutation}\)</span>.</p>
+<p>This shall be done in three steps, where <span class="math notranslate nohighlight">\(\eqref{eq_p30_s_commute}, \eqref{eq_j30_s_commute}\)</span> will be handled first, followed by <span class="math notranslate nohighlight">\(\eqref{eq_k30_s_commute}\)</span>, and finally <span class="math notranslate nohighlight">\(\eqref{eq_h0_s_commute}\)</span>.</p>
+<dl>
+<dt>Step 1.</dt><dd><p>Recall from <span class="math notranslate nohighlight">\(\eqref{eq_s_operator_by_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_defn_u_operator}\)</span> that the S-operator can be understood as time translations dictated by <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(H_0\)</span>.  It’s therefore necessary to understand how the free infinitesimal Lorentz transformations commute with <span class="math notranslate nohighlight">\(H\)</span>. To this end, let’s consider the in-states at <span class="math notranslate nohighlight">\(\tau \to -\infty\)</span>, which is approximately free. We can similarly define infinitesimal operators <span class="math notranslate nohighlight">\(\Pbf, \Jbf, \Kbf\)</span> that together with <span class="math notranslate nohighlight">\(H\)</span> satisfy the same commutation relations <span class="math notranslate nohighlight">\(\eqref{eq_hp_commute}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_kkj_commutation}\)</span>.</p>
+<p>Now comes the crucial part, which is to make assumptions about <span class="math notranslate nohighlight">\(H\)</span> so that <span class="math notranslate nohighlight">\(\eqref{eq_h0_s_commute}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_k30_s_commute}\)</span> are satisfied. Recall that <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> where <span class="math notranslate nohighlight">\(V\)</span> describes the interactions. The first assumption we’ll make is the following</p>
+<div class="important admonition">
+<p class="admonition-title">Assumption on <span class="math notranslate nohighlight">\(H\)</span> for Lorentz invariance of S-matrix #1</p>
+<p>The interaction <span class="math notranslate nohighlight">\(V\)</span> affects neither the momentum <span class="math notranslate nohighlight">\(\Pbf\)</span> nor the angular momentum <span class="math notranslate nohighlight">\(\Jbf\)</span>. In other words, we assume that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Pbf = \Pbf_0, ~~\Jbf = \Jbf_0, ~~[V, \Pbf_0] = [V, \Jbf_0] = 0
+        \label{eq_s_matrix_lorentz_invariance_assump_1}
+\end{equation}</div></div>
+<p>It follows from this assumption that <span class="math notranslate nohighlight">\(\eqref{eq_p30_s_commute}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j30_s_commute}\)</span> hold.</p>
+</dd>
+<dt>Step 2.</dt><dd><p>Next we turn to <span class="math notranslate nohighlight">\(\eqref{eq_k30_s_commute}\)</span>. This time we cannot “cheat” by assuming that <span class="math notranslate nohighlight">\(\Kbf = \Kbf_0\)</span> because it would led to the undesirable consequence <span class="math notranslate nohighlight">\(H = H_0\)</span> by <span class="math notranslate nohighlight">\(\eqref{eq_pkh_commutation}\)</span>. So instead, let’s write</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Kbf = \Kbf_0 + \Wbf
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\Wbf\)</span> denotes the perturbation term. Let’s calculate</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        [\Kbf_0, S] = \lim_{\substack{\tau_0 \to -\infty \\ \tau_1 \to \infty\phantom{-}}} [\Kbf_0, U(\tau_1, \tau_0)] \
+                = \lim_{\substack{\tau_0 \to -\infty \\ \tau_1 \to \infty\phantom{-}}} [\Kbf_0, \exp(\ifrak \tau_1 H_0) \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0)]
+        \label{eq_k0_s_commutator_by_u}
+\end{equation}</div><p>as follow. First using <span class="math notranslate nohighlight">\(\eqref{eq_hkp_commutation}\)</span> again</p>
+<div class="math notranslate nohighlight">
+\begin{alignat*}{2}
+        [\Kbf_0, \exp(\ifrak \tau H_0)] &amp;= [\Kbf_0, \ifrak \tau H_0] \exp(\ifrak \tau H_0) &amp;&amp;= \tau \Pbf_0 \exp(\ifrak \tau H_0) \\
+        [\Kbf, \exp(\ifrak \tau H)] &amp;= [\Kbf, \ifrak \tau H] \exp(\ifrak \tau H) &amp;&amp;= \tau \Pbf \exp(\ifrak \tau H) =\tau \Pbf_0 \exp(\ifrak \tau H)
+\end{alignat*}</div><p>from which we can calculate</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        [\Kbf_0, U(\tau_1, \tau_0)] &amp;= [\Kbf_0, \exp(\ifrak \tau_1 H_0) \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0)] \label{eq_k30_u_commutation} \\
+                &amp;= [\Kbf_0, \exp(\ifrak \tau_1 H_0)] \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0) \nonumber \\
+                &amp;\phantom{=} + \exp(\ifrak \tau_1 H_0) [\Kbf - \Wbf, \exp(\ifrak (\tau_0 - \tau_1) H)] \exp(-\ifrak \tau_0 H_0) \nonumber \\
+                &amp;\phantom{=} + \exp(\ifrak \tau_1 H_0) \exp(\ifrak (\tau_0 - \tau_1) H) [\Kbf_0, \exp(-\ifrak \tau_0 H_0)] \nonumber \\
+                &amp;= \blue{\tau_1 \Pbf_0 \exp(\ifrak \tau H_0) \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0)} \nonumber \\
+                &amp;\phantom{=} \blue{+ (\tau_0 - \tau_1) \Pbf_0 \exp(\ifrak \tau_1 H_0) \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0)} \nonumber \\
+                &amp;\phantom{=} \blue{- \tau_0 \Pbf_0 \exp(\ifrak \tau_1 H_0) \exp(\ifrak (\tau_0 - \tau_1) H) \exp(-\ifrak \tau_0 H_0)} \nonumber \\
+                &amp;\phantom{=} - \exp(\ifrak \tau_1 H_0) [\Wbf, \exp(\ifrak (\tau_0 - \tau_1) H)] \exp(-\ifrak \tau_0 H_0) \nonumber \\
+                &amp;= -\Wbf(\tau_1) U(\tau_1, \tau_0) + U(\tau_1, \tau_0) \Wbf(\tau_0) \nonumber
+\end{align}</div><p>where <span class="math notranslate nohighlight">\(\Wbf(\tau) \coloneqq \exp(\ifrak \tau H_0) \Wbf \exp(-\ifrak \tau H_0)\)</span>. Note that the three blue terms cancel out.</p>
+<p>We see that <span class="math notranslate nohighlight">\(\eqref{eq_k0_s_commutator_by_u}\)</span>, and hence <span class="math notranslate nohighlight">\(\eqref{eq_k30_s_commute}\)</span>, would follow if <span class="math notranslate nohighlight">\(W(\tau) \to 0\)</span> as <span class="math notranslate nohighlight">\(\tau \to \pm\infty\)</span>. The latter, in turn, would follow from the following assumption</p>
+<div class="important admonition">
+<p class="admonition-title">Assumption on <span class="math notranslate nohighlight">\(H\)</span> for Lorentz invariance of S-matrix #2</p>
+<p>The matrix elements of <span class="math notranslate nohighlight">\(W\)</span> with respect to the eigenstates <span class="math notranslate nohighlight">\(\Phi_{\alpha}\)</span> of <span class="math notranslate nohighlight">\(H_0\)</span> is smooth, so that <span class="math notranslate nohighlight">\(W(\tau)\)</span> vanishes on any local packet of <span class="math notranslate nohighlight">\(\Phi_{\alpha}\)</span> as in <span class="math notranslate nohighlight">\(\eqref{eq_psi_packet}\)</span> as <span class="math notranslate nohighlight">\(\tau \to \pm\infty\)</span>.</p>
+</div>
+<p>This assumption should be compared with <span class="math notranslate nohighlight">\(\eqref{eq_in_out_states_asymptotic_by_energy}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_in_out_states_asymptotic_by_hamiltonian}\)</span>, and can be justified by the asymptotic freeness of S-matrix theory.</p>
+</dd>
+<dt>Step 3.</dt><dd><p>Finally let’s handle <span class="math notranslate nohighlight">\(\eqref{eq_h0_s_commute}\)</span>. Recall from <span class="math notranslate nohighlight">\(\eqref{eq_s_operator_by_u}\)</span> that <span class="math notranslate nohighlight">\(S = \Omega^{\dagger}(\infty) \Omega(-\infty)\)</span>. Hence the idea is to work out how <span class="math notranslate nohighlight">\(H\)</span> and <span class="math notranslate nohighlight">\(H_0\)</span> intertwine with <span class="math notranslate nohighlight">\(\Omega(\pm\infty)\)</span>. To this end, let’s use <span class="math notranslate nohighlight">\(\eqref{eq_k30_u_commutation}\)</span> by setting <span class="math notranslate nohighlight">\(\tau_1 = 0\)</span> and <span class="math notranslate nohighlight">\(\tau_0 = \mp\infty\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        [\Kbf_0, \Omega(-\infty)] = -\Wbf \Omega(-\infty) ~\Longrightarrow~ \Kbf \Omega(\mp\infty) = \Omega(\mp\infty) \Kbf_0
+\end{equation*}</div><p>Moreover, by <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_lorentz_invariance_assump_1}\)</span>, we have also <span class="math notranslate nohighlight">\(\Pbf \Omega(\mp\infty) = \Omega(\mp\infty) \Pbf_0\)</span>. Now using the commutation relation <span class="math notranslate nohighlight">\(\eqref{eq_pkh_commutation}\)</span> we conclude that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        H \Omega(\mp\infty) = \Omega(\mp\infty) H_0
+\end{equation*}</div><p>which readily implies <span class="math notranslate nohighlight">\(\eqref{eq_h0_s_commute}\)</span>.</p>
+</dd>
+</dl>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
