@@ -4,7 +4,7 @@ The Quantum Theory of Fields (S. Weinberg)
 .. warning::
 	This note is work in progress.
 
-This note covers the three volumes [Wei95]_, [Wei96]_, and [Wei00]_, written by S. Weinberg on quantum field theory. What I like the most about these books is his attempt to make logical deductions from the most basic principles, in particular, the principle of symmetries, rather than to make analogies to experience, e.g., from classical physics (from a historical perspective). Such an endeavor may not always be possible because, after all, physics is about how we interpret Nature based on nothing but experience, and *not* about how Nature actually works. By the same token, the arguments that are considered logical here should really be interpreted as "reasonable-sounding", and have nothing to do with what mathematician would call "rigorous".
+This note covers the three volumes [Wei95]_, [Wei96]_, and [Wei00]_, written by S. Weinberg on quantum field theory, with occasional references to [Wei15]_ by the same author. What I like the most about these books is his attempt to make logical deductions from the most basic principles, in particular, the principle of symmetries, rather than to make analogies to experience, e.g., from classical physics (from a historical perspective). Such an endeavor may not always be possible because, after all, physics is about how we interpret Nature based on nothing but experience, and *not* about how Nature actually works. By the same token, the arguments that are considered logical here should really be interpreted as "reasonable-sounding", and have nothing to do with what mathematician would call "rigorous".
 
 The order of the sections correspond roughly to the order of the chapters of the books.
 
@@ -848,7 +848,6 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 .. dropdown:: Representations of angular momenta
 	:animate: fade-in-slide-down
 
-
 	Recall from :math:`\eqref{eq_jjj_commutation}` that the (quantum) angular momenta vector :math:`\Jbf` satisfy the commutation relations :math:`[J_i, J_j] = \ifrak \epsilon_{ijk} J_k`. Hence they cannot be simultaneously diagonalized. It's then a convention to use the angular momentum along the :math:`3`-axis to label the spin. The following two identities are straightforward but important
 
 	.. math::
@@ -871,11 +870,11 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 			\label{eq_j1_j2_raises_or_lowers_state}
 		\end{equation}
 
-	In other words, applying :math:`J_1 \pm \ifrak J_2` to any eigenstate of :math:`J_3` raises or lowers the eigenvalue by one, and henceforth they are called *raising* and *lowering* operators, respectively. Moreover, since :math:`\Jbf^2` commutes with :math:`J_3`, we may assume that :math:`\Psi_m` is also an eigenstate of :math:`\Jbf^2`, and since :math:`\Jbf^2` also commutes with :math:`J_1 \pm \ifrak J_2`, the whole series of :math:`J_3`-eigenstates obtained by applying raising and/or lowering operators has the same :math:`\Jbf^2`-eigenvalue.
+	In other words, applying :math:`J_1 \pm \ifrak J_2` to any eigenstate of :math:`J_3` raises or lowers the eigenvalue by one, and henceforth they are called *raising* and *lowering* operators, respectively. Moreover, since :math:`\Jbf^2` commutes with :math:`J_3`, we may assume that :math:`\Psi_{\sigma}` is also an eigenstate of :math:`\Jbf^2`, and since :math:`\Jbf^2` also commutes with :math:`J_1 \pm \ifrak J_2`, the whole series of :math:`J_3`-eigenstates obtained by applying the raising/lowering operators have the same :math:`\Jbf^2`-eigenvalue.
 
-	We are only interested in eigenstates with finite :math:`\Jbf^2`-eigenvalue. So both the raising and the lowering operations must stop after finite steps. Let :math:`\Psi_{\jfrak}` be the :math:`J_3`-eigenstate with the highest eigenvalue (if there are more than one, the representation is reducible). By repeatedly applying the lowering operator to :math:`\Psi_{\jfrak}`, we'll eventually reach the eigenstate :math:`\Psi_{\jfrak'}` with the lowest eigenvalue. Since the lowering operator decreases the eigenvalue by one, we know that :math:`\jfrak - \jfrak'` must be an integer.
+	We'll from now on focus on eigenstates with a fixed :math:`\Jbf^2`-eigenvalue. Moreover we'd like the eigenvalues of :math:`J_3` to be bounded, so both the raising and the lowering operations must stop after finite steps. Let :math:`\Psi_{\jfrak}` be the :math:`J_3`-eigenstate with the highest eigenvalue (if there are more than one, the representation is reducible). By repeatedly applying the lowering operator to :math:`\Psi_{\jfrak}`, we'll eventually reach the eigenstate :math:`\Psi_{\jfrak'}` with the lowest eigenvalue. Since the lowering operator decreases the eigenvalue by one, we know that :math:`\jfrak - \jfrak'` must be an integer.
 
-	Let's consider the following two operators
+	Consider the following two operators
 
 	.. math::
 		:nowrap:
@@ -890,11 +889,23 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\Jbf^2 \Psi_{\jfrak} = (\jfrak^2 + \jfrak) \Psi_{\jfrak} = ((\jfrak')^2 - \jfrak') \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'} ~\Longrightarrow~ \jfrak (\jfrak + 1) = \jfrak' (\jfrak' - 1)
-		\end{equation*}
+		\end{equation}
 
 	The equation has two potential solutions: either :math:`\jfrak' = \jfrak + 1` or :math:`\jfrak = -\jfrak'`. The first option violates the maximality of :math:`\jfrak`, and so we must accept the second option. Since we also know :math:`\jfrak - \jfrak'` must be integral, we conclude that :math:`\jfrak` is itself a half-integer.
+
+	As a piece of notation, we'll from now on write :math:`\Psi^{\jfrak}_{\sigma}` for the eigenstate of both :math:`\Jbf^2` and :math:`J_3` such that
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			\Jbf^2 \Psi^{\jfrak}_{\sigma} &= \jfrak (\jfrak + 1) \Psi^{\jfrak}_{\sigma}  \label{eq_3j_square_eigenstate} \\
+			J_3 \Psi^{\jfrak}_{\sigma} &= \sigma \Psi^{\jfrak}_{\sigma}  \nonumber
+		\end{align}
+
+	We'll also write :math:`J_i^{(\jfrak)} \coloneqq J_i` to explicitly indicate the dependency on :math:`\jfrak`.
 
 	It remains to settle the constant term on the right-hand-side of :math:`\eqref{eq_j1_j2_matrix}`. By :math:`\eqref{eq_j1_j2_raises_or_lowers_state}` we can assume
 
@@ -902,10 +913,10 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 		:nowrap:
 
 		\begin{equation*}
-			\left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma} = \alpha_{\pm}(\jfrak, \sigma) \Psi_{\sigma \pm 1}
+			\left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma} = \alpha_{\pm}(\jfrak, \sigma) \Psi^{\jfrak}_{\sigma \pm 1}
 		\end{equation*}
 
-	Applying :math:`\eqref{eq_j1_j2_mixed_product_plus}` and :math:`\eqref{eq_j1_j2_mixed_product_minus}` to :math:`\Psi_{\sigma}` then implies
+	Applying :math:`\eqref{eq_j1_j2_mixed_product_plus}` and :math:`\eqref{eq_j1_j2_mixed_product_minus}` to :math:`\Psi^{\jfrak}_{\sigma}` then implies
 
 	.. math::
 		:nowrap:
@@ -914,15 +925,15 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 			\alpha_{\mp} (\jfrak, \sigma \pm 1) \alpha_{\pm} (\jfrak, \sigma) = \jfrak^2 + \jfrak - \sigma^2 \mp \sigma
 		\end{equation*}
 
-	Now we use the fact that :math:`J_i, i = 1, 2, 3`, are Hermitian operators to calculate
+	Now we use the fact that :math:`J^{(\jfrak)}_i, i = 1, 2, 3`, are Hermitian operators to calculate
 
 	.. math::
 		:nowrap:
 
 		\begin{align*}
-			|\alpha_{\pm} (\jfrak, \sigma)|^2 (\Psi_{\sigma}, \Psi_{\sigma}) &= \left( \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma}, \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma} \right) \\
-				&= \left( \Psi_{\sigma}, \left( J_1^{(\jfrak)} \mp \ifrak J_2^{(\jfrak)} \right) \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi_{\sigma} \right) \\
-				&= (\jfrak^2 + \jfrak - \sigma^2 \mp \sigma) (\Psi_{\sigma}, \Psi_{\sigma})
+			|\alpha_{\pm} (\jfrak, \sigma)|^2 (\Psi^{\jfrak}_{\sigma}, \Psi^{\jfrak}_{\sigma}) &= \left( \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma}, \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma} \right) \\
+				&= \left( \Psi^{\jfrak}_{\sigma}, \left( J_1^{(\jfrak)} \mp \ifrak J_2^{(\jfrak)} \right) \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma} \right) \\
+				&= (\jfrak^2 + \jfrak - \sigma^2 \mp \sigma) (\Psi^{\jfrak}_{\sigma}, \Psi^{\jfrak}_{\sigma})
 		\end{align*}
 
 	It follows that, up to a choice of phase, :math:`\alpha_{\pm} (\jfrak, \sigma) = \sqrt{\jfrak^2 + \jfrak - \sigma^2 \mp \sigma} = \sqrt{(j \mp \sigma)(j \pm \sigma + 1)}`, which confirms :math:`\eqref{eq_j1_j2_matrix}`.
@@ -949,7 +960,16 @@ It follows that [#boost_in_p_formula]_
 		L(p)_i^j &= \delta_i^j + \frac{p_i p_j}{\pbf^2} (\gamma - 1) \label{eq_L_transformation_for_massive_3}
 	\end{align}
 
-Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:`3`-rotation, then :math:`W(\Rcal, p) = \Rcal` for any :math:`p`. To see this, we'll work out how :math:`W(\Rcal, p)` acts on :math:`(1, \mathbf{0}), (0, \pbf)`, and :math:`(0, \qbf)`, respectively, where :math:`\qbf` is any :math:`3`-vector perpendicular to :math:`\pbf`, as follows
+Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:`3`-rotation, then
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		W(\Rcal, p) = \Rcal  \label{eq_little_group_rotation}
+	\end{equation}
+
+for any :math:`p`. To see this, we'll work out how :math:`W(\Rcal, p)` acts on :math:`(1, \mathbf{0}), (0, \pbf)`, and :math:`(0, \qbf)`, respectively, where :math:`\qbf` is any :math:`3`-vector perpendicular to :math:`\pbf`, as follows
 
 .. math::
 	:nowrap:
@@ -962,11 +982,200 @@ Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:
 
 where we have used that fact that :math:`\gamma` is :math:`\Rcal`-invariant.
 
-This observation is important since it implies that non-relativistic calculations about spins, such as the `Clebsch-Gordan coefficients <https://en.wikipedia.org/wiki/Clebsch%E2%80%93Gordan_coefficients>`__, can be literally carried over to the quantum setting.
+This observation is important since it implies that non-relativistic calculations about angular momenta, such as the `Clebsch-Gordan coefficients <https://en.wikipedia.org/wiki/Clebsch%E2%80%93Gordan_coefficients>`__, can be literally carried over to the relativistic setting.
 
-.. todo::
-	Review Clebsch-Gordan coefficients.
+.. dropdown:: Clebsch-Gordan coefficients
+	:animate: fade-in-slide-down
 
+	In a scenario where multiple particles present, or even just a single particle with both orbital angular momentum (i.e., the quantization of the classical angular momentum :math:`\xbf \times \Pbf`) and spin, it may happen that the full Hamiltonian doesn't commute with each individual :math:`3`-momentum :math:`\Jbf`, but commute with a "total" angular momentum. Therefore a formula, in terms of the so-called Clebsch-Gordan coefficients, that expresses the total angular momentum in terms of the individual ones is desirable. This section follows closely §4 from [Wei15]_. Note that the discussions that follow will be
+
+	1. non-relativistic, which is justified by :math:`\eqref{eq_little_group_rotation}`, and
+	2. applicable mostly (but not necessarily) to multi-particles states, rather than single-particle states.
+
+	We shall focus on the composition of two angular momentum :math:`3`-vectors :math:`\Jbf'` and :math:`\Jbf''`, whether orbital or spin, that commute, i.e., they each satisfies :math:`\eqref{eq_jjj_commutation}` and in addition
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			[J'_i, J''_j] = 0
+		\end{equation*}
+
+	for :math:`1 \leq i, j \leq 3`.
+
+	Let's recollect the eigenstate representations :math:`\eqref{eq_j1_j2_matrix}, \eqref{eq_j3_matrix}` and :math:`\eqref{eq_3j_square_eigenstate}` as follows,
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			{\Jbf'}^2 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &= \jfrak' (\jfrak' + 1) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+			J'_3 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &= \sigma' \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+			(J'_1 \pm \ifrak J'_2) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &= \sqrt{{\jfrak'}^2 + \jfrak' - {\sigma'}^2 \mp \sigma'} ~\Psi^{\jfrak' ~\jfrak''}_{\sigma' \pm 1, \sigma''} \\
+			{\Jbf''}^2 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &= \jfrak'' (\jfrak'' + 1) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+			J''_3 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &= \sigma'' \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+			(J''_1 \pm \ifrak J''_2) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &= \sqrt{{\jfrak''}^2 + \jfrak'' - {\sigma''}^2 \mp \sigma''} ~\Psi^{\jfrak' ~\jfrak''}_{\sigma', \sigma'' \pm 1}
+		\end{align*}
+
+	Without knowing exactly how the Hamiltonian :math:`H` looks like, we cannot really say what combinations of these angular momentum operators commute with :math:`H`, and therefore may be used to label states. However, one can imagine that a rotationally invariant Hamiltonian may contain terms like :math:`{\Jbf'}^2, {\Jbf''}^2` and interactions like :math:`\Jbf' \cdot \Jbf''`. In this case, we may choose to consider the following collection of (mutually commuting) operators
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			{\Jbf'}^2, ~{\Jbf''}^2, ~\Jbf^2, \text{ and } J_3
+		\end{equation*}
+
+	where :math:`\Jbf \coloneqq \Jbf' + \Jbf''` is the total angular momentum, and :math:`J_i, i=1,2,3,` is its :math:`i`-th component.
+
+	Now our goal is to express the eigenstates :math:`\Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma}` which satisfy the following
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			{\Jbf'}^2 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &= \jfrak' (\jfrak' + 1) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \nonumber \\
+			{\Jbf''}^2 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &= \jfrak'' (\jfrak'' + 1) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \nonumber \\
+			\Jbf^2 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &= \jfrak (\jfrak + 1) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \nonumber \\
+			J_3 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &= \sigma \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \nonumber \\
+			(J_1 \pm \ifrak J_2) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &= \sqrt{\jfrak^2 + \jfrak - \sigma^2 \mp \sigma} ~\Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma \pm 1} \label{eq_raising_lowering_am_pair}
+		\end{align}
+
+	in terms of :math:`\Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} = \sum_{\sigma' \sigma''} C^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''}
+		\end{equation*}
+
+	where the coefficients are known as Clebsch-Gordan coefficients. For the clarity of exposition, let's divide the solution into a few steps.
+
+	Step 1.
+		First of all, note that since :math:`J_3 = J'_3 + J''_3`, we have the following constraint
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				\Psi^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \neq 0 ~\Longrightarrow~ \sigma = \sigma' + \sigma''
+				\label{eq_sigma_additive}
+			\end{equation}
+
+		Moreover, we see that the maximum possible value of :math:`\sigma` is :math:`\jfrak' + \jfrak''`, and it is achieved exactly when :math:`\sigma' = \jfrak'` and :math:`\sigma'' = \jfrak''`. It follows, assuming the non-degeneracy of the representation at least, that
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak''} =  \Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak''}
+				\label{eq_highest_weight_am_pair}
+			\end{equation}
+
+		or equivalently
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				C^{\jfrak' ~\jfrak''}(\jfrak' + \jfrak'' ~\jfrak' + \jfrak''; \sigma' \sigma'') = \delta_{\sigma' ~\jfrak'} \delta_{\sigma'' ~\jfrak''}
+			\label{eq_clebsch_gordan_highest_weight}
+			\end{equation}
+
+	Step 2.
+		Next consider a state with :math:`\sigma = \jfrak' + \jfrak'' - 1`. It follows from :math:`\eqref{eq_sigma_additive}` that it must be a superposition of :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''}` and :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1}`, unless :math:`\jfrak'` and/or :math:`\jfrak''` vanishes, which leads to even simpler situations. Now we have two possible values of :math:`\jfrak`, namely :math:`\jfrak' + \jfrak''` and :math:`\jfrak' + \jfrak'' - 1`.
+
+		In the former case, we can apply :math:`\eqref{eq_raising_lowering_am_pair}` by letting :math:`\sigma = \jfrak = \jfrak' + \jfrak''` as follows
+
+		.. math::
+			:nowrap:
+
+			\begin{align*}
+				\sqrt{2(\jfrak' + \jfrak'')} ~\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak'' - 1} \
+					&\xlongequal{\eqref{eq_raising_lowering_am_pair}} (J_1 - \ifrak J_2) \Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak''} \\
+					&\xlongequal{\eqref{eq_highest_weight_am_pair}} (J_1 - \ifrak J_2) \Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak''} \\
+					&= (J'_1 - \ifrak J'_2 + J''_2 - \ifrak J''_2) \Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak''} \\
+					&= \sqrt{2 \jfrak'} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''} + \sqrt{2 \jfrak''} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1}
+			\end{align*}
+
+		This gives us one of the :math:`\sigma = \jfrak' + \jfrak'' - 1` states
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak'' - 1} = (\jfrak' + \jfrak'')^{-1/2} \left( \sqrt{\jfrak'} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''} + \sqrt{\jfrak''} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1} \right)
+				\label{eq_second_highest_weight_am_pair_one}
+			\end{equation}
+
+		The other one, which has :math:`\jfrak = \jfrak' + \jfrak'' - 1`, must be orthogonal to :math:`\eqref{eq_second_highest_weight_am_pair_one}`. Therefore up to a normalization factor, we can write
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak'' - 1}_{\jfrak' + \jfrak'' - 1} = (\jfrak' + \jfrak'')^{-1/2} \left( \sqrt{\jfrak''} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak'-1 ~\jfrak''} - \sqrt{\jfrak'} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1} \right)
+			\label{eq_second_highest_weight_am_pair_two}
+			\end{equation}
+
+		We can translate :math:`\eqref{eq_second_highest_weight_am_pair_one}` and :math:`\eqref{eq_second_highest_weight_am_pair_two}` into Clebsch-Gordan coefficients as follows
+
+		.. math::
+			:nowrap:
+
+			\begin{align}
+				C^{\jfrak' ~\jfrak''}(\jfrak' + \jfrak'' ~\jfrak' + \jfrak'' - 1; \sigma' \sigma'') &= \
+					\sqrt{\frac{\jfrak'}{\jfrak' + \jfrak''}} ~\delta_{\sigma' ~\jfrak' - 1} \delta_{\sigma'' ~\jfrak''} + \
+					\sqrt{\frac{\jfrak''}{\jfrak' + \jfrak''}} ~\delta_{\sigma' ~\jfrak'} \delta_{\sigma'' ~\jfrak'' - 1} \
+					\label{eq_clebsch_gordan_second_highest_weight_one} \\
+
+				C^{\jfrak' ~\jfrak''}(\jfrak' + \jfrak'' -1 ~\jfrak' + \jfrak'' - 1; \sigma' \sigma'') &= \
+					\sqrt{\frac{\jfrak''}{\jfrak' + \jfrak''}} ~\delta_{\sigma' ~\jfrak' - 1} \delta_{\sigma'' ~\jfrak''} - \
+					\sqrt{\frac{\jfrak''}{\jfrak' + \jfrak''}} \delta_{\sigma' ~\jfrak'} \delta_{\sigma'' ~\jfrak'' - 1} \
+					\label{eq_clebsch_gordan_second_highest_weight_two}
+			\end{align}
+
+	Step 3.
+		The pattern should now be clear. Namely for :math:`\sigma = \jfrak' + \jfrak'' - 2`, the :math:`J_3`-eigenspace must be :math:`3`-dimensional and spanned by :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 2 ~\jfrak''}, \Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak'' - 1}` and :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 2}`. Two of them come from :math:`\eqref{eq_second_highest_weight_am_pair_one}, \eqref{eq_second_highest_weight_am_pair_two}` by applying the lowering operator :math:`J_1 - \ifrak J_2`, and the third orthogonally complements the first two.
+
+		This procedure can be continued but will eventually terminate because of the bounds :math:`|\sigma'| \leq \jfrak'` and :math:`|\sigma''| \leq \jfrak''`. It follows that :math:`\jfrak` can only take the following values
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				\jfrak = |\jfrak' - \jfrak''|, ~|\jfrak' - \jfrak''| + 1, \cdots, ~\jfrak' + \jfrak''
+			\end{equation}
+
+	To make the above rather abstract calculations more concrete, let's consider the example of a hydrogen atom, where the single electron is subject to the (radial) Coulomb force. Without actually spelling out the Hamiltonian, let's jump directly to the result. The result is that the energy levels can be labeled by positive integers :math:`n = 1, 2, \cdots`. For each :math:`n`, the orbital angular momentum :math:`\ell` can take any value from :math:`0, 1, \cdots, n - 1`, traditionally labeled by :math:`s, p, d, f, g, \cdots`. Finally the electron spin is :math:`\sfrak = 1/2`. We can then make the following table for the first few states with :math:`n \leq 2`.
+
+	+------------------+-----------+------------------------+---------------------------+----------------+-----------------+-----------------+------------------+----------------------------------------------------------+
+	| State            | :math:`n` | :math:`\ell(=\jfrak')` | :math:`\sfrak(=\jfrak'')` | :math:`\jfrak` | :math:`\sigma`  | :math:`\sigma'` | :math:`\sigma''` | :math:`C^{\ell~\sfrak}(\jfrak~\sigma;~\sigma' \sigma'')` |
+	+==================+===========+========================+===========================+================+=================+=================+==================+==========================================================+
+	| :math:`1s_{1/2}` | :math:`1` | :math:`0`              | :math:`1/2`               | :math:`1/2`    | :math:`\pm 1/2` | :math:`0`       | :math:`\pm 1/2`  | :math:`1`                                                |
+	+------------------+-----------+------------------------+---------------------------+----------------+-----------------+-----------------+------------------+----------------------------------------------------------+
+	| :math:`2s_{1/2}` | :math:`2` | :math:`0`              | :math:`1/2`               | :math:`1/2`    | :math:`\pm 1/2` | :math:`0`       | :math:`\pm 1/2`  | :math:`1`                                                |
+	+------------------+-----------+------------------------+---------------------------+----------------+-----------------+-----------------+------------------+----------------------------------------------------------+
+	| :math:`2p_{1/2}` | :math:`2` | :math:`1`              | :math:`1/2`               | :math:`1/2`    | :math:`\pm 1/2` | :math:`0`       | :math:`\pm 1/2`  | :math:`\pm \sqrt{1/3}`                                   |
+	|                  |           |                        |                           |                |                 +-----------------+------------------+----------------------------------------------------------+
+	|                  |           |                        |                           |                |                 | :math:`\pm 1`   | :math:`\mp 1/2`  | :math:`\mp \sqrt{2/3}`                                   |
+	+------------------+-----------+------------------------+---------------------------+----------------+-----------------+-----------------+------------------+----------------------------------------------------------+
+	| :math:`2p_{3/2}` | :math:`2` | :math:`1`              | :math:`1/2`               | :math:`3/2`    | :math:`\pm 3/2` | :math:`\pm 1`   | :math:`\pm 1/2`  | :math:`1`                                                |
+	|                  |           |                        |                           |                +-----------------+-----------------+------------------+----------------------------------------------------------+
+	|                  |           |                        |                           |                | :math:`\pm 1/2` | :math:`0`       | :math:`\pm 1/2`  | :math:`\sqrt{2/3}`                                       |
+	|                  |           |                        |                           |                |                 +-----------------+------------------+----------------------------------------------------------+
+	|                  |           |                        |                           |                |                 | :math:`\pm 1`   | :math:`\mp 1/2`  | :math:`\sqrt{1/3}`                                       |
+	+------------------+-----------+------------------------+---------------------------+----------------+-----------------+-----------------+------------------+----------------------------------------------------------+
+
+	where a state is structured as :math:`\{n\}\{\ell\}_{\{\jfrak\}}`. Interpreting the Clebsch-Gordan coefficients as probability amplitudes, we see for example that if one measures the :math:`3`-components of the orbital and spin of the electron in a hydrogen atom in state :math:`2p_{1/2}` with :math:`\sigma = 1/2`, then one gets either :math:`(0, 1/2)` or :math:`(1, -1/2)` with probabilities :math:`1/3` and :math:`2/3`, respectively.
+
+	We end this (long) excursion with a few interesting facts that we'll come back to later.
+
+	1. The energy difference between :math:`1s_{1/2}` and :math:`2s_{1/2}`, plotted on a spectrometer, is the famous `21-centimeter line <https://en.wikipedia.org/wiki/Hydrogen_line>`_.
+	2. The energy difference between :math:`2p_{1/2}` and :math:`2p_{3/2}`, i.e., same orbital but different total angular momentum, is known as the `fine structure <https://en.wikipedia.org/wiki/Fine_structure>`_ of the hydrogen atom.
+	3. The energy difference between :math:`2s_{1/2}` and :math:`2p_{1/2}`, i.e., same total but different orbital angular momentum, is known as the `Lamb shift <https://en.wikipedia.org/wiki/Lamb_shift>`_. 3.
+	4. The energy difference between states with the same orbital and total angular momentum, e.g., :math:`1s_{1/2}`, but different spin-:math:`z` component :math:`\sigma`, e.g., :math:`\pm 1/2`, due to the magnetic moment is known as the `hyperfine structure <https://en.wikipedia.org/wiki/Hyperfine_structure>`_.
 
 Massless particle states
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1203,6 +1412,8 @@ Then apply a (pure) rotation that takes :math:`(0, 0, |\pbf|)` to :math:`\pbf`. 
 
 	It's not obvious at all why these states are named the way they are, if only viewed as abstract combinations of eigenstates of an abstract operator :math:`J_3`. They are named after analogies, either with `helicity <https://en.wikipedia.org/wiki/Helicity_(particle_physics)>`_ from classical mechanics or with classical electromagnetic fields (in vacuum) from Maxwell's theory.
 
+.. _sec_space_and_time_inversions:
+
 Space and time inversions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1259,6 +1470,8 @@ As before, it'll be useful to rewrite :math:`\eqref{eq_p_conjugated_by_p}` -- :m
 One can (and should) try to reconcile these implications with commonsense. For example, :math:`\eqref{eq_p3_conjugated_by_p}` and :math:`\eqref{eq_p3_conjugated_by_t}` say that the :math:`3`-momentum changes direction under either space or time inversion, which is of course as expected. Moreover :math:`\eqref{eq_j3_conjugated_by_p}` says that the spin (of for example a basketball) remains the same under space inversion because both the direction of the axis and the handedness of the rotation get reversed simultaneously, but it gets reversed under a time inversion according to :math:`\eqref{eq_j3_conjugated_by_t}` because the direction of rotation is reversed if time flows backwards.
 
 In what follows we will work out the effects of space and time inversions on massive and massless particles, respectively.
+
+.. _sec_space_inversion_for_massive_particles:
 
 Space inversion for massive particles
 +++++++++++++++++++++++++++++++++++++
@@ -1463,7 +1676,7 @@ As a conclusion, we see that for such systems, any energy eigenvalue has at leas
 Scattering Theory
 -----------------
 
-Physics would have been rather boring if nothing interacts, like the free particles that we have been studying so far. On the flip side, physics would have been impossible if we try to know exactly what happens in the interactions. The middle ground, where we assume that the particles are non-interacting long before and after the interaction, and something mysterious happened in between, is called scattering theory.
+Physics would have been rather boring if nothing interacts, like the free particles that we have been studying so far. On the flip side, physics would have been impossible if we try to know exactly what happens in the interactions. The middle ground, where we assume that the particles are non-interacting long before and after the interaction, and something mysterious happened in between, is called scattering theory --  a place where theories meet experiments.
 
 Non-interacting many-particles state
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1744,12 +1957,11 @@ but this is *not* what we mean by Lorentz symmetry. What we do want to know is, 
 
 	\begin{align}
 		S_{p'_1, \sigma'_1, n'_1; ~p'_2, \sigma'_2, n'_2; ~\cdots, ~~p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} = \
-			&\blue{\exp\left( \ifrak a^{\mu} \Lambda_{\mu}^{\nu} \left( (p'_1)_{\nu} + (p'_2)_{\nu} + \cdots - (p_1)_{\nu} - (p_2)_{\nu} - \cdots \right) \right)}  \nonumber \\
+			&\blue{\exp\left( \ifrak a^{\mu} \Lambda_{\mu}^{\nu} \left( (p'_1)_{\nu} + (p'_2)_{\nu} + \cdots - (p_1)_{\nu} - (p_2)_{\nu} - \cdots \right) \right)}  \label{eq_lorentz_transformation_formula_for_s_matrix} \\
 			&\times \sqrt{\frac{(\Lambda p'_1)_0 (\Lambda p'_2)_0 \cdots (\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p'_1)_0 (p'_2)_0 \cdots (p_1)_0 (p_2)_0 \cdots}}  \nonumber \\
-			&\times \sum_{\underline{\sigma}'_1 \underline{\sigma}'_2 \cdots} D_{\sigma'_1 \underline{\sigma}'_1} (W(\Lambda, p'_1)) D_{\sigma'_2 \underline{\sigma}'_2} (W(\Lambda, p'_2)) \cdots  \nonumber \\
+			&\times \sum_{\underline{\sigma}'_1 \underline{\sigma}'_2 \cdots} D^{\ast}_{\sigma'_1 \underline{\sigma}'_1} (W(\Lambda, p'_1)) D^{\ast}_{\sigma'_2 \underline{\sigma}'_2} (W(\Lambda, p'_2)) \cdots  \nonumber \\
 			&\times \sum_{\underline{\sigma}_1 \underline{\sigma}_2 \cdots} D_{\sigma_1 \underline{\sigma}_1} (W(\Lambda, p_1)) D_{\sigma_2 \underline{\sigma}_2} (W(\Lambda, p_2)) \cdots  \nonumber \\
-			&\times S_{\Lambda p'_1, \underline{\sigma}'_1, n'_1; ~\Lambda p'_2, \underline{\sigma}'_2, n'_2; ~\cdots, ~~\Lambda p_1, \underline{\sigma}_1, n_1; ~\Lambda p_2, \underline{\sigma}_2, n_2, ~\cdots}
-			\label{eq_lorentz_transformation_formula_for_s_matrix}
+			&\times S_{\Lambda p'_1, \underline{\sigma}'_1, n'_1; ~\Lambda p'_2, \underline{\sigma}'_2, n'_2; ~\cdots, ~~\Lambda p_1, \underline{\sigma}_1, n_1; ~\Lambda p_2, \underline{\sigma}_2, n_2, ~\cdots}  \nonumber
 	\end{align}
 
 where we've used primes to distinguish between labels from in- and out-states, and underlines to distinguish between labels, specifically the spin-:math:`z` or helicity, before and after the Lorentz transformation.
@@ -1906,6 +2118,123 @@ Step 3.
 		\end{equation*}
 
 	which readily implies :math:`\eqref{eq_h0_s_commute}`.
+
+.. note::
+	Besides showing that :math:`\eqref{eq_h0_s_commute}` -- :math:`\eqref{eq_k30_s_commute}` hold, our calculations actually establish the following intertwining identities
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			H \Omega(\pm\infty) &= \Omega(\pm\infty) H_0 \\
+			\Pbf \Omega(\pm\infty) &= \Omega(\pm\infty) \Pbf_0 \\
+			\Jbf \Omega(\pm\infty) &= \Omega(\pm\infty) \Jbf_0
+		\end{align*}
+
+	which imply, in particular, that the standard commutation relations :math:`\eqref{eq_hp_commute}` -- :math:`\eqref{eq_kkj_commutation}` also hold in a frame where :math:`\tau \to \infty`, as expected.
+
+Internal symmetry
++++++++++++++++++
+
+An internal symmetry is a symmetry that leaves :math:`p` and :math:`\sigma` invariant and acts on the other labels such as charge, spin, and so on. We can write the general form of an internal symmetry on in- and out-states as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(T) \Psi^{\pm}_{p_1, \sigma_1, n_1;~p_2, \sigma_2, n_2;~\cdots} = \sum_{n'_1, n'_2, \cdots} \Dscr_{n_1 n'_1} \Dscr_{n_2 n'_2} \cdots \Psi^{\pm}_{p_1, \sigma_1, n'_1;~p_2, \sigma_2, n'_2;~\cdots}
+		\label{eq_internal_symmetry_transformation_for_in_and_out_states}
+	\end{equation}
+
+where :math:`U(T)` is the unitary operator associated with the symmetry transformation :math:`T`, and the :math:`\Dscr`'s are analogs of the little group representations from :math:`\eqref{eq_d_repr_of_little_group}`.
+
+Similar to :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}`, we can formulate the internal symmetry of S-matrix as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{n'_1, n'_2, \cdots, ~n_1, n_2, \cdots} = \
+			\sum_{\underline{n}'_1, \underline{n}'_2, \cdots} \Dscr^{\ast}_{n'_1 \underline{n}'_1}(T) \Dscr^{\ast}_{n'_2 \underline{n}'_2}(T) \cdots \
+			\sum_{\underline{n}_1, \underline{n}_2, \cdots} \Dscr_{n_1 \underline{n}_1}(T) \Dscr_{n_2 \underline{n}_2}(T) \cdots \
+			S_{\underline{n}'_1, \underline{n}'_2, \cdots, ~\underline{n}_1, \underline{n}_2, \cdots}
+		\label{eq_internal_symmetry_transformation_formula_for_s_matrix}
+	\end{equation}
+
+where we have suppressed the irrelevant :math:`p` and :math:`\sigma` labels.
+
+For what kind of Hamiltonian :math:`H` does there exist an internal symmetry :math:`U(T)` that acts like :math:`\eqref{eq_internal_symmetry_transformation_for_in_and_out_states}`? The answer is similar to the case of Lorentz symmetry. Namely, if we can split :math:`H = H_0 + V` into the free and perturbation terms, such that the free symmetry transformation :math:`U_0(T)`, which satisfies :math:`\eqref{eq_internal_symmetry_transformation_for_in_and_out_states}` with :math:`\Phi` in place of :math:`\Psi^{\pm}`, commutes with both :math:`H_0` and :math:`V`.
+
+
+Similar to the translations in Lorentz symmetry, let's consider a symmetry :math:`T(\theta)` parametrized by a real number. It follows from :math:`\eqref{eq_additive_symmetry}` that we can write
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(T(\theta)) = \exp(\ifrak \theta Q)
+	\end{equation*}
+
+where :math:`Q` is a Hermitian operator called the charge. Probably the best known example of it is the electric charge. In this case, we can also write
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Dscr_{n n'}(T(\theta)) = \delta_{n n'} \exp(\ifrak \theta q_n)
+		\label{eq_infinitesimal_charge_d_matrix}
+	\end{equation}
+
+The general formula :math:`\eqref{eq_internal_symmetry_transformation_formula_for_s_matrix}` then translates into
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		q_1 + q_2 + \cdots = q'_1 + q'_2 + \cdots
+	\end{equation*}
+
+which is nothing about the conservation of charges. Besides the electric charge, there exist also other similar conserved, or approximately conserved, quantities, such as baryon number and lepton number.
+
+Parity symmetry
++++++++++++++++
+
+Recall from :ref:`sec_space_inversion_for_massive_particles` that for non-interacting massive particles
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(\Pcal) \Psi^{\pm}_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} \
+			= \eta_{n_1} \eta_{n_2} \cdots \Psi^{\pm}_{U(\Pcal)p_1, \sigma_1, n_1; ~U(\Pcal)p_2, \sigma_2, n_2; ~\cdots}
+		\label{eq_space_inversion_acts_on_in_and_out_states}
+	\end{equation}
+
+where :math:`\eta_n` denotes the intrinsic parity of particle :math:`n`. The S-matrix version of the parity symmetry is as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{p'_1, \sigma'_1, n'_1; ~p'_2, \sigma'_2, n'_2; ~\cdots, ~~p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} \
+			= \eta^{\ast}_{n'_1} \eta^{\ast}_{n'_2} \cdots \eta_{n_1} \eta_{n_2} \cdots \
+			S_{U(\Pcal)p'_1, \sigma'_1, n'_1; ~U(\Pcal)p'_2, \sigma'_2, n'_2; ~\cdots, ~~U(\Pcal)p_1, \sigma_1, n_1; ~U(\Pcal)p_2, \sigma_2, n_2; ~\cdots}
+		\label{eq_space_inversion_formula_for_s_matrix}
+	\end{equation}
+
+Although the space inversion operator :math:`\Pcal` is defined explicitly in :math:`\eqref{eq_space_inversion}`, the parity operator :math:`U(\Pcal)`, as far as the S-matrix is concerned, is completely determined by :math:`\eqref{eq_space_inversion_acts_on_in_and_out_states}` and :math:`\eqref{eq_space_inversion_formula_for_s_matrix}`. In particular, it's not uniquely determined if the particle species under question possesses internal symmetries as discussed in the previous section, because their composition with :math:`\Pcal` will also satisfy :math:`\eqref{eq_space_inversion_acts_on_in_and_out_states}` and :math:`\eqref{eq_space_inversion_formula_for_s_matrix}`, and therefore may equally well be called a parity operator.
+
+Since :math:`\Pcal^2 = 1`, it's an obvious question to ask whether :math:`U(\Pcal)^2 = 1` necessarily. This would have been the case if :math:`U` furnishes a genuine representation, but it doesn't have to. In general, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Pcal)^2 \Psi^{\pm}_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} = \eta_{n_1}^2 \eta_{n_2}^2 \cdots \
+			\Psi^{\pm}_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots}
+	\end{equation*}
+
+which looks just like an internal symmetry. Now if :math:`U(\Pcal)^2` belongs to a continuous family of internal symmetries, then it may be redefined so that all :math:`\eta^2 = 1`.
 
 
 .. rubric:: Footnotes

@@ -39,3 +39,5 @@ Bibliography
 .. [Wei96] S\. Weinberg\. *The Quantum Theory of Fields Volume 2: Modern Applications* `doi <https://doi.org/10.1017/CBO9781139644174>`__
 
 .. [Wei00] S\. Weinberg\. *The Quantum Theory of Fields Volume 3: Supersymmetry* `doi <https://doi.org/10.1017/CBO9781139644198>`__
+
+.. [Wei15] S\. Weinberg\. *Lectures on Quantum Mechanics* `doi <https://doi.org/10.1017/CBO9781316276105>`__

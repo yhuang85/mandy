@@ -112,6 +112,7 @@ mathjax3_config = {
 			**{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
 			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},
 			**{f'{w}frak': f'{{\\mathfrak {w}}}' for w in string.ascii_letters},
+            **{f'{w}scr': f'{{\\mathscr {w}}}' for w in string.ascii_letters},
 		},
 		'packages': {
 			'[+]': [
