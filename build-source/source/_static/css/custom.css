@@ -1,3 +1,7 @@
 .math > .MathJax {
   overflow: initial;
 }
+
+.red {
+  color: red;
+}

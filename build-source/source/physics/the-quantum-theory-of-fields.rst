@@ -121,7 +121,7 @@ where :math:`c` is any complex number.
 					&= |1 + c|
 			\end{align*}
 
-		It follows that :math:`c = \pm\i`, which correspond to :math:`U` being (complex) linear or anti-linear, respectively.
+		It follows that :math:`c = \pm \ifrak`, which correspond to :math:`U` being (complex) linear or anti-linear, respectively.
 
 	At this point, we can extend :math:`U` to either a linear or anti-linear map of the Hilbert space. But we'll not be bothered about any further formal argument, including showing that (anti-)linearity must be coupled with (anti-)unitarity, respectively.
 
@@ -217,7 +217,7 @@ In fact, it will be of great importance to just look at the symmetry up to the f
 		\label{eq_u_expansion}
 	\end{equation}
 
-where :math:`\theta^a` are the (real) components of :math:`\theta`, and :math:`u_a` are operators independent of :math:`\theta`, and as a convention, repeated indexes are summed up. Here we put a :math:`\i` in front of the linear term so that the unitarity of :math:`U` implies that :math:`u_a` are Hermitian.
+where :math:`\theta^a` are the (real) components of :math:`\theta`, and :math:`u_a` are operators independent of :math:`\theta`, and as a convention, repeated indexes are summed up. Here we put a :math:`\ifrak` in front of the linear term so that the unitarity of :math:`U` implies that :math:`u_a` are Hermitian.
 
 Now let :math:`\eta` be another element of the Lie algebra, and expand both sides of :math:`U(T(\eta)) U(T(\theta)) = U(T(\eta) T(\theta))` as follows
 
@@ -984,6 +984,8 @@ where we have used that fact that :math:`\gamma` is :math:`\Rcal`-invariant.
 
 This observation is important since it implies that non-relativistic calculations about angular momenta, such as the `Clebsch-Gordan coefficients <https://en.wikipedia.org/wiki/Clebsch%E2%80%93Gordan_coefficients>`__, can be literally carried over to the relativistic setting.
 
+.. _dropdown_clebsch_gordan_coefficients:
+
 .. dropdown:: Clebsch-Gordan coefficients
 	:animate: fade-in-slide-down
 
@@ -1146,6 +1148,7 @@ This observation is important since it implies that non-relativistic calculation
 
 			\begin{equation}
 				\jfrak = |\jfrak' - \jfrak''|, ~|\jfrak' - \jfrak''| + 1, \cdots, ~\jfrak' + \jfrak''
+				\label{eq_composite_total_angular_momentum_range}
 			\end{equation}
 
 	To make the above rather abstract calculations more concrete, let's consider the example of a hydrogen atom, where the single electron is subject to the (radial) Coulomb force. Without actually spelling out the Hamiltonian, let's jump directly to the result. The result is that the energy levels can be labeled by positive integers :math:`n = 1, 2, \cdots`. For each :math:`n`, the orbital angular momentum :math:`\ell` can take any value from :math:`0, 1, \cdots, n - 1`, traditionally labeled by :math:`s, p, d, f, g, \cdots`. Finally the electron spin is :math:`\sfrak = 1/2`. We can then make the following table for the first few states with :math:`n \leq 2`.
@@ -1174,8 +1177,8 @@ This observation is important since it implies that non-relativistic calculation
 
 	1. The energy difference between :math:`1s_{1/2}` and :math:`2s_{1/2}`, plotted on a spectrometer, is the famous `21-centimeter line <https://en.wikipedia.org/wiki/Hydrogen_line>`_.
 	2. The energy difference between :math:`2p_{1/2}` and :math:`2p_{3/2}`, i.e., same orbital but different total angular momentum, is known as the `fine structure <https://en.wikipedia.org/wiki/Fine_structure>`_ of the hydrogen atom.
-	3. The energy difference between :math:`2s_{1/2}` and :math:`2p_{1/2}`, i.e., same total but different orbital angular momentum, is known as the `Lamb shift <https://en.wikipedia.org/wiki/Lamb_shift>`_. 3.
-	4. The energy difference between states with the same orbital and total angular momentum, e.g., :math:`1s_{1/2}`, but different spin-:math:`z` component :math:`\sigma`, e.g., :math:`\pm 1/2`, due to the magnetic moment is known as the `hyperfine structure <https://en.wikipedia.org/wiki/Hyperfine_structure>`_.
+	3. The energy difference between :math:`2s_{1/2}` and :math:`2p_{1/2}`, i.e., same total but different orbital angular momentum, is known as the `Lamb shift <https://en.wikipedia.org/wiki/Lamb_shift>`_.
+	4. The energy difference between states with the same orbital and total angular momentum, e.g., :math:`1s_{1/2}`, but different spin :math:`z`-component :math:`\sigma`, e.g., :math:`\pm 1/2`, due to the magnetic moment is known as the `hyperfine structure <https://en.wikipedia.org/wiki/Hyperfine_structure>`_.
 
 Massless particle states
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1471,6 +1474,7 @@ One can (and should) try to reconcile these implications with commonsense. For e
 
 In what follows we will work out the effects of space and time inversions on massive and massless particles, respectively.
 
+
 .. _sec_space_inversion_for_massive_particles:
 
 Space inversion for massive particles
@@ -1508,6 +1512,9 @@ We can calculate as follows
 	\end{equation}
 
 which generalizes :math:`\eqref{eq_space_inversion_on_massive_standard}`. Such :math:`\eta` is known as the *intrinsic parity*, which is intrinsic to a particle species.
+
+
+.. _sec_time_inversion_for_massive_particles:
 
 Time inversion for massive particles
 ++++++++++++++++++++++++++++++++++++
@@ -1555,7 +1562,7 @@ Here we have chosen to keep the option of a physically inconsequential phase :ma
 	:nowrap:
 
 	\begin{equation}
-		U(\Tcal) \Psi_{p, \sigma} = \zeta (-1)^{\jfrak - \sigma} \Psi_{p, -\sigma}
+		U(\Tcal) \Psi_{p, \sigma} = \zeta (-1)^{\jfrak - \sigma} \Psi_{\Pcal p, -\sigma}
 		\label{eq_time_inversion_on_massive_general}
 	\end{equation}
 
@@ -1694,7 +1701,7 @@ We shall, as always, start from the easiest part of the theory, which is clearly
 		&\times \Psi_{\Lambda p_1, \sigma'_1, n_1; ~\Lambda p_2, \sigma'_2, n_2; ~\cdots} \nonumber
 	\end{align}
 
-where the first component is the translation transformation :math:`\eqref{eq_translation_formula_for_particle_state}`, the second component is the normalization factor, and the third component is the little group representation, and the :math:`\sigma`'s are either the spin-:math:`z` component for massive particles or the helicity for massless particles, and the :math:`n`'s are additional (discrete) labels such as mass, charge, spin, etc.
+where the first component is the translation transformation :math:`\eqref{eq_translation_formula_for_particle_state}`, the second component is the normalization factor, and the third component is the little group representation, and the :math:`\sigma`'s are either the spin :math:`z`-component for massive particles or the helicity for massless particles, and the :math:`n`'s are additional (discrete) labels such as mass, charge, spin, etc.
 
 Notice that by writing a many-particles state as :math:`\Psi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots}`, we have given the particles an order, which is by no means unique. Hence the normalization of these states must take permutations into account as follows
 
@@ -2171,9 +2178,10 @@ Similar to the translations in Lorentz symmetry, let's consider a symmetry :math
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		U(T(\theta)) = \exp(\ifrak \theta Q)
-	\end{equation*}
+		\label{eq_charge_internal_symmetry}
+	\end{equation}
 
 where :math:`Q` is a Hermitian operator called the charge. Probably the best known example of it is the electric charge. In this case, we can also write
 
@@ -2195,6 +2203,7 @@ The general formula :math:`\eqref{eq_internal_symmetry_transformation_formula_fo
 	\end{equation*}
 
 which is nothing about the conservation of charges. Besides the electric charge, there exist also other similar conserved, or approximately conserved, quantities, such as baryon number and lepton number.
+
 
 Parity symmetry
 +++++++++++++++
@@ -2234,13 +2243,389 @@ Since :math:`\Pcal^2 = 1`, it's an obvious question to ask whether :math:`U(\Pca
 			\Psi^{\pm}_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots}
 	\end{equation*}
 
-which looks just like an internal symmetry. Now if :math:`U(\Pcal)^2` belongs to a continuous family of internal symmetries, then it may be redefined so that all :math:`\eta^2 = 1`.
+which looks just like an internal symmetry. Now if :math:`U(\Pcal)^2` belongs to a continuous family of internal symmetries, then it may be redefined, by suitably composing with internal symmetries, so that all :math:`\eta^2 = 1`. Examples of this kind include notably protons and neutrons. On the other hand, non-examples, i.e., those whose intrinsic parity cannot be reduced to :math:`\pm 1`, include only those hypothetical `Majorana fermions <https://en.wikipedia.org/wiki/Majorana_fermion>`_.
+
+.. todo::
+	Revise this part after I've learned more...
+
+.. dropdown:: Parities of elementary particles
+	:animate: fade-in-slide-down
+
+	We shall in this section assume familiarity with angular momentum as discussed in :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`.
+
+	Can parities be other than :math:`\pm 1`?
+		Aside from electric charges, there exist other quantities that are (at least approximately) conserved by internal symmetries, for example, `baryon numbers <https://en.wikipedia.org/wiki/Baryon_number>`_ :math:`B` and `lepton numbers <https://en.wikipedia.org/wiki/Lepton_number>`_ :math:`L`. Examples of baryons include `protons <https://en.wikipedia.org/wiki/Proton>`_ and `neutrons <https://en.wikipedia.org/wiki/Neutron>`_. Examples of leptons include `electrons <https://en.wikipedia.org/wiki/Electron>`_, `muons <https://en.wikipedia.org/wiki/Muon>`_ and `neutrinos <https://en.wikipedia.org/wiki/Neutrino>`_. The internal symmetry operator generalizes :math:`\eqref{eq_charge_internal_symmetry}` in a straightforward way as follows
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				U(T(\alpha, \beta, \gamma)) = \exp(\ifrak(\alpha B + \beta L + \gamma Q))
+				\label{eq_baryon_lepton_charge_internal_symmetry}
+			\end{equation}
+
+		so that :math:`T` is isomorphic to :math:`\Rbb^3` instead of :math:`\Rbb`. This will be the most general internal symmetry that will be considered here.
+
+		By the conservation of angular momentum, the parity of the number of half-integer spin particles, which we denote by :math:`(-1)^F`, is conserved. Here :math:`F` stands for fermion. For all known (to Weinberg at least) particles, the following equality of parities holds
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				(-1)^F = (-1)^{B + L}
+				\label{eq_fermion_count_eq_baryon_and_lepton_mod_2}
+			\end{equation}
+
+		In particular, the above mentioned protons, neutrons, electrons, neutrinos are all spin-:math:`1/2` particles.
+
+		If, for whatever reason, the following holds
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				\orange{U(\Pcal)^2 = (-1)^F}
+				\label{}
+			\end{equation}
+
+		and in addition :math:`\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}` holds, then :math:`U(\Pcal)^2` is part of a continuous symmetry :math:`\eqref{eq_baryon_lepton_charge_internal_symmetry}` and hence can be set to one.  A hypothetical example that breaks :math:`\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}` is the so-called Majorana fermions that are their own anti-particles, which implies :math:`B = L = 0`. For these particles, we have :math:`U(\Pcal)^4 = 1`, and hence the intrinsic parity may be :math:`\pm 1` or :math:`\pm \ifrak`.
+
+	Can parities be :math:`-1`?
+		The following reaction is observed experimentally
+
+		.. math::
+			:nowrap:
+
+			\begin{equation}
+				\pi^- + d \to n + n
+				\label{eq_pion_deuteron_to_two_neutrons}
+			\end{equation}
+
+		where a negative pion is absorbed by a `deuteron <https://en.wikipedia.org/wiki/Deuterium>`_ to produce two neutrons. Moreover, the reaction assumes that the initial state, i.e., the left-hand-side of :math:`\eqref{eq_pion_deuteron_to_two_neutrons}` has orbital angular momentum :math:`\ell = 0` and total angular momentum :math:`j = 1`. Note that the spin of pion and deuteron is :math:`0` and :math:`1`, respectively.
+
+		The conservation of angular momentum demands that the total angular momentum of the right-hand-side must also be :math:`1`, and this can be achieved, a priori, in a number of possibilities. Since neutrons have spin :math:`1/2`, the total spin :math:`\sfrak` of :math:`n + n` may be either :math:`0` or :math:`1` by :math:`\eqref{eq_composite_total_angular_momentum_range}`. But since neutrons are fermions and therefore the state :math:`n + n` must be anti-symmetric, we conclude that :math:`\sfrak = 0` by :math:`\eqref{eq_second_highest_weight_am_pair_two}`. [#pion_deuteron_reaction_final_state]_ Then it follows again from :math:`\eqref{eq_composite_total_angular_momentum_range}` that the orbital angular momentum of the right-hand-side of :math:`\eqref{eq_pion_deuteron_to_two_neutrons}` must be :math:`1`. We are left with exactly one choice.
+
+		Now since the orbital angular momentum changes from :math:`0` in the initial state to :math:`1` in the final state, the S-matrix elements flip sign by the action of :math:`U(\Pcal)` (:red:`WHY? I guess I'm missing knowledge about how orbital angular momentum enters the S-matrix.`). It follows from :math:`\eqref{eq_space_inversion_formula_for_s_matrix}` that
+
+		.. math::
+			:nowrap:
+
+			\begin{equation*}
+				\eta_{\pi^-} \eta_d = -\eta_n^2
+			\end{equation*}
+
+		Deuteron is a nucleus consisting of a proton and a neutron. By the previous discussions about internal symmetries, one can arrange so that they have the same intrinsic parity and hence :math:`\eta_d = \eta_n^2`. It follows that :math:`\eta_{\pi^-} = -1` and the pion :math:`\pi^-` is what we set out to look for. Indeed, all its companions :math:`\pi^0` and :math:`\pi^+` also have parity :math:`-1` due to the isospin symmetry.
+
+		The fact that :math:`\eta_{\pi} = -1` had led to a profound consequence because it was discovered through experiments that there are two spin-:math:`0` particles, now known as :math:`K`-mesons, one of which decays into two pions and the other into three pions. By rotational invariance one can exclude the effects of orbital angular momentum and conclude, assuming parity conservation, that they must have opposite intrinsic parities. However, as more experimental evidence pointing towards the fact that the two :math:`K`-mesons look alike, walk alike and quack alike, it was finally suggested by T. D. Lee and C. N. Yang that they're really the same particle and it's the parity conservation that fails to hold in these reactions, now known as the weak interactions. This suggestion was later verified more directly by an experiment of `C. S. Wu <https://en.wikipedia.org/wiki/Wu_experiment>`_.
+
+
+Time inversion symmetry
++++++++++++++++++++++++
+
+Recall from :ref:`sec_time_inversion_for_massive_particles` that for a single massive particle
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Tcal) \Psi_{p, \sigma, n} = \zeta (-1)^{\jfrak - \sigma} \Psi_{\Pcal p, -\sigma, n}
+	\end{equation*}
+
+To generalize this to the in- and out-states, we need to remember that the time inversion also interchanges the very frame with respect to which the in- and out-states are defined. The result is as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(\Tcal) \Psi^{\pm}_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} = \
+			\zeta_{n_1} (-1)^{\jfrak_1 - \sigma_1} \zeta_{n_2} (-1)^{\jfrak_2 - \sigma_2} \cdots \
+			\Psi^{\mp}_{\Pcal p_1, -\sigma_1, n_1; ~\Pcal p_2, -\sigma_2, n_2; ~\cdots}
+		\label{eq_time_inversion_acts_on_in_and_out_states}
+	\end{equation}
+
+The invariance of S-matrix can then be formulated as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		S_{p'_1, \sigma'_1, n'_1; ~p'_2, \sigma'_2, n'_2; ~\cdots, ~p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} = \
+			&\zeta_{n'_1} (-1)^{\jfrak'_1 - \sigma'_1} \zeta_{n'_2} (-1)^{\jfrak'_2 - \sigma'_2} \cdots \
+				\zeta^{\ast}_{n_1} (-1)^{\jfrak_1 - \sigma_1} \zeta^{\ast}_{n_2} (-1)^{\jfrak_2 - \sigma_2}
+			\label{eq_time_inversion_acts_on_s_matrix}  \\
+			&\times S_{\Pcal p_1, -\sigma_1, n_1; ~\Pcal p_2, -\sigma_2, n_2; ~\cdots; ~\Pcal p'_1, -\sigma'_1, n'_1; ~\Pcal p'_2, -\sigma'_2, n'_2; ~\cdots} \nonumber
+	\end{align}
+
+Since we'll be mainly concerned with the rate of interactions in this section, the phase factors in front of :math:`\Psi` play little role. So let's simplify the notations in :math:`\eqref{eq_time_inversion_acts_on_in_and_out_states}` and :math:`\eqref{eq_time_inversion_acts_on_s_matrix}` using compound indexes as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U(\Tcal) \Psi^{\pm}_{\alpha} &= \Psi^{\mp}_{\Tcal \alpha}  \nonumber \\
+		S_{\beta, \alpha} &= S_{\Tcal\alpha, \Tcal\beta}  \label{eq_time_inversion_formula_for_s_matrix}
+	\end{align}
+
+where the phase factors have been "absorbed" in the right-hand-side.
+
+Unlike the space inversions discussed in the previous section, time inversions don't directly lead to implications on reaction rates because, after all, we cannot turn time around in any experiment. However, under certain circumstances, one can use a trick to draw experimentally verifiable conclusions, which we now present.
+
+The main assumption here is that one can expand the S-operator as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{\beta \alpha} = S^{(0)}_{\beta \alpha} + S^{(1)}_{\beta \alpha} + \cdots
+		\label{eq_s_operator_first_order_expansion}
+	\end{equation}
+
+such that :math:`S^{(1)} \ll S^{(0)}` can be regarded as the first-order perturbation. The unitarity of :math:`S` shows that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		1 = S^{\dagger} S = {S^{(0)}}^{\dagger} S^{(0)} + {S^{(0)}}^{\dagger} S^{(1)} + {S^{(1)}}^{\dagger} S^{(0)} + \cdots
+	\end{equation*}
+
+which, in turn, implies
+
+.. math::
+	:nowrap:
+
+	\begin{alignat*}{2}
+		{S^{(0)}}^{\dagger} S^{(0)} &= 1 \quad &&\text{(Unitary)} \\
+		S^{(1)} &= -S^{(0)} {S^{(1)}}^{\dagger} S^{(0)} \quad &&\text{((anti-)Hermitian)}
+	\end{alignat*}
+
+Using :math:`\eqref{eq_time_inversion_formula_for_s_matrix}`, the (anti-)Hermitian condition can be spelled out in matrix notations as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S^{(1)}_{\beta \alpha} = -\int d\gamma' \int d\gamma ~S^{(0)}_{\beta \gamma'} ~S^{(1)~\ast}_{\Tcal \gamma' ~\Tcal \gamma} ~S^{(0)}_{\gamma \alpha}
+		\label{eq_first_order_s_matrix_is_hermitian}
+	\end{equation}
+
+where we recall that the adjoint :math:`\dagger` equals the composition of the (complex) conjugation :math:`\ast` and transpose. Together with the unitarity of :math:`S^{(0)}`, we see that the rate of reaction :math:`\left| S^{(1)}_{\beta \alpha} \right|^2`, when summed up against a complete set of :math:`S^{(0)}` eigenstates, remains the same after applying :math:`\Tcal` to both initial and final states.
+
+The simplest case where :math:`\eqref{eq_first_order_s_matrix_is_hermitian}` becomes applicable is obviously when both :math:`\alpha` and :math:`\beta` are eigenstates of :math:`S^{(0)}`, with eigenvalues, say, :math:`\exp(\ifrak \theta_{\alpha})` and :math:`\exp(\ifrak \theta_{\beta})`, respectively. In this case :math:`\eqref{eq_first_order_s_matrix_is_hermitian}` becomes
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		S^{(1)}_{\beta \alpha} = -\exp(\ifrak(\theta_{\alpha} + \theta_{\beta})) S^{(1)~\ast}_{\Tcal \beta ~\Tcal \alpha} \
+			~\Longrightarrow~ \left| S^{(1)}_{\beta \alpha} \right|^2 = \left| S^{(1)}_{\Tcal \beta ~\Tcal \alpha} \right|^2
+	\end{equation*}
+
+This is to say that under the assumption that :math:`\eqref{eq_s_operator_first_order_expansion}` is valid, at least approximately, the rate of reaction :math:`S^{(1)}_{\beta \alpha}` should be invariant under a flip of the :math:`3`-momentum as well as the spin :math:`z`-component. This is *not* contradicted by Wu's experiment which disproved the parity conservation.
+
+
+Rates and cross-sections
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+As we already mentioned, the S-matrix entries :math:`S_{\beta \alpha}` can be interpreted as probability amplitudes of a reaction that turns an in-state :math:`\Psi^-_{\alpha}` into an out-state :math:`\Psi^+_{\beta}`. In other words, the probability :math:`P(\Psi^-_{\alpha} \to \Psi^+_{\beta}) = \left| S_{\beta \alpha} \right|^2`. It is, however, not completely straightforward to square S-matrix entries because, as we've seen in :math:`\eqref{eq_s_matrix_with_m}`, they contain Dirac delta functions.
+
+Derivation in box model
++++++++++++++++++++++++
+
+One trick that is often used in physics to deal with integration over an infinite space is to restrict the space to a (large) box, often with additional periodic boundary conditions, and hope that the final results will not depend on the size of the box, as long as it's large enough. This is exactly what we shall do.
+
+Consider a cubic box whose sides have length :math:`L` and has volume :math:`V = L^3`. Imposing the periodic boundary condition on the cube, the :math:`3`-momentum is discretized as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\pbf = \frac{2\pi}{L} (n_1, n_2, n_3)
+		\label{eq_momentum_by_wave_number}
+	\end{equation}
+
+where :math:`n_1, n_2, n_3` are nonnegative integers. Of course, the higher the :math:`n`, the shorter the wave length if we interpret it as wave mechanics. By analogy with the continuous case, we can define the Dirac delta function as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\delta^3_V (\pbf - \pbf') \coloneqq \frac{1}{(2\pi)^3} \int_V d^3 \xbf ~\exp(\ifrak (\pbf - \pbf') \cdot \xbf) = \frac{V}{(2\pi)^3} \delta_{\pbf \pbf'}
+		\label{eq_3_momentum_delta_in_a_box}
+	\end{equation}
+
+where :math:`\delta_{\pbf \pbf'}` is the usual Kronecker delta. With this setup, the states inner product :math:`\eqref{eq_many_particles_state_normalization_rough}` will produce, from the Dirac deltas, an overall factor of :math:`\left( V/(2\pi)^3 \right)^N` where :math:`N` denotes the number of particles in the box. In order for the amplitudes to be independent of the size of the box, let's normalize the states as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Psi_{\alpha}^{\square} \coloneqq \left( \frac{(2\pi)^3}{V} \right)^{N/2} \Psi_{\alpha}
+	\end{equation*}
+
+such that :math:`\left( \Psi^{\square}_{\beta}, \Psi^{\square}_{\alpha} \right) = \delta_{\beta \alpha}` is properly normalized. Correspondingly, we can express the S-matrix with respect to the box-normalized states as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		S^{\square}_{\beta \alpha} = \left( \frac{(2\pi)^3}{V} \right)^{(N_{\alpha} + N_{\beta})/2} S_{\beta \alpha}
+ 	\end{equation*}
+
+where :math:`N_{\alpha}, N_{\beta}` are the numbers of particles in the in- and out-states, respectively.
+
+Now the transition probability in the box model takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		P(\alpha \to \beta) = \left| S^{\square}_{\beta \alpha} \right|^2 = \left( \frac{(2\pi)^3}{V} \right)^{N_{\alpha} + N_{\beta}} \left| S_{\beta \alpha} \right|^2
+	\end{equation*}
+
+which we can further turn to a differential form as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		dP(\alpha \to \beta) \
+			&= P(\alpha \to \beta) d\Nscr_{\beta}  \label{eq_differential_form_of_s_matrix_probability} \\
+			&= P(\alpha \to \beta) \left( \frac{V}{(2\pi)^3} \right)^{N_{\beta}} d\beta  \nonumber \\
+			&= \left( \frac{(2\pi)^3}{V} \right)^{N_{\alpha}} \left| S_{\beta \alpha} \right|^2 d\beta  \nonumber
+	\end{align}
+
+where :math:`d\beta` denotes an infinitesimal volume element around the state :math:`\beta`, or more precisely, a product of :math:`d^3 \pbf`, one for each particle. Then :math:`\Nscr_{\beta}` counts the number of states within the infinitesimal :math:`d\beta`, which can be readily calculated from :math:`\eqref{eq_momentum_by_wave_number}`.
+
+Back to our core problem, which is to define :math:`\left| S_{\beta \alpha} \right|^2` as calculated by :math:`\eqref{eq_s_matrix_with_m}`. The first assumption we will make, at least for now, is a genericity condition
+
+.. admonition:: Genericity assumption on the S-matrix
+	:class: Important
+
+	No subset of particles in the state :math:`\beta` have exactly the same (total) :math:`4`-momentum as some subset in the state :math:`\alpha`.
+
+Under this assumption, we can remove the term :math:`\delta(\beta - \alpha)` from :math:`\eqref{eq_s_matrix_with_m}` and write
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{\beta \alpha} = -2 \pi \ifrak \delta^4(p_{\beta} - p_{\alpha}) M_{\beta \alpha}
+		\label{eq_generic_s_matrix_in_box}
+	\end{equation}
+
+and moreover, ensure that :math:`M_{\beta \alpha}` contains no more delta functions. Now the question becomes how to define :math:`\left| \delta^4(p_{\beta} - p_{\alpha}) \right|^2`. In fact, to align with the main theme of using in- and out-states to calculate the S-matrix, the interaction must be turned on for a finite period of time, say, :math:`T`. Hence the time-wise delta function becomes
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\delta_T(E_{\beta} - E_{\alpha}) \coloneqq \frac{1}{2 \pi} \int_{-T/2}^{T/2} dt ~\exp(\ifrak (E_{\beta} - E_{\alpha}) t)
+		\label{eq_time_delta_in_a_period}
+	\end{equation}
+
+We can then modify :math:`\eqref{eq_generic_s_matrix_in_box}` in a "timed box" as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S_{\beta \alpha} = -2\pi\ifrak \delta^3_V (\pbf_{\beta} - \pbf_{\alpha}) \delta_T(E_{\beta} - E_{\alpha}) M_{\beta \alpha}
+		\label{eq_generic_s_matrix_in_time_box}
+	\end{equation}
+
+Now using :math:`\eqref{eq_3_momentum_delta_in_a_box}` and :math:`\eqref{eq_time_delta_in_a_period}`, we can calculate the squares as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat*}{2}
+		\left( \delta^3_V(\pbf_{\beta} - \pbf_{\alpha}) \right)^2 &= \delta^3_V(\pbf_{\beta} - \pbf_{\alpha}) \delta^3_V(0) &&= \delta^3_V(\pbf_{\beta} - \pbf_{\alpha}) V/(2\pi)^3 \\
+		\left( \delta_T(E_{\beta} - E_{\alpha}) \right)^2 &= \delta_T(E_{\beta} - E_{\alpha}) \delta_T(0) &&= \delta_T(E_{\beta} - E_{\alpha}) T/(2\pi)
+	\end{alignat*}
+
+All together, we can now rewrite :math:`\eqref{eq_differential_form_of_s_matrix_probability}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		dP(\alpha \to \beta) &= \left( \frac{(2\pi)^3}{V} \right)^{N_{\alpha}} \left| S_{\beta \alpha} \right|^2 d\beta \\
+			&= (2\pi)^2 \left( \frac{(2\pi)^3}{V} \right)^{N_{\alpha} - 1} \frac{T}{2\pi} \
+				\delta^3_V(\pbf_{\beta} - \pbf_{\alpha}) \delta_T(E_{\beta} - E_{\alpha}) \left| M_{\beta \alpha} \right|^2 d\beta \\
+			&= (2\pi)^{3N_{\alpha} - 2} V^{1 - N_{\alpha}} T \delta^4(p_{\beta} - p_{\alpha}) \left| M_{\beta \alpha} \right|^2 d\beta
+	\end{align*}
+
+where we have restored :math:`\delta^4(p_{\beta} - p_{\alpha})` by taking the large :math:`V` and :math:`T` limits.
+
+If taking partial limits in :math:`V` and :math:`T` in the above derivation is not suspicious enough, then let's define the rate of transition by moving the :math:`T` factor from the right to the left as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		d\Gamma(\alpha \to \beta) \coloneqq dP(\alpha \to \beta) / T = (2\pi)^{3N_{\alpha}-2} V^{1-N_{\alpha}} \delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 d\beta
+		\label{eq_rate_of_reaction_master_formula}
+	\end{equation}
+
+where :math:`M_{\beta \alpha}` is defined by :math:`\eqref{eq_generic_s_matrix_in_box}` instead of :math:`\eqref{eq_generic_s_matrix_in_time_box}` because we have restored :math:`\delta^4(p_{\beta} - p_{\alpha})`. This is totally wild because by taking rate one typically think of processes that happen within infinitesimal time periods, but we have at the same taken large time limit to recover the :math:`\delta^4(p_{\beta} - p_{\alpha})` factor. Despite the insane derivation, the end result seems reasonable and it will be the key formula that connects S-matrix to experimental measurement of probabilities.
+
+One initial particle
+++++++++++++++++++++
+
+One special case of interest is when :math:`N_{\alpha} = 1`, or in other words, processes where one particle decays into multi-particles. In this case :math:`\eqref{eq_rate_of_reaction_master_formula}` becomes
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		d\Gamma(\alpha \to \beta) = 2\pi \delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 d\beta
+	\end{equation*}
+
+which becomes independent of the volume of the box. This is reasonable because the decay rate of one particle shouldn't care about the size of the containing box. However, the :math:`T \to \infty` limit in :math:`\delta^4(p_{\beta} - p_{\alpha})` is no longer valid. In fact, it cannot be longer than the (mean) lifetime :math:`\tau_{\alpha}` of the particle :math:`\alpha`, because the interaction wouldn't make sense if the particle itself already disintegrates. In this case, in order for :math:`\eqref{eq_time_delta_in_a_period}` to still approximate a delta function, we must assume that any characteristic energy of the interaction satisfies
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		|E_{\beta} - E_{\alpha}| \ll 1/\tau_{\alpha}
+	\end{equation*}
+
+where the right-hand-side is known as the total decay rate.
+
+Two initial particles
++++++++++++++++++++++
+
+Another case of interest is when :math:`N_{\alpha} = 2`. In this case :math:`\eqref{eq_rate_of_reaction_master_formula}` takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		d\Gamma(\alpha \to \beta) = (2\pi)^4 V^{-1} \delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 d\beta
+		\label{eq_differential_reaction_rate_two_particles}
+	\end{equation}
+
+It turns out that in the world of experimentalists, it's more common to use, instead of the transition rate, something called *cross-section*, or equivalently, rate per flux, where the flux is defined as [#abuse_of_phi_as_both_state_vector_and_flux]_
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Phi_{\alpha} \coloneqq u_{\alpha} / V
+	\end{equation*}
+
+and :math:`u_{\alpha}` is the relative velocity between the two particles, to be discussed in more detail momentarily.
 
 
 .. rubric:: Footnotes
 
-.. [#tedious_calc_of_commutations] These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in the book.
+.. [#tedious_calc_of_commutations] These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in [Wei95]_ page 61.
 
 .. [#boost_in_p_formula] The formula in [Wei95]_ page 68, eq. (2.5.24) is wrong.
 
-.. [#in_out_state_sign_convention] I really don't like the sign convention of the in- and out-states in the book, even though Weinberg said that it's become a tradition. So our convention is the opposite to the one used in the book.
+.. [#in_out_state_sign_convention] I really don't like the sign convention of the in- and out-states in [Wei95]_, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in [Wei95]_.
+
+.. [#pion_deuteron_reaction_final_state] The final state claimed in [Wei95]_ page 126 has total spin :math:`1` rather than :math:`0`. I suspect that the claim in [Wei95]_ is wrong, but otherwise it doesn't affect any subsequent arguments anyway.
+
+.. [#abuse_of_phi_as_both_state_vector_and_flux] It's really unfortunate that one constantly runs out symbols to represent physical quantities, and it's uncommon to use anything other than just one letter. So we have to live with the fact that the meaning of the symbol will depend on the context.

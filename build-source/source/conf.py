@@ -56,6 +56,9 @@ exclude_patterns = []
 
 
 # -- Options for HTML output -------------------------------------------------
+rst_prolog = """
+.. role:: red
+"""
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -69,8 +72,6 @@ html_static_path = ['_static']
 html_css_files = [
     'css/custom.css',
 ]
-
-
 
 html_logo = '_static/dms.png'
 html_title = "Mandy's wonderland"
@@ -107,6 +108,7 @@ mathjax3_config = {
 			'ps': ['\\prescript {#1}{#2}{#3}', 3],
 			'psup': ['\\prescript {#1}{}{#2}', 2],
 			'blue': ['{\\color{blue} {#1}}', 1],
+			'orange': ['{\\color{orange} {#1}}', 1],
 			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std']},
 			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
 			**{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
