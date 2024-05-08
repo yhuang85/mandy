@@ -781,7 +781,16 @@ Since :math:`\Psi_{p, \sigma}` can be derived from :math:`\Psi_{k, \sigma}` by :
 			&= \int d^3\pbf ~\frac{f\left( \sqrt{\pbf^2 + M^2}, \pbf \right)}{2 \sqrt{\pbf^2 + M^2}}
 	\end{align*}
 
-where :math:`\theta(p_0)` is the step function defined to be :math:`0` if :math:`p_0 \leq 0` and :math:`1` if :math:`p_0 > 1`. It follows that the Lorentz-invariant volume element in the :math:`3`-momentum space is :math:`d^3\pbf / \sqrt{\pbf^2 + M^2}`. We can use it to find the Lorentz-invariant Dirac delta (marked in blue) as follows
+where :math:`\theta(p_0)` is the step function defined to be :math:`0` if :math:`p_0 \leq 0` and :math:`1` if :math:`p_0 > 1`. It follows that the Lorentz-invariant volume element in the :math:`3`-momentum space is
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		d^3\pbf / \sqrt{\pbf^2 + M^2}  \label{eq_lorentz_invariant_3_momentum_volume_element}
+	\end{equation}
+
+We can use it to find the Lorentz-invariant Dirac delta (marked in blue) as follows
 
 .. math::
 	:nowrap:
@@ -2499,6 +2508,8 @@ where :math:`d\beta` denotes an infinitesimal volume element around the state :m
 
 Back to our core problem, which is to define :math:`\left| S_{\beta \alpha} \right|^2` as calculated by :math:`\eqref{eq_s_matrix_with_m}`. The first assumption we will make, at least for now, is a genericity condition
 
+.. _assump_genericity_s_matrix:
+
 .. admonition:: Genericity assumption on the S-matrix
 	:class: Important
 
@@ -2511,7 +2522,7 @@ Under this assumption, we can remove the term :math:`\delta(\beta - \alpha)` fro
 
 	\begin{equation}
 		S_{\beta \alpha} = -2 \pi \ifrak \delta^4(p_{\beta} - p_{\alpha}) M_{\beta \alpha}
-		\label{eq_generic_s_matrix_in_box}
+		\label{eq_generic_s_matrix_with_m}
 	\end{equation}
 
 and moreover, ensure that :math:`M_{\beta \alpha}` contains no more delta functions. Now the question becomes how to define :math:`\left| \delta^4(p_{\beta} - p_{\alpha}) \right|^2`. In fact, to align with the main theme of using in- and out-states to calculate the S-matrix, the interaction must be turned on for a finite period of time, say, :math:`T`. Hence the time-wise delta function becomes
@@ -2524,7 +2535,7 @@ and moreover, ensure that :math:`M_{\beta \alpha}` contains no more delta functi
 		\label{eq_time_delta_in_a_period}
 	\end{equation}
 
-We can then modify :math:`\eqref{eq_generic_s_matrix_in_box}` in a "timed box" as follows
+We can then modify :math:`\eqref{eq_generic_s_matrix_with_m}` in a "timed box" as follows
 
 .. math::
 	:nowrap:
@@ -2568,19 +2579,20 @@ If taking partial limits in :math:`V` and :math:`T` in the above derivation is n
 		\label{eq_rate_of_reaction_master_formula}
 	\end{equation}
 
-where :math:`M_{\beta \alpha}` is defined by :math:`\eqref{eq_generic_s_matrix_in_box}` instead of :math:`\eqref{eq_generic_s_matrix_in_time_box}` because we have restored :math:`\delta^4(p_{\beta} - p_{\alpha})`. This is totally wild because by taking rate one typically think of processes that happen within infinitesimal time periods, but we have at the same taken large time limit to recover the :math:`\delta^4(p_{\beta} - p_{\alpha})` factor. Despite the insane derivation, the end result seems reasonable and it will be the key formula that connects S-matrix to experimental measurement of probabilities.
+where :math:`M_{\beta \alpha}` is defined by :math:`\eqref{eq_generic_s_matrix_with_m}` instead of :math:`\eqref{eq_generic_s_matrix_in_time_box}` because we have restored :math:`\delta^4(p_{\beta} - p_{\alpha})`. This is totally wild because by taking rate one typically think of processes that happen within infinitesimal time periods, but we have at the same taken large time limit to recover the :math:`\delta^4(p_{\beta} - p_{\alpha})` factor. Despite the insane derivation, the end result seems reasonable and it will be the key formula that connects S-matrix to experimental measurement of probabilities.
 
-One initial particle
-++++++++++++++++++++
+Examples with few initial particles
++++++++++++++++++++++++++++++++++++
 
 One special case of interest is when :math:`N_{\alpha} = 1`, or in other words, processes where one particle decays into multi-particles. In this case :math:`\eqref{eq_rate_of_reaction_master_formula}` becomes
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		d\Gamma(\alpha \to \beta) = 2\pi \delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 d\beta
-	\end{equation*}
+		\label{eq_differential_reaction_rate_one_particle}
+	\end{equation}
 
 which becomes independent of the volume of the box. This is reasonable because the decay rate of one particle shouldn't care about the size of the containing box. However, the :math:`T \to \infty` limit in :math:`\delta^4(p_{\beta} - p_{\alpha})` is no longer valid. In fact, it cannot be longer than the (mean) lifetime :math:`\tau_{\alpha}` of the particle :math:`\alpha`, because the interaction wouldn't make sense if the particle itself already disintegrates. In this case, in order for :math:`\eqref{eq_time_delta_in_a_period}` to still approximate a delta function, we must assume that any characteristic energy of the interaction satisfies
 
@@ -2592,9 +2604,6 @@ which becomes independent of the volume of the box. This is reasonable because t
 	\end{equation*}
 
 where the right-hand-side is known as the total decay rate.
-
-Two initial particles
-+++++++++++++++++++++
 
 Another case of interest is when :math:`N_{\alpha} = 2`. In this case :math:`\eqref{eq_rate_of_reaction_master_formula}` takes the following form
 
@@ -2615,7 +2624,240 @@ It turns out that in the world of experimentalists, it's more common to use, ins
 		\Phi_{\alpha} \coloneqq u_{\alpha} / V
 	\end{equation*}
 
-and :math:`u_{\alpha}` is the relative velocity between the two particles, to be discussed in more detail momentarily.
+and :math:`u_{\alpha}` is the (relativistic) relative velocity between the two particles, to be discussed in more detail in the next section by considering Lorentz symmetry. We can then rewrite :math:`\eqref{eq_differential_reaction_rate_two_particles}` in terms of the cross-section as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		d\sigma(\alpha \to \beta) \coloneqq d\Gamma(\alpha \to \beta) / \Phi_{\alpha} = (2\pi)^4 u_{\alpha}^{-1} \delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 d\beta
+		\label{eq_cross_section_two_particles}
+	\end{equation}
+
+Note that :math:`d\sigma` has the dimension of an area.
+
+Lorentz symmetry of rates and cross-sections
+++++++++++++++++++++++++++++++++++++++++++++
+
+We can investigate the Lorentz symmetry on the rates and cross-sections as follows. Squaring :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}`, and using the fact that the little group representations are unitary, we see that the following quantity
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		R_{\beta \alpha} \coloneqq \sum_{\text{spins}} |M_{\beta \alpha}|^2 \prod_{\beta} E \prod_{\alpha} E
+	\end{equation*}
+
+is Lorentz invariant, where :math:`E = p_0 = \sqrt{\pbf^2 + m^2}` for each particle in :math:`\alpha` and :math:`\beta`, respectively.
+
+It follows that in the one-particle case, :math:`\eqref{eq_differential_reaction_rate_one_particle}` gives
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\sum_{\text{spins}} d\Gamma(\alpha \to \beta) = 2\pi E_{\alpha}^{-1} R_{\beta \alpha} \delta^4(p_{\beta} - p_{\alpha}) \frac{d\beta}{\prod_{\beta} E}
+	\end{equation*}
+
+In particular, we recognize :math:`d\beta / \prod_{\beta} E` as a product of the Lorentz invariant :math:`3`-momentum volume elements constructed in :math:`\eqref{eq_lorentz_invariant_3_momentum_volume_element}`. Hence the only factor in the right-hand-side which is not Lorentz invariant is :math:`E_{\alpha}^{-1}`. It follows that the decay rate of a particle, summed up over all spins, is inverse proportional to its energy, or in other words, a faster moving particle decays slower, which is consistent with the special theory of relativity and experimentally observed slow decay rates of high energy particles coming from cosmic rays.
+
+Next, let's turn to the two-particles case. In this case :math:`\eqref{eq_cross_section_two_particles}` gives
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\sum_{\text{spins}} d\sigma(\alpha \to \beta) = (2\pi)^4 u_{\alpha}^{-1} E_1^{-1} E_2^{-1} R_{\beta \alpha} \delta^4(p_{\beta} - p_{\alpha}) \frac{d\beta}{\prod_{\beta} E}
+	\end{equation*}
+
+where :math:`E_1, E_2` are the energies of the two particles in state :math:`\alpha`. As in the one-particle case, in order for the cross-section to be Lorentz invariant, we must define the relative velocity :math:`u_{\alpha}` such that the product :math:`u_{\alpha} E_1 E_2` is Lorentz invariant. Indeed, such a quantity is uniquely determined by the requirement that when one of the particles stays still, then :math:`u_{\alpha}` should be the velocity of the other particle, and it takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		u_{\alpha} = \frac{\sqrt{(p_1 \cdot p_2)^2 - m_1^2 m_2^2}}{E_1 E_2}
+	\end{equation*}
+
+For later use, let's rewrite :math:`u_{\alpha}` in the center-of-mass frame as follows. In the center-of-mass frame, the total momentum vanishes, and therefore we can write :math:`p_1 = (E_1, \pbf)` and :math:`p_2 = (E_2, -\pbf)`. It follows that
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		u_{\alpha} &= \frac{\sqrt{(E_1 E_2 + |\pbf|^2)^2 - m_1^2 m_2^2}}{E_1 E_2} \label{eq_two_particles_relative_velocity_in_center_of_mass_frame} \\
+			&= \frac{\sqrt{(E_1 E_2 + |\pbf|^2)^2 - (E_1^2 - |\pbf|^2)(E_2^2 - |\pbf|^2)}}{E_1 E_2} \nonumber \\
+			&= \frac{|\pbf| (E_1 + E_2)}{E_1 E_2} \nonumber \\
+			&= \left| \frac{\pbf_1}{E_1} - \frac{\pbf_2}{E_2} \right| \nonumber
+	\end{align}
+
+which indeed looks more like a relative velocity. Note, however, that this is *not* a physical velocity because its value may approach :math:`2` (i.e., faster than the speed of light) in relativistic limit.
+
+The phase-space factor
+++++++++++++++++++++++
+
+By phase-space factor we mean the factor :math:`\delta^4(p_{\beta} - p_{\alpha}) d\beta` that appears in transition probabilities, rates and cross-sections discussed above. The goal of this section is to calculate it, particularly in the scenario where the final state consists of two particles. We'll use the center-of-mass frame with respect to the initial state so that :math:`\pbf_{\alpha} = 0`. Then the phase-space factors can be written as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\delta^4(p_{\beta} - p_{\alpha}) d\beta = \delta^3(\pbf'_1 + \pbf'_2 + \cdots) \delta(E'_1 + E'_2 + \cdots - E_{\alpha}) d^3 \pbf'_1 d^3 \pbf'_2 \cdots
+	\end{equation*}
+
+where we recall that the primes indicate that the quantities are taken from state :math:`\beta`, and :math:`E_{\alpha}` denotes the total energy of state :math:`\alpha`. In the case where the final state consists of exactly two particles, the phase-space factor can be further simplified as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\delta^4(p_{\beta} - p_{\alpha}) d\beta &= \delta(E'_1 + E'_2 - E_{\alpha}) d^3 \pbf'_1 \label{eq_simplified_two_final_particles_phase_space_factor} \\
+			&= \delta \left( \sqrt{|\pbf'_1|^2 + {m'_1}^2} + \sqrt{|\pbf'_1|^2 + {m'_2}^2} - E_{\alpha} \right) |\pbf'_1|^2 d|\pbf'_1| d\Omega \nonumber
+	\end{align}
+
+where :math:`\Omega` is the solid angle in :math:`\pbf'_1`-space, if in the integration we replace any occurrence of :math:`\pbf'_2` with :math:`-\pbf'_1`.
+
+To further simply the delta function in :math:`\eqref{eq_simplified_two_final_particles_phase_space_factor}`, we recall the following identity, which is an incarnation of integration by substitution,
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\delta(f(x)) = \delta(x - x_0) / f'(x_0)
+	\end{equation*}
+
+where :math:`x_0` is a simple zero of :math:`f`. In the case of :math:`\eqref{eq_simplified_two_final_particles_phase_space_factor}`, we make the following choices
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		f(|\pbf'_1|) &= \sqrt{|\pbf'_1|^2 + {m'_1}^2} + \sqrt{|\pbf'_1|^2 + {m'_2}^2} - E_{\alpha} \nonumber \\
+		k' &= \frac{\sqrt{\left( E_{\alpha}^2 - {m'_1}^2 - {m'_2}^2 \right)^2 - 4 {m'_1}^2 {m'_2}^2}}{2E_{\alpha}} \label{eq_defn_root_k_prime}
+	\end{align}
+
+where :math:`k'` is the unique simple zero of :math:`f`. Differentiating :math:`f` at :math:`k'` we get
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		f'(k') = \frac{k'}{E'_1} + \frac{k'}{E'_2} = \frac{k' E_{\alpha}}{E_1 E_2}
+	\end{equation*}
+
+where
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		E'_1 &= \sqrt{{k'}^2 + {m'_1}^2} = \frac{E_{\alpha}^2 + {m'_1}^2 - {m'_2}^2}{2E_{\alpha}} \label{eq_defn_e1_prime} \\
+		E'_2 &= \sqrt{{k'}^2 + {m'_2}^2} = \frac{E_{\alpha}^2 - {m'_1}^2 + {m'_2}^2}{2E_{\alpha}} \label{eq_defn_e2_prime}
+	\end{align}
+
+Putting all together, we can further simplify :math:`\eqref{eq_simplified_two_final_particles_phase_space_factor}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\delta^4(p_{\beta} - p_{\alpha}) d\beta = \frac{k' E'_1 E'_2}{E_{\alpha}} d\Omega
+		\label{eq_two_particles_final_state_phase_factor_formula}
+	\end{equation}
+
+where :math:`k', E'_1` and :math:`E'_2` are defined by :math:`\eqref{eq_defn_root_k_prime}, \eqref{eq_defn_e1_prime}` and :math:`\eqref{eq_defn_e2_prime}`, respectively.
+
+Substituting :math:`\eqref{eq_two_particles_final_state_phase_factor_formula}` into :math:`\eqref{eq_differential_reaction_rate_one_particle}`, we see that in the case of one particle decaying into two particles,
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\frac{d\Gamma(\alpha \to \beta)}{d\Omega} = \frac{2\pi k' E'_1 E'_2}{E_{\alpha}} |M_{\beta \alpha}|^2
+	\end{equation*}
+
+The two-body scattering :math:`1~2 \to 1'~2'`, according to :math:`\eqref{eq_cross_section_two_particles}` and :math:`\eqref{eq_two_particles_relative_velocity_in_center_of_mass_frame}`, takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\frac{d\sigma(\alpha \to \beta)}{d\Omega} = \frac{(2\pi)^4 k' E'_1 E'_2}{u_{\alpha} E_{\alpha}} |M_{\beta \alpha}|^2 \
+			= \frac{(2\pi)^4 k' E'_1 E'_2 E_1 E_2}{k E_{\alpha}^2} |M_{\beta \alpha}|^2
+	\end{equation*}
+
+where :math:`k \coloneqq |\pbf_1| = |\pbf_2|`. These calculations will be used in the next section to get some insights into the scattering process.
+
+
+Implications of the unitarity of S-matrix
++++++++++++++++++++++++++++++++++++++++++
+
+In this section we'll no longer assume the :ref:`Genericity of the S-matrix <assump_genericity_s_matrix>`. This means that we'll get back to use :math:`\eqref{eq_s_matrix_with_m}`, instead of :math:`\eqref{eq_generic_s_matrix_with_m}`, which we recall as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		S_{\beta \alpha} = \delta(\beta - \alpha) - 2\pi \ifrak \delta^4(p_{\beta} - p_{\alpha}) M_{\beta \alpha}
+	\end{equation*}
+
+However, all the calculations from the previous sections can still be used here because we'll be caring about, for example, the *total* rates, which are integrations over all possible final states, and the degenerate ones will *not* contribute to such integrals.
+
+First, let's spell out the consequence of the unitarity of the S-matrix as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\delta(\gamma - \alpha) &= \int d\beta ~S^{\ast}_{\beta \gamma} S_{\beta \alpha} \\
+			&= \int d\beta \left( \delta(\beta - \gamma) + 2\pi \ifrak \delta^4(p_{\beta} - p_{\gamma}) M^{\ast}_{\beta \gamma} \right) \
+				\left( \delta(\beta - \alpha) - 2\pi \ifrak \delta^4(p_{\beta} - p_{\alpha}) M_{\beta \alpha} \right) \\
+			&= \delta(\gamma - \alpha) + 2\pi \ifrak \delta^4(p_{\alpha} - p_{\gamma}) M^{\ast}_{\alpha \gamma} - \
+				2\pi \ifrak \delta^4(p_{\gamma} - p_{\alpha}) M_{\gamma \alpha} + \
+				4\pi^2 \delta^4(p_{\gamma} - p_{\alpha}) \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) M^{\ast}_{\beta \gamma} M_{\beta \alpha}
+	\end{align*}
+
+which implies
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\ifrak M^{\ast}_{\alpha \gamma} - \ifrak M_{\gamma \alpha} + 2\pi \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) M^{\ast}_{\beta \gamma} M_{\beta \alpha} = 0
+		\label{eq_s_matrix_unitarity_implication_on_m_general}
+	\end{equation}
+
+In the special case where :math:`\alpha = \gamma`, :math:`\eqref{eq_s_matrix_unitarity_implication_on_m_general}` gives the following key identity
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\op{Im} M_{\alpha \alpha} = -\pi \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2
+		\label{eq_s_matrix_unitarity_implication_on_m_special}
+	\end{equation}
+
+Now we can calculate the total rate of all reactions produced by the initial state :math:`\alpha` using :math:`\eqref{eq_rate_of_reaction_master_formula}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\Gamma_{\alpha} &\coloneqq \int d\beta ~\frac{d\Gamma(\alpha \to \beta)}{d\beta} \\
+			&~= (2\pi)^{3N_{\alpha} - 2} V^{1 - N_{\alpha}} \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 \\
+			&~= -\frac{1}{\pi} (2\pi)^{3N_{\alpha} - 2} V^{1 - N_{\alpha}} \op{Im} M_{\alpha \alpha}
+	\end{align*}
+
+In the case where :math:`\alpha` is a two-particles state, we can use :math:`\eqref{eq_cross_section_two_particles}` to calculate the total cross-section as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sigma_{\alpha} &\coloneqq \int d\beta ~\frac{d\sigma(\alpha \to \beta)}{d\beta} \\
+			&~= (2\pi)^4 u_{\alpha}^{-1} \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 \\
+			&~= -16\pi^3 u_{\alpha}^{-1} \op{Im} M_{\alpha \alpha}
+	\end{align*}
 
 
 .. rubric:: Footnotes
