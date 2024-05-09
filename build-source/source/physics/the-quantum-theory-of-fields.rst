@@ -2781,10 +2781,11 @@ The two-body scattering :math:`1~2 \to 1'~2'`, according to :math:`\eqref{eq_cro
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\frac{d\sigma(\alpha \to \beta)}{d\Omega} = \frac{(2\pi)^4 k' E'_1 E'_2}{u_{\alpha} E_{\alpha}} |M_{\beta \alpha}|^2 \
 			= \frac{(2\pi)^4 k' E'_1 E'_2 E_1 E_2}{k E_{\alpha}^2} |M_{\beta \alpha}|^2
-	\end{equation*}
+		\label{eq_two_body_scattering_cross_section_per_solid_angle}
+	\end{equation}
 
 where :math:`k \coloneqq |\pbf_1| = |\pbf_2|`. These calculations will be used in the next section to get some insights into the scattering process.
 
@@ -2803,19 +2804,19 @@ In this section we'll no longer assume the :ref:`Genericity of the S-matrix <ass
 
 However, all the calculations from the previous sections can still be used here because we'll be caring about, for example, the *total* rates, which are integrations over all possible final states, and the degenerate ones will *not* contribute to such integrals.
 
-First, let's spell out the consequence of the unitarity of the S-matrix as follows
+First, let's spell out the consequence of the unitarity of the S-matrix, or more precisely :math:`S^{\dagger} S = 1`, as follows
 
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		\delta(\gamma - \alpha) &= \int d\beta ~S^{\ast}_{\beta \gamma} S_{\beta \alpha} \\
+	\begin{align}
+		\delta(\gamma - \alpha) &= \int d\beta ~S^{\ast}_{\beta \gamma} S_{\beta \alpha} \label{eq_s_matrix_unitarity_first_half} \\
 			&= \int d\beta \left( \delta(\beta - \gamma) + 2\pi \ifrak \delta^4(p_{\beta} - p_{\gamma}) M^{\ast}_{\beta \gamma} \right) \
-				\left( \delta(\beta - \alpha) - 2\pi \ifrak \delta^4(p_{\beta} - p_{\alpha}) M_{\beta \alpha} \right) \\
+				\left( \delta(\beta - \alpha) - 2\pi \ifrak \delta^4(p_{\beta} - p_{\alpha}) M_{\beta \alpha} \right) \nonumber \\
 			&= \delta(\gamma - \alpha) + 2\pi \ifrak \delta^4(p_{\alpha} - p_{\gamma}) M^{\ast}_{\alpha \gamma} - \
-				2\pi \ifrak \delta^4(p_{\gamma} - p_{\alpha}) M_{\gamma \alpha} + \
-				4\pi^2 \delta^4(p_{\gamma} - p_{\alpha}) \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) M^{\ast}_{\beta \gamma} M_{\beta \alpha}
-	\end{align*}
+				2\pi \ifrak \delta^4(p_{\gamma} - p_{\alpha}) M_{\gamma \alpha} \nonumber \\
+			&\phantom{=} + 4\pi^2 \delta^4(p_{\gamma} - p_{\alpha}) \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) M^{\ast}_{\beta \gamma} M_{\beta \alpha} \nonumber
+	\end{align}
 
 which implies
 
@@ -2827,7 +2828,7 @@ which implies
 		\label{eq_s_matrix_unitarity_implication_on_m_general}
 	\end{equation}
 
-In the special case where :math:`\alpha = \gamma`, :math:`\eqref{eq_s_matrix_unitarity_implication_on_m_general}` gives the following key identity
+In the special case where :math:`\alpha = \gamma`, :math:`\eqref{eq_s_matrix_unitarity_implication_on_m_general}` gives the following key identity, known as the *generalized optical theorem*
 
 .. math::
 	:nowrap:
@@ -2837,7 +2838,7 @@ In the special case where :math:`\alpha = \gamma`, :math:`\eqref{eq_s_matrix_uni
 		\label{eq_s_matrix_unitarity_implication_on_m_special}
 	\end{equation}
 
-Now we can calculate the total rate of all reactions produced by the initial state :math:`\alpha` using :math:`\eqref{eq_rate_of_reaction_master_formula}` as follows
+As an application we can calculate the total rate of all transitions produced by the initial state :math:`\alpha` using :math:`\eqref{eq_rate_of_reaction_master_formula}` as follows
 
 .. math::
 	:nowrap:
@@ -2848,16 +2849,126 @@ Now we can calculate the total rate of all reactions produced by the initial sta
 			&~= -\frac{1}{\pi} (2\pi)^{3N_{\alpha} - 2} V^{1 - N_{\alpha}} \op{Im} M_{\alpha \alpha}
 	\end{align*}
 
-In the case where :math:`\alpha` is a two-particles state, we can use :math:`\eqref{eq_cross_section_two_particles}` to calculate the total cross-section as follows
+.. dropdown:: An example of two-body scattering
+	:animate: fade-in-slide-down
+
+	In the case where :math:`\alpha` is a two-particles state, we can use :math:`\eqref{eq_cross_section_two_particles}` to calculate the total cross-section as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			\sigma_{\alpha} &\coloneqq \int d\beta ~\frac{d\sigma(\alpha \to \beta)}{d\beta} \label{eq_two_body_total_cross_section_by_m} \\
+				&~= (2\pi)^4 u_{\alpha}^{-1} \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 \nonumber \\
+				&~= -16\pi^3 u_{\alpha}^{-1} \op{Im} M_{\alpha \alpha} \nonumber
+		\end{align}
+
+	We then recall from :math:`\eqref{eq_two_body_scattering_cross_section_per_solid_angle}` that :math:`M_{\beta \alpha}` may also be expressed in terms of the differential cross-section by solid angle. Motivated by :math:`\eqref{eq_two_body_scattering_cross_section_per_solid_angle}`, let's define the *scattering amplitude* as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			f(\alpha \to \beta) \coloneqq -\frac{4\pi^2}{E_{\alpha}} \sqrt{\frac{k' E'_1 E'_2 E_1 E_2}{k}} ~M_{\beta \alpha}
+		\end{equation*}
+
+	so that :math:`d\sigma(\alpha \to \beta) / d\Omega = |f(\alpha \to \beta)|^2`, and the sign is just a convention. A particularly simple case is when the scattering is *elastic*, which means that :math:`E_i = E'_i` and :math:`|\pbf_i| = |\pbf'_i|` for :math:`i = 1, 2`, and consequentially :math:`k = k'`. In this case we have
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			f(\alpha \to \beta) &= -\frac{4\pi^2 E_1 E_2}{E_{\alpha}} M_{\beta \alpha} \\
+			u_{\alpha} &= \frac{k E_{\alpha}}{E_1 E_2}
+		\end{align*}
+
+	These, together with :math:`\eqref{eq_two_body_total_cross_section_by_m}`, imply the following so-called `optical theorem <https://en.wikipedia.org/wiki/Optical_theorem>`_ for elastic two-body scattering
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\op{Im} f(\alpha \to \alpha) = \frac{k}{4\pi} \sigma_{\alpha}
+			\label{eq_optical_theorem}
+		\end{equation}
+
+	From the optical theorem we can derive an estimate on the forward diffraction angle as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\sigma_{\alpha} = \int d\Omega ~|f(\alpha \to \beta)|^2 > \frac{1}{2} |f(\alpha \to \alpha)|^2 \Delta\Omega \
+				\geq \frac{1}{2} \left| \op{Im} f(\alpha \to \alpha) \right|^2 \Delta\Omega
+		\end{equation*}
+
+	where the second inequality follows from the assumption that :math:`f` is continuous, and the factor :math:`1/2` is a rather random choice and can be anything less than :math:`1`. Roughly speaking :math:`\Delta\Omega` measures the peak of the diffraction in the direction of :math:`\alpha`. Combining with :math:`\eqref{eq_optical_theorem}`, we conclude that
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\Delta\Omega < \frac{32 \pi^2}{k^2 \sigma_{\alpha}}
+		\end{equation*}
+
+	Assuming that total decay rate :math:`\sigma_{\alpha}` doesn't grow very fast at high energies, the peak in the direction of :math:`\alpha` shrink at the scale of :math:`1 / k^2`.
+
+Another application of the unitary of the S-matrix is along the lines of statistical mechanics. Applying the same calculation in :math:`\eqref{eq_s_matrix_unitarity_first_half}` to :math:`S S^{\dagger} = 1`, we get the counterpart to :math:`\eqref{eq_s_matrix_unitarity_implication_on_m_special}`
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\op{Im} M_{\alpha \alpha} = -\pi \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) |M_{\alpha \beta}|^2
+	\end{equation*}
+
+Combining with the master equation :math:`\eqref{eq_rate_of_reaction_master_formula}` we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\int d\beta ~c_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} = \int d\beta ~c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha}
+		\label{eq_s_matrix_unitarity_induced_symmetry_on_reaction_rates}
+	\end{equation}
+
+where :math:`c_{\alpha} \coloneqq \left( V / (2\pi)^3 \right)^{N_{\alpha}}`.
+
+We shall carry out an equilibrium analysis for state :math:`\alpha`. To this end, let :math:`P_{\alpha} d\alpha` be the infinitesimal probability of finding the system in state :math:`\alpha`. Then we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\frac{dP_{\alpha}}{dt} = \int d\beta ~P_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} - P_{\alpha} \int d\beta ~\frac{d\Gamma(\alpha \to \beta)}{d\beta}
+	\end{equation*}
+
+where the first term calculates the total rate that other states transit into :math:`\alpha`, and the second term calculates the total rate that the state :math:`\alpha` transits into other states. Recall that the *entropy* of the system is defined to be
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		-\int d\alpha ~P_{\alpha} \ln(P_{\alpha} / c_{\alpha})
+	\end{equation*}
+
+Its rate of change can be estimated as follows
 
 .. math::
 	:nowrap:
 
 	\begin{align*}
-		\sigma_{\alpha} &\coloneqq \int d\beta ~\frac{d\sigma(\alpha \to \beta)}{d\beta} \\
-			&~= (2\pi)^4 u_{\alpha}^{-1} \int d\beta ~\delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 \\
-			&~= -16\pi^3 u_{\alpha}^{-1} \op{Im} M_{\alpha \alpha}
+		-\frac{d}{dt} \int d\alpha ~P_{\alpha} \ln(P_{\alpha} / c_{\alpha}) \
+			&= -\int d\alpha ~(\ln(P_{\alpha} / c_{\alpha}) + 1) \frac{dP_{\alpha}}{dt} \\
+			&= -\int d\alpha \int d\beta ~(\ln(P_{\alpha} / c_{\alpha}) + 1) \left( P_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \
+      			- P_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} \right) \\
+			&= \int d\alpha \int d\beta ~P_{\beta} \ln\left( \frac{P_{\beta} c_{\alpha}}{P_{\alpha} c_{\beta}} \right) \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \\
+			&\geq \int d\alpha \int d\beta ~\left( \frac{P_{\beta}}{c_{\beta}} - \frac{P_{\alpha}}{c_{\alpha}} \right) c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \\
+			&= \int d\alpha \int d\beta ~\frac{P_{\beta}}{c_{\beta}} \left( c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} - c_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} \right) \\
+			&= \int d\alpha ~\frac{P_{\alpha}}{c_{\alpha}} \int d\beta \left( c_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} - c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \right) \xlongequal{\eqref{eq_s_matrix_unitarity_induced_symmetry_on_reaction_rates}} 0
 	\end{align*}
+
+where the fourth inequality follows from the general inequality :math:`\ln(x) \geq 1 - 1 / x` for any :math:`x > 0`. This is nothing but the famous slogan: entropy never decreases! And we see that as a consequence of the unitarity of the S-matrix.
 
 
 .. rubric:: Footnotes
