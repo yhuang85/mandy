@@ -1689,6 +1689,9 @@ contradicts :math:`\eqref{eq_time_inversion_squared_reverse_sign}`.
 
 As a conclusion, we see that for such systems, any energy eigenvalue has at least a two-fold degeneracy. This is known as `Kramers' degeneracy <https://en.wikipedia.org/wiki/Kramers%27_theorem>`_.
 
+
+.. _sec_scattering_theory:
+
 Scattering Theory
 -----------------
 
@@ -1870,6 +1873,9 @@ Now let's justify the term :math:`\pm \ifrak \epsilon` by showing that :math:`\e
 
 Now the integral colored in blue can be integrated over :math:`E_{\alpha}` by a contour that runs from :math:`-\infty` to :math:`+\infty`, followed by a semicircle at infinity, in the upper-half-plane in the case of :math:`\Psi_{\alpha}^-` and the lower-half-plane in the case of :math:`\Psi_{\alpha}^+`, back to :math:`-\infty`. In either case, the sign in :math:`\mp \ifrak \epsilon` is chosen so that the integrant has no poles with infinitesimally small imaginary part, though both :math:`g(\alpha)` and :math:`(\Phi_{\beta}, V \Psi_{\alpha}^{\pm})`, viewed as complex functions, may have poles with finite imaginary parts. It follows then from the residual theorem and the damping factor :math:`\exp(-\ifrak \tau E_{\alpha})` as :math:`\tau \to \pm\infty` that the integral in blue vanishes, as desired.
 
+
+.. _sec_s_matrix_and_its_symmetry:
+
 S-matrix and its symmetry
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1924,7 +1930,7 @@ The most straightforward way to calculate :math:`S_{\beta \alpha}` is probably t
 			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} \
      			- 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)  \nonumber \\
 			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \left( g(\beta) - 2\pi\ifrak \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \right)  \nonumber \\
-			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right) \nonumber
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak \delta(E_{\alpha} - E_{\beta}) (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right) \nonumber
 	\end{align}
 
 where we've used the residue theorem again in the second equality. Next expand the left-hand-side of the equation in terms of the out-states and then let :math:`\tau \to \infty`
@@ -1948,7 +1954,7 @@ Equating the blue terms from :math:`\eqref{eq_positive_limit_of_in_state_by_lipp
 	:nowrap:
 
 	\begin{equation}
-		S_{\beta \alpha} = \delta(\beta - \alpha) - 2\pi\ifrak (\Phi_\beta, V \Psi_{\alpha}^-)
+		S_{\beta \alpha} = \delta(\beta - \alpha) - 2\pi\ifrak \delta(E_{\beta} - E_{\alpha}) (\Phi_\beta, V \Psi_{\alpha}^-)
 		\label{eq_s_matrix_pre_born_approx}
 	\end{equation}
 
@@ -2969,6 +2975,48 @@ Its rate of change can be estimated as follows
 	\end{align*}
 
 where the fourth inequality follows from the general inequality :math:`\ln(x) \geq 1 - 1 / x` for any :math:`x > 0`. This is nothing but the famous slogan: entropy never decreases! And we see that as a consequence of the unitarity of the S-matrix.
+
+
+Perturbation theory of S-matrix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rather than being the epilogue of :ref:`sec_scattering_theory`, this section is more like a prelude to what comes next. In particular, we will work out a candidate Hamiltonian that satisfies the Lorentz invariance discussed in :ref:`sec_s_matrix_and_its_symmetry`.
+
+One possible starting point of the perturbation theory is :math:`\eqref{eq_s_matrix_pre_born_approx}` together with the Lippmann-Schwinger formula :math:`\eqref{eq_lippmann_schwinger_pure}` which we recollect as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		S_{\beta \alpha} &= \delta(\beta - \alpha) - 2\pi \ifrak \delta(E_{\beta} - E_{\alpha}) (\Phi_{\beta}, V\Psi_{\alpha}^-) \
+		\label{eq_s_matrix_pre_born_approx_repeated} \\
+		\Psi_{\alpha}^- &= \Phi_{\alpha} + \int d\beta ~\frac{(\Phi_{\beta}, V\Psi_{\alpha}^-) \Phi_{\beta}}{E_{\alpha} - E_{\beta} + \ifrak \epsilon} \
+		\label{eq_lippmann_schwinger_repeated}
+	\end{align}
+
+Applying :math:`V` to :math:`\eqref{eq_lippmann_schwinger_repeated}` and taking scalar product with :math:`\Phi_{\beta}`, we get
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) = V_{\beta \alpha} + \int d\beta ~\frac{\left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) V_{\beta \alpha}}{E_{\alpha} - E_{\beta} + \ifrak \epsilon}
+		\label{eq_base_iter_old_fashioned_s_matrix_perturbation}
+	\end{equation}
+
+where :math:`V_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, V\Phi_{\alpha} \right)`. One can apply :math:`\eqref{eq_base_iter_old_fashioned_s_matrix_perturbation}` iteratively to get the following
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) = V_{\beta \alpha} \
+      		+ \int d\gamma ~\frac{V_{\beta \gamma} V_{\gamma \alpha}}{E_{\alpha} - E_{\gamma} + \ifrak \epsilon} \
+      		+ \int d\gamma \int d\gamma' ~\frac{V_{\beta \gamma} V_{\gamma \gamma'} V_{\gamma' \alpha}}{(E_{\alpha} - E_{\gamma} + \ifrak \epsilon)(E_{\alpha} - E_{\gamma'} + \ifrak \epsilon)} \
+      		+ \cdots
+	\end{equation*}
+
+and therefore a power series expansion in :math:`V` of :math:`S_{\beta \alpha}` in view of :math:`\eqref{eq_s_matrix_pre_born_approx_repeated}`.
 
 
 .. rubric:: Footnotes

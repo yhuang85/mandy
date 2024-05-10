@@ -1441,7 +1441,7 @@ Polarization of photons<div class="sd-summary-down docutils">
 </section>
 </section>
 <section id="scattering-theory">
-<h2>Scattering Theory<a class="headerlink" href="#scattering-theory" title="Link to this heading">#</a></h2>
+<span id="sec-scattering-theory"></span><h2>Scattering Theory<a class="headerlink" href="#scattering-theory" title="Link to this heading">#</a></h2>
 <p>Physics would have been rather boring if nothing interacts, like the free particles that we have been studying so far. On the flip side, physics would have been impossible if we try to know exactly what happens in the interactions. The middle ground, where we assume that the particles are non-interacting long before and after the interaction, and something mysterious happened in between, is called scattering theory –  a place where theories meet experiments.</p>
 <section id="non-interacting-many-particles-state">
 <h3>Non-interacting many-particles state<a class="headerlink" href="#non-interacting-many-particles-state" title="Link to this heading">#</a></h3>
@@ -1535,7 +1535,7 @@ Polarization of photons<div class="sd-summary-down docutils">
 \end{align}</div><p>Now the integral colored in blue can be integrated over <span class="math notranslate nohighlight">\(E_{\alpha}\)</span> by a contour that runs from <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(+\infty\)</span>, followed by a semicircle at infinity, in the upper-half-plane in the case of <span class="math notranslate nohighlight">\(\Psi_{\alpha}^-\)</span> and the lower-half-plane in the case of <span class="math notranslate nohighlight">\(\Psi_{\alpha}^+\)</span>, back to <span class="math notranslate nohighlight">\(-\infty\)</span>. In either case, the sign in <span class="math notranslate nohighlight">\(\mp \ifrak \epsilon\)</span> is chosen so that the integrant has no poles with infinitesimally small imaginary part, though both <span class="math notranslate nohighlight">\(g(\alpha)\)</span> and <span class="math notranslate nohighlight">\((\Phi_{\beta}, V \Psi_{\alpha}^{\pm})\)</span>, viewed as complex functions, may have poles with finite imaginary parts. It follows then from the residual theorem and the damping factor <span class="math notranslate nohighlight">\(\exp(-\ifrak \tau E_{\alpha})\)</span> as <span class="math notranslate nohighlight">\(\tau \to \pm\infty\)</span> that the integral in blue vanishes, as desired.</p>
 </section>
 <section id="s-matrix-and-its-symmetry">
-<h3>S-matrix and its symmetry<a class="headerlink" href="#s-matrix-and-its-symmetry" title="Link to this heading">#</a></h3>
+<span id="sec-s-matrix-and-its-symmetry"></span><h3>S-matrix and its symmetry<a class="headerlink" href="#s-matrix-and-its-symmetry" title="Link to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/S-matrix">S-matrix</a> defined by</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -1564,7 +1564,7 @@ Polarization of photons<div class="sd-summary-down docutils">
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} \
                 - 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)  \nonumber \\
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \left( g(\beta) - 2\pi\ifrak \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \right)  \nonumber \\
-                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right) \nonumber
+                &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak \delta(E_{\alpha} - E_{\beta}) (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right) \nonumber
 \end{align}</div><p>where we’ve used the residue theorem again in the second equality. Next expand the left-hand-side of the equation in terms of the out-states and then let <span class="math notranslate nohighlight">\(\tau \to \infty\)</span></p>
 <div class="math notranslate nohighlight">
 \begin{align}
@@ -1577,7 +1577,7 @@ Polarization of photons<div class="sd-summary-down docutils">
 <p>Equating the blue terms from <span class="math notranslate nohighlight">\(\eqref{eq_positive_limit_of_in_state_by_lippmann_schwinger}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_positive_limit_of_in_state_by_expanding_out_states}\)</span>, we’ve derived the following formula</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        S_{\beta \alpha} = \delta(\beta - \alpha) - 2\pi\ifrak (\Phi_\beta, V \Psi_{\alpha}^-)
+        S_{\beta \alpha} = \delta(\beta - \alpha) - 2\pi\ifrak \delta(E_{\beta} - E_{\alpha}) (\Phi_\beta, V \Psi_{\alpha}^-)
         \label{eq_s_matrix_pre_born_approx}
 \end{equation}</div><p>Up to the first order in <span class="math notranslate nohighlight">\(V\)</span>, one can replace <span class="math notranslate nohighlight">\(\Psi_{\alpha}^-\)</span> on the right-hand-side by <span class="math notranslate nohighlight">\(\Phi_{\alpha}\)</span> and arrive at the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Born_approximation">Born approximation</a> of the S-matrix.</p>
 <section id="id11">
@@ -2137,6 +2137,31 @@ An example of two-body scattering<div class="sd-summary-down docutils">
                 &amp;= \int d\alpha \int d\beta ~\frac{P_{\beta}}{c_{\beta}} \left( c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} - c_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} \right) \\
                 &amp;= \int d\alpha ~\frac{P_{\alpha}}{c_{\alpha}} \int d\beta \left( c_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} - c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \right) \xlongequal{\eqref{eq_s_matrix_unitarity_induced_symmetry_on_reaction_rates}} 0
 \end{align*}</div><p>where the fourth inequality follows from the general inequality <span class="math notranslate nohighlight">\(\ln(x) \geq 1 - 1 / x\)</span> for any <span class="math notranslate nohighlight">\(x &gt; 0\)</span>. This is nothing but the famous slogan: entropy never decreases! And we see that as a consequence of the unitarity of the S-matrix.</p>
+</section>
+</section>
+<section id="perturbation-theory-of-s-matrix">
+<h3>Perturbation theory of S-matrix<a class="headerlink" href="#perturbation-theory-of-s-matrix" title="Link to this heading">#</a></h3>
+<p>Rather than being the epilogue of <a class="reference internal" href="#sec-scattering-theory"><span class="std std-ref">Scattering Theory</span></a>, this section is more like a prelude to what comes next. In particular, we will work out a candidate Hamiltonian that satisfies the Lorentz invariance discussed in <a class="reference internal" href="#sec-s-matrix-and-its-symmetry"><span class="std std-ref">S-matrix and its symmetry</span></a>.</p>
+<p>One possible starting point of the perturbation theory is <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_pre_born_approx}\)</span> together with the Lippmann-Schwinger formula <span class="math notranslate nohighlight">\(\eqref{eq_lippmann_schwinger_pure}\)</span> which we recollect as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        S_{\beta \alpha} &amp;= \delta(\beta - \alpha) - 2\pi \ifrak \delta(E_{\beta} - E_{\alpha}) (\Phi_{\beta}, V\Psi_{\alpha}^-) \
+        \label{eq_s_matrix_pre_born_approx_repeated} \\
+        \Psi_{\alpha}^- &amp;= \Phi_{\alpha} + \int d\beta ~\frac{(\Phi_{\beta}, V\Psi_{\alpha}^-) \Phi_{\beta}}{E_{\alpha} - E_{\beta} + \ifrak \epsilon} \
+        \label{eq_lippmann_schwinger_repeated}
+\end{align}</div><p>Applying <span class="math notranslate nohighlight">\(V\)</span> to <span class="math notranslate nohighlight">\(\eqref{eq_lippmann_schwinger_repeated}\)</span> and taking scalar product with <span class="math notranslate nohighlight">\(\Phi_{\beta}\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) = V_{\beta \alpha} + \int d\beta ~\frac{\left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) V_{\beta \alpha}}{E_{\alpha} - E_{\beta} + \ifrak \epsilon}
+        \label{eq_base_iter_old_fashioned_s_matrix_perturbation}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(V_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, V\Phi_{\alpha} \right)\)</span>. One can apply <span class="math notranslate nohighlight">\(\eqref{eq_base_iter_old_fashioned_s_matrix_perturbation}\)</span> iteratively to get the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) = V_{\beta \alpha} \
+        + \int d\gamma ~\frac{V_{\beta \gamma} V_{\gamma \alpha}}{E_{\alpha} - E_{\gamma} + \ifrak \epsilon} \
+        + \int d\gamma \int d\gamma' ~\frac{V_{\beta \gamma} V_{\gamma \gamma'} V_{\gamma' \alpha}}{(E_{\alpha} - E_{\gamma} + \ifrak \epsilon)(E_{\alpha} - E_{\gamma'} + \ifrak \epsilon)} \
+        + \cdots
+\end{equation*}</div><p>and therefore a power series expansion in <span class="math notranslate nohighlight">\(V\)</span> of <span class="math notranslate nohighlight">\(S_{\beta \alpha}\)</span> in view of <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_pre_born_approx_repeated}\)</span>.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
@@ -2160,7 +2185,6 @@ An example of two-body scattering<div class="sd-summary-down docutils">
 <p>It’s really unfortunate that one constantly runs out symbols to represent physical quantities, and it’s uncommon to use anything other than just one letter. So we have to live with the fact that the meaning of the symbol will depend on the context.</p>
 </aside>
 </aside>
-</section>
 </section>
 </section>
 </section>
@@ -2229,6 +2253,7 @@ An example of two-body scattering<div class="sd-summary-down docutils">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#implications-of-the-unitarity-of-s-matrix">Implications of the unitarity of S-matrix</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-theory-of-s-matrix">Perturbation theory of S-matrix</a></li>
 </ul>
 </li>
 </ul>
