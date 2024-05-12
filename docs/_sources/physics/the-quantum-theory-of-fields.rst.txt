@@ -2067,9 +2067,10 @@ Step 2.
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\Kbf = \Kbf_0 + \Wbf
-		\end{equation*}
+			\label{eq_k_as_k0_plus_w}
+		\end{equation}
 
 	where :math:`\Wbf` denotes the perturbation term. Let's calculate
 
@@ -2980,7 +2981,7 @@ where the fourth inequality follows from the general inequality :math:`\ln(x) \g
 Perturbation theory of S-matrix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Rather than being the epilogue of :ref:`sec_scattering_theory`, this section is more like a prelude to what comes next. In particular, we will work out a candidate Hamiltonian that satisfies the Lorentz invariance discussed in :ref:`sec_s_matrix_and_its_symmetry`.
+Rather than being the epilogue of :ref:`sec_scattering_theory`, this section is more like a prelude to what comes next. In particular, we will work out a candidate Hamiltonian that satisfies the Lorentz invariance condition discussed in :ref:`sec_s_matrix_and_its_symmetry`.
 
 One possible starting point of the perturbation theory is :math:`\eqref{eq_s_matrix_pre_born_approx}` together with the Lippmann-Schwinger formula :math:`\eqref{eq_lippmann_schwinger_pure}` which we recollect as follows
 
@@ -3009,14 +3010,205 @@ where :math:`V_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, V\Phi_{\alpha} \rig
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) = V_{\beta \alpha} \
       		+ \int d\gamma ~\frac{V_{\beta \gamma} V_{\gamma \alpha}}{E_{\alpha} - E_{\gamma} + \ifrak \epsilon} \
       		+ \int d\gamma \int d\gamma' ~\frac{V_{\beta \gamma} V_{\gamma \gamma'} V_{\gamma' \alpha}}{(E_{\alpha} - E_{\gamma} + \ifrak \epsilon)(E_{\alpha} - E_{\gamma'} + \ifrak \epsilon)} \
       		+ \cdots
-	\end{equation*}
+		\label{eq_s_matrix_power_series_expansion_old_fashioned}
+	\end{equation}
 
 and therefore a power series expansion in :math:`V` of :math:`S_{\beta \alpha}` in view of :math:`\eqref{eq_s_matrix_pre_born_approx_repeated}`.
+
+One obvious drawback of the expansion :math:`\eqref{eq_s_matrix_power_series_expansion_old_fashioned}` is that it obscures the Lorentz symmetry of the S-matrix because the denominators consist of only the energy terms. To overcome this, we shall use instead the other interpretation of the S-matrix in terms of the Hamiltonians given by :math:`\eqref{eq_s_operator_by_u}` and :math:`\eqref{eq_defn_u_operator}`, which we recall as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		S &= U(\infty, -\infty) \nonumber \\
+		U(\tau, \tau_0) &= \exp(\ifrak H_0 \tau) \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \label{eq_defn_u_operator_repeated}
+	\end{align}
+
+Differentiating :math:`\eqref{eq_defn_u_operator_repeated}` in :math:`\tau` gives
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\ifrak \frac{d}{d\tau} U(\tau, \tau_0) &= -H_0 \exp(\ifrak H_0 \tau) \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \label{eq_evolution_equation_of_u_operator} \\
+      		&\phantom{=} + \exp(\ifrak H_0 \tau) H \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \nonumber \\
+            &= \exp(\ifrak H_0 \tau) (H - H_0) \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \nonumber \\
+			&= \exp(\ifrak H_0 \tau) V \exp(-\ifrak H_0 \tau) U(\tau, \tau_0) \nonumber \\
+			&\eqqcolon V(\tau) U(\tau, \tau_0) \nonumber
+	\end{align}
+
+Here :math:`V(\tau) = \exp(\ifrak H_0 \tau) V \exp(-\ifrak H_0 \tau)` is a time-dependent operator in the so-called *interaction picture*, to be distinguished from the Heisenberg picture operator where the true Hamiltonian :math:`H` should be used in place of :math:`H_0`. The differential equation :math:`\eqref{eq_evolution_equation_of_u_operator}` can be easily solved as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\tau, \tau_0) = 1 - \ifrak \int_{\tau_0}^{\tau} dt ~V(t) U(t, \tau_0)
+	\end{equation*}
+
+which can then be iterated to give the following
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\tau, \tau_0) &= 1 - \ifrak \int_{\tau_0}^{\tau} dt_1 ~V(t_1) \
+        		+ (-\ifrak)^2 \int_{\tau_0}^{\tau} dt_1 \int_{\tau_0}^{t_1} dt_2 ~V(t_1) V(t_2) \\
+      		&\phantom{=} + (-\ifrak)^3 \int_{\tau_0}^{\tau} dt_1 \int_{\tau_0}^{t_1} dt_2 \int_{\tau_0}^{t_2} dt_3 ~V(t_1) V(t_2) V(t_3) \
+        		+ \cdots
+	\end{align*}
+
+Letting :math:`\tau \to \infty` and :math:`\tau_0 \to -\infty` we get another power series expansion of :math:`S` in :math:`V` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		S &= 1 - \ifrak \int_{-\infty}^{\infty} dt_1 ~V(t_1) \
+        		+ (-\ifrak)^2 \int_{-\infty}^{\infty} dt_1 \int_{-\infty}^{t_1} dt_2 ~V(t_1) V(t_2) \label{eq_s_matrix_power_series_expansion_raw} \\
+      		&\phantom{=} + (-\ifrak)^3 \int_{-\infty}^{\infty} dt_1 \int_{-\infty}^{t_1} dt_2 \int_{-\infty}^{t_2} dt_3 ~V(t_1) V(t_2) V(t_3) \
+        		+ \cdots \nonumber
+	\end{align}
+
+It's somewhat inconvenient that the integral limits in :math:`\eqref{eq_s_matrix_power_series_expansion_raw}` ruins the permutation symmetry of the products of :math:`V`. But this can be fixed by introducing a *time-ordered product* as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		T\{ V(t) \} &\coloneqq V(t) \\
+		T\{ V(t_1) V(t_2) \} &\coloneqq \theta(t_1 - t_2) V(t_1) V(t_2) + \theta(t_2 - t_1) V(t_2) V(t_1) \\
+		T\{ V(t_1) V(t_2) V(t_3) \} &\coloneqq \theta(t_1 - t_2) \theta(t_2 - t_3) V(t_1) V(t_2) V(t_3) + \cdots \\
+		&\cdots
+	\end{align*}
+
+where :math:`\theta(\tau)` is the step function which equals :math:`1` for :math:`\tau > 0` and :math:`0` for :math:`\tau < 0`, and it doesn't matter what the value at :math:`\tau = 0` is because it doesn't contribute to the integrals in :math:`\eqref{eq_s_matrix_power_series_expansion_raw}` anyway. With this definition, we can rewrite :math:`\eqref{eq_s_matrix_power_series_expansion_raw}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S = 1 + \sum_{n=1}^{\infty} \frac{(-\ifrak)^n}{n!} \int_{-\infty}^{\infty} dt_1 dt_2 \cdots dt_n ~T\{ V(t_1) V(t_2) \cdots V(t_n) \}
+		\label{eq_s_matrix_power_series_expansion_time_ordered}
+	\end{equation}
+
+where the division by :math:`n!` is to account for the duplicated integrals introduced by the time-ordered product. Note that this power series looks much like the Taylor series of an exponential function. Indeed, in the unlikely event where :math:`V(t)` at different times all commute, one can remove the time-ordering and write :math:`\eqref{eq_s_matrix_power_series_expansion_time_ordered}` as an exponential function.
+
+One great benefit of writing :math:`S` as in the form of :math:`\eqref{eq_s_matrix_power_series_expansion_time_ordered}` is that we can reformulate the condition of :math:`S` being Lorentz symmetric in terms of some condition on :math:`V`. Recall from :ref:`sec_s_matrix_and_its_symmetry` that a sufficient condition for a Lorentz invariant S-matrix is that the S-operator commutes with :math:`U_0(\Lambda, a)`, or equivalently in infinitesimal terms :math:`\eqref{eq_h0_s_commute}` -- :math:`\eqref{eq_k30_s_commute}` are satisfied. Now the main postulation is to express :math:`V` using a density function as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		V(t) = \int d^3 x ~\Hscr(t, \xbf)
+	\end{equation*}
+
+such that :math:`\Hscr(x)` is a scalar in the sense that
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U_0(\Lambda, a) \Hscr(x) U^{-1}_0(\Lambda, a) = \Hscr(\Lambda x + a)
+		\label{eq_h_density_is_scalar}
+	\end{equation}
+
+Under these assumptions, we can further rewrite :math:`\eqref{eq_s_matrix_power_series_expansion_time_ordered}` in terms of :math:`\Hscr(x)` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		S = 1 + \sum_{n=1}^{\infty} \frac{(-1)^n}{n!} \int d^4 x_1 \cdots d^4 x_n ~T\{ \Hscr(x_1) \cdots \Hscr(x_n) \}
+		\label{eq_s_matrix_power_series_expansion_time_ordered_density}
+	\end{equation}
+
+This expression of :math:`S` is manifestly Lorentz invariant, except for the time-ordering part. In fact, the time-ordering between two spacetime points :math:`x_1, x_2` are Lorentz invariant if and only if :math:`x_1 - x_2` is time-like, namely, :math:`(x_1 - x_2)^2 \geq 0`. This is consistent with intuition because events with time-like (or light-like) separations may be observed by one observer, who definitely should know which event happened first. Therefore we obtain a sufficient condition for the Lorentz invariance of :math:`S` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		[\Hscr(x_1), \Hscr(x_2)] = 0, \quad\forall ~(x_1 - x_2)^2 \leq 0
+		\label{eq_h_commutativity_for_space_like_separations}
+	\end{equation}
+
+where we've also included the light-like case for technical reasons that will only become clear later.
+
+.. dropdown:: A formal proof of the Lorentz invariance of the S-matrix
+	:animate: fade-in-slide-down
+
+	We shall verify that the S-operator defined by :math:`\eqref{eq_s_matrix_power_series_expansion_time_ordered_density}` and satisfying :math:`\eqref{eq_h_commutativity_for_space_like_separations}` indeed satisfies :math:`\eqref{eq_h0_s_commute}` -- :math:`\eqref{eq_k30_s_commute}`, or rather, the most crucial one :math:`\eqref{eq_k30_s_commute}`. Using the definition of :math:`\Kbf_0` from :ref:`sec_quantum_lorentz_symmetry`, it follows from :math:`\eqref{eq_h_density_is_scalar}` that
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			-\ifrak [\Kbf_0, \Hscr(t, \xbf)] = t \nabla \Hscr(t, \xbf) + \xbf \p_t \Hscr(t, \xbf)
+		\end{equation*}
+
+	Integrating over :math:`\xbf` and setting :math:`t = 0`, we get
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			[\Kbf_0, V] &= \left[ \Kbf_0, \int d^3 x ~\Hscr(0, \xbf) \right] \\
+				&= \int d^3 x ~\xbf \left. \frac{\p}{\p t} \right\vert_{t=0} \Hscr(t, \xbf) \\
+				&= \left[ H_0, \int d^3 x ~\xbf \Hscr(0, \xbf) \right] \\
+				&\eqqcolon [H_0, \Wbf]
+		\end{align*}
+
+	where the third equality follows again from :math:`\eqref{eq_h_density_is_scalar}` by letting :math:`\Lambda` to be the infinitesimal time translation. Indeed the quantity
+
+	.. math::
+		\Wbf \coloneqq \int d^3 x ~\xbf \Hscr(0, \xbf)
+
+	here is the same as the :math:`\Wbf` in :math:`\eqref{eq_k_as_k0_plus_w}`.
+
+	Now for :math:`\Kbf = \Kbf_0 + \Wbf`, together with :math:`\Pbf` and :math:`H`, to satisfy the commutation relation :math:`\eqref{eq_hkp_commutation}`, which is readily satisfied by the free particle state Lorentz symmetry generators :math:`\Kbf_0, \Pbf_0` and :math:`H_0`, it suffices that
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			[\Wbf, V] = 0 \label{eq_w_v_commute}
+		\end{equation}
+
+	because of the following calculation
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			[H, \Kbf] &= [H_0 + V, \Kbf_0 + \Wbf] \\
+				&= \ifrak \Pbf_0 + [V, \Kbf_0] + [H_0, W] + [V, \Wbf] \\
+				&= \ifrak \Pbf_0 \\
+				&= \ifrak \Pbf
+		\end{align*}
+
+	Finally, we note that :math:`\eqref{eq_w_v_commute}` is equivalent to the following
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\int d^3 x \int d^3 y ~\xbf [\Hscr(0, \xbf), \Hscr(0, \ybf)] = 0
+		\end{equation*}
+
+	which is clearly a weaker condition than :math:`\eqref{eq_h_commutativity_for_space_like_separations}`.
+
+At last we've finally climbed the highest peak in scattering theory, namely :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. It is specific to the relativistic theory because time-ordering is always preserved in Galilean symmetry. It is also this restriction that eventually leads us to a quantum field theory. In the words of the author
+
+	"It is this condition that makes the combination of Lorentz invariance and quantum mechanics so restrictive." [#weinberg_quote_on_lorentz_invariance_and_quantum_mechanics]_
+
+	-- S. Weinberg
 
 
 .. rubric:: Footnotes
@@ -3030,3 +3222,5 @@ and therefore a power series expansion in :math:`V` of :math:`S_{\beta \alpha}` 
 .. [#pion_deuteron_reaction_final_state] The final state claimed in [Wei95]_ page 126 has total spin :math:`1` rather than :math:`0`. I suspect that the claim in [Wei95]_ is wrong, but otherwise it doesn't affect any subsequent arguments anyway.
 
 .. [#abuse_of_phi_as_both_state_vector_and_flux] It's really unfortunate that one constantly runs out symbols to represent physical quantities, and it's uncommon to use anything other than just one letter. So we have to live with the fact that the meaning of the symbol will depend on the context.
+
+.. [#weinberg_quote_on_lorentz_invariance_and_quantum_mechanics] See [Wei95]_ page 145.
