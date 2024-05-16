@@ -109,7 +109,7 @@ mathjax3_config = {
 			'psup': ['\\prescript {#1}{}{#2}', 2],
 			'blue': ['{\\color{blue} {#1}}', 1],
 			'orange': ['{\\color{orange} {#1}}', 1],
-			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std']},
+			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std', 'VAC']},
 			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
 			**{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
 			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},
