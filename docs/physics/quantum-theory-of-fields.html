@@ -14,28 +14,28 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=9d07dabb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script src="../_static/documentation_options.js?v=2709fde1"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -57,27 +57,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -99,12 +95,17 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button class="sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
   
   <div class="col-lg-3 navbar-header-items__start">
@@ -140,26 +141,26 @@
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../math/index.html">
-                        Mathematics
-                      </a>
-                    </li>
-                
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../math/index.html">
+    Mathematics
+  </a>
+</li>
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
-                        Physics
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../bib.html">
-                        Bibliography
-                      </a>
-                    </li>
-                
+<li class="nav-item pst-header-nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Physics
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../bib.html">
+    Bibliography
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -231,9 +232,9 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+    <button class="sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
-    </label>
+    </button>
   
 </div>
 
@@ -254,32 +255,35 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item">
+          
+          
+            <div class="navbar-item">
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../math/index.html">
-                        Mathematics
-                      </a>
-                    </li>
-                
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../math/index.html">
+    Mathematics
+  </a>
+</li>
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
-                        Physics
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../bib.html">
-                        Bibliography
-                      </a>
-                    </li>
-                
+<li class="nav-item pst-header-nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Physics
+  </a>
+</li>
+
+
+<li class="nav-item pst-header-nav-item">
+  <a class="nav-link nav-internal" href="../bib.html">
+    Bibliography
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -328,13 +332,13 @@ document.write(`
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -343,7 +347,7 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
@@ -737,7 +741,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </section>
 </section>
 <section id="one-particle-states">
-<h2>One-Particle States<a class="headerlink" href="#one-particle-states" title="Link to this heading">#</a></h2>
+<span id="sec-one-particle-states"></span><h2>One-Particle States<a class="headerlink" href="#one-particle-states" title="Link to this heading">#</a></h2>
 <p>One neat application of our knowledge about Lorentz symmetry is to classify (free) one-particle states according to their transformation laws under (inhomogeneous) Lorentz transformations. Throughout this section, the Lorentz transformations will be assumed to be proper orthochronous, i.e., <span class="math notranslate nohighlight">\(\op{det}(\Lambda) = 1\)</span> and <span class="math notranslate nohighlight">\(\Lambda_0^0 \geq 1\)</span>.</p>
 <p>In order to do so, we need some labels to identify states, which are typically conserved quantities. According to the commutation relations between <span class="math notranslate nohighlight">\(H, \Pbf\)</span> and <span class="math notranslate nohighlight">\(\Jbf\)</span> obtained in the previous section, we see that <span class="math notranslate nohighlight">\(p = (H, \Pbf)\)</span> consists of mutually commutative conserved components, but not <span class="math notranslate nohighlight">\(\Jbf\)</span>. Hence we can write our one-particle states as <span class="math notranslate nohighlight">\(\Psi_{p, \sigma}\)</span> such that</p>
 <div class="math notranslate nohighlight">
@@ -763,7 +767,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
         \label{eq_lorentz_acts_on_p_and_sigma}
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> furnishes a representation of <span class="math notranslate nohighlight">\(\Lambda\)</span> and <span class="math notranslate nohighlight">\(p\)</span> under straightforward transformation rules, and an implicit summation over <span class="math notranslate nohighlight">\(\sigma'\)</span> is assumed although it’s not a <span class="math notranslate nohighlight">\(4\)</span>-index.</p>
 <p>Next we’d like to remove the dependency of <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> on <span class="math notranslate nohighlight">\(p\)</span> since, after all, it is <span class="math notranslate nohighlight">\(\Lambda\)</span> that carries the symmetry. We can achieve this by noticing that <span class="math notranslate nohighlight">\(U(\Lambda)\)</span> acts on the <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span> transitively. The <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span>, in turn, are uniquely determined by the value of <span class="math notranslate nohighlight">\(p^2\)</span>, and in the case of <span class="math notranslate nohighlight">\(p^2 \geq 0\)</span>, also by the sign of <span class="math notranslate nohighlight">\(p_0\)</span>. We can therefore pick a convenient representative <span class="math notranslate nohighlight">\(k\)</span> for each case as follows</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Case</p></th>
 <th class="head"><p>Standard <span class="math notranslate nohighlight">\(k\)</span></p></th>
@@ -797,6 +801,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </tr>
 </tbody>
 </table>
+</div>
 <p>It turns out that only three of these cases are realized physically, and they correspond to the cases of a massive particle of mass <span class="math notranslate nohighlight">\(M\)</span>, a massless particle and the vacuum, respectively. Since there is not much to say about the vacuum state, there are only two cases that we need to investigate.</p>
 <p>With the choices of the standard <span class="math notranslate nohighlight">\(k\)</span> in hand, we need to make one more set of choices. Namely, we will choose for each <span class="math notranslate nohighlight">\(p\)</span> a standard Lorentz transformation <span class="math notranslate nohighlight">\(L(p)\)</span> such that <span class="math notranslate nohighlight">\(L(p) k = p\)</span>. Such <span class="math notranslate nohighlight">\(L(p)\)</span> for a massive particle has been chosen in <span class="math notranslate nohighlight">\(\eqref{eq_general_lambda_in_spacetime}\)</span>, albeit in spacetime coordinates, and we’ll also handle the case of massless particles later. Once these choices have been made, we can <em>define</em></p>
 <div class="math notranslate nohighlight">
@@ -876,7 +881,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation*}</div><p>where <span class="math notranslate nohighlight">\(J_{ij}\)</span> is a collection of Hermitian operators that satisfy <span class="math notranslate nohighlight">\(J_{ij} = -J_{ji}\)</span> and the commutation relations <span class="math notranslate nohighlight">\(\eqref{eq_jjj_commutation}\)</span>. It turns out that there exists an infinite number of such unitary representations indexed by nonnegative half-integers <span class="math notranslate nohighlight">\(\jfrak = 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \cdots\)</span>, each of which has dimension <span class="math notranslate nohighlight">\(2\jfrak + 1\)</span>. Choosing the <span class="math notranslate nohighlight">\(3\)</span>-axis as the preferred axis of (definite) spin, we can summarize the result as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        D^{(\jfrak)}_{\sigma \sigma'} (\Rcal) &amp;= \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} \left( J^{(\jfrak)}_{ij} \right)_{\sigma \sigma'}  \nonumber \\
+        D^{(\jfrak)}_{\sigma \sigma'} (\Rcal) &amp;= \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} \left( J^{(\jfrak)}_{ij} \right)_{\sigma \sigma'}  \label{eq_representation_rotation_first_order} \\
         \left( J^{(\jfrak)}_{23} \pm \ifrak J^{(\jfrak)}_{31} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_1 \pm \ifrak J^{(\jfrak)}_2 \right)_{\sigma \sigma'} &amp;= \delta_{\sigma \pm 1, \sigma'} \sqrt{(\jfrak \mp \sigma)(\jfrak \pm \sigma + 1)}  \label{eq_j1_j2_matrix} \\
         \left( J^{(\jfrak)}_{12} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_3 \right)_{\sigma \sigma'} &amp;= \sigma \delta_{\sigma \sigma'}  \label{eq_j3_matrix}
 \end{align}</div><p>where <span class="math notranslate nohighlight">\(\sigma, \sigma'\)</span> run through the values <span class="math notranslate nohighlight">\(-\jfrak, -\jfrak + 1, \cdots, \jfrak - 1, \jfrak\)</span>.</p>
@@ -1049,7 +1054,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation}</div></dd>
 </dl>
 <p class="sd-card-text">To make the above rather abstract calculations more concrete, let’s consider the example of a hydrogen atom, where the single electron is subject to the (radial) Coulomb force. Without actually spelling out the Hamiltonian, let’s jump directly to the result. The result is that the energy levels can be labeled by positive integers <span class="math notranslate nohighlight">\(n = 1, 2, \cdots\)</span>. For each <span class="math notranslate nohighlight">\(n\)</span>, the orbital angular momentum <span class="math notranslate nohighlight">\(\ell\)</span> can take any value from <span class="math notranslate nohighlight">\(0, 1, \cdots, n - 1\)</span>, traditionally labeled by <span class="math notranslate nohighlight">\(s, p, d, f, g, \cdots\)</span>. Finally the electron spin is <span class="math notranslate nohighlight">\(\sfrak = 1/2\)</span>. We can then make the following table for the first few states with <span class="math notranslate nohighlight">\(n \leq 2\)</span>.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p class="sd-card-text">State</p></th>
 <th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p></th>
@@ -1118,6 +1123,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </tr>
 </tbody>
 </table>
+</div>
 <p class="sd-card-text">where a state is structured as <span class="math notranslate nohighlight">\(\{n\}\{\ell\}_{\{\jfrak\}}\)</span>. Interpreting the Clebsch-Gordan coefficients as probability amplitudes, we see for example that if one measures the <span class="math notranslate nohighlight">\(3\)</span>-components of the orbital and spin of the electron in a hydrogen atom in state <span class="math notranslate nohighlight">\(2p_{1/2}\)</span> with <span class="math notranslate nohighlight">\(\sigma = 1/2\)</span>, then one gets either <span class="math notranslate nohighlight">\((0, 1/2)\)</span> or <span class="math notranslate nohighlight">\((1, -1/2)\)</span> with probabilities <span class="math notranslate nohighlight">\(1/3\)</span> and <span class="math notranslate nohighlight">\(2/3\)</span>, respectively.</p>
 <p class="sd-card-text">We end this (long) excursion with a few interesting facts that we’ll come back to later.</p>
 <ol class="arabic simple">
@@ -1749,7 +1755,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \begin{equation}
         \orange{U(\Pcal)^2 = (-1)^F}
         \label{}
-\end{equation}</div><p class="sd-card-text">and in addition <span class="math notranslate nohighlight">\(\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}\)</span> holds, then <span class="math notranslate nohighlight">\(U(\Pcal)^2\)</span> is part of a continuous symmetry <span class="math notranslate nohighlight">\(\eqref{eq_baryon_lepton_charge_internal_symmetry}\)</span> and hence can be set to one.  A hypothetical example that breaks <span class="math notranslate nohighlight">\(\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}\)</span> is the so-called Majorana fermions that are their own anti-particles, which implies <span class="math notranslate nohighlight">\(B = L = 0\)</span>. For these particles, we have <span class="math notranslate nohighlight">\(U(\Pcal)^4 = 1\)</span>, and hence the intrinsic parity may be <span class="math notranslate nohighlight">\(\pm 1\)</span> or <span class="math notranslate nohighlight">\(\pm \ifrak\)</span>.</p>
+\end{equation}</div><p class="sd-card-text">and in addition <span class="math notranslate nohighlight">\(\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}\)</span> holds, then <span class="math notranslate nohighlight">\(U(\Pcal)^2\)</span> is part of a continuous symmetry <span class="math notranslate nohighlight">\(\eqref{eq_baryon_lepton_charge_internal_symmetry}\)</span> and hence can be set to one.  A hypothetical example that breaks <span class="math notranslate nohighlight">\(\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}\)</span> is the so-called Majorana fermions that are their own antiparticles, which implies <span class="math notranslate nohighlight">\(B = L = 0\)</span>. For these particles, we have <span class="math notranslate nohighlight">\(U(\Pcal)^4 = 1\)</span>, and hence the intrinsic parity may be <span class="math notranslate nohighlight">\(\pm 1\)</span> or <span class="math notranslate nohighlight">\(\pm \ifrak\)</span>.</p>
 </dd>
 <dt>Can parities be <span class="math notranslate nohighlight">\(-1\)</span>?</dt><dd><p class="sd-card-text">The following reaction is observed experimentally</p>
 <div class="math notranslate nohighlight">
@@ -2174,9 +2180,10 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation}</div><p>where the division by <span class="math notranslate nohighlight">\(n!\)</span> is to account for the duplicated integrals introduced by the time-ordered product. Note that this power series looks much like the Taylor series of an exponential function. Indeed, in the unlikely event where <span class="math notranslate nohighlight">\(V(t)\)</span> at different times all commute, one can remove the time-ordering and write <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_time_ordered}\)</span> as an exponential function.</p>
 <p>One great benefit of writing <span class="math notranslate nohighlight">\(S\)</span> as in the form of <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_time_ordered}\)</span> is that we can reformulate the condition of <span class="math notranslate nohighlight">\(S\)</span> being Lorentz symmetric in terms of some condition on <span class="math notranslate nohighlight">\(V\)</span>. Recall from <a class="reference internal" href="#sec-s-matrix-and-its-symmetry"><span class="std std-ref">S-matrix and its symmetry</span></a> that a sufficient condition for a Lorentz invariant S-matrix is that the S-operator commutes with <span class="math notranslate nohighlight">\(U_0(\Lambda, a)\)</span>, or equivalently in infinitesimal terms <span class="math notranslate nohighlight">\(\eqref{eq_h0_s_commute}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_k30_s_commute}\)</span> are satisfied. Now the main postulation is to express <span class="math notranslate nohighlight">\(V\)</span> using a density function as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         V(t) = \int d^3 x ~\Hscr(t, \xbf)
-\end{equation*}</div><p>such that <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> is a scalar in the sense that</p>
+        \label{eq_defn_v_by_density}
+\end{equation}</div><p>such that <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> is a scalar in the sense that</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         U_0(\Lambda, a) \Hscr(x) U^{-1}_0(\Lambda, a) = \Hscr(\Lambda x + a)
@@ -2235,7 +2242,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </section>
 </section>
 <section id="the-cluster-decomposition-principle">
-<h2>The Cluster Decomposition Principle<a class="headerlink" href="#the-cluster-decomposition-principle" title="Link to this heading">#</a></h2>
+<span id="sec-the-cluster-decomposition-principle"></span><h2>The Cluster Decomposition Principle<a class="headerlink" href="#the-cluster-decomposition-principle" title="Link to this heading">#</a></h2>
 <p>Nearly all modern texts on quantum field theory use the so-called <em>creation</em> and <em>annihilation</em> operators to describe Hamiltonians, but few explain why it is the way it is. Historically speaking, this formalism grew out of the so-called <em>canonical quantization</em> of electromagnetic fields. But of course we prefer logical reasons over historical ones, and it is the goal of this chapter to explain how this formalism leads to an S-matrix that satisfies the so-called cluster decomposition principle, or in plain words, that in effect distant experiments yield uncorrelated results. This is a quite fundamental assumption to keep because otherwise it’d be impossible to make an “isolated” experiment.</p>
 <section id="bosons-and-fermions">
 <h3>Bosons and fermions<a class="headerlink" href="#bosons-and-fermions" title="Link to this heading">#</a></h3>
@@ -2367,7 +2374,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </div>
 </section>
 <section id="the-lorentz-and-cpt-transformation-laws">
-<h4>The Lorentz and CPT transformation laws<a class="headerlink" href="#the-lorentz-and-cpt-transformation-laws" title="Link to this heading">#</a></h4>
+<span id="sec-the-lorentz-and-cpt-transformation-laws"></span><h4>The Lorentz and CPT transformation laws<a class="headerlink" href="#the-lorentz-and-cpt-transformation-laws" title="Link to this heading">#</a></h4>
 <p>Let’s first work out how <span class="math notranslate nohighlight">\(a^{\dagger}(\pbf, \sigma, n)\)</span> and <span class="math notranslate nohighlight">\(a(\pbf, \sigma, n)\)</span> transform under Lorentz transformations. To this end, we recall the general Lorentz transformation law on free-particles state <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_many_free_particles}\)</span>, and use <span class="math notranslate nohighlight">\(b\)</span> for the translational parameter to avoid conflict of notations, as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -2403,7 +2410,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_time_inversion_on_massive_general}} \zeta_n (-1)^{\jfrak - \sigma} a^{\dagger}(-\pbf, -\sigma, n) &amp;&amp;\quad\text{(massive particle)} \\
         U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_time_inversion_on_massless_general}} \zeta_{\sigma, n} \exp(\pm \ifrak \pi \sigma) a^{\dagger}(-\pbf, \sigma, n) &amp;&amp;\quad\text{(massless particle)} \\
         U(\Ccal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Ccal) &amp;\xlongequal{\phantom{(00)}} \zeta_n a^{\dagger}(\pbf, \sigma, n^c) &amp;&amp;\quad\text{(massive/massless particle)}
-\end{alignat*}</div><p>where <span class="math notranslate nohighlight">\(\Ccal\)</span> replaces a particle of species <span class="math notranslate nohighlight">\(n\)</span> with its anti-particle – a notion we haven’t really explained yet – <span class="math notranslate nohighlight">\(n^c\)</span>. The corresponding transformation laws for <span class="math notranslate nohighlight">\(a(\pbf, \sigma, n)\)</span> can be derived from the above identities by taking the adjoint, and are omitted here.</p>
+\end{alignat*}</div><p>where <span class="math notranslate nohighlight">\(\Ccal\)</span> replaces a particle of species <span class="math notranslate nohighlight">\(n\)</span> with its antiparticle – a notion we haven’t really explained yet – <span class="math notranslate nohighlight">\(n^c\)</span>. The corresponding transformation laws for <span class="math notranslate nohighlight">\(a(\pbf, \sigma, n)\)</span> can be derived from the above identities by taking the adjoint, and are omitted here.</p>
 </section>
 </section>
 <section id="cluster-decomposition-of-s-matrix">
@@ -2483,7 +2490,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 </div>
 </details></section>
 <section id="cluster-decomposable-hamiltonians">
-<h3>Cluster decomposable Hamiltonians<a class="headerlink" href="#cluster-decomposable-hamiltonians" title="Link to this heading">#</a></h3>
+<span id="sec-cluster-decomposable-hamiltonians"></span><h3>Cluster decomposable Hamiltonians<a class="headerlink" href="#cluster-decomposable-hamiltonians" title="Link to this heading">#</a></h3>
 <p>We have seen from the previous section how the cluster decomposition principle is equivalent to a “single momentum-conservation delta function” condition on the connected parts of the S-matrix. The goal of this section is to further translate this condition to one on the Hamiltonian, as a prelude to the next chapter. Writing the Hamiltonian in its most general form as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -2522,9 +2529,9 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 \end{align*}</div><p>where we’ve also suppressed the time factor from <span class="math notranslate nohighlight">\(V(t)\)</span> as it won’t really play a role in the diagram. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id27">
+<figure class="align-center" id="id28">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" /><figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2548,9 +2555,9 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
 <p>To verify that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function, we note a crucial fact that the diagram contains no <em>directed</em> loops, which allows us to start from the bottom, i.e., the total momentum of the in-state particles, and work our way up to the top, i.e., the total momentum of the out-state particles, so that there is exactly one momentum-conservation delta function at each step when a(n intermediate) vertex is added, which guarantees that the incoming total momentum equals the outgoing total momentum.</p>
 <p>As a side remark, we point out that the argument in <a class="reference internal" href="../bib.html#wei95" id="id19"><span>[Wei95]</span></a> (page 186 –187) in terms of a Euler characteristic calculation of the diagram appears to be wrong. A counterexample (to Weinberg’s argument) can be illustrated in the following pseudo Feynman diagram which contains a directed loop</p>
-<figure class="align-center" id="id28">
+<figure class="align-center" id="id29">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" /><figcaption>
-<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Evaluating the momentum-conservation delta function of the diagram then gives</p>
@@ -2559,23 +2566,207 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \delta^3(\pbf_3 - \pbf_1 - \pbf_4) \delta^3(\pbf_5 - \pbf_2 - \pbf_3) \delta^3(\pbf_6 + \pbf_4 - \pbf_5) \
                 = \delta^3(\pbf_6 - \pbf_1 - \pbf_2) \delta^3(\pbf_4 + \pbf_6 - \pbf_2 - \pbf_3)
 \end{equation*}</div><p>where the first factor demands the usual conservation of momentum between in- and out-state particles, and the second demands a conservation of momentum on the edge labeled by <span class="math notranslate nohighlight">\(\pbf_5\)</span>.</p>
-<p class="rubric">Footnotes</p>
+</section>
+</section>
+<section id="quantum-fields-and-antiparticles">
+<h2>Quantum Fields and Antiparticles<a class="headerlink" href="#quantum-fields-and-antiparticles" title="Link to this heading">#</a></h2>
+<p>In this chapter we will construct the Hamiltonians in the form of <span class="math notranslate nohighlight">\(H = H_0 + V\)</span>, where <span class="math notranslate nohighlight">\(H_0\)</span> is the Hamiltonian of free particles, and <span class="math notranslate nohighlight">\(V = \int d^3 x~\Hscr(t, \xbf)\)</span> is a (small) interaction term in the form of <span class="math notranslate nohighlight">\(\eqref{eq_defn_v_by_density}\)</span>, and the interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> is a Lorentz scalar in the sense of <span class="math notranslate nohighlight">\(\eqref{eq_h_density_is_scalar}\)</span> and satisfies the cluster decomposition principle <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>. As a byproduct of the construction, we’ll also demystify the so-called <em>antiparticles</em> which have been mentioned a number of times so far without definition.</p>
+<section id="symmetries-and-quantum-fields">
+<h3>Symmetries and quantum fields<a class="headerlink" href="#symmetries-and-quantum-fields" title="Link to this heading">#</a></h3>
+<p>Following the discussions in <a class="reference internal" href="#sec-the-cluster-decomposition-principle"><span class="std std-ref">The Cluster Decomposition Principle</span></a>, we’ll construct <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> out of creation and annihilation operators. However, as we’ve seen in <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a>, the Lorentz transformation of both <span class="math notranslate nohighlight">\(a^{\dagger}(q)\)</span> and <span class="math notranslate nohighlight">\(a(q)\)</span> involve in the coefficients a matrix element <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}(W(\Lambda, p))\)</span> that depend on the momenta of the particles, and hence are not scalars. The idea, then, is to construct <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> out of the so-called creation and annihilation fields defined as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        \psi_{\ell}^+(x) &amp;\coloneqq \sum_{\sigma, n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) a(\pbf, \sigma, n) \label{eq_defn_annihilation_field} \\
+        \psi_{\ell}^-(x) &amp;\coloneqq \sum_{\sigma, n} \int d^3 p~v_{\ell}(x;~\pbf, \sigma, n) a^{\dagger}(\pbf, \sigma, n) \label{eq_defn_creation_field}
+\end{align}</div><p>where <span class="math notranslate nohighlight">\(\ell\)</span> is reserved for labeling particles later. We see, in particular, that the creation field <span class="math notranslate nohighlight">\(\psi_{\ell}^-(x)\)</span> is a superposition of creation operators. Applying it to the vacuum state and let <span class="math notranslate nohighlight">\(x\)</span> wander around the whole spacetime then creates a (quantum) field.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Just like particles, fields may be either bosonic or fermionic, but not mixed. For example <span class="math notranslate nohighlight">\(\psi^-_{\ell}(x)\)</span> is a bosonic/fermionic if and only if all the particles created by <span class="math notranslate nohighlight">\(a^{\dagger}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_defn_creation_field}\)</span> are bosonic/fermionic, respectively.</p>
+</div>
+<section id="lorentz-symmetries">
+<h4>Lorentz symmetries<a class="headerlink" href="#lorentz-symmetries" title="Link to this heading">#</a></h4>
+<p>Now the hope is that the creation and annihilation fields transform, under (proper orthochronous) Lorentz symmetry, by a matrix that is independent of the spacetime coordinate <span class="math notranslate nohighlight">\(x\)</span>. More precisely, we’d like the following to hold</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        U_0(\Lambda, b) \psi_{\ell}^+ U_0^{-1}(\Lambda, b) &amp;= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^+ (\Lambda x + b) \label{eq_conjugate_annihilation_field} \\
+        U_0(\Lambda, b) \psi_{\ell}^- U_0^{-1}(\Lambda, b) &amp;= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^- (\Lambda x + b) \label{eq_conjugate_creation_field}
+\end{align}</div><p>Note that we’ve put <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> inside <span class="math notranslate nohighlight">\(D_{\ell \ell'}\)</span> so that <span class="math notranslate nohighlight">\(D\)</span> furnishes a representation of the homogeneous Lorentz transformations in the sense that <span class="math notranslate nohighlight">\(D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)\)</span>. There is a priori no reason to use the same representation <span class="math notranslate nohighlight">\(D\)</span> for both <span class="math notranslate nohighlight">\(\psi^{\pm}_{\ell}\)</span>, but this turns out to be possible just by calculation. Moreover, the representation <span class="math notranslate nohighlight">\(D\)</span> is not assumed to be irreducible. Indeed, as we’ll see later, it generally decomposes into blocks fixed by further labels.</p>
+<p>Then we can try to construct <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> by a formula similar to <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Hscr(x) = \sum_{N,M=0}^{\infty} \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} \psi_{\ell'_1}^-(x) \cdots \psi_{\ell'_N}^-(x) \psi_{\ell_1}^+(x) \cdots \psi_{\ell_M}^+(x)
+        \label{eq_construct_interaction_density_by_fields}
+\end{equation}</div><p>It follows from <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_creation_field}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_annihilation_field}\)</span> that the interaction density defined by <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span> is a scalar if the following holds</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        g_{\bar{\ell}'_1, \cdots, \bar{\ell}'_N;~\bar{\ell}_1, \cdots, \bar{\ell}_M} = \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} D_{\ell'_1 \bar{\ell}'_1}(\Lambda^{-1}) \cdots D_{\ell'_N \bar{\ell}'_N}(\Lambda^{-1}) D_{\ell_1 \bar{\ell}_1}(\Lambda^{-1}) \cdots D_{\ell_M \bar{\ell}_M}(\Lambda^{-1}) g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M}
+\end{equation*}</div><p>The solution to the last problem relies on a classification of the representations of the Lorentz group, which has been discussed (in terms of the little group representations) in <a class="reference internal" href="#sec-one-particle-states"><span class="std std-ref">One-Particle States</span></a>, and shall be dealt with at a later point. The main goal of this section is to pin down the conditions <span class="math notranslate nohighlight">\(u_{\ell}\)</span> and <span class="math notranslate nohighlight">\(v_{\ell}\)</span> must satisfy so that they can be explicitly solved in the following sections.</p>
+<p>For this section, we’ll focus on the massive case. Recall the Lorentz transformation laws for the creation and annihilation of massive particles <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_creation_operator}, \eqref{eq_lorentz_transformation_formula_for_annihilation_operator}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &amp;= \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_annihilation_operator_revisited} \\
+        U_0(\Lambda, b) a^{\dagger}(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &amp;= \exp(-\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n) \ast}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_creation_operator_revisited}
+\end{align}</div><p>where we’ve used the fact that <span class="math notranslate nohighlight">\(D\)</span> is unitary in the sense that <span class="math notranslate nohighlight">\(D^{\dagger} = D^{-1}\)</span> to invert <span class="math notranslate nohighlight">\(W(\Lambda, p)\)</span> (and flip the indexes) for later convenience – mostly because of the use of <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_annihilation_field}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_creation_field}\)</span>.</p>
+<p>Applying <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_annihilation_operator_revisited}\)</span> to <span class="math notranslate nohighlight">\(\eqref{eq_defn_annihilation_field}\)</span>, respectively, we get</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        U_0(\Lambda, b) \psi_{\ell}^+(x) U_0^{-1}(\Lambda, b) &amp;= \sum_{\sigma, n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) \\
+                &amp;= \sum_{\sigma, \sigma', n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma' \sigma} (W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+                &amp;= \sum_{\sigma, \sigma', n} \int d^3 (\Lambda p)~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+                &amp;= \sum_{\sigma', n} \int d^3 (\Lambda p) \blue{\sum_{\sigma} u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p))} a(\pbf_{\Lambda}, \sigma', n)
+\end{align*}</div><p>where in the last equality we’ve used that the fact <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariant_3_momentum_volume_element}\)</span> that <span class="math notranslate nohighlight">\(d^3 p / p_0\)</span> is Lorentz invariant. Comparing this with the right-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_annihilation_field}\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi^+_{\ell'}(\Lambda x + b) &amp;= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \sum_{\sigma, n} \int d^3 p~u_{\ell'}(\Lambda x + b;~\pbf, \sigma, n) a(\pbf, \sigma, n) \\
+                &amp;= \sum_{\sigma', n} \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \int d^3 (\Lambda p)~u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) a(\pbf_{\Lambda}, \sigma', n) \\
+                &amp;= \sum_{\sigma', n} \int d^3 (\Lambda p)~\blue{\sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n)} a(\pbf_{\Lambda}, \sigma', n)
+\end{align*}</div><p>Equating the blue parts the two calculations, and inverting <span class="math notranslate nohighlight">\(D^{(j_n)}_{\sigma' \sigma} (W^{-1}(\Lambda, p))\)</span> and <span class="math notranslate nohighlight">\(D_{\ell \ell'}(\Lambda^{-1})\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(x;~\pbf, \sigma, n) \
+                = \sum_{\sigma'} u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D_{\sigma \sigma'}^{(j_n)} (W(\Lambda, p))
+        \label{eq_annihilation_u_transformation}
+\end{equation}</div><p>A parallel calculation for the <span class="math notranslate nohighlight">\(v_{\ell}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_creation_field}\)</span>, which we’ll omit, gives the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(-\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(x;~\pbf, \sigma, n) \
+                = \sum_{\sigma'} v_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma \sigma'}(W(\Lambda, p))
+        \label{eq_creation_v_transformation}
+\end{equation}</div><p>The identities <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation}\)</span> pose the fundamental conditions on <span class="math notranslate nohighlight">\(u_{\ell}\)</span> and <span class="math notranslate nohighlight">\(v_{\ell}\)</span>, respectively, which we’ll utilize to eventually solve for their solutions. Currently both <span class="math notranslate nohighlight">\(u_{\ell}\)</span> and <span class="math notranslate nohighlight">\(v_{\ell}\)</span> depend on <span class="math notranslate nohighlight">\(x, \pbf, \sigma\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, and the goal is to use the Lorentz symmetry to reduce the dependencies. This will be carried out in three steps, corresponding to the three types of Lorentz symmetries: translations, boosts, and rotations, as follows.</p>
+<dl>
+<dt>Translations</dt><dd><p>Taking <span class="math notranslate nohighlight">\(\Lambda = 1\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation}\)</span> gives <span class="math notranslate nohighlight">\(\exp(\ifrak b \cdot p) u_{\ell}(x;~\pbf, \sigma, n) = u_{\ell}(x + b;~\pbf, \sigma, n)\)</span>, which then implies</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        u_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} \exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma, n)
+        \label{eq_redefine_u_after_translation}
+\end{equation}</div><p>and similarly</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        v_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} \exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma, n)
+        \label{eq_redefine_v_after_translation}
+\end{equation}</div><p>where we’ve slightly abused notations by keeping the names of <span class="math notranslate nohighlight">\(u_{\ell}\)</span> and <span class="math notranslate nohighlight">\(v_{\ell}\)</span>, while changing their arguments. Here the seemingly redundant <span class="math notranslate nohighlight">\((2\pi)^{-3/2}\)</span> is inserted so that the fields</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        \psi^+_{\ell}(x) &amp;= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~\exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma, n) a(\pbf, \sigma, n) \label{eq_annihilation_field_simplified_by_translation} \\
+        \psi^-_{\ell}(x) &amp;= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~\exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma, n) a^{\dagger}(\pbf, \sigma, n) \label{eq_creation_field_simplified_by_translation}
+\end{align}</div><p>look like the usual Fourier transforms.</p>
+<p>Plugging <span class="math notranslate nohighlight">\(\eqref{eq_redefine_u_after_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_redefine_v_after_translation}\)</span> into <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation}\)</span>, respectively, they can be simplified as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        \sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(\pbf, \sigma, n) &amp;= \sum_{\sigma'} u_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n)}_{\sigma \sigma'}(W(\Lambda, p)) \label{eq_annihilation_u_transformation_simplified_by_translation} \\
+        \sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(\pbf, \sigma, n) &amp;= \sum_{\sigma'} v_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma \sigma'}(W(\Lambda, p)) \label{eq_creation_v_transformation_simplified_by_translation}
+\end{align}</div><p>for any homogeneous Lorentz transformation <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
+</dd>
+<dt>Boosts</dt><dd><p>Taking <span class="math notranslate nohighlight">\(\pbf = 0\)</span> and <span class="math notranslate nohighlight">\(\Lambda = L(q)\)</span> which takes a particle at rest to one with (arbitrary) momentum <span class="math notranslate nohighlight">\(q\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_translation}\)</span>, we see that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        W(\Lambda, p) \xlongequal{\eqref{eq_w_from_l}} L(\Lambda p)^{-1} \Lambda L(p) = L(q)^{-1} L(q) = 1
+\end{equation*}</div><p>In this case <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation_simplified_by_translation}\)</span> take the following form (with <span class="math notranslate nohighlight">\(\qbf\)</span> substituted by <span class="math notranslate nohighlight">\(\pbf\)</span>)</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \sqrt{\frac{m}{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) u_{\ell}(0, \sigma, n) &amp;= u_{\ell'}(\pbf, \sigma, n) \\
+        \sqrt{\frac{m}{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) v_{\ell}(0, \sigma, n) &amp;= v_{\ell'}(\pbf, \sigma, n)
+\end{align*}</div><p>It follows that one can calculate <span class="math notranslate nohighlight">\(u_{\ell}(\pbf, \sigma, n)\)</span> for any <span class="math notranslate nohighlight">\(\pbf\)</span> from the special case of <span class="math notranslate nohighlight">\(\pbf = 0\)</span> given a representation <span class="math notranslate nohighlight">\(D\)</span>.</p>
+</dd>
+<dt>Rotations</dt><dd><p>Taking <span class="math notranslate nohighlight">\(\pbf = 0\)</span> and <span class="math notranslate nohighlight">\(\Lambda = \Rcal\)</span> a <span class="math notranslate nohighlight">\(3\)</span>-rotation, and recalling from <span class="math notranslate nohighlight">\(\eqref{eq_little_group_rotation}\)</span> that <span class="math notranslate nohighlight">\(W(\Lambda, p) = \Rcal\)</span>, we get special cases of <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation_simplified_by_translation}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \sum_{\ell} D_{\ell' \ell}(\Rcal) u_{\ell}(0, \sigma, n) &amp;= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) D_{\sigma \sigma'}^{(j_n)}(\Rcal) \\
+        \sum_{\ell} D_{\ell' \ell}(\Rcal) v_{\ell}(0, \sigma, n) &amp;= \sum_{\sigma'} v_{\ell'}(0, \sigma', n) D_{\sigma \sigma'}^{(j_n) \ast}(\Rcal)
+\end{align*}</div><p>Using <span class="math notranslate nohighlight">\(\eqref{eq_representation_rotation_first_order}\)</span> we can further reduce it to the first order as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \sum_{\ell} \hat{\Jbf}_{\ell' \ell} u_{\ell}(0, \sigma, n) &amp;= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \\
+        \sum_{\ell} \hat{\Jbf}_{\ell' \ell} v_{\ell}(0, \sigma, n) &amp;= -\sum_{\sigma'} v_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'}
+\end{align*}</div><p>where <span class="math notranslate nohighlight">\(\hat{\Jbf}\)</span> denotes the angular momentum vector for the representation <span class="math notranslate nohighlight">\(D_{\ell' \ell}(\Rcal)\)</span>, in analogy with the usual angular momentum <span class="math notranslate nohighlight">\(\Jbf^{(j)}\)</span> for <span class="math notranslate nohighlight">\(D^{(j)}(\Rcal)\)</span>.</p>
+</dd>
+</dl>
+</section>
+<section id="id20">
+<h4>The cluster decomposition principle<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<p>Let’s verify that the fields defined by <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_field_simplified_by_translation}\)</span>, when plugged into <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span>, indeed satisfy the cluster decomposition principle as discussed in <a class="reference internal" href="#sec-the-cluster-decomposition-principle"><span class="std std-ref">The Cluster Decomposition Principle</span></a>. It’s really just a straightforward but tedious calculation which we spell out as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        V(t) &amp;= \int d^3 x~\Hscr(x) \\
+                &amp;= \sum_{N,M=0}^{\infty} \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} \int d^3 x~\psi^-_{\ell'_1}(x) \cdots \psi^-_{\ell'_N}(x) \psi^+_{\ell_1}(x) \cdots \psi^+_{\ell_M}(x) \\
+                &amp;= \sum_{N,M=0}^{\infty} \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} \sum_{\sigma'_1, \cdots, \sigma'_N} \sum_{n'_1, \cdots, n'_N} \sum_{\sigma_1, \cdots, \sigma_M} \sum_{n_1, \cdots, n_M} (2\pi)^{-3N/2-3M/2} \\
+                &amp;\phantom{=} \times \int d^3 p'_1 \cdots d^3 p'_N d^3 p_1 \cdots d^3 p_M~\exp(\ifrak (E_1 + \cdots E_M - E'_1 - \cdots - E'_N)t) \\
+                &amp;\phantom{=} \times \blue{\int d^3 x~\exp(\ifrak (\pbf_1 + \cdots \pbf_M - \pbf'_1 - \cdots - \pbf'_N) \cdot \xbf)} \\
+                &amp;\phantom{=} \times v_{\ell'_1}(\pbf'_1, \sigma'_1, n'_1) \cdots v_{\ell'_N}(\pbf'_N, \sigma'_N, n'_N) u_{\ell_1}(\pbf_1, \sigma_1, n_1) \cdots u_{\ell_M}(\pbf_M, \sigma_M, n_M) \\
+                &amp;\phantom{=} \times a^{\dagger}(\pbf'_1, \sigma'_1, n'_1) \cdots a^{\dagger}(\pbf'_N, \sigma'_N, n'_N) a(\pbf_1, \sigma_1, n_1) \cdots a(\pbf_M, \sigma_M, n_M) \\
+                &amp;= \sum_{N,M=0}^{\infty} \sum_{\sigma'_1, \cdots, \sigma'_N} \sum_{n'_1, \cdots, n'_N} \sum_{\sigma_1, \cdots, \sigma_M} \sum_{n_1, \cdots, n_M} \int d^3 p'_1 \cdots d^3 p'_N d^3 p_1 \cdots d^3 p_M \\
+                &amp;\phantom{=} \times (2\pi)^{3 - 3N/2 - 3M/2} \exp(\ifrak (E_1 + \cdots E_M - E'_1 - \cdots - E'_N)t) \\
+                &amp;\phantom{=} \times a^{\dagger}(\pbf'_1, \sigma'_1, n'_1) \cdots a^{\dagger}(\pbf'_N, \sigma'_N, n'_N) a(\pbf_1, \sigma_1, n_1) \cdots a(\pbf_M, \sigma_M, n_M) \blue{\delta^3(\pbf_1 + \cdots + \pbf_M - \pbf'_1 - \cdots - \pbf'_N)} \\
+                &amp;\phantom{=} \times \left( \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} v_{\ell'_1}(\pbf'_1, \sigma'_1, n'_1) \cdots v_{\ell'_N}(\pbf'_N, \sigma'_N, n'_N) u_{\ell_1}(\pbf_1, \sigma_1, n_1) \cdots u_{\ell_M}(\pbf_M, \sigma_M, n_M) \right)
+\end{align*}</div><p>Besides re-ordering the terms, the only actual calculation is highlighted in the two blue terms, where the second one is the integral of the first. One can compare this calculation with <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span> and see that the cluster decomposition principle is indeed satisfied because there is a unique momentum conservation delta function in each coefficient, as long as <span class="math notranslate nohighlight">\(g, u, v\)</span> are reasonably smooth, i.e., it’s fine to have poles and/or branching singularities but no delta functions.</p>
+</section>
+<section id="causality-and-antiparticles">
+<h4>Causality and antiparticles<a class="headerlink" href="#causality-and-antiparticles" title="Link to this heading">#</a></h4>
+<p>We now turn to the other crucial condition on the Hamiltonian, namely, the space separation commutativity <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>. Given the general formula <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span> of the interaction density, we are forced to require that <span class="math notranslate nohighlight">\([\psi^+_{\ell}(x), \psi^-_{\ell'}(y)] = 0\)</span> whenever <span class="math notranslate nohighlight">\(x - y\)</span> is space-like. However, according to <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_field_simplified_by_translation}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        [\psi^+_{\ell}(x), \psi^-_{\ell'}(y)]_{\pm} &amp;= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p d^3 p'~\exp(\ifrak (p \cdot x - p' \cdot y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf', \sigma, n) [a(\pbf, \sigma, n), a^{\dagger}(\pbf', \sigma, n)]_{\pm} \\
+                &amp;= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~\exp(\ifrak p \cdot (x - y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf, \sigma, n)
+\end{align*}</div><p>where the sign <span class="math notranslate nohighlight">\(\pm\)</span> is positive if both fields are fermionic, and negative otherwise. This quantity is not vanishing even if <span class="math notranslate nohighlight">\(x - y\)</span> is space-like.</p>
+<p>Therefore in order to construct <span class="math notranslate nohighlight">\(\Hscr\)</span> in the form of <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span> that satisfies <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>, we must not just use <span class="math notranslate nohighlight">\(\psi^{\pm}(x)\)</span> as the building blocks. It turns out that one may consider a linear combination of the two as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \psi_{\ell}(x) \coloneqq \alpha_{\ell} \psi^+_{\ell}(x) + \beta_{\ell} \psi^-_{\ell}(x)
+        \label{eq_defn_psi_field}
+\end{equation}</div><p>as well as its adjoint <span class="math notranslate nohighlight">\(\psi^{\dagger}_{\ell}(x)\)</span>, and hope that they satisfy</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        [\psi_{\ell}(x), \psi_{\ell}(y)]_{\pm} = [\psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y)]_{\pm} = 0
+        \label{eq_space_like_commutativity_for_combined_field}
+\end{equation}</div><p>whenever <span class="math notranslate nohighlight">\(x-y\)</span> is space-like, and replace <span class="math notranslate nohighlight">\(\psi^{\pm}_{\ell}(x)\)</span> with <span class="math notranslate nohighlight">\(\psi_{\ell}(x), \psi^{\dagger}_{\ell}(x)\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span>. Under these assumptions, we can then construct the interaction density <span class="math notranslate nohighlight">\(\Hscr\)</span> as a polynomial in <span class="math notranslate nohighlight">\(\psi_{\ell}(x), \psi_{\ell}^{\dagger}(x)\)</span> with an even number of fermionic fields (so that the sign in <span class="math notranslate nohighlight">\(\eqref{eq_space_like_commutativity_for_combined_field}\)</span> is negative).</p>
+<p>There remains, however, one issue with field like <span class="math notranslate nohighlight">\(\eqref{eq_space_like_commutativity_for_combined_field}\)</span> that mixes creation and annihilation fields. Namely, special conditions must hold in order for such fields to play well with conserved quantum numbers. To be more specific, let <span class="math notranslate nohighlight">\(Q\)</span> be a conserved quantum number, e.g., the electric charge. Then the following hold</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        [Q, a(\pbf, \sigma, n)] &amp;= -q(n) a(\pbf, \sigma, n) \label{eq_charge_of_creation_operator} \\
+        [Q, a^{\dagger}(\pbf, \sigma, n)] &amp;= q(n) a^{\dagger}(\pbf, \sigma, n) \label{eq_charge_of_annihilation_operator}
+\end{align}</div><p>where <span class="math notranslate nohighlight">\(q(n)\)</span> denotes the quantum number of the particle species <span class="math notranslate nohighlight">\(n\)</span>. These identities can be verified by applying both sides to <span class="math notranslate nohighlight">\(\Psi_{\pbf, \sigma, n}\)</span> and <span class="math notranslate nohighlight">\(\Psi_{\VAC}\)</span>, respectively.</p>
+<p>Now in order for <span class="math notranslate nohighlight">\(Q\)</span> to commute with <span class="math notranslate nohighlight">\(\Hscr\)</span>, which is constructed as a polynomial of <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> and <span class="math notranslate nohighlight">\(\psi_{\ell}^{\dagger}(x)\)</span>, we better have</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        [Q, \psi_{\ell}(x)] = -q_{\ell} \psi_{\ell}(x)
+        \label{eq_charge_of_psi_field}
+\end{equation}</div><p>so that each monomial (with coefficient neglected) <span class="math notranslate nohighlight">\(\psi^{\dagger}_{\ell'_1}(x) \cdots \psi^{\dagger}_{\ell'_M}(x) \psi_{\ell_1}(x) \cdots \psi_{\ell_N}(x)\)</span> in <span class="math notranslate nohighlight">\(\Hscr\)</span> will commute with <span class="math notranslate nohighlight">\(Q\)</span> if</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        q_{\ell_1} + \cdots + q_{\ell_N} = q_{\ell'_1} + \cdots + q_{\ell'_M}
+\end{equation*}</div><p>Note that the negative sign in <span class="math notranslate nohighlight">\(\eqref{eq_charge_of_psi_field}\)</span> is a formal analogy to <span class="math notranslate nohighlight">\(\eqref{eq_charge_of_creation_operator}\)</span>, where we think of <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> as an annihilation field even though it’s really not. Since <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> is a linear combination of <span class="math notranslate nohighlight">\(\psi^+_{\ell}(x)\)</span> and <span class="math notranslate nohighlight">\(\psi^-_{\ell}(x)\)</span>, which in turn are superpositions of annihilation and creation operators, respectively, it follows from <span class="math notranslate nohighlight">\(\eqref{eq_charge_of_creation_operator}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_charge_of_annihilation_operator}\)</span> that in order for <span class="math notranslate nohighlight">\(\eqref{eq_charge_of_psi_field}\)</span> to hold, the following conditions must be satisfied</p>
+<ol class="arabic simple">
+<li><p>all particles annihilated by <span class="math notranslate nohighlight">\(\psi^+_{\ell}(x)\)</span> must have the same charge <span class="math notranslate nohighlight">\(q(n) = q_{\ell}\)</span>,</p></li>
+<li><p>all particles created by <span class="math notranslate nohighlight">\(\psi^-_{\ell}(x)\)</span> must have the same charge <span class="math notranslate nohighlight">\(q(n) = -q_{\ell}\)</span>, and</p></li>
+<li><p>for any particle of species <span class="math notranslate nohighlight">\(n\)</span>, which is annihilated by <span class="math notranslate nohighlight">\(\psi^+_{\ell}(x)\)</span>, there exists a particle of species <span class="math notranslate nohighlight">\(\bar{n}\)</span>, which is created by <span class="math notranslate nohighlight">\(\psi^-_{\ell}(x)\)</span>, such that <span class="math notranslate nohighlight">\(q(n) = -q(\bar{n})\)</span>.</p></li>
+</ol>
+<p>The particles of species <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(\bar{n}\)</span> are called <em>antiparticles</em> of each other. It is the last condition that demands the existence of antiparticles so that one can formulate a consistent (relativistic) QFT.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">The Klein-Gordon equation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">It follows from the definition <span class="math notranslate nohighlight">\(\eqref{eq_defn_psi_field}\)</span>, together with <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_field_simplified_by_translation}\)</span>, that the field <span class="math notranslate nohighlight">\(\psi_{\ell}\)</span> satisfies the following so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Klein%E2%80%93Gordon_equation">Klein-Gordon equation</a></p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        (\square - m^2) \psi_{\ell}(x) = 0
+\end{equation*}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(\square \coloneqq \eta^{\mu \nu} \p_{\mu} \p_{\nu}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/D%27Alembert_operator">d’Alembert operator</a> and <span class="math notranslate nohighlight">\(m\)</span> is the (definite) mass of the field. This equation is traditionally one of the starting points of QFT, from which creation/annihilation operators can be derived through the so-called canonical quantization mechanism. However, we’ve derived the equation here from the other way around, namely, the creation/annihilation operators, which in turn come from the first principles of quantum mechanics and Lorentz symmetry.</p>
+</div>
+</details><p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id20"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id21"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="boost-in-p-formula" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
-<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id21"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
+<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id22"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">3</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id22"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id23"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id23"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id24"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id24"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id25"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id25"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id26"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
@@ -2583,9 +2774,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">6</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id26"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id27"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 </section>
@@ -2670,6 +2862,15 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-decomposable-hamiltonians">Cluster decomposable Hamiltonians</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-fields-and-antiparticles">Quantum Fields and Antiparticles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetries-and-quantum-fields">Symmetries and quantum fields</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-symmetries">Lorentz symmetries</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">The cluster decomposition principle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#causality-and-antiparticles">Causality and antiparticles</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -2711,8 +2912,8 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -2745,7 +2946,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.3.
 </p></div>
       
     </div>

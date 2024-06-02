@@ -620,6 +620,8 @@ where :math:`\epsilon_{ijk}` is totally anti-symmetric with respect to permutati
 
 Since the time evolution of a physical system is dictated by the Hamiltonian :math:`H`, quantities (i.e., observables) that commute with :math:`H` are conserved. In particular :math:`\eqref{eq_hp_commute}` and :math:`\eqref{eq_hj_commute}` imply that both momentum and angular momentum are conserved. Boosts, on the other hand, are *not* conserved, and therefore cannot be used to label (stable) physical states. Moreover :math:`\eqref{eq_pp_commute}` implies that translations commute with each other (as expected), which is *not* the case for the angular momenta according to :math:`\eqref{eq_jjj_commutation}`. Indeed, they furnish an infinitesimal representation of the :math:`3`-rotation group :math:`SO(3)`.
 
+.. _sec_one_particle_states:
+
 One-Particle States
 -------------------
 
@@ -845,7 +847,7 @@ where :math:`J_{ij}` is a collection of Hermitian operators that satisfy :math:`
 	:nowrap:
 
 	\begin{align}
-		D^{(\jfrak)}_{\sigma \sigma'} (\Rcal) &= \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} \left( J^{(\jfrak)}_{ij} \right)_{\sigma \sigma'}  \nonumber \\
+		D^{(\jfrak)}_{\sigma \sigma'} (\Rcal) &= \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} \left( J^{(\jfrak)}_{ij} \right)_{\sigma \sigma'}  \label{eq_representation_rotation_first_order} \\
 		\left( J^{(\jfrak)}_{23} \pm \ifrak J^{(\jfrak)}_{31} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_1 \pm \ifrak J^{(\jfrak)}_2 \right)_{\sigma \sigma'} &= \delta_{\sigma \pm 1, \sigma'} \sqrt{(\jfrak \mp \sigma)(\jfrak \pm \sigma + 1)}  \label{eq_j1_j2_matrix} \\
 		\left( J^{(\jfrak)}_{12} \right)_{\sigma \sigma'} = \left( J^{(\jfrak)}_3 \right)_{\sigma \sigma'} &= \sigma \delta_{\sigma \sigma'}  \label{eq_j3_matrix}
 	\end{align}
@@ -2304,7 +2306,7 @@ which looks just like an internal symmetry. Now if :math:`U(\Pcal)^2` belongs to
 				\label{}
 			\end{equation}
 
-		and in addition :math:`\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}` holds, then :math:`U(\Pcal)^2` is part of a continuous symmetry :math:`\eqref{eq_baryon_lepton_charge_internal_symmetry}` and hence can be set to one.  A hypothetical example that breaks :math:`\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}` is the so-called Majorana fermions that are their own anti-particles, which implies :math:`B = L = 0`. For these particles, we have :math:`U(\Pcal)^4 = 1`, and hence the intrinsic parity may be :math:`\pm 1` or :math:`\pm \ifrak`.
+		and in addition :math:`\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}` holds, then :math:`U(\Pcal)^2` is part of a continuous symmetry :math:`\eqref{eq_baryon_lepton_charge_internal_symmetry}` and hence can be set to one.  A hypothetical example that breaks :math:`\eqref{eq_fermion_count_eq_baryon_and_lepton_mod_2}` is the so-called Majorana fermions that are their own antiparticles, which implies :math:`B = L = 0`. For these particles, we have :math:`U(\Pcal)^4 = 1`, and hence the intrinsic parity may be :math:`\pm 1` or :math:`\pm \ifrak`.
 
 	Can parities be :math:`-1`?
 		The following reaction is observed experimentally
@@ -3105,9 +3107,10 @@ One great benefit of writing :math:`S` as in the form of :math:`\eqref{eq_s_matr
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		V(t) = \int d^3 x ~\Hscr(t, \xbf)
-	\end{equation*}
+		\label{eq_defn_v_by_density}
+	\end{equation}
 
 such that :math:`\Hscr(x)` is a scalar in the sense that
 
@@ -3210,6 +3213,8 @@ At last we've finally climbed the highest peak in scattering theory, namely :mat
 
 	-- S. Weinberg
 
+
+.. _sec_the_cluster_decomposition_principle:
 
 The Cluster Decomposition Principle
 -----------------------------------
@@ -3431,6 +3436,8 @@ where the factorials :math:`L!` and :math:`K!` are included to account for the t
 .. note::
 	In :math:`\eqref{eq_general_operator_expansion_in_creation_and_annihilation}` we've chosen a specific ordering of the creation and annihilation operators, known as the *normal* order. Namely, all the creation operators lie to the left of all the annihilation operators. It has at least one advantage of making :math:`\eqref{eq_defn_c00}` obvious. Finally we note that any ordering of a composition of creation and annihilation operators can be normally ordered by applying :math:`\eqref{eq_creation_annihilation_commutator}`.
 
+.. _sec_the_lorentz_and_cpt_transformation_laws:
+
 The Lorentz and CPT transformation laws
 +++++++++++++++++++++++++++++++++++++++
 
@@ -3499,7 +3506,7 @@ The parity, time, and charge symmetry on the creation and annihilation operators
 		U(\Ccal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Ccal) &\xlongequal{\phantom{(00)}} \zeta_n a^{\dagger}(\pbf, \sigma, n^c) &&\quad\text{(massive/massless particle)}
 	\end{alignat*}
 
-where :math:`\Ccal` replaces a particle of species :math:`n` with its anti-particle -- a notion we haven't really explained yet -- :math:`n^c`. The corresponding transformation laws for :math:`a(\pbf, \sigma, n)` can be derived from the above identities by taking the adjoint, and are omitted here.
+where :math:`\Ccal` replaces a particle of species :math:`n` with its antiparticle -- a notion we haven't really explained yet -- :math:`n^c`. The corresponding transformation laws for :math:`a(\pbf, \sigma, n)` can be derived from the above identities by taking the adjoint, and are omitted here.
 
 Cluster decomposition of S-matrix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3638,6 +3645,7 @@ at least under the :ref:`assumption on particle stability <assump_on_particle_st
 
 	But since the two-body amplitude :math:`S^C_{q'_1 q'_2,~q_1 q_2}` itself also contains a momentum-conservation delta function, the first summand of :math:`S^C_{q'_1 q'_2 q'_3,~q_1 q_2 q_3}` would contain a product of two delta functions, in violation against the cluster decomposition principle.
 
+.. _sec_cluster_decomposable_hamiltonians:
 
 Cluster decomposable Hamiltonians
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3764,6 +3772,331 @@ Evaluating the momentum-conservation delta function of the diagram then gives
 where the first factor demands the usual conservation of momentum between in- and out-state particles, and the second demands a conservation of momentum on the edge labeled by :math:`\pbf_5`.
 
 
+Quantum Fields and Antiparticles
+--------------------------------
+
+In this chapter we will construct the Hamiltonians in the form of :math:`H = H_0 + V`, where :math:`H_0` is the Hamiltonian of free particles, and :math:`V = \int d^3 x~\Hscr(t, \xbf)` is a (small) interaction term in the form of :math:`\eqref{eq_defn_v_by_density}`, and the interaction density :math:`\Hscr(x)` is a Lorentz scalar in the sense of :math:`\eqref{eq_h_density_is_scalar}` and satisfies the cluster decomposition principle :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. As a byproduct of the construction, we'll also demystify the so-called *antiparticles* which have been mentioned a number of times so far without definition.
+
+
+Symmetries and quantum fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Following the discussions in :ref:`sec_the_cluster_decomposition_principle`, we'll construct :math:`\Hscr(x)` out of creation and annihilation operators. However, as we've seen in :ref:`sec_the_lorentz_and_cpt_transformation_laws`, the Lorentz transformation of both :math:`a^{\dagger}(q)` and :math:`a(q)` involve in the coefficients a matrix element :math:`D_{\sigma \sigma'}(W(\Lambda, p))` that depend on the momenta of the particles, and hence are not scalars. The idea, then, is to construct :math:`\Hscr(x)` out of the so-called creation and annihilation fields defined as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\psi_{\ell}^+(x) &\coloneqq \sum_{\sigma, n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) a(\pbf, \sigma, n) \label{eq_defn_annihilation_field} \\
+		\psi_{\ell}^-(x) &\coloneqq \sum_{\sigma, n} \int d^3 p~v_{\ell}(x;~\pbf, \sigma, n) a^{\dagger}(\pbf, \sigma, n) \label{eq_defn_creation_field}
+	\end{align}
+
+where :math:`\ell` is reserved for labeling particles later. We see, in particular, that the creation field :math:`\psi_{\ell}^-(x)` is a superposition of creation operators. Applying it to the vacuum state and let :math:`x` wander around the whole spacetime then creates a (quantum) field.
+
+.. note::
+	Just like particles, fields may be either bosonic or fermionic, but not mixed. For example :math:`\psi^-_{\ell}(x)` is a bosonic/fermionic if and only if all the particles created by :math:`a^{\dagger}` in :math:`\eqref{eq_defn_creation_field}` are bosonic/fermionic, respectively.
+
+Lorentz symmetries
+++++++++++++++++++
+
+Now the hope is that the creation and annihilation fields transform, under (proper orthochronous) Lorentz symmetry, by a matrix that is independent of the spacetime coordinate :math:`x`. More precisely, we'd like the following to hold
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U_0(\Lambda, b) \psi_{\ell}^+ U_0^{-1}(\Lambda, b) &= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^+ (\Lambda x + b) \label{eq_conjugate_annihilation_field} \\
+		U_0(\Lambda, b) \psi_{\ell}^- U_0^{-1}(\Lambda, b) &= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^- (\Lambda x + b) \label{eq_conjugate_creation_field}
+	\end{align}
+
+Note that we've put :math:`\Lambda^{-1}` inside :math:`D_{\ell \ell'}` so that :math:`D` furnishes a representation of the homogeneous Lorentz transformations in the sense that :math:`D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)`. There is a priori no reason to use the same representation :math:`D` for both :math:`\psi^{\pm}_{\ell}`, but this turns out to be possible just by calculation. Moreover, the representation :math:`D` is not assumed to be irreducible. Indeed, as we'll see later, it generally decomposes into blocks fixed by further labels.
+
+Then we can try to construct :math:`\Hscr(x)` by a formula similar to :math:`\eqref{eq_general_expansion_of_hamiltonian}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Hscr(x) = \sum_{N,M=0}^{\infty} \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} \psi_{\ell'_1}^-(x) \cdots \psi_{\ell'_N}^-(x) \psi_{\ell_1}^+(x) \cdots \psi_{\ell_M}^+(x)
+		\label{eq_construct_interaction_density_by_fields}
+	\end{equation}
+
+It follows from :math:`\eqref{eq_conjugate_creation_field}` and :math:`\eqref{eq_conjugate_annihilation_field}` that the interaction density defined by :math:`\eqref{eq_construct_interaction_density_by_fields}` is a scalar if the following holds
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		g_{\bar{\ell}'_1, \cdots, \bar{\ell}'_N;~\bar{\ell}_1, \cdots, \bar{\ell}_M} = \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} D_{\ell'_1 \bar{\ell}'_1}(\Lambda^{-1}) \cdots D_{\ell'_N \bar{\ell}'_N}(\Lambda^{-1}) D_{\ell_1 \bar{\ell}_1}(\Lambda^{-1}) \cdots D_{\ell_M \bar{\ell}_M}(\Lambda^{-1}) g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M}
+	\end{equation*}
+
+The solution to the last problem relies on a classification of the representations of the Lorentz group, which has been discussed (in terms of the little group representations) in :ref:`sec_one_particle_states`, and shall be dealt with at a later point. The main goal of this section is to pin down the conditions :math:`u_{\ell}` and :math:`v_{\ell}` must satisfy so that they can be explicitly solved in the following sections.
+
+For this section, we'll focus on the massive case. Recall the Lorentz transformation laws for the creation and annihilation of massive particles :math:`\eqref{eq_lorentz_transformation_formula_for_creation_operator}, \eqref{eq_lorentz_transformation_formula_for_annihilation_operator}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &= \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_annihilation_operator_revisited} \\
+		U_0(\Lambda, b) a^{\dagger}(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &= \exp(-\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n) \ast}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_creation_operator_revisited}
+	\end{align}
+
+where we've used the fact that :math:`D` is unitary in the sense that :math:`D^{\dagger} = D^{-1}` to invert :math:`W(\Lambda, p)` (and flip the indexes) for later convenience -- mostly because of the use of :math:`\Lambda^{-1}` in :math:`\eqref{eq_conjugate_annihilation_field}` and :math:`\eqref{eq_conjugate_creation_field}`.
+
+Applying :math:`\eqref{eq_lorentz_transformation_formula_for_annihilation_operator_revisited}` to :math:`\eqref{eq_defn_annihilation_field}`, respectively, we get
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U_0(\Lambda, b) \psi_{\ell}^+(x) U_0^{-1}(\Lambda, b) &= \sum_{\sigma, n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) \\
+			&= \sum_{\sigma, \sigma', n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma' \sigma} (W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+			&= \sum_{\sigma, \sigma', n} \int d^3 (\Lambda p)~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+			&= \sum_{\sigma', n} \int d^3 (\Lambda p) \blue{\sum_{\sigma} u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p))} a(\pbf_{\Lambda}, \sigma', n)
+	\end{align*}
+
+where in the last equality we've used that the fact :math:`\eqref{eq_lorentz_invariant_3_momentum_volume_element}` that :math:`d^3 p / p_0` is Lorentz invariant. Comparing this with the right-hand-side of :math:`\eqref{eq_conjugate_annihilation_field}`
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi^+_{\ell'}(\Lambda x + b) &= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \sum_{\sigma, n} \int d^3 p~u_{\ell'}(\Lambda x + b;~\pbf, \sigma, n) a(\pbf, \sigma, n) \\
+			&= \sum_{\sigma', n} \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \int d^3 (\Lambda p)~u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) a(\pbf_{\Lambda}, \sigma', n) \\
+			&= \sum_{\sigma', n} \int d^3 (\Lambda p)~\blue{\sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n)} a(\pbf_{\Lambda}, \sigma', n)
+	\end{align*}
+
+Equating the blue parts the two calculations, and inverting :math:`D^{(j_n)}_{\sigma' \sigma} (W^{-1}(\Lambda, p))` and :math:`D_{\ell \ell'}(\Lambda^{-1})`, we get
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(x;~\pbf, \sigma, n) \
+			= \sum_{\sigma'} u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D_{\sigma \sigma'}^{(j_n)} (W(\Lambda, p))
+		\label{eq_annihilation_u_transformation}
+	\end{equation}
+
+A parallel calculation for the :math:`v_{\ell}` in :math:`\eqref{eq_conjugate_creation_field}`, which we'll omit, gives the following
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(-\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(x;~\pbf, \sigma, n) \
+			= \sum_{\sigma'} v_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma \sigma'}(W(\Lambda, p))
+		\label{eq_creation_v_transformation}
+	\end{equation}
+
+The identities :math:`\eqref{eq_annihilation_u_transformation}` and :math:`\eqref{eq_creation_v_transformation}` pose the fundamental conditions on :math:`u_{\ell}` and :math:`v_{\ell}`, respectively, which we'll utilize to eventually solve for their solutions. Currently both :math:`u_{\ell}` and :math:`v_{\ell}` depend on :math:`x, \pbf, \sigma` and :math:`n`, and the goal is to use the Lorentz symmetry to reduce the dependencies. This will be carried out in three steps, corresponding to the three types of Lorentz symmetries: translations, boosts, and rotations, as follows.
+
+
+Translations
+	Taking :math:`\Lambda = 1` in :math:`\eqref{eq_creation_v_transformation}` gives :math:`\exp(\ifrak b \cdot p) u_{\ell}(x;~\pbf, \sigma, n) = u_{\ell}(x + b;~\pbf, \sigma, n)`, which then implies
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			u_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} \exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma, n)
+			\label{eq_redefine_u_after_translation}
+		\end{equation}
+
+	and similarly
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			v_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} \exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma, n)
+			\label{eq_redefine_v_after_translation}
+		\end{equation}
+
+	where we've slightly abused notations by keeping the names of :math:`u_{\ell}` and :math:`v_{\ell}`, while changing their arguments. Here the seemingly redundant :math:`(2\pi)^{-3/2}` is inserted so that the fields
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			\psi^+_{\ell}(x) &= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~\exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma, n) a(\pbf, \sigma, n) \label{eq_annihilation_field_simplified_by_translation} \\
+			\psi^-_{\ell}(x) &= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~\exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma, n) a^{\dagger}(\pbf, \sigma, n) \label{eq_creation_field_simplified_by_translation}
+		\end{align}
+
+	look like the usual Fourier transforms.
+
+	Plugging :math:`\eqref{eq_redefine_u_after_translation}` and :math:`\eqref{eq_redefine_v_after_translation}` into :math:`\eqref{eq_annihilation_u_transformation}` and :math:`\eqref{eq_creation_v_transformation}`, respectively, they can be simplified as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			\sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(\pbf, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n)}_{\sigma \sigma'}(W(\Lambda, p)) \label{eq_annihilation_u_transformation_simplified_by_translation} \\
+			\sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(\pbf, \sigma, n) &= \sum_{\sigma'} v_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma \sigma'}(W(\Lambda, p)) \label{eq_creation_v_transformation_simplified_by_translation}
+		\end{align}
+
+	for any homogeneous Lorentz transformation :math:`\Lambda`.
+
+Boosts
+	Taking :math:`\pbf = 0` and :math:`\Lambda = L(q)` which takes a particle at rest to one with (arbitrary) momentum :math:`q` in :math:`\eqref{eq_annihilation_u_transformation_simplified_by_translation}`, we see that
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			W(\Lambda, p) \xlongequal{\eqref{eq_w_from_l}} L(\Lambda p)^{-1} \Lambda L(p) = L(q)^{-1} L(q) = 1
+		\end{equation*}
+
+	In this case :math:`\eqref{eq_annihilation_u_transformation_simplified_by_translation}` and :math:`\eqref{eq_creation_v_transformation_simplified_by_translation}` take the following form (with :math:`\qbf` substituted by :math:`\pbf`)
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\sqrt{\frac{m}{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) u_{\ell}(0, \sigma, n) &= u_{\ell'}(\pbf, \sigma, n) \\
+			\sqrt{\frac{m}{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) v_{\ell}(0, \sigma, n) &= v_{\ell'}(\pbf, \sigma, n)
+		\end{align*}
+
+	It follows that one can calculate :math:`u_{\ell}(\pbf, \sigma, n)` for any :math:`\pbf` from the special case of :math:`\pbf = 0` given a representation :math:`D`.
+
+Rotations
+	Taking :math:`\pbf = 0` and :math:`\Lambda = \Rcal` a :math:`3`-rotation, and recalling from :math:`\eqref{eq_little_group_rotation}` that :math:`W(\Lambda, p) = \Rcal`, we get special cases of :math:`\eqref{eq_annihilation_u_transformation_simplified_by_translation}` and :math:`\eqref{eq_creation_v_transformation_simplified_by_translation}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\sum_{\ell} D_{\ell' \ell}(\Rcal) u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) D_{\sigma \sigma'}^{(j_n)}(\Rcal) \\
+			\sum_{\ell} D_{\ell' \ell}(\Rcal) v_{\ell}(0, \sigma, n) &= \sum_{\sigma'} v_{\ell'}(0, \sigma', n) D_{\sigma \sigma'}^{(j_n) \ast}(\Rcal)
+		\end{align*}
+
+	Using :math:`\eqref{eq_representation_rotation_first_order}` we can further reduce it to the first order as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \\
+			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} v_{\ell}(0, \sigma, n) &= -\sum_{\sigma'} v_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'}
+		\end{align*}
+
+	where :math:`\hat{\Jbf}` denotes the angular momentum vector for the representation :math:`D_{\ell' \ell}(\Rcal)`, in analogy with the usual angular momentum :math:`\Jbf^{(j)}` for :math:`D^{(j)}(\Rcal)`.
+
+
+The cluster decomposition principle
++++++++++++++++++++++++++++++++++++
+
+Let's verify that the fields defined by :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, when plugged into :math:`\eqref{eq_construct_interaction_density_by_fields}`, indeed satisfy the cluster decomposition principle as discussed in :ref:`sec_the_cluster_decomposition_principle`. It's really just a straightforward but tedious calculation which we spell out as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		V(t) &= \int d^3 x~\Hscr(x) \\
+			&= \sum_{N,M=0}^{\infty} \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} \int d^3 x~\psi^-_{\ell'_1}(x) \cdots \psi^-_{\ell'_N}(x) \psi^+_{\ell_1}(x) \cdots \psi^+_{\ell_M}(x) \\
+			&= \sum_{N,M=0}^{\infty} \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} \sum_{\sigma'_1, \cdots, \sigma'_N} \sum_{n'_1, \cdots, n'_N} \sum_{\sigma_1, \cdots, \sigma_M} \sum_{n_1, \cdots, n_M} (2\pi)^{-3N/2-3M/2} \\
+			&\phantom{=} \times \int d^3 p'_1 \cdots d^3 p'_N d^3 p_1 \cdots d^3 p_M~\exp(\ifrak (E_1 + \cdots E_M - E'_1 - \cdots - E'_N)t) \\
+			&\phantom{=} \times \blue{\int d^3 x~\exp(\ifrak (\pbf_1 + \cdots \pbf_M - \pbf'_1 - \cdots - \pbf'_N) \cdot \xbf)} \\
+			&\phantom{=} \times v_{\ell'_1}(\pbf'_1, \sigma'_1, n'_1) \cdots v_{\ell'_N}(\pbf'_N, \sigma'_N, n'_N) u_{\ell_1}(\pbf_1, \sigma_1, n_1) \cdots u_{\ell_M}(\pbf_M, \sigma_M, n_M) \\
+			&\phantom{=} \times a^{\dagger}(\pbf'_1, \sigma'_1, n'_1) \cdots a^{\dagger}(\pbf'_N, \sigma'_N, n'_N) a(\pbf_1, \sigma_1, n_1) \cdots a(\pbf_M, \sigma_M, n_M) \\
+			&= \sum_{N,M=0}^{\infty} \sum_{\sigma'_1, \cdots, \sigma'_N} \sum_{n'_1, \cdots, n'_N} \sum_{\sigma_1, \cdots, \sigma_M} \sum_{n_1, \cdots, n_M} \int d^3 p'_1 \cdots d^3 p'_N d^3 p_1 \cdots d^3 p_M \\
+			&\phantom{=} \times (2\pi)^{3 - 3N/2 - 3M/2} \exp(\ifrak (E_1 + \cdots E_M - E'_1 - \cdots - E'_N)t) \\
+			&\phantom{=} \times a^{\dagger}(\pbf'_1, \sigma'_1, n'_1) \cdots a^{\dagger}(\pbf'_N, \sigma'_N, n'_N) a(\pbf_1, \sigma_1, n_1) \cdots a(\pbf_M, \sigma_M, n_M) \blue{\delta^3(\pbf_1 + \cdots + \pbf_M - \pbf'_1 - \cdots - \pbf'_N)} \\
+			&\phantom{=} \times \left( \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M} v_{\ell'_1}(\pbf'_1, \sigma'_1, n'_1) \cdots v_{\ell'_N}(\pbf'_N, \sigma'_N, n'_N) u_{\ell_1}(\pbf_1, \sigma_1, n_1) \cdots u_{\ell_M}(\pbf_M, \sigma_M, n_M) \right)
+	\end{align*}
+
+Besides re-ordering the terms, the only actual calculation is highlighted in the two blue terms, where the second one is the integral of the first. One can compare this calculation with :math:`\eqref{eq_general_expansion_of_hamiltonian}` and see that the cluster decomposition principle is indeed satisfied because there is a unique momentum conservation delta function in each coefficient, as long as :math:`g, u, v` are reasonably smooth, i.e., it's fine to have poles and/or branching singularities but no delta functions.
+
+
+Causality and antiparticles
++++++++++++++++++++++++++++
+
+We now turn to the other crucial condition on the Hamiltonian, namely, the space separation commutativity :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. Given the general formula :math:`\eqref{eq_construct_interaction_density_by_fields}` of the interaction density, we are forced to require that :math:`[\psi^+_{\ell}(x), \psi^-_{\ell'}(y)] = 0` whenever :math:`x - y` is space-like. However, according to :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, we have
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		[\psi^+_{\ell}(x), \psi^-_{\ell'}(y)]_{\pm} &= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p d^3 p'~\exp(\ifrak (p \cdot x - p' \cdot y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf', \sigma, n) [a(\pbf, \sigma, n), a^{\dagger}(\pbf', \sigma, n)]_{\pm} \\
+			&= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~\exp(\ifrak p \cdot (x - y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf, \sigma, n)
+	\end{align*}
+
+where the sign :math:`\pm` is positive if both fields are fermionic, and negative otherwise. This quantity is not vanishing even if :math:`x - y` is space-like.
+
+Therefore in order to construct :math:`\Hscr` in the form of :math:`\eqref{eq_construct_interaction_density_by_fields}` that satisfies :math:`\eqref{eq_h_commutativity_for_space_like_separations}`, we must not just use :math:`\psi^{\pm}(x)` as the building blocks. It turns out that one may consider a linear combination of the two as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi_{\ell}(x) \coloneqq \alpha_{\ell} \psi^+_{\ell}(x) + \beta_{\ell} \psi^-_{\ell}(x)
+		\label{eq_defn_psi_field}
+	\end{equation}
+
+as well as its adjoint :math:`\psi^{\dagger}_{\ell}(x)`, and hope that they satisfy
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		[\psi_{\ell}(x), \psi_{\ell}(y)]_{\pm} = [\psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y)]_{\pm} = 0
+		\label{eq_space_like_commutativity_for_combined_field}
+	\end{equation}
+
+whenever :math:`x-y` is space-like, and replace :math:`\psi^{\pm}_{\ell}(x)` with :math:`\psi_{\ell}(x), \psi^{\dagger}_{\ell}(x)` in :math:`\eqref{eq_construct_interaction_density_by_fields}`. Under these assumptions, we can then construct the interaction density :math:`\Hscr` as a polynomial in :math:`\psi_{\ell}(x), \psi_{\ell}^{\dagger}(x)` with an even number of fermionic fields (so that the sign in :math:`\eqref{eq_space_like_commutativity_for_combined_field}` is negative).
+
+There remains, however, one issue with field like :math:`\eqref{eq_space_like_commutativity_for_combined_field}` that mixes creation and annihilation fields. Namely, special conditions must hold in order for such fields to play well with conserved quantum numbers. To be more specific, let :math:`Q` be a conserved quantum number, e.g., the electric charge. Then the following hold
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		[Q, a(\pbf, \sigma, n)] &= -q(n) a(\pbf, \sigma, n) \label{eq_charge_of_creation_operator} \\
+		[Q, a^{\dagger}(\pbf, \sigma, n)] &= q(n) a^{\dagger}(\pbf, \sigma, n) \label{eq_charge_of_annihilation_operator}
+	\end{align}
+
+where :math:`q(n)` denotes the quantum number of the particle species :math:`n`. These identities can be verified by applying both sides to :math:`\Psi_{\pbf, \sigma, n}` and :math:`\Psi_{\VAC}`, respectively.
+
+Now in order for :math:`Q` to commute with :math:`\Hscr`, which is constructed as a polynomial of :math:`\psi_{\ell}(x)` and :math:`\psi_{\ell}^{\dagger}(x)`, we better have
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		[Q, \psi_{\ell}(x)] = -q_{\ell} \psi_{\ell}(x)
+		\label{eq_charge_of_psi_field}
+	\end{equation}
+
+so that each monomial (with coefficient neglected) :math:`\psi^{\dagger}_{\ell'_1}(x) \cdots \psi^{\dagger}_{\ell'_M}(x) \psi_{\ell_1}(x) \cdots \psi_{\ell_N}(x)` in :math:`\Hscr` will commute with :math:`Q` if
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		q_{\ell_1} + \cdots + q_{\ell_N} = q_{\ell'_1} + \cdots + q_{\ell'_M}
+	\end{equation*}
+
+Note that the negative sign in :math:`\eqref{eq_charge_of_psi_field}` is a formal analogy to :math:`\eqref{eq_charge_of_creation_operator}`, where we think of :math:`\psi_{\ell}(x)` as an annihilation field even though it's really not. Since :math:`\psi_{\ell}(x)` is a linear combination of :math:`\psi^+_{\ell}(x)` and :math:`\psi^-_{\ell}(x)`, which in turn are superpositions of annihilation and creation operators, respectively, it follows from :math:`\eqref{eq_charge_of_creation_operator}` and :math:`\eqref{eq_charge_of_annihilation_operator}` that in order for :math:`\eqref{eq_charge_of_psi_field}` to hold, the following conditions must be satisfied
+
+1. all particles annihilated by :math:`\psi^+_{\ell}(x)` must have the same charge :math:`q(n) = q_{\ell}`,
+2. all particles created by :math:`\psi^-_{\ell}(x)` must have the same charge :math:`q(n) = -q_{\ell}`, and
+3. for any particle of species :math:`n`, which is annihilated by :math:`\psi^+_{\ell}(x)`, there exists a particle of species :math:`\bar{n}`, which is created by :math:`\psi^-_{\ell}(x)`, such that :math:`q(n) = -q(\bar{n})`.
+
+The particles of species :math:`n` and :math:`\bar{n}` are called *antiparticles* of each other. It is the last condition that demands the existence of antiparticles so that one can formulate a consistent (relativistic) QFT.
+
+.. dropdown:: The Klein-Gordon equation
+	:animate: fade-in-slide-down
+
+	It follows from the definition :math:`\eqref{eq_defn_psi_field}`, together with :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, that the field :math:`\psi_{\ell}` satisfies the following so-called `Klein-Gordon equation <https://en.wikipedia.org/wiki/Klein%E2%80%93Gordon_equation>`_
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			(\square - m^2) \psi_{\ell}(x) = 0
+		\end{equation*}
+
+	where :math:`\square \coloneqq \eta^{\mu \nu} \p_{\mu} \p_{\nu}` is the `d'Alembert operator <https://en.wikipedia.org/wiki/D%27Alembert_operator>`_ and :math:`m` is the (definite) mass of the field. This equation is traditionally one of the starting points of QFT, from which creation/annihilation operators can be derived through the so-called canonical quantization mechanism. However, we've derived the equation here from the other way around, namely, the creation/annihilation operators, which in turn come from the first principles of quantum mechanics and Lorentz symmetry.
 
 
 .. rubric:: Footnotes
