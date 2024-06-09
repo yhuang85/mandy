@@ -3142,7 +3142,7 @@ This expression of :math:`S` is manifestly Lorentz invariant, except for the tim
 		\label{eq_h_commutativity_for_space_like_separations}
 	\end{equation}
 
-where we've also included the light-like case for technical reasons that will only become clear later.
+where we've also included the light-like case for technical reasons that will only become clear later. This condition is also referred to as the *causality* condition as it may be interpreted as saying that interactions happening at space-like separations should not be correlated.
 
 .. dropdown:: A formal proof of the Lorentz invariance of the S-matrix
 	:animate: fade-in-slide-down
@@ -3503,7 +3503,7 @@ The parity, time, and charge symmetry on the creation and annihilation operators
 		U(\Pcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Pcal) &\xlongequal{\eqref{eq_space_inversion_on_massless_general}} \eta_{\sigma, n} \exp(\mp \ifrak \pi \sigma) a^{\dagger}(-\pbf, -\sigma, n) &&\quad\text{(massless particle)} \\
 		U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &\xlongequal{\eqref{eq_time_inversion_on_massive_general}} \zeta_n (-1)^{\jfrak - \sigma} a^{\dagger}(-\pbf, -\sigma, n) &&\quad\text{(massive particle)} \\
 		U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &\xlongequal{\eqref{eq_time_inversion_on_massless_general}} \zeta_{\sigma, n} \exp(\pm \ifrak \pi \sigma) a^{\dagger}(-\pbf, \sigma, n) &&\quad\text{(massless particle)} \\
-		U(\Ccal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Ccal) &\xlongequal{\phantom{(00)}} \zeta_n a^{\dagger}(\pbf, \sigma, n^c) &&\quad\text{(massive/massless particle)}
+		U(\Ccal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Ccal) &\xlongequal{\phantom{(00)}} \xi_n a^{\dagger}(\pbf, \sigma, n^c) &&\quad\text{(massive/massless particle)}
 	\end{alignat*}
 
 where :math:`\Ccal` replaces a particle of species :math:`n` with its antiparticle -- a notion we haven't really explained yet -- :math:`n^c`. The corresponding transformation laws for :math:`a(\pbf, \sigma, n)` can be derived from the above identities by taking the adjoint, and are omitted here.
@@ -3826,9 +3826,10 @@ It follows from :math:`\eqref{eq_conjugate_creation_field}` and :math:`\eqref{eq
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		g_{\bar{\ell}'_1, \cdots, \bar{\ell}'_N;~\bar{\ell}_1, \cdots, \bar{\ell}_M} = \sum_{\ell'_1, \cdots, \ell'_N} \sum_{\ell_1, \cdots, \ell_M} D_{\ell'_1 \bar{\ell}'_1}(\Lambda^{-1}) \cdots D_{\ell'_N \bar{\ell}'_N}(\Lambda^{-1}) D_{\ell_1 \bar{\ell}_1}(\Lambda^{-1}) \cdots D_{\ell_M \bar{\ell}_M}(\Lambda^{-1}) g_{\ell'_1, \cdots, \ell'_N;~\ell_1, \cdots, \ell_M}
-	\end{equation*}
+		\label{eq_coefficient_g_transformation_law}
+	\end{equation}
 
 The solution to the last problem relies on a classification of the representations of the Lorentz group, which has been discussed (in terms of the little group representations) in :ref:`sec_one_particle_states`, and shall be dealt with at a later point. The main goal of this section is to pin down the conditions :math:`u_{\ell}` and :math:`v_{\ell}` must satisfy so that they can be explicitly solved in the following sections.
 
@@ -3975,10 +3976,10 @@ Rotations
 	.. math::
 		:nowrap:
 
-		\begin{align*}
-			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \\
-			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} v_{\ell}(0, \sigma, n) &= -\sum_{\sigma'} v_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'}
-		\end{align*}
+		\begin{align}
+			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \label{eq_j_intertwines_u} \\
+			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} v_{\ell}(0, \sigma, n) &= -\sum_{\sigma'} v_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \label{eq_j_intertwines_v}
+		\end{align}
 
 	where :math:`\hat{\Jbf}` denotes the angular momentum vector for the representation :math:`D_{\ell' \ell}(\Rcal)`, in analogy with the usual angular momentum :math:`\Jbf^{(j)}` for :math:`D^{(j)}(\Rcal)`.
 
@@ -4011,17 +4012,17 @@ Besides re-ordering the terms, the only actual calculation is highlighted in the
 Causality and antiparticles
 +++++++++++++++++++++++++++
 
-We now turn to the other crucial condition on the Hamiltonian, namely, the space separation commutativity :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. Given the general formula :math:`\eqref{eq_construct_interaction_density_by_fields}` of the interaction density, we are forced to require that :math:`[\psi^+_{\ell}(x), \psi^-_{\ell'}(y)] = 0` whenever :math:`x - y` is space-like. However, according to :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, we have
+We now turn to the other crucial condition on the Hamiltonian, namely, the causality condition :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. Given the general formula :math:`\eqref{eq_construct_interaction_density_by_fields}` of the interaction density, we are forced to require that :math:`[\psi^+_{\ell}(x), \psi^-_{\ell'}(y)] = 0` whenever :math:`x - y` is space-like. However, according to :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, we have
 
 .. math::
 	:nowrap:
 
 	\begin{align*}
-		[\psi^+_{\ell}(x), \psi^-_{\ell'}(y)]_{\pm} &= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p d^3 p'~\exp(\ifrak (p \cdot x - p' \cdot y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf', \sigma, n) [a(\pbf, \sigma, n), a^{\dagger}(\pbf', \sigma, n)]_{\pm} \\
+		[\psi^+_{\ell}(x), \psi^-_{\ell'}(y)]_{\pm} &= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~d^3 p'~\exp(\ifrak (p \cdot x - p' \cdot y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf', \sigma, n) [a(\pbf, \sigma, n), a^{\dagger}(\pbf', \sigma, n)]_{\pm} \\
 			&= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~\exp(\ifrak p \cdot (x - y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf, \sigma, n)
 	\end{align*}
 
-where the sign :math:`\pm` is positive if both fields are fermionic, and negative otherwise. This quantity is not vanishing even if :math:`x - y` is space-like.
+where the sign :math:`\pm` is positive if the field is fermionic, and negative otherwise. This quantity is not necessarily vanishing even if :math:`x - y` is space-like.
 
 Therefore in order to construct :math:`\Hscr` in the form of :math:`\eqref{eq_construct_interaction_density_by_fields}` that satisfies :math:`\eqref{eq_h_commutativity_for_space_like_separations}`, we must not just use :math:`\psi^{\pm}(x)` as the building blocks. It turns out that one may consider a linear combination of the two as follows
 
@@ -4082,21 +4083,260 @@ Note that the negative sign in :math:`\eqref{eq_charge_of_psi_field}` is a forma
 2. all particles created by :math:`\psi^-_{\ell}(x)` must have the same charge :math:`q(n) = -q_{\ell}`, and
 3. for any particle of species :math:`n`, which is annihilated by :math:`\psi^+_{\ell}(x)`, there exists a particle of species :math:`\bar{n}`, which is created by :math:`\psi^-_{\ell}(x)`, such that :math:`q(n) = -q(\bar{n})`.
 
-The particles of species :math:`n` and :math:`\bar{n}` are called *antiparticles* of each other. It is the last condition that demands the existence of antiparticles so that one can formulate a consistent (relativistic) QFT.
+The particles of species :math:`n` and :math:`\bar{n}` are called *antiparticles* of each other -- they are exactly the same except for the charges which are opposite. It is the last condition that demands the existence of particle-antiparticle pairs so that one can formulate a consistent (relativistic) quantum field theory.
 
 .. dropdown:: The Klein-Gordon equation
 	:animate: fade-in-slide-down
 
-	It follows from the definition :math:`\eqref{eq_defn_psi_field}`, together with :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, that the field :math:`\psi_{\ell}` satisfies the following so-called `Klein-Gordon equation <https://en.wikipedia.org/wiki/Klein%E2%80%93Gordon_equation>`_
+	It follows from the definition :math:`\eqref{eq_defn_psi_field}`, together with :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, that the field :math:`\psi_{\ell}(x)` satisfies the following so-called `Klein-Gordon equation <https://en.wikipedia.org/wiki/Klein%E2%80%93Gordon_equation>`_
 
 	.. math::
 		:nowrap:
 
 		\begin{equation*}
-			(\square - m^2) \psi_{\ell}(x) = 0
+			\left( \square - m^2 \right) \psi_{\ell}(x) = 0
 		\end{equation*}
 
-	where :math:`\square \coloneqq \eta^{\mu \nu} \p_{\mu} \p_{\nu}` is the `d'Alembert operator <https://en.wikipedia.org/wiki/D%27Alembert_operator>`_ and :math:`m` is the (definite) mass of the field. This equation is traditionally one of the starting points of QFT, from which creation/annihilation operators can be derived through the so-called canonical quantization mechanism. However, we've derived the equation here from the other way around, namely, the creation/annihilation operators, which in turn come from the first principles of quantum mechanics and Lorentz symmetry.
+	where :math:`\square \coloneqq \eta^{\mu \nu} \p_{\mu} \p_{\nu}` is the `d'Alembert operator <https://en.wikipedia.org/wiki/D%27Alembert_operator>`_ and :math:`m` is the (definite) mass of the field. This equation is traditionally one of the starting points of quantum field theory, from which creation/annihilation operators can be derived through the so-called canonical quantization formalism. However, we've derived the equation here from the other way around, namely, the creation/annihilation operators, which in turn come from the first principles of quantum mechanics and Lorentz symmetry.
+
+
+Scalar fields
+^^^^^^^^^^^^^
+
+We'll start, as always, with the simplest case of scalar fields, namely, when :math:`\psi^+(x) = \psi^+_{\ell}(x)` and :math:`\psi^-(x) = \psi^-_{\ell}(x)` are scalar functions. We argue first that such fields can only create/annihilate spinless particles. Indeed, since :math:`\hat{\Jbf}` necessarily vanishes, it follows from :math:`\eqref{eq_j_intertwines_u}` and :math:`\eqref{eq_j_intertwines_v}` that :math:`u` and :math:`v` may be nonzero if and only if :math:`j_n = 0`. If we, for the moment, are concerned with just one particle species, then we can write :math:`u(\pbf, \sigma, n) = u(\pbf)` and :math:`v(\pbf, \sigma, n) = v(\pbf)`. Lastly, we note that since :math:`D = 1` in this case, :math:`\eqref{eq_annihilation_u_transformation_simplified_by_translation}` and :math:`\eqref{eq_creation_v_transformation_simplified_by_translation}` become
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sqrt{p_0}~u(\pbf) &= \sqrt{(\Lambda p)_0}~u(\pbf_{\Lambda}) \\
+		\sqrt{p_0}~v(\pbf) &= \sqrt{(\Lambda p)_0}~v(\pbf_{\Lambda})
+	\end{align*}
+
+It follows that
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		u(\pbf)	= v(\pbf) = (2p_0)^{-1/2}
+		\label{eq_scalar_u_and_v}
+	\end{equation}
+
+where the factor :math:`2` is purely conventional. In particular :math:`u(0) = v(0) = (2m)^{-1/2}`.
+
+Plugging :math:`\eqref{eq_scalar_u_and_v}` into :math:`\eqref{eq_annihilation_field_simplified_by_translation}, \eqref{eq_creation_field_simplified_by_translation}`, we get
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\psi^+(x) &= \int d^3 p~(2\pi)^{-3/2} \exp(\ifrak p \cdot x) (2p_0)^{-1/2} a(\pbf)
+		\label{eq_scalar_field_psi_plus} \\
+		\psi^-(x) &= \int d^3 p~(2\pi)^{-3/2} \exp(-\ifrak p \cdot x) (2p_0)^{-1/2} a^{\dagger}(\pbf) = \psi^{+ \dagger}(x)
+		\label{eq_scalar_field_psi_plus_and_minus_are_adjoints}
+	\end{align}
+
+To construct :math:`\Hscr`, we first note that :math:`\eqref{eq_coefficient_g_transformation_law}` trivially holds in this case because :math:`D = 1` and :math:`g` is simply a scalar. Next let's consider the causality condition which demands that :math:`\left[ \psi^+(x), \psi^-(y) \right] = 0` whenever :math:`x - y` is space-like. Using the canonical commutation relation :math:`\eqref{eq_creation_annihilation_commutator}` we calculate
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left[ \psi^+(x), \psi^-(y) \right]_{\pm} &= \int d^3 p~d^3 q~(2\pi)^{-3} \exp(\ifrak (p \cdot x - q \cdot y)) (4 p_0 q_0)^{-1/2} \left[ a(\pbf), a^{\dagger}(\qbf) \right]_{\pm}
+		\label{eq_scalar_field_commutator_as_Delta} \\
+			&= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot (x - y)) \eqqcolon \Delta(x - y) \nonumber
+	\end{align}
+
+where
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Delta(x) \coloneqq \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot x)
+	\end{equation*}
+
+We notice that :math:`\Delta(x)` is apparently (proper orthochronous) Lorentz invariant -- the invariance of the volume element comes from :math:`\eqref{eq_lorentz_invariant_3_momentum_volume_element}`. It is, however, not in general invariant under transformations like :math:`x \to -x`. But, as we'll see, such invariance holds assuming :math:`x` is space-like.
+
+Now we'll restrict ourselves to the special case of a space-like :math:`x` which, up to a Lorentz transformation, can be assumed to take the form :math:`x = (0, \xbf)` with :math:`|\xbf| > 0`. In this case, we can then calculate :math:`\Delta(x)` as follows [#wrong_integration_of_Delta_function]_
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\Delta(x) &= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2\sqrt{\pbf^2 + m^2}}~\exp(\ifrak \pbf \cdot \xbf) \\
+			&= \frac{4\pi}{(2\pi)^3} \int_0^{\infty} \frac{|\pbf|^2 d|\pbf|}{2\sqrt{|\pbf|^2 + m^2}} \int_{S^2} d^2 \hat{\pbf}~\exp(\ifrak |\pbf| |\xbf| \hat{\pbf} \cdot \hat{\xbf}) \\
+			&= \frac{1}{2\pi} \int_0^{\infty} \frac{|\pbf|^2 d|\pbf|}{2\sqrt{|\pbf|^2 + m^2}} \int_0^{\pi} d\theta~\exp(\ifrak |\pbf| |\xbf| \cos\theta)
+	\end{align*}
+
+The last integral cannot be easily evaluated, at least without some knowledge about special functions. Nonetheless, we observe that :math:`\Delta(x) \neq 0`, which means that :math:`\Hscr` cannot be just any polynomial in :math:`\psi^{\pm}(x)`. Moreover, we note that :math:`\Delta(x) = \Delta(-x)` as promised earlier. As already mentioned in :math:`\eqref{eq_defn_psi_field}`, let's try
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi(x) \coloneqq \alpha \psi^+(x) + \beta \psi^-(x)
+		\label{eq_scalar_field_first_defn_of_psi}
+	\end{equation}
+
+We can then try to make :math:`\eqref{eq_space_like_commutativity_for_combined_field}` hold by the following calculations
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ \psi(x), \psi(y) \right]_{\pm} &\xlongequal{\phantom{(000)}} \alpha\beta \left(\left[ \psi^+(x), \psi^-(y) \right]_{\pm} + \left[ \psi^-(x), \psi^+(y) \right]_{\pm} \right) \\
+			&\xlongequal{\eqref{eq_scalar_field_commutator_as_Delta}} \alpha\beta (1 \pm 1) \Delta(x - y) \\
+		\left[ \psi(x), \psi^{\dagger}(y) \right]_{\pm} &\xlongequal{\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}} \left[ \alpha \psi^+(x) + \beta \psi^-(x), \alpha^{\ast} \psi^-(y) + \beta^{\ast} \psi^+(y) \right]_{\pm} \\
+			&\xlongequal{\phantom{(000)}} |\alpha|^2 \left[ \psi^+(x), \psi^-(y) \right]_{\pm} + |\beta|^2 \left[ \psi^-(x), \psi^+(y) \right]_{\pm} \\
+			&\xlongequal{\eqref{eq_scalar_field_commutator_as_Delta}} \left( |\alpha|^2 \pm |\beta|^2 \right) \Delta(x - y)
+	\end{align*}
+
+We see that :math:`\eqref{eq_space_like_commutativity_for_combined_field}` holds for scalar fields if the fields are bosonic, so that the bracket :math:`[...]_{\pm}` gives the usual commutator, and :math:`|\alpha| = |\beta|`. By adjust the phase of :math:`a(\pbf)`, we can actually arrange so that :math:`\alpha = \beta`, in which case we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi(x) = \psi^+(x) + \psi^-(x) = \psi^+(x) + \psi^{+ \dagger}(x) = \psi^{\dagger}(x)
+		\label{eq_scalar_field_psi_fixed_phase}
+	\end{equation}
+
+.. note::
+	Although the arrangement of phase so that :math:`\alpha = \beta` is a mere convention, it's a convention that needs to be applied to *all* scalar fields appearing in :math:`\Hscr`. Namely, one cannot have both :math:`\psi(x)` as in :math:`\eqref{eq_scalar_field_psi_fixed_phase}` and another
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\psi'(x) = \exp(\ifrak \theta) \psi^+(x) + \exp(-\ifrak \theta) \psi^{+ \dagger}(x)
+		\end{equation*}
+
+	for some :math:`\theta`, because :math:`\psi(x)` won't commute with :math:`\psi'(y)` even if :math:`x - y` is space-like.
+
+Now if the particle created and annihilated by :math:`\psi(x)` carries a (non-vanishing) conserved quantum number :math:`Q`, then by the discussions on the charge conservation from the previous section, a density :math:`\Hscr` made up of :math:`\psi(x)` as defined by :math:`\eqref{eq_scalar_field_psi_fixed_phase}` will not commute with :math:`Q`. Instead, one must assume the existence of a field :math:`\psi^{+ c}(x)` that creates and annihilates the corresponding antiparticle, in the sense that
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ Q, \psi^+(x) \right] &= -q \psi^+(x) \\
+		\left[ Q, \psi^{+ c}(x) \right] &= q \psi^{+ c}(x)
+	\end{align*}
+
+Here the supscript :math:`c` stands for charge (conjugation). Now instead of :math:`\eqref{eq_scalar_field_first_defn_of_psi}`, let's try
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\psi(x) \coloneqq \alpha \psi^+(x) + \beta \psi^{+ c \dagger}(x)
+	\end{equation*}
+
+so that :math:`[Q, \psi(x)] = -q \psi(x)`. We calculate the commutators, assuming the antiparticle is different from the particle, just as before as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[\psi(x), \psi(y) \right]_{\pm} &= \left[ \alpha \psi^+(x) + \beta \psi^{+ c \dagger}(x), \alpha \psi^+(y) + \beta \psi^{+ c \dagger}(y) \right]_{\pm} = 0 \\
+		\left[\psi(x), \psi^{\dagger}(y) \right]_{\pm} &= \left[ \alpha \psi^+(x) + \beta \psi^{+ c \dagger}(x), \alpha^{\ast} \psi^{+ \dagger}(y) + \beta^{\ast} \psi^{+ c}(y) \right]_{\pm} \\
+			&= |\alpha|^2 \left[ \psi^+(x), \psi^{+ \dagger}(y) \right]_{\pm} + |\beta|^2 \left[ \psi^{+ c \dagger}(x), \psi^{+ c}(y) \right]_{\pm} \\
+			&= (|\alpha|^2 \pm |\beta|^2) \Delta(x - y)
+	\end{align*}
+
+where we've assumed, in particular that the particle and its particle share the same mass so that :math:`\eqref{eq_scalar_field_commutator_as_Delta}` equally applies.
+
+By the same argument as in the case where no quantum number is involved, we see that a scalar field can satisfy the causality condition if it describes a boson. Moreover, by adjusting the phase of :math:`a(\pbf)`, one can arrange so that :math:`\alpha = \beta` so that
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi(x) = \psi^+(x) + \psi^{+ c \dagger}(x)
+		\label{eq_scalar_field_psi_fixed_phase_with_antiparticle}
+	\end{equation}
+
+Note that this is compatible with :math:`\eqref{eq_scalar_field_psi_fixed_phase}` in the case where the particle is its own antiparticle.
+
+Using :math:`\eqref{eq_scalar_field_psi_plus}` and :math:`\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}`, we can write :math:`\psi(x)` in terms of the creation and annihilation operators as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi(x) = \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) a(\pbf) + \exp(-\ifrak p \cdot x) a^{c \dagger}(\pbf) \right]
+		\label{eq_scalar_field_psi_by_creation_and_annihilation_operators}
+	\end{equation}
+
+with the possibility of :math:`a^{c \dagger}(\pbf) = a^{\dagger}(\pbf)` in the case where the created particle is its own antiparticle.
+
+The CPT symmetries
+++++++++++++++++++
+
+Let's investigate how a scalar field transforms under spatial inversion :math:`\Pcal`, time inversion :math:`\Tcal`, and charge conjugation :math:`\Ccal`. This follows essentially from :math:`\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}` together with our knowledge about how creation/annihilation operators transform under CPT transformations in :ref:`sec_the_lorentz_and_cpt_transformation_laws`. Recall that we consider the case of massive particles here, leaving the massless case to a later section.
+
+We start with the spatial inversion :math:`\Pcal` by recalling the following transformation rules
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\Pcal) a(\pbf) U^{-1}(\Pcal) &= \eta^{\ast} a(-\pbf) \\
+		U(\Pcal) a^{c \dagger}(\pbf) U^{-1}(\Pcal) &= \eta^c a^{c \dagger}(-\pbf)
+	\end{align*}
+
+where :math:`\eta` and :math:`\eta^c` are the intrinsic parities of the particle and antiparticle, respectively. In order for the scalar field :math:`\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}` to transform nicely with :math:`\Pcal`, one must have :math:`\eta^{\ast} = \eta^c` (or :math:`\eta^{\ast} = \eta` in the case where the particle is its own antiparticle). As a result, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Pcal) \psi(x) U^{-1}(\Pcal) = \eta^{\ast} \psi(\Pcal x)
+	\end{equation*}
+
+Next let's consider the time inversion :math:`\Tcal`. We recall the transformation rules as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\Tcal) a(\pbf) U^{-1}(\Tcal) &= \zeta^{\ast} a(-\pbf) \\
+		U(\Tcal) a^{c \dagger}(\pbf) U^{-1}(\Tcal) &= \zeta^c a^{c \dagger}(-\pbf)
+	\end{align*}
+
+Similar to the case of spatial inversions, in order for :math:`\psi(x)` to transform nicely with :math:`U(\Tcal)`, one must have :math:`\zeta^{\ast} = \zeta^c`. Moreover, since :math:`U(\Tcal)` is anti-unitary, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Tcal) \psi(x) U^{-1}(\Tcal) = \zeta^{\ast} \psi(-\Tcal x)
+	\end{equation*}
+
+Finally let's consider the charge conjugation :math:`\Ccal` with the following transformation laws
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\Ccal) a(\pbf) U^{-1}(\Ccal) &= \xi^{\ast} a^c(\pbf) \\
+		U(\Ccal) a^{c \dagger}(\pbf) U^{-1}(\Ccal) &= \xi^c a^{\dagger}(\pbf)
+	\end{align*}
+
+As before, we must have :math:`\xi^{\ast} = \xi^c` and therefore
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \psi^{\dagger}(x)
+	\end{equation*}
+
+
+Vector fields
+^^^^^^^^^^^^^
 
 
 .. rubric:: Footnotes
@@ -4112,3 +4352,5 @@ The particles of species :math:`n` and :math:`\bar{n}` are called *antiparticles
 .. [#abuse_of_phi_as_both_state_vector_and_flux] It's really unfortunate that one constantly runs out symbols to represent physical quantities, and it's uncommon to use anything other than just one letter. So we have to live with the fact that the meaning of the symbol will depend on the context.
 
 .. [#weinberg_quote_on_lorentz_invariance_and_quantum_mechanics] See [Wei95]_ page 145.
+
+.. [#wrong_integration_of_Delta_function] The evaluation of the integral eq. (5.2.8) on [Wei95]_ page 202 seems to be wrong, as the integrand oscillates as :math:`\sin(u)` for :math:`u` large enough, which will cause the integral to diverge.
