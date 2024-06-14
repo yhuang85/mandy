@@ -238,7 +238,7 @@ where :math:`f^c_{ab}` are the coefficients of the expansion of :math:`T(f(\eta,
 	:nowrap:
 
 	\begin{equation*}
-		-u_a u_b = \ifrak f^c_{ab} u_c + u_{ab} \quad \Longrightarrow \quad u_{ab} = -u_a u_b - \ifrak f^c_{ab} u_c.
+		-u_a u_b = \ifrak f^c_{ab} u_c + u_{ab} \implies u_{ab} = -u_a u_b - \ifrak f^c_{ab} u_c.
 	\end{equation*}
 
 It implies that one can calculate the higher-order operator :math:`u_{ab}` from the lower-order ones, assuming of course that we know the structure of the symmetry (Lie) group/algebra. In fact, this bootstrapping procedure can be continued to all orders, but we'll not be bothered about the details.
@@ -307,7 +307,7 @@ where
 		:nowrap:
 
 		\begin{equation*}
-			1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 ~\Longrightarrow~ m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 = E^2 - \pbf^2
+			1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 \implies m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 = E^2 - \pbf^2
 		\end{equation*}
 
 	which looks just like :math:`\eqref{eq_proper_time}`, and indeed, the mass (in our convention) is invariant in all inertial frames.
@@ -338,7 +338,7 @@ which consists of a homogeneous part :math:`\Lambda` and a translation by :math:
 
 	\begin{equation}
 		\eta^{\mu \nu} dx_{\mu} dx_{\nu} = \eta^{\mu \nu} \Lambda^{\rho}_{\mu} \Lambda^{\kappa}_{\nu} dx_{\rho} dx_{\kappa} \
-			~\Longrightarrow~ \eta^{\mu \nu} = \eta^{\rho \kappa} \Lambda^{\mu}_{\rho} \Lambda^{\nu}_{\kappa}
+			\implies \eta^{\mu \nu} = \eta^{\rho \kappa} \Lambda^{\mu}_{\rho} \Lambda^{\nu}_{\kappa}
 		\label{eq_homogeneous_lorentz_transformation}
 	\end{equation}
 
@@ -358,7 +358,7 @@ For later use, let's also calculate the inverse transformation using :math:`\eqr
 
 	\begin{equation}
 		\delta_{\sigma}^{\nu} = \eta_{\sigma \mu} \eta^{\mu \nu} = \left(\eta_{\sigma \mu} \eta^{\rho \kappa} \Lambda_{\rho}^{\mu}\right) \Lambda^{\nu}_{\kappa} \
-			~\Longrightarrow~ (\Lambda^{-1})_{\mu}^{\nu} = \eta_{\mu \sigma} \eta^{\nu \rho} \Lambda_{\rho}^{\sigma} \
+			\implies (\Lambda^{-1})_{\mu}^{\nu} = \eta_{\mu \sigma} \eta^{\nu \rho} \Lambda_{\rho}^{\sigma} \
 			~\Longleftrightarrow~ (\Lambda^{-1})^{\mu \nu} = \Lambda^{\nu \mu}
 		\label{eq_lambda_inverse}
 	\end{equation}
@@ -369,7 +369,7 @@ Taking determinant on :math:`\eqref{eq_homogeneous_lorentz_transformation}` impl
 	:nowrap:
 
 	\begin{equation*}
-		1 = (\Lambda^0_0)^2 - \sum_{i=1}^3 \Lambda^0_i \Lambda^0_i ~\Longrightarrow~ \left| \Lambda^0_0 \right| \geq 1
+		1 = (\Lambda^0_0)^2 - \sum_{i=1}^3 \Lambda^0_i \Lambda^0_i \implies \left| \Lambda^0_0 \right| \geq 1
 	\end{equation*}
 
 It follows that the homogeneous Lorentz group has four components. In particular, the one with :math:`\op{det}(\Lambda) = 1` and :math:`\Lambda^0_0 \geq 1` is the most common used and is given a name: *proper orthochronous* Lorentz group. Nonetheless, one can map one component to another by composing with either a time reversal transformation
@@ -400,7 +400,7 @@ So far everything have been rather abstract, but in fact, the (homogeneous) Lore
 	:nowrap:
 
 	\begin{equation*}
-		dt' = \Lambda^0_0 dt, \quad dx'_i = \Lambda^0_i dt ~\Longrightarrow~ \Lambda^0_i = v_i \Lambda^0_0
+		dt' = \Lambda^0_0 dt, \quad dx'_i = \Lambda^0_i dt \implies \Lambda^0_i = v_i \Lambda^0_0
 	\end{equation*}
 
 Then using :math:`\eqref{eq_homogeneous_lorentz_transformation}`, we get
@@ -410,7 +410,7 @@ Then using :math:`\eqref{eq_homogeneous_lorentz_transformation}`, we get
 
 	\begin{equation}
 		1 = -\eta^{\mu \nu} \Lambda^0_{\mu} \Lambda^0_{\nu} = (\Lambda^0_0)^2 - \Lambda^0_i \Lambda^0_i = (1 - \vbf^2) (\Lambda^0_0)^2 \
-			~\Longrightarrow~ \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}} \eqqcolon \gamma
+			\implies \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}} \eqqcolon \gamma
 			\label{eq_def_gamma}
 	\end{equation}
 
@@ -489,9 +489,10 @@ We will quantize the Lorentz symmetry :math:`L(\Lambda, a)` by looking for unita
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Lambda_{\mu}^{\nu} = \delta_{\mu}^{\nu} + \omega_{\mu}^{\nu} + \cdots
-	\end{equation*}
+		\label{eq_expansion_of_Lambda}
+	\end{equation}
 
 where :math:`\delta` is the Kronecker delta, and *not* a tensor. It follows from :math:`\eta^{\mu \nu} = \eta^{\rho \kappa} \Lambda^{\mu}_{\rho} \Lambda^{\nu}_{\kappa}` that
 
@@ -605,15 +606,15 @@ Now that we have all the commutator relations, let's reorganize :math:`\eqref{eq
 	:nowrap:
 
 	\begin{alignat}{2}
-		\text{let } \mu = 0, \nu = i \text{ in \eqref{eq_bracket_p4_p4}} ~&\Longrightarrow~ [H, P_i] &&= 0  \label{eq_hp_commute} \\
-		\text{let } \mu = 0, \rho = j, \kappa = k \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [H, J_i] &&= 0  \label{eq_hj_commute} \\
-		\text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [H, K_i] &&= \ifrak P_i  \label{eq_hkp_commutation} \\
-		\text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} ~&\Longrightarrow~ [P_i, P_j] &&= 0  \label{eq_pp_commute} \\
-		\text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [P_i, J_j] &&= -\ifrak \epsilon_{ijk} P_k  \nonumber \\
-		\text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} ~&\Longrightarrow~ [P_i, K_j] &&= \ifrak \delta_{ij} H  \label{eq_pkh_commutation} \\
-		\text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [J_i, J_j] &&= \ifrak \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
-		\text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [J_i, K_j] &&= \ifrak \epsilon_{ijk} K_k  \label{eq_jkk_commutation} \\
-		\text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} ~&\Longrightarrow~ [K_i, K_j] &&= -\ifrak \epsilon_{ijk} J_k  \label{eq_kkj_commutation}
+		\text{let } \mu = 0, \nu = i \text{ in \eqref{eq_bracket_p4_p4}} &\implies [H, P_i] &&= 0  \label{eq_hp_commute} \\
+		\text{let } \mu = 0, \rho = j, \kappa = k \text{ in \eqref{eq_bracket_p4_j4}} &\implies [H, J_i] &&= 0  \label{eq_hj_commute} \\
+		\text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} &\implies [H, K_i] &&= \ifrak P_i  \label{eq_hkp_commutation} \\
+		\text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} &\implies [P_i, P_j] &&= 0  \label{eq_pp_commute} \\
+		\text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} &\implies [P_i, J_j] &&= -\ifrak \epsilon_{ijk} P_k  \nonumber \\
+		\text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} &\implies [P_i, K_j] &&= \ifrak \delta_{ij} H  \label{eq_pkh_commutation} \\
+		\text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &\implies [J_i, J_j] &&= \ifrak \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
+		\text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &\implies [J_i, K_j] &&= \ifrak \epsilon_{ijk} K_k  \label{eq_jkk_commutation} \\
+		\text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &\implies [K_i, K_j] &&= -\ifrak \epsilon_{ijk} J_k  \label{eq_kkj_commutation}
  	\end{alignat}
 
 where :math:`\epsilon_{ijk}` is totally anti-symmetric with respect to permutations of indexes and satisfies :math:`\epsilon_{123} = 1`. [#tedious_calc_of_commutations]_
@@ -901,7 +902,8 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 		:nowrap:
 
 		\begin{equation}
-			\Jbf^2 \Psi_{\jfrak} = (\jfrak^2 + \jfrak) \Psi_{\jfrak} = ((\jfrak')^2 - \jfrak') \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'} ~\Longrightarrow~ \jfrak (\jfrak + 1) = \jfrak' (\jfrak' - 1)
+			\Jbf^2 \Psi_{\jfrak} = (\jfrak^2 + \jfrak) \Psi_{\jfrak} = ((\jfrak')^2 - \jfrak') \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'} \implies \jfrak (\jfrak + 1) = \jfrak' (\jfrak' - 1)
+			\label{eq_angular_momentum_squared_eigenvalue}
 		\end{equation}
 
 	The equation has two potential solutions: either :math:`\jfrak' = \jfrak + 1` or :math:`\jfrak = -\jfrak'`. The first option violates the maximality of :math:`\jfrak`, and so we must accept the second option. Since we also know :math:`\jfrak - \jfrak'` must be integral, we conclude that :math:`\jfrak` is itself a half-integer.
@@ -957,7 +959,7 @@ Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :mat
 	:nowrap:
 
 	\begin{equation*}
-		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} ~\Longrightarrow~ \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M}
+		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M}
 	\end{equation*}
 
 It follows that [#boost_in_p_formula]_
@@ -1072,7 +1074,7 @@ This observation is important since it implies that non-relativistic calculation
 			:nowrap:
 
 			\begin{equation}
-				\Psi^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \neq 0 ~\Longrightarrow~ \sigma = \sigma' + \sigma''
+				\Psi^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \neq 0 \implies \sigma = \sigma' + \sigma''
 				\label{eq_sigma_additive}
 			\end{equation}
 
@@ -1753,7 +1755,7 @@ We have postulated that the transformation law :math:`\eqref{eq_lorentz_transfor
 	:nowrap:
 
 	\begin{equation*}
-		\exp(\ifrak \tau E_{\alpha}) \Psi_{\alpha} = \exp(\ifrak \tau H) \Psi_{\alpha} = \exp(\ifrak \tau (E_1 + E_2 + \cdots)) \Psi_{\alpha} ~\Longrightarrow~ E_\alpha = E_1 + E_2 + \cdots
+		\exp(\ifrak \tau E_{\alpha}) \Psi_{\alpha} = \exp(\ifrak \tau H) \Psi_{\alpha} = \exp(\ifrak \tau (E_1 + E_2 + \cdots)) \Psi_{\alpha} \implies E_\alpha = E_1 + E_2 + \cdots
 	\end{equation*}
 
 where :math:`E_i \coloneqq (p_i)_0` is the energy of the :math:`i`-th particle. There is obviously no energy left for any interaction.
@@ -1835,7 +1837,7 @@ In practice it will be assumed that the interaction term :math:`V` in :math:`\eq
 	:nowrap:
 
 	\begin{equation*}
-		E_{\alpha} \Psi_{\alpha}^{\pm} = H \Psi_{\alpha}^{\pm} = (H_0 + V) \Psi_{\alpha}^{\pm} ~\Longrightarrow~ (E_{\alpha} - H_0) \Psi_{\alpha}^{\pm} = V \Psi_{\alpha}^{\pm}
+		E_{\alpha} \Psi_{\alpha}^{\pm} = H \Psi_{\alpha}^{\pm} = (H_0 + V) \Psi_{\alpha}^{\pm} \implies (E_{\alpha} - H_0) \Psi_{\alpha}^{\pm} = V \Psi_{\alpha}^{\pm}
 	\end{equation*}
 
 Note that :math:`\Phi_{\alpha}` is also annihilated by :math:`E_{\alpha} - H_0`. Considering the asymptotic :math:`\eqref{eq_in_out_states_asymptotic_by_energy}` or :math:`\eqref{eq_in_out_states_asymptotic_by_hamiltonian}`, it's reasonable to guess the following formal solution
@@ -1906,7 +1908,7 @@ Using :math:`\eqref{eq_defn_of_Omega}` we see that
 	:nowrap:
 
 	\begin{equation}
-		S_{\beta \alpha} = (\Omega(\infty) \Phi_{\beta}, \Omega(-\infty) \Phi_{\alpha}) = (\Phi_{\beta}, \Omega^{\dagger}(\infty) \Omega(-\infty) \Phi_{\alpha}) ~\Longrightarrow~ S = \Omega^{\dagger}(\infty) \Omega(-\infty) \eqqcolon U(\infty, -\infty)
+		S_{\beta \alpha} = (\Omega(\infty) \Phi_{\beta}, \Omega(-\infty) \Phi_{\alpha}) = (\Phi_{\beta}, \Omega^{\dagger}(\infty) \Omega(-\infty) \Phi_{\alpha}) \implies S = \Omega^{\dagger}(\infty) \Omega(-\infty) \eqqcolon U(\infty, -\infty)
 		\label{eq_s_operator_by_u}
 	\end{equation}
 
@@ -2130,7 +2132,7 @@ Step 3.
 		:nowrap:
 
 		\begin{equation*}
-			[\Kbf_0, \Omega(-\infty)] = -\Wbf \Omega(-\infty) ~\Longrightarrow~ \Kbf \Omega(\mp\infty) = \Omega(\mp\infty) \Kbf_0
+			[\Kbf_0, \Omega(-\infty)] = -\Wbf \Omega(-\infty) \implies \Kbf \Omega(\mp\infty) = \Omega(\mp\infty) \Kbf_0
 		\end{equation*}
 
 	Moreover, by :math:`\eqref{eq_s_matrix_lorentz_invariance_assump_1}`, we have also :math:`\Pbf \Omega(\mp\infty) = \Omega(\mp\infty) \Pbf_0`. Now using the commutation relation :math:`\eqref{eq_pkh_commutation}` we conclude that
@@ -2436,7 +2438,7 @@ The simplest case where :math:`\eqref{eq_first_order_s_matrix_is_hermitian}` bec
 
 	\begin{equation*}
 		S^{(1)}_{\beta \alpha} = -\exp(\ifrak(\theta_{\alpha} + \theta_{\beta})) S^{(1)~\ast}_{\Tcal \beta ~\Tcal \alpha} \
-			~\Longrightarrow~ \left| S^{(1)}_{\beta \alpha} \right|^2 = \left| S^{(1)}_{\Tcal \beta ~\Tcal \alpha} \right|^2
+			\implies \left| S^{(1)}_{\beta \alpha} \right|^2 = \left| S^{(1)}_{\Tcal \beta ~\Tcal \alpha} \right|^2
 	\end{equation*}
 
 This is to say that under the assumption that :math:`\eqref{eq_s_operator_first_order_expansion}` is valid, at least approximately, the rate of reaction :math:`S^{(1)}_{\beta \alpha}` should be invariant under a flip of the :math:`3`-momentum as well as the spin :math:`z`-component. This is *not* contradicted by Wu's experiment which disproved the parity conservation.
@@ -3953,10 +3955,12 @@ Boosts
 	.. math::
 		:nowrap:
 
-		\begin{align*}
-			\sqrt{\frac{m}{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) u_{\ell}(0, \sigma, n) &= u_{\ell'}(\pbf, \sigma, n) \\
+		\begin{align}
+			\sqrt{\frac{m}{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) u_{\ell}(0, \sigma, n) &= u_{\ell'}(\pbf, \sigma, n)
+			\label{eq_annihilation_u_transformation_simplified_by_boost} \\
 			\sqrt{\frac{m}{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) v_{\ell}(0, \sigma, n) &= v_{\ell'}(\pbf, \sigma, n)
-		\end{align*}
+			\label{eq_creation_v_transformation_simplified_by_boost}
+		\end{align}
 
 	It follows that one can calculate :math:`u_{\ell}(\pbf, \sigma, n)` for any :math:`\pbf` from the special case of :math:`\pbf = 0` given a representation :math:`D`.
 
@@ -3981,7 +3985,7 @@ Rotations
 			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} v_{\ell}(0, \sigma, n) &= -\sum_{\sigma'} v_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \label{eq_j_intertwines_v}
 		\end{align}
 
-	where :math:`\hat{\Jbf}` denotes the angular momentum vector for the representation :math:`D_{\ell' \ell}(\Rcal)`, in analogy with the usual angular momentum :math:`\Jbf^{(j)}` for :math:`D^{(j)}(\Rcal)`.
+	where :math:`\hat{\Jbf}` denotes the angular momentum vector for the representation :math:`D_{\ell' \ell}(\Rcal)`, in analogy with the usual angular momentum :math:`\Jbf^{(\jfrak)}` for :math:`D^{(j)}(\Rcal)`.
 
 
 The cluster decomposition principle
@@ -4337,6 +4341,324 @@ As before, we must have :math:`\xi^{\ast} = \xi^c` and therefore
 
 Vector fields
 ^^^^^^^^^^^^^
+
+The next simplest scenario after scalar field is vector field, where the representation :math:`D(\Lambda) = \Lambda`. Once again, let's consider particles of one species so that we can drop the :math:`n` label from, for example, :math:`a(\pbf, \sigma, n)`. In this case, we can rewrite :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\psi^+_{\mu}(x) &= \sum_{\sigma} (2\pi)^{-3/2} \int d^3 p~\exp(\ifrak p \cdot x) u_{\mu}(\pbf, \sigma) a(\pbf, \sigma)
+		\label{eq_vector_field_psi_plus} \\
+		\psi^-_{\nu}(x) &= \sum_{\sigma} (2\pi)^{-3/2} \int d^3 p~\exp(-\ifrak p \cdot x) v_{\nu}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma)
+		\label{eq_vector_field_psi_minus}
+	\end{align}
+
+where :math:`\mu, \nu` are the :math:`4`-indexes. Moreover, the boost transformation formulae :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` and :math:`\eqref{eq_creation_v_transformation_simplified_by_boost}` take the following form
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		u_{\mu}(\pbf, \sigma) &= (m / p_0)^{1/2} L(p)_{\mu}^{\nu} u_{\nu}(0, \sigma)
+		\label{eq_vector_field_boost_u} \\
+		v_{\mu}(\pbf, \sigma) &= (m / p_0)^{1/2} L(p)_{\mu}^{\nu} v_{\nu}(0, \sigma)
+		\label{eq_vector_field_boost_v}
+	\end{align}
+
+Finally the (linearized) rotation transformation formulae :math:`\eqref{eq_j_intertwines_u}` and :math:`\eqref{eq_j_intertwines_v}` take the following form
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\sum_{\sigma'} u_{\mu}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma'} &= \sum_{\nu} \hat{\Jbf}_{\mu \nu} u_{\nu}(0, \sigma)
+		\label{eq_vector_field_angular_momentum_intertwines_u} \\
+		-\sum_{\sigma'} v_{\mu}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma'} &= \sum_{\nu} \hat{\Jbf}_{\mu \nu} v_{\nu}(0, \sigma)
+		\label{eq_vector_field_angular_momentum_intertwines_v}
+	\end{align}
+
+where :math:`\hat{\Jbf}` is the angular momentum vector associated with the (tautological) representation :math:`\Lambda`. It follows from :math:`\eqref{eq_expansion_of_Lambda}` and :math:`\eqref{eq_u_lorentz_expansion}` that
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left( \hat{\Jbf}_k \right)_{00} = \left( \hat{\Jbf}_k \right)_{0i} = \left( \hat{\Jbf}_k \right)_{i0} &= 0
+		\label{eq_vector_field_j_intertwines_u} \\
+		\left( \hat{\Jbf}_k \right)_{ij} &= -\ifrak \epsilon_{ijk}
+		\label{eq_vector_field_j_intertwines_v}
+	\end{align}
+
+where :math:`\{i,j,k\} = \{1,2,3\}`. From this one can then calculate the following squares
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left( \hat{\Jbf}^2 \right)_{00} &= \left( \hat{\Jbf}^2 \right)_{0i} = \left( \hat{\Jbf}^2 \right)_{i0} = 0 \\
+		\left( \hat{\Jbf}^2 \right)_{ij} &= \sum_{k,m=1}^3 \left( \hat{\Jbf}_k \right)_{im} \left( \hat{\Jbf}_k \right)_{mj} = \sum_{k,m=1}^3 -\epsilon_{imk} \epsilon_{mjk} = 2\delta_{ij}
+	\end{align*}
+
+It follows then from :math:`\eqref{eq_vector_field_j_intertwines_u}` and :math:`\eqref{eq_vector_field_j_intertwines_v}` that
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\sum_{\sigma'} u_0(0, \sigma') \left(\Jbf^{(\jfrak)}\right)^2_{\sigma \sigma'} \
+			&= \sum_{\sigma', \sigma''} u_0(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma''} \Jbf^{(\jfrak)}_{\sigma'' \sigma'} \label{eq_vector_field_u0_intertwines_j_sq} \\
+			&= \sum_{\nu, \sigma'} \Jbf^{(\jfrak)}_{\sigma \sigma''} \hat{\Jbf}_{0 \nu} u_{\nu}(0, \sigma'') = 0 \nonumber \\
+		\sum_{\sigma'} u_i(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} \
+			&= \sum_{\sigma', \sigma''} u_i(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma''} \Jbf^{(\jfrak)}_{\sigma'' \sigma'} \label{eq_vector_field_ui_intertwines_j_sq} \\
+			&= \sum_{\nu, \sigma''} \hat{\Jbf}_{i \nu} \Jbf^{(\jfrak)}_{\sigma \sigma''} u_{\nu}(0, \sigma'') \nonumber \\
+			&= \sum_{\nu, \rho} \hat{\Jbf}_{i \nu} \hat{\Jbf}_{\nu \rho} u_{\rho}(0, \sigma) \nonumber \\
+			&= 2 \delta_{i \rho} u_{\rho}(0, \sigma) = 2 u_i(0, \sigma) \nonumber \\
+		\sum_{\sigma'} v_0(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} &= 0
+		\label{eq_vector_field_v0_intertwines_j_sq} \\
+		\sum_{\sigma'} v_i(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} &=2v_i(0, \sigma)
+		\label{eq_vector_field_vi_intertwines_j_sq}
+	\end{align}
+
+where we've worked out the details of the calculations for :math:`u`, but not :math:`v` because they are essentially the same.
+
+The reason for squaring the angular momentum :math:`3`-vector as above is because it has a particularly simple matrix form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} = \jfrak (\jfrak + 1) \delta_{\sigma \sigma'}
+	\end{equation*}
+
+by :math:`\eqref{eq_angular_momentum_squared_eigenvalue}`. It follows that in order for :math:`\eqref{eq_vector_field_u0_intertwines_j_sq}` -- :math:`\eqref{eq_vector_field_vi_intertwines_j_sq}` to have nonzero solutions, one must have either :math:`\jfrak = 0`, in which case only the time-components :math:`u_0(0)` and :math:`v_0(0)` may be nonzero, where we've also suppressed :math:`\sigma` because spin vanishes, or :math:`\jfrak = 1`, in which case only the space-components :math:`u_i(0, \sigma)` and :math:`v_i(0, \sigma)` may be nonzero. These two cases are discussed in more details as follows.
+
+Spin-:math:`0` vector fields
+++++++++++++++++++++++++++++
+
+In this case :math:`\jfrak = 0`. For reasons that will become clear momentarily, let's fix the constants :math:`u_0(0), v_0(0)` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		u_0(0) &= \ifrak (m / 2)^{1/2} \\
+		v_0(0) &= -\ifrak (m / 2)^{1/2}
+	\end{align*}
+
+It follows from :math:`\eqref{eq_vector_field_boost_u}` and :math:`\eqref{eq_vector_field_boost_v}` (see also :math:`\eqref{eq_L_transformation_for_massive_1}, \eqref{eq_L_transformation_for_massive_2}`) that
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		u_{\mu}(\pbf) &= (m / p_0)^{1/2} L(p)^0_{\mu} u_0(0) \\
+			&= (m / p_0)^{1/2} (p_{\mu} / m) \ifrak (m / 2)^{1/2} \\
+			&= \ifrak p_{\mu} (2p_0)^{-1/2} \\
+		v_{\mu}(\pbf) &= -\ifrak p_{\mu} (2p_0)^{-1/2}
+	\end{align*}
+
+where we once again have omitted the details of the calculation of :math:`v` because it's similar to that of :math:`u`. Plugging into :math:`\eqref{eq_vector_field_psi_plus}` and :math:`\eqref{eq_vector_field_psi_minus}`, we see that the field components take the following form
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\psi^+_{\mu}(x) &= (2\pi)^{-3/2} \int d^3 p~\exp(\ifrak p \cdot x) \ifrak p_{\mu} (2p_0)^{-1/2} a(\pbf) \\
+		\psi^-_{\mu}(x) &= (2\pi)^{-3/2} \int d^3 p~\exp(-\ifrak p \cdot x) (-\ifrak p_{\mu}) (2p_0)^{-1/2} a^{\dagger}(\pbf)
+	\end{align*}
+
+Comparing these with :math:`\eqref{eq_scalar_field_psi_plus}` and :math:`\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}`, and thanks to the choices of :math:`u_0(0)` and :math:`v_0(0)` above, we see that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\psi^+_{\mu}(x) = \p_{\mu} \psi^+(x), \quad \psi^-_{\mu}(x) = \p_{\mu} \psi^-(x)
+	\end{equation*}
+
+It follows that in fact a spinless vector field defined by :math:`\psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^-_{\mu}(x)` as usual is nothing but the gradient vector field of a (spinless) scalar field. Hence we get nothing new from spinless vector fields.
+
+Spin-:math:`1` vector fields
+++++++++++++++++++++++++++++
+
+In this case :math:`\jfrak = 1`. We start with the state whose spin :math:`z`-component vanishes, i.e., :math:`u_{\mu}(0,0)` and :math:`v_{\mu}(0,0)`. First we claim that they are both in the :math:`z`-direction, i.e., :math:`u_{\mu}(0,0) = v_{\mu}(0,0) = 0` unless :math:`\mu=3`. Indeed, taking the :math:`z`-components of both sides of :math:`\eqref{eq_vector_field_angular_momentum_intertwines_u}` and recalling that :math:`\left( J_3^{(1)} \right)_{0 \sigma} = 0`, we have for :math:`\mu = 1`
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		0 = \sum_{\nu} \left( \hat{\Jbf}_3 \right)_{1 \nu} u_{\nu}(0, 0) = -\ifrak u_2(0, 0) \implies u_2(0, 0) = 0
+	\end{equation*}
+
+and for :math:`\mu = 2`
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		0 = \sum_{\nu} \left( \hat{\Jbf}_3 \right)_{2 \nu} u_{\nu}(0, 0) = \ifrak u_1(0, 0) \implies u_1(0, 0) = 0
+	\end{equation*}
+
+These, together with :math:`\eqref{eq_vector_field_u0_intertwines_j_sq}`, imply that only :math:`u_3(0, 0)` is nonzero. The same conclusion can also be drawn for :math:`v_3(0, 0)`. Therefore up to a normalization factor, we can write
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		u_{\mu}(0, 0) = v_{\mu}(0, 0) = (2m)^{-1/2} \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
+		\label{eq_vector_field_uv_spin_z_0}
+	\end{equation}
+
+Now to calculate :math:`u` and :math:`v` for the other spin :math:`z`-components, we'll try to use :math:`\eqref{eq_j1_j2_matrix}` as follows. According to :math:`\eqref{eq_vector_field_angular_momentum_intertwines_u}` we have
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sum_{\nu} \left(\left( \hat{\Jbf}_1 \right)_{\mu \nu} + \ifrak \left( \hat{\Jbf}_2 \right)_{\mu \nu} \right) u_{\nu}(0, \sigma) \
+			&= \sum_{\sigma'} u_{\mu}(0, \sigma') \left( J^{(1)}_1 + \ifrak J^{(1)}_2 \right)_{\sigma \sigma'} \\
+			&= \sum_{\sigma'} u_{\mu}(0, \sigma') \delta_{\sigma+1, \sigma'} \sqrt{(1 - \sigma)(2 + \sigma)}
+	\end{align*}
+
+Letting :math:`\sigma=0` and :math:`\mu=1`, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\sqrt{2}~u_1(0, 1) = \sum_{\nu} \left(\left( \hat{\Jbf}_1 \right)_{1 \nu} + \ifrak \left( \hat{\Jbf}_2 \right)_{1 \nu} \right) u_{\nu}(0, 0) = \ifrak \left( \hat{\Jbf}_2 \right)_{13} u_3(0, 0) = -(2m)^{-1/2}
+	\end{equation*}
+
+Changing to :math:`\mu=2`, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\sqrt{2}~u_2(0, 1) = \sum_{\nu} \left(\left( \hat{\Jbf}_1 \right)_{2 \nu} + \ifrak \left( \hat{\Jbf}_2 \right)_{2 \nu} \right) u_{\nu}(0, 0) = (\hat{\Jbf}_1)_{23} u_3(0, 0) = -\ifrak (2m)^{-1/2}
+	\end{equation*}
+
+Finally take :math:`\mu=3`, we have
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\sqrt{2}~u_3(0, 1) = \sum_{\nu} \left(\left( \hat{\Jbf}_1 \right)_{3 \nu} + \ifrak \left( \hat{\Jbf}_2 \right)_{3 \nu} \right) u_{\nu}(0, 0) \
+			= \left( \hat{\Jbf}_1 \right)_{32} u_2(0, 0) + \ifrak \left( \hat{\Jbf}_2 \right)_{31} u_1(0, 0) = 0
+	\end{equation*}
+
+Putting these all together, we have calculated :math:`u_{\mu}(0, 1)` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		u_{\mu}(0, 1) = -\frac{1}{2\sqrt{m}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}
+	\end{equation*}
+
+Calculations for :math:`\sigma = -1` as well as for :math:`v` are similar and hence omitted. The results are listed for future reference as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat}{2}
+		u_{\mu}(0, 1) &= -v_{\mu}(0, -1) &&= -\frac{1}{2\sqrt{m}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}
+		\label{eq_vector_field_uv_spin_z_1} \\
+		u_{\mu}(0, -1) &= -v_{\mu}(0, 1) &&= \frac{1}{2\sqrt{m}} \begin{bmatrix} 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix}
+		\label{eq_vector_field_uv_spin_z_2}
+	\end{alignat}
+
+Applying the boosting formulae :math:`\eqref{eq_vector_field_boost_u}, \eqref{eq_vector_field_boost_v}` to :math:`\eqref{eq_vector_field_uv_spin_z_0}, \eqref{eq_vector_field_uv_spin_z_1}, \eqref{eq_vector_field_uv_spin_z_2}`, we obtain the formulae for :math:`u, v` at arbitrary momentum as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		u_{\mu}(\pbf, \sigma) = v_{\mu}^{\ast}(\pbf, \sigma) = (2p_0)^{-1/2} L(p)_{\mu}^{\nu} e_{\nu}(0, \sigma) \eqqcolon (2p_0)^{-1/2} e_{\mu}(\pbf, \sigma)
+		\label{eq_vector_field_defn_e_vector_at_p}
+	\end{equation}
+
+where
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		e_{\mu}(0, 0) = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}, \quad \
+		e_{\mu}(0, 1) = -\frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}, \quad \
+		e_{\mu}(0, -1) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix}
+	\end{equation*}
+
+Now we can rewrite the fields :math:`\eqref{eq_vector_field_psi_plus}` and :math:`\eqref{eq_vector_field_psi_minus}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\psi^+_{\mu}(x) &= \sum_{\sigma} (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}}~\exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \\
+		\psi^-_{\mu}(x) &= \sum_{\sigma} (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}}~\exp(-\ifrak p \cdot x) e_{\mu}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) = \psi^{+ \dagger}_{\mu}(x)
+	\end{align*}
+
+Similar to the calculation :math:`\eqref{eq_scalar_field_commutator_as_Delta}` for scalar field, the (anti-)commutator can be calculated as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \int \frac{d^3 p}{(2\pi)^3 2p_0}~\exp(\ifrak p \cdot (x - y)) \Pi_{\mu \nu}(\pbf)
+	\end{equation*}
+
+where
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Pi_{\mu \nu}(\pbf) \coloneqq \sum_{\sigma} e_{\mu}(\pbf, \sigma) e^{\ast}_{\nu}(\pbf, \sigma)
+		\label{eq_vector_field_Pi_matrix}
+	\end{equation}
+
+To better understand the quantity :math:`\Pi_{\mu \nu}(\pbf)`, let's first evaluate it at :math:`\pbf = 0` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Pi_{\mu \nu}(0) = \begin{bmatrix}
+				0 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 1
+			\end{bmatrix} + \frac{1}{2} \begin{bmatrix}
+				0 & 0 & 0 & 0 \\
+				0 & 1 & -\ifrak & 0 \\
+				0 & \ifrak & 1 & 0 \\
+				0 & 0 & 0 & 0
+			\end{bmatrix} + \frac{1}{2} \begin{bmatrix}
+				0 & 0 & 0 & 0 \\
+				0 & 1 & \ifrak & 0 \\
+				0 & -\ifrak & 1 & 0 \\
+				0 & 0 & 0 & 0
+			\end{bmatrix} = \begin{bmatrix}
+				0 & 0 & 0 & 0 \\
+				0 & 1 & 0 & 0 \\
+				0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1
+			\end{bmatrix}
+	\end{equation*}
+
+which is nothing but the projection to the spatial :math:`3`-space, or in other words, the orthogonal complement of the time direction :math:`\pbf = 0`. Considering the definition :math:`e_{\mu}(\pbf, \sigma) \coloneqq L(p)_{\mu}^{\nu} e_{\nu}(0, \sigma)` as in :math:`\eqref{eq_vector_field_defn_e_vector_at_p}`, we see that the general :math:`\Pi_{\mu \nu}(\pbf)` is really just a projection to the orthogonal complement of :math:`p`, and therefore can be written as
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Pi_{\mu \nu}(\pbf) = \eta_{\mu \nu} + \frac{p_{\mu} p_{\nu}}{m^2}
+	\end{equation*}
+
+because of the mass-shell condition :math:`p^2 + m^2 = 0`.
 
 
 .. rubric:: Footnotes
