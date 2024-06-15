@@ -306,9 +306,10 @@ where
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 \implies m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 = E^2 - \pbf^2
-		\end{equation*}
+			\label{eq_four_momentum_mass_identity}
+		\end{equation}
 
 	which looks just like :math:`\eqref{eq_proper_time}`, and indeed, the mass (in our convention) is invariant in all inertial frames.
 
@@ -674,23 +675,23 @@ that :math:`U(\Lambda) \Psi_{p, \sigma}` has :math:`4`-momentum :math:`\Lambda p
 
 where :math:`C_{\sigma \sigma'}` furnishes a representation of :math:`\Lambda` and :math:`p` under straightforward transformation rules, and an implicit summation over :math:`\sigma'` is assumed although it's not a :math:`4`-index.
 
-Next we'd like to remove the dependency of :math:`C_{\sigma \sigma'}` on :math:`p` since, after all, it is :math:`\Lambda` that carries the symmetry. We can achieve this by noticing that :math:`U(\Lambda)` acts on the :math:`\Lambda`-orbits of :math:`p` transitively. The :math:`\Lambda`-orbits of :math:`p`, in turn, are uniquely determined by the value of :math:`p^2`, and in the case of :math:`p^2 \geq 0`, also by the sign of :math:`p_0`. We can therefore pick a convenient representative :math:`k` for each case as follows
+Next we'd like to remove the dependency of :math:`C_{\sigma \sigma'}` on :math:`p` since, after all, it is :math:`\Lambda` that carries the symmetry. We can achieve this by noticing that :math:`U(\Lambda)` acts on the :math:`\Lambda`-orbits of :math:`p` transitively. The :math:`\Lambda`-orbits of :math:`p`, in turn, are uniquely determined by the value of :math:`p^2`, and in the case of :math:`p^2 \leq 0`, also by the sign of :math:`p_0`. In light of :math:`\eqref{eq_four_momentum_mass_identity}`, we can pick a convenient representative :math:`k` for each case as follows
 
-+--------------------------------+-----------------------+----------+
-| Case                           | Standard :math:`k`    | Physical |
-+================================+=======================+==========+
-| :math:`p^2 = M^2 > 0,~p_0 > 0` | :math:`(M, 0, 0, 0)`  | Yes      |
-+--------------------------------+-----------------------+----------+
-| :math:`p^2 = M^2 > 0,~p_0 < 0` | :math:`(-M, 0, 0, 0)` | No       |
-+--------------------------------+-----------------------+----------+
-| :math:`p^2 = 0,~p_0 > 0`       | :math:`(1, 0, 0, 1)`  | Yes      |
-+--------------------------------+-----------------------+----------+
-| :math:`p^2 = 0,~p_0 = 0`       | :math:`(0, 0, 0, 0)`  | Yes      |
-+--------------------------------+-----------------------+----------+
-| :math:`p^2 = 0,~p_0 < 0`       | :math:`(-1, 0, 0, 1)` | No       |
-+--------------------------------+-----------------------+----------+
-| :math:`p^2 = -N^2 < 0`         | :math:`(0, N, 0, 0)`  | No       |
-+--------------------------------+-----------------------+----------+
++---------------------------------+-----------------------+----------+
+| Case                            | Standard :math:`k`    | Physical |
++=================================+=======================+==========+
+| :math:`p^2 = -M^2 < 0,~p_0 > 0` | :math:`(M, 0, 0, 0)`  | Yes      |
++---------------------------------+-----------------------+----------+
+| :math:`p^2 = -M^2 < 0,~p_0 < 0` | :math:`(-M, 0, 0, 0)` | No       |
++---------------------------------+-----------------------+----------+
+| :math:`p^2 = 0,~p_0 > 0`        | :math:`(1, 0, 0, 1)`  | Yes      |
++---------------------------------+-----------------------+----------+
+| :math:`p^2 = 0,~p_0 = 0`        | :math:`(0, 0, 0, 0)`  | Yes      |
++---------------------------------+-----------------------+----------+
+| :math:`p^2 = 0,~p_0 < 0`        | :math:`(-1, 0, 0, 1)` | No       |
++---------------------------------+-----------------------+----------+
+| :math:`p^2 = N^2 > 0`           | :math:`(0, N, 0, 0)`  | No       |
++---------------------------------+-----------------------+----------+
 
 It turns out that only three of these cases are realized physically, and they correspond to the cases of a massive particle of mass :math:`M`, a massless particle and the vacuum, respectively. Since there is not much to say about the vacuum state, there are only two cases that we need to investigate.
 
@@ -762,7 +763,7 @@ It remains now, as far as the general discussion is concerned, to settle the nor
 
 where the first delta is the Kronecker delta (for discrete indexes) and the second is the Dirac delta (for continuous indexes), since they are eigenvectors of the (Hermitian) operator :math:`P`. All we need is :math:`D_{\sigma \sigma'}` being unitary as is obvious from :math:`\eqref{eq_little_group_acts_on_p_and_sigma}`.
 
-However, the Dirac delta in :math:`\eqref{eq_psi_p4_sigma_orthonormal}` is tricky to use since :math:`p` is constrained to the so-called *mass shell*, i.e., :math:`p_0 > 0` together with :math:`p^2 = M^2` in the massive case and :math:`p^2 = 0` in the massless case, respectively. Hence the actual normalization we'd like to impose on the one-particle states is, instead of :math:`\eqref{eq_psi_p4_sigma_orthonormal}`, the following
+However, the Dirac delta in :math:`\eqref{eq_psi_p4_sigma_orthonormal}` is tricky to use since :math:`p` is constrained to the so-called *mass shell*, i.e., :math:`p_0 > 0` together with :math:`p^2 = -M^2` in the massive case and :math:`p^2 = 0` in the massless case, respectively. Hence the actual normalization we'd like to impose on the one-particle states is, instead of :math:`\eqref{eq_psi_p4_sigma_orthonormal}`, the following
 
 .. math::
 	:nowrap:
@@ -780,7 +781,7 @@ Since :math:`\Psi_{p, \sigma}` can be derived from :math:`\Psi_{k, \sigma}` by :
 	:nowrap:
 
 	\begin{align*}
-		\int d^4 p ~\delta(p^2 - M^2) \theta(p_0) f(p) &= \int d^3\pbf dp_0 ~\delta(p_0^2 - \pbf^2 - M^2) \theta(p_0) f(p_0, \pbf) \\
+		\int d^4 p ~\delta(p^2 + M^2) \theta(p_0) f(p) &= \int d^3\pbf dp_0 ~\delta(p_0^2 - \pbf^2 - M^2) \theta(p_0) f(p_0, \pbf) \\
 			&= \int d^3\pbf ~\frac{f\left( \sqrt{\pbf^2 + M^2}, \pbf \right)}{2 \sqrt{\pbf^2 + M^2}}
 	\end{align*}
 
@@ -959,7 +960,7 @@ Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :mat
 	:nowrap:
 
 	\begin{equation*}
-		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M}
+		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)
 	\end{equation*}
 
 It follows that [#boost_in_p_formula]_
