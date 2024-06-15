@@ -4158,9 +4158,10 @@ where
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Delta(x) \coloneqq \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot x)
-	\end{equation*}
+		\label{eq_defn_Delta}
+	\end{equation}
 
 We notice that :math:`\Delta(x)` is apparently (proper orthochronous) Lorentz invariant -- the invariance of the volume element comes from :math:`\eqref{eq_lorentz_invariant_3_momentum_volume_element}`. It is, however, not in general invariant under transformations like :math:`x \to -x`. But, as we'll see, such invariance holds assuming :math:`x` is space-like.
 
@@ -4586,11 +4587,12 @@ where
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		e_{\mu}(0, 0) = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}, \quad \
 		e_{\mu}(0, 1) = -\frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}, \quad \
 		e_{\mu}(0, -1) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix}
-	\end{equation*}
+		\label{eq_vector_field_defn_e_vector_at_rest}
+	\end{equation}
 
 Now we can rewrite the fields :math:`\eqref{eq_vector_field_psi_plus}` and :math:`\eqref{eq_vector_field_psi_minus}` as follows
 
@@ -4607,9 +4609,10 @@ Similar to the calculation :math:`\eqref{eq_scalar_field_commutator_as_Delta}` f
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \int \frac{d^3 p}{(2\pi)^3 2p_0}~\exp(\ifrak p \cdot (x - y)) \Pi_{\mu \nu}(\pbf)
-	\end{equation*}
+		\label{eq_vector_field_commutator_by_Pi}
+	\end{equation}
 
 where
 
@@ -4655,11 +4658,152 @@ which is nothing but the projection to the spatial :math:`3`-space, or in other 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Pi_{\mu \nu}(\pbf) = \eta_{\mu \nu} + \frac{p_{\mu} p_{\nu}}{m^2}
-	\end{equation*}
+		\label{eq_vector_field_defn_Pi}
+	\end{equation}
 
 because of the mass-shell condition :math:`p^2 + m^2 = 0`.
+
+In light of :math:`\eqref{eq_scalar_field_commutator_as_Delta}`, we can rewrite :math:`\eqref{eq_vector_field_commutator_by_Pi}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta(x - y)
+		\label{eq_vector_field_commutator_by_Delta}
+	\end{equation}
+
+where :math:`\Delta(x - y)` is defined by :math:`\eqref{eq_defn_Delta}`. As in the case of scalar fields, this (anti-)commutator doesn't vanish even for space-like :math:`x - y`. Nonetheless, it's still an even function for space-like separations. The trick, as before, is to consider some appropriate linear combination of :math:`\psi^+_{\mu}(x)` and :math:`\psi^-_{\mu}(x)` which turns out to be
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^-_{\mu}(x) = \psi^+_{\mu}(x) + \psi^{+ \dagger}_{\mu}(x)
+		\label{eq_vector_field_psi_fixed_phase}
+	\end{equation}
+
+just like :math:`\eqref{eq_scalar_field_psi_fixed_phase}`. Moreover, in order for the left-hand-side of :math:`\eqref{eq_vector_field_commutator_by_Delta}` to be a commutator, we conclude that a spin-:math:`1` vector field must be bosonic. In addition, if the field carries a nonzero (conserved) quantum charge, then one must adjust :math:`\eqref{eq_vector_field_psi_fixed_phase}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^{+ c \dagger}_{\mu}(x)
+	\end{equation*}
+
+in analogy with :math:`\eqref{eq_scalar_field_psi_fixed_phase_with_antiparticle}` for scalar fields. Finally, we can express the vector field in terms of creation and annihilation operators as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi_{\mu}(x) = \sum_{\sigma} \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \
+			+ \exp(-\ifrak p \cdot x) e_{\mu}^{\ast}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right]
+		\label{eq_vector_field_psi_by_creation_and_annihilation_operators}
+	\end{equation}
+
+in analogy with :math:`\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}` for scalar fields.
+
+So far, besides the introduction of the vectors :math:`e_{\mu}(\pbf, \sigma)` in :math:`\eqref{eq_vector_field_defn_e_vector_at_p}` and :math:`\eqref{eq_vector_field_defn_e_vector_at_rest}`, the discussion on vector fields looks very much like scalar fields. A key difference, however, stems from the following observation
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		e^{\mu}(\pbf, \sigma) p_{\mu} = 0
+	\end{equation*}
+
+which, in turn, implies that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\p_{\mu} \psi^{\mu}(x) = 0
+	\end{equation*}
+
+This condition turns out to be coincide with a so-called "gauge fixing" condition for spin-:math:`1` photons in quantum electrodynamics. However, it's known that photons are massless particles. Therefore we may wonder if a vanishing mass limit :math:`m \to 0` may be applied. Now the simplest way to construct a (scalar) interaction density :math:`\Hscr(x)` using :math:`\psi_{\mu}(x)` is
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Hscr(x) = J^{\mu}(x) \psi_{\mu}(x)
+	\end{equation*}
+
+where :math:`J^{\mu}(x)` is a :math:`4`-vector current. Suppose we fix the in- and out-states in the interaction. Then according to :math:`\eqref{eq_vector_field_psi_by_creation_and_annihilation_operators}`, the rate of (anti-)particle emission is proportional to
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\sum_{\sigma} \left| \langle J^{\mu} \rangle e_{\mu}^{\ast}(\pbf, \sigma) \right|^2 \
+			= \langle J^{\mu} \rangle \langle J^{\mu} \rangle^{\ast} \Pi_{\mu \nu}(\pbf) \
+			\xlongequal{\eqref{eq_vector_field_defn_Pi}} \langle J^{\mu} \rangle \langle J^{\mu} \rangle^{\ast} \left( \eta_{\mu \nu} - p_{\mu} p_{\nu} / m^2 \right)
+	\end{equation*}
+
+where :math:`\langle J^{\mu} \rangle` denotes the matrix element of the current between the fixed in- and out-states. Now this rate blows up at :math:`m \to 0` limit unless :math:`p_{\mu} \langle J^{\mu} \rangle = 0`. This last condition can be translated to spacetime coordinates as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\p_{\mu} J^{\mu}(x) = 0
+	\end{equation*}
+
+or in other words :math:`J^{\mu}(x)` is a conserved current.
+
+The CPT symmetries
+++++++++++++++++++
+
+Let's start with the spatial inversion. First recall from :ref:`sec_the_lorentz_and_cpt_transformation_laws`
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\Pcal) a(\pbf, \sigma) U^{-1}(\Pcal) &= \eta^{\ast} a(-\pbf, \sigma) \\
+		U(\Pcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Pcal) &= \eta^c a^{c \dagger}(-\pbf, \sigma)
+	\end{align*}
+
+It follows that we need to express :math:`e_{\mu}(-\pbf, \sigma)` in terms of :math:`e_{\mu}(\pbf, \sigma)`. To this end, let's calculate
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		e_{\mu}(-\pbf, \sigma) = L(-p)_{\mu}^{\nu} e_{\nu}(0, \sigma) \
+			= \Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} \Pcal_{\tau}^{\nu} e_{\nu}(0, \sigma) \
+			= -\Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} e_{\tau}(0, \sigma) \
+			= -\Pcal_{\mu}^{\rho} e_{\rho}(p, \sigma)
+	\end{equation*}
+
+It follows that the spatial inversion transformation law is given as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Pcal) \psi_{\mu}(x) U^{-1}(\Pcal) = -\eta^{\ast} \Pcal_{\mu}^{\nu} \psi_{\nu}(\Pcal x)
+	\end{equation*}
+
+Omitting further details, the transformation laws for time inversion and charge conjugation is given as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\Tcal) \psi_{\mu}(x) U^{-1}(\Tcal) &= \zeta^{\ast} \Pcal_{\mu}^{\nu} \psi_{\nu}(x) \\
+		U(\Ccal) \psi_{\mu}(x) U^{-1}(\Ccal) &= \xi^{\ast} \psi_{\mu}^{\dagger}(x)
+	\end{align*}
+
+Just like the case of scalar fields, we also have :math:`\eta^c = \eta^{\ast}, \zeta^c = \zeta^{\ast}` and :math:`\xi^c = \xi^{\ast}`.
+
+Dirac fields
+^^^^^^^^^^^^
 
 
 .. rubric:: Footnotes

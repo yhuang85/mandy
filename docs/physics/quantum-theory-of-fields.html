@@ -2532,9 +2532,9 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 \end{align*}</div><p>where we’ve also suppressed the time factor from <span class="math notranslate nohighlight">\(V(t)\)</span> as it won’t really play a role in the diagram. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id30">
+<figure class="align-center" id="id31">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" /><figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2558,9 +2558,9 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
 <p>To verify that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function, we note a crucial fact that the diagram contains no <em>directed</em> loops, which allows us to start from the bottom, i.e., the total momentum of the in-state particles, and work our way up to the top, i.e., the total momentum of the out-state particles, so that there is exactly one momentum-conservation delta function at each step when a(n intermediate) vertex is added, which guarantees that the incoming total momentum equals the outgoing total momentum.</p>
 <p>As a side remark, we point out that the argument in <a class="reference internal" href="../bib.html#wei95" id="id19"><span>[Wei95]</span></a> (page 186 –187) in terms of a Euler characteristic calculation of the diagram appears to be wrong. A counterexample (to Weinberg’s argument) can be illustrated in the following pseudo Feynman diagram which contains a directed loop</p>
-<figure class="align-center" id="id31">
+<figure class="align-center" id="id32">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" /><figcaption>
-<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Evaluating the momentum-conservation delta function of the diagram then gives</p>
@@ -2786,9 +2786,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
                 &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot (x - y)) \eqqcolon \Delta(x - y) \nonumber
 \end{align}</div><p>where</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \Delta(x) \coloneqq \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot x)
-\end{equation*}</div><p>We notice that <span class="math notranslate nohighlight">\(\Delta(x)\)</span> is apparently (proper orthochronous) Lorentz invariant – the invariance of the volume element comes from <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariant_3_momentum_volume_element}\)</span>. It is, however, not in general invariant under transformations like <span class="math notranslate nohighlight">\(x \to -x\)</span>. But, as we’ll see, such invariance holds assuming <span class="math notranslate nohighlight">\(x\)</span> is space-like.</p>
+        \label{eq_defn_Delta}
+\end{equation}</div><p>We notice that <span class="math notranslate nohighlight">\(\Delta(x)\)</span> is apparently (proper orthochronous) Lorentz invariant – the invariance of the volume element comes from <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariant_3_momentum_volume_element}\)</span>. It is, however, not in general invariant under transformations like <span class="math notranslate nohighlight">\(x \to -x\)</span>. But, as we’ll see, such invariance holds assuming <span class="math notranslate nohighlight">\(x\)</span> is space-like.</p>
 <p>Now we’ll restrict ourselves to the special case of a space-like <span class="math notranslate nohighlight">\(x\)</span> which, up to a Lorentz transformation, can be assumed to take the form <span class="math notranslate nohighlight">\(x = (0, \xbf)\)</span> with <span class="math notranslate nohighlight">\(|\xbf| &gt; 0\)</span>. In this case, we can then calculate <span class="math notranslate nohighlight">\(\Delta(x)\)</span> as follows <a class="footnote-reference brackets" href="#wrong-integration-of-delta-function" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -3015,20 +3016,22 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_vector_field_defn_e_vector_at_p}
 \end{equation}</div><p>where</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         e_{\mu}(0, 0) = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}, \quad \
         e_{\mu}(0, 1) = -\frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}, \quad \
         e_{\mu}(0, -1) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix}
-\end{equation*}</div><p>Now we can rewrite the fields <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_minus}\)</span> as follows</p>
+        \label{eq_vector_field_defn_e_vector_at_rest}
+\end{equation}</div><p>Now we can rewrite the fields <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_minus}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         \psi^+_{\mu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}}~\exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \\
         \psi^-_{\mu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}}~\exp(-\ifrak p \cdot x) e_{\mu}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) = \psi^{+ \dagger}_{\mu}(x)
 \end{align*}</div><p>Similar to the calculation <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_commutator_as_Delta}\)</span> for scalar field, the (anti-)commutator can be calculated as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \int \frac{d^3 p}{(2\pi)^3 2p_0}~\exp(\ifrak p \cdot (x - y)) \Pi_{\mu \nu}(\pbf)
-\end{equation*}</div><p>where</p>
+        \label{eq_vector_field_commutator_by_Pi}
+\end{equation}</div><p>where</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \Pi_{\mu \nu}(\pbf) \coloneqq \sum_{\sigma} e_{\mu}(\pbf, \sigma) e^{\ast}_{\nu}(\pbf, \sigma)
@@ -3059,26 +3062,100 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
                 \end{bmatrix}
 \end{equation*}</div><p>which is nothing but the projection to the spatial <span class="math notranslate nohighlight">\(3\)</span>-space, or in other words, the orthogonal complement of the time direction <span class="math notranslate nohighlight">\(\pbf = 0\)</span>. Considering the definition <span class="math notranslate nohighlight">\(e_{\mu}(\pbf, \sigma) \coloneqq L(p)_{\mu}^{\nu} e_{\nu}(0, \sigma)\)</span> as in <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_defn_e_vector_at_p}\)</span>, we see that the general <span class="math notranslate nohighlight">\(\Pi_{\mu \nu}(\pbf)\)</span> is really just a projection to the orthogonal complement of <span class="math notranslate nohighlight">\(p\)</span>, and therefore can be written as</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \Pi_{\mu \nu}(\pbf) = \eta_{\mu \nu} + \frac{p_{\mu} p_{\nu}}{m^2}
-\end{equation*}</div><p>because of the mass-shell condition <span class="math notranslate nohighlight">\(p^2 + m^2 = 0\)</span>.</p>
+        \label{eq_vector_field_defn_Pi}
+\end{equation}</div><p>because of the mass-shell condition <span class="math notranslate nohighlight">\(p^2 + m^2 = 0\)</span>.</p>
+<p>In light of <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_commutator_as_Delta}\)</span>, we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_commutator_by_Pi}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta(x - y)
+        \label{eq_vector_field_commutator_by_Delta}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta(x - y)\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta}\)</span>. As in the case of scalar fields, this (anti-)commutator doesn’t vanish even for space-like <span class="math notranslate nohighlight">\(x - y\)</span>. Nonetheless, it’s still an even function for space-like separations. The trick, as before, is to consider some appropriate linear combination of <span class="math notranslate nohighlight">\(\psi^+_{\mu}(x)\)</span> and <span class="math notranslate nohighlight">\(\psi^-_{\mu}(x)\)</span> which turns out to be</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^-_{\mu}(x) = \psi^+_{\mu}(x) + \psi^{+ \dagger}_{\mu}(x)
+        \label{eq_vector_field_psi_fixed_phase}
+\end{equation}</div><p>just like <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_fixed_phase}\)</span>. Moreover, in order for the left-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_commutator_by_Delta}\)</span> to be a commutator, we conclude that a spin-<span class="math notranslate nohighlight">\(1\)</span> vector field must be bosonic. In addition, if the field carries a nonzero (conserved) quantum charge, then one must adjust <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_fixed_phase}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^{+ c \dagger}_{\mu}(x)
+\end{equation*}</div><p>in analogy with <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_fixed_phase_with_antiparticle}\)</span> for scalar fields. Finally, we can express the vector field in terms of creation and annihilation operators as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \psi_{\mu}(x) = \sum_{\sigma} \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \
+                + \exp(-\ifrak p \cdot x) e_{\mu}^{\ast}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right]
+        \label{eq_vector_field_psi_by_creation_and_annihilation_operators}
+\end{equation}</div><p>in analogy with <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}\)</span> for scalar fields.</p>
+<p>So far, besides the introduction of the vectors <span class="math notranslate nohighlight">\(e_{\mu}(\pbf, \sigma)\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_defn_e_vector_at_p}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_defn_e_vector_at_rest}\)</span>, the discussion on vector fields looks very much like scalar fields. A key difference, however, stems from the following observation</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        e^{\mu}(\pbf, \sigma) p_{\mu} = 0
+\end{equation*}</div><p>which, in turn, implies that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \p_{\mu} \psi^{\mu}(x) = 0
+\end{equation*}</div><p>This condition turns out to be coincide with a so-called “gauge fixing” condition for spin-<span class="math notranslate nohighlight">\(1\)</span> photons in quantum electrodynamics. However, it’s known that photons are massless particles. Therefore we may wonder if a vanishing mass limit <span class="math notranslate nohighlight">\(m \to 0\)</span> may be applied. Now the simplest way to construct a (scalar) interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> using <span class="math notranslate nohighlight">\(\psi_{\mu}(x)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Hscr(x) = J^{\mu}(x) \psi_{\mu}(x)
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(J^{\mu}(x)\)</span> is a <span class="math notranslate nohighlight">\(4\)</span>-vector current. Suppose we fix the in- and out-states in the interaction. Then according to <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_by_creation_and_annihilation_operators}\)</span>, the rate of (anti-)particle emission is proportional to</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \sum_{\sigma} \left| \langle J^{\mu} \rangle e_{\mu}^{\ast}(\pbf, \sigma) \right|^2 \
+                = \langle J^{\mu} \rangle \langle J^{\mu} \rangle^{\ast} \Pi_{\mu \nu}(\pbf) \
+                \xlongequal{\eqref{eq_vector_field_defn_Pi}} \langle J^{\mu} \rangle \langle J^{\mu} \rangle^{\ast} \left( \eta_{\mu \nu} - p_{\mu} p_{\nu} / m^2 \right)
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\langle J^{\mu} \rangle\)</span> denotes the matrix element of the current between the fixed in- and out-states. Now this rate blows up at <span class="math notranslate nohighlight">\(m \to 0\)</span> limit unless <span class="math notranslate nohighlight">\(p_{\mu} \langle J^{\mu} \rangle = 0\)</span>. This last condition can be translated to spacetime coordinates as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \p_{\mu} J^{\mu}(x) = 0
+\end{equation*}</div><p>or in other words <span class="math notranslate nohighlight">\(J^{\mu}(x)\)</span> is a conserved current.</p>
+</section>
+<section id="id22">
+<h4>The CPT symmetries<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
+<p>Let’s start with the spatial inversion. First recall from <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a></p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        U(\Pcal) a(\pbf, \sigma) U^{-1}(\Pcal) &amp;= \eta^{\ast} a(-\pbf, \sigma) \\
+        U(\Pcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Pcal) &amp;= \eta^c a^{c \dagger}(-\pbf, \sigma)
+\end{align*}</div><p>It follows that we need to express <span class="math notranslate nohighlight">\(e_{\mu}(-\pbf, \sigma)\)</span> in terms of <span class="math notranslate nohighlight">\(e_{\mu}(\pbf, \sigma)\)</span>. To this end, let’s calculate</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        e_{\mu}(-\pbf, \sigma) = L(-p)_{\mu}^{\nu} e_{\nu}(0, \sigma) \
+                = \Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} \Pcal_{\tau}^{\nu} e_{\nu}(0, \sigma) \
+                = -\Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} e_{\tau}(0, \sigma) \
+                = -\Pcal_{\mu}^{\rho} e_{\rho}(p, \sigma)
+\end{equation*}</div><p>It follows that the spatial inversion transformation law is given as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Pcal) \psi_{\mu}(x) U^{-1}(\Pcal) = -\eta^{\ast} \Pcal_{\mu}^{\nu} \psi_{\nu}(\Pcal x)
+\end{equation*}</div><p>Omitting further details, the transformation laws for time inversion and charge conjugation is given as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        U(\Tcal) \psi_{\mu}(x) U^{-1}(\Tcal) &amp;= \zeta^{\ast} \Pcal_{\mu}^{\nu} \psi_{\nu}(x) \\
+        U(\Ccal) \psi_{\mu}(x) U^{-1}(\Ccal) &amp;= \xi^{\ast} \psi_{\mu}^{\dagger}(x)
+\end{align*}</div><p>Just like the case of scalar fields, we also have <span class="math notranslate nohighlight">\(\eta^c = \eta^{\ast}, \zeta^c = \zeta^{\ast}\)</span> and <span class="math notranslate nohighlight">\(\xi^c = \xi^{\ast}\)</span>.</p>
+</section>
+</section>
+<section id="dirac-fields">
+<h3>Dirac fields<a class="headerlink" href="#dirac-fields" title="Link to this heading">#</a></h3>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id22"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id23"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="boost-in-p-formula" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
-<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id23"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
+<p>The formula in <a class="reference internal" href="../bib.html#wei95" id="id24"><span>[Wei95]</span></a> page 68, eq. (2.5.24) is wrong.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">3</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id24"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id25"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id25"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id26"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id26"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id27"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id27"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id28"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
@@ -3086,14 +3163,13 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">6</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id28"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id29"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">7</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id29"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id30"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 </aside>
-</section>
 </section>
 </section>
 </section>
@@ -3192,8 +3268,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-fields">Vector fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0-vector-fields">Spin-<span class="math notranslate nohighlight">\(0\)</span> vector fields</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-1-vector-fields">Spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">The CPT symmetries</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-fields">Dirac fields</a></li>
 </ul>
 </li>
 </ul>
