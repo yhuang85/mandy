@@ -4805,6 +4805,150 @@ Just like the case of scalar fields, we also have :math:`\eta^c = \eta^{\ast}, \
 Dirac fields
 ^^^^^^^^^^^^
 
+Here we'll encounter the first nontrivial representation of the (homogeneous orthochronous) Lorentz group, first discovered by P. Dirac in a completely different (and more physical) context. Our treatment here will be purely mathematical, and will serve as a warm-up for the general representation theory.
+
+Let :math:`D` be a representation of the Lorentz group in the sense that :math:`D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)`. By the discussion in :ref:`sec_quantum_lorentz_symmetry` and ignoring the translation part, we can write :math:`D(\Lambda)` up to first order as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		D(\Lambda) = 1 + \frac{\ifrak}{2} \omega^{\mu \nu} \Jscr_{\mu \nu}
+	\end{equation*}
+
+where :math:`\Jscr_{\mu \nu} = -\Jscr_{\nu \mu}` are (Hermitian) matrices that, according to :math:`\eqref{eq_bracket_j4_j4}`, satisfy in addition the following Lie-algebraic condition
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\left[ \Jscr_{\mu \nu}, \Jscr_{\rho \kappa} \right] = \ifrak\left( \eta_{\mu \rho} \Jscr_{\nu \kappa} - \eta_{\nu \rho} \Jscr_{\mu \kappa} + \eta_{\kappa \mu} \Jscr_{\rho \nu} - \eta_{\kappa \nu} \Jscr_{\rho \mu} \right)
+		\label{eq_bracket_repr_j}
+	\end{equation}
+
+The idea is to turn :math:`\eqref{eq_bracket_repr_j}` into a Jacobi identity. To this end, let's assume the existence of matrices :math:`\gamma_{\mu}` such that
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\left\{ \gamma_{\mu}, \gamma_{\nu} \right\} = 2\eta_{\mu \nu}
+		\label{eq_dirac_field_clifford_algebra}
+	\end{equation}
+
+where the curly bracket denotes the anti-commutator and is equivalent to the notation :math:`[\cdots]_+` used in the previous chapters. Here the right-hand-side, being a bear number, should be interpreted as a multiple of the identity matrix of the same rank as :math:`\gamma_{\mu}`. Such matrices :math:`\gamma_{\mu}` form a so-called `Clifford algebra <https://en.wikipedia.org/wiki/Clifford_algebra>`_ of the symmetric bilinear form :math:`\eta_{\mu \nu}`. Then we can define
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Jscr_{\mu \nu} \coloneqq -\frac{\ifrak}{4} \left[ \gamma_{\mu}, \gamma_{\nu} \right]
+		\label{eq_dirac_field_defn_j}
+	\end{equation}
+
+Now we can calculate
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left[ \Jscr_{\mu \nu}, \gamma_{\rho} \right] &= -\frac{\ifrak}{4} \left[ \left[ \gamma_{\mu}, \gamma_{\nu} \right], \gamma_{\rho} \right] \label{eq_dirac_field_j_gamma_commutator} \\
+			&= -\frac{\ifrak}{4} \left( \gamma_{\mu}\gamma_{\nu}\gamma_{\rho} - \gamma_{\nu}\gamma_{\mu}\gamma_{\rho} - \gamma_{\rho}\gamma_{\mu}\gamma_{\nu} + \gamma_{\rho}\gamma_{\nu}\gamma_{\mu} \right) \nonumber \\
+			&= -\frac{\ifrak}{4} \left( (\gamma_{\mu}\gamma_{\nu}\gamma_{\rho} + \gamma_{\mu}\gamma_{\rho}\gamma_{\nu}) - (\gamma_{\mu}\gamma_{\rho}\gamma_{\nu} + \gamma_{\rho}\gamma_{\mu}\gamma_{\nu}) - (\gamma_{\nu}\gamma_{\mu}\gamma_{\rho} + \gamma_{\nu}\gamma_{\rho}\gamma_{\mu}) + (\gamma_{\nu}\gamma_{\rho}\gamma_{\mu} + \gamma_{\rho}\gamma_{\nu}\gamma_{\mu}) \right) \nonumber \\
+			&= -\frac{\ifrak}{4} \left( 2\gamma_{\mu}\eta_{\nu \rho} - 2\eta_{\mu \rho}\gamma_{\nu} - 2\gamma_{\nu}\eta_{\mu \rho} + 2\eta_{\nu \rho}\gamma_{\mu} \right) \nonumber \\
+			&= -\ifrak \eta_{\nu \rho}\gamma_{\mu} + \ifrak \eta_{\mu \rho}\gamma_{\nu} \nonumber
+	\end{align}
+
+Then we can verify :math:`\eqref{eq_bracket_repr_j}`, starting from the left-hand-side, as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ \Jscr_{\mu \nu}, \Jscr_{\rho \kappa} \right] &= -\frac{\ifrak}{4} \left[ \Jscr_{\mu \nu}, \left[ \gamma_{\rho}, \gamma_{\kappa} \right] \right] \\
+			&= \frac{\ifrak}{4} \left[ \gamma_{\rho}, \left[ \gamma_{\kappa}, \Jscr_{\mu \nu} \right] \right] + \frac{\ifrak}{4} \left[ \gamma_{\kappa}, \left[ \Jscr_{\mu \nu}, \gamma_{\rho} \right] \right] \\
+			&= \frac{\ifrak}{4} \left[ \gamma_{\rho}, \left( \ifrak \eta_{\nu \kappa} \gamma_{\mu} - \ifrak \eta_{\mu \kappa} \gamma_{\nu} \right) \right] + \frac{\ifrak}{4} \left[ \gamma_{\kappa}, \left( -\ifrak \eta_{\nu \rho} \gamma_{\mu} + \ifrak \eta_{\mu \rho} \gamma_{\nu} \right) \right] \\
+			&= -\ifrak \eta_{\nu \kappa} \Jscr_{\rho \mu} + \ifrak \eta_{\mu \kappa} \Jscr_{\rho \nu} + \ifrak \eta_{\nu \rho} \Jscr_{\kappa \mu} - \ifrak \eta_{\mu \rho} \Jscr_{\kappa \nu}
+	\end{align*}
+
+The last expression is easily seen to be equal to the right-hand-side of :math:`\eqref{eq_bracket_repr_j}` using the anti-symmetry of :math:`\Jscr_{\mu \nu}`. Hence :math:`\eqref{eq_bracket_repr_j}` is indeed satisfied for :math:`\Jscr_{\mu \nu}` defined by :math:`\eqref{eq_dirac_field_defn_j}`.
+
+In fact, the calculation :math:`\eqref{eq_dirac_field_j_gamma_commutator}` may be rephrased more conveniently as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		D(\Lambda) \gamma_{\mu} D^{-1}(\Lambda) = \left( \Lambda^{-1} \right)_{\mu}^{\nu} \gamma_{\nu}
+		\label{eq_dirac_field_gamma_is_vector}
+	\end{equation}
+
+or in plain words, :math:`\gamma_{\mu}` is a vector. Indeed, one can calculate the left-hand-side of :math:`\eqref{eq_dirac_field_gamma_is_vector}` up to first order as follows [#wrong_dirac_gamma_is_vector]_
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		D(\Lambda) \gamma_{\mu} D^{-1}(\Lambda) &= \left( 1 + \frac{\ifrak}{2} \omega^{\nu \rho} \Jscr_{\nu \rho} \right) \gamma_{\mu} \left( 1 - \frac{\ifrak}{2} \omega^{\nu \rho} \Jscr_{\nu \rho} \right) \\
+			&= \gamma_{\mu} + \frac{\ifrak}{2} \omega^{\nu \rho} \left[ \Jscr_{\nu \rho}, \gamma_{\mu} \right] \\
+			&= \gamma_{\mu} + \frac{\ifrak}{2} \omega^{\nu \rho} \left( -\ifrak \eta_{\rho \mu} \gamma_{\nu} + \ifrak \eta_{\nu \mu} \gamma_{\rho} \right) \\
+			&= \left( \delta_{\mu}^{\nu} - \omega_{\mu}^{\nu} \right) \gamma_{\nu} = \left( \Lambda^{-1} \right)_{\mu}^{\nu} \gamma_{\nu}
+	\end{align*}
+
+Using the very definition :math:`\eqref{eq_dirac_field_defn_j}`, one then sees that :math:`\Jscr_{\mu \nu}` is an anti-symmetric tensor in the sense that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		D(\Lambda) \Jscr_{\mu \nu} D^{-1}(\Lambda) = \left( \Lambda^{-1} \right)_{\mu}^{\rho} \left( \Lambda^{-1} \right)_{\nu}^{\kappa} \Jscr_{\rho \kappa}
+	\end{equation*}
+
+Indeed, one can construct even more anti-symmetric tensors as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\Ascr_{\mu \nu \rho} &\coloneqq \gamma_{\mu}\gamma_{\nu}\gamma_{\rho} \pm \text{ signed permutations} \\
+		\Pscr_{\mu \nu \rho \kappa} &\coloneqq \gamma_{\mu}\gamma_{\nu}\gamma_{\rho}\gamma_{\kappa} \pm \text{ signed permutations}
+	\end{align*}
+
+but no more because we're constrained by the :math:`4`-dimensional spacetime. Here we remark also that the consideration of only anti-symmetric tensors loses no generality because of :math:`\eqref{eq_dirac_field_clifford_algebra}`. Now we claim that the matrices :math:`1, \gamma_{\mu}, \Jscr_{\mu \nu}, \Ascr_{\mu \nu \rho}` and :math:`\Pscr_{\mu \nu \rho \kappa}` are all linearly independent. This can be seen either by observing that they transform differently under conjugation by :math:`D(\Lambda)`, or, more directly, by observing that they are orthogonal to each other under the inner product defined by the trace of the product (of two matrices). For example, one easily sees that :math:`\Jscr_{\mu \nu}` is traceless because the trace of a commutator vanishes, and :math:`\op{tr}(\gamma_{\mu} \gamma_{\nu}) = 0` for :math:`\mu \neq \nu` using :math:`\eqref{eq_dirac_field_clifford_algebra}`. It's slightly tricker to see that :math:`\gamma_{\mu}` itself is also traceless, but this is again a consequence of the Clifford algebra relations :math:`\eqref{eq_dirac_field_clifford_algebra}`, which we demonstrate as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\op{tr}(\gamma_{\mu}) = \op{tr}(\gamma_{\nu} \gamma_{\mu} \gamma^{-1}_{\nu}) = -\op{tr}(\gamma_{\mu} \gamma_{\nu} \gamma^{-1}_{\nu}) = -\op{tr}(\gamma_{\mu}) \
+			\implies \op{tr}(\gamma_{\mu}) = 0
+	\end{equation*}
+
+Counting these linearly independent matrices, we see that there are :math:`1 + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4} = 16` of them. It means that the size of the :math:`\gamma_{\mu}` matrices is at least :math:`4 \times 4`.
+
+It turns out that there exists indeed a solution of :math:`\eqref{eq_dirac_field_clifford_algebra}` in terms of :math:`4 \times 4` matrices, conveniently known as the `gamma matrices <https://en.wikipedia.org/wiki/Gamma_matrices>`_, which we define as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\gamma_0 \coloneqq -\ifrak \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \
+			\bm{\gamma} \coloneqq -\ifrak \begin{bmatrix} 0 & \bm{\sigma} \\ -\bm{\sigma} & 0 \end{bmatrix}
+	\end{equation*}
+
+where :math:`\bm{\sigma} = (\sigma_1, \sigma_2, \sigma_3)` is made up of the so-called `Pauli matrices <https://en.wikipedia.org/wiki/Pauli_matrices>`_ defined as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\sigma_1 \coloneqq \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \
+			\sigma_2 \coloneqq \begin{bmatrix} 0 & -\ifrak \\ \ifrak & 0 \end{bmatrix}, \quad \
+			\sigma_3 \coloneqq \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+	\end{equation*}
+
+Indeed, the Pauli matrices make up a solution to the :math:`3`-dimensional Clifford algebra with respect to the Euclidean inner product.
+
 
 .. rubric:: Footnotes
 
@@ -4821,3 +4965,5 @@ Dirac fields
 .. [#weinberg_quote_on_lorentz_invariance_and_quantum_mechanics] See [Wei95]_ page 145.
 
 .. [#wrong_integration_of_Delta_function] The evaluation of the integral eq. (5.2.8) on [Wei95]_ page 202 seems to be wrong, as the integrand oscillates as :math:`\sin(u)` for :math:`u` large enough, which will cause the integral to diverge.
+
+.. [#wrong_dirac_gamma_is_vector] The formula (5.4.8) in [Wei95]_ appears to be wrong because it violates the group law of :math:`\Lambda`. One can compare this with :math:`\eqref{eq_conjugate_annihilation_field}` or eq. (5.1.6) in [Wei95]_.

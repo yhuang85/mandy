@@ -108,6 +108,7 @@ mathjax3_config = {
 			'ps': ['\\prescript {#1}{#2}{#3}', 3],
 			'psup': ['\\prescript {#1}{}{#2}', 2],
 			'blue': ['{\\color{blue} {#1}}', 1],
+            'bm': ['{{\\boldsymbol{#1}}}', 1],
 			'orange': ['{\\color{orange} {#1}}', 1],
 			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std', 'VAC']},
 			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
@@ -119,6 +120,7 @@ mathjax3_config = {
 		'packages': {
 			'[+]': [
 				'ams',
+                'boldsymbol',
 				'color',
 				'mathtools',
 				'unicode',
@@ -129,6 +131,7 @@ mathjax3_config = {
 	'loader': {
 		'load': [
 			'[tex]/ams',
+            '[tex]/boldsymbol',
 			'[tex]/color',
 			'[tex]/mathtools',
 			'[tex]/unicode',
