@@ -724,7 +724,7 @@ At this point, we have reduced the problem to the classification of representati
 	:nowrap:
 
 	\begin{equation*}
-		D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}
+		\sum_{\sigma'} D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}
 	\end{equation*}
 
 Once this is done, we can define
@@ -733,20 +733,30 @@ Once this is done, we can define
 	:nowrap:
 
 	\begin{align}
-		U(W) \Psi_{k, \sigma} &\coloneqq D_{\sigma \sigma'}(W) \Psi_{k, \sigma'}  \label{eq_d_repr_of_little_group} \\
+		U(W) \Psi_{k, \sigma} &\coloneqq \sum_{\sigma'} D_{\sigma' \sigma}(W) \Psi_{k, \sigma'}  \label{eq_d_repr_of_little_group} \\
 		W(\Lambda, p) &\coloneqq L(\Lambda p)^{-1} \Lambda L(p)  \label{eq_w_from_l}
 	\end{align}
 
+One can verify that :math:`\eqref{eq_d_repr_of_little_group}` indeed respects the group law as follows
 
-and substitute them into :math:`\eqref{eq_def_of_one_particle_psi_refactored}` to get
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(W_2) U(W_1) \Psi_{k, \sigma} = U(W_2) \sum_{\sigma'} D_{\sigma' \sigma}(W_1) \Psi_{k, \sigma'} \
+			= \sum_{\sigma' \sigma''} D_{\sigma' \sigma}(W_1) D_{\sigma'' \sigma'}(W_2) \Psi_{k, \sigma''} \
+			= \sum_{\sigma''} D_{\sigma'' \sigma}(W_2 W_1) \Psi_{k, \sigma''}
+	\end{equation*}
+
+Now we can rewrite :math:`\eqref{eq_def_of_one_particle_psi_refactored}` as follows
 
 .. math::
 	:nowrap:
 
 	\begin{align}
 		U(\Lambda) \Psi_{p, \sigma} &\xlongequal{\eqref{eq_w_from_l}} N(p) U(L(\Lambda p)) U(W(\Lambda, p)) \Psi_{k, \sigma} \label{eq_little_group_acts_on_p_and_sigma} \\
-			&\xlongequal{\eqref{eq_d_repr_of_little_group}} N(p) D_{\sigma \sigma'}(W(\Lambda, p)) U(L(\Lambda p)) \Psi_{k, \sigma'}  \nonumber \\
-			&\xlongequal{\eqref{eq_def_of_one_particle_psi}} \frac{N(p)}{N(\Lambda p)} D_{\sigma \sigma'}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'} \nonumber
+			&\xlongequal{\eqref{eq_d_repr_of_little_group}} N(p) \sum_{\sigma'} D_{\sigma' \sigma}(W(\Lambda, p)) U(L(\Lambda p)) \Psi_{k, \sigma'}  \nonumber \\
+			&\xlongequal{\eqref{eq_def_of_one_particle_psi}} \frac{N(p)}{N(\Lambda p)} \sum_{\sigma'} D_{\sigma' \sigma}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'} \nonumber
 	\end{align}
 
 which gives the sought-after coefficients :math:`C_{\sigma \sigma'}` in :math:`\eqref{eq_lorentz_acts_on_p_and_sigma}`.
@@ -823,11 +833,11 @@ Putting everything together, we've obtained the following grand formula for the 
 	:nowrap:
 
 	\begin{equation}
-		U(\Lambda) \Psi_{p, \sigma} = \sqrt{\frac{(\Lambda p)_0}{p_0}} D_{\sigma \sigma'}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}
+		U(\Lambda) \Psi_{p, \sigma} = \sqrt{\frac{(\Lambda p)_0}{p_0}} \sum_{\sigma'} D_{\sigma' \sigma}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}
 		\label{eq_lorentz_transformation_formula_for_particle_state}
 	\end{equation}
 
-where :math:`D_{\sigma \sigma'}` is a unitary representation of the little group, and :math:`W(\Lambda, p)` is defined by :math:`\eqref{eq_w_from_l}`.
+where :math:`D_{\sigma' \sigma}` is a unitary representation of the little group, and :math:`W(\Lambda, p)` is defined by :math:`\eqref{eq_w_from_l}`.
 
 Massive particle states
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -963,7 +973,7 @@ Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :mat
 		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)
 	\end{equation*}
 
-It follows that [#boost_in_p_formula]_
+It follows that
 
 .. math::
 	:nowrap:
@@ -1189,10 +1199,10 @@ This observation is important since it implies that non-relativistic calculation
 
 	We end this (long) excursion with a few interesting facts that we'll come back to later.
 
-	1. The energy difference between :math:`1s_{1/2}` and :math:`2s_{1/2}`, plotted on a spectrometer, is the famous `21-centimeter line <https://en.wikipedia.org/wiki/Hydrogen_line>`_.
-	2. The energy difference between :math:`2p_{1/2}` and :math:`2p_{3/2}`, i.e., same orbital but different total angular momentum, is known as the `fine structure <https://en.wikipedia.org/wiki/Fine_structure>`_ of the hydrogen atom.
-	3. The energy difference between :math:`2s_{1/2}` and :math:`2p_{1/2}`, i.e., same total but different orbital angular momentum, is known as the `Lamb shift <https://en.wikipedia.org/wiki/Lamb_shift>`_.
-	4. The energy difference between states with the same orbital and total angular momentum, e.g., :math:`1s_{1/2}`, but different spin :math:`z`-component :math:`\sigma`, e.g., :math:`\pm 1/2`, due to the magnetic moment is known as the `hyperfine structure <https://en.wikipedia.org/wiki/Hyperfine_structure>`_.
+	3. The energy difference between :math:`1s_{1/2}` and :math:`2s_{1/2}`, plotted on a spectrometer, is the famous `21-centimeter line <https://en.wikipedia.org/wiki/Hydrogen_line>`_.
+	4. The energy difference between :math:`2p_{1/2}` and :math:`2p_{3/2}`, i.e., same orbital but different total angular momentum, is known as the `fine structure <https://en.wikipedia.org/wiki/Fine_structure>`_ of the hydrogen atom.
+	5. The energy difference between :math:`2s_{1/2}` and :math:`2p_{1/2}`, i.e., same total but different orbital angular momentum, is known as the `Lamb shift <https://en.wikipedia.org/wiki/Lamb_shift>`_.
+	6. The energy difference between states with the same orbital and total angular momentum, e.g., :math:`1s_{1/2}`, but different spin :math:`z`-component :math:`\sigma`, e.g., :math:`\pm 1/2`, due to the magnetic moment is known as the `hyperfine structure <https://en.wikipedia.org/wiki/Hyperfine_structure>`_.
 
 Massless particle states
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1477,7 +1487,7 @@ As before, it'll be useful to rewrite :math:`\eqref{eq_p_conjugated_by_p}` -- :m
 		U(\Pcal) &H U^{-1}(\Pcal) &&= &&H \nonumber \\
 		U(\Pcal) &\Pbf U^{-1}(\Pcal) &&= -&&\Pbf \label{eq_p3_conjugated_by_p} \\
 		U(\Pcal) &\Jbf U^{-1}(\Pcal) &&= &&\Jbf \label{eq_j3_conjugated_by_p} \\
-		U(\Pcal) &\Kbf U^{-1}(\Pcal) &&= -&&\Kbf \nonumber \\
+		U(\Pcal) &\Kbf U^{-1}(\Pcal) &&= -&&\Kbf \label{eq_k3_conjugated_by_p} \\
 		U(\Tcal) &H U^{-1}(\Tcal) &&= &&H \nonumber \\
 		U(\Tcal) &\Pbf U^{-1}(\Tcal) &&= -&&\Pbf \label{eq_p3_conjugated_by_t} \\
 		U(\Tcal) &\Jbf U^{-1}(\Tcal) &&= -&&\Jbf \label{eq_j3_conjugated_by_t} \\
@@ -1714,7 +1724,7 @@ We shall, as always, start from the easiest part of the theory, which is clearly
 		U(\Lambda, a) \Psi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&~ \exp(-\ifrak a^{\mu} ((\Lambda p_1)_{\mu} + (\Lambda p_2)_{\mu} + \cdots)) \
 		\label{eq_lorentz_transformation_formula_for_many_free_particles} \\
 		&\times \sqrt{\frac{(\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p_1)_0 (p_2)_0 \cdots}} \nonumber \\
-		&\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma_1 \sigma'_1}(W_1(\Lambda, p_1)) D_{\sigma_2 \sigma'_2}(W_2(\Lambda, p_2)) \cdots \nonumber \\
+		&\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma'_1 \sigma_1}(W_1(\Lambda, p_1)) D_{\sigma'_2 \sigma_2}(W_2(\Lambda, p_2)) \cdots \nonumber \\
 		&\times \Psi_{\Lambda p_1, \sigma'_1, n_1; ~\Lambda p_2, \sigma'_2, n_2; ~\cdots} \nonumber
 	\end{align}
 
@@ -1986,12 +1996,12 @@ but this is *not* what we mean by Lorentz symmetry. What we do want to know is, 
 		S_{p'_1, \sigma'_1, n'_1; ~p'_2, \sigma'_2, n'_2; ~\cdots, ~~p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} = \
 			&\blue{\exp\left( \ifrak a^{\mu} \Lambda_{\mu}^{\nu} \left( (p'_1)_{\nu} + (p'_2)_{\nu} + \cdots - (p_1)_{\nu} - (p_2)_{\nu} - \cdots \right) \right)}  \label{eq_lorentz_transformation_formula_for_s_matrix} \\
 			&\times \sqrt{\frac{(\Lambda p'_1)_0 (\Lambda p'_2)_0 \cdots (\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p'_1)_0 (p'_2)_0 \cdots (p_1)_0 (p_2)_0 \cdots}}  \nonumber \\
-			&\times \sum_{\underline{\sigma}'_1 \underline{\sigma}'_2 \cdots} D^{\ast}_{\sigma'_1 \underline{\sigma}'_1} (W(\Lambda, p'_1)) D^{\ast}_{\sigma'_2 \underline{\sigma}'_2} (W(\Lambda, p'_2)) \cdots  \nonumber \\
-			&\times \sum_{\underline{\sigma}_1 \underline{\sigma}_2 \cdots} D_{\sigma_1 \underline{\sigma}_1} (W(\Lambda, p_1)) D_{\sigma_2 \underline{\sigma}_2} (W(\Lambda, p_2)) \cdots  \nonumber \\
-			&\times S_{\Lambda p'_1, \underline{\sigma}'_1, n'_1; ~\Lambda p'_2, \underline{\sigma}'_2, n'_2; ~\cdots, ~~\Lambda p_1, \underline{\sigma}_1, n_1; ~\Lambda p_2, \underline{\sigma}_2, n_2, ~\cdots}  \nonumber
+			&\times \sum_{\bar{\sigma}'_1 \bar{\sigma}'_2 \cdots} D^{\ast}_{\bar{\sigma}'_1 \sigma'_1} (W(\Lambda, p'_1)) D^{\ast}_{\bar{\sigma}'_2 \sigma'_2} (W(\Lambda, p'_2)) \cdots  \nonumber \\
+			&\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D_{\bar{\sigma}_1 \sigma_1} (W(\Lambda, p_1)) D_{\bar{\sigma}_2 \sigma_2} (W(\Lambda, p_2)) \cdots  \nonumber \\
+			&\times S_{\Lambda p'_1, \bar{\sigma}'_1, n'_1; ~\Lambda p'_2, \bar{\sigma}'_2, n'_2; ~\cdots, ~~\Lambda p_1, \bar{\sigma}_1, n_1; ~\Lambda p_2, \bar{\sigma}_2, n_2, ~\cdots}  \nonumber
 	\end{align}
 
-where we've used primes to distinguish between labels from in- and out-states, and underlines to distinguish between labels, specifically the spin-:math:`z` or helicity, before and after the Lorentz transformation.
+where we've used primes to distinguish between labels from in- and out-states, and bars to distinguish between labels, specifically the spin-:math:`z` or helicity, before and after the Lorentz transformation.
 
 Since the left-hand-side doesn't depend on the translation parameter :math:`a`, the blue term on the right-hand-side must be :math:`1`. In other words,
 
@@ -2170,7 +2180,7 @@ An internal symmetry is a symmetry that leaves :math:`p` and :math:`\sigma` inva
 	:nowrap:
 
 	\begin{equation}
-		U(T) \Psi^{\pm}_{p_1, \sigma_1, n_1;~p_2, \sigma_2, n_2;~\cdots} = \sum_{n'_1, n'_2, \cdots} \Dscr_{n_1 n'_1} \Dscr_{n_2 n'_2} \cdots \Psi^{\pm}_{p_1, \sigma_1, n'_1;~p_2, \sigma_2, n'_2;~\cdots}
+		U(T) \Psi^{\pm}_{p_1, \sigma_1, n_1;~p_2, \sigma_2, n_2;~\cdots} = \sum_{n'_1, n'_2, \cdots} \Dscr_{n'_1 n_1}(T) \Dscr_{n'_2 n_2}(T) \cdots \Psi^{\pm}_{p_1, \sigma_1, n'_1;~p_2, \sigma_2, n'_2;~\cdots}
 		\label{eq_internal_symmetry_transformation_for_in_and_out_states}
 	\end{equation}
 
@@ -2183,9 +2193,9 @@ Similar to :math:`\eqref{eq_lorentz_transformation_formula_for_s_matrix}`, we ca
 
 	\begin{equation}
 		S_{n'_1, n'_2, \cdots, ~n_1, n_2, \cdots} = \
-			\sum_{\underline{n}'_1, \underline{n}'_2, \cdots} \Dscr^{\ast}_{n'_1 \underline{n}'_1}(T) \Dscr^{\ast}_{n'_2 \underline{n}'_2}(T) \cdots \
-			\sum_{\underline{n}_1, \underline{n}_2, \cdots} \Dscr_{n_1 \underline{n}_1}(T) \Dscr_{n_2 \underline{n}_2}(T) \cdots \
-			S_{\underline{n}'_1, \underline{n}'_2, \cdots, ~\underline{n}_1, \underline{n}_2, \cdots}
+			\sum_{\bar{n}'_1, \bar{n}'_2, \cdots} \Dscr^{\ast}_{\bar{n}'_1 n'_1}(T) \Dscr^{\ast}_{\bar{n}'_2 n'_2}(T) \cdots \
+			\sum_{\bar{n}_1, \bar{n}_2, \cdots} \Dscr_{\bar{n}_1 n_1}(T) \Dscr_{\bar{n}_2 n_2}(T) \cdots \
+			S_{\bar{n}'_1, \bar{n}'_2, \cdots, ~\bar{n}_1, \bar{n}_2, \cdots}
 		\label{eq_internal_symmetry_transformation_formula_for_s_matrix}
 	\end{equation}
 
@@ -2745,7 +2755,7 @@ where :math:`x_0` is a simple zero of :math:`f`. In the case of :math:`\eqref{eq
 
 	\begin{align}
 		f(|\pbf'_1|) &= \sqrt{|\pbf'_1|^2 + {m'_1}^2} + \sqrt{|\pbf'_1|^2 + {m'_2}^2} - E_{\alpha} \nonumber \\
-		k' &= \frac{\sqrt{\left( E_{\alpha}^2 - {m'_1}^2 - {m'_2}^2 \right)^2 - 4 {m'_1}^2 {m'_2}^2}}{2E_{\alpha}} \label{eq_defn_root_k_prime}
+		k' &= \frac{1}{2E_{\alpha}} \sqrt{\left( E_{\alpha}^2 - {m'_1}^2 - {m'_2}^2 \right)^2 - 4 {m'_1}^2 {m'_2}^2} \label{eq_defn_root_k_prime}
 	\end{align}
 
 where :math:`k'` is the unique simple zero of :math:`f`. Differentiating :math:`f` at :math:`k'` we get
@@ -3452,7 +3462,7 @@ Let's first work out how :math:`a^{\dagger}(\pbf, \sigma, n)` and :math:`a(\pbf,
 	\begin{align*}
         U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&~ \exp(-\ifrak b^{\mu} ((\Lambda p_1)_{\mu} + (\Lambda p_2)_{\mu} + \cdots)) \\
         &\times \sqrt{\frac{(\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p_1)_0 (p_2)_0 \cdots}} \\
-        &\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma_1 \sigma'_1}(W_1(\Lambda, p_1)) D_{\sigma_2 \sigma'_2}(W_2(\Lambda, p_2)) \cdots \\
+        &\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma'_1 \sigma_1}(W_1(\Lambda, p_1)) D_{\sigma'_2 \sigma_2}(W_2(\Lambda, p_2)) \cdots \\
         &\times \Phi_{\Lambda p_1, \sigma'_1, n_1; ~\Lambda p_2, \sigma'_2, n_2; ~\cdots}
 	\end{align*}
 
@@ -3481,7 +3491,7 @@ we see that :math:`a^{\dagger}(\pbf, \sigma, n)` better transforms as follows
 
 	\begin{equation}
 		U_0(\Lambda, b) a^{\dagger}(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) = \
-			\exp(-\ifrak b^{\mu} (\Lambda p)_{\mu}) \sqrt{\frac{(\Lambda p)_0}{p_0}} D_{\sigma \sigma'}(W(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n)
+			\exp(-\ifrak b^{\mu} (\Lambda p)_{\mu}) \sqrt{\frac{(\Lambda p)_0}{p_0}} D_{\sigma' \sigma}(W(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n)
 		\label{eq_lorentz_transformation_formula_for_creation_operator}
 	\end{equation}
 
@@ -3492,7 +3502,7 @@ where :math:`\pbf_{\Lambda}` is the :math:`3`-momentum part of :math:`\Lambda p`
 
 	\begin{equation}
 		U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) = \
-			\exp(\ifrak b^{\mu} (\Lambda p)_{\mu}) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{\ast}_{\sigma \sigma'}(W(\Lambda, p)) a(\pbf_{\Lambda}, \sigma, n)
+			\exp(\ifrak b^{\mu} (\Lambda p)_{\mu}) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{\ast}_{\sigma' \sigma}(W(\Lambda, p)) a(\pbf_{\Lambda}, \sigma, n)
 		\label{eq_lorentz_transformation_formula_for_annihilation_operator}
 	\end{equation}
 
@@ -3808,11 +3818,11 @@ Now the hope is that the creation and annihilation fields transform, under (prop
 	:nowrap:
 
 	\begin{align}
-		U_0(\Lambda, b) \psi_{\ell}^+ U_0^{-1}(\Lambda, b) &= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^+ (\Lambda x + b) \label{eq_conjugate_annihilation_field} \\
-		U_0(\Lambda, b) \psi_{\ell}^- U_0^{-1}(\Lambda, b) &= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^- (\Lambda x + b) \label{eq_conjugate_creation_field}
+		U_0(\Lambda, b) \psi_{\ell}^+(x) U_0^{-1}(\Lambda, b) &= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^+ (\Lambda x + b) \label{eq_conjugate_annihilation_field} \\
+		U_0(\Lambda, b) \psi_{\ell}^-(x) U_0^{-1}(\Lambda, b) &= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^- (\Lambda x + b) \label{eq_conjugate_creation_field}
 	\end{align}
 
-Note that we've put :math:`\Lambda^{-1}` inside :math:`D_{\ell \ell'}` so that :math:`D` furnishes a representation of the homogeneous Lorentz transformations in the sense that :math:`D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)`. There is a priori no reason to use the same representation :math:`D` for both :math:`\psi^{\pm}_{\ell}`, but this turns out to be possible just by calculation. Moreover, the representation :math:`D` is not assumed to be irreducible. Indeed, as we'll see later, it generally decomposes into blocks fixed by further labels.
+Note that we've put :math:`\Lambda^{-1}` inside :math:`D_{\ell \ell'}` so that :math:`D` furnishes a representation of the homogeneous Lorentz transformations in the sense that :math:`D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)`. [#two_ways_of_representation]_ There is a priori no reason to use the same representation :math:`D` for both :math:`\psi^{\pm}_{\ell}`, but this turns out to be possible just by calculation. Moreover, the representation :math:`D` is not assumed to be irreducible. Indeed, as we'll see later, it generally decomposes into blocks fixed by further labels.
 
 Then we can try to construct :math:`\Hscr(x)` by a formula similar to :math:`\eqref{eq_general_expansion_of_hamiltonian}` as follows
 
@@ -3842,8 +3852,8 @@ For this section, we'll focus on the massive case. Recall the Lorentz transforma
 	:nowrap:
 
 	\begin{align}
-		U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &= \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_annihilation_operator_revisited} \\
-		U_0(\Lambda, b) a^{\dagger}(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &= \exp(-\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n) \ast}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_creation_operator_revisited}
+		U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &= \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_annihilation_operator_revisited} \\
+		U_0(\Lambda, b) a^{\dagger}(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &= \exp(-\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n) \ast}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_creation_operator_revisited}
 	\end{align}
 
 where we've used the fact that :math:`D` is unitary in the sense that :math:`D^{\dagger} = D^{-1}` to invert :math:`W(\Lambda, p)` (and flip the indexes) for later convenience -- mostly because of the use of :math:`\Lambda^{-1}` in :math:`\eqref{eq_conjugate_annihilation_field}` and :math:`\eqref{eq_conjugate_creation_field}`.
@@ -3855,9 +3865,9 @@ Applying :math:`\eqref{eq_lorentz_transformation_formula_for_annihilation_operat
 
 	\begin{align*}
 		U_0(\Lambda, b) \psi_{\ell}^+(x) U_0^{-1}(\Lambda, b) &= \sum_{\sigma, n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) \\
-			&= \sum_{\sigma, \sigma', n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma' \sigma} (W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
-			&= \sum_{\sigma, \sigma', n} \int d^3 (\Lambda p)~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
-			&= \sum_{\sigma', n} \int d^3 (\Lambda p) \blue{\sum_{\sigma} u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma' \sigma}(W^{-1}(\Lambda, p))} a(\pbf_{\Lambda}, \sigma', n)
+			&= \sum_{\sigma, \sigma', n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma \sigma'} (W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+			&= \sum_{\sigma, \sigma', n} \int d^3 (\Lambda p)~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+			&= \sum_{\sigma', n} \int d^3 (\Lambda p) \blue{\sum_{\sigma} u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p))} a(\pbf_{\Lambda}, \sigma', n)
 	\end{align*}
 
 where in the last equality we've used that the fact :math:`\eqref{eq_lorentz_invariant_3_momentum_volume_element}` that :math:`d^3 p / p_0` is Lorentz invariant. Comparing this with the right-hand-side of :math:`\eqref{eq_conjugate_annihilation_field}`
@@ -3871,14 +3881,14 @@ where in the last equality we've used that the fact :math:`\eqref{eq_lorentz_inv
 			&= \sum_{\sigma', n} \int d^3 (\Lambda p)~\blue{\sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n)} a(\pbf_{\Lambda}, \sigma', n)
 	\end{align*}
 
-Equating the blue parts the two calculations, and inverting :math:`D^{(j_n)}_{\sigma' \sigma} (W^{-1}(\Lambda, p))` and :math:`D_{\ell \ell'}(\Lambda^{-1})`, we get
+Equating the blue parts the two calculations, and inverting :math:`D^{(j_n)}_{\sigma \sigma'} (W^{-1}(\Lambda, p))` and :math:`D_{\ell \ell'}(\Lambda^{-1})`, we get
 
 .. math::
 	:nowrap:
 
 	\begin{equation}
 		\sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(x;~\pbf, \sigma, n) \
-			= \sum_{\sigma'} u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D_{\sigma \sigma'}^{(j_n)} (W(\Lambda, p))
+			= \sum_{\sigma'} u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D_{\sigma' \sigma}^{(j_n)} (W(\Lambda, p))
 		\label{eq_annihilation_u_transformation}
 	\end{equation}
 
@@ -3889,7 +3899,7 @@ A parallel calculation for the :math:`v_{\ell}` in :math:`\eqref{eq_conjugate_cr
 
 	\begin{equation}
 		\sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(-\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(x;~\pbf, \sigma, n) \
-			= \sum_{\sigma'} v_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma \sigma'}(W(\Lambda, p))
+			= \sum_{\sigma'} v_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma' \sigma}(W(\Lambda, p))
 		\label{eq_creation_v_transformation}
 	\end{equation}
 
@@ -3935,8 +3945,8 @@ Translations
 		:nowrap:
 
 		\begin{align}
-			\sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(\pbf, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n)}_{\sigma \sigma'}(W(\Lambda, p)) \label{eq_annihilation_u_transformation_simplified_by_translation} \\
-			\sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(\pbf, \sigma, n) &= \sum_{\sigma'} v_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma \sigma'}(W(\Lambda, p)) \label{eq_creation_v_transformation_simplified_by_translation}
+			\sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(\pbf, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n)}_{\sigma' \sigma}(W(\Lambda, p)) \label{eq_annihilation_u_transformation_simplified_by_translation} \\
+			\sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(\pbf, \sigma, n) &= \sum_{\sigma'} v_{\ell'}(\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma' \sigma}(W(\Lambda, p)) \label{eq_creation_v_transformation_simplified_by_translation}
 		\end{align}
 
 	for any homogeneous Lorentz transformation :math:`\Lambda`.
@@ -3972,8 +3982,8 @@ Rotations
 		:nowrap:
 
 		\begin{align*}
-			\sum_{\ell} D_{\ell' \ell}(\Rcal) u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) D_{\sigma \sigma'}^{(j_n)}(\Rcal) \\
-			\sum_{\ell} D_{\ell' \ell}(\Rcal) v_{\ell}(0, \sigma, n) &= \sum_{\sigma'} v_{\ell'}(0, \sigma', n) D_{\sigma \sigma'}^{(j_n) \ast}(\Rcal)
+			\sum_{\ell} D_{\ell' \ell}(\Rcal) u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) D_{\sigma' \sigma}^{(j_n)}(\Rcal) \\
+			\sum_{\ell} D_{\ell' \ell}(\Rcal) v_{\ell}(0, \sigma, n) &= \sum_{\sigma'} v_{\ell'}(0, \sigma', n) D_{\sigma' \sigma}^{(j_n) \ast}(\Rcal)
 		\end{align*}
 
 	Using :math:`\eqref{eq_representation_rotation_first_order}` we can further reduce it to the first order as follows
@@ -3982,8 +3992,8 @@ Rotations
 		:nowrap:
 
 		\begin{align}
-			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \label{eq_j_intertwines_u} \\
-			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} v_{\ell}(0, \sigma, n) &= -\sum_{\sigma'} v_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma \sigma'} \label{eq_j_intertwines_v}
+			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} u_{\ell}(0, \sigma, n) &= \sum_{\sigma'} u_{\ell'}(0, \sigma', n) \Jbf^{(j_n)}_{\sigma' \sigma} \label{eq_j_intertwines_u} \\
+			\sum_{\ell} \hat{\Jbf}_{\ell' \ell} v_{\ell}(0, \sigma, n) &= -\sum_{\sigma'} v_{\ell'}(0, \sigma', n) \Jbf^{(j_n) \ast}_{\sigma' \sigma} \label{eq_j_intertwines_v}
 		\end{align}
 
 	where :math:`\hat{\Jbf}` denotes the angular momentum vector for the representation :math:`D_{\ell' \ell}(\Rcal)`, in analogy with the usual angular momentum :math:`\Jbf^{(\jfrak)}` for :math:`D^{(j)}(\Rcal)`.
@@ -4374,9 +4384,9 @@ Finally the (linearized) rotation transformation formulae :math:`\eqref{eq_j_int
 	:nowrap:
 
 	\begin{align}
-		\sum_{\sigma'} u_{\mu}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma'} &= \sum_{\nu} \hat{\Jbf}_{\mu \nu} u_{\nu}(0, \sigma)
+		\sum_{\sigma'} u_{\mu}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_{\nu} \hat{\Jbf}_{\mu \nu} u_{\nu}(0, \sigma)
 		\label{eq_vector_field_angular_momentum_intertwines_u} \\
-		-\sum_{\sigma'} v_{\mu}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma'} &= \sum_{\nu} \hat{\Jbf}_{\mu \nu} v_{\nu}(0, \sigma)
+		-\sum_{\sigma'} v_{\mu}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_{\nu} \hat{\Jbf}_{\mu \nu} v_{\nu}(0, \sigma)
 		\label{eq_vector_field_angular_momentum_intertwines_v}
 	\end{align}
 
@@ -4408,17 +4418,17 @@ It follows then from :math:`\eqref{eq_vector_field_j_intertwines_u}` and :math:`
 	:nowrap:
 
 	\begin{align}
-		\sum_{\sigma'} u_0(0, \sigma') \left(\Jbf^{(\jfrak)}\right)^2_{\sigma \sigma'} \
-			&= \sum_{\sigma', \sigma''} u_0(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma''} \Jbf^{(\jfrak)}_{\sigma'' \sigma'} \label{eq_vector_field_u0_intertwines_j_sq} \\
-			&= \sum_{\nu, \sigma'} \Jbf^{(\jfrak)}_{\sigma \sigma''} \hat{\Jbf}_{0 \nu} u_{\nu}(0, \sigma'') = 0 \nonumber \\
-		\sum_{\sigma'} u_i(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} \
-			&= \sum_{\sigma', \sigma''} u_i(0, \sigma') \Jbf^{(\jfrak)}_{\sigma \sigma''} \Jbf^{(\jfrak)}_{\sigma'' \sigma'} \label{eq_vector_field_ui_intertwines_j_sq} \\
-			&= \sum_{\nu, \sigma''} \hat{\Jbf}_{i \nu} \Jbf^{(\jfrak)}_{\sigma \sigma''} u_{\nu}(0, \sigma'') \nonumber \\
-			&= \sum_{\nu, \rho} \hat{\Jbf}_{i \nu} \hat{\Jbf}_{\nu \rho} u_{\rho}(0, \sigma) \nonumber \\
+		\sum_{\sigma'} u_0(0, \sigma') \left(\Jbf^{(\jfrak)}\right)^2_{\sigma' \sigma} \
+			&= \sum_{\sigma' \sigma''} u_0(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma''} \Jbf^{(\jfrak)}_{\sigma'' \sigma} \label{eq_vector_field_u0_intertwines_j_sq} \\
+			&= \sum_{\nu \sigma'} \Jbf^{(\jfrak)}_{\sigma' \sigma''} \hat{\Jbf}_{0 \nu} u_{\nu}(0, \sigma'') = 0 \nonumber \\
+		\sum_{\sigma'} u_i(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma' \sigma} \
+			&= \sum_{\sigma' \sigma''} u_i(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma''} \Jbf^{(\jfrak)}_{\sigma'' \sigma} \label{eq_vector_field_ui_intertwines_j_sq} \\
+			&= \sum_{\nu \sigma''} \hat{\Jbf}_{i \nu} u_{\nu}(0, \sigma'') \Jbf^{(\jfrak)}_{\sigma'' \sigma} \nonumber \\
+			&= \sum_{\nu \rho} \hat{\Jbf}_{i \nu} \hat{\Jbf}_{\nu \rho} u_{\rho}(0, \sigma) \nonumber \\
 			&= 2 \delta_{i \rho} u_{\rho}(0, \sigma) = 2 u_i(0, \sigma) \nonumber \\
-		\sum_{\sigma'} v_0(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} &= 0
+		\sum_{\sigma'} v_0(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma' \sigma} &= 0
 		\label{eq_vector_field_v0_intertwines_j_sq} \\
-		\sum_{\sigma'} v_i(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} &=2v_i(0, \sigma)
+		\sum_{\sigma'} v_i(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma' \sigma} &=2v_i(0, \sigma)
 		\label{eq_vector_field_vi_intertwines_j_sq}
 	\end{align}
 
@@ -4774,12 +4784,13 @@ It follows that we need to express :math:`e_{\mu}(-\pbf, \sigma)` in terms of :m
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		e_{\mu}(-\pbf, \sigma) = L(-p)_{\mu}^{\nu} e_{\nu}(0, \sigma) \
 			= \Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} \Pcal_{\tau}^{\nu} e_{\nu}(0, \sigma) \
 			= -\Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} e_{\tau}(0, \sigma) \
 			= -\Pcal_{\mu}^{\rho} e_{\rho}(p, \sigma)
-	\end{equation*}
+		\label{eq_vector_field_revert_momentum_transformation}
+	\end{equation}
 
 It follows that the spatial inversion transformation law is given as follows
 
@@ -4807,14 +4818,18 @@ Dirac fields
 
 Here we'll encounter the first nontrivial representation of the (homogeneous orthochronous) Lorentz group, first discovered by P. Dirac in a completely different (and more physical) context. Our treatment here will be purely mathematical, and will serve as a warm-up for the general representation theory.
 
+Dirac representation and gamma matrices
++++++++++++++++++++++++++++++++++++++++
+
 Let :math:`D` be a representation of the Lorentz group in the sense that :math:`D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)`. By the discussion in :ref:`sec_quantum_lorentz_symmetry` and ignoring the translation part, we can write :math:`D(\Lambda)` up to first order as follows
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		D(\Lambda) = 1 + \frac{\ifrak}{2} \omega^{\mu \nu} \Jscr_{\mu \nu}
-	\end{equation*}
+		\label{eq_dirac_field_linearize_representation}
+	\end{equation}
 
 where :math:`\Jscr_{\mu \nu} = -\Jscr_{\nu \mu}` are (Hermitian) matrices that, according to :math:`\eqref{eq_bracket_j4_j4}`, satisfy in addition the following Lie-algebraic condition
 
@@ -4883,7 +4898,7 @@ In fact, the calculation :math:`\eqref{eq_dirac_field_j_gamma_commutator}` may b
 		\label{eq_dirac_field_gamma_is_vector}
 	\end{equation}
 
-or in plain words, :math:`\gamma_{\mu}` is a vector. Indeed, one can calculate the left-hand-side of :math:`\eqref{eq_dirac_field_gamma_is_vector}` up to first order as follows [#wrong_dirac_gamma_is_vector]_
+or in plain words, :math:`\gamma_{\mu}` is a vector. Indeed, one can calculate the left-hand-side of :math:`\eqref{eq_dirac_field_gamma_is_vector}` up to first order as follows [#dirac_gamma_is_vector]_
 
 .. math::
 	:nowrap:
@@ -4941,20 +4956,255 @@ where :math:`\bm{\sigma} = (\sigma_1, \sigma_2, \sigma_3)` is made up of the so-
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\sigma_1 \coloneqq \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \
 			\sigma_2 \coloneqq \begin{bmatrix} 0 & -\ifrak \\ \ifrak & 0 \end{bmatrix}, \quad \
 			\sigma_3 \coloneqq \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+		\label{eq_pauli_matrices}
+	\end{equation}
+
+Indeed the Pauli matrices make up a solution to not only a :math:`3`-dimensional Clifford algebra with respect to the Euclidean inner product, but also an angular momentum representation if multiplied by :math:`1/2`, or more precisely, a spin-:math:`1/2` representation. Note that this representation, in terms of Hermitian matrices, is apparently different from the one given by :math:`\eqref{eq_representation_rotation_first_order} - \eqref{eq_j3_matrix}` with :math:`\jfrak = 1/2`, in terms of real matrices. One can verify that they differ by just a change of basis. As long as the terminology is concerned, one often uses Hermitian and real interchangeably.
+
+Now using the definition :math:`\eqref{eq_dirac_field_defn_j}`, we can calculate, using the Clifford relations, as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\Jscr_{ij} &= -\frac{\ifrak}{4} \left[ \gamma_i, \gamma_j \right] \
+			= -\frac{\ifrak}{2} \epsilon_{ij} \gamma_i \gamma_j \
+			= -\frac{\ifrak}{2} \epsilon_{ij} \begin{bmatrix} \sigma_i \sigma_j & 0 \\ 0 & \sigma_i \sigma_j \end{bmatrix} \
+			\xlongequal{\eqref{eq_jjj_commutation}} \frac{1}{2} \epsilon_{ijk} \begin{bmatrix} \sigma_k & 0 \\ 0 & \sigma_k \end{bmatrix}  \label{eq_dirac_field_jscr_matrix} \\
+		\Jscr_{i0} &= -\frac{\ifrak}{4} \left[ \gamma_i, \gamma_0 \right] = -\frac{\ifrak}{2} \gamma_i \gamma_0 = \frac{\ifrak}{2} \begin{bmatrix} \sigma_i & 0 \\ 0 & \sigma_i \end{bmatrix}  \nonumber
+	\end{align}
+
+where :math:`i, j \in \{1,2,3\}` and :math:`\epsilon` is the totally antisymmetric sign. We see that the representation :math:`\Jscr_{\mu \nu}` is in fact reducible. Moreover, we see that that the corresponding representation :math:`D` of the Lorentz group given by :math:`\eqref{eq_dirac_field_linearize_representation}` is not unitary, since while :math:`\Jscr_{ij}` are Hermitian, :math:`\Jscr_{i0}` are anti-Hermitian. The fact that :math:`D` is not unitary will have consequences when we try to construct the interaction density as in :math:`\eqref{eq_construct_interaction_density_by_fields}`, because products like :math:`\psi^{\dagger} \psi` will not be a scalar in light of :math:`\eqref{eq_conjugate_annihilation_field}` or :math:`\eqref{eq_conjugate_creation_field}`.
+
+Next let's consider the parity transformation in the formalism of gamma matrices. In light of the transformation laws :math:`\eqref{eq_j3_conjugated_by_p}` and :math:`\eqref{eq_k3_conjugated_by_p}`, we can define
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\beta \coloneqq \ifrak \gamma_0 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
+		\label{eq_dirac_field_beta_matrix}
+	\end{equation}
+
+as the parity transformation. It's clear that :math:`\beta^2 = 1`. Moreover, it follows from the Clifford relations :math:`\eqref{eq_dirac_field_clifford_algebra}` that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\beta \gamma_i \beta^{-1} = -\gamma_i, \quad \beta \gamma_0 \beta^{-1} = \gamma_0
 	\end{equation*}
 
-Indeed, the Pauli matrices make up a solution to the :math:`3`-dimensional Clifford algebra with respect to the Euclidean inner product.
+It follows then from the definition :math:`\eqref{eq_dirac_field_defn_j}` that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\beta \Jscr_{ij} \beta^{-1} = \Jscr_{ij}, \quad \beta \Jscr_{i0} \beta^{-1} = - \Jscr_{i0}
+	\end{equation*}
+
+which are in complete analogy with :math:`\eqref{eq_j3_conjugated_by_p}` and :math:`\eqref{eq_k3_conjugated_by_p}` if we think of :math:`\Jscr_{ij}` as the "angular momenta" and :math:`\Jscr_{i0}` as the "boosts".
+
+In connection to the non-unitarity of :math:`D(\Lambda)`, let's note that since :math:`\beta \gamma_{\mu}^{\dagger} \beta^{-1} = -\gamma_{\mu}`, we have :math:`\beta \Jscr_{\mu \nu}^{\dagger} \beta^{-1} = \Jscr_{\mu \nu}`, and therefore
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\beta D(\Lambda) \beta^{-1} = D^{-1}(\Lambda)
+	\end{equation*}
+
+in light of :math:`\eqref{eq_dirac_field_linearize_representation}`. This identity will be useful when we later construct the interaction density.
+
+Construction of Dirac fields
+++++++++++++++++++++++++++++
+
+As in the case of scalar and vector fields, let's write the Dirac fields as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\psi^+_{\ell}(x) &= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma) a(\pbf, \sigma)
+		\label{eq_dirac_field_psi_plus} \\
+		\psi^{-c}_{\ell}(x) &= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma)
+		\label{eq_dirac_field_psi_minus}
+	\end{align}
+
+Moreover, using the particularly convenient form of :math:`\Jscr_{ij}` in :math:`\eqref{eq_dirac_field_jscr_matrix}`, we can write the zero-momentum conditions :math:`\eqref{eq_j_intertwines_u}` and :math:`\eqref{eq_j_intertwines_v}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\frac{1}{2} \sum_m \bm{\sigma}_{m' m} u_{m \pm}(0, \sigma) &= \sum_{\sigma'} u_{m' \pm}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma}
+		\label{eq_dirac_field_sigma_intertwines_j_by_u} \\
+		-\frac{1}{2} \sum_m \bm{\sigma}_{m' m} v_{m \pm}(0, \sigma) &= \sum_{\sigma'} v_{m' \pm}(0, \sigma') \Jbf^{(\jfrak) \ast}_{\sigma' \sigma}
+		\label{eq_dirac_field_sigma_intertwines_j_by_v}
+	\end{align}
+
+Here the signs :math:`\pm` correspond to the two (identical) irreducible representations of :math:`\Jscr_{ij}` in the form of :math:`\eqref{eq_dirac_field_jscr_matrix}`, and :math:`m` and :math:`m'` index the Pauli matrices.
+
+Now if we think of :math:`u_{m \pm}(0, \sigma)` as matrix elements of a matrix :math:`U_{\pm}` and similarly for :math:`v`, then :math:`\eqref{eq_dirac_field_sigma_intertwines_j_by_u}` and :math:`\eqref{eq_dirac_field_sigma_intertwines_j_by_v}` can be rewritten as
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\frac{1}{2} \bm{\sigma} U_{\pm} &= U_{\pm} \Jbf^{(\jfrak)}
+		\label{eq_dirac_field_sigma_intertwines_j_by_u_matrix_form} \\
+		-\frac{1}{2} \bm{\sigma} V_{\pm} &= V_{\pm} \Jbf^{(\jfrak) \ast}
+		\label{eq_dirac_field_sigma_intertwines_j_by_v_matrix_form}
+	\end{align}
+
+We recall that both :math:`\tfrac{1}{2} \bm{\sigma}` and :math:`\Jbf^{(\jfrak)}` (as well as :math:`-\Jbf^{(\jfrak) \ast}`) are irreducible representations of the rotation group (or rather, its Lie algebra). We first claim that :math:`U_{\pm}` must be isomorphism. Indeed, the kernel of :math:`U_{\pm}` is easily seen to be an invariant subspace under the action of :math:`\Jbf^{(\jfrak)}`, and hence must be null if :math:`U_{\pm} \neq 0`. On the other hand, the image of :math:`U_{\pm}` is an invariant subspace under the action of :math:`\bm{\sigma}`, and hence must be the whole space if :math:`U_{\pm} \neq 0`. It follows then that the rank of :math:`\Jbf^{(\jfrak)}` and :math:`U_{\pm}` must be the same as :math:`\bm{\sigma}`, which is :math:`2`. The same argument applies also to :math:`V_{\pm}`. In particular we must have :math:`\jfrak = 1/2`, or in other words, the Dirac fields describe :math:`1/2`-spin particles.
+
+.. note::
+	The mathematical argument above is commonly known as `Schur's lemma <https://en.wikipedia.org/wiki/Schur%27s_lemma>`_.
+
+The matrix form of :math:`\Jbf^{(1/2)}` according to :math:`\eqref{eq_j1_j2_matrix}` and :math:`\eqref{eq_j3_matrix}` is given By
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		J_1^{(1/2)} = \frac{1}{2} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \
+			J_2^{(1/2)} = \frac{\ifrak}{2} \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \quad \
+			J_3^{(1/2)} = \frac{1}{2} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+	\end{equation*}
+
+Comparing with the Pauli matrices :math:`\eqref{eq_pauli_matrices}`, we see that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Jbf^{(1/2)} = \frac{1}{2} \bm{\sigma}, \quad -\Jbf^{(1/2) \ast} = \frac{1}{2} \sigma_2 \bm{\sigma} \sigma_2
+	\end{equation*}
+
+Hence :math:`\eqref{eq_dirac_field_sigma_intertwines_j_by_u_matrix_form}` may be rewritten as :math:`\bm{\sigma} U_{\pm} = U_{\pm} \bm{\sigma}`. One can apply Schur's lemma once again to conclude that :math:`U_{\pm}` must be a scalar. To spell out more details, note that since :math:`\bm{\sigma}` commutes with any scalar it commutes with :math:`U_{\pm} - \lambda` for any :math:`\lambda \in \Cbb`. It follows that :math:`U_{\pm} - \lambda` is either an isomorphism or zero. The later must be the case if :math:`\lambda` is an eigenvalue of :math:`U_{\pm}`. Hence :math:`U_{\pm}` must be a scalar as claimed. A similar argument can be applied to :math:`V_{\pm}` by rewriting :math:`\eqref{eq_dirac_field_sigma_intertwines_j_by_v_matrix_form}` as :math:`\bm{\sigma} (V_{\pm} \sigma_2) = (V_{\pm} \sigma_2) \bm{\sigma}`. Hence :math:`V_{\pm}` must be proportional to :math:`\sigma_2`.
+
+Going back to :math:`u_{m \pm}(0, \sigma)` (resp. :math:`v_{m \pm}(0, \sigma)`) from :math:`U_{\pm}` (resp. :math:`V_{\pm}`), we have concluded that
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		u_{m \pm}(0, \sigma) &= c_{\pm} \delta_{m \sigma} \\
+		v_{m \pm}(0, \sigma) &= -\ifrak d_{\pm} (\sigma_2)_{m \sigma}
+	\end{align*}
+
+where we've inserted the extra factor :math:`-\ifrak` in front of :math:`d_{\pm}` to make the final results look more uniform. We can further unwrap this result in matrix notations as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat}{2}
+		u(0, 1/2) &= \begin{bmatrix} c_+ \\ 0 \\ c_- \\ 0 \end{bmatrix}, \quad u(0, -1/2) &&= \begin{bmatrix} 0 \\ c_+ \\ 0 \\ c_- \end{bmatrix}
+		\label{eq_dirac_field_u_matrix_by_c} \\
+		v(0, 1/2) &= \begin{bmatrix} 0 \\ d_+ \\ 0 \\ d_- \end{bmatrix}, \quad v(0, -1/2) &&= -\begin{bmatrix} d_+ \\ 0 \\ d_- \\ 0 \end{bmatrix}
+		\label{eq_dirac_field_v_matrix_by_d}
+	\end{alignat}
+
+These are known as the (Dirac) spinors. Spinors at finite momentum can be determined by :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` and :math:`\eqref{eq_creation_v_transformation_simplified_by_boost}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		u(\pbf, \sigma) &= \sqrt{m/p_0} D(L(p)) u(0, \sigma)
+		\label{eq_dirac_field_spinor_u_at_finite_momentum} \\
+		v(\pbf, \sigma) &= \sqrt{m/p_0} D(L(p)) v(0, \sigma)
+		\label{eq_dirac_field_spinor_v_at_finite_momentum}
+	\end{align}
+
+In general the constants :math:`c_{\pm}` and :math:`d_{\pm}` may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from :ref:`sec_the_lorentz_and_cpt_transformation_laws` to :math:`\eqref{eq_dirac_field_psi_plus}` and :math:`\eqref{eq_dirac_field_psi_minus}`, we can calculate as follows [#spatial_inversion_on_fields_sign]_
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot x) u(\pbf, \sigma) a(-\pbf, \sigma)
+			\label{eq_dirac_field_spatial_inversion_acts_on_psi_plus} \\
+			&= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot \Pcal x) u(-\pbf, \sigma) a(\pbf, \sigma) \nonumber \\
+			&= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot \Pcal x) \sqrt{m/p_0}~\beta D(L(p)) \beta u(0, \sigma) a(\pbf, \sigma) \nonumber \\
+		U(\Pcal) \psi^-(x) U^{-1}(\Pcal) &= -(2\pi)^{-3/2} \eta^c \sum_{\sigma} \int d^3 p~\exp(-\ifrak p \cdot \Pcal x) \sqrt{m/p_0}~\beta D(L(p))\beta v(0, \sigma) a^{c \dagger}(\pbf, \sigma)
+		\label{eq_dirac_field_spatial_inversion_acts_on_psi_minus}
+	\end{align}
+
+Here we've evaluated :math:`u(-\pbf, \sigma)` (and :math:`v(-\pbf, \sigma)`) in a way similar to :math:`\eqref{eq_vector_field_revert_momentum_transformation}`, where, instead of applying :math:`\Pcal` directly on vectors, we recall for Dirac fields that the spatial inversion acts as :math:`\beta`, defined by :math:`\eqref{eq_dirac_field_beta_matrix},` on spinors.
+
+In order for :math:`U(\Pcal) \psi^+(x) U^{-1}(\Pcal)` to be proportional to :math:`\psi^+(x)`, we observe that it would be sufficient (and most likely also necessary) if :math:`u(0, \sigma)` is an eigenvector of :math:`\beta`. Similar argument applies to :math:`\psi^-(x)` as well, so we can write
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\beta u(0, \sigma) &= b_+ u(0, \sigma)
+		\label{eq_dirac_field_beta_eigenvalue_of_u} \\
+		\beta v(0, \sigma) &= b_- v(0, \sigma)
+		\label{eq_dirac_field_beta_eigenvalue_of_v}
+	\end{align}
+
+where :math:`b^2_{\pm} = 1` since :math:`\beta^2 = 1`. Assuming this, we can rewrite :math:`\eqref{eq_dirac_field_spatial_inversion_acts_on_psi_plus}` and :math:`\eqref{eq_dirac_field_spatial_inversion_acts_on_psi_minus}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &= -\eta^{\ast} b_+ \beta \psi^+(\Pcal x) \\
+		U(\Pcal) \psi^-(x) U^{-1}(\Pcal) &= -\eta^c b_- \beta \psi^-(\Pcal x)
+	\end{align*}
+
+so that the parity is indeed conserved.
+
+Now using :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_v}` (and an appropriate rescaling), we can rewrite :math:`\eqref{eq_dirac_field_u_matrix_by_c}` and :math:`\eqref{eq_dirac_field_v_matrix_by_d}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat*}{2}
+		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_+ \\ 0 \end{bmatrix}, \quad u(0, -1/2) &&= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ b_+ \end{bmatrix} \\
+		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\b_- \end{bmatrix}, \quad v(0, -1/2) &&= -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_- \\ 0 \end{bmatrix}
+	\end{alignat*}
+
+So far we haven't really achieved much by assuming the parity conservation. What eventually pins down the spinors is, once again, the causality condition. To see this, let's try to construct the Dirac field following :math:`\eqref{eq_defn_psi_field}` (with a slight change of variable names because :math:`\beta` is already occupied) as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\psi(x) \coloneqq \kappa \psi^+(x) + \lambda \psi^{- c}(x)
+	\end{equation*}
+
+The (anti-)commutator can be calculated using :math:`\eqref{eq_dirac_field_psi_plus}` and :math:`\eqref{eq_dirac_field_psi_minus}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm} = (2\pi)^{-3} \int d^3 p~\left( |\kappa|^2 N_{\ell \ell'}(\pbf) \exp(\ifrak p \cdot (x-y)) \pm |\lambda|^2 M_{\ell \ell'}(\pbf) \exp(-\ifrak p \cdot (x-y)) \right)
+	\end{equation*}
+
+where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spinor sums defined as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		N_{\ell \ell'} &= \sum_{\sigma} u_{\ell}(\pbf, \sigma) u^{\ast}_{\ell'}(\pbf, \sigma) \\
+		M_{\ell \ell'} &= \sum_{\sigma} v_{\ell}(\pbf, \sigma) v^{\ast}_{\ell'}(\pbf, \sigma)
+	\end{align*}
 
 
 .. rubric:: Footnotes
 
 .. [#tedious_calc_of_commutations] These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in [Wei95]_ page 61.
-
-.. [#boost_in_p_formula] The formula in [Wei95]_ page 68, eq. (2.5.24) is wrong.
 
 .. [#in_out_state_sign_convention] I really don't like the sign convention of the in- and out-states in [Wei95]_, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in [Wei95]_.
 
@@ -4964,6 +5214,10 @@ Indeed, the Pauli matrices make up a solution to the :math:`3`-dimensional Cliff
 
 .. [#weinberg_quote_on_lorentz_invariance_and_quantum_mechanics] See [Wei95]_ page 145.
 
+.. [#two_ways_of_representation] This should be compared with :math:`\eqref{eq_d_repr_of_little_group}`, which uses transpose instead of inverse to satisfy the group law. From the viewpoint of representation theory, it's more natural to use the inverse. But in the case of little group representations, since we're only interested in unitary representations, there is not much difference between the two choices.
+
 .. [#wrong_integration_of_Delta_function] The evaluation of the integral eq. (5.2.8) on [Wei95]_ page 202 seems to be wrong, as the integrand oscillates as :math:`\sin(u)` for :math:`u` large enough, which will cause the integral to diverge.
 
-.. [#wrong_dirac_gamma_is_vector] The formula (5.4.8) in [Wei95]_ appears to be wrong because it violates the group law of :math:`\Lambda`. One can compare this with :math:`\eqref{eq_conjugate_annihilation_field}` or eq. (5.1.6) in [Wei95]_.
+.. [#dirac_gamma_is_vector] Our calculation is consistent with formula (5.4.8) in [Wei95]_ because of the convention :math:`{(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}` introduced in formula (2.3.10).
+
+.. [#spatial_inversion_on_fields_sign] Our calculation differs from (5.5.10) and (5.5.11) in [Wei95]_ by a sign because we take into account the fact that the substitution :math:`\pbf \to -\pbf` also reverts the volume element :math:`d^3 p`.
