@@ -1719,7 +1719,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation*}</div><p>which is nothing about the conservation of charges. Besides the electric charge, there exist also other similar conserved, or approximately conserved, quantities, such as baryon number and lepton number.</p>
 </section>
 <section id="parity-symmetry">
-<h4>Parity symmetry<a class="headerlink" href="#parity-symmetry" title="Link to this heading">#</a></h4>
+<span id="sec-parity-symmetry"></span><h4>Parity symmetry<a class="headerlink" href="#parity-symmetry" title="Link to this heading">#</a></h4>
 <p>Recall from <a class="reference internal" href="#sec-space-inversion-for-massive-particles"><span class="std std-ref">Space inversion for massive particles</span></a> that for non-interacting massive particles</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -2793,20 +2793,24 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \begin{align}
         \left[ \psi^+(x), \psi^-(y) \right]_{\pm} &amp;= \int d^3 p~d^3 q~(2\pi)^{-3} \exp(\ifrak (p \cdot x - q \cdot y)) (4 p_0 q_0)^{-1/2} \left[ a(\pbf), a^{\dagger}(\qbf) \right]_{\pm}
         \label{eq_scalar_field_commutator_as_Delta} \\
-                &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot (x - y)) \eqqcolon \Delta(x - y) \nonumber
+                &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot (x - y)) \eqqcolon \Delta_+(x - y) \nonumber
 \end{align}</div><p>where</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \Delta(x) \coloneqq \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot x)
-        \label{eq_defn_Delta}
-\end{equation}</div><p>We notice that <span class="math notranslate nohighlight">\(\Delta(x)\)</span> is apparently (proper orthochronous) Lorentz invariant – the invariance of the volume element comes from <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariant_3_momentum_volume_element}\)</span>. It is, however, not in general invariant under transformations like <span class="math notranslate nohighlight">\(x \to -x\)</span>. But, as we’ll see, such invariance holds assuming <span class="math notranslate nohighlight">\(x\)</span> is space-like.</p>
-<p>Now we’ll restrict ourselves to the special case of a space-like <span class="math notranslate nohighlight">\(x\)</span> which, up to a Lorentz transformation, can be assumed to take the form <span class="math notranslate nohighlight">\(x = (0, \xbf)\)</span> with <span class="math notranslate nohighlight">\(|\xbf| &gt; 0\)</span>. In this case, we can then calculate <span class="math notranslate nohighlight">\(\Delta(x)\)</span> as follows <a class="footnote-reference brackets" href="#wrong-integration-of-delta-function" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p>
+        \Delta_+(x) \coloneqq \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot x)
+        \label{eq_defn_Delta_plus}
+\end{equation}</div><p>We notice that <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> is manifestly (proper orthochronous) Lorentz invariant – the invariance of the volume element comes from <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariant_3_momentum_volume_element}\)</span>. It is, however, not in general invariant under transformations like <span class="math notranslate nohighlight">\(x \to -x\)</span>. But, as we’ll see, such invariance holds assuming <span class="math notranslate nohighlight">\(x\)</span> is space-like.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The plus subscript in <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> is there to distinguish it from an anti-symmetrized version <span class="math notranslate nohighlight">\(\Delta(x)\)</span> to be introduced later.</p>
+</div>
+<p>Now we’ll restrict ourselves to the special case of a space-like <span class="math notranslate nohighlight">\(x\)</span> which, up to a Lorentz transformation, can be assumed to take the form <span class="math notranslate nohighlight">\(x = (0, \xbf)\)</span> with <span class="math notranslate nohighlight">\(|\xbf| &gt; 0\)</span>. In this case, we can then calculate <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> as follows <a class="footnote-reference brackets" href="#wrong-integration-of-delta-function" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        \Delta(x) &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2\sqrt{\pbf^2 + m^2}}~\exp(\ifrak \pbf \cdot \xbf) \\
+        \Delta_+(x) &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2\sqrt{\pbf^2 + m^2}}~\exp(\ifrak \pbf \cdot \xbf) \\
                 &amp;= \frac{4\pi}{(2\pi)^3} \int_0^{\infty} \frac{|\pbf|^2 d|\pbf|}{2\sqrt{|\pbf|^2 + m^2}} \int_{S^2} d^2 \hat{\pbf}~\exp(\ifrak |\pbf| |\xbf| \hat{\pbf} \cdot \hat{\xbf}) \\
                 &amp;= \frac{1}{2\pi} \int_0^{\infty} \frac{|\pbf|^2 d|\pbf|}{2\sqrt{|\pbf|^2 + m^2}} \int_0^{\pi} d\theta~\exp(\ifrak |\pbf| |\xbf| \cos\theta)
-\end{align*}</div><p>The last integral cannot be easily evaluated, at least without some knowledge about special functions. Nonetheless, we observe that <span class="math notranslate nohighlight">\(\Delta(x) \neq 0\)</span>, which means that <span class="math notranslate nohighlight">\(\Hscr\)</span> cannot be just any polynomial in <span class="math notranslate nohighlight">\(\psi^{\pm}(x)\)</span>. Moreover, we note that <span class="math notranslate nohighlight">\(\Delta(x) = \Delta(-x)\)</span> as promised earlier. As already mentioned in <span class="math notranslate nohighlight">\(\eqref{eq_defn_psi_field}\)</span>, let’s try</p>
+\end{align*}</div><p>The last integral cannot be easily evaluated, at least without some knowledge about special functions. Nonetheless, we observe that <span class="math notranslate nohighlight">\(\Delta_+(x) \neq 0\)</span>, which means that <span class="math notranslate nohighlight">\(\Hscr\)</span> cannot be just any polynomial in <span class="math notranslate nohighlight">\(\psi^{\pm}(x)\)</span>. Moreover, we note that <span class="math notranslate nohighlight">\(\Delta_+(x) = \Delta_+(-x)\)</span> as promised earlier. As already mentioned in <span class="math notranslate nohighlight">\(\eqref{eq_defn_psi_field}\)</span>, let’s try</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \psi(x) \coloneqq \alpha \psi^+(x) + \beta \psi^-(x)
@@ -2861,7 +2865,17 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \psi(x) = \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) a(\pbf) + \exp(-\ifrak p \cdot x) a^{c \dagger}(\pbf) \right]
         \label{eq_scalar_field_psi_by_creation_and_annihilation_operators}
 \end{equation}</div><p>with the possibility of <span class="math notranslate nohighlight">\(a^{c \dagger}(\pbf) = a^{\dagger}(\pbf)\)</span> in the case where the created particle is its own antiparticle.</p>
-<section id="the-cpt-symmetries">
+<p>For later use (e.g., the evaluation of Feynman diagrams), we note the following identity</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left[ \psi(x), \psi^{\dagger}(y) \right] = \Delta(x - y)
+        \label{eq_scalar_field_commutator}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta(x)\)</span> is defined, for any <span class="math notranslate nohighlight">\(x\)</span>, as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Delta(x) \coloneqq \Delta_+(x) - \Delta_+(-x) = \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0} (\exp(\ifrak p \cdot x) - \exp(-\ifrak p \cdot x))
+        \label{eq_defn_Delta}
+\end{equation}</div><section id="the-cpt-symmetries">
 <h4>The CPT symmetries<a class="headerlink" href="#the-cpt-symmetries" title="Link to this heading">#</a></h4>
 <p>Let’s investigate how a scalar field transforms under spatial inversion <span class="math notranslate nohighlight">\(\Pcal\)</span>, time inversion <span class="math notranslate nohighlight">\(\Tcal\)</span>, and charge conjugation <span class="math notranslate nohighlight">\(\Ccal\)</span>. This follows essentially from <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}\)</span> together with our knowledge about how creation/annihilation operators transform under CPT transformations in <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a>. Recall that we consider the case of massive particles here, leaving the massless case to a later section.</p>
 <p>We start with the spatial inversion <span class="math notranslate nohighlight">\(\Pcal\)</span> by recalling the following transformation rules</p>
@@ -3033,10 +3047,11 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_vector_field_defn_e_vector_at_rest}
 \end{equation}</div><p>Now we can rewrite the fields <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_minus}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
-\begin{align*}
-        \psi^+_{\mu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}}~\exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \\
+\begin{align}
+        \psi^+_{\mu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}}~\exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \nonumber \\
         \psi^-_{\mu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}}~\exp(-\ifrak p \cdot x) e_{\mu}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) = \psi^{+ \dagger}_{\mu}(x)
-\end{align*}</div><p>Similar to the calculation <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_commutator_as_Delta}\)</span> for scalar field, the (anti-)commutator can be calculated as follows</p>
+        \label{eq_vector_field_psi_minus_adjoint_to_plus}
+\end{align}</div><p>Similar to the calculation <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_commutator_as_Delta}\)</span> for scalar field, the (anti-)commutator can be calculated as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \int \frac{d^3 p}{(2\pi)^3 2p_0}~\exp(\ifrak p \cdot (x - y)) \Pi_{\mu \nu}(\pbf)
@@ -3079,14 +3094,24 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>In light of <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_commutator_as_Delta}\)</span>, we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_commutator_by_Pi}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta(x - y)
+        \left[ \psi^+_{\mu}(x), \psi^-_{\nu}(y) \right]_{\pm} = \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta_+(x - y)
         \label{eq_vector_field_commutator_by_Delta}
-\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta(x - y)\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta}\)</span>. As in the case of scalar fields, this (anti-)commutator doesn’t vanish even for space-like <span class="math notranslate nohighlight">\(x - y\)</span>. Nonetheless, it’s still an even function for space-like separations. The trick, as before, is to consider some appropriate linear combination of <span class="math notranslate nohighlight">\(\psi^+_{\mu}(x)\)</span> and <span class="math notranslate nohighlight">\(\psi^-_{\mu}(x)\)</span> which turns out to be</p>
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta_+(x - y)\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta_plus}\)</span>. As in the case of scalar fields, this (anti-)commutator doesn’t vanish even for space-like <span class="math notranslate nohighlight">\(x - y\)</span>. Nonetheless, it’s still an even function for space-like separations. The trick, as usual, is to consider a linear combination of <span class="math notranslate nohighlight">\(\psi^+_{\mu}(x)\)</span> and <span class="math notranslate nohighlight">\(\psi^-_{\mu}(x)\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \psi_{\mu}(x) \coloneqq \alpha \psi^+_{\mu}(x) + \beta \psi^-_{\mu}(x)
+\end{equation*}</div><p>Now for space-separated <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, we can calculate using <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_commutator_by_Delta}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_minus_adjoint_to_plus}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \left[ \psi_{\mu}(x), \psi_{\nu}(y) \right]_{\pm} &amp;= (\alpha\beta \pm \alpha\beta) \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta_+(x-y) \\
+        \left[ \psi_{\mu}(x), \psi^{\dagger}_{\nu}(y) \right]_{\pm} &amp;= (|\kappa|^2 \pm |\lambda|^2) \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta_+(x-y)
+\end{align*}</div><p>For them to vanishes, we see that first of all, we must adopt the top sign, i.e., take the commutator, or in other words, the vector field of spin <span class="math notranslate nohighlight">\(1\)</span> must be bosonic. In addition, we must have <span class="math notranslate nohighlight">\(|\kappa| = |\lambda|\)</span>. In fact, by adjusting the phase of the creation/annihilation operators, we can arrange so that <span class="math notranslate nohighlight">\(\kappa = \lambda = 1\)</span>. To summarize, we can write a general vector field in the following form</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^-_{\mu}(x) = \psi^+_{\mu}(x) + \psi^{+ \dagger}_{\mu}(x)
         \label{eq_vector_field_psi_fixed_phase}
-\end{equation}</div><p>just like <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_fixed_phase}\)</span>. Moreover, in order for the left-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_commutator_by_Delta}\)</span> to be a commutator, we conclude that a spin-<span class="math notranslate nohighlight">\(1\)</span> vector field must be bosonic. In addition, if the field carries a nonzero (conserved) quantum charge, then one must adjust <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_fixed_phase}\)</span> as follows</p>
+\end{equation}</div><p>just like <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_fixed_phase}\)</span>. It’s also obvious that <span class="math notranslate nohighlight">\(\psi_{\mu}(x)\)</span> is Hermitian.</p>
+<p>Now if the vector field carries a nonzero (conserved) quantum charge, then one must adjust <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_fixed_phase}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^{+ c \dagger}_{\mu}(x)
@@ -3096,7 +3121,12 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \psi_{\mu}(x) = \sum_{\sigma} \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \
                 + \exp(-\ifrak p \cdot x) e_{\mu}^{\ast}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right]
         \label{eq_vector_field_psi_by_creation_and_annihilation_operators}
-\end{equation}</div><p>in analogy with <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}\)</span> for scalar fields.</p>
+\end{equation}</div><p>in analogy with <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}\)</span> for scalar fields. Finally, let’s calculate the commutator (for general <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>) for later use as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left[ \psi_{\mu}(x), \psi^{\dagger}_{\nu}(y) \right] = \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta(x-y)
+        \label{eq_vector_field_commutator}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta(x-y)\)</span> as defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta}\)</span>.</p>
 <p>So far, besides the introduction of the vectors <span class="math notranslate nohighlight">\(e_{\mu}(\pbf, \sigma)\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_defn_e_vector_at_p}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_defn_e_vector_at_rest}\)</span>, the discussion on vector fields looks very much like scalar fields. A key difference, however, stems from the following observation</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -3335,7 +3365,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
                 \label{eq_dirac_field_spatial_inversion_acts_on_psi_plus} \\
                 &amp;= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot \Pcal x) u(-\pbf, \sigma) a(\pbf, \sigma) \nonumber \\
                 &amp;= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot \Pcal x) \sqrt{m/p_0}~\beta D(L(p)) \beta u(0, \sigma) a(\pbf, \sigma) \nonumber \\
-        U(\Pcal) \psi^-(x) U^{-1}(\Pcal) &amp;= -(2\pi)^{-3/2} \eta^c \sum_{\sigma} \int d^3 p~\exp(-\ifrak p \cdot \Pcal x) \sqrt{m/p_0}~\beta D(L(p))\beta v(0, \sigma) a^{c \dagger}(\pbf, \sigma)
+        U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &amp;= -(2\pi)^{-3/2} \eta^c \sum_{\sigma} \int d^3 p~\exp(-\ifrak p \cdot \Pcal x) \sqrt{m/p_0}~\beta D(L(p))\beta v(0, \sigma) a^{c \dagger}(\pbf, \sigma)
         \label{eq_dirac_field_spatial_inversion_acts_on_psi_minus}
 \end{align}</div><p>Here we’ve evaluated <span class="math notranslate nohighlight">\(u(-\pbf, \sigma)\)</span> (and <span class="math notranslate nohighlight">\(v(-\pbf, \sigma)\)</span>) in a way similar to <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_revert_momentum_transformation}\)</span>, where, instead of applying <span class="math notranslate nohighlight">\(\Pcal\)</span> directly on vectors, we recall for Dirac fields that the spatial inversion acts as <span class="math notranslate nohighlight">\(\beta\)</span>, defined by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_beta_matrix},\)</span> on spinors.</p>
 <p>In order for <span class="math notranslate nohighlight">\(U(\Pcal) \psi^+(x) U^{-1}(\Pcal)\)</span> to be proportional to <span class="math notranslate nohighlight">\(\psi^+(x)\)</span>, we observe that it would be sufficient (and most likely also necessary) if <span class="math notranslate nohighlight">\(u(0, \sigma)\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\beta\)</span>. Similar argument applies to <span class="math notranslate nohighlight">\(\psi^-(x)\)</span> as well, so we can write</p>
@@ -3347,10 +3377,12 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_dirac_field_beta_eigenvalue_of_v}
 \end{align}</div><p>where <span class="math notranslate nohighlight">\(b^2_{\pm} = 1\)</span> since <span class="math notranslate nohighlight">\(\beta^2 = 1\)</span>. Assuming this, we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_inversion_acts_on_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_inversion_acts_on_psi_minus}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
-\begin{align*}
-        U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &amp;= -\eta^{\ast} b_+ \beta \psi^+(\Pcal x) \\
-        U(\Pcal) \psi^-(x) U^{-1}(\Pcal) &amp;= -\eta^c b_- \beta \psi^-(\Pcal x)
-\end{align*}</div><p>so that the parity is indeed conserved.</p>
+\begin{align}
+        U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &amp;= -\eta^{\ast} b_+ \beta \psi^+(\Pcal x)
+        \label{eq_dirac_field_psi_plus_conjugated_by_u} \\
+        U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &amp;= -\eta^c b_- \beta \psi^{- c}(\Pcal x)
+        \label{eq_dirac_field_psi_minus_conjugated_by_u}
+\end{align}</div><p>so that the parity is indeed conserved.</p>
 <p>Now using <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_beta_eigenvalue_of_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_beta_eigenvalue_of_v}\)</span> (and an appropriate rescaling), we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_u_matrix_by_c}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_v_matrix_by_d}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{alignat*}{2}
@@ -3411,7 +3443,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_dirac_field_commutator_first_evaluation} \\
                 &amp;\phantom{=} \pm |\lambda|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_- m) \exp(-\ifrak p \cdot (x-y)) \beta \big)_{\ell \ell'} \nonumber \\
                 &amp;= \left( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta(x-y) \beta \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta(y-x) \beta \right)_{\ell \ell'} \nonumber
-\end{align}</div><p>where <span class="math notranslate nohighlight">\(\Delta\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta}\)</span>. Recall that <span class="math notranslate nohighlight">\(\Delta(x) = \Delta(-x)\)</span> for space-like <span class="math notranslate nohighlight">\(x\)</span>. Hence for space-like <span class="math notranslate nohighlight">\(x-y\)</span>, the following holds</p>
+\end{align}</div><p>where <span class="math notranslate nohighlight">\(\Delta\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta_plus}\)</span>. Recall that <span class="math notranslate nohighlight">\(\Delta(x) = \Delta(-x)\)</span> for space-like <span class="math notranslate nohighlight">\(x\)</span>. Hence for space-like <span class="math notranslate nohighlight">\(x-y\)</span>, the following holds</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \p_{x_{\mu}} \Delta(x-y) = \p_{x_{\mu}} \Delta(y-x) = -\p_{y_{\mu}} \Delta(y-x)
@@ -3423,9 +3455,11 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{align*}</div><p>We see that first of all, the top sign applies, which means in particular that we must be considering the anti-commutator in <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_commutator_first_evaluation}\)</span>, or in other words, the Dirac fields must be fermionic. In addition, we must also have <span class="math notranslate nohighlight">\(|\kappa| = |\lambda|\)</span> and <span class="math notranslate nohighlight">\(b_+ + b_- = 0\)</span>.</p>
 <p>By the usual phase adjustments on the creation and annihilation operators and rescaling, we can arrange so that <span class="math notranslate nohighlight">\(\kappa = \lambda = 1\)</span>. Recalling <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_gamma_5_anticommutes_beta}\)</span> and replacing <span class="math notranslate nohighlight">\(\psi\)</span> with <span class="math notranslate nohighlight">\(\gamma_5 \psi\)</span> if necessary, we can arrange so that <span class="math notranslate nohighlight">\(b_{\pm} = \pm 1\)</span>. Putting these all together, we have evaluated the Dirac field <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_field_raw}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
-        \psi(x) = (2\pi)^{-3} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) a(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
-\end{equation*}</div><p>where the zero-momentum spinors are</p>
+\begin{align}
+        \psi(x) &amp;= \psi^+(x) + \psi^{- c}(x)
+                \label{eq_dirac_field_psi_field} \\
+                &amp;= (2\pi)^{-3} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) a(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right) \nonumber
+\end{align}</div><p>where the zero-momentum spinors are</p>
 <div class="math notranslate nohighlight">
 \begin{alignat*}{2}
         u(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \quad &amp;&amp;u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 1 \end{bmatrix} \\
@@ -3437,9 +3471,16 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
         M(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} - m\right) \beta
 \end{align*}</div><p>and the anti-commutator <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_commutator_first_evaluation}\)</span></p>
 <div class="math notranslate nohighlight">
+\begin{equation}
+        \left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_+ = \left( \left( -\gamma^{\mu}\p_{\mu} + m \right) \beta \right)_{\ell \ell'} \Delta(x-y)
+        \label{eq_dirac_field_commutator}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\p_{\mu} = \p_{x_{\mu}}\)</span> and <span class="math notranslate nohighlight">\(\Delta(x-y)\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta}\)</span>.</p>
+<p>For <span class="math notranslate nohighlight">\(\psi(x)\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_field}\)</span> to transform covariantly under spatial inversion, we recall <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_plus_conjugated_by_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_minus_conjugated_by_u}\)</span> to conclude that</p>
+<div class="math notranslate nohighlight">
 \begin{equation*}
-        \left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_+ =
-\end{equation*}</div><p class="rubric">Footnotes</p>
+        \eta^{\ast} + \eta^c = 0
+\end{equation*}</div><p>It follows that <span class="math notranslate nohighlight">\(\eta \eta^c = -1\)</span>, or in other words, the state consisting of a spin <span class="math notranslate nohighlight">\(1/2\)</span> particle and its antiparticle is odd in the sense of <a class="reference internal" href="#sec-parity-symmetry"><span class="std std-ref">Parity symmetry</span></a>.</p>
+<p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
