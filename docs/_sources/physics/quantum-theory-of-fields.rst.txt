@@ -5196,10 +5196,26 @@ where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spinor sums defi
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		N_{\ell \ell'} &= \sum_{\sigma} u_{\ell}(\pbf, \sigma) u^{\ast}_{\ell'}(\pbf, \sigma) \\
-		M_{\ell \ell'} &= \sum_{\sigma} v_{\ell}(\pbf, \sigma) v^{\ast}_{\ell'}(\pbf, \sigma)
-	\end{align*}
+	\begin{align}
+		N_{\ell \ell'}(\pbf) &= \sum_{\sigma} u_{\ell}(\pbf, \sigma) u^{\ast}_{\ell'}(\pbf, \sigma) 
+		\label{eq_dirac_field_n_matrix_as_spinor_sum} \\
+		M_{\ell \ell'}(\pbf) &= \sum_{\sigma} v_{\ell}(\pbf, \sigma) v^{\ast}_{\ell'}(\pbf, \sigma)
+		\label{eq_dirac_field_m_matrix_as_spinor_sum}
+	\end{align}
+
+To evaluate the spinor sums, we first turn back to the zero-momentum case and use :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_v}` to express the values in terms of :math:`\beta` as follows
+
+.. math:: 
+	:nowrap:
+
+	\begin{align}
+		N(0) &= \frac{1 + b_+ \beta}{2} 
+		\label{eq_dirac_field_n_matrix_at_zero} \\
+		M(0) &= \frac{1 + b_- \beta}{2}
+		\label{eq_dirac_field_m_matrix_at_zero}
+	\end{align}
+
+The easiest way to see this is probably to momentarily forget about the spin :math:`z`-component :math:`\sigma` so that :math:`\beta` as in :math:`\eqref{eq_dirac_field_beta_matrix}` behaves like a :math:`2 \times 2` matrix with obvious eigenvectors :math:`[1, 1]^T` for :math:`b_+ = 1` and :math:`[1, -1]^T` for :math:`b_+ = -1`. Then :math:`\eqref{eq_dirac_field_n_matrix_at_zero}` and :math:`\eqref{eq_dirac_field_m_matrix_at_zero}` can be verified by a direct calculation. Here the superscript :math:`T` means taking transpose so we have column vectors.
 
 
 .. rubric:: Footnotes
