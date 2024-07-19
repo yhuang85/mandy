@@ -973,15 +973,15 @@ Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :mat
 		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)
 	\end{equation*}
 
-It follows that
+It follows that [#momentum_l_transformation_sign]_
 
 .. math::
 	:nowrap:
 
 	\begin{align}
 		L(p)_0^0 &= \gamma \label{eq_L_transformation_for_massive_1} \\
-		L(p)_i^0 = L(p)_0^i &= \frac{p_i}{M} \label{eq_L_transformation_for_massive_2} \\
-		L(p)_i^j &= \delta_i^j + \frac{p_i p_j}{\pbf^2} (\gamma - 1) \label{eq_L_transformation_for_massive_3}
+		L(p)_{i0} = L(p)_{0i} &= \frac{p_i}{M} \label{eq_L_transformation_for_massive_2} \\
+		L(p)_{ij} &= \delta_{ij} + \frac{p_i p_j}{\pbf^2} (\gamma - 1) \label{eq_L_transformation_for_massive_3}
 	\end{align}
 
 Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:`3`-rotation, then
@@ -3952,7 +3952,7 @@ Translations
 	for any homogeneous Lorentz transformation :math:`\Lambda`.
 
 Boosts
-	Taking :math:`\pbf = 0` and :math:`\Lambda = L(q)` which takes a particle at rest to one with (arbitrary) momentum :math:`q` in :math:`\eqref{eq_annihilation_u_transformation_simplified_by_translation}`, we see that
+	Taking :math:`\pbf = 0` and :math:`\Lambda = L(q)` which takes a particle at rest to one with (arbitrary) momentum :math:`q`, we see that
 
 	.. math::
 		:nowrap:
@@ -4818,6 +4818,8 @@ Dirac fields
 
 Here we'll encounter the first nontrivial representation of the (homogeneous orthochronous) Lorentz group, first discovered by P. Dirac in a completely different (and more physical) context. Our treatment here will be purely mathematical, and will serve as a warm-up for the general representation theory.
 
+.. _sec_dirac_representation_and_gamma_matrices:
+
 Dirac representation and gamma matrices
 +++++++++++++++++++++++++++++++++++++++
 
@@ -5015,9 +5017,10 @@ In connection to the non-unitarity of :math:`D(\Lambda)`, let's note that since 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
-		\beta D(\Lambda) \beta^{-1} = D^{-1}(\Lambda)
-	\end{equation*}
+	\begin{equation}
+		\beta D^{\dagger}(\Lambda) \beta^{-1} = D^{-1}(\Lambda)
+		\label{eq_dirac_field_pseudo_unitarity_of_d_matrix}
+	\end{equation}
 
 in light of :math:`\eqref{eq_dirac_field_linearize_representation}`. This identity will be useful when we later construct the interaction density.
 
@@ -5187,9 +5190,10 @@ The (anti-)commutator can be calculated using :math:`\eqref{eq_dirac_field_psi_p
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm} = (2\pi)^{-3} \int d^3 p~\left( |\kappa|^2 N_{\ell \ell'}(\pbf) \exp(\ifrak p \cdot (x-y)) \pm |\lambda|^2 M_{\ell \ell'}(\pbf) \exp(-\ifrak p \cdot (x-y)) \right)
-	\end{equation*}
+		\label{eq_dirac_field_commutator_raw}
+	\end{equation}
 
 where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spinor sums defined as follows
 
@@ -5197,7 +5201,7 @@ where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spinor sums defi
 	:nowrap:
 
 	\begin{align}
-		N_{\ell \ell'}(\pbf) &= \sum_{\sigma} u_{\ell}(\pbf, \sigma) u^{\ast}_{\ell'}(\pbf, \sigma) 
+		N_{\ell \ell'}(\pbf) &= \sum_{\sigma} u_{\ell}(\pbf, \sigma) u^{\ast}_{\ell'}(\pbf, \sigma)
 		\label{eq_dirac_field_n_matrix_as_spinor_sum} \\
 		M_{\ell \ell'}(\pbf) &= \sum_{\sigma} v_{\ell}(\pbf, \sigma) v^{\ast}_{\ell'}(\pbf, \sigma)
 		\label{eq_dirac_field_m_matrix_as_spinor_sum}
@@ -5205,22 +5209,83 @@ where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spinor sums defi
 
 To evaluate the spinor sums, we first turn back to the zero-momentum case and use :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_v}` to express the values in terms of :math:`\beta` as follows
 
-.. math:: 
+.. math::
+	:nowrap:
+
+	\begin{alignat}{2}
+		N(0) &= \sum_{\sigma} u(0, \sigma) u^{\dagger}(0, \sigma) &&= \frac{1 + b_+ \beta}{2}
+		\label{eq_dirac_field_n_matrix_at_zero} \\
+		M(0) &= \sum_{\sigma} v(0, \sigma) v^{\dagger}(0, \sigma) &&= \frac{1 + b_- \beta}{2}
+		\label{eq_dirac_field_m_matrix_at_zero}
+	\end{alignat}
+
+where :math:`\dagger` here means transpose conjugation. The easiest way to see this is probably to momentarily forget about the spin :math:`z`-component :math:`\sigma` so that :math:`\beta` as in :math:`\eqref{eq_dirac_field_beta_matrix}` behaves like a :math:`2 \times 2` matrix with obvious eigenvectors :math:`[1, 1]^T` for :math:`b_{\pm} = 1` and :math:`[1, -1]^T` for :math:`b_{\pm} = -1`. Then :math:`\eqref{eq_dirac_field_n_matrix_at_zero}` and :math:`\eqref{eq_dirac_field_m_matrix_at_zero}` can be verified by a direct calculation. Here the superscript :math:`T` means taking transpose so we have column vectors.
+
+Now we can evaluate the :math:`N` and :math:`M` matrices in terms of :math:`\beta` as follows
+
+.. math::
 	:nowrap:
 
 	\begin{align}
-		N(0) &= \frac{1 + b_+ \beta}{2} 
-		\label{eq_dirac_field_n_matrix_at_zero} \\
-		M(0) &= \frac{1 + b_- \beta}{2}
-		\label{eq_dirac_field_m_matrix_at_zero}
+		N(\pbf) &\xlongequal{\eqref{eq_dirac_field_n_matrix_as_spinor_sum}} \sum_{\sigma} u(\pbf, \sigma) u^{\dagger}(\pbf, \sigma)
+			\label{eq_dirac_field_n_matrix_first_evaluation} \\
+			&\xlongequal{\eqref{eq_dirac_field_spinor_u_at_finite_momentum}} \frac{m}{p_0} D(L(p)) \left( \sum_{\sigma} u(0, \sigma) u^{\dagger}(0, \sigma) \right) D^{\dagger}(L(p)) \nonumber \\
+			&\xlongequal{\eqref{eq_dirac_field_n_matrix_at_zero}} \frac{m}{2p_0} D(L(p)) (1 + b_+ \beta) D^{\dagger}(L(p)) \nonumber \\
+		M(\pbf) &\xlongequal{\phantom{\eqref{eq_dirac_field_n_matrix_at_zero}}} \frac{m}{2p_0} D(L(p)) (1 + b_- \beta) D^{\dagger}(L(p))
+		\label{eq_dirac_field_m_matrix_first_evaluation}
 	\end{align}
 
-The easiest way to see this is probably to momentarily forget about the spin :math:`z`-component :math:`\sigma` so that :math:`\beta` as in :math:`\eqref{eq_dirac_field_beta_matrix}` behaves like a :math:`2 \times 2` matrix with obvious eigenvectors :math:`[1, 1]^T` for :math:`b_+ = 1` and :math:`[1, -1]^T` for :math:`b_+ = -1`. Then :math:`\eqref{eq_dirac_field_n_matrix_at_zero}` and :math:`\eqref{eq_dirac_field_m_matrix_at_zero}` can be verified by a direct calculation. Here the superscript :math:`T` means taking transpose so we have column vectors.
+To go further, we need to invoke the the transformation laws of the gamma matrices and their relatives, e.g., :math:`\beta`, under :math:`D(\Lambda)` from :ref:`sec_dirac_representation_and_gamma_matrices`. More precisely, using the pseudo-unitarity :math:`\eqref{eq_dirac_field_pseudo_unitarity_of_d_matrix}` we have the following
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		D(L(p)) \beta D^{\dagger}(L(p)) &\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) D^{-1}(L(p)) \beta = \beta \\
+		D(L(p)) D^{\dagger}(L(p)) &\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) \beta D^{-1}(L(p)) \beta \\
+			&\xlongequal{\eqref{eq_dirac_field_beta_matrix}} \ifrak D(L(p)) \gamma_0 D(L(p)) \beta \\
+			&\xlongequal{\eqref{eq_dirac_field_gamma_is_vector}} \ifrak \left( L^{-1}(p) \right)_0^{\mu} \gamma_{\mu} \beta \\
+			&\xlongequal{\eqref{eq_L_transformation_for_massive_2}} -\ifrak p^{\mu} \gamma_{\mu} \beta / m \
+			= -\ifrak p_{\mu} \gamma^{\mu} \beta / m
+	\end{align*}
+
+Plugging them into :math:`\eqref{eq_dirac_field_n_matrix_first_evaluation}` and :math:`\eqref{eq_dirac_field_m_matrix_first_evaluation}`, respectively, we can continue our evaluation as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		N(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_+ m \right) \beta \\
+		M(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right) \beta
+	\end{align*}
+
+Now that we've finished evaluating the spinor sums, we can plug them into :math:`\eqref{eq_dirac_field_commutator_raw}` to get the following evaluation of the (anti)-commutator
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm} &= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~\big( |\kappa|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_+ m) \exp(\ifrak p \cdot (x-y)) \beta
+		\label{eq_dirac_field_commutator_first_evaluation} \\
+			&\phantom{=} \pm |\lambda|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_- m) \exp(-\ifrak p \cdot (x-y)) \beta \big)_{\ell \ell'} \nonumber \\
+			&= \left( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta(x-y) \beta \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta(y-x) \beta \right)_{\ell \ell'} \nonumber
+	\end{align}
+
+where :math:`\Delta` is defined by :math:`\eqref{eq_defn_Delta}`. Recall that :math:`\Delta(x) = \Delta(-x)` for space-like :math:`x`. It follows that for space-like :math:`x-y`, the following holds
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\p_{x_{\mu}} \Delta(x-y)
+	\end{equation*}
 
 
 .. rubric:: Footnotes
 
 .. [#tedious_calc_of_commutations] These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in [Wei95]_ page 61.
+
+.. [#momentum_l_transformation_sign] The corresponding formula (2.5.24) in [Wei95]_ uses the convention (2.3.10) for inverse matrices.
 
 .. [#in_out_state_sign_convention] I really don't like the sign convention of the in- and out-states in [Wei95]_, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in [Wei95]_.
 
