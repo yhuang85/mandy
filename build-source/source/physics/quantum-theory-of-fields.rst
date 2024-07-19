@@ -5024,6 +5024,28 @@ In connection to the non-unitarity of :math:`D(\Lambda)`, let's note that since 
 
 in light of :math:`\eqref{eq_dirac_field_linearize_representation}`. This identity will be useful when we later construct the interaction density.
 
+At last we'll introduce yet another special element to the family of gamma matrices, namely :math:`\gamma_5`, defined as follows
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		\gamma_5 \coloneqq -\ifrak \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+	\end{equation*}
+
+One nice thing about :math:`\gamma_5` is that it anti-commutes with all other :math:`\gamma` matrices, and in particular
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation}
+		\beta \gamma_5 = -\gamma_5 \beta
+		\label{eq_dirac_field_gamma_5_anticommutes_beta}
+	\end{equation}
+
+In fact, the collection :math:`\gamma_0, \gamma_1, \gamma_2, \gamma_3, \gamma_5` makes exactly a :math:`5`-dimensional spacetime Clifford algebra.
+
+
 Construction of Dirac fields
 ++++++++++++++++++++++++++++
 
@@ -5173,7 +5195,7 @@ Now using :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{
 
 	\begin{alignat*}{2}
 		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_+ \\ 0 \end{bmatrix}, \quad u(0, -1/2) &&= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ b_+ \end{bmatrix} \\
-		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\b_- \end{bmatrix}, \quad v(0, -1/2) &&= -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_- \\ 0 \end{bmatrix}
+		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ b_- \end{bmatrix}, \quad v(0, -1/2) &&= -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_- \\ 0 \end{bmatrix}
 	\end{alignat*}
 
 So far we haven't really achieved much by assuming the parity conservation. What eventually pins down the spinors is, once again, the causality condition. To see this, let's try to construct the Dirac field following :math:`\eqref{eq_defn_psi_field}` (with a slight change of variable names because :math:`\beta` is already occupied) as follows
@@ -5181,9 +5203,10 @@ So far we haven't really achieved much by assuming the parity conservation. What
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\psi(x) \coloneqq \kappa \psi^+(x) + \lambda \psi^{- c}(x)
-	\end{equation*}
+		\label{eq_dirac_field_psi_field_raw}
+	\end{equation}
 
 The (anti-)commutator can be calculated using :math:`\eqref{eq_dirac_field_psi_plus}` and :math:`\eqref{eq_dirac_field_psi_minus}` as follows
 
@@ -5195,7 +5218,7 @@ The (anti-)commutator can be calculated using :math:`\eqref{eq_dirac_field_psi_p
 		\label{eq_dirac_field_commutator_raw}
 	\end{equation}
 
-where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spinor sums defined as follows
+where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spin sums defined as follows
 
 .. math::
 	:nowrap:
@@ -5207,7 +5230,7 @@ where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spinor sums defi
 		\label{eq_dirac_field_m_matrix_as_spinor_sum}
 	\end{align}
 
-To evaluate the spinor sums, we first turn back to the zero-momentum case and use :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_v}` to express the values in terms of :math:`\beta` as follows
+To evaluate the spin sums, we first turn back to the zero-momentum case and use :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_v}` to express the values in terms of :math:`\beta` as follows
 
 .. math::
 	:nowrap:
@@ -5259,7 +5282,7 @@ Plugging them into :math:`\eqref{eq_dirac_field_n_matrix_first_evaluation}` and 
 		M(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right) \beta
 	\end{align*}
 
-Now that we've finished evaluating the spinor sums, we can plug them into :math:`\eqref{eq_dirac_field_commutator_raw}` to get the following evaluation of the (anti)-commutator
+Now that we've finished evaluating the spin sums, we can plug them into :math:`\eqref{eq_dirac_field_commutator_raw}` to get the following evaluation of the (anti)-commutator
 
 .. math::
 	:nowrap:
@@ -5271,14 +5294,65 @@ Now that we've finished evaluating the spinor sums, we can plug them into :math:
 			&= \left( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta(x-y) \beta \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta(y-x) \beta \right)_{\ell \ell'} \nonumber
 	\end{align}
 
-where :math:`\Delta` is defined by :math:`\eqref{eq_defn_Delta}`. Recall that :math:`\Delta(x) = \Delta(-x)` for space-like :math:`x`. It follows that for space-like :math:`x-y`, the following holds
+where :math:`\Delta` is defined by :math:`\eqref{eq_defn_Delta}`. Recall that :math:`\Delta(x) = \Delta(-x)` for space-like :math:`x`. Hence for space-like :math:`x-y`, the following holds
 
 .. math::
 	:nowrap:
 
 	\begin{equation*}
-		\p_{x_{\mu}} \Delta(x-y)
+		\p_{x_{\mu}} \Delta(x-y) = \p_{x_{\mu}} \Delta(y-x) = -\p_{y_{\mu}} \Delta(y-x)
 	\end{equation*}
+
+It follows that in order for :math:`\eqref{eq_dirac_field_commutator_first_evaluation}` to vanish for space-separated :math:`x` and :math:`y`, the following must hold
+
+.. math:: 
+	:nowrap:
+
+	\begin{align*}
+		|\kappa|^2 \mp |\lambda|^2 &= 0 \\
+		|\kappa|^2 b_+ \pm |\lambda|^2 b_- &= 0
+	\end{align*}
+
+We see that first of all, the top sign applies, which means in particular that we must be considering the anti-commutator in :math:`\eqref{eq_dirac_field_commutator_first_evaluation}`, or in other words, the Dirac fields must be fermionic. In addition, we must also have :math:`|\kappa| = |\lambda|` and :math:`b_+ + b_- = 0`.
+
+By the usual phase adjustments on the creation and annihilation operators and rescaling, we can arrange so that :math:`\kappa = \lambda = 1`. Recalling :math:`\eqref{eq_dirac_field_gamma_5_anticommutes_beta}` and replacing :math:`\psi` with :math:`\gamma_5 \psi` if necessary, we can arrange so that :math:`b_{\pm} = \pm 1`. Putting these all together, we have evaluated the Dirac field :math:`\eqref{eq_dirac_field_psi_field_raw}` as follows
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		\psi(x) = (2\pi)^{-3} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) a(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+	\end{equation*}
+
+where the zero-momentum spinors are 
+
+.. math:: 
+	:nowrap:
+
+	\begin{alignat*}{2}
+		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \quad &&u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 1 \end{bmatrix} \\
+        v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatrix}, \quad &&v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}
+	\end{alignat*}
+
+and the spin sums are 
+
+.. math:: 
+	:nowrap:
+
+	\begin{align*}
+		N(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} + m \right) \beta \\
+		M(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} - m\right) \beta
+	\end{align*}
+
+and the anti-commutator :math:`\eqref{eq_dirac_field_commutator_first_evaluation}`
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_+ = 
+	\end{equation*}
+
 
 
 .. rubric:: Footnotes
