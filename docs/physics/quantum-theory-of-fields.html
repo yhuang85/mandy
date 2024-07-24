@@ -1744,7 +1744,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <p class="admonition-title">Todo</p>
 <p>Revise this part after I’ve learned more…</p>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="dropdown-parities-of-elementary-particles">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Parities of elementary particles</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">We shall in this section assume familiarity with angular momentum as discussed in <a class="reference internal" href="#dropdown-clebsch-gordan-coefficients"><span class="std std-ref">Clebsch-Gordan coefficients</span></a>.</p>
@@ -2415,13 +2415,18 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_lorentz_transformation_formula_for_annihilation_operator}
 \end{equation}</div><p>The parity, time, and charge symmetry on the creation and annihilation operators can be worked out as follows</p>
 <div class="math notranslate nohighlight">
-\begin{alignat*}{2}
-        U(\Pcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Pcal) &amp;\xlongequal{\eqref{eq_space_inversion_on_massive_general}} \eta_n a^{\dagger}(-\pbf, \sigma, n) &amp;&amp;\quad\text{(massive particle)} \\
-        U(\Pcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Pcal) &amp;\xlongequal{\eqref{eq_space_inversion_on_massless_general}} \eta_{\sigma, n} \exp(\mp \ifrak \pi \sigma) a^{\dagger}(-\pbf, -\sigma, n) &amp;&amp;\quad\text{(massless particle)} \\
-        U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_time_inversion_on_massive_general}} \zeta_n (-1)^{\jfrak - \sigma} a^{\dagger}(-\pbf, -\sigma, n) &amp;&amp;\quad\text{(massive particle)} \\
-        U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_time_inversion_on_massless_general}} \zeta_{\sigma, n} \exp(\pm \ifrak \pi \sigma) a^{\dagger}(-\pbf, \sigma, n) &amp;&amp;\quad\text{(massless particle)} \\
+\begin{alignat}{2}
+        U(\Pcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Pcal) &amp;\xlongequal{\eqref{eq_space_inversion_on_massive_general}} \eta_n a^{\dagger}(-\pbf, \sigma, n) &amp;&amp;\quad\text{(massive particle)}
+        \label{eq_creation_operator_space_inversion_conjugation_massive} \\
+        U(\Pcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Pcal) &amp;\xlongequal{\eqref{eq_space_inversion_on_massless_general}} \eta_{\sigma, n} \exp(\mp \ifrak \pi \sigma) a^{\dagger}(-\pbf, -\sigma, n) &amp;&amp;\quad\text{(massless particle)}
+        \label{eq_creation_operator_space_inversion_conjugation_massless} \\
+        U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_time_inversion_on_massive_general}} \zeta_n (-1)^{\jfrak - \sigma} a^{\dagger}(-\pbf, -\sigma, n) &amp;&amp;\quad\text{(massive particle)}
+        \label{eq_creation_operator_time_inversion_conjugation_massive} \\
+        U(\Tcal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_time_inversion_on_massless_general}} \zeta_{\sigma, n} \exp(\pm \ifrak \pi \sigma) a^{\dagger}(-\pbf, \sigma, n) &amp;&amp;\quad\text{(massless particle)}
+        \label{eq_creation_operator_time_inversion_conjugation_massless} \\
         U(\Ccal) a^{\dagger}(\pbf, \sigma, n) U^{-1}(\Ccal) &amp;\xlongequal{\phantom{(00)}} \xi_n a^{\dagger}(\pbf, \sigma, n^c) &amp;&amp;\quad\text{(massive/massless particle)}
-\end{alignat*}</div><p>where <span class="math notranslate nohighlight">\(\Ccal\)</span> replaces a particle of species <span class="math notranslate nohighlight">\(n\)</span> with its antiparticle – a notion we haven’t really explained yet – <span class="math notranslate nohighlight">\(n^c\)</span>. The corresponding transformation laws for <span class="math notranslate nohighlight">\(a(\pbf, \sigma, n)\)</span> can be derived from the above identities by taking the adjoint, and are omitted here.</p>
+        \label{eq_creation_operator_charge_inversion_conjugation}
+\end{alignat}</div><p>where <span class="math notranslate nohighlight">\(\Ccal\)</span> replaces a particle of species <span class="math notranslate nohighlight">\(n\)</span> with its antiparticle – a notion we haven’t really explained yet – <span class="math notranslate nohighlight">\(n^c\)</span>. The corresponding transformation laws for <span class="math notranslate nohighlight">\(a(\pbf, \sigma, n)\)</span> can be derived from the above identities by taking the adjoint, and are omitted here.</p>
 </section>
 </section>
 <section id="cluster-decomposition-of-s-matrix">
@@ -2540,10 +2545,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 \end{align*}</div><p>where we’ve also suppressed the time factor from <span class="math notranslate nohighlight">\(V(t)\)</span> as it won’t really play a role in the diagram. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id36">
+<figure class="align-center" id="id39">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id39" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2567,10 +2572,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
 <p>To verify that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function, we note a crucial fact that the diagram contains no <em>directed</em> loops, which allows us to start from the bottom, i.e., the total momentum of the in-state particles, and work our way up to the top, i.e., the total momentum of the out-state particles, so that there is exactly one momentum-conservation delta function at each step when a(n intermediate) vertex is added, which guarantees that the incoming total momentum equals the outgoing total momentum.</p>
 <p>As a side remark, we point out that the argument in <a class="reference internal" href="../bib.html#wei95" id="id19"><span>[Wei95]</span></a> (page 186 –187) in terms of a Euler characteristic calculation of the diagram appears to be wrong. A counterexample (to Weinberg’s argument) can be illustrated in the following pseudo Feynman diagram which contains a directed loop</p>
-<figure class="align-center" id="id37">
+<figure class="align-center" id="id40">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id37" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id40" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Evaluating the momentum-conservation delta function of the diagram then gives</p>
@@ -2762,9 +2767,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <span class="sd-summary-text">The Klein-Gordon equation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">It follows from the definition <span class="math notranslate nohighlight">\(\eqref{eq_defn_psi_field}\)</span>, together with <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_field_simplified_by_translation}\)</span>, that the field <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> satisfies the following so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Klein%E2%80%93Gordon_equation">Klein-Gordon equation</a></p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \left( \square - m^2 \right) \psi_{\ell}(x) = 0
-\end{equation*}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(\square \coloneqq \eta^{\mu \nu} \p_{\mu} \p_{\nu}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/D%27Alembert_operator">d’Alembert operator</a> and <span class="math notranslate nohighlight">\(m\)</span> is the (definite) mass of the field. This equation is traditionally one of the starting points of quantum field theory, from which creation/annihilation operators can be derived through the so-called canonical quantization formalism. However, we’ve derived the equation here from the other way around, namely, the creation/annihilation operators, which in turn come from the first principles of quantum mechanics and Lorentz symmetry.</p>
+        \label{eq_klein_gordon}
+\end{equation}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(\square \coloneqq \eta^{\mu \nu} \p_{\mu} \p_{\nu}\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/D%27Alembert_operator">d’Alembert operator</a> and <span class="math notranslate nohighlight">\(m\)</span> is the (definite) mass of the field. This equation is traditionally one of the starting points of quantum field theory, from which creation/annihilation operators can be derived through the so-called canonical quantization formalism. However, we’ve derived the equation here from the other way around, namely, the creation/annihilation operators, which in turn come from the first principles of quantum mechanics and Lorentz symmetry.</p>
 </div>
 </details></section>
 </section>
@@ -2823,7 +2829,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \left[ \psi(x), \psi^{\dagger}(y) \right]_{\pm} &amp;\xlongequal{\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}} \left[ \alpha \psi^+(x) + \beta \psi^-(x), \alpha^{\ast} \psi^-(y) + \beta^{\ast} \psi^+(y) \right]_{\pm} \\
                 &amp;\xlongequal{\phantom{(000)}} |\alpha|^2 \left[ \psi^+(x), \psi^-(y) \right]_{\pm} + |\beta|^2 \left[ \psi^-(x), \psi^+(y) \right]_{\pm} \\
                 &amp;\xlongequal{\eqref{eq_scalar_field_commutator_as_Delta}} \left( |\alpha|^2 \pm |\beta|^2 \right) \Delta(x - y)
-\end{align*}</div><p>We see that <span class="math notranslate nohighlight">\(\eqref{eq_space_like_commutativity_for_combined_field}\)</span> holds for scalar fields if the fields are bosonic, so that the bracket <span class="math notranslate nohighlight">\([...]_{\pm}\)</span> gives the usual commutator, and <span class="math notranslate nohighlight">\(|\alpha| = |\beta|\)</span>. By adjust the phase of <span class="math notranslate nohighlight">\(a(\pbf)\)</span>, we can actually arrange so that <span class="math notranslate nohighlight">\(\alpha = \beta\)</span>, in which case we have</p>
+\end{align*}</div><p>We see that <span class="math notranslate nohighlight">\(\eqref{eq_space_like_commutativity_for_combined_field}\)</span> holds for scalar fields if the fields are bosonic, i.e., the bottom sign in <span class="math notranslate nohighlight">\(\pm\)</span> applies, and <span class="math notranslate nohighlight">\(|\alpha| = |\beta|\)</span>. By adjust the phase of <span class="math notranslate nohighlight">\(a(\pbf)\)</span>, we can actually arrange so that <span class="math notranslate nohighlight">\(\alpha = \beta\)</span>, in which case we have</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \psi(x) = \psi^+(x) + \psi^-(x) = \psi^+(x) + \psi^{+ \dagger}(x) = \psi^{\dagger}(x)
@@ -3161,7 +3167,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{align*}</div><p>It follows that we need to express <span class="math notranslate nohighlight">\(e_{\mu}(-\pbf, \sigma)\)</span> in terms of <span class="math notranslate nohighlight">\(e_{\mu}(\pbf, \sigma)\)</span>. To this end, let’s calculate</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        e_{\mu}(-\pbf, \sigma) = L(-p)_{\mu}^{\nu} e_{\nu}(0, \sigma) \
+        e_{\mu}(-\pbf, \sigma) = L(-\pbf)_{\mu}^{\nu} e_{\nu}(0, \sigma) \
                 = \Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} \Pcal_{\tau}^{\nu} e_{\nu}(0, \sigma) \
                 = -\Pcal_{\mu}^{\rho} L(p)_{\rho}^{\tau} e_{\tau}(0, \sigma) \
                 = -\Pcal_{\mu}^{\rho} e_{\rho}(p, \sigma)
@@ -3248,10 +3254,11 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{equation*}</div><p>Counting these linearly independent matrices, we see that there are <span class="math notranslate nohighlight">\(1 + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4} = 16\)</span> of them. It means that the size of the <span class="math notranslate nohighlight">\(\gamma_{\mu}\)</span> matrices is at least <span class="math notranslate nohighlight">\(4 \times 4\)</span>.</p>
 <p>It turns out that there exists indeed a solution of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_clifford_algebra}\)</span> in terms of <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrices, conveniently known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_matrices">gamma matrices</a>, which we define as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \gamma_0 \coloneqq -\ifrak \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}, \quad \
                 \bm{\gamma} \coloneqq -\ifrak \begin{bmatrix} 0 &amp; \bm{\sigma} \\ -\bm{\sigma} &amp; 0 \end{bmatrix}
-\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\bm{\sigma} = (\sigma_1, \sigma_2, \sigma_3)\)</span> is made up of the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Pauli_matrices">Pauli matrices</a> defined as follows</p>
+        \label{eq_dirac_field_defn_gamma_matrices}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\bm{\sigma} = (\sigma_1, \sigma_2, \sigma_3)\)</span> is made up of the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Pauli_matrices">Pauli matrices</a> defined as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \sigma_1 \coloneqq \begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix}, \quad \
@@ -3267,7 +3274,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
                 = -\frac{\ifrak}{2} \epsilon_{ij} \begin{bmatrix} \sigma_i \sigma_j &amp; 0 \\ 0 &amp; \sigma_i \sigma_j \end{bmatrix} \
                 \xlongequal{\eqref{eq_jjj_commutation}} \frac{1}{2} \epsilon_{ijk} \begin{bmatrix} \sigma_k &amp; 0 \\ 0 &amp; \sigma_k \end{bmatrix}  \label{eq_dirac_field_jscr_matrix} \\
         \Jscr_{i0} &amp;= -\frac{\ifrak}{4} \left[ \gamma_i, \gamma_0 \right] = -\frac{\ifrak}{2} \gamma_i \gamma_0 = \frac{\ifrak}{2} \begin{bmatrix} \sigma_i &amp; 0 \\ 0 &amp; \sigma_i \end{bmatrix}  \nonumber
-\end{align}</div><p>where <span class="math notranslate nohighlight">\(i, j \in \{1,2,3\}\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span> is the totally antisymmetric sign. We see that the representation <span class="math notranslate nohighlight">\(\Jscr_{\mu \nu}\)</span> is in fact reducible. Moreover, we see that that the corresponding representation <span class="math notranslate nohighlight">\(D\)</span> of the Lorentz group given by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_linearize_representation}\)</span> is not unitary, since while <span class="math notranslate nohighlight">\(\Jscr_{ij}\)</span> are Hermitian, <span class="math notranslate nohighlight">\(\Jscr_{i0}\)</span> are anti-Hermitian. The fact that <span class="math notranslate nohighlight">\(D\)</span> is not unitary will have consequences when we try to construct the interaction density as in <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span>, because products like <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi\)</span> will not be a scalar in light of <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_annihilation_field}\)</span> or <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_creation_field}\)</span>.</p>
+\end{align}</div><p id="paragraph-dirac-field-representation-not-unitary">where <span class="math notranslate nohighlight">\(i, j \in \{1,2,3\}\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span> is the totally antisymmetric sign. We see that the representation <span class="math notranslate nohighlight">\(\Jscr_{\mu \nu}\)</span> is in fact reducible. Moreover, we see that that the corresponding representation <span class="math notranslate nohighlight">\(D\)</span> of the Lorentz group given by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_linearize_representation}\)</span> is not unitary, since while <span class="math notranslate nohighlight">\(\Jscr_{ij}\)</span> are Hermitian, <span class="math notranslate nohighlight">\(\Jscr_{i0}\)</span> are anti-Hermitian. The fact that <span class="math notranslate nohighlight">\(D\)</span> is not unitary will have consequences when we try to construct the interaction density as in <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span>, because products like <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi\)</span> will not be a scalar in light of <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_annihilation_field}\)</span> or <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_creation_field}\)</span>.</p>
 <p>Next let’s consider the parity transformation in the formalism of gamma matrices. In light of the transformation laws <span class="math notranslate nohighlight">\(\eqref{eq_j3_conjugated_by_p}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_k3_conjugated_by_p}\)</span>, we can define</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -3290,13 +3297,14 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{equation}</div><p>in light of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_linearize_representation}\)</span>. This identity will be useful when we later construct the interaction density.</p>
 <p>At last we’ll introduce yet another special element to the family of gamma matrices, namely <span class="math notranslate nohighlight">\(\gamma_5\)</span>, defined as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \gamma_5 \coloneqq -\ifrak \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}
-\end{equation*}</div><p>One nice thing about <span class="math notranslate nohighlight">\(\gamma_5\)</span> is that it anti-commutes with all other <span class="math notranslate nohighlight">\(\gamma\)</span> matrices, and in particular</p>
+        \label{eq_dirac_field_defn_gamma_5}
+\end{equation}</div><p>One nice thing about <span class="math notranslate nohighlight">\(\gamma_5\)</span> is that it anti-commutes with all other <span class="math notranslate nohighlight">\(\gamma\)</span> matrices, and in particular</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \beta \gamma_5 = -\gamma_5 \beta
-        \label{eq_dirac_field_gamma_5_anticommutes_beta}
+        \label{eq_dirac_field_gamma_5_anti_commutes_beta}
 \end{equation}</div><p>In fact, the collection <span class="math notranslate nohighlight">\(\gamma_0, \gamma_1, \gamma_2, \gamma_3, \gamma_5\)</span> makes exactly a <span class="math notranslate nohighlight">\(5\)</span>-dimensional spacetime Clifford algebra.</p>
 </section>
 <section id="construction-of-dirac-fields">
@@ -3358,7 +3366,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_dirac_field_spinor_u_at_finite_momentum} \\
         v(\pbf, \sigma) &amp;= \sqrt{m/p_0} D(L(p)) v(0, \sigma)
         \label{eq_dirac_field_spinor_v_at_finite_momentum}
-\end{align}</div><p>In general the constants <span class="math notranslate nohighlight">\(c_{\pm}\)</span> and <span class="math notranslate nohighlight">\(d_{\pm}\)</span> may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a> to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_minus}\)</span>, we can calculate as follows <a class="footnote-reference brackets" href="#spatial-inversion-on-fields-sign" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p>
+\end{align}</div><p>In general the constants <span class="math notranslate nohighlight">\(c_{\pm}\)</span> and <span class="math notranslate nohighlight">\(d_{\pm}\)</span> may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a> to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_minus}\)</span>, we can calculate as follows <a class="footnote-reference brackets" href="#spatial-inversion-on-dirac-fields-sign" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align}
         U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &amp;= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot x) u(\pbf, \sigma) a(-\pbf, \sigma)
@@ -3424,14 +3432,15 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_dirac_field_m_matrix_first_evaluation}
 \end{align}</div><p>To go further, we need to invoke the the transformation laws of the gamma matrices and their relatives, e.g., <span class="math notranslate nohighlight">\(\beta\)</span>, under <span class="math notranslate nohighlight">\(D(\Lambda)\)</span> from <a class="reference internal" href="#sec-dirac-representation-and-gamma-matrices"><span class="std std-ref">Dirac representation and gamma matrices</span></a>. More precisely, using the pseudo-unitarity <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_pseudo_unitarity_of_d_matrix}\)</span> we have the following</p>
 <div class="math notranslate nohighlight">
-\begin{align*}
-        D(L(p)) \beta D^{\dagger}(L(p)) &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) D^{-1}(L(p)) \beta = \beta \\
-        D(L(p)) D^{\dagger}(L(p)) &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) \beta D^{-1}(L(p)) \beta \\
-                &amp;\xlongequal{\eqref{eq_dirac_field_beta_matrix}} \ifrak D(L(p)) \gamma_0 D(L(p)) \beta \\
-                &amp;\xlongequal{\eqref{eq_dirac_field_gamma_is_vector}} \ifrak \left( L^{-1}(p) \right)_0^{\mu} \gamma_{\mu} \beta \\
+\begin{align}
+        D(L(p)) \beta D^{\dagger}(L(p)) &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) D^{-1}(L(p)) \beta = \beta \nonumber \\
+        D(L(p)) D^{\dagger}(L(p)) &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) \beta D^{-1}(L(p)) \beta
+                \label{eq_dirac_field_d_d_dagger_product} \\
+                &amp;\xlongequal{\eqref{eq_dirac_field_beta_matrix}} \ifrak D(L(p)) \gamma_0 D(L(p)) \beta \nonumber \\
+                &amp;\xlongequal{\eqref{eq_dirac_field_gamma_is_vector}} \ifrak \left( L^{-1}(p) \right)_0^{\mu} \gamma_{\mu} \beta \nonumber \\
                 &amp;\xlongequal{\eqref{eq_L_transformation_for_massive_2}} -\ifrak p^{\mu} \gamma_{\mu} \beta / m \
-                = -\ifrak p_{\mu} \gamma^{\mu} \beta / m
-\end{align*}</div><p>Plugging them into <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_n_matrix_first_evaluation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_m_matrix_first_evaluation}\)</span>, respectively, we can continue our evaluation as follows</p>
+                = -\ifrak p_{\mu} \gamma^{\mu} \beta / m \nonumber
+\end{align}</div><p>Plugging them into <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_n_matrix_first_evaluation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_m_matrix_first_evaluation}\)</span>, respectively, we can continue our evaluation as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         N(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_+ m \right) \beta \\
@@ -3453,18 +3462,20 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         |\kappa|^2 \mp |\lambda|^2 &amp;= 0 \\
         |\kappa|^2 b_+ \pm |\lambda|^2 b_- &amp;= 0
 \end{align*}</div><p>We see that first of all, the top sign applies, which means in particular that we must be considering the anti-commutator in <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_commutator_first_evaluation}\)</span>, or in other words, the Dirac fields must be fermionic. In addition, we must also have <span class="math notranslate nohighlight">\(|\kappa| = |\lambda|\)</span> and <span class="math notranslate nohighlight">\(b_+ + b_- = 0\)</span>.</p>
-<p>By the usual phase adjustments on the creation and annihilation operators and rescaling, we can arrange so that <span class="math notranslate nohighlight">\(\kappa = \lambda = 1\)</span>. Recalling <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_gamma_5_anticommutes_beta}\)</span> and replacing <span class="math notranslate nohighlight">\(\psi\)</span> with <span class="math notranslate nohighlight">\(\gamma_5 \psi\)</span> if necessary, we can arrange so that <span class="math notranslate nohighlight">\(b_{\pm} = \pm 1\)</span>. Putting these all together, we have evaluated the Dirac field <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_field_raw}\)</span> as follows</p>
+<p>By the usual phase adjustments on the creation and annihilation operators and rescaling, we can arrange so that <span class="math notranslate nohighlight">\(\kappa = \lambda = 1\)</span>. Recalling <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_gamma_5_anti_commutes_beta}\)</span> and replacing <span class="math notranslate nohighlight">\(\psi\)</span> with <span class="math notranslate nohighlight">\(\gamma_5 \psi\)</span> if necessary, we can arrange so that <span class="math notranslate nohighlight">\(b_{\pm} = \pm 1\)</span>. Putting these all together, we have evaluated the Dirac field <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_field_raw}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
         \psi(x) &amp;= \psi^+(x) + \psi^{- c}(x)
                 \label{eq_dirac_field_psi_field} \\
-                &amp;= (2\pi)^{-3} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) a(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right) \nonumber
+                &amp;= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) a(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right) \nonumber
 \end{align}</div><p>where the zero-momentum spinors are</p>
 <div class="math notranslate nohighlight">
-\begin{alignat*}{2}
-        u(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \quad &amp;&amp;u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 1 \end{bmatrix} \\
+\begin{alignat}{2}
+        u(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \quad &amp;&amp;u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 1 \end{bmatrix}
+        \label{eq_dirac_field_u_spinor_zero_momentum} \\
 v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatrix}, \quad &amp;&amp;v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}
-\end{alignat*}</div><p>and the spin sums are</p>
+        \label{eq_dirac_field_v_spinor_zero_momentum}
+\end{alignat}</div><p>and the spin sums are</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         N(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} + m \right) \beta \\
@@ -3477,26 +3488,184 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(\p_{\mu} = \p_{x_{\mu}}\)</span> and <span class="math notranslate nohighlight">\(\Delta(x-y)\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta}\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(\psi(x)\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_field}\)</span> to transform covariantly under spatial inversion, we recall <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_plus_conjugated_by_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_minus_conjugated_by_u}\)</span> to conclude that</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \eta^{\ast} + \eta^c = 0
-\end{equation*}</div><p>It follows that <span class="math notranslate nohighlight">\(\eta \eta^c = -1\)</span>, or in other words, the state consisting of a spin <span class="math notranslate nohighlight">\(1/2\)</span> particle and its antiparticle is odd in the sense of <a class="reference internal" href="#sec-parity-symmetry"><span class="std std-ref">Parity symmetry</span></a>.</p>
+        \label{eq_dirac_field_spatial_parity_relation}
+\end{equation}</div><p>It follows that <span class="math notranslate nohighlight">\(\eta \eta^c = -1\)</span>, or in other words, the intrinsic parity of the state consisting of a spin <span class="math notranslate nohighlight">\(1/2\)</span> particle and its antiparticle is odd in the sense of <a class="reference internal" href="#sec-parity-symmetry"><span class="std std-ref">Parity symmetry</span></a>. The parity transformation law for Dirac fields is as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        U(\Pcal) \psi(x) U^{-1}(\Pcal) = -\eta^{\ast} \beta \psi(\Pcal x)
+        \label{eq_dirac_field_spatial_inversion_transformation_law}
+\end{equation}</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">The Dirac equation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Recall from <span class="math notranslate nohighlight">\(\eqref{eq_klein_gordon}\)</span> that a general quantum field satisfies Klein-Gordon equation, which is a second-order differential equation. It turns out that the Dirac fields satisfy a first-order equation, known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_equation">Dirac equation</a>.</p>
+<p class="sd-card-text">To see this, we recall that in the derivation of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_d_d_dagger_product}\)</span>, we’ve essentially proved the following identity</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        D(L(p)) \beta D^{-1}(L(p)) = -\ifrak p_{\mu} \gamma^{\mu} / m
+\end{equation*}</div><p class="sd-card-text">Applying the left-hand-side to <span class="math notranslate nohighlight">\(u(\pbf, \sigma)\)</span>, we see that</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        D(L(p)) \beta D^{-1}(L(p)) u(\pbf, \sigma) &amp;\xlongequal{\eqref{eq_dirac_field_spinor_u_at_finite_momentum}} \sqrt{m/p_0} D^{-1}(L(p)) \beta u(0, \sigma) \\
+                &amp;\xlongequal{\eqref{eq_dirac_field_beta_eigenvalue_of_u}} \sqrt{m/p_0} D(L(p)) u(0, \sigma) \\
+                &amp;\xlongequal{\eqref{eq_dirac_field_spinor_u_at_finite_momentum}} u(\pbf, \sigma)
+\end{align*}</div><p class="sd-card-text">It follows that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \left( \ifrak p_{\mu} \gamma^{\mu} + m \right) u(\pbf, \sigma) = 0
+\end{equation*}</div><p class="sd-card-text">Similarly one can show that <span class="math notranslate nohighlight">\(v(\pbf, \sigma)\)</span> satisfies the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        (-\ifrak p_{\mu} \gamma^{\mu} + m) v(\pbf, \sigma) = 0
+\end{equation*}</div><p class="sd-card-text">Combining these identities with <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_field}\)</span>, we conclude that the Dirac fields satisfy the following Dirac equation</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \left( \gamma^{\mu} \p_{\mu} + m \right) \psi(x) = 0
+\end{equation*}</div><p class="sd-card-text">However, unlike the original derivation of Dirac, we’ve derived it here as a consequence of parity conservation. In fact, we note that the Dirac equation is not something completely different from the Klein-Gordon equation, because using the Clifford algebra relations <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_clifford_algebra}\)</span>, we see that <span class="math notranslate nohighlight">\(\gamma^{\mu} \p_{\mu}\)</span> is actually a square root of the D’Alembert operator <span class="math notranslate nohighlight">\(\square\)</span>. This is allegedly one of the motivations of Dirac to find these gamma matrices in the first place.</p>
+</div>
+</details></section>
+<section id="id26">
+<h4>The CPT symmetries<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
+<p>The transformation law of Dirac fields under spatial inversion has already been worked out in <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_inversion_transformation_law}\)</span>, so we’re left to work out the transformation laws under time inversion and charge conjugation.</p>
+<p>Recall from <a class="reference internal" href="#sec-space-and-time-inversions"><span class="std std-ref">Space and time inversions</span></a> that the time-inversion operator <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> is complex anti-linear. Hence to work out the transformation law under time inversion, we’ll need to work out the complex-conjugated spinors <span class="math notranslate nohighlight">\(u^{\ast}(\pbf, \sigma)\)</span> and <span class="math notranslate nohighlight">\(v^{\ast}(\pbf, \sigma)\)</span>. Now in light of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spinor_u_at_finite_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spinor_v_at_finite_momentum}\)</span>, and the fact that the spinors are real at zero-momentum, we just need to work out the complex conjugate <span class="math notranslate nohighlight">\(D^{\ast}(L(p))\)</span> in terms of <span class="math notranslate nohighlight">\(D(L(p))\)</span> and the gamma matrices. Now according to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_linearize_representation}\)</span>, it suffices to work out <span class="math notranslate nohighlight">\(\Jscr^{\ast}_{\mu \nu}\)</span>. Finally according to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_defn_j}\)</span>, it suffices to work out <span class="math notranslate nohighlight">\(\gamma^{\ast}_{\mu}\)</span>.</p>
+<p>Inspecting the explicit forms of the gamma matrices given by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_defn_gamma_matrices}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_pauli_matrices}\)</span> we see that <span class="math notranslate nohighlight">\(\gamma_0, \gamma_1, \gamma_3\)</span> are anti-Hermitian while <span class="math notranslate nohighlight">\(\gamma_2\)</span> is Hermitian, or more explicitly</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \gamma^{\ast}_0 = -\gamma_0, \quad \gamma^{\ast}_1 = -\gamma_1, \quad \gamma^{\ast}_2 = \gamma_2, \quad \gamma^{\ast}_3 = -\gamma_3
+\end{equation*}</div><p>Using the Clifford algebra relations, this can be written more concisely as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \gamma^{\ast}_{\mu} = \gamma_2 \gamma_{\mu} \gamma_2
+        \label{eq_dirac_field_gamma_conjugation_by_gamma_2}
+\end{equation}</div><p>While this result could’ve be satisfactory in its own right, as we’ll see, it’ll be more convenient to factor out a <span class="math notranslate nohighlight">\(\beta\)</span> matrix. Hence we’re motivated to introduce yet another special matrix</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Cscr \coloneqq \gamma_2 \beta = -\ifrak \begin{bmatrix} \sigma_2 &amp; 0 \\ 0 &amp; -\sigma_2 \end{bmatrix}
+        \label{eq_dirac_field_defn_c_matrix}
+\end{equation}</div><p>and rewrite <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_gamma_conjugation_by_gamma_2}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \gamma^{\ast}_{\mu} = \beta \Cscr \gamma_{\mu} \Cscr^{-1} \beta
+\end{equation*}</div><p>where we also note that <span class="math notranslate nohighlight">\((\Cscr^{-1} \beta)^{-1} = \beta \Cscr\)</span>. It follows from <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_defn_j}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Jscr^{\ast}_{\mu \nu} = -\beta\Cscr \Jscr_{\mu \nu} \Cscr^{-1}\beta
+\end{equation*}</div><p>and hence from <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_linearize_representation}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        D^{\ast}(L(p)) = 1 - \frac{\ifrak}{2} \omega^{\mu \nu} \Jscr^{\ast}_{\mu \nu} \
+                = 1 + \frac{\ifrak}{2} \omega^{\mu \nu} \beta\Cscr \Jscr_{\mu \nu} \Cscr^{-1}\beta \
+                = \beta \Cscr D(L(p)) \Cscr^{-1} \beta
+        \label{eq_dirac_field_d_matrix_conjugation_1}
+\end{equation}</div><p>Using the explicit formula <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_defn_c_matrix}\)</span> for <span class="math notranslate nohighlight">\(\Cscr\)</span> as well <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_u_spinor_zero_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_v_spinor_zero_momentum}\)</span> for <span class="math notranslate nohighlight">\(u(0, \sigma)\)</span> and <span class="math notranslate nohighlight">\(v(0, \sigma)\)</span>, we get the following</p>
+<div class="math notranslate nohighlight">
+\begin{alignat}{2}
+        u^{\ast}(\pbf, \sigma) &amp;= \sqrt{m/p_0} D^{\ast}(L(p)) u(0, \sigma) &amp;&amp;= -\beta\Cscr v(\pbf, \sigma)
+        \label{eq_dirac_field_u_conjugate_to_v} \\
+        v^{\ast}(\pbf, \sigma) &amp;= \sqrt{m/p_0} D^{\ast}(L(p)) v(0, \sigma) &amp;&amp;= -\beta\Cscr u(\pbf, \sigma)
+        \label{eq_dirac_field_v_conjugate_to_u}
+\end{alignat}</div><p>These relations turns out to be useful for the charge conjugation transformation, but not for the time inversion because the spinors <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> are swapped. To remedy this, we notice from <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_u_spinor_zero_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_v_spinor_zero_momentum}\)</span> that the <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> spinors at zero-momentum are related by <span class="math notranslate nohighlight">\(\gamma_5\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_defn_gamma_5}\)</span>. Moreover, in order to cancel the <span class="math notranslate nohighlight">\(\beta\)</span> matrices at the two ends of right-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_d_matrix_conjugation_1}\)</span>, we can replace <span class="math notranslate nohighlight">\(\pbf\)</span> with <span class="math notranslate nohighlight">\(-\pbf\)</span>, which is also desirable as far as the time inversion is concerned in light of <span class="math notranslate nohighlight">\(\eqref{eq_creation_operator_time_inversion_conjugation_massive}\)</span>. Putting all these considerations together, let’s try the following</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        D^{\ast}(L(-\pbf)) &amp;= D^{\ast}(\Pcal L(p) \Pcal) \\
+                &amp;= \beta D^{\ast}(L(p)) \beta \\
+                &amp;= \gamma_5 \beta D^{\ast}(L(p)) \beta \gamma_5 \\
+                &amp;= \gamma_5 \Cscr D(L(p)) \Cscr^{-1} \gamma_5
+\end{align*}</div><p>where the third equality holds because of the Clifford relations, namely, <span class="math notranslate nohighlight">\(\gamma_5\)</span> commutes with <span class="math notranslate nohighlight">\(\Jscr_{\mu \nu}\)</span>, and hence <span class="math notranslate nohighlight">\(D^{\ast}(L(p))\)</span>, and anti-commutes with <span class="math notranslate nohighlight">\(\beta\)</span>. Now instead of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_u_conjugate_to_v}\)</span>, we can calculate as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        u^{\ast}(-\pbf, \sigma) &amp;= \sqrt{m/p_0} D^{\ast}(L(-\pbf)) u(0, \sigma)
+        \label{eq_dirac_field_u_conjugate_to_u} \\
+                &amp;= \sqrt{m/p_0} \gamma_5 \Cscr D^{\ast}(L(p)) \Cscr^{-1} \gamma_5 u(0, \sigma) \nonumber \\
+                &amp;= \sqrt{m/p_0} \gamma_5 \Cscr D^{\ast}(L(p)) (-1)^{1/2 + \sigma} u(0, -\sigma) \nonumber \\
+                &amp;= (-1)^{1/2 + \sigma} \gamma_5 \Cscr u(\pbf, -\sigma) \nonumber
+\end{align}</div><p>A similar calculation can be done to show that in fact <span class="math notranslate nohighlight">\(v(-\pbf, \sigma)\)</span> satisfies exactly the same conjugation formula.</p>
+<p>With all the preparations above, we can now calculate the spatial-inversion transformation laws as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        U(\Tcal) \psi(x) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_dirac_field_psi_field}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\big( \exp(-\ifrak p \cdot x) u^{\ast}(\pbf, \sigma) U(\Tcal) a(\pbf, \sigma) U^{-1}(\Tcal) \\
+                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \exp(\ifrak p \cdot x) v^{\ast}(\pbf, \sigma) U(\Tcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Tcal) \big) \\
+                &amp;\xlongequal{\eqref{eq_creation_operator_time_inversion_conjugation_massive}} (2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 - \sigma} \int d^3 p~\big( \exp(-\ifrak p \cdot x) \zeta^{\ast} u^{\ast}(\pbf, \sigma) a(-\pbf, -\sigma) \\
+                        &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \exp(\ifrak p \cdot x) \zeta^c v^{\ast}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} -(2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 + \sigma} \int d^3 p~\big( \exp(-\ifrak p \cdot \Pcal x) \zeta^{\ast} u^{\ast}(-\pbf, -\sigma) a(\pbf, \sigma) \\
+                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \exp(\ifrak p \cdot \Pcal x) \zeta^c v^{\ast}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} (2\pi)^{-3/2} \gamma_5 \Cscr \sum_{\sigma} \int d^3 p~\big( \zeta^{\ast} \exp(-\ifrak p \cdot \Pcal x) u(\pbf, \sigma) a(\pbf, \sigma) \\
+                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \zeta^c \exp(\ifrak p \cdot \Pcal x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \big)
+\end{align*}</div><p>In order for <span class="math notranslate nohighlight">\(\psi(x)\)</span> to transform nicely under the time inversion, we’re forced to make the following assumption</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \zeta^{\ast} = \zeta^c
+        \label{eq_dirac_field_time_parity_relation}
+\end{equation}</div><p>Under this assumption we’ve finally worked out the time inversion transformation law for Dirac fields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Tcal) \psi(x) U^{-1}(\Tcal) = \zeta^{\ast} \gamma_5 \Cscr \psi(-\Pcal x)
+\end{equation*}</div><p>Next let’s calculate the charge inversion transformation as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        U(\Ccal) \psi(x) U^{-1}(\Ccal) &amp;\xlongequal{\eqref{eq_creation_operator_charge_inversion_conjugation}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) \xi^{\ast} a^c(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) \xi^c a^{\dagger}(\pbf, \sigma) \right) \\
+                &amp;\xlongequal{\substack{\eqref{eq_dirac_field_u_conjugate_to_v} \\ \eqref{eq_dirac_field_v_conjugate_to_u}}} (2\pi)^{-3/2} \Cscr \beta \sum_{\sigma} \int d^3p~\left( \xi^{\ast} \exp(\ifrak p \cdot x) v^{\ast}(\pbf, \sigma) a^c(\pbf, \sigma) + \xi^c \exp(-\ifrak p \cdot x) u^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) \right)
+\end{align*}</div><p>Just as for the time inversion, we are forced to assuming the following condition on the charge conjugation parities</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \xi^{\ast} = \xi^c
+        \label{eq_dirac_field_charge_parity_relation}
+\end{equation}</div><p>Under this assumption, we can work out the charge conjugation transformation law as follows <a class="footnote-reference brackets" href="#charge-inversion-on-dirac-fields-sign" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a></p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \Cscr \beta \psi^{\ast}(x)
+\end{equation*}</div><p>Here we’ve used <span class="math notranslate nohighlight">\(\psi^{\ast}(x)\)</span> instead of <span class="math notranslate nohighlight">\(\psi^{\dagger}(x)\)</span> because we don’t want to transpose the spinors, but it should be understood that the <span class="math notranslate nohighlight">\(\ast\)</span> when applied to the creation/annihilation operators are the same as taking the adjoint.</p>
+<p>Finally, let’s consider the special case where the spin-<span class="math notranslate nohighlight">\(1/2\)</span> particles are their own antiparticles. These particles are known as Majorana fermions, as already discussed in <a class="reference internal" href="#dropdown-parities-of-elementary-particles"><span class="std std-ref">Parities of elementary particles</span></a>. According to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_parity_relation}, \eqref{eq_dirac_field_time_parity_relation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_charge_parity_relation}\)</span>, we see that the spatial parity of a Majorana fermion must be <span class="math notranslate nohighlight">\(\pm \ifrak\)</span>, while the time and charge parity must be <span class="math notranslate nohighlight">\(\pm 1\)</span>.</p>
+</section>
+<section id="construction-of-the-interaction-density">
+<h4>Construction of the interaction density<a class="headerlink" href="#construction-of-the-interaction-density" title="Link to this heading">#</a></h4>
+<p>As mentioned in <a class="reference internal" href="#paragraph-dirac-field-representation-not-unitary"><span class="std std-ref">Dirac representation and gamma matrices</span></a>, the fact that the Dirac representation is not unitary means that we cannot construct the interaction density using <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi\)</span> because it won’t be a scalar. Indeed, let’s work out how <span class="math notranslate nohighlight">\(\psi^{\dagger}\)</span> transforms under a (homogeneous orthochronous) Lorentz transformation using <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_pseudo_unitarity_of_d_matrix}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U_0(\Lambda) \psi^{\dagger}(x) U_0^{-1}(\Lambda) = \left( U_0(\Lambda) \psi(x) U_0^{-1}(\Lambda) \right)^{\dagger} \
+                = \left( D^{-1}(\Lambda) \psi(\Lambda x) \right)^{\dagger} \
+                = \psi^{\dagger}(\Lambda x) \left( D^{-1}(\Lambda) \right)^{\dagger} \
+                = \psi^{\dagger}(\Lambda x) \beta D(\Lambda) \beta
+\end{equation*}</div><p>We see that if we define a new adjoint</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \bar{\psi} \coloneqq \psi^{\dagger} \beta
+\end{equation*}</div><p>then <span class="math notranslate nohighlight">\(\bar{\psi}\)</span> transforms nicely as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U_0(\Lambda) \bar{\psi}(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda)
+\end{equation*}</div><p>It follows that we can construct a bilinear form as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \bar{\psi}(x) M \psi(x)
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(M\)</span> is a <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrix, so that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U_0(\Lambda) \bar{\psi}(x) M \psi(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda) M D^{-1}(\Lambda) \psi(\Lambda x)
+\end{equation*}</div><p>Letting <span class="math notranslate nohighlight">\(M\)</span> to be <span class="math notranslate nohighlight">\(1, \gamma_{\mu}, \Jscr_{\mu \nu}, \gamma_5 \gamma_{\mu}\)</span> or <span class="math notranslate nohighlight">\(\gamma_5\)</span> then produces a scalar, vector, tensor, axial vector or pseudo-scalar, respectively. Here the adjectives “axial” and “pseudo-” refer to the opposite to usual parities under spatial and/or time inversion.</p>
+<p>An important example is Fermi’s theory of beta-decay, which involves an interaction density of the following form</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \bar{\psi}_p \gamma^{\mu} \psi_n \bar{\psi}_e \gamma_{\mu} \psi_{\nu}
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(p, n, e, \nu\)</span> stand for proton, neutron, electron and neutrino, respectively.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id26"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id28"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="momentum-l-transformation-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
-<p>The corresponding formula (2.5.24) in <a class="reference internal" href="../bib.html#wei95" id="id27"><span>[Wei95]</span></a> uses the convention (2.3.10) for inverse matrices.</p>
+<p>The corresponding formula (2.5.24) in <a class="reference internal" href="../bib.html#wei95" id="id29"><span>[Wei95]</span></a> uses the convention (2.3.10) for inverse matrices.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">3</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id28"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id29"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id30"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id31"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id30"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id31"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
@@ -3504,7 +3673,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">6</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 <aside class="footnote brackets" id="two-ways-of-representation" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">7</a><span class="fn-bracket">]</span></span>
@@ -3512,15 +3681,19 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">8</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 <aside class="footnote brackets" id="dirac-gamma-is-vector" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">9</a><span class="fn-bracket">]</span></span>
-<p>Our calculation is consistent with formula (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
+<p>Our calculation is consistent with formula (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
 </aside>
-<aside class="footnote brackets" id="spatial-inversion-on-fields-sign" role="doc-footnote">
+<aside class="footnote brackets" id="spatial-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">10</a><span class="fn-bracket">]</span></span>
-<p>Our calculation differs from (5.5.10) and (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
+<p>Our calculation differs from (5.5.10) and (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
+</aside>
+<aside class="footnote brackets" id="charge-inversion-on-dirac-fields-sign" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">11</a><span class="fn-bracket">]</span></span>
+<p>Our calculation, once again, differs from the calculation (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
 </aside>
 </aside>
 </section>
@@ -3628,6 +3801,8 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-fields">Dirac fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-representation-and-gamma-matrices">Dirac representation and gamma matrices</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-dirac-fields">Construction of Dirac fields</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">The CPT symmetries</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-the-interaction-density">Construction of the interaction density</a></li>
 </ul>
 </li>
 </ul>
@@ -3694,7 +3869,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     <br/>
   </p>
 </div>
