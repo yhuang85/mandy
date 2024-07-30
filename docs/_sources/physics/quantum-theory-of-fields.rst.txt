@@ -1072,9 +1072,10 @@ This observation is important since it implies that non-relativistic calculation
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} = \sum_{\sigma' \sigma''} C^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''}
-		\end{equation*}
+			\label{eq_defn_clebsch_gordan_coefficients}
+		\end{equation}
 
 	where the coefficients are known as Clebsch-Gordan coefficients. For the clarity of exposition, let's divide the solution into a few steps.
 
@@ -1085,11 +1086,11 @@ This observation is important since it implies that non-relativistic calculation
 			:nowrap:
 
 			\begin{equation}
-				\Psi^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \neq 0 \implies \sigma = \sigma' + \sigma''
+				C^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \neq 0 \implies \sigma = \sigma' + \sigma''
 				\label{eq_sigma_additive}
 			\end{equation}
 
-		Moreover, we see that the maximum possible value of :math:`\sigma` is :math:`\jfrak' + \jfrak''`, and it is achieved exactly when :math:`\sigma' = \jfrak'` and :math:`\sigma'' = \jfrak''`. It follows, assuming the non-degeneracy of the representation at least, that
+		Moreover, we see that the maximum possible value of :math:`\sigma` is :math:`\jfrak' + \jfrak''`, and it's achieved exactly when :math:`\sigma' = \jfrak'` and :math:`\sigma'' = \jfrak''`. It follows, assuming the non-degeneracy of the representation at least, that
 
 		.. math::
 			:nowrap:
@@ -1110,7 +1111,7 @@ This observation is important since it implies that non-relativistic calculation
 			\end{equation}
 
 	Step 2.
-		Next consider a state with :math:`\sigma = \jfrak' + \jfrak'' - 1`. It follows from :math:`\eqref{eq_sigma_additive}` that it must be a superposition of :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''}` and :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1}`, unless :math:`\jfrak'` and/or :math:`\jfrak''` vanishes, which leads to even simpler situations. Now we have two possible values of :math:`\jfrak`, namely :math:`\jfrak' + \jfrak''` and :math:`\jfrak' + \jfrak'' - 1`.
+		Next consider a state with :math:`\sigma = \jfrak' + \jfrak'' - 1`. It follows from :math:`\eqref{eq_sigma_additive}` that it must be a superposition of :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''}` and :math:`\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1}` unless :math:`\jfrak'` and/or :math:`\jfrak''` vanishes, which leads to even simpler situations. Now we have two possible values of :math:`\jfrak`, namely :math:`\jfrak' + \jfrak''` and :math:`\jfrak' + \jfrak'' - 1`.
 
 		In the former case, we can apply :math:`\eqref{eq_raising_lowering_am_pair}` by letting :math:`\sigma = \jfrak = \jfrak' + \jfrak''` as follows
 
@@ -4054,7 +4055,7 @@ Therefore in order to construct :math:`\Hscr` in the form of :math:`\eqref{eq_co
 	:nowrap:
 
 	\begin{equation}
-		\psi_{\ell}(x) \coloneqq \alpha_{\ell} \psi^+_{\ell}(x) + \beta_{\ell} \psi^-_{\ell}(x)
+		\psi_{\ell}(x) \coloneqq \kappa_{\ell} \psi^+_{\ell}(x) + \lambda_{\ell} \psi^-_{\ell}(x)
 		\label{eq_defn_psi_field}
 	\end{equation}
 
@@ -4205,7 +4206,7 @@ The last integral cannot be easily evaluated, at least without some knowledge ab
 	:nowrap:
 
 	\begin{equation}
-		\psi(x) \coloneqq \alpha \psi^+(x) + \beta \psi^-(x)
+		\psi(x) \coloneqq \kappa \psi^+(x) + \lambda \psi^-(x)
 		\label{eq_scalar_field_first_defn_of_psi}
 	\end{equation}
 
@@ -4215,14 +4216,14 @@ We can then try to make :math:`\eqref{eq_space_like_commutativity_for_combined_f
 	:nowrap:
 
 	\begin{align*}
-		\left[ \psi(x), \psi(y) \right]_{\pm} &\xlongequal{\phantom{(000)}} \alpha\beta \left(\left[ \psi^+(x), \psi^-(y) \right]_{\pm} + \left[ \psi^-(x), \psi^+(y) \right]_{\pm} \right) \\
-			&\xlongequal{\eqref{eq_scalar_field_commutator_as_Delta}} \alpha\beta (1 \pm 1) \Delta(x - y) \\
-		\left[ \psi(x), \psi^{\dagger}(y) \right]_{\pm} &\xlongequal{\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}} \left[ \alpha \psi^+(x) + \beta \psi^-(x), \alpha^{\ast} \psi^-(y) + \beta^{\ast} \psi^+(y) \right]_{\pm} \\
-			&\xlongequal{\phantom{(000)}} |\alpha|^2 \left[ \psi^+(x), \psi^-(y) \right]_{\pm} + |\beta|^2 \left[ \psi^-(x), \psi^+(y) \right]_{\pm} \\
-			&\xlongequal{\eqref{eq_scalar_field_commutator_as_Delta}} \left( |\alpha|^2 \pm |\beta|^2 \right) \Delta(x - y)
+		\left[ \psi(x), \psi(y) \right]_{\pm} &\xlongequal{\phantom{(000)}} \kappa\lambda \left(\left[ \psi^+(x), \psi^-(y) \right]_{\pm} + \left[ \psi^-(x), \psi^+(y) \right]_{\pm} \right) \\
+			&\xlongequal{\eqref{eq_scalar_field_commutator_as_Delta}} \kappa\lambda (1 \pm 1) \Delta(x - y) \\
+		\left[ \psi(x), \psi^{\dagger}(y) \right]_{\pm} &\xlongequal{\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}} \left[ \kappa \psi^+(x) + \lambda \psi^-(x), \kappa^{\ast} \psi^-(y) + \lambda^{\ast} \psi^+(y) \right]_{\pm} \\
+			&\xlongequal{\phantom{(000)}} |\kappa|^2 \left[ \psi^+(x), \psi^-(y) \right]_{\pm} + |\lambda|^2 \left[ \psi^-(x), \psi^+(y) \right]_{\pm} \\
+			&\xlongequal{\eqref{eq_scalar_field_commutator_as_Delta}} \left( |\kappa|^2 \pm |\lambda|^2 \right) \Delta(x - y)
 	\end{align*}
 
-We see that :math:`\eqref{eq_space_like_commutativity_for_combined_field}` holds for scalar fields if the fields are bosonic, i.e., the bottom sign in :math:`\pm` applies, and :math:`|\alpha| = |\beta|`. By adjust the phase of :math:`a(\pbf)`, we can actually arrange so that :math:`\alpha = \beta`, in which case we have
+We see that :math:`\eqref{eq_space_like_commutativity_for_combined_field}` holds for scalar fields if the fields are bosonic, i.e., the bottom sign in :math:`\pm` applies, and :math:`|\kappa| = |\lambda|`. By adjust the phase of :math:`a(\pbf)`, we can actually arrange so that :math:`\kappa = \lambda`, in which case we have
 
 .. math::
 	:nowrap:
@@ -4233,7 +4234,7 @@ We see that :math:`\eqref{eq_space_like_commutativity_for_combined_field}` holds
 	\end{equation}
 
 .. note::
-	Although the arrangement of phase so that :math:`\alpha = \beta` is a mere convention, it's a convention that needs to be applied to *all* scalar fields appearing in :math:`\Hscr`. Namely, one cannot have both :math:`\psi(x)` as in :math:`\eqref{eq_scalar_field_psi_fixed_phase}` and another
+	Although the arrangement of phase so that :math:`\kappa = \lambda` is a mere convention, it's a convention that needs to be applied to *all* scalar fields appearing in :math:`\Hscr`. Namely, one cannot have both :math:`\psi(x)` as in :math:`\eqref{eq_scalar_field_psi_fixed_phase}` and another
 
 	.. math::
 		:nowrap:
@@ -4260,7 +4261,7 @@ Here the supscript :math:`c` stands for charge (conjugation). Now instead of :ma
 	:nowrap:
 
 	\begin{equation*}
-		\psi(x) \coloneqq \alpha \psi^+(x) + \beta \psi^{+ c \dagger}(x)
+		\psi(x) \coloneqq \kappa \psi^+(x) + \lambda \psi^{+ c \dagger}(x)
 	\end{equation*}
 
 so that :math:`[Q, \psi(x)] = -q \psi(x)`. We calculate the commutators, assuming the antiparticle is different from the particle, just as before as follows
@@ -4269,15 +4270,15 @@ so that :math:`[Q, \psi(x)] = -q \psi(x)`. We calculate the commutators, assumin
 	:nowrap:
 
 	\begin{align*}
-		\left[\psi(x), \psi(y) \right]_{\pm} &= \left[ \alpha \psi^+(x) + \beta \psi^{+ c \dagger}(x), \alpha \psi^+(y) + \beta \psi^{+ c \dagger}(y) \right]_{\pm} = 0 \\
-		\left[\psi(x), \psi^{\dagger}(y) \right]_{\pm} &= \left[ \alpha \psi^+(x) + \beta \psi^{+ c \dagger}(x), \alpha^{\ast} \psi^{+ \dagger}(y) + \beta^{\ast} \psi^{+ c}(y) \right]_{\pm} \\
-			&= |\alpha|^2 \left[ \psi^+(x), \psi^{+ \dagger}(y) \right]_{\pm} + |\beta|^2 \left[ \psi^{+ c \dagger}(x), \psi^{+ c}(y) \right]_{\pm} \\
-			&= (|\alpha|^2 \pm |\beta|^2) \Delta(x - y)
+		\left[\psi(x), \psi(y) \right]_{\pm} &= \left[ \kappa \psi^+(x) + \lambda \psi^{+ c \dagger}(x), \kappa \psi^+(y) + \lambda \psi^{+ c \dagger}(y) \right]_{\pm} = 0 \\
+		\left[\psi(x), \psi^{\dagger}(y) \right]_{\pm} &= \left[ \kappa \psi^+(x) + \lambda \psi^{+ c \dagger}(x), \kappa^{\ast} \psi^{+ \dagger}(y) + \lambda^{\ast} \psi^{+ c}(y) \right]_{\pm} \\
+			&= |\kappa|^2 \left[ \psi^+(x), \psi^{+ \dagger}(y) \right]_{\pm} + |\lambda|^2 \left[ \psi^{+ c \dagger}(x), \psi^{+ c}(y) \right]_{\pm} \\
+			&= (|\kappa|^2 \pm |\lambda|^2) \Delta(x - y)
 	\end{align*}
 
 where we've assumed, in particular that the particle and its particle share the same mass so that :math:`\eqref{eq_scalar_field_commutator_as_Delta}` equally applies.
 
-By the same argument as in the case where no quantum number is involved, we see that a scalar field can satisfy the causality condition if it describes a boson. Moreover, by adjusting the phase of :math:`a(\pbf)`, one can arrange so that :math:`\alpha = \beta` so that
+By the same argument as in the case where no quantum number is involved, we see that a scalar field can satisfy the causality condition if it describes a boson. Moreover, by adjusting the phase of :math:`a(\pbf)`, one can arrange so that :math:`\kappa = \lambda` so that
 
 .. math::
 	:nowrap:
@@ -4726,7 +4727,7 @@ where :math:`\Delta_+(x - y)` is defined by :math:`\eqref{eq_defn_Delta_plus}`. 
 	:nowrap:
 
 	\begin{equation*}
-		\psi_{\mu}(x) \coloneqq \alpha \psi^+_{\mu}(x) + \beta \psi^-_{\mu}(x)
+		\psi_{\mu}(x) \coloneqq \kappa \psi^+_{\mu}(x) + \lambda \psi^-_{\mu}(x)
 	\end{equation*}
 
 Now for space-separated :math:`x` and :math:`y`, we can calculate using :math:`\eqref{eq_vector_field_commutator_by_Delta}` and :math:`\eqref{eq_vector_field_psi_minus_adjoint_to_plus}` as follows
@@ -4735,7 +4736,7 @@ Now for space-separated :math:`x` and :math:`y`, we can calculate using :math:`\
 	:nowrap:
 
 	\begin{align*}
-		\left[ \psi_{\mu}(x), \psi_{\nu}(y) \right]_{\pm} &= (\alpha\beta \pm \alpha\beta) \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta_+(x-y) \\
+		\left[ \psi_{\mu}(x), \psi_{\nu}(y) \right]_{\pm} &= \kappa\lambda(1 \pm 1) \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta_+(x-y) \\
 		\left[ \psi_{\mu}(x), \psi^{\dagger}_{\nu}(y) \right]_{\pm} &= (|\kappa|^2 \pm |\lambda|^2) \left( \eta_{\mu \nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta_+(x-y)
 	\end{align*}
 
@@ -5270,7 +5271,7 @@ Now using :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{
 		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ b_- \end{bmatrix}, \quad v(0, -1/2) &&= -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_- \\ 0 \end{bmatrix}
 	\end{alignat*}
 
-So far we haven't really achieved much by assuming the parity conservation. What eventually pins down the spinors is, once again, the causality condition. To see this, let's try to construct the Dirac field following :math:`\eqref{eq_defn_psi_field}` (with a slight change of variable names because :math:`\beta` is already occupied) as follows
+So far we haven't really achieved much by assuming the parity conservation. What eventually pins down the spinors is, once again, the causality condition. To see this, let's try to construct the Dirac field following :math:`\eqref{eq_defn_psi_field}` as follows
 
 .. math::
 	:nowrap:
@@ -5745,6 +5746,208 @@ An important example is Fermi's theory of beta-decay, which involves an interact
 where :math:`p, n, e, \nu` stand for proton, neutron, electron and neutrino, respectively.
 
 
+General fields
+^^^^^^^^^^^^^^
+
+We've now seen how scalar, vector, and Dirac fields can be constructed out of specific representations of the (homogeneous orthochronous) Lorentz group. These constructions can be generalized and unified by understanding the general representation theory of the Lorentz group.
+
+General representation theory of the Lorentz group
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The starting point, as in the case of Dirac fields, is the general commutation relation :math:`\eqref{eq_bracket_repr_j}` that the :math:`\Jscr_{\mu \nu}` matrices must satisfy. As explained in :ref:`sec_quantum_lorentz_symmetry`, we can rename the :math:`\Jscr_{\mu \nu}` matrices as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat*}{3}
+		\Jscr_1 &\coloneqq \Jscr_{23}, \quad \Jscr_2 &&\coloneqq \Jscr_{31}, \quad \Jscr_3 &&\coloneqq \Jscr_{12} \\
+		\Kscr_1 &\coloneqq \Jscr_{10}, \quad \Kscr_2 &&\coloneqq \Jscr_{20}, \quad \Kscr_3 &&\coloneqq \Jscr_{30}
+	\end{alignat*}
+
+and rewrite :math:`\eqref{eq_bracket_repr_j}` as a set of equations as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left[ \Jscr_i, \Jscr_j \right] &= \ifrak \epsilon_{ijk} \Jscr_k
+		\label{eq_jjj_commutation_general_repr} \\
+		\left[ \Jscr_i, \Kscr_j \right] &= \ifrak \epsilon_{ijk} \Kscr_k
+		\label{eq_jkk_commutation_general_repr} \\
+		\left[ \Kscr_i, \Kscr_j \right] &= -\ifrak \epsilon_{ijk} \Jscr_k
+		\label{eq_kkj_commutation_general_repr}
+	\end{align}
+
+which correspond to :math:`\eqref{eq_jjj_commutation}, \eqref{eq_jkk_commutation}` and :math:`\eqref{eq_kkj_commutation}`, respectively.
+
+Let's write :math:`\bm{\Jscr} \coloneqq \left(\Jscr_1, \Jscr_2, \Jscr_3\right)` and :math:`\bm{\Kscr} \coloneqq \left(\Kscr_1, \Kscr_2, \Kscr_3\right)`. It turns out that this Lie algebra generated by :math:`\bm{\Jscr}` and :math:`\bm{\Kscr}` can be *complex* linearly transformed into one that splits. The transformation is defined as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\bm{\Ascr} &= \frac{1}{2} \left( \bm{\Jscr} + \ifrak \bm{\Kscr} \right) \\
+		\bm{\Bscr} &= \frac{1}{2} \left( \bm{\Jscr} - \ifrak \bm{\Kscr} \right)
+	\end{align*}
+
+so that :math:`\eqref{eq_jjj_commutation_general_repr}` -- :math:`\eqref{eq_kkj_commutation_general_repr}` take the following form
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left[ \bm{\Ascr}_i, \bm{\Ascr}_j \right] &= \ifrak \epsilon_{ijk} \bm{\Ascr}_k
+		\label{eq_aaa_commutation} \\
+		\left[ \bm{\Bscr}_i, \bm{\Bscr}_j \right] &= \ifrak \epsilon_{ijk} \bm{\Bscr}_k
+		\label{eq_bbb_commutation} \\
+		\left[ \bm{\Ascr}_i, \bm{\Bscr}_j \right] &= 0
+		\label{eq_ab0_commutation}
+	\end{align}
+
+In other words, both :math:`\bm{\Ascr}` and :math:`\bm{\Bscr}` form a Lie algebra of the :math:`3`-dimensional rotation group and they commute each other. It follows then from :ref:`Representations of angular momentum <dropdown_repr_of_angular_momenta>` that representations of the Lie algebra defined by :math:`\eqref{eq_aaa_commutation}` -- :math:`\eqref{eq_ab0_commutation}` can be parametrized by two nonnegative (half-)integers :math:`A` and :math:`B` such that
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\bm{\Ascr}_{a'b', ab} &= \delta_{b'b} \Jbf^{(A)}_{a'a}
+		\label{eq_general_field_a_repr} \\
+		\bm{\Bscr}_{a'b', ab} &= \delta_{a'a} \Jbf^{(B)}_{b'b}
+		\label{eq_general_field_b_repr}
+	\end{align}
+
+where :math:`a, a' \in \{-A, -A+1, \cdots, A\}` and :math:`b, b' \in \{-B, -B+1, \cdots, B\}`, and :math:`\Jbf^{(A)}` and :math:`\Jbf^{(B)}` are matrices given by :math:`\eqref{eq_j1_j2_matrix}` and :math:`\eqref{eq_j3_matrix}`. In particular, all these representations have dimension :math:`(2A+1)(2B+1)` and are unitary.
+
+Now each one of these representations gives rise to a representation of the Lorentz group, which will be referred to as the :math:`(A, B)` representation. As we've seen for Dirac fields, these representations are not unitary, because while :math:`\bm{\Jscr} = \bm{\Ascr} + \bm{\Bscr}` is Hermitian, :math:`\bm{\Kscr} = -\ifrak \left( \bm{\Ascr} - \bm{\Bscr} \right)` is anti-Hermitian. For the corresponding unitary representation of the :math:`3`-dimensional rotation group, we recall from :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>` that it may be split into irreducible components of spin :math:`\jfrak`, which takes values in the following range
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\jfrak = |A-B|, |A-B| + 1, \cdots, A+B
+		\label{eq_general_field_j_range}
+	\end{equation}
+
+according to :math:`\eqref{eq_composite_total_angular_momentum_range}`. Under this setup, the scalar, vector, and Dirac fields discussed before correspond to the following three scenarios.
+
+1. Scalar field: :math:`A = B = 0`. In this case :math:`\jfrak` must vanish, and hence no spin is possible.
+2. Vector field: :math:`A = B = \tfrac{1}{2}`. In this case :math:`\jfrak` may be :math:`0` or :math:`1`, which correspond to the time and space components of the vector field, respectively.
+3. Dirac field: :math:`A = \tfrac{1}{2}, B = 0` or :math:`A = 0, B = \tfrac{1}{2}`. In either case :math:`\jfrak` must be :math:`\tfrac{1}{2}`. Indeed, they correspond to the two irreducible components of (the angular momentum part of) the Dirac representation :math:`\eqref{eq_dirac_field_jscr_matrix}`. Therefore the Dirac field may be written in short hand as :math:`\left( \tfrac{1}{2}, 0 \right) \oplus \left( 0, \tfrac{1}{2} \right)`.
+
+It turns out that any general :math:`(A, B)` fields can be derived from the above basic ones by taking tensor products and irreducible components. For example :math:`(1, 0)` and :math:`(0, 1)` fields can be derived, using again :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`, by the following calculation
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left( \tfrac{1}{2}, \tfrac{1}{2} \right) \otimes \left( \tfrac{1}{2}, \tfrac{1}{2} \right) \
+			= (0, 0) \oplus (0, 1) \oplus (1, 0) \oplus (1, 1)
+	\end{equation*}
+
+In fact, all :math:`(A, B)` fields with :math:`A + B` being an integer can be obtained in this way by tensoring copies of :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)`. To get those fields with :math:`A + B` being a half-integer, we can consider the following calculation
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left( \tfrac{1}{2}, \tfrac{1}{2} \right) \otimes \left( \left(\tfrac{1}{2}, 0\right) \oplus \left(0, \tfrac{1}{2}\right) \right) \
+			= \left(0, \tfrac{1}{2}\right) \oplus \left(1, \tfrac{1}{2}\right) \oplus \left(\tfrac{1}{2}, 0\right) \oplus \left(\tfrac{1}{2}, 1\right)
+	\end{equation*}
+
+Construction of general fields
+++++++++++++++++++++++++++++++
+
+We've seen that general fields can be indexed by two (half-)integers :math:`a` and :math:`b`, and take the following general form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \kappa \exp(\ifrak p \cdot x) u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \lambda \exp(-\ifrak p \cdot x) v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+	\end{equation*}
+
+As usual, let's translate :math:`\eqref{eq_j_intertwines_u}` and :math:`\eqref{eq_j_intertwines_v}` in the context of :math:`(A, B)` representations as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sum_{\sigma'} u_{a'b'}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_{a, b} \bm{\Jscr}_{a'b', ab} u_{ab}(0, \sigma) \\
+		-\sum_{\sigma'} v_{a'b'}(0, \sigma') \Jbf^{(\jfrak) \ast}_{\sigma' \sigma} &= \sum_{a, b} \bm{\Jscr}_{a'b', ab} v_{ab}(0, \sigma)
+	\end{align*}
+
+Using the fact that :math:`\bm{\Jscr} = \bm{\Ascr} + \bm{\Bscr}` and :math:`\eqref{eq_general_field_a_repr}` and :math:`\eqref{eq_general_field_b_repr}`, we can further rewrite these conditions as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\sum_{\sigma'} u_{a'b'}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_a \Jbf^{(A)}_{a'a} u_{ab'}(0, \sigma) + \sum_b \Jbf^{(B)}_{b'b} u_{a'b}(0, \sigma)
+		\label{eq_general_field_uj_relation} \\
+		-\sum_{\sigma'} v_{a'b'}(0, \sigma') \Jbf^{(\jfrak) \ast}_{\sigma' \sigma} &= \sum_a \Jbf^{(A)}_{a'a} v_{ab'}(0, \sigma) + \sum_b \Jbf^{(B)}_{b'b} v_{a'b}(0, \sigma)
+		\label{eq_general_field_vj_relation}
+	\end{align}
+
+Looking at :math:`\eqref{eq_general_field_uj_relation}`, it's an identity that relates an angular momentum representation of spin :math:`\jfrak` on the left to the sum of two independent angular momentum representations on the right. Hence it's not unreasonable to guess that :math:`u` might have something to do with the Clebsch-Gordan coefficients defined by :math:`\eqref{eq_defn_clebsch_gordan_coefficients}`. This turns out to be indeed the case as we now demonstrate. Since :math:`\bigoplus_{\jfrak} \Jbf^{(\jfrak)} = \Jbf^{(A)} + \Jbf^{(B)}`, where the direct sum is taken over the range :math:`\eqref{eq_general_field_j_range}` and can be thought of as a block diagonal matrix, we can calculate as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\Jbf^{(\jfrak)}_{\sigma' \sigma} &=\left ( \Psi^{AB~\jfrak}_{\sigma'},~\bigoplus_{\jfrak'} \Jbf^{(\jfrak')} \Psi^{AB~\jfrak}_{\sigma} \right)
+		\label{eq_general_field_calculate_j_in_clebsch_gordan_coefficients} \\
+			&\xlongequal{\eqref{eq_defn_clebsch_gordan_coefficients}} \left( \sum_{a', b'} C^{AB}(\jfrak, \sigma'; a', b') \Psi^{AB}_{a'b'},~\sum_{a, b} C^{AB}(\jfrak, \sigma; a, b) \bigoplus_{\jfrak'} \Jbf^{(\jfrak')} \Psi^{AB}_{ab} \right)
+			\nonumber \\
+			&= \sum_{a', b', a, b} C^{AB}(\jfrak, \sigma'; a', b') C^{AB}(\jfrak, \sigma; a, b) \left( \Psi^{AB}_{a'b'},~\left( \Jbf^{(A)} + \Jbf^{(B)} \right) \Psi^{AB}_{ab} \right)
+			\nonumber \\
+			&= \sum_{a', b', a, b} C^{AB}(\jfrak, \sigma'; a', b') C^{AB}(\jfrak, \sigma; a, b) \left( \delta_{b'b} \Jbf^{(A)}_{a'a} + \delta_{a'a} \Jbf^{(B)}_{b'b} \right)
+			\nonumber \\
+			&= \sum_{a', b'} C^{AB}(\jfrak, \sigma'; a', b') \left( \blue{\sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b}} \right)
+			\nonumber
+	\end{align}
+
+We are now one step away from being able to compare with :math:`\eqref{eq_general_field_uj_relation}`. Namely we need to bring the coefficients :math:`C^{AB}(\jfrak, \sigma'; a', b')` to the left side of the equation. To to this, we recall the following identity of Clebsch-Gordan coefficients
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\sum_{a', b'} C^{AB}(\jfrak', \sigma'; a', b') C^{AB}(\jfrak, \sigma; a', b') = \delta_{\jfrak'\jfrak} \delta_{\sigma'\sigma}
+		\label{eq_clebsch_gordan_coefficients_orthonormal_relation}
+	\end{equation}
+
+which follows from the orthonormality of the states :math:`\Psi^{AB}_{ab}` and the reality of the Clebsch-Gordan coefficients as constructed in :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`. [#clebsch_gordan_coefficients_orthonormality]_ Now :math:`\eqref{eq_general_field_calculate_j_in_clebsch_gordan_coefficients}` will be satisfied if we set the blue terms to equal to the following quantity
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b} \
+			= \sum_{\sigma''} C^{AB}(\jfrak, \sigma; a', b') \Jbf^{(\jfrak)}_{\sigma'' \sigma}
+		\label{eq_general_field_condition_on_j_by_clebsch_gordan_coefficients}
+	\end{equation}
+
+due to :math:`\eqref{eq_clebsch_gordan_coefficients_orthonormal_relation}`.
+
+Now compare :math:`\eqref{eq_general_field_condition_on_j_by_clebsch_gordan_coefficients}` with :math:`\eqref{eq_general_field_uj_relation}`, we've solved the :math:`u`-fields of dimension :math:`(2A+1)(2B+1)` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		u_{ab}(0, \sigma) = (2m)^{-1/2} C^{AB}(\jfrak, \sigma; a, b)
+	\end{equation*}
+
+Using the fact that :math:`\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-\sigma+1} \Jbf^{(\jfrak)}_{-\sigma', -\sigma}`, which can be verified directly using :math:`\eqref{eq_j1_j2_matrix}` and :math:`\eqref{eq_j3_matrix}`, we can express the :math:`v`-fields in terms of the :math:`u`-fields as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		v_{ab}(0, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(0, -\sigma)
+	\end{equation*}
+
+
 .. rubric:: Footnotes
 
 .. [#tedious_calc_of_commutations] These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in [Wei95]_ page 61.
@@ -5768,3 +5971,5 @@ where :math:`p, n, e, \nu` stand for proton, neutron, electron and neutrino, res
 .. [#spatial_inversion_on_dirac_fields_sign] Our calculation differs from (5.5.10) and (5.5.11) in [Wei95]_ by a sign because we take into account the fact that the substitution :math:`\pbf \to -\pbf` also reverts the volume element :math:`d^3 p`.
 
 .. [#charge_inversion_on_dirac_fields_sign] Our calculation, once again, differs from the calculation (5.5.47) in [Wei95]_ by a sign, though this time it has nothing to do with the volume element.
+
+.. [#clebsch_gordan_coefficients_orthonormality] Details of the argument can be found in [Wei15]_ page 121 -- 122.
