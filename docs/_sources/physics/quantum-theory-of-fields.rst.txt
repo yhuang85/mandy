@@ -973,14 +973,14 @@ Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :mat
 		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)
 	\end{equation*}
 
-It follows that [#momentum_l_transformation_sign]_
+It follows that 
 
 .. math::
 	:nowrap:
 
 	\begin{align}
 		L(p)_0^0 &= \gamma \label{eq_L_transformation_for_massive_1} \\
-		L(p)_{i0} = L(p)_{0i} &= \frac{p_i}{M} \label{eq_L_transformation_for_massive_2} \\
+		L(p)^i_0 = L(p)_i^0 &= \frac{p_i}{M} \label{eq_L_transformation_for_massive_2} \\
 		L(p)_{ij} &= \delta_{ij} + \frac{p_i p_j}{\pbf^2} (\gamma - 1) \label{eq_L_transformation_for_massive_3}
 	\end{align}
 
@@ -5934,11 +5934,12 @@ Now compare :math:`\eqref{eq_general_field_condition_on_j_by_clebsch_gordan_coef
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		u_{ab}(0, \sigma) = (2m)^{-1/2} C^{AB}(\jfrak, \sigma; a, b)
-	\end{equation*}
+		\label{eq_general_field_u_at_zero_momentum}
+	\end{equation}
 
-Using the fact that :math:`\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-\sigma+1} \Jbf^{(\jfrak)}_{-\sigma', -\sigma}`, which can be verified directly using :math:`\eqref{eq_j1_j2_matrix}` and :math:`\eqref{eq_j3_matrix}`, we can express the :math:`v`-fields in terms of the :math:`u`-fields as follows
+where :math:`(2m)^{-1/2}` is a conventional coefficient add here to cancel the mass term in :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` later. Using the fact that :math:`\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-\sigma+1} \Jbf^{(\jfrak)}_{-\sigma', -\sigma}`, which can be verified directly using :math:`\eqref{eq_j1_j2_matrix}` and :math:`\eqref{eq_j3_matrix}`, we can express the :math:`v`-fields in terms of the :math:`u`-fields as follows
 
 .. math::
 	:nowrap:
@@ -5947,12 +5948,84 @@ Using the fact that :math:`\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-
 		v_{ab}(0, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(0, -\sigma)
 	\end{equation*}
 
+To get the :math:`u` and :math:`v` fields at finite momentum, we need to invoke the general boost formulae :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` -- :math:`\eqref{eq_creation_v_transformation_simplified_by_boost}`, as well as the :math:`L` transformation :math:`\eqref{eq_L_transformation_for_massive_1}` -- :math:`\eqref{eq_L_transformation_for_massive_3}`. Here we'll think of a boost as a :math:`1`-parameter transformation in a given direction :math:`\hat{\pbf} \coloneqq \pbf / |\pbf|`. It turns out to be neat to use a `hyperbolic angle <https://en.wikipedia.org/wiki/Hyperbolic_functions>`_ :math:`\theta`, rather than :math:`|\pbf|`, defined by 
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		\cosh\theta = \sqrt{\pbf^2 + m^2} / m, \quad \sinh\theta = |\pbf| / m
+	\end{equation*}
+
+to parametrize the boost as follows
+
+.. math:: 
+	:nowrap:
+
+	\begin{align*}
+		L(\theta)^0_0 &= \cosh\theta \\
+		L(\theta)^i_0 = L(\theta)_i^0 &= \hat{\pbf}_i \sinh\theta \\
+		L(\theta)_{ij} &= \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh\theta - 1)
+	\end{align*}
+
+The nice thing about this parametrization is that :math:`L(\theta)` becomes additive in :math:`\theta` in the following sense
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		L(\theta') L(\theta) = L(\theta' + \theta)
+	\end{equation*}
+
+Indeed, one can verify it by, for example, the following calculation
+
+.. math:: 
+	:nowrap:
+
+	\begin{align*}
+		L(\theta')^i_{\mu} L(\theta)^{\mu}_j &= L(\theta')^i_0 L(\theta)^0_j + \sum_{k=1}^3 L(\theta')^i_k L(\theta)^k_j \\
+			&= \hat{\pbf}_i \hat{\pbf}_j \sinh\theta' \sinh\theta + \sum_{k=1}^3 \left( \delta_{ik} + \hat{\pbf}_i \hat{\pbf}_k (\cosh\theta' - 1) \right) \left( \delta_{kj} + \hat{\pbf}_k \hat{\pbf}_j (\cosh\theta - 1) \right) \\
+			&= \hat{\pbf}_i \hat{\pbf}_j \sinh\theta' \sinh\theta + \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j \left( \cosh\theta' - 1 + \cosh\theta - 1 + (\cosh\theta' - 1)(\cosh\theta - 1) \right) \\
+			&= \hat{\pbf}_i \hat{\pbf}_j \sinh\theta' \sinh\theta + \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh\theta' \cosh\theta - 1) \\
+			&= \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh(\theta' + \theta) - 1) = L(\theta' + \theta)^i_j
+	\end{align*}
+
+In light of :math:`\eqref{eq_dirac_field_linearize_representation}`, we can then write
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		D(L(p)) = \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \bm{\Kscr}\right)
+	\end{equation*}
+
+at least for :math:`\theta` infinitesimal. Here the minus sign comes from the fact that we have to bring the upper-index :math:`\mu=0` in :math:`\omega^{\mu\nu}` down.
+
+For an :math:`(A, B)` representation, we can further write :math:`\ifrak \bm{\Kscr} = \bm{\Ascr} - \bm{\Bscr}`, and henceforth
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation}
+		D(L(p))_{a'b', ab} = \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b}
+		\label{eq_general_field_d_transformation_in_ab_repr}
+	\end{equation}
+
+since the representation splits into a direct sum of :math:`\bm{\Ascr}` and :math:`\bm{\Bscr}`. Combining :math:`\eqref{eq_general_field_d_transformation_in_ab_repr}` with :math:`\eqref{eq_general_field_u_at_zero_momentum}` and :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}`, we obtain the following formula for the :math:`u`-field at finite momentum for an :math:`(A, B)` representation
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
+	\end{equation*}
+
+where we assume implicitly that the spin :math:`\jfrak` is within the range :math:`\eqref{eq_general_field_j_range}`, and :math:`a,b,a',b'` are the corresponding spin :math:`z`-components.
+
 
 .. rubric:: Footnotes
 
 .. [#tedious_calc_of_commutations] These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in [Wei95]_ page 61.
-
-.. [#momentum_l_transformation_sign] The corresponding formula (2.5.24) in [Wei95]_ uses the convention (2.3.10) for inverse matrices.
 
 .. [#in_out_state_sign_convention] I really don't like the sign convention of the in- and out-states in [Wei95]_, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in [Wei95]_.
 
