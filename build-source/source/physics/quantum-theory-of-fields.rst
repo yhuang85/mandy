@@ -72,6 +72,7 @@ or
 where :math:`c` is any complex number.
 
 .. dropdown:: Proof of Wigner's theorem
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	The construction of a realization :math:`U` of :math:`T` takes the following steps.
@@ -297,6 +298,7 @@ where
 	4. Einstein's summation convention is implicitly applied, i.e., upper and lower indexes of the same label are summed up. *The same label that appears both as upper or lower indexes are considered illegal expression.* This is particularly important because otherwise we'd run into troublesome expressions such as :math:`x_{\mu} x_{\mu} = x_0^2 + x_1^2 + x_2^2 + x_3^2`.
 
 .. dropdown:: Einstein's special theory of relativity
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	Using the notations introduced above, we can rewrite :math:`\eqref{eq_proper_time}` as :math:`d\tau^2 = dt^2 - d\xbf^2`, so that it's obvious that if a particle travels at the speed of light in one inertial frame, i.e., :math:`|d\xbf / dt| = 1`, and equivalently :math:`d\tau = 0`, then it travels at the speed of light in any other inertial frame, in direct contradiction with Newtonian mechanics.
@@ -438,6 +440,7 @@ The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely d
 	\end{alignat}
 
 .. dropdown:: Time dilation and length contraction
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	A few consequences can be drawn from the boost transformation, most notably the effects of `time dilation <https://en.wikipedia.org/wiki/Time_dilation>`__ and `length contraction <https://en.wikipedia.org/wiki/Length_contraction>`__. The time dilation, i.e., a clock ticks slower in a moving frame than in a rest frame, is quite obvious from :math:`\eqref{eq_lambda_boost}` and the fact that :math:`\gamma > 1`. But the length contraction requires some elaboration.
@@ -869,6 +872,7 @@ where :math:`\sigma, \sigma'` run through the values :math:`-\jfrak, -\jfrak + 1
 .. _dropdown_repr_of_angular_momenta:
 
 .. dropdown:: Representations of angular momenta
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	Recall from :math:`\eqref{eq_jjj_commutation}` that the (quantum) angular momenta vector :math:`\Jbf` satisfy the commutation relations :math:`[J_i, J_j] = \ifrak \epsilon_{ijk} J_k`. Hence they cannot be simultaneously diagonalized. It's then a convention to use the angular momentum along the :math:`3`-axis to label the spin. The following two identities are straightforward but important
@@ -973,7 +977,7 @@ Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :mat
 		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)
 	\end{equation*}
 
-It follows that 
+It follows that
 
 .. math::
 	:nowrap:
@@ -1011,6 +1015,7 @@ This observation is important since it implies that non-relativistic calculation
 .. _dropdown_clebsch_gordan_coefficients:
 
 .. dropdown:: Clebsch-Gordan coefficients
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	In a scenario where multiple particles present, or even just a single particle with both orbital angular momentum (i.e., the quantization of the classical angular momentum :math:`\xbf \times \Pbf`) and spin, it may happen that the full Hamiltonian doesn't commute with each individual :math:`3`-momentum :math:`\Jbf`, but commute with a "total" angular momentum. Therefore a formula, in terms of the so-called Clebsch-Gordan coefficients, that expresses the total angular momentum in terms of the individual ones is desirable. This section follows closely §4 from [Wei15]_. Note that the discussions that follow will be
@@ -1249,6 +1254,7 @@ which leaves :math:`k` invariant, and satisfies :math:`Sv = Wv`. It follows that
 Hence we can write any element in the little group as :math:`W(a, b, \theta) = S(a, b) R(\theta)`.
 
 .. dropdown:: The little group is :math:`~E^+(2)`
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	Although not necessary for our purposes here, we'd like to better understand the little group for :math:`k = (1, 0, 0, 1)` in terms of more familiar groups. It turns out that it's isomorphic to the :math:`2`-dimensional orientation-preserving `Euclidean group <https://en.wikipedia.org/wiki/Euclidean_group>`__ :math:`E^+(2)`, i.e., the group of rotations and translations on the plane.
@@ -1425,6 +1431,7 @@ In order to use :math:`\eqref{eq_lorentz_transformation_formula_for_massless}` f
 Then apply a (pure) rotation that takes :math:`(0, 0, |\pbf|)` to :math:`\pbf`. However, in contrast to the massive case :math:`\eqref{eq_L_transformation_for_massive_1}` -- :math:`\eqref{eq_L_transformation_for_massive_3}`, where :math:`L(p)` depends continuously on :math:`p`, there exists no continuous family of rotations that take :math:`(0, 0, |\pbf|)` to any other :math:`3`-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the :math:`3`-axis, which, according to :math:`\eqref{eq_lorentz_transformation_formula_for_massless}`, only produces a physically immaterial phase factor.
 
 .. dropdown:: Polarization of photons
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	General photon states of definite momentum can be written as a superposition
@@ -2285,6 +2292,7 @@ which looks just like an internal symmetry. Now if :math:`U(\Pcal)^2` belongs to
 .. _dropdown_parities_of_elementary_particles:
 
 .. dropdown:: Parities of elementary particles
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	We shall in this section assume familiarity with angular momentum as discussed in :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`.
@@ -2877,6 +2885,7 @@ As an application we can calculate the total rate of all transitions produced by
 	\end{align*}
 
 .. dropdown:: An example of two-body scattering
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	In the case where :math:`\alpha` is a two-particles state, we can use :math:`\eqref{eq_cross_section_two_particles}` to calculate the total cross-section as follows
@@ -3163,6 +3172,7 @@ This expression of :math:`S` is manifestly Lorentz invariant, except for the tim
 where we've also included the light-like case for technical reasons that will only become clear later. This condition is also referred to as the *causality* condition as it may be interpreted as saying that interactions happening at space-like separations should not be correlated.
 
 .. dropdown:: A formal proof of the Lorentz invariance of the S-matrix
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	We shall verify that the S-operator defined by :math:`\eqref{eq_s_matrix_power_series_expansion_time_ordered_density}` and satisfying :math:`\eqref{eq_h_commutativity_for_space_like_separations}` indeed satisfies :math:`\eqref{eq_h0_s_commute}` -- :math:`\eqref{eq_k30_s_commute}`, or rather, the most crucial one :math:`\eqref{eq_k30_s_commute}`. Using the definition of :math:`\Kbf_0` from :ref:`sec_quantum_lorentz_symmetry`, it follows from :math:`\eqref{eq_h_density_is_scalar}` that
@@ -3646,6 +3656,7 @@ which guarantees that an overall translation will not change the integral. Moreo
 at least under the :ref:`assumption on particle stability <assump_on_particle_stability>`.
 
 .. dropdown:: Inevitability of quantum field theory
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	One of the deepest consequences of the cluster decomposition principle is the necessity of a quantum field theory, or in other words, the inability to consistently define scattering amplitudes with a fixed number of particles. For example, let's consider a two-body problem with S-matrix amplitude :math:`S_{q'_1 q'_2,~q_1 q_2}`. Then it'd have been possible to adjust the Hamiltonian so that all higher-order amplitudes, and in particular, the three-body amplitude, vanish.
@@ -4111,6 +4122,7 @@ Note that the negative sign in :math:`\eqref{eq_charge_of_psi_field}` is a forma
 The particles of species :math:`n` and :math:`\bar{n}` are called *antiparticles* of each other -- they are exactly the same except for the charges which are opposite. It is the last condition that demands the existence of particle-antiparticle pairs so that one can formulate a consistent (relativistic) quantum field theory.
 
 .. dropdown:: The Klein-Gordon equation
+	:icon: unlock
 	:animate: fade-in-slide-down
 
 	It follows from the definition :math:`\eqref{eq_defn_psi_field}`, together with :math:`\eqref{eq_annihilation_field_simplified_by_translation}` and :math:`\eqref{eq_creation_field_simplified_by_translation}`, that the field :math:`\psi_{\ell}(x)` satisfies the following so-called `Klein-Gordon equation <https://en.wikipedia.org/wiki/Klein%E2%80%93Gordon_equation>`_
@@ -5862,9 +5874,10 @@ We've seen that general fields can be indexed by two (half-)integers :math:`a` a
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \kappa \exp(\ifrak p \cdot x) u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \lambda \exp(-\ifrak p \cdot x) v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
-	\end{equation*}
+		\label{eq_general_field_defn_psi_field}
+	\end{equation}
 
 As usual, let's translate :math:`\eqref{eq_j_intertwines_u}` and :math:`\eqref{eq_j_intertwines_v}` in the context of :math:`(A, B)` representations as follows
 
@@ -5944,13 +5957,14 @@ where :math:`(2m)^{-1/2}` is a conventional coefficient add here to cancel the m
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		v_{ab}(0, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(0, -\sigma)
-	\end{equation*}
+		\label{eq_general_field_v_at_zero_momentum}
+	\end{equation}
 
-To get the :math:`u` and :math:`v` fields at finite momentum, we need to invoke the general boost formulae :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` -- :math:`\eqref{eq_creation_v_transformation_simplified_by_boost}`, as well as the :math:`L` transformation :math:`\eqref{eq_L_transformation_for_massive_1}` -- :math:`\eqref{eq_L_transformation_for_massive_3}`. Here we'll think of a boost as a :math:`1`-parameter transformation in a given direction :math:`\hat{\pbf} \coloneqq \pbf / |\pbf|`. It turns out to be neat to use a `hyperbolic angle <https://en.wikipedia.org/wiki/Hyperbolic_functions>`_ :math:`\theta`, rather than :math:`|\pbf|`, defined by 
+To get the :math:`u` and :math:`v` fields at finite momentum, we need to invoke the general boost formulae :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` -- :math:`\eqref{eq_creation_v_transformation_simplified_by_boost}`, as well as the :math:`L` transformation :math:`\eqref{eq_L_transformation_for_massive_1}` -- :math:`\eqref{eq_L_transformation_for_massive_3}`. Here we'll think of a boost as a :math:`1`-parameter transformation in a given direction :math:`\hat{\pbf} \coloneqq \pbf / |\pbf|`. It turns out to be neat to use a `hyperbolic angle <https://en.wikipedia.org/wiki/Hyperbolic_functions>`_ :math:`\theta`, rather than :math:`|\pbf|`, defined by
 
-.. math:: 
+.. math::
 	:nowrap:
 
 	\begin{equation*}
@@ -5959,7 +5973,7 @@ To get the :math:`u` and :math:`v` fields at finite momentum, we need to invoke 
 
 to parametrize the boost as follows
 
-.. math:: 
+.. math::
 	:nowrap:
 
 	\begin{align*}
@@ -5970,7 +5984,7 @@ to parametrize the boost as follows
 
 The nice thing about this parametrization is that :math:`L(\theta)` becomes additive in :math:`\theta` in the following sense
 
-.. math:: 
+.. math::
 	:nowrap:
 
 	\begin{equation*}
@@ -5979,7 +5993,7 @@ The nice thing about this parametrization is that :math:`L(\theta)` becomes addi
 
 Indeed, one can verify it by, for example, the following calculation
 
-.. math:: 
+.. math::
 	:nowrap:
 
 	\begin{align*}
@@ -5992,7 +6006,7 @@ Indeed, one can verify it by, for example, the following calculation
 
 In light of :math:`\eqref{eq_dirac_field_linearize_representation}`, we can then write
 
-.. math:: 
+.. math::
 	:nowrap:
 
 	\begin{equation*}
@@ -6003,7 +6017,7 @@ at least for :math:`\theta` infinitesimal. Here the minus sign comes from the fa
 
 For an :math:`(A, B)` representation, we can further write :math:`\ifrak \bm{\Kscr} = \bm{\Ascr} - \bm{\Bscr}`, and henceforth
 
-.. math:: 
+.. math::
 	:nowrap:
 
 	\begin{equation}
@@ -6013,14 +6027,123 @@ For an :math:`(A, B)` representation, we can further write :math:`\ifrak \bm{\Ks
 
 since the representation splits into a direct sum of :math:`\bm{\Ascr}` and :math:`\bm{\Bscr}`. Combining :math:`\eqref{eq_general_field_d_transformation_in_ab_repr}` with :math:`\eqref{eq_general_field_u_at_zero_momentum}` and :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}`, we obtain the following formula for the :math:`u`-field at finite momentum for an :math:`(A, B)` representation
 
-.. math:: 
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{a'a} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
+		\label{eq_general_field_u_at_finite_momentum}
+	\end{equation}
+
+where we assume implicitly that the spin :math:`\jfrak` is within the range :math:`\eqref{eq_general_field_j_range}`, and :math:`a,b,a',b'` are the corresponding spin :math:`z`-components.
+
+Parallel to :math:`\eqref{eq_general_field_v_at_zero_momentum}`, we can express the :math:`v`-field at finite momentum in terms of the :math:`u`-field as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		v_{ab}(\pbf, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(\pbf, -\sigma)
+		\label{eq_general_field_v_at_finite_momentum}
+	\end{equation}
+
+The construction of interaction densities for general :math:`(A, B)` fields relies on Clebsch-Gordan coefficients, and is discussed in some detail in the following dropdown block.
+
+.. dropdown:: Construction of interaction densities
+	:icon: unlock
+	:animate: fade-in-slide-down
+
+	According to :math:`\eqref{eq_construct_interaction_density_by_fields}` and :math:`\eqref{eq_coefficient_g_transformation_law}`, a general interaction density can be constructed as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\Hscr(x) = \sum_{a_1 a_2 \cdots a_n} \sum_{b_1 b_2 \cdots b_n} g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n} \psi^{(1)}_{a_1 b_1}(x) \psi^{(2)}_{a_2 b_2}(x) \cdots \psi^{(n)}_{a_n b_n}(x)
+		\end{equation*}
+
+	where :math:`\psi^{(i)}_{a_i b_i}(x)` is an :math:`(A_i, B_i)` field, and the coefficients :math:`g_{\underline{a}, \underline{b}} \coloneqq g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n}` are covariant under the product of the :math:`(A_i, B_i)` representations. Looking at :math:`\eqref{eq_general_field_u_at_finite_momentum}` and :math:`\eqref{eq_general_field_v_at_finite_momentum}`, we see that the :math:`D` matrices, as in :math:`\eqref{eq_conjugate_annihilation_field}` -- :math:`\eqref{eq_conjugate_creation_field}`, act on general fields as a product of the angular momentum representations associated with the :math:`A`'s and :math:`B`'s. Therefore we may also split the coefficients :math:`g_{\underline{a}, \underline{b}}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n} = g_{a_1 a_2 \cdots a_n} g_{b_1 b_2 \cdots b_n}
+		\end{equation*}
+
+	such that :math:`g_{\underline{a}}` and :math:`g_{\underline{b}}` are covariant under the angular momentum representations in the sense that for any :math:`3`-vector :math:`\bm{\theta}` and :math:`J \coloneqq \bm{\theta} \cdot \Jbf`, the following holds
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			J^{(A_1)}_{a'_1 a_1} J^{(A_2)}_{a'_2 a_2} \cdots J^{(A_n)}_{a'_n a_n} g_{a_1 a_2 \cdots a_n} = g_{a'_1 a'_2 \cdots a'_n}
+			\label{eq_general_field_g_coefficients_covariance}
+		\end{equation}
+
+	for :math:`g_{\underline{a}}`, and a similar relation holds for :math:`g_{\underline{b}}`.
+
+	Now a particularly neat set of solutions to :math:`\eqref{eq_general_field_g_coefficients_covariance}` is given by identifying :math:`g` with the Clebsch-Gordan coefficients, which we think of as the coefficients of expressing a state with definite total angular momentum in terms of states with definite individual angular momenta. In this setting, the solutions to :math:`\eqref{eq_general_field_g_coefficients_covariance}` correspond to states with zero total angular momenta.
+
+	A particularly interesting example of this kind is Wigner's `3j-symbol <https://en.wikipedia.org/wiki/3-j_symbol>`__ defined as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\begin{pmatrix} A_1 & A_2 & A_3 \\ a_1 & a_2 & a_3 \end{pmatrix} \coloneqq \sum_{a'_3} C^{A_3 A_3}(0 0; a'_3 a_3) C^{A_1 A_3}(A_3 a'_3; a_1 a_2)
+		\end{equation*}
+
+	We read the definition as a two-step process. Namely, we first (linearly) combine states :math:`\Psi^{A_1}_{a_1}` and :math:`\Psi^{A_2}_{a_2}` to a state with total angular momentum :math:`A_3` (and spin :math:`z`-component :math:`a'_3`), and then (linearly) combine with the state :math:`\Psi^{A_3}_{a_3}` to end up in a spinless final state. [#clebsch_gordan_coefficient_zero_total_angular_momentum]_
+
+We will now turn to the arguably most interesting causality condition :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. Indeed, it is this condition that clarifies the correlation between the spin and whether a particle/field is bosonic or fermionic. As before, we need to evaluate the (anti-)commutator between the fields using :math:`\eqref{eq_general_field_defn_psi_field}` as follows
+
+.. math::
 	:nowrap:
 
 	\begin{equation*}
-		u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
+		\left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(x) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right)
 	\end{equation*}
 
-where we assume implicitly that the spin :math:`\jfrak` is within the range :math:`\eqref{eq_general_field_j_range}`, and :math:`a,b,a',b'` are the corresponding spin :math:`z`-components.
+where :math:`\pi(\pbf)` is the (rescaled) spin sum defined by
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		(2p_0)^{-1} \pi_{ab,a'b'}(\pbf) \coloneqq \sum_{\sigma} u_{ab}(\pbf, \sigma) u_{a'b'}^{\prime~\ast}(\pbf, \sigma) = \sum_{\sigma} v_{ab}(\pbf, \sigma) v_{a'b'}^{\prime~\ast}(\pbf, \sigma)
+	\end{equation*}
+
+Here the second equality can be mostly easily seen using :math:`\eqref{eq_general_field_v_at_finite_momentum}`. Note also that we are considering the most general scenario where :math:`a,b,a',b'` are the spin :math:`z`-components of spins :math:`A,B,A',B'`, respectively.
+
+Using :math:`\eqref{eq_general_field_u_at_finite_momentum}`, we can spell out more details of the spin sum as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\pi_{ab, a'b'}(\pbf) &= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}') \\
+			&\phantom{=} \times \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
+			&\phantom{=} \times \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
+	\end{align*}
+
+This looks horribly complicated, but it has been evaluated by the author in [Wei69]_. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that :math:`\pi_{ab,a'b'}(\pbf)` is a polynomial :math:`P` in :math:`p` on the mass shell as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{|\pbf|^2 + m^2}, \pbf \right)
+	\end{equation*}
+
+The second is that this polynomial is even or odd depending on the parity of :math:`2A + 2B'` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		P_{ab,a'b'}(-p) = (-1)^{2A+2B'} P_{ab,a'b'}(p)
+	\end{equation*}
 
 
 .. rubric:: Footnotes
@@ -6046,3 +6169,5 @@ where we assume implicitly that the spin :math:`\jfrak` is within the range :mat
 .. [#charge_inversion_on_dirac_fields_sign] Our calculation, once again, differs from the calculation (5.5.47) in [Wei95]_ by a sign, though this time it has nothing to do with the volume element.
 
 .. [#clebsch_gordan_coefficients_orthonormality] Details of the argument can be found in [Wei15]_ page 121 -- 122.
+
+.. [#clebsch_gordan_coefficient_zero_total_angular_momentum] An explicit evaluation of :math:`C^{AA}(0, 0;a, -a)`, with the only non-vanishing combination of spin :math:`z`-components, can be found in [Wei15]_ page 124 -- 125.
