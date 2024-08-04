@@ -29,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=9d07dabb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -2546,10 +2546,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 \end{align*}</div><p>where we’ve also suppressed the time factor from <span class="math notranslate nohighlight">\(V(t)\)</span> as it won’t really play a role in the diagram. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id42">
+<figure class="align-center" id="id43">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id42" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id43" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2573,10 +2573,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
 <p>To verify that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function, we note a crucial fact that the diagram contains no <em>directed</em> loops, which allows us to start from the bottom, i.e., the total momentum of the in-state particles, and work our way up to the top, i.e., the total momentum of the out-state particles, so that there is exactly one momentum-conservation delta function at each step when a(n intermediate) vertex is added, which guarantees that the incoming total momentum equals the outgoing total momentum.</p>
 <p>As a side remark, we point out that the argument in <a class="reference internal" href="../bib.html#wei95" id="id18"><span>[Wei95]</span></a> (page 186 –187) in terms of a Euler characteristic calculation of the diagram appears to be wrong. A counterexample (to Weinberg’s argument) can be illustrated in the following pseudo Feynman diagram which contains a directed loop</p>
-<figure class="align-center" id="id43">
+<figure class="align-center" id="id44">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id43" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id44" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Evaluating the momentum-conservation delta function of the diagram then gives</p>
@@ -2776,7 +2776,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 </details></section>
 </section>
 <section id="scalar-fields">
-<h3>Scalar fields<a class="headerlink" href="#scalar-fields" title="Link to this heading">#</a></h3>
+<span id="sec-scalar-field"></span><h3>Scalar fields<a class="headerlink" href="#scalar-fields" title="Link to this heading">#</a></h3>
 <p>We’ll start, as always, with the simplest case of scalar fields, namely, when <span class="math notranslate nohighlight">\(\psi^+(x) = \psi^+_{\ell}(x)\)</span> and <span class="math notranslate nohighlight">\(\psi^-(x) = \psi^-_{\ell}(x)\)</span> are scalar functions. We argue first that such fields can only create/annihilate spinless particles. Indeed, since <span class="math notranslate nohighlight">\(\hat{\Jbf}\)</span> necessarily vanishes, it follows from <span class="math notranslate nohighlight">\(\eqref{eq_j_intertwines_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j_intertwines_v}\)</span> that <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> may be nonzero if and only if <span class="math notranslate nohighlight">\(j_n = 0\)</span>. If we, for the moment, are concerned with just one particle species, then we can write <span class="math notranslate nohighlight">\(u(\pbf, \sigma, n) = u(\pbf)\)</span> and <span class="math notranslate nohighlight">\(v(\pbf, \sigma, n) = v(\pbf)\)</span>. Lastly, we note that since <span class="math notranslate nohighlight">\(D = 1\)</span> in this case, <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation_simplified_by_translation}\)</span> become</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -2872,12 +2872,12 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \psi(x) = \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) a(\pbf) + \exp(-\ifrak p \cdot x) a^{c \dagger}(\pbf) \right]
         \label{eq_scalar_field_psi_by_creation_and_annihilation_operators}
 \end{equation}</div><p>with the possibility of <span class="math notranslate nohighlight">\(a^{c \dagger}(\pbf) = a^{\dagger}(\pbf)\)</span> in the case where the created particle is its own antiparticle.</p>
-<p>For later use (e.g., the evaluation of Feynman diagrams), we note the following identity</p>
+<p>For later use (e.g., the evaluation of Feynman diagrams), we note the following identity which holds for any, and not just space-like, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \left[ \psi(x), \psi^{\dagger}(y) \right] = \Delta(x - y)
         \label{eq_scalar_field_commutator}
-\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta(x)\)</span> is defined, for any <span class="math notranslate nohighlight">\(x\)</span>, as follows</p>
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta(x)\)</span> is defined as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \Delta(x) \coloneqq \Delta_+(x) - \Delta_+(-x) = \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0} (\exp(\ifrak p \cdot x) - \exp(-\ifrak p \cdot x))
@@ -2971,7 +2971,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} = \jfrak (\jfrak + 1) \delta_{\sigma \sigma'}
 \end{equation*}</div><p>by <span class="math notranslate nohighlight">\(\eqref{eq_angular_momentum_squared_eigenvalue}\)</span>. It follows that in order for <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_u0_intertwines_j_sq}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_vi_intertwines_j_sq}\)</span> to have nonzero solutions, one must have either <span class="math notranslate nohighlight">\(\jfrak = 0\)</span>, in which case only the time-components <span class="math notranslate nohighlight">\(u_0(0)\)</span> and <span class="math notranslate nohighlight">\(v_0(0)\)</span> may be nonzero, where we’ve also suppressed <span class="math notranslate nohighlight">\(\sigma\)</span> because spin vanishes, or <span class="math notranslate nohighlight">\(\jfrak = 1\)</span>, in which case only the space-components <span class="math notranslate nohighlight">\(u_i(0, \sigma)\)</span> and <span class="math notranslate nohighlight">\(v_i(0, \sigma)\)</span> may be nonzero. These two cases are discussed in more details as follows.</p>
 <section id="spin-0-vector-fields">
-<h4>Spin-<span class="math notranslate nohighlight">\(0\)</span> vector fields<a class="headerlink" href="#spin-0-vector-fields" title="Link to this heading">#</a></h4>
+<span id="sec-spin-zero-vector-field"></span><h4>Spin-<span class="math notranslate nohighlight">\(0\)</span> vector fields<a class="headerlink" href="#spin-0-vector-fields" title="Link to this heading">#</a></h4>
 <p>In this case <span class="math notranslate nohighlight">\(\jfrak = 0\)</span>. For reasons that will become clear momentarily, let’s fix the constants <span class="math notranslate nohighlight">\(u_0(0), v_0(0)\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -3772,9 +3772,10 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
         \label{eq_general_field_v_at_zero_momentum}
 \end{equation}</div><p>To get the <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> fields at finite momentum, we need to invoke the general boost formulae <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_boost}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation_simplified_by_boost}\)</span>, as well as the <span class="math notranslate nohighlight">\(L\)</span> transformation <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_1}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_L_transformation_for_massive_3}\)</span>. Here we’ll think of a boost as a <span class="math notranslate nohighlight">\(1\)</span>-parameter transformation in a given direction <span class="math notranslate nohighlight">\(\hat{\pbf} \coloneqq \pbf / |\pbf|\)</span>. It turns out to be neat to use a <a class="reference external" href="https://en.wikipedia.org/wiki/Hyperbolic_functions">hyperbolic angle</a> <span class="math notranslate nohighlight">\(\theta\)</span>, rather than <span class="math notranslate nohighlight">\(|\pbf|\)</span>, defined by</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \cosh\theta = \sqrt{\pbf^2 + m^2} / m, \quad \sinh\theta = |\pbf| / m
-\end{equation*}</div><p>to parametrize the boost as follows</p>
+        \label{eq_general_field_defn_theta}
+\end{equation}</div><p>to parametrize the boost as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         L(\theta)^0_0 &amp;= \cosh\theta \\
@@ -3800,14 +3801,14 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <p>For an <span class="math notranslate nohighlight">\((A, B)\)</span> representation, we can further write <span class="math notranslate nohighlight">\(\ifrak \bm{\Kscr} = \bm{\Ascr} - \bm{\Bscr}\)</span>, and henceforth</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        D(L(p))_{a'b', ab} = \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b}
+        D(L(p))_{a'b', ab} = \exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b}
         \label{eq_general_field_d_transformation_in_ab_repr}
 \end{equation}</div><p>since the representation splits into a direct sum of <span class="math notranslate nohighlight">\(\bm{\Ascr}\)</span> and <span class="math notranslate nohighlight">\(\bm{\Bscr}\)</span>. Combining <span class="math notranslate nohighlight">\(\eqref{eq_general_field_d_transformation_in_ab_repr}\)</span> with <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_zero_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_boost}\)</span>, we obtain the following formula for the <span class="math notranslate nohighlight">\(u\)</span>-field at finite momentum for an <span class="math notranslate nohighlight">\((A, B)\)</span> representation</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{a'a} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
+        u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{a'a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
         \label{eq_general_field_u_at_finite_momentum}
-\end{equation}</div><p>where we assume implicitly that the spin <span class="math notranslate nohighlight">\(\jfrak\)</span> is within the range <span class="math notranslate nohighlight">\(\eqref{eq_general_field_j_range}\)</span>, and <span class="math notranslate nohighlight">\(a,b,a',b'\)</span> are the corresponding spin <span class="math notranslate nohighlight">\(z\)</span>-components.</p>
+\end{equation}</div><p>where we assume implicitly that the spin <span class="math notranslate nohighlight">\(\jfrak\)</span> is within the range <span class="math notranslate nohighlight">\(\eqref{eq_general_field_j_range}\)</span>, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the corresponding spin <span class="math notranslate nohighlight">\(z\)</span>-component.</p>
 <p>Parallel to <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_zero_momentum}\)</span>, we can express the <span class="math notranslate nohighlight">\(v\)</span>-field at finite momentum in terms of the <span class="math notranslate nohighlight">\(u\)</span>-field as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -3840,40 +3841,160 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </div>
 </details><p>We will now turn to the arguably most interesting causality condition <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>. Indeed, it is this condition that clarifies the correlation between the spin and whether a particle/field is bosonic or fermionic. As before, we need to evaluate the (anti-)commutator between the fields using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_defn_psi_field}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
-        \left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(x) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right)
-\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\pi(\pbf)\)</span> is the (rescaled) spin sum defined by</p>
+\begin{equation}
+        \left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(y) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right)
+        \label{eq_general_field_psi_commutator}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\pi(\pbf)\)</span> is the (rescaled) spin sum defined by</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         (2p_0)^{-1} \pi_{ab,a'b'}(\pbf) \coloneqq \sum_{\sigma} u_{ab}(\pbf, \sigma) u_{a'b'}^{\prime~\ast}(\pbf, \sigma) = \sum_{\sigma} v_{ab}(\pbf, \sigma) v_{a'b'}^{\prime~\ast}(\pbf, \sigma)
-\end{equation*}</div><p>Here the second equality can be mostly easily seen using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>. Note also that we are considering the most general scenario where <span class="math notranslate nohighlight">\(a,b,a',b'\)</span> are the spin <span class="math notranslate nohighlight">\(z\)</span>-components of spins <span class="math notranslate nohighlight">\(A,B,A',B'\)</span>, respectively.</p>
+\end{equation*}</div><p>Here the second equality can be mostly easily seen using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>. Note also that we are considering the general scenario where <span class="math notranslate nohighlight">\(\psi(x)\)</span> is an <span class="math notranslate nohighlight">\((A, B)\)</span> field, while <span class="math notranslate nohighlight">\(\psi'(x)\)</span> is a possibly different <span class="math notranslate nohighlight">\((A', B')\)</span> field.</p>
 <p>Using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span>, we can spell out more details of the spin sum as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         \pi_{ab, a'b'}(\pbf) &amp;= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}') \\
-                &amp;\phantom{=} \times \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
-                &amp;\phantom{=} \times \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
+                &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
+                &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
 \end{align*}</div><p>This looks horribly complicated, but it has been evaluated by the author in <a class="reference internal" href="../bib.html#wei69" id="id29"><span>[Wei69]</span></a>. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that <span class="math notranslate nohighlight">\(\pi_{ab,a'b'}(\pbf)\)</span> is a polynomial <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(p\)</span> on the mass shell as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         \pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{|\pbf|^2 + m^2}, \pbf \right)
-\end{equation*}</div><p>The second is that this polynomial is even or odd depending on the parity of <span class="math notranslate nohighlight">\(2A + 2B'\)</span> as follows</p>
+        \label{eq_general_field_spin_sum_is_polynomial}
+\end{equation}</div><p>The second is that this polynomial is even or odd depending on the parity of <span class="math notranslate nohighlight">\(2A + 2B'\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        P_{ab,a'b'}(-p) = (-1)^{2A+2B'} P_{ab,a'b'}(p)
+        \label{eq_general_field_spin_sum_polynomial_parity}
+\end{equation}</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Evaluation of the spin sum</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We will evaluate <span class="math notranslate nohighlight">\(\pi_{ab, a'b'}(\pbf)\)</span> in the simplest case where <span class="math notranslate nohighlight">\(\pbf\)</span> is along the <span class="math notranslate nohighlight">\(z\)</span>-axis, so that <span class="math notranslate nohighlight">\(\hat{\pbf} \cdot \Jbf\)</span> is diagonal by <span class="math notranslate nohighlight">\(\eqref{eq_j3_matrix}\)</span>. In this case we have the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \exp((-a+b-a'+b') \theta)
+        \label{eq_general_field_spin_sum_along_z_axis}
+\end{equation}</div><p class="sd-card-text">Since the Clebsch-Gordan coefficients vanish unless</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
-        P_{ab,a'b'}(-p) = (-1)^{2A+2B'} P_{ab,a'b'}(p)
-\end{equation*}</div><p class="rubric">Footnotes</p>
+        a + b = a' + b' = \sigma
+\end{equation*}</div><p class="sd-card-text">we can eliminate <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(a'\)</span> from the exponential in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_along_z_axis}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        -a+b-a'+b' = -a+(\sigma-a)-(\sigma-b')+b' = 2b' - 2a
+\end{equation*}</div><p class="sd-card-text">Moreover, recall from the definition of <span class="math notranslate nohighlight">\(\theta\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_defn_theta}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \exp(\pm\theta) = \cosh\theta \pm \sinh\theta = \left( p_0 \pm p_3 \right) / m
+\end{equation*}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(p_0 = \sqrt{\pbf^2 + m^2}\)</span>. Hence we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_along_z_axis}\)</span> in a polynomial in <span class="math notranslate nohighlight">\(p\)</span> in two cases as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \times \!
+                \begin{cases}
+                        \left( (p_0 + p_3) / m \right)^{2b'-2a} &amp; \text{if } a \leq b' \\
+                        \left( (p_0 - p_3) / m \right)^{2a-2b'} &amp; \text{if } a \geq b'
+                \end{cases}
+\end{equation*}</div><p class="sd-card-text">Finally, to verify <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_polynomial_parity}\)</span>, it suffices to note that <span class="math notranslate nohighlight">\(2a-2b'\)</span> differs from <span class="math notranslate nohighlight">\(2A-2B'\)</span> by an even integer.</p>
+</div>
+</details><p>Assuming <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_is_polynomial}\)</span>, we note that any <span class="math notranslate nohighlight">\(P_{ab, a'b'}\)</span> can be written in such a way that it’s (at most) linear in the first argument <span class="math notranslate nohighlight">\(\sqrt{|\pbf|^2 + m^2}\)</span>. Changing the content of <span class="math notranslate nohighlight">\(P_{ab, a'b'}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_is_polynomial}\)</span>, we may then rewrite it as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \pi_{ab, a'b'}(\pbf) = P_{ab, a'b'}(\pbf) + 2 \sqrt{|\pbf|^2 + m^2} Q_{ab, a'b'}(\pbf)
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(P, Q\)</span> are polynomials in <span class="math notranslate nohighlight">\(\pbf\)</span> that satisfy the following parity conditions</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        P_{ab, a'b'}(-\pbf) &amp;= (-1)^{2A+2B'} P_{ab, a'b'}(\pbf) \\
+        Q_{ab, a'b'}(-\pbf) &amp;= -(-1)^{2A+2B'} Q_{ab, a'b'}(\pbf)
+\end{align*}</div><p>Returning to the causality condition <span class="math notranslate nohighlight">\(\eqref{eq_general_field_psi_commutator}\)</span>, let’s consider space separated <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Up to a Lorentz transformation, we may assume that <span class="math notranslate nohighlight">\(x-y = (0, \xbf-\ybf)\)</span>. Under this assumption, we can calculate as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \left[ \psi_{ab}(x), \psi^{\prime~\dagger}_{a'b'}(y) \right]_{\pm} &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~P_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right) \\
+                &amp;\phantom{=} + (2\pi)^{-3} \int d^3p~Q_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right) \\
+                &amp;= \kappa\kappa^{\prime~\ast} P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} P_{ab, a'b'}(\ifrak \nabla) \Delta_+(\ybf - \xbf) \\
+                &amp;\phantom{=} + \kappa\kappa^{\prime~\ast} Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} Q_{ab, a'b'}(\ifrak \nabla) \delta^3(\ybf - \xbf) \\
+                &amp;= \left( \kappa\kappa^{\prime~\ast} \pm (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \\
+                &amp;\phantom{=} + \left( \kappa\kappa^{\prime~\ast} \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf)
+\end{align*}</div><p>where the derivative <span class="math notranslate nohighlight">\(\nabla\)</span> is always taken with respect to <span class="math notranslate nohighlight">\(x\)</span>. Here we’ve also used the fact that <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> (for space-like <span class="math notranslate nohighlight">\(x\)</span>) and the Dirac delta <span class="math notranslate nohighlight">\(\delta^3(x)\)</span> are even functions. We see that for the (anti-)commutator to vanish for <span class="math notranslate nohighlight">\(\xbf \neq \ybf\)</span>, i.e., when <span class="math notranslate nohighlight">\(\delta^3(\xbf - \ybf) = 0\)</span>, we must have</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \kappa\kappa^{\prime~\ast} = \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast}
+        \label{eq_general_field_causality_kappa_lambda_condition}
+\end{equation}</div><p>Now consider an important special case where <span class="math notranslate nohighlight">\(\psi = \psi'\)</span>. It implies in particular that <span class="math notranslate nohighlight">\((A, B) = (A', B')\)</span> and <span class="math notranslate nohighlight">\((\kappa, \lambda) = (\kappa', \lambda')\)</span>. In this case we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_general_field_causality_kappa_lambda_condition}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        |\kappa|^2 = \mp (-1)^{2A+2B} |\lambda|^2 = \mp (-1)^{2\jfrak} |\lambda|^2
+        \label{eq_general_field_self_kappa_lambda_relation}
+\end{equation}</div><p>since <span class="math notranslate nohighlight">\(\jfrak\)</span> differs from <span class="math notranslate nohighlight">\(A+B\)</span> by an integer according to <span class="math notranslate nohighlight">\(\eqref{eq_general_field_j_range}\)</span>. Hence in addition to the condition <span class="math notranslate nohighlight">\(|\kappa| = |\lambda|\)</span>, the field (or rather the particle it describes) must be bosonic, i.e., the bottom sign is taken, if <span class="math notranslate nohighlight">\(\jfrak\)</span> is an integer, and fermionic, i.e., the top sign is taken, if <span class="math notranslate nohighlight">\(\jfrak\)</span> is a half-integer. This is consistent with the corresponding conclusions for scalar , vector, and Dirac fields found in previous sections, and is indeed a great clarification of the relationship between spin and statistics, e.g., <a class="reference external" href="https://en.wikipedia.org/wiki/Pauli_exclusion_principle">Pauli’s exclusion principle</a>.</p>
+<p>Back to the general case. We know from <span class="math notranslate nohighlight">\(\eqref{eq_general_field_self_kappa_lambda_relation}\)</span> that <span class="math notranslate nohighlight">\(|\kappa'| = |\lambda'|\)</span> and <span class="math notranslate nohighlight">\((-1)^{2A+2B} = (-1)^{2\jfrak} = \mp\)</span>, which is the same sign as in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_causality_kappa_lambda_condition}\)</span>. Hence we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_general_field_causality_kappa_lambda_condition}\)</span> by dividing both sides by <span class="math notranslate nohighlight">\(|\kappa'|^2 = |\lambda'|^2\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \frac{\kappa}{\kappa'} = (-1)^{2B+2B'} \frac{\lambda}{\lambda'} \
+        \implies (-1)^{2B} \frac{\kappa}{\lambda} = (-1)^{2B'} \frac{\kappa'}{\lambda'}
+\end{equation*}</div><p>Hence we conclude the following relationship between the coefficients <span class="math notranslate nohighlight">\(\kappa\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \lambda = (-1)^{2B} c \kappa
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(c\)</span> is a constant that depends only on the field, or rather, the particle it describes, and not on the specific representation that gives rise to the field. Moreover we note that <span class="math notranslate nohighlight">\(c\)</span> is a phase since <span class="math notranslate nohighlight">\(|\kappa| = |\lambda|\)</span>. Hence by adjusting the phase of the creation operator (and correspondingly the annihilation operator), we can arrange so that <span class="math notranslate nohighlight">\(c = 1\)</span>.</p>
+<p>This marks the end of the discussion about the causality condition on general <span class="math notranslate nohighlight">\((A, B)\)</span>. As a result, we’ve obtained the following grand formula for a general (causal) field.</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~ \left( \exp(\ifrak p \cdot x) u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \
+                (-1)^{2B} \exp(-\ifrak p \cdot x) v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+\end{equation*}</div><p>where the spinors <span class="math notranslate nohighlight">\(u_{ab}\)</span> and <span class="math notranslate nohighlight">\(v_{ab}\)</span> are given by <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>, respectively.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Same field given by different representations are physically indifferent</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">As we’ve seen in <a class="reference internal" href="#sec-scalar-field"><span class="std std-ref">Scalar fields</span></a> and <a class="reference internal" href="#sec-spin-zero-vector-field"><span class="std std-ref">Spin-0 vector fields</span></a>, a spin-<span class="math notranslate nohighlight">\(0\)</span> field can arise either as a scalar field, i.e., a <span class="math notranslate nohighlight">\((0, 0)\)</span> field, or from a vector field, i.e., a <span class="math notranslate nohighlight">\(\left( \tfrac{1}{2}, \tfrac{1}{2} \right)\)</span> field. Moreover, the later turns out to be the (first) derivatives of the former, and hence doesn’t produce anything really new. We’ll see here that this is a rather general phenomenon.</p>
+<p class="sd-card-text">Indeed, according to <span class="math notranslate nohighlight">\(\eqref{eq_general_field_j_range}\)</span>, a spin-<span class="math notranslate nohighlight">\(0\)</span> field can only arise from an <span class="math notranslate nohighlight">\((A, A)\)</span> field. Given a scalar field <span class="math notranslate nohighlight">\(\psi(x)\)</span>, one can construct a spin-<span class="math notranslate nohighlight">\(0\)</span> <span class="math notranslate nohighlight">\((A, A)\)</span> field as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2A}} \right\} \psi(x)
+        \label{eq_general_field_spin_zero_aa_field}
+\end{equation}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(\left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2A}} \right\}\)</span> is a traceless (symmetric) product of the partial derivatives. Here the trace of a symmetric tensor <span class="math notranslate nohighlight">\(S_{\mu_1 \mu_2 \cdots \mu_n}\)</span> is defined to be</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \op{tr}(S_{\mu_1 \mu_2 \cdots \mu_n}) \coloneqq \sum_{\mu_1, \mu_2 = 0}^3 \delta_{\mu_1 \mu_2} S_{\mu_1 \mu_2 \cdots \mu_n}
+        \label{eq_trace_of_symmetric_tensor}
+\end{equation}</div><p class="sd-card-text">We’ll not verify that <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_zero_aa_field}\)</span> indeed transforms as a <span class="math notranslate nohighlight">\((A, A)\)</span> field, but we’ll verify that it at least has the expected dimension <span class="math notranslate nohighlight">\((2A+1)^2\)</span>. To this end, we first note that a rank <span class="math notranslate nohighlight">\(2A\)</span> symmetric tensor (in <span class="math notranslate nohighlight">\(4\)</span> dimensions) has dimension</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \frac{(2A+1)(2A+2)(2A+3)}{3!}
+\end{equation*}</div><p class="sd-card-text">which combinatorially is just the number of ways of having four nonnegative integers sum up to <span class="math notranslate nohighlight">\(2A\)</span>. Next we must subtract from it the number of traces one can take on these tensors. According to <span class="math notranslate nohighlight">\(\eqref{eq_trace_of_symmetric_tensor}\)</span>, each trace fixes two indexes, while the rest is still symmetric. Hence the number of traces is the same combinatorial number with <span class="math notranslate nohighlight">\(2A\)</span> replaced by <span class="math notranslate nohighlight">\(2A-2\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \frac{(2A-1)(2A)(2A+1)}{3!}
+\end{equation*}</div><p class="sd-card-text">Now the difference of the two number above, which is the dimension of traceless symmetric tensors, is exactly <span class="math notranslate nohighlight">\((2A+1)^2\)</span> as expected.</p>
+<p class="sd-card-text">In general a spin-<span class="math notranslate nohighlight">\(\jfrak\)</span> field can arise from an <span class="math notranslate nohighlight">\((A, B)\)</span> field as long as the triangle inequality</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        |A-B| \leq \jfrak \leq A+B
+        \label{eq_spin_range_abj_triangle_inequality}
+\end{equation}</div><p class="sd-card-text">is satisfied. We claim that the <span class="math notranslate nohighlight">\((A, B)\)</span> representation is the same as the tensor product of the <span class="math notranslate nohighlight">\((\jfrak, 0)\)</span> representation and the <span class="math notranslate nohighlight">\((B, B)\)</span> representation. Indeed, following <a class="reference internal" href="#dropdown-clebsch-gordan-coefficients"><span class="std std-ref">Clebsch-Gordan coefficients</span></a>, we see that the later is a direct sum of <span class="math notranslate nohighlight">\((A, B)\)</span> representations as long as</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        |B-\jfrak| \leq A \leq B+\jfrak
+\end{equation}</div><p class="sd-card-text">but this triangle inequality is exactly the same as <span class="math notranslate nohighlight">\(\eqref{eq_spin_range_abj_triangle_inequality}\)</span>. Hence the claim is proved.</p>
+<p class="sd-card-text">By the same argument as in the spin-<span class="math notranslate nohighlight">\(0\)</span> case, we conclude that any spin-<span class="math notranslate nohighlight">\(\jfrak\)</span> field can be written as</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2B}} \right\} \psi_{\sigma}(x)
+\end{equation*}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(\psi_{\sigma}(x)\)</span> is the <span class="math notranslate nohighlight">\((\jfrak, 0)\)</span> field. Swapping the role of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, one can also write it as rank <span class="math notranslate nohighlight">\(2A\)</span> traceless derivatives of the <span class="math notranslate nohighlight">\((0, \jfrak)\)</span> field.</p>
+</div>
+</details></section>
+<section id="id30">
+<h4>The CPT symmetries<a class="headerlink" href="#id30" title="Link to this heading">#</a></h4>
+<p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id30"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id31"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">2</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id31"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">3</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
@@ -3881,7 +4002,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 <aside class="footnote brackets" id="two-ways-of-representation" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">6</a><span class="fn-bracket">]</span></span>
@@ -3889,27 +4010,27 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">7</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 <aside class="footnote brackets" id="dirac-gamma-is-vector" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">8</a><span class="fn-bracket">]</span></span>
-<p>Our calculation is consistent with formula (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
+<p>Our calculation is consistent with formula (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
 </aside>
 <aside class="footnote brackets" id="spatial-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">9</a><span class="fn-bracket">]</span></span>
-<p>Our calculation differs from (5.5.10) and (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
+<p>Our calculation differs from (5.5.10) and (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
 </aside>
 <aside class="footnote brackets" id="charge-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">10</a><span class="fn-bracket">]</span></span>
-<p>Our calculation, once again, differs from the calculation (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
+<p>Our calculation, once again, differs from the calculation (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficients-orthonormality" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">11</a><span class="fn-bracket">]</span></span>
-<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id40"><span>[Wei15]</span></a> page 121 – 122.</p>
+<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id41"><span>[Wei15]</span></a> page 121 – 122.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficient-zero-total-angular-momentum" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">12</a><span class="fn-bracket">]</span></span>
-<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id41"><span>[Wei15]</span></a> page 124 – 125.</p>
+<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id42"><span>[Wei15]</span></a> page 124 – 125.</p>
 </aside>
 </aside>
 </section>
@@ -4024,6 +4145,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-fields">General fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general-representation-theory-of-the-lorentz-group">General representation theory of the Lorentz group</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-general-fields">Construction of general fields</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">The CPT symmetries</a></li>
 </ul>
 </li>
 </ul>

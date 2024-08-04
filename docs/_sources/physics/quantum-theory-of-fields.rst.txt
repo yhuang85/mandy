@@ -4138,6 +4138,8 @@ The particles of species :math:`n` and :math:`\bar{n}` are called *antiparticles
 	where :math:`\square \coloneqq \eta^{\mu \nu} \p_{\mu} \p_{\nu}` is the `d'Alembert operator <https://en.wikipedia.org/wiki/D%27Alembert_operator>`_ and :math:`m` is the (definite) mass of the field. This equation is traditionally one of the starting points of quantum field theory, from which creation/annihilation operators can be derived through the so-called canonical quantization formalism. However, we've derived the equation here from the other way around, namely, the creation/annihilation operators, which in turn come from the first principles of quantum mechanics and Lorentz symmetry.
 
 
+.. _sec_scalar_field:
+
 Scalar fields
 ^^^^^^^^^^^^^
 
@@ -4314,7 +4316,7 @@ Using :math:`\eqref{eq_scalar_field_psi_plus}` and :math:`\eqref{eq_scalar_field
 
 with the possibility of :math:`a^{c \dagger}(\pbf) = a^{\dagger}(\pbf)` in the case where the created particle is its own antiparticle.
 
-For later use (e.g., the evaluation of Feynman diagrams), we note the following identity
+For later use (e.g., the evaluation of Feynman diagrams), we note the following identity which holds for any, and not just space-like, :math:`x` and :math:`y`.
 
 .. math::
 	:nowrap:
@@ -4324,7 +4326,7 @@ For later use (e.g., the evaluation of Feynman diagrams), we note the following 
 		\label{eq_scalar_field_commutator}
 	\end{equation}
 
-where :math:`\Delta(x)` is defined, for any :math:`x`, as follows
+where :math:`\Delta(x)` is defined as follows
 
 .. math::
 	:nowrap:
@@ -4491,6 +4493,8 @@ The reason for squaring the angular momentum :math:`3`-vector as above is becaus
 	\end{equation*}
 
 by :math:`\eqref{eq_angular_momentum_squared_eigenvalue}`. It follows that in order for :math:`\eqref{eq_vector_field_u0_intertwines_j_sq}` -- :math:`\eqref{eq_vector_field_vi_intertwines_j_sq}` to have nonzero solutions, one must have either :math:`\jfrak = 0`, in which case only the time-components :math:`u_0(0)` and :math:`v_0(0)` may be nonzero, where we've also suppressed :math:`\sigma` because spin vanishes, or :math:`\jfrak = 1`, in which case only the space-components :math:`u_i(0, \sigma)` and :math:`v_i(0, \sigma)` may be nonzero. These two cases are discussed in more details as follows.
+
+.. _sec_spin_zero_vector_field:
 
 Spin-:math:`0` vector fields
 ++++++++++++++++++++++++++++
@@ -5967,9 +5971,10 @@ To get the :math:`u` and :math:`v` fields at finite momentum, we need to invoke 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\cosh\theta = \sqrt{\pbf^2 + m^2} / m, \quad \sinh\theta = |\pbf| / m
-	\end{equation*}
+		\label{eq_general_field_defn_theta}
+	\end{equation}
 
 to parametrize the boost as follows
 
@@ -6021,7 +6026,7 @@ For an :math:`(A, B)` representation, we can further write :math:`\ifrak \bm{\Ks
 	:nowrap:
 
 	\begin{equation}
-		D(L(p))_{a'b', ab} = \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b}
+		D(L(p))_{a'b', ab} = \exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b}
 		\label{eq_general_field_d_transformation_in_ab_repr}
 	\end{equation}
 
@@ -6031,11 +6036,11 @@ since the representation splits into a direct sum of :math:`\bm{\Ascr}` and :mat
 	:nowrap:
 
 	\begin{equation}
-		u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{a'a} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
+		u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{a'a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
 		\label{eq_general_field_u_at_finite_momentum}
 	\end{equation}
 
-where we assume implicitly that the spin :math:`\jfrak` is within the range :math:`\eqref{eq_general_field_j_range}`, and :math:`a,b,a',b'` are the corresponding spin :math:`z`-components.
+where we assume implicitly that the spin :math:`\jfrak` is within the range :math:`\eqref{eq_general_field_j_range}`, and :math:`\sigma` is the corresponding spin :math:`z`-component.
 
 Parallel to :math:`\eqref{eq_general_field_v_at_zero_momentum}`, we can express the :math:`v`-field at finite momentum in terms of the :math:`u`-field as follows
 
@@ -6101,9 +6106,10 @@ We will now turn to the arguably most interesting causality condition :math:`\eq
 .. math::
 	:nowrap:
 
-	\begin{equation*}
-		\left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(x) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right)
-	\end{equation*}
+	\begin{equation}
+		\left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(y) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right)
+		\label{eq_general_field_psi_commutator}
+	\end{equation}
 
 where :math:`\pi(\pbf)` is the (rescaled) spin sum defined by
 
@@ -6114,7 +6120,7 @@ where :math:`\pi(\pbf)` is the (rescaled) spin sum defined by
 		(2p_0)^{-1} \pi_{ab,a'b'}(\pbf) \coloneqq \sum_{\sigma} u_{ab}(\pbf, \sigma) u_{a'b'}^{\prime~\ast}(\pbf, \sigma) = \sum_{\sigma} v_{ab}(\pbf, \sigma) v_{a'b'}^{\prime~\ast}(\pbf, \sigma)
 	\end{equation*}
 
-Here the second equality can be mostly easily seen using :math:`\eqref{eq_general_field_v_at_finite_momentum}`. Note also that we are considering the most general scenario where :math:`a,b,a',b'` are the spin :math:`z`-components of spins :math:`A,B,A',B'`, respectively.
+Here the second equality can be mostly easily seen using :math:`\eqref{eq_general_field_v_at_finite_momentum}`. Note also that we are considering the general scenario where :math:`\psi(x)` is an :math:`(A, B)` field, while :math:`\psi'(x)` is a possibly different :math:`(A', B')` field.
 
 Using :math:`\eqref{eq_general_field_u_at_finite_momentum}`, we can spell out more details of the spin sum as follows
 
@@ -6123,8 +6129,8 @@ Using :math:`\eqref{eq_general_field_u_at_finite_momentum}`, we can spell out mo
 
 	\begin{align*}
 		\pi_{ab, a'b'}(\pbf) &= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}') \\
-			&\phantom{=} \times \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
-			&\phantom{=} \times \left(\exp\left(-\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\ifrak \theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
+			&\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
+			&\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
 	\end{align*}
 
 This looks horribly complicated, but it has been evaluated by the author in [Wei69]_. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that :math:`\pi_{ab,a'b'}(\pbf)` is a polynomial :math:`P` in :math:`p` on the mass shell as follows
@@ -6132,18 +6138,246 @@ This looks horribly complicated, but it has been evaluated by the author in [Wei
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{|\pbf|^2 + m^2}, \pbf \right)
-	\end{equation*}
+		\label{eq_general_field_spin_sum_is_polynomial}
+	\end{equation}
 
 The second is that this polynomial is even or odd depending on the parity of :math:`2A + 2B'` as follows
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		P_{ab,a'b'}(-p) = (-1)^{2A+2B'} P_{ab,a'b'}(p)
+		\label{eq_general_field_spin_sum_polynomial_parity}
+	\end{equation}
+
+.. dropdown:: Evaluation of the spin sum
+	:icon: unlock
+	:animate: fade-in-slide-down
+
+	We will evaluate :math:`\pi_{ab, a'b'}(\pbf)` in the simplest case where :math:`\pbf` is along the :math:`z`-axis, so that :math:`\hat{\pbf} \cdot \Jbf` is diagonal by :math:`\eqref{eq_j3_matrix}`. In this case we have the following
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \exp((-a+b-a'+b') \theta)
+			\label{eq_general_field_spin_sum_along_z_axis}
+		\end{equation}
+
+	Since the Clebsch-Gordan coefficients vanish unless
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			a + b = a' + b' = \sigma
+		\end{equation*}
+
+	we can eliminate :math:`b` and :math:`a'` from the exponential in :math:`\eqref{eq_general_field_spin_sum_along_z_axis}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			-a+b-a'+b' = -a+(\sigma-a)-(\sigma-b')+b' = 2b' - 2a
+		\end{equation*}
+
+	Moreover, recall from the definition of :math:`\theta` in :math:`\eqref{eq_general_field_defn_theta}` that
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\exp(\pm\theta) = \cosh\theta \pm \sinh\theta = \left( p_0 \pm p_3 \right) / m
+		\end{equation*}
+
+	where :math:`p_0 = \sqrt{\pbf^2 + m^2}`. Hence we can rewrite :math:`\eqref{eq_general_field_spin_sum_along_z_axis}` in a polynomial in :math:`p` in two cases as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \times \!
+				\begin{cases}
+					\left( (p_0 + p_3) / m \right)^{2b'-2a} & \text{if } a \leq b' \\
+					\left( (p_0 - p_3) / m \right)^{2a-2b'} & \text{if } a \geq b'
+				\end{cases}
+		\end{equation*}
+
+	Finally, to verify :math:`\eqref{eq_general_field_spin_sum_polynomial_parity}`, it suffices to note that :math:`2a-2b'` differs from :math:`2A-2B'` by an even integer.
+
+Assuming :math:`\eqref{eq_general_field_spin_sum_is_polynomial}`, we note that any :math:`P_{ab, a'b'}` can be written in such a way that it's (at most) linear in the first argument :math:`\sqrt{|\pbf|^2 + m^2}`. Changing the content of :math:`P_{ab, a'b'}` in :math:`\eqref{eq_general_field_spin_sum_is_polynomial}`, we may then rewrite it as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\pi_{ab, a'b'}(\pbf) = P_{ab, a'b'}(\pbf) + 2 \sqrt{|\pbf|^2 + m^2} Q_{ab, a'b'}(\pbf)
 	\end{equation*}
+
+where :math:`P, Q` are polynomials in :math:`\pbf` that satisfy the following parity conditions
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		P_{ab, a'b'}(-\pbf) &= (-1)^{2A+2B'} P_{ab, a'b'}(\pbf) \\
+		Q_{ab, a'b'}(-\pbf) &= -(-1)^{2A+2B'} Q_{ab, a'b'}(\pbf)
+	\end{align*}
+
+Returning to the causality condition :math:`\eqref{eq_general_field_psi_commutator}`, let's consider space separated :math:`x` and :math:`y`. Up to a Lorentz transformation, we may assume that :math:`x-y = (0, \xbf-\ybf)`. Under this assumption, we can calculate as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ \psi_{ab}(x), \psi^{\prime~\dagger}_{a'b'}(y) \right]_{\pm} &= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~P_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right) \\
+			&\phantom{=} + (2\pi)^{-3} \int d^3p~Q_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right) \\
+			&= \kappa\kappa^{\prime~\ast} P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} P_{ab, a'b'}(\ifrak \nabla) \Delta_+(\ybf - \xbf) \\
+			&\phantom{=} + \kappa\kappa^{\prime~\ast} Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} Q_{ab, a'b'}(\ifrak \nabla) \delta^3(\ybf - \xbf) \\
+			&= \left( \kappa\kappa^{\prime~\ast} \pm (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \\
+			&\phantom{=} + \left( \kappa\kappa^{\prime~\ast} \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf)
+	\end{align*}
+
+where the derivative :math:`\nabla` is always taken with respect to :math:`x`. Here we've also used the fact that :math:`\Delta_+(x)` (for space-like :math:`x`) and the Dirac delta :math:`\delta^3(x)` are even functions. We see that for the (anti-)commutator to vanish for :math:`\xbf \neq \ybf`, i.e., when :math:`\delta^3(\xbf - \ybf) = 0`, we must have
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\kappa\kappa^{\prime~\ast} = \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast}
+		\label{eq_general_field_causality_kappa_lambda_condition}
+	\end{equation}
+
+Now consider an important special case where :math:`\psi = \psi'`. It implies in particular that :math:`(A, B) = (A', B')` and :math:`(\kappa, \lambda) = (\kappa', \lambda')`. In this case we can rewrite :math:`\eqref{eq_general_field_causality_kappa_lambda_condition}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		|\kappa|^2 = \mp (-1)^{2A+2B} |\lambda|^2 = \mp (-1)^{2\jfrak} |\lambda|^2
+		\label{eq_general_field_self_kappa_lambda_relation}
+	\end{equation}
+
+since :math:`\jfrak` differs from :math:`A+B` by an integer according to :math:`\eqref{eq_general_field_j_range}`. Hence in addition to the condition :math:`|\kappa| = |\lambda|`, the field (or rather the particle it describes) must be bosonic, i.e., the bottom sign is taken, if :math:`\jfrak` is an integer, and fermionic, i.e., the top sign is taken, if :math:`\jfrak` is a half-integer. This is consistent with the corresponding conclusions for scalar , vector, and Dirac fields found in previous sections, and is indeed a great clarification of the relationship between spin and statistics, e.g., `Pauli's exclusion principle <https://en.wikipedia.org/wiki/Pauli_exclusion_principle>`__.
+
+Back to the general case. We know from :math:`\eqref{eq_general_field_self_kappa_lambda_relation}` that :math:`|\kappa'| = |\lambda'|` and :math:`(-1)^{2A+2B} = (-1)^{2\jfrak} = \mp`, which is the same sign as in :math:`\eqref{eq_general_field_causality_kappa_lambda_condition}`. Hence we can rewrite :math:`\eqref{eq_general_field_causality_kappa_lambda_condition}` by dividing both sides by :math:`|\kappa'|^2 = |\lambda'|^2` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\frac{\kappa}{\kappa'} = (-1)^{2B+2B'} \frac{\lambda}{\lambda'} \
+		\implies (-1)^{2B} \frac{\kappa}{\lambda} = (-1)^{2B'} \frac{\kappa'}{\lambda'}
+	\end{equation*}
+
+Hence we conclude the following relationship between the coefficients :math:`\kappa` and :math:`\lambda`
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\lambda = (-1)^{2B} c \kappa
+	\end{equation*}
+
+where :math:`c` is a constant that depends only on the field, or rather, the particle it describes, and not on the specific representation that gives rise to the field. Moreover we note that :math:`c` is a phase since :math:`|\kappa| = |\lambda|`. Hence by adjusting the phase of the creation operator (and correspondingly the annihilation operator), we can arrange so that :math:`c = 1`.
+
+This marks the end of the discussion about the causality condition on general :math:`(A, B)`. As a result, we've obtained the following grand formula for a general (causal) field.
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~ \left( \exp(\ifrak p \cdot x) u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \
+			(-1)^{2B} \exp(-\ifrak p \cdot x) v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+	\end{equation*}
+
+where the spinors :math:`u_{ab}` and :math:`v_{ab}` are given by :math:`\eqref{eq_general_field_u_at_finite_momentum}` and :math:`\eqref{eq_general_field_v_at_finite_momentum}`, respectively.
+
+.. dropdown:: Same field given by different representations are physically indifferent
+	:icon: unlock
+	:animate: fade-in-slide-down
+
+	As we've seen in :ref:`sec_scalar_field` and :ref:`sec_spin_zero_vector_field`, a spin-:math:`0` field can arise either as a scalar field, i.e., a :math:`(0, 0)` field, or from a vector field, i.e., a :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)` field. Moreover, the later turns out to be the (first) derivatives of the former, and hence doesn't produce anything really new. We'll see here that this is a rather general phenomenon.
+
+	Indeed, according to :math:`\eqref{eq_general_field_j_range}`, a spin-:math:`0` field can only arise from an :math:`(A, A)` field. Given a scalar field :math:`\psi(x)`, one can construct a spin-:math:`0` :math:`(A, A)` field as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2A}} \right\} \psi(x)
+			\label{eq_general_field_spin_zero_aa_field}
+		\end{equation}
+
+	where :math:`\left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2A}} \right\}` is a traceless (symmetric) product of the partial derivatives. Here the trace of a symmetric tensor :math:`S_{\mu_1 \mu_2 \cdots \mu_n}` is defined to be
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\op{tr}(S_{\mu_1 \mu_2 \cdots \mu_n}) \coloneqq \sum_{\mu_1, \mu_2 = 0}^3 \delta_{\mu_1 \mu_2} S_{\mu_1 \mu_2 \cdots \mu_n}
+			\label{eq_trace_of_symmetric_tensor}
+		\end{equation}
+
+	We'll not verify that :math:`\eqref{eq_general_field_spin_zero_aa_field}` indeed transforms as a :math:`(A, A)` field, but we'll verify that it at least has the expected dimension :math:`(2A+1)^2`. To this end, we first note that a rank :math:`2A` symmetric tensor (in :math:`4` dimensions) has dimension
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\frac{(2A+1)(2A+2)(2A+3)}{3!}
+		\end{equation*}
+
+	which combinatorially is just the number of ways of having four nonnegative integers sum up to :math:`2A`. Next we must subtract from it the number of traces one can take on these tensors. According to :math:`\eqref{eq_trace_of_symmetric_tensor}`, each trace fixes two indexes, while the rest is still symmetric. Hence the number of traces is the same combinatorial number with :math:`2A` replaced by :math:`2A-2` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\frac{(2A-1)(2A)(2A+1)}{3!}
+		\end{equation*}
+
+	Now the difference of the two number above, which is the dimension of traceless symmetric tensors, is exactly :math:`(2A+1)^2` as expected.
+
+	In general a spin-:math:`\jfrak` field can arise from an :math:`(A, B)` field as long as the triangle inequality
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			|A-B| \leq \jfrak \leq A+B
+			\label{eq_spin_range_abj_triangle_inequality}
+		\end{equation}
+
+	is satisfied. We claim that the :math:`(A, B)` representation is the same as the tensor product of the :math:`(\jfrak, 0)` representation and the :math:`(B, B)` representation. Indeed, following :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`, we see that the later is a direct sum of :math:`(A, B)` representations as long as
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			|B-\jfrak| \leq A \leq B+\jfrak
+		\end{equation}
+
+	but this triangle inequality is exactly the same as :math:`\eqref{eq_spin_range_abj_triangle_inequality}`. Hence the claim is proved.
+
+	By the same argument as in the spin-:math:`0` case, we conclude that any spin-:math:`\jfrak` field can be written as
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2B}} \right\} \psi_{\sigma}(x)
+		\end{equation*}
+
+	where :math:`\psi_{\sigma}(x)` is the :math:`(\jfrak, 0)` field. Swapping the role of :math:`A` and :math:`B`, one can also write it as rank :math:`2A` traceless derivatives of the :math:`(0, \jfrak)` field.
+
+
+The CPT symmetries
+++++++++++++++++++
 
 
 .. rubric:: Footnotes
