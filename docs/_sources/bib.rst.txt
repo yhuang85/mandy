@@ -34,6 +34,8 @@ Bibliography
 
 .. rubric:: Physics
 
+.. [Wei69] S\. Weinberg\. *Feynman Rules for Any Spin. III*. `doi <https://doi.org/10.1103/PhysRev.181.1893>`__
+
 .. [Wei95] S\. Weinberg\. *The Quantum Theory of Fields Volume 1: Foundations*. `doi <https://doi.org/10.1017/CBO9781139644167>`__
 
 .. [Wei96] S\. Weinberg\. *The Quantum Theory of Fields Volume 2: Modern Applications*. `doi <https://doi.org/10.1017/CBO9781139644174>`__
@@ -41,5 +43,3 @@ Bibliography
 .. [Wei00] S\. Weinberg\. *The Quantum Theory of Fields Volume 3: Supersymmetry*. `doi <https://doi.org/10.1017/CBO9781139644198>`__
 
 .. [Wei15] S\. Weinberg\. *Lectures on Quantum Mechanics*. `doi <https://doi.org/10.1017/CBO9781316276105>`__
-
-.. [Wei69] S\. Weinberg\. *Feynman Rules for Any Spin. III*. `doi <https://doi.org/10.1103/PhysRev.181.1893>`__

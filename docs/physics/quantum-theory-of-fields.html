@@ -2546,10 +2546,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 \end{align*}</div><p>where we’ve also suppressed the time factor from <span class="math notranslate nohighlight">\(V(t)\)</span> as it won’t really play a role in the diagram. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id43">
+<figure class="align-center" id="id44">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id43" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id44" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2573,10 +2573,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
 <p>To verify that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function, we note a crucial fact that the diagram contains no <em>directed</em> loops, which allows us to start from the bottom, i.e., the total momentum of the in-state particles, and work our way up to the top, i.e., the total momentum of the out-state particles, so that there is exactly one momentum-conservation delta function at each step when a(n intermediate) vertex is added, which guarantees that the incoming total momentum equals the outgoing total momentum.</p>
 <p>As a side remark, we point out that the argument in <a class="reference internal" href="../bib.html#wei95" id="id18"><span>[Wei95]</span></a> (page 186 –187) in terms of a Euler characteristic calculation of the diagram appears to be wrong. A counterexample (to Weinberg’s argument) can be illustrated in the following pseudo Feynman diagram which contains a directed loop</p>
-<figure class="align-center" id="id44">
+<figure class="align-center" id="id45">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id44" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id45" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Evaluating the momentum-conservation delta function of the diagram then gives</p>
@@ -2624,16 +2624,16 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>For this section, we’ll focus on the massive case. Recall the Lorentz transformation laws for the creation and annihilation of massive particles <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_creation_operator}, \eqref{eq_lorentz_transformation_formula_for_annihilation_operator}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &amp;= \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_annihilation_operator_revisited} \\
-        U_0(\Lambda, b) a^{\dagger}(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &amp;= \exp(-\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n) \ast}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_creation_operator_revisited}
+        U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &amp;= e^{\ifrak b \cdot \Lambda p} \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_annihilation_operator_revisited} \\
+        U_0(\Lambda, b) a^{\dagger}(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) &amp;= e^{-\ifrak b \cdot \Lambda p} \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n) \ast}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma', n) \label{eq_lorentz_transformation_formula_for_creation_operator_revisited}
 \end{align}</div><p>where we’ve used the fact that <span class="math notranslate nohighlight">\(D\)</span> is unitary in the sense that <span class="math notranslate nohighlight">\(D^{\dagger} = D^{-1}\)</span> to invert <span class="math notranslate nohighlight">\(W(\Lambda, p)\)</span> (and flip the indexes) for later convenience – mostly because of the use of <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_annihilation_field}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_creation_field}\)</span>.</p>
 <p>Applying <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_annihilation_operator_revisited}\)</span> to <span class="math notranslate nohighlight">\(\eqref{eq_defn_annihilation_field}\)</span>, respectively, we get</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         U_0(\Lambda, b) \psi_{\ell}^+(x) U_0^{-1}(\Lambda, b) &amp;= \sum_{\sigma, n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) U_0(\Lambda, b) a(\pbf, \sigma, n) U_0^{-1}(\Lambda, b) \\
-                &amp;= \sum_{\sigma, \sigma', n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma \sigma'} (W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
-                &amp;= \sum_{\sigma, \sigma', n} \int d^3 (\Lambda p)~u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
-                &amp;= \sum_{\sigma', n} \int d^3 (\Lambda p) \blue{\sum_{\sigma} u_{\ell}(x;~\pbf, \sigma, n) \exp(\ifrak b \cdot (\Lambda p)) \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p))} a(\pbf_{\Lambda}, \sigma', n)
+                &amp;= \sum_{\sigma, \sigma', n} \int d^3 p~u_{\ell}(x;~\pbf, \sigma, n) e^{\ifrak b \cdot \Lambda p} \sqrt{\frac{(\Lambda p)_0}{p_0}} D^{(j_n)}_{\sigma \sigma'} (W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+                &amp;= \sum_{\sigma, \sigma', n} \int d^3 (\Lambda p)~u_{\ell}(x;~\pbf, \sigma, n) e^{\ifrak b \cdot \Lambda p} \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p)) a(\pbf_{\Lambda}, \sigma', n) \\
+                &amp;= \sum_{\sigma', n} \int d^3 (\Lambda p) \blue{\sum_{\sigma} u_{\ell}(x;~\pbf, \sigma, n) e^{\ifrak b \cdot \Lambda p} \sqrt{\frac{p_0}{(\Lambda p)_0}} D^{(j_n)}_{\sigma \sigma'}(W^{-1}(\Lambda, p))} a(\pbf_{\Lambda}, \sigma', n)
 \end{align*}</div><p>where in the last equality we’ve used that the fact <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariant_3_momentum_volume_element}\)</span> that <span class="math notranslate nohighlight">\(d^3 p / p_0\)</span> is Lorentz invariant. Comparing this with the right-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_annihilation_field}\)</span></p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -2643,13 +2643,13 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{align*}</div><p>Equating the blue parts the two calculations, and inverting <span class="math notranslate nohighlight">\(D^{(j_n)}_{\sigma \sigma'} (W^{-1}(\Lambda, p))\)</span> and <span class="math notranslate nohighlight">\(D_{\ell \ell'}(\Lambda^{-1})\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(x;~\pbf, \sigma, n) \
+        \sqrt{\frac{p_0}{(\Lambda p)_0}} e^{\ifrak b \cdot \Lambda p} \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(x;~\pbf, \sigma, n) \
                 = \sum_{\sigma'} u_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D_{\sigma' \sigma}^{(j_n)} (W(\Lambda, p))
         \label{eq_annihilation_u_transformation}
 \end{equation}</div><p>A parallel calculation for the <span class="math notranslate nohighlight">\(v_{\ell}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_conjugate_creation_field}\)</span>, which we’ll omit, gives the following</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \sqrt{\frac{p_0}{(\Lambda p)_0}} \exp(-\ifrak b \cdot (\Lambda p)) \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(x;~\pbf, \sigma, n) \
+        \sqrt{\frac{p_0}{(\Lambda p)_0}} e^{-\ifrak b \cdot \Lambda p} \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(x;~\pbf, \sigma, n) \
                 = \sum_{\sigma'} v_{\ell'}(\Lambda x + b;~\pbf_{\Lambda}, \sigma', n) D^{(j_n) \ast}_{\sigma' \sigma}(W(\Lambda, p))
         \label{eq_creation_v_transformation}
 \end{equation}</div><p>The identities <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation}\)</span> pose the fundamental conditions on <span class="math notranslate nohighlight">\(u_{\ell}\)</span> and <span class="math notranslate nohighlight">\(v_{\ell}\)</span>, respectively, which we’ll utilize to eventually solve for their solutions. Currently both <span class="math notranslate nohighlight">\(u_{\ell}\)</span> and <span class="math notranslate nohighlight">\(v_{\ell}\)</span> depend on <span class="math notranslate nohighlight">\(x, \pbf, \sigma\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, and the goal is to use the Lorentz symmetry to reduce the dependencies. This will be carried out in three steps, corresponding to the three types of Lorentz symmetries: translations, boosts, and rotations, as follows.</p>
@@ -2657,18 +2657,18 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <dt>Translations</dt><dd><p>Taking <span class="math notranslate nohighlight">\(\Lambda = 1\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation}\)</span> gives <span class="math notranslate nohighlight">\(\exp(\ifrak b \cdot p) u_{\ell}(x;~\pbf, \sigma, n) = u_{\ell}(x + b;~\pbf, \sigma, n)\)</span>, which then implies</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        u_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} \exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma, n)
+        u_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma, n)
         \label{eq_redefine_u_after_translation}
 \end{equation}</div><p>and similarly</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        v_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} \exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma, n)
+        v_{\ell}(x;~\pbf, \sigma, n) = (2\pi)^{-3/2} e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma, n)
         \label{eq_redefine_v_after_translation}
 \end{equation}</div><p>where we’ve slightly abused notations by keeping the names of <span class="math notranslate nohighlight">\(u_{\ell}\)</span> and <span class="math notranslate nohighlight">\(v_{\ell}\)</span>, while changing their arguments. Here the seemingly redundant <span class="math notranslate nohighlight">\((2\pi)^{-3/2}\)</span> is inserted so that the fields</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        \psi^+_{\ell}(x) &amp;= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~\exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma, n) a(\pbf, \sigma, n) \label{eq_annihilation_field_simplified_by_translation} \\
-        \psi^-_{\ell}(x) &amp;= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~\exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma, n) a^{\dagger}(\pbf, \sigma, n) \label{eq_creation_field_simplified_by_translation}
+        \psi^+_{\ell}(x) &amp;= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma, n) a(\pbf, \sigma, n) \label{eq_annihilation_field_simplified_by_translation} \\
+        \psi^-_{\ell}(x) &amp;= \sum_{\sigma, n} (2\pi)^{-3/2} \int d^3 p~e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma, n) a^{\dagger}(\pbf, \sigma, n) \label{eq_creation_field_simplified_by_translation}
 \end{align}</div><p>look like the usual Fourier transforms.</p>
 <p>Plugging <span class="math notranslate nohighlight">\(\eqref{eq_redefine_u_after_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_redefine_v_after_translation}\)</span> into <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation}\)</span>, respectively, they can be simplified as follows</p>
 <div class="math notranslate nohighlight">
@@ -2727,8 +2727,8 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>We now turn to the other crucial condition on the Hamiltonian, namely, the causality condition <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>. Given the general formula <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span> of the interaction density, we are forced to require that <span class="math notranslate nohighlight">\([\psi^+_{\ell}(x), \psi^-_{\ell'}(y)] = 0\)</span> whenever <span class="math notranslate nohighlight">\(x - y\)</span> is space-like. However, according to <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_field_simplified_by_translation}\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        [\psi^+_{\ell}(x), \psi^-_{\ell'}(y)]_{\pm} &amp;= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~d^3 p'~\exp(\ifrak (p \cdot x - p' \cdot y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf', \sigma, n) [a(\pbf, \sigma, n), a^{\dagger}(\pbf', \sigma, n)]_{\pm} \\
-                &amp;= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~\exp(\ifrak p \cdot (x - y)) u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf, \sigma, n)
+        [\psi^+_{\ell}(x), \psi^-_{\ell'}(y)]_{\pm} &amp;= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~d^3 p'~e^{\ifrak (p \cdot x - p' \cdot y)} u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf', \sigma, n) [a(\pbf, \sigma, n), a^{\dagger}(\pbf', \sigma, n)]_{\pm} \\
+                &amp;= \sum_{\sigma, n} (2\pi)^{-3} \int d^3 p~e^{\ifrak p \cdot (x - y)} u_{\ell}(\pbf, \sigma, n) v_{\ell'}(\pbf, \sigma, n)
 \end{align*}</div><p>where the sign <span class="math notranslate nohighlight">\(\pm\)</span> is positive if the field is fermionic, and negative otherwise. This quantity is not necessarily vanishing even if <span class="math notranslate nohighlight">\(x - y\)</span> is space-like.</p>
 <p>Therefore in order to construct <span class="math notranslate nohighlight">\(\Hscr\)</span> in the form of <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span> that satisfies <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>, we must not just use <span class="math notranslate nohighlight">\(\psi^{\pm}(x)\)</span> as the building blocks. It turns out that one may consider a linear combination of the two as follows</p>
 <div class="math notranslate nohighlight">
@@ -2791,20 +2791,20 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>Plugging <span class="math notranslate nohighlight">\(\eqref{eq_scalar_u_and_v}\)</span> into <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}, \eqref{eq_creation_field_simplified_by_translation}\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        \psi^+(x) &amp;= \int d^3 p~(2\pi)^{-3/2} \exp(\ifrak p \cdot x) (2p_0)^{-1/2} a(\pbf)
+        \psi^+(x) &amp;= \int d^3 p~(2\pi)^{-3/2} e^{\ifrak p \cdot x} (2p_0)^{-1/2} a(\pbf)
         \label{eq_scalar_field_psi_plus} \\
-        \psi^-(x) &amp;= \int d^3 p~(2\pi)^{-3/2} \exp(-\ifrak p \cdot x) (2p_0)^{-1/2} a^{\dagger}(\pbf) = \psi^{+ \dagger}(x)
+        \psi^-(x) &amp;= \int d^3 p~(2\pi)^{-3/2} e^{-\ifrak p \cdot x} (2p_0)^{-1/2} a^{\dagger}(\pbf) = \psi^{+ \dagger}(x)
         \label{eq_scalar_field_psi_plus_and_minus_are_adjoints}
 \end{align}</div><p>To construct <span class="math notranslate nohighlight">\(\Hscr\)</span>, we first note that <span class="math notranslate nohighlight">\(\eqref{eq_coefficient_g_transformation_law}\)</span> trivially holds in this case because <span class="math notranslate nohighlight">\(D = 1\)</span> and <span class="math notranslate nohighlight">\(g\)</span> is simply a scalar. Next let’s consider the causality condition which demands that <span class="math notranslate nohighlight">\(\left[ \psi^+(x), \psi^-(y) \right] = 0\)</span> whenever <span class="math notranslate nohighlight">\(x - y\)</span> is space-like. Using the canonical commutation relation <span class="math notranslate nohighlight">\(\eqref{eq_creation_annihilation_commutator}\)</span> we calculate</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        \left[ \psi^+(x), \psi^-(y) \right]_{\pm} &amp;= \int d^3 p~d^3 q~(2\pi)^{-3} \exp(\ifrak (p \cdot x - q \cdot y)) (4 p_0 q_0)^{-1/2} \left[ a(\pbf), a^{\dagger}(\qbf) \right]_{\pm}
+        \left[ \psi^+(x), \psi^-(y) \right]_{\pm} &amp;= \int d^3 p~d^3 q~(2\pi)^{-3} e^{\ifrak (p \cdot x - q \cdot y)} (4 p_0 q_0)^{-1/2} \left[ a(\pbf), a^{\dagger}(\qbf) \right]_{\pm}
         \label{eq_scalar_field_commutator_as_Delta} \\
-                &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot (x - y)) \eqqcolon \Delta_+(x - y) \nonumber
+                &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~e^{\ifrak p \cdot (x - y)} \eqqcolon \Delta_+(x - y) \nonumber
 \end{align}</div><p>where</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \Delta_+(x) \coloneqq \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~\exp(\ifrak p \cdot x)
+        \Delta_+(x) \coloneqq \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0}~e^{\ifrak p \cdot x}
         \label{eq_defn_Delta_plus}
 \end{equation}</div><p>We notice that <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> is manifestly (proper orthochronous) Lorentz invariant – the invariance of the volume element comes from <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariant_3_momentum_volume_element}\)</span>. It is, however, not in general invariant under transformations like <span class="math notranslate nohighlight">\(x \to -x\)</span>. But, as we’ll see, such invariance holds assuming <span class="math notranslate nohighlight">\(x\)</span> is space-like.</p>
 <div class="admonition note">
@@ -2840,7 +2840,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>Although the arrangement of phase so that <span class="math notranslate nohighlight">\(\kappa = \lambda\)</span> is a mere convention, it’s a convention that needs to be applied to <em>all</em> scalar fields appearing in <span class="math notranslate nohighlight">\(\Hscr\)</span>. Namely, one cannot have both <span class="math notranslate nohighlight">\(\psi(x)\)</span> as in <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_fixed_phase}\)</span> and another</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
-        \psi'(x) = \exp(\ifrak \theta) \psi^+(x) + \exp(-\ifrak \theta) \psi^{+ \dagger}(x)
+        \psi'(x) = e^{\ifrak \theta} \psi^+(x) + e^{-\ifrak \theta} \psi^{+ \dagger}(x)
 \end{equation*}</div><p>for some <span class="math notranslate nohighlight">\(\theta\)</span>, because <span class="math notranslate nohighlight">\(\psi(x)\)</span> won’t commute with <span class="math notranslate nohighlight">\(\psi'(y)\)</span> even if <span class="math notranslate nohighlight">\(x - y\)</span> is space-like.</p>
 </div>
 <p>Now if the particle created and annihilated by <span class="math notranslate nohighlight">\(\psi(x)\)</span> carries a (non-vanishing) conserved quantum number <span class="math notranslate nohighlight">\(Q\)</span>, then by the discussions on the charge conservation from the previous section, a density <span class="math notranslate nohighlight">\(\Hscr\)</span> made up of <span class="math notranslate nohighlight">\(\psi(x)\)</span> as defined by <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_fixed_phase}\)</span> will not commute with <span class="math notranslate nohighlight">\(Q\)</span>. Instead, one must assume the existence of a field <span class="math notranslate nohighlight">\(\psi^{+ c}(x)\)</span> that creates and annihilates the corresponding antiparticle, in the sense that</p>
@@ -2869,7 +2869,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>Using <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}\)</span>, we can write <span class="math notranslate nohighlight">\(\psi(x)\)</span> in terms of the creation and annihilation operators as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \psi(x) = \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) a(\pbf) + \exp(-\ifrak p \cdot x) a^{c \dagger}(\pbf) \right]
+        \psi(x) = \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ e^{\ifrak p \cdot x} a(\pbf) + e^{-\ifrak p \cdot x} a^{c \dagger}(\pbf) \right]
         \label{eq_scalar_field_psi_by_creation_and_annihilation_operators}
 \end{equation}</div><p>with the possibility of <span class="math notranslate nohighlight">\(a^{c \dagger}(\pbf) = a^{\dagger}(\pbf)\)</span> in the case where the created particle is its own antiparticle.</p>
 <p>For later use (e.g., the evaluation of Feynman diagrams), we note the following identity which holds for any, and not just space-like, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
@@ -2880,7 +2880,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta(x)\)</span> is defined as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \Delta(x) \coloneqq \Delta_+(x) - \Delta_+(-x) = \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0} (\exp(\ifrak p \cdot x) - \exp(-\ifrak p \cdot x))
+        \Delta(x) \coloneqq \Delta_+(x) - \Delta_+(-x) = \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0} \left( e^{\ifrak p \cdot x} - e^{-\ifrak p \cdot x} \right)
         \label{eq_defn_Delta}
 \end{equation}</div><section id="the-cpt-symmetries">
 <h4>The CPT symmetries<a class="headerlink" href="#the-cpt-symmetries" title="Link to this heading">#</a></h4>
@@ -2892,9 +2892,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         U(\Pcal) a^{c \dagger}(\pbf) U^{-1}(\Pcal) &amp;= \eta^c a^{c \dagger}(-\pbf)
 \end{align*}</div><p>where <span class="math notranslate nohighlight">\(\eta\)</span> and <span class="math notranslate nohighlight">\(\eta^c\)</span> are the intrinsic parities of the particle and antiparticle, respectively. In order for the scalar field <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}\)</span> to transform nicely with <span class="math notranslate nohighlight">\(\Pcal\)</span>, one must have <span class="math notranslate nohighlight">\(\eta^{\ast} = \eta^c\)</span> (or <span class="math notranslate nohighlight">\(\eta^{\ast} = \eta\)</span> in the case where the particle is its own antiparticle). As a result, we have</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         U(\Pcal) \psi(x) U^{-1}(\Pcal) = \eta^{\ast} \psi(\Pcal x)
-\end{equation*}</div><p>Next let’s consider the time inversion <span class="math notranslate nohighlight">\(\Tcal\)</span>. We recall the transformation rules as follows</p>
+        \label{eq_scalar_field_spatial_inversion_transformation_law}
+\end{equation}</div><p>Next let’s consider the time inversion <span class="math notranslate nohighlight">\(\Tcal\)</span>. We recall the transformation rules as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         U(\Tcal) a(\pbf) U^{-1}(\Tcal) &amp;= \zeta^{\ast} a(-\pbf) \\
@@ -2919,9 +2920,9 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>The next simplest scenario after scalar field is vector field, where the representation <span class="math notranslate nohighlight">\(D(\Lambda) = \Lambda\)</span>. Once again, let’s consider particles of one species so that we can drop the <span class="math notranslate nohighlight">\(n\)</span> label from, for example, <span class="math notranslate nohighlight">\(a(\pbf, \sigma, n)\)</span>. In this case, we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_field_simplified_by_translation}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        \psi^+_{\mu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int d^3 p~\exp(\ifrak p \cdot x) u_{\mu}(\pbf, \sigma) a(\pbf, \sigma)
+        \psi^+_{\mu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int d^3 p~e^{\ifrak p \cdot x} u_{\mu}(\pbf, \sigma) a(\pbf, \sigma)
         \label{eq_vector_field_psi_plus} \\
-        \psi^-_{\nu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int d^3 p~\exp(-\ifrak p \cdot x) v_{\nu}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma)
+        \psi^-_{\nu}(x) &amp;= \sum_{\sigma} (2\pi)^{-3/2} \int d^3 p~e^{-\ifrak p \cdot x} v_{\nu}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma)
         \label{eq_vector_field_psi_minus}
 \end{align}</div><p>where <span class="math notranslate nohighlight">\(\mu, \nu\)</span> are the <span class="math notranslate nohighlight">\(4\)</span>-indexes. Moreover, the boost transformation formulae <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_boost}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_v_transformation_simplified_by_boost}\)</span> take the following form</p>
 <div class="math notranslate nohighlight">
@@ -2987,8 +2988,8 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{align*}</div><p>where we once again have omitted the details of the calculation of <span class="math notranslate nohighlight">\(v\)</span> because it’s similar to that of <span class="math notranslate nohighlight">\(u\)</span>. Plugging into <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_psi_minus}\)</span>, we see that the field components take the following form</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        \psi^+_{\mu}(x) &amp;= (2\pi)^{-3/2} \int d^3 p~\exp(\ifrak p \cdot x) \ifrak p_{\mu} (2p_0)^{-1/2} a(\pbf) \\
-        \psi^-_{\mu}(x) &amp;= (2\pi)^{-3/2} \int d^3 p~\exp(-\ifrak p \cdot x) (-\ifrak p_{\mu}) (2p_0)^{-1/2} a^{\dagger}(\pbf)
+        \psi^+_{\mu}(x) &amp;= (2\pi)^{-3/2} \int d^3 p~e^{\ifrak p \cdot x} \ifrak p_{\mu} (2p_0)^{-1/2} a(\pbf) \\
+        \psi^-_{\mu}(x) &amp;= (2\pi)^{-3/2} \int d^3 p~e^{-\ifrak p \cdot x} (-\ifrak p_{\mu}) (2p_0)^{-1/2} a^{\dagger}(\pbf)
 \end{align*}</div><p>Comparing these with <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_plus_and_minus_are_adjoints}\)</span>, and thanks to the choices of <span class="math notranslate nohighlight">\(u_0(0)\)</span> and <span class="math notranslate nohighlight">\(v_0(0)\)</span> above, we see that</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -3125,8 +3126,8 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{equation*}</div><p>in analogy with <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_fixed_phase_with_antiparticle}\)</span> for scalar fields. Finally, we can express the vector field in terms of creation and annihilation operators as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \psi_{\mu}(x) = \sum_{\sigma} \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ \exp(\ifrak p \cdot x) e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \
-                + \exp(-\ifrak p \cdot x) e_{\mu}^{\ast}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right]
+        \psi_{\mu}(x) = \sum_{\sigma} \int \frac{d^3 p}{(2\pi)^{3/2} (2p_0)^{1/2}}~\left[ e^{\ifrak p \cdot x} e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) \
+                + e^{-\ifrak p \cdot x} e_{\mu}^{\ast}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right]
         \label{eq_vector_field_psi_by_creation_and_annihilation_operators}
 \end{equation}</div><p>in analogy with <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}\)</span> for scalar fields. Finally, let’s calculate the commutator (for general <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>) for later use as follows</p>
 <div class="math notranslate nohighlight">
@@ -3175,14 +3176,15 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_vector_field_revert_momentum_transformation}
 \end{equation}</div><p>It follows that the spatial inversion transformation law is given as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         U(\Pcal) \psi_{\mu}(x) U^{-1}(\Pcal) = -\eta^{\ast} \Pcal_{\mu}^{\nu} \psi_{\nu}(\Pcal x)
-\end{equation*}</div><p>Omitting further details, the transformation laws for time inversion and charge conjugation is given as follows</p>
+        \label{eq_vector_field_spatial_inversion_transformation_law}
+\end{equation}</div><p>under the following assumption <span class="math notranslate nohighlight">\(\eta^c = \eta^{\ast}\)</span>. Omitting further details, the transformation laws for time inversion and charge conjugation is given as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         U(\Tcal) \psi_{\mu}(x) U^{-1}(\Tcal) &amp;= \zeta^{\ast} \Pcal_{\mu}^{\nu} \psi_{\nu}(x) \\
         U(\Ccal) \psi_{\mu}(x) U^{-1}(\Ccal) &amp;= \xi^{\ast} \psi_{\mu}^{\dagger}(x)
-\end{align*}</div><p>Just like the case of scalar fields, we also have <span class="math notranslate nohighlight">\(\eta^c = \eta^{\ast}, \zeta^c = \zeta^{\ast}\)</span> and <span class="math notranslate nohighlight">\(\xi^c = \xi^{\ast}\)</span>.</p>
+\end{align*}</div><p>under the assumptions <span class="math notranslate nohighlight">\(\zeta^c = \zeta^{\ast}\)</span> and <span class="math notranslate nohighlight">\(\xi^c = \xi^{\ast}\)</span>.</p>
 </section>
 </section>
 <section id="dirac-fields">
@@ -3313,9 +3315,9 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>As in the case of scalar and vector fields, let’s write the Dirac fields as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        \psi^+_{\ell}(x) &amp;= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot x) u_{\ell}(\pbf, \sigma) a(\pbf, \sigma)
+        \psi^+_{\ell}(x) &amp;= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma) a(\pbf, \sigma)
         \label{eq_dirac_field_psi_plus} \\
-        \psi^{-c}_{\ell}(x) &amp;= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\exp(-\ifrak p \cdot x) v_{\ell}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma)
+        \psi^{-c}_{\ell}(x) &amp;= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma)
         \label{eq_dirac_field_psi_minus}
 \end{align}</div><p>Moreover, using the particularly convenient form of <span class="math notranslate nohighlight">\(\Jscr_{ij}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_jscr_matrix}\)</span>, we can write the zero-momentum conditions <span class="math notranslate nohighlight">\(\eqref{eq_j_intertwines_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j_intertwines_v}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
@@ -3370,11 +3372,11 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{align}</div><p>In general the constants <span class="math notranslate nohighlight">\(c_{\pm}\)</span> and <span class="math notranslate nohighlight">\(d_{\pm}\)</span> may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a> to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_minus}\)</span>, we can calculate as follows <a class="footnote-reference brackets" href="#spatial-inversion-on-dirac-fields-sign" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &amp;= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot x) u(\pbf, \sigma) a(-\pbf, \sigma)
+        U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &amp;= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot x} u(\pbf, \sigma) a(-\pbf, \sigma)
                 \label{eq_dirac_field_spatial_inversion_acts_on_psi_plus} \\
-                &amp;= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot \Pcal x) u(-\pbf, \sigma) a(\pbf, \sigma) \nonumber \\
-                &amp;= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~\exp(\ifrak p \cdot \Pcal x) \sqrt{m/p_0}~\beta D(L(p)) \beta u(0, \sigma) a(\pbf, \sigma) \nonumber \\
-        U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &amp;= -(2\pi)^{-3/2} \eta^c \sum_{\sigma} \int d^3 p~\exp(-\ifrak p \cdot \Pcal x) \sqrt{m/p_0}~\beta D(L(p))\beta v(0, \sigma) a^{c \dagger}(\pbf, \sigma)
+                &amp;= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot \Pcal x} u(-\pbf, \sigma) a(\pbf, \sigma) \nonumber \\
+                &amp;= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot \Pcal x} \sqrt{m/p_0}~\beta D(L(p)) \beta u(0, \sigma) a(\pbf, \sigma) \nonumber \\
+        U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &amp;= -(2\pi)^{-3/2} \eta^c \sum_{\sigma} \int d^3 p~e^{-\ifrak p \cdot \Pcal x} \sqrt{m/p_0}~\beta D(L(p))\beta v(0, \sigma) a^{c \dagger}(\pbf, \sigma)
         \label{eq_dirac_field_spatial_inversion_acts_on_psi_minus}
 \end{align}</div><p>Here we’ve evaluated <span class="math notranslate nohighlight">\(u(-\pbf, \sigma)\)</span> (and <span class="math notranslate nohighlight">\(v(-\pbf, \sigma)\)</span>) in a way similar to <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_revert_momentum_transformation}\)</span>, where, instead of applying <span class="math notranslate nohighlight">\(\Pcal\)</span> directly on vectors, we recall for Dirac fields that the spatial inversion acts as <span class="math notranslate nohighlight">\(\beta\)</span>, defined by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_beta_matrix},\)</span> on spinors.</p>
 <p>In order for <span class="math notranslate nohighlight">\(U(\Pcal) \psi^+(x) U^{-1}(\Pcal)\)</span> to be proportional to <span class="math notranslate nohighlight">\(\psi^+(x)\)</span>, we observe that it would be sufficient (and most likely also necessary) if <span class="math notranslate nohighlight">\(u(0, \sigma)\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\beta\)</span>. Similar argument applies to <span class="math notranslate nohighlight">\(\psi^-(x)\)</span> as well, so we can write</p>
@@ -3449,9 +3451,9 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \end{align*}</div><p>Now that we’ve finished evaluating the spin sums, we can plug them into <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_commutator_raw}\)</span> to get the following evaluation of the (anti)-commutator</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        \left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm} &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~\big( |\kappa|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_+ m) \exp(\ifrak p \cdot (x-y)) \beta
+        \left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm} &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~\big( |\kappa|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_+ m) e^{\ifrak p \cdot (x-y)} \beta \phantom{\big)}
         \label{eq_dirac_field_commutator_first_evaluation} \\
-                &amp;\phantom{=} \pm |\lambda|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_- m) \exp(-\ifrak p \cdot (x-y)) \beta \big)_{\ell \ell'} \nonumber \\
+                &amp;\phantom{= \phantom{\big(}} \pm |\lambda|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_- m) e^{-\ifrak p \cdot (x-y)} \beta \big)_{\ell \ell'} \nonumber \\
                 &amp;= \left( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta(x-y) \beta \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta(y-x) \beta \right)_{\ell \ell'} \nonumber
 \end{align}</div><p>where <span class="math notranslate nohighlight">\(\Delta\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta_plus}\)</span>. Recall that <span class="math notranslate nohighlight">\(\Delta(x) = \Delta(-x)\)</span> for space-like <span class="math notranslate nohighlight">\(x\)</span>. Hence for space-like <span class="math notranslate nohighlight">\(x-y\)</span>, the following holds</p>
 <div class="math notranslate nohighlight">
@@ -3468,7 +3470,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \begin{align}
         \psi(x) &amp;= \psi^+(x) + \psi^{- c}(x)
                 \label{eq_dirac_field_psi_field} \\
-                &amp;= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) a(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right) \nonumber
+                &amp;= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( e^{\ifrak p \cdot x} u(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right) \nonumber
 \end{align}</div><p>where the zero-momentum spinors are</p>
 <div class="math notranslate nohighlight">
 \begin{alignat}{2}
@@ -3582,17 +3584,16 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
                 &amp;= \sqrt{m/p_0} \gamma_5 \Cscr D^{\ast}(L(p)) (-1)^{1/2 + \sigma} u(0, -\sigma) \nonumber \\
                 &amp;= (-1)^{1/2 + \sigma} \gamma_5 \Cscr u(\pbf, -\sigma) \nonumber
 \end{align}</div><p>A similar calculation can be done to show that in fact <span class="math notranslate nohighlight">\(v(-\pbf, \sigma)\)</span> satisfies exactly the same conjugation formula.</p>
-<p>With all the preparations above, we can now calculate the spatial-inversion transformation laws as follows</p>
+<p>With all the preparations above, we can now calculate the spatial inversion transformation laws as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        U(\Tcal) \psi(x) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_dirac_field_psi_field}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\big( \exp(-\ifrak p \cdot x) u^{\ast}(\pbf, \sigma) U(\Tcal) a(\pbf, \sigma) U^{-1}(\Tcal) \\
-                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \exp(\ifrak p \cdot x) v^{\ast}(\pbf, \sigma) U(\Tcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Tcal) \big) \\
-                &amp;\xlongequal{\eqref{eq_creation_operator_time_inversion_conjugation_massive}} (2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 - \sigma} \int d^3 p~\big( \exp(-\ifrak p \cdot x) \zeta^{\ast} u^{\ast}(\pbf, \sigma) a(-\pbf, -\sigma) \\
-                        &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \exp(\ifrak p \cdot x) \zeta^c v^{\ast}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
-                &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} -(2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 + \sigma} \int d^3 p~\big( \exp(-\ifrak p \cdot \Pcal x) \zeta^{\ast} u^{\ast}(-\pbf, -\sigma) a(\pbf, \sigma) \\
-                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \exp(\ifrak p \cdot \Pcal x) \zeta^c v^{\ast}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
-                &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} (2\pi)^{-3/2} \gamma_5 \Cscr \sum_{\sigma} \int d^3 p~\big( \zeta^{\ast} \exp(-\ifrak p \cdot \Pcal x) u(\pbf, \sigma) a(\pbf, \sigma) \\
-                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + \zeta^c \exp(\ifrak p \cdot \Pcal x) v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \big)
+        U(\Tcal) \psi(x) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_dirac_field_psi_field}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} u^{\ast}(\pbf, \sigma) U(\Tcal) a(\pbf, \sigma) U^{-1}(\Tcal) \\
+                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) U(\Tcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Tcal) \big) \\
+                &amp;\xlongequal{\eqref{eq_creation_operator_time_inversion_conjugation_massive}} (2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 - \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} \zeta^{\ast} u^{\ast}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)} \\
+                        &amp;\phantom{\eqref{eq_dirac_field_psi_field} \big(} + e^{\ifrak p \cdot x} \zeta^c v^{\ast}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} -(2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 + \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot \Pcal x} \zeta^{\ast} u^{\ast}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \\
+                &amp;\phantom{\eqref{eq_dirac_field_psi_field} \big(} + e^{\ifrak p \cdot \Pcal x} \zeta^c v^{\ast}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} (2\pi)^{-3/2} \gamma_5 \Cscr \sum_{\sigma} \int d^3 p~\left( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u(\pbf, \sigma) a(\pbf, \sigma) + \zeta^c e^{\ifrak p \cdot \Pcal x} v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
 \end{align*}</div><p>In order for <span class="math notranslate nohighlight">\(\psi(x)\)</span> to transform nicely under the time inversion, we’re forced to make the following assumption</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -3605,8 +3606,8 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \end{equation*}</div><p>Next let’s calculate the charge inversion transformation as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        U(\Ccal) \psi(x) U^{-1}(\Ccal) &amp;\xlongequal{\eqref{eq_creation_operator_charge_inversion_conjugation}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \exp(\ifrak p \cdot x) u(\pbf, \sigma) \xi^{\ast} a^c(\pbf, \sigma) + \exp(-\ifrak p \cdot x) v(\pbf, \sigma) \xi^c a^{\dagger}(\pbf, \sigma) \right) \\
-                &amp;\xlongequal{\substack{\eqref{eq_dirac_field_u_conjugate_to_v} \\ \eqref{eq_dirac_field_v_conjugate_to_u}}} (2\pi)^{-3/2} \Cscr \beta \sum_{\sigma} \int d^3p~\left( \xi^{\ast} \exp(\ifrak p \cdot x) v^{\ast}(\pbf, \sigma) a^c(\pbf, \sigma) + \xi^c \exp(-\ifrak p \cdot x) u^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) \right)
+        U(\Ccal) \psi(x) U^{-1}(\Ccal) &amp;\xlongequal{\eqref{eq_creation_operator_charge_inversion_conjugation}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( e^{\ifrak p \cdot x} u(\pbf, \sigma) \xi^{\ast} a^c(\pbf, \sigma) + e^{-\ifrak p \cdot x} v(\pbf, \sigma) \xi^c a^{\dagger}(\pbf, \sigma) \right) \\
+                &amp;\xlongequal{\substack{\eqref{eq_dirac_field_u_conjugate_to_v} \\ \eqref{eq_dirac_field_v_conjugate_to_u}}} (2\pi)^{-3/2} \Cscr \beta \sum_{\sigma} \int d^3p~\left( \xi^{\ast} e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) a^c(\pbf, \sigma) + \xi^c e^{-\ifrak p \cdot x} u^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) \right)
 \end{align*}</div><p>Just as for the time inversion, we are forced to assuming the following condition on the charge conjugation parities</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -3721,7 +3722,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <p>We’ve seen that general fields can be indexed by two (half-)integers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and take the following general form</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \kappa \exp(\ifrak p \cdot x) u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \lambda \exp(-\ifrak p \cdot x) v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+        \psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \kappa e^{\ifrak p \cdot x} u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \lambda e^{-\ifrak p \cdot x} v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
         \label{eq_general_field_defn_psi_field}
 \end{equation}</div><p>As usual, let’s translate <span class="math notranslate nohighlight">\(\eqref{eq_j_intertwines_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j_intertwines_v}\)</span> in the context of <span class="math notranslate nohighlight">\((A, B)\)</span> representations as follows</p>
 <div class="math notranslate nohighlight">
@@ -3765,7 +3766,12 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \begin{equation}
         u_{ab}(0, \sigma) = (2m)^{-1/2} C^{AB}(\jfrak, \sigma; a, b)
         \label{eq_general_field_u_at_zero_momentum}
-\end{equation}</div><p>where <span class="math notranslate nohighlight">\((2m)^{-1/2}\)</span> is a conventional coefficient add here to cancel the mass term in <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_boost}\)</span> later. Using the fact that <span class="math notranslate nohighlight">\(\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-\sigma+1} \Jbf^{(\jfrak)}_{-\sigma', -\sigma}\)</span>, which can be verified directly using <span class="math notranslate nohighlight">\(\eqref{eq_j1_j2_matrix}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j3_matrix}\)</span>, we can express the <span class="math notranslate nohighlight">\(v\)</span>-fields in terms of the <span class="math notranslate nohighlight">\(u\)</span>-fields as follows</p>
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\((2m)^{-1/2}\)</span> is a conventional coefficient add here to cancel the mass term in <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_u_transformation_simplified_by_boost}\)</span> later. Using the fact that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        -\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-\sigma} \Jbf^{(\jfrak)}_{-\sigma', -\sigma}
+        \label{eq_angular_momentum_representation_conjugate_formula}
+\end{equation}</div><p>which can be verified directly using <span class="math notranslate nohighlight">\(\eqref{eq_j1_j2_matrix}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_j3_matrix}\)</span>, we can express the <span class="math notranslate nohighlight">\(v\)</span>-fields in terms of the <span class="math notranslate nohighlight">\(u\)</span>-fields as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         v_{ab}(0, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(0, -\sigma)
@@ -3842,7 +3848,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </details><p>We will now turn to the arguably most interesting causality condition <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>. Indeed, it is this condition that clarifies the correlation between the spin and whether a particle/field is bosonic or fermionic. As before, we need to evaluate the (anti-)commutator between the fields using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_defn_psi_field}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(y) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right)
+        \left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(y) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y}) \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right)
         \label{eq_general_field_psi_commutator}
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(\pi(\pbf)\)</span> is the (rescaled) spin sum defined by</p>
 <div class="math notranslate nohighlight">
@@ -3880,7 +3886,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \end{equation*}</div><p class="sd-card-text">we can eliminate <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(a'\)</span> from the exponential in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_along_z_axis}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
-        -a+b-a'+b' = -a+(\sigma-a)-(\sigma-b')+b' = 2b' - 2a
+        -a+b-a'+b' = -a+(\sigma - a)-(\sigma - b')+b' = 2b' - 2a
 \end{equation*}</div><p class="sd-card-text">Moreover, recall from the definition of <span class="math notranslate nohighlight">\(\theta\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_defn_theta}\)</span> that</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -3907,8 +3913,8 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \end{align*}</div><p>Returning to the causality condition <span class="math notranslate nohighlight">\(\eqref{eq_general_field_psi_commutator}\)</span>, let’s consider space separated <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Up to a Lorentz transformation, we may assume that <span class="math notranslate nohighlight">\(x-y = (0, \xbf-\ybf)\)</span>. Under this assumption, we can calculate as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        \left[ \psi_{ab}(x), \psi^{\prime~\dagger}_{a'b'}(y) \right]_{\pm} &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~P_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right) \\
-                &amp;\phantom{=} + (2\pi)^{-3} \int d^3p~Q_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} \exp(\ifrak p \cdot (x-y)) \pm \lambda \lambda'^{~\ast} \exp(-\ifrak p \cdot (x-y)) \right) \\
+        \left[ \psi_{ab}(x), \psi^{\prime~\dagger}_{a'b'}(y) \right]_{\pm} &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~P_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y)} \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right) \\
+                &amp;\phantom{=} + (2\pi)^{-3} \int d^3p~Q_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y)} \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right) \\
                 &amp;= \kappa\kappa^{\prime~\ast} P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} P_{ab, a'b'}(\ifrak \nabla) \Delta_+(\ybf - \xbf) \\
                 &amp;\phantom{=} + \kappa\kappa^{\prime~\ast} Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} Q_{ab, a'b'}(\ifrak \nabla) \delta^3(\ybf - \xbf) \\
                 &amp;= \left( \kappa\kappa^{\prime~\ast} \pm (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \\
@@ -3936,10 +3942,11 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \end{equation*}</div><p>where <span class="math notranslate nohighlight">\(c\)</span> is a constant that depends only on the field, or rather, the particle it describes, and not on the specific representation that gives rise to the field. Moreover we note that <span class="math notranslate nohighlight">\(c\)</span> is a phase since <span class="math notranslate nohighlight">\(|\kappa| = |\lambda|\)</span>. Hence by adjusting the phase of the creation operator (and correspondingly the annihilation operator), we can arrange so that <span class="math notranslate nohighlight">\(c = 1\)</span>.</p>
 <p>This marks the end of the discussion about the causality condition on general <span class="math notranslate nohighlight">\((A, B)\)</span>. As a result, we’ve obtained the following grand formula for a general (causal) field.</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
-        \psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~ \left( \exp(\ifrak p \cdot x) u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \
-                (-1)^{2B} \exp(-\ifrak p \cdot x) v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
-\end{equation*}</div><p>where the spinors <span class="math notranslate nohighlight">\(u_{ab}\)</span> and <span class="math notranslate nohighlight">\(v_{ab}\)</span> are given by <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>, respectively.</p>
+\begin{equation}
+        \psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( e^{\ifrak p \cdot x} u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \
+                (-1)^{2B} e^{-\ifrak p \cdot x} v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+        \label{eq_general_field_psi_field}
+\end{equation}</div><p>where the spinors <span class="math notranslate nohighlight">\(u_{ab}\)</span> and <span class="math notranslate nohighlight">\(v_{ab}\)</span> are given by <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>, respectively.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Same field given by different representations are physically indifferent</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -3982,19 +3989,92 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </details></section>
 <section id="id30">
 <h4>The CPT symmetries<a class="headerlink" href="#id30" title="Link to this heading">#</a></h4>
-<p class="rubric">Footnotes</p>
+<p>The calculations of space, time, and charge conjugation transformations in the general case is essentially the same as for the Dirac field. In particular, instead of reverting the <span class="math notranslate nohighlight">\(3\)</span>-momentum in Dirac spinors as in <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_inversion_acts_on_psi_plus}\)</span>, we need to do it for general <span class="math notranslate nohighlight">\((A, B)\)</span> spinors <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span>, which involves the Clebsch-Gordan coefficients.</p>
+<p>Without going to the details, we list the relevant symmetry properties of Clebsch-Gordan coefficients as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        C^{AB}(\jfrak, \sigma; a, b) &amp;= (-1)^{A+B-\jfrak} C^{BA}(\jfrak, \sigma; b, a)
+        \label{eq_clebsch_gordan_symmetry_swap} \\
+        C^{AB}(\jfrak, \sigma; a, b) &amp;= (-1)^{A+B-\jfrak} C^{AB}(\jfrak, -\sigma; -a, -b)
+        \label{eq_clebsch_gordan_symmetry_reverse}
+\end{align}</div><p>The first relation is proved in <a class="reference internal" href="../bib.html#wei00" id="id31"><span>[Wei00]</span></a> page 124, and the second relation can be deduced from the time reversal transformation law <span class="math notranslate nohighlight">\(\eqref{eq_time_inversion_on_massive_general}\)</span>.</p>
+<p>Consider first the spatial inversion. Combining <span class="math notranslate nohighlight">\(\eqref{eq_clebsch_gordan_symmetry_swap}\)</span> with <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span>, one obtains the following relations on the spinors</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        u^{AB}_{ab}(-\pbf, \sigma) &amp;= (-1)^{A+B-\jfrak} u^{BA}_{ba}(\pbf, \sigma)
+        \label{eq_general_field_u_symmetry_swap} \\
+        v^{AB}_{ab}(-\pbf, \sigma) &amp;= (-1)^{A+B-\jfrak} v^{BA}_{ba}(\pbf, \sigma)
+        \label{eq_general_field_v_symmetry_swap}
+\end{align}</div><p>We can calculate the spatial conjugation as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        U(\Pcal) \psi^{AB}_{ab}(x) U^{-1}(\Pcal) &amp;\xlongequal{\eqref{eq_general_field_psi_field}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( \eta^{\ast} e^{\ifrak p \cdot x} u^{AB}_{ab}(\pbf, \sigma) a(-\pbf, \sigma) + (-1)^{2B} \eta^c e^{-\ifrak p \cdot x} v^{AB}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, \sigma) \right) \\
+                &amp;\xlongequal{\substack{\eqref{eq_general_field_u_symmetry_swap} \\ \eqref{eq_general_field_v_symmetry_swap}}} -(2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B-\jfrak} \big( \blue{\eta^{\ast} e^{\ifrak p \cdot \Pcal x} u_{ba}(\pbf, \sigma) a(\pbf, \sigma)} \phantom{\big)} \\
+                &amp;\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(}~\blue{+ (-1)^{2B} \eta^c e^{-\ifrak p \cdot \Pcal x} v_{ba}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma)} \big)
+\end{align*}</div><p>In order for the blue terms to be proportional to the corresponding terms in, in this case, a <span class="math notranslate nohighlight">\((B, A)\)</span> field, we must have</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        (-1)^{2B} \eta^c = (-1)^{2A} \eta^{\ast} \iff \eta^c = (-1)^{2\jfrak} \eta^{\ast}
+\end{equation*}</div><p>Under this assumption, we can complete the transformation law for spatial inversion as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Pcal) \psi^{AB}(x) U^{-1}(\Pcal) = -\eta^{\ast} (-1)^{A+B-\jfrak} \psi^{BA}_{ba}(\Pcal x)
+\end{equation*}</div><p>which recovers the cases of scalar field <span class="math notranslate nohighlight">\(\eqref{eq_scalar_field_spatial_inversion_transformation_law}\)</span>, vector field <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_spatial_inversion_transformation_law}\)</span>, and Dirac field <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_inversion_transformation_law}\)</span> where <span class="math notranslate nohighlight">\(\beta\)</span>, as defined by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_beta_matrix}\)</span>, serves the function of swapping <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>Next consider the time inversion. As for the spatial inversion, we’ll need the following identities</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        u^{AB \ast}_{ab}(-\pbf, -\sigma) &amp;\xlongequal{\eqref{eq_general_field_u_at_finite_momentum}} \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(A) \ast}\right)\right)_{-a', a} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(B) \ast}\right)\right)_{-b', b} C^{AB}(\jfrak, -\sigma; -a', -b')
+                \label{eq_general_field_u_symmetry_negation} \\
+                &amp;\xlongequal{\eqref{eq_clebsch_gordan_symmetry_reverse}} \frac{(-1)^{A+B-\jfrak}}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(A) \ast}\right)\right)_{-a', a} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(B) \ast}\right)\right)_{-b', b} C^{AB}(\jfrak, \sigma; a', b') \nonumber \\
+                &amp;\xlongequal{\substack{\eqref{eq_angular_momentum_representation_conjugate_formula} \\ \eqref{eq_angular_momentum_representation_conjugate_formula_as_matrix}}} \frac{(-1)^{A+B-\jfrak}}{\sqrt{2p_0}} \sum_{a'b'} (-1)^{a-a'+b-b'} \left( \exp(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}) \right)_{a', -a} \left( \exp(\theta~\hat{\pbf} \cdot \Jbf^{(B)}) \right)_{b', -b} C^{AB}(\jfrak, \sigma; a', b') \nonumber \\
+                &amp;= (-1)^{A+B+a+b-\sigma - \jfrak} u^{AB}_{-a, -b}(\pbf, \sigma) \nonumber
+\end{align}</div><p>where it’s convenient for the third equality to reformulate <span class="math notranslate nohighlight">\(\eqref{eq_angular_momentum_representation_conjugate_formula}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Jbf^{(\jfrak) \ast} = -C \Jbf^{(\jfrak)} C^{-1}, \quad \text{where}~~C_{\sigma' \sigma} = (-1)^{\jfrak - \sigma} \delta_{\sigma', -\sigma}
+        \label{eq_angular_momentum_representation_conjugate_formula_as_matrix}
+\end{equation}</div><p>Since <span class="math notranslate nohighlight">\(v^{AB}_{ab}(\pbf, \sigma)\)</span> is related to <span class="math notranslate nohighlight">\(u^{AB}_{ab}(\pbf, \sigma)\)</span> by <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>, we can derive the <span class="math notranslate nohighlight">\(v\)</span>-counterpart of <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_symmetry_negation}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        v^{AB \ast}_{ab}(-\pbf, -\sigma) &amp;\xlongequal{\eqref{eq_general_field_v_at_finite_momentum}} (-1)^{\jfrak - \sigma} u^{AB \ast}_{ab}(-\pbf, \sigma)
+                \label{eq_general_field_v_symmetry_negation} \\
+                &amp;\xlongequal{\eqref{eq_general_field_u_symmetry_negation}} (-1)^{A+B+a+b} u^{AB}_{-a, -b}(\pbf, -\sigma) \nonumber \\
+                &amp;\xlongequal{\eqref{eq_general_field_v_at_finite_momentum}} (-1)^{A+B+a+b-\sigma - \jfrak} v^{AB}_{-a, -b}(\pbf, \sigma) \nonumber
+\end{align}</div><p>Remembering that <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> is anti-unitary, we can calculate the time inversion transformation as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        U(\Tcal) \psi^{AB}_{ab}(x) U^{-1}(\Tcal) &amp;\xlongequal{\substack{\eqref{eq_general_field_psi_field} \\ \eqref{eq_creation_operator_time_inversion_conjugation_massive}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot x} u^{AB \ast}_{ab}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)} \\
+        &amp;\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot x} v^{AB \ast}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} -(2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB \ast}_{ab}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \\
+                &amp;\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB \ast}_{ab}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
+                &amp;\xlongequal{\substack{\eqref{eq_general_field_u_symmetry_negation} \\ \eqref{eq_general_field_v_symmetry_negation}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B+a+b-2\sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB}_{-a, -b}(\pbf, \sigma) \phantom{\big)} \\
+                &amp;\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB}_{-a, -b}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} \psi^{AB}_{-a, -b}(-\Pcal x)
+\end{align*}</div><p>where the last equality assumes the following symmetry on the time-reversal parity</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \zeta^{\ast} = \zeta^c
+\end{equation*}</div><p>At this point, we’re pretty proficient at (and tired of) this kind of calculation. Hence we’ll not spell out the (rather similar) details for the charge conjugation symmetry, but rather list the result as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\Ccal) \psi^{AB}_{ab}(x) U^{-1}(\Ccal) = (-1)^{-2A-a-b-\jfrak} \xi^{\ast} \psi^{BA \dagger}_{-b, -a}(x)
+\end{equation*}</div><p>under the following assumption on the charge-reversal parity</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \xi^{\ast} = \xi^c
+\end{equation*}</div><p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id31"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">2</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">3</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
@@ -4002,7 +4082,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 <aside class="footnote brackets" id="two-ways-of-representation" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">6</a><span class="fn-bracket">]</span></span>
@@ -4010,27 +4090,27 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">7</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 <aside class="footnote brackets" id="dirac-gamma-is-vector" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">8</a><span class="fn-bracket">]</span></span>
-<p>Our calculation is consistent with formula (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
+<p>Our calculation is consistent with formula (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
 </aside>
 <aside class="footnote brackets" id="spatial-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">9</a><span class="fn-bracket">]</span></span>
-<p>Our calculation differs from (5.5.10) and (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
+<p>Our calculation differs from (5.5.10) and (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
 </aside>
 <aside class="footnote brackets" id="charge-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">10</a><span class="fn-bracket">]</span></span>
-<p>Our calculation, once again, differs from the calculation (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
+<p>Our calculation, once again, differs from the calculation (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id41"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficients-orthonormality" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">11</a><span class="fn-bracket">]</span></span>
-<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id41"><span>[Wei15]</span></a> page 121 – 122.</p>
+<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id42"><span>[Wei15]</span></a> page 121 – 122.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficient-zero-total-angular-momentum" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">12</a><span class="fn-bracket">]</span></span>
-<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id42"><span>[Wei15]</span></a> page 124 – 125.</p>
+<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id43"><span>[Wei15]</span></a> page 124 – 125.</p>
 </aside>
 </aside>
 </section>
