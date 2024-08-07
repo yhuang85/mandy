@@ -1947,12 +1947,12 @@ The most straightforward way to calculate :math:`S_{\beta \alpha}` is probably t
 	:nowrap:
 
 	\begin{align}
-		\int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^- \
-			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} + \int d\beta ~\Phi_{\beta} \int d\alpha \
-				\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)}{E_{\alpha} - E_{\beta} + \ifrak \epsilon}  \label{eq_positive_limit_of_in_state_by_lippmann_schwinger} \\
-			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} \
-     			- 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)  \nonumber \\
-			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \left( g(\beta) - 2\pi\ifrak \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \right)  \nonumber \\
+		\int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^- &= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta}
+			\label{eq_positive_limit_of_in_state_by_lippmann_schwinger} \\
+      		&\phantom{=} + \int d\beta ~\Phi_{\beta} \int d\alpha \frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)}{E_{\alpha} - E_{\beta} + \ifrak \epsilon} \nonumber \\
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} \nonumber \\
+     		&\phantom{=} - 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \nonumber \\
+			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \left( g(\beta) - 2\pi\ifrak \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \right) \nonumber \\
 			&= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak \delta(E_{\alpha} - E_{\beta}) (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right) \nonumber
 	\end{align}
 
@@ -5764,6 +5764,8 @@ An important example is Fermi's theory of beta-decay, which involves an interact
 where :math:`p, n, e, \nu` stand for proton, neutron, electron and neutrino, respectively.
 
 
+.. _sec_general_fields:
+
 General fields
 ^^^^^^^^^^^^^^
 
@@ -6076,9 +6078,10 @@ The construction of interaction densities for general :math:`(A, B)` fields reli
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\Hscr(x) = \sum_{a_1 a_2 \cdots a_n} \sum_{b_1 b_2 \cdots b_n} g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n} \psi^{(1)}_{a_1 b_1}(x) \psi^{(2)}_{a_2 b_2}(x) \cdots \psi^{(n)}_{a_n b_n}(x)
-		\end{equation*}
+			\label{eq_general_field_interaction_density}
+		\end{equation}
 
 	where :math:`\psi^{(i)}_{a_i b_i}(x)` is an :math:`(A_i, B_i)` field, and the coefficients :math:`g_{\underline{a}, \underline{b}} \coloneqq g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n}` are covariant under the product of the :math:`(A_i, B_i)` representations. Looking at :math:`\eqref{eq_general_field_u_at_finite_momentum}` and :math:`\eqref{eq_general_field_v_at_finite_momentum}`, we see that the :math:`D` matrices, as in :math:`\eqref{eq_conjugate_annihilation_field}` -- :math:`\eqref{eq_conjugate_creation_field}`, act on general fields as a product of the angular momentum representations associated with the :math:`A`'s and :math:`B`'s. Therefore we may also split the coefficients :math:`g_{\underline{a}, \underline{b}}` as follows
 
@@ -6446,9 +6449,10 @@ Under this assumption, we can complete the transformation law for spatial invers
 .. math::
 	:nowrap:
 
-	\begin{equation*}
-		U(\Pcal) \psi^{AB}(x) U^{-1}(\Pcal) = -\eta^{\ast} (-1)^{A+B-\jfrak} \psi^{BA}_{ba}(\Pcal x)
-	\end{equation*}
+	\begin{equation}
+		U(\Pcal) \psi^{AB}_{ab}(x) U^{-1}(\Pcal) = -\eta^{\ast} (-1)^{A+B-\jfrak} \psi^{BA}_{ba}(\Pcal x)
+		\label{eq_general_field_space_inversion_transformation}
+	\end{equation}
 
 which recovers the cases of scalar field :math:`\eqref{eq_scalar_field_spatial_inversion_transformation_law}`, vector field :math:`\eqref{eq_vector_field_spatial_inversion_transformation_law}`, and Dirac field :math:`\eqref{eq_dirac_field_spatial_inversion_transformation_law}` where :math:`\beta`, as defined by :math:`\eqref{eq_dirac_field_beta_matrix}`, serves the function of swapping :math:`A` and :math:`B`.
 
@@ -6492,15 +6496,16 @@ Remembering that :math:`U(\Tcal)` is anti-unitary, we can calculate the time inv
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		U(\Tcal) \psi^{AB}_{ab}(x) U^{-1}(\Tcal) &\xlongequal{\substack{\eqref{eq_general_field_psi_field} \\ \eqref{eq_creation_operator_time_inversion_conjugation_massive}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot x} u^{AB \ast}_{ab}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)} \\
-      		&\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot x} v^{AB \ast}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
-			&\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} -(2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB \ast}_{ab}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \\
-			&\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB \ast}_{ab}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
-			&\xlongequal{\substack{\eqref{eq_general_field_u_symmetry_negation} \\ \eqref{eq_general_field_v_symmetry_negation}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B+a+b-2\sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB}_{-a, -b}(\pbf, \sigma) \phantom{\big)} \\
-			&\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB}_{-a, -b}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
-			&\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} \psi^{AB}_{-a, -b}(-\Pcal x)
-	\end{align*}
+	\begin{align}
+		U(\Tcal) \psi^{AB}_{ab}(x) U^{-1}(\Tcal) &\xlongequal{\substack{\eqref{eq_general_field_psi_field} \\ \eqref{eq_creation_operator_time_inversion_conjugation_massive}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot x} u^{AB \ast}_{ab}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)}
+		\label{eq_general_field_time_inversion_transformation} \\
+      		&\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot x} v^{AB \ast}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \nonumber \\
+			&\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} -(2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB \ast}_{ab}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \nonumber \\
+			&\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB \ast}_{ab}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \nonumber \\
+			&\xlongequal{\substack{\eqref{eq_general_field_u_symmetry_negation} \\ \eqref{eq_general_field_v_symmetry_negation}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B+a+b-2\sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB}_{-a, -b}(\pbf, \sigma) \phantom{\big)} \nonumber \\
+			&\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB}_{-a, -b}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \big) \nonumber \\
+			&\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} \psi^{AB}_{-a, -b}(-\Pcal x) \nonumber
+	\end{align}
 
 where the last equality assumes the following symmetry on the time-reversal parity
 
@@ -6516,9 +6521,10 @@ At this point, we're pretty proficient at (and tired of) this kind of calculatio
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		U(\Ccal) \psi^{AB}_{ab}(x) U^{-1}(\Ccal) = (-1)^{-2A-a-b-\jfrak} \xi^{\ast} \psi^{BA \dagger}_{-b, -a}(x)
-	\end{equation*}
+		\label{eq_general_field_charge_inversion_transformation}
+	\end{equation}
 
 under the following assumption on the charge-reversal parity
 
@@ -6528,6 +6534,80 @@ under the following assumption on the charge-reversal parity
 	\begin{equation*}
 		\xi^{\ast} = \xi^c
 	\end{equation*}
+
+
+The CPT theorem
+^^^^^^^^^^^^^^^
+
+With all the hard work we've done in :ref:`sec_general_fields`, we can now reward ourselves a bit with the celebrated `CPT theorem <https://en.wikipedia.org/wiki/CPT_symmetry>`__ which is stated as follows
+
+	For an appropriate choice of the inversion phases :math:`\eta` (space), :math:`\zeta` (time), and :math:`\xi` (charge), the product :math:`U(CPT)` is conserved.
+
+We'll skip over the special case of scalar, vector, and Dirac fields, and jump directly into the general, and in fact simpler, case of :math:`(A, B)` fields.
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U(CPT) \psi^{AB}_{ab}(x) U^{-1}(CPT) &\xlongequal{\eqref{eq_general_field_time_inversion_transformation}} (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} U(CP) \psi^{AB}_{-a, -b}(-\Pcal x) U^{-1}(CP)
+		\label{eq_cpt_conjugation_general_field_calculation} \\
+			&\xlongequal{\eqref{eq_general_field_space_inversion_transformation}} -(-1)^{a+b-\jfrak} \zeta^{\ast} \eta^{\ast} U(C) \psi^{BA}_{-b, -a}(-x) U^{-1}(C) \nonumber \\
+			&\xlongequal{\eqref{eq_general_field_charge_inversion_transformation}} -(-1)^{-2B} \zeta^{\ast} \eta^{\ast} \xi^{\ast} \psi^{AB \dagger}_{ab}(-x) \nonumber
+	\end{align}
+
+Hence if we assume the following condition on the inversion parities
+
+.. admonition:: Assumption on the inversion parities
+	:class: Important
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\zeta~\eta~\xi = 1
+		\end{equation*}
+
+then we can rewrite :math:`\eqref{eq_cpt_conjugation_general_field_calculation}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(CPT) \psi^{AB}_{ab}(x) U^{-1}(CPT) = -(-1)^{2B} \psi^{AB \dagger}_{ab}(-x)
+	\end{equation*}
+
+Now suppose the interaction density :math:`\Hscr(x)` is defined by :math:`\eqref{eq_general_field_interaction_density}` as a linear combination of monomials like
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\psi^{A_1 B_1}_{a_1 b_1}(x) \psi^{A_2 B_2}_{a_2 b_2}(x) \cdots \psi^{A_n B_n}_{a_n b_n}(x)
+	\end{equation*}
+
+Hence in light of :math:`\eqref{eq_general_field_g_coefficients_covariance}`, we know that both :math:`A_1 + A_2 + \cdots + A_n` and :math:`B_1 + B_2 + \cdots + B_n` must be integers, for otherwise they cannot be coupled to a spinless state. It follows then the following CPT transformation law on the interaction density
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(CPT) \Hscr(x) U^{-1}(CPT) = -\Hscr(-x)
+	\end{equation*}
+
+Recall from :math:`\eqref{eq_evolution_equation_of_u_operator}` and :math:`\eqref{eq_defn_v_by_density}` that the interaction term :math:`V = \int d^3 x~\Hscr(0, \xbf)` satisfies the following [#volume_element_inversion_sign_cancels_for_cpt_symmetry]_
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(CPT) V U^{-1}(CPT) = -\int d^3 x~\Hscr(-x) = V
+	\end{equation*}
+
+Since the CPT symmetry is clearly conserved for free particles, it is also conserved in interactions according to :math:`\eqref{eq_h_as_h0_plus_v}`.
+
+
+Massless fields
+^^^^^^^^^^^^^^^
 
 
 .. rubric:: Footnotes
@@ -6546,12 +6626,14 @@ under the following assumption on the charge-reversal parity
 
 .. [#wrong_integration_of_Delta_function] The evaluation of the integral eq. (5.2.8) on [Wei95]_ page 202 seems to be wrong, as the integrand oscillates as :math:`\sin(u)` for :math:`u` large enough, which will cause the integral to diverge.
 
-.. [#dirac_gamma_is_vector] Our calculation is consistent with formula (5.4.8) in [Wei95]_ because of the convention :math:`{(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}` introduced in formula (2.3.10).
+.. [#dirac_gamma_is_vector] Our calculation is consistent with eq. (5.4.8) in [Wei95]_ because of the convention :math:`{(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}` introduced in formula (2.3.10).
 
-.. [#spatial_inversion_on_dirac_fields_sign] Our calculation differs from (5.5.10) and (5.5.11) in [Wei95]_ by a sign because we take into account the fact that the substitution :math:`\pbf \to -\pbf` also reverts the volume element :math:`d^3 p`.
+.. [#spatial_inversion_on_dirac_fields_sign] Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in [Wei95]_ by a sign because we take into account the fact that the substitution :math:`\pbf \to -\pbf` also reverts the volume element :math:`d^3 p`.
 
-.. [#charge_inversion_on_dirac_fields_sign] Our calculation, once again, differs from the calculation (5.5.47) in [Wei95]_ by a sign, though this time it has nothing to do with the volume element.
+.. [#charge_inversion_on_dirac_fields_sign] Our calculation, once again, differs from the calculation eq. (5.5.47) in [Wei95]_ by a sign, though this time it has nothing to do with the volume element.
 
 .. [#clebsch_gordan_coefficients_orthonormality] Details of the argument can be found in [Wei15]_ page 121 -- 122.
 
 .. [#clebsch_gordan_coefficient_zero_total_angular_momentum] An explicit evaluation of :math:`C^{AA}(0, 0;a, -a)`, with the only non-vanishing combination of spin :math:`z`-components, can be found in [Wei15]_ page 124 -- 125.
+
+.. [#volume_element_inversion_sign_cancels_for_cpt_symmetry] Comparing with eq. (5.8.9) in [Wei95]_ page 246, we get probably the most important result right, even though we've insisted in reversing the sign of the volume elements such as :math:`d^3 p` and :math:`d^3 x`, when :math:`p` and :math:`x` are reversed, respectively.
