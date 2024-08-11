@@ -1210,6 +1210,9 @@ This observation is important since it implies that non-relativistic calculation
 	5. The energy difference between :math:`2s_{1/2}` and :math:`2p_{1/2}`, i.e., same total but different orbital angular momentum, is known as the `Lamb shift <https://en.wikipedia.org/wiki/Lamb_shift>`_.
 	6. The energy difference between states with the same orbital and total angular momentum, e.g., :math:`1s_{1/2}`, but different spin :math:`z`-component :math:`\sigma`, e.g., :math:`\pm 1/2`, due to the magnetic moment is known as the `hyperfine structure <https://en.wikipedia.org/wiki/Hyperfine_structure>`_.
 
+
+.. _sec_massless_particle_states:
+
 Massless particle states
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1228,28 +1231,30 @@ It follows from :math:`\eqref{eq_vk_is_one}` that we can write :math:`Wv = (1 + 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		S(a, b) = \begin{bmatrix}
 			1 + c & a & b & -c \\
 			a & 1 & 0 & -a \\
 			b & 0 & 1 & -b \\
 			c & a & b & 1 - c
 		\end{bmatrix}
-	\end{equation*}
+		\label{eq_massless_little_group_s_matrix}
+	\end{equation}
 
 which leaves :math:`k` invariant, and satisfies :math:`Sv = Wv`. It follows that :math:`S^{-1} W` must be a rotation about the :math:`3`-axis, which can be written as follows
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		R(\theta) = \begin{bmatrix}
 			1 & 0 & 0 & 0 \\
 			0 & \cos\theta & \sin\theta & 0 \\
 			0 & -\sin\theta & \cos\theta & 0 \\
 			0 & 0 & 0 & 1
 		\end{bmatrix}
-	\end{equation*}
+		\label{eq_massless_little_group_r_matrix}
+	\end{equation}
 
 Hence we can write any element in the little group as :math:`W(a, b, \theta) = S(a, b) R(\theta)`.
 
@@ -1381,9 +1386,10 @@ Combining the discussions so far, we can write down the :math:`D`-matrix defined
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		D_{\sigma \sigma'}(W(a, b, \theta)) = \exp(\ifrak \theta \sigma) \delta_{\sigma \sigma'}
-	\end{equation*}
+		\label{eq_little_group_d_matrix_massless}
+	\end{equation}
 
 where we recall :math:`W(a, b, \theta) = L(\Lambda p)^{-1} \Lambda L(p) = S(a, b)R(\theta)`. The Lorentz transformation formula :math:`\eqref{eq_lorentz_transformation_formula_for_particle_state}` for massless particles now becomes
 
@@ -3809,7 +3815,7 @@ where the first factor demands the usual conservation of momentum between in- an
 Quantum Fields and Antiparticles
 --------------------------------
 
-In this chapter we will construct the Hamiltonians in the form of :math:`H = H_0 + V`, where :math:`H_0` is the Hamiltonian of free particles, and :math:`V = \int d^3 x~\Hscr(t, \xbf)` is a (small) interaction term in the form of :math:`\eqref{eq_defn_v_by_density}`, and the interaction density :math:`\Hscr(x)` is a Lorentz scalar in the sense of :math:`\eqref{eq_h_density_is_scalar}` and satisfies the cluster decomposition principle :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. As a byproduct of the construction, we'll also demystify the so-called *antiparticles* which have been mentioned a number of times so far without definition.
+In this chapter we will construct the Hamiltonians in the form of :math:`H = H_0 + V`, where :math:`H_0` is the Hamiltonian of free particles, and :math:`V = \int d^3 x~\Hscr(0, \xbf)` is a (small) interaction term in the form of :math:`\eqref{eq_defn_v_by_density}`, and the interaction density :math:`\Hscr(x)` is a Lorentz scalar in the sense of :math:`\eqref{eq_h_density_is_scalar}` and satisfies the cluster decomposition principle :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. As a byproduct of the construction, we'll also demystify the so-called *antiparticles* which have been mentioned a number of times so far without definition.
 
 
 Symmetries and quantum fields
@@ -4044,6 +4050,8 @@ Let's verify that the fields defined by :math:`\eqref{eq_annihilation_field_simp
 
 Besides re-ordering the terms, the only actual calculation is highlighted in the two blue terms, where the second one is the integral of the first. One can compare this calculation with :math:`\eqref{eq_general_expansion_of_hamiltonian}` and see that the cluster decomposition principle is indeed satisfied because there is a unique momentum conservation delta function in each coefficient, as long as :math:`g, u, v` are reasonably smooth, i.e., it's fine to have poles and/or branching singularities but no delta functions.
 
+
+.. _sec_causality_and_antiparticles:
 
 Causality and antiparticles
 +++++++++++++++++++++++++++
@@ -4806,18 +4814,20 @@ So far, besides the introduction of the vectors :math:`e_{\mu}(\pbf, \sigma)` in
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		e^{\mu}(\pbf, \sigma) p_{\mu} = 0
-	\end{equation*}
+		\label{eq_vector_field_spinor_orthogonal_to_momentum}
+	\end{equation}
 
 which, in turn, implies that
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\p_{\mu} \psi^{\mu}(x) = 0
-	\end{equation*}
+		\label{eq_vector_field_gauge_fixing_condition}
+	\end{equation}
 
 This condition turns out to be coincide with a so-called "gauge fixing" condition for spin-:math:`1` photons in quantum electrodynamics. However, it's known that photons are massless particles. Therefore we may wonder if a vanishing mass limit :math:`m \to 0` may be applied. Now the simplest way to construct a (scalar) interaction density :math:`\Hscr(x)` using :math:`\psi_{\mu}(x)` is
 
@@ -6440,9 +6450,10 @@ In order for the blue terms to be proportional to the corresponding terms in, in
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		(-1)^{2B} \eta^c = (-1)^{2A} \eta^{\ast} \iff \eta^c = (-1)^{2\jfrak} \eta^{\ast}
-	\end{equation*}
+		\label{eq_general_field_space_inversion_parity_relation}
+	\end{equation}
 
 Under this assumption, we can complete the transformation law for spatial inversion as follows
 
@@ -6512,9 +6523,10 @@ where the last equality assumes the following symmetry on the time-reversal pari
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\zeta^{\ast} = \zeta^c
-	\end{equation*}
+		\label{eq_general_field_time_inversion_parity_relation}
+	\end{equation}
 
 At this point, we're pretty proficient at (and tired of) this kind of calculation. Hence we'll not spell out the (rather similar) details for the charge conjugation symmetry, but rather list the result as follows
 
@@ -6531,9 +6543,10 @@ under the following assumption on the charge-reversal parity
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\xi^{\ast} = \xi^c
-	\end{equation*}
+		\label{eq_general_field_charge_inversion_parity_relation}
+	\end{equation}
 
 
 The CPT theorem
@@ -6563,9 +6576,10 @@ Hence if we assume the following condition on the inversion parities
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\zeta~\eta~\xi = 1
-		\end{equation*}
+			\label{eq_cpt_parities_product_assumption}
+		\end{equation}
 
 then we can rewrite :math:`\eqref{eq_cpt_conjugation_general_field_calculation}` as follows
 
@@ -6575,6 +6589,8 @@ then we can rewrite :math:`\eqref{eq_cpt_conjugation_general_field_calculation}`
 	\begin{equation*}
 		U(CPT) \psi^{AB}_{ab}(x) U^{-1}(CPT) = -(-1)^{2B} \psi^{AB \dagger}_{ab}(-x)
 	\end{equation*}
+
+A few words are needed, however, to justify the seemingly strange assumption on the product of inversion parities. Indeed, it is physically meaningless to specify any inversion parity for a single species of particles because it's just a phase. The only conditions that we've seen on the parities come from pairs of particles and their antiparticles, notably :math:`\eqref{eq_general_field_space_inversion_parity_relation}, \eqref{eq_general_field_time_inversion_parity_relation}`, and :math:`\eqref{eq_general_field_charge_inversion_parity_relation}`. We saw that the time and charge inversion parities are the same between the particle and its antiparticle, respectively. However, a sign :math:`(-1)^{2\jfrak}` is involved in the space inversion parity. So if we impose :math:`\eqref{eq_cpt_parities_product_assumption}` on one particle species, then it will fail on its antiparticle species if the particle in question is a fermion! We're eventually saved by the fact that the interaction density must involve an even number of fermions (cf. discussions in :ref:`sec_causality_and_antiparticles`). In any case :math:`\eqref{eq_cpt_parities_product_assumption}` is a fairly sloppy assumption, which cannot hold in general, but it also doesn't make a difference to the CPT theorem.
 
 Now suppose the interaction density :math:`\Hscr(x)` is defined by :math:`\eqref{eq_general_field_interaction_density}` as a linear combination of monomials like
 
@@ -6609,6 +6625,292 @@ Since the CPT symmetry is clearly conserved for free particles, it is also conse
 Massless fields
 ^^^^^^^^^^^^^^^
 
+So far the story about quantum fields has been a 100% success. We've namely found the general formula :math:`\eqref{eq_general_field_psi_field}` for *any* field that represents a massive particle. However, such success will come to an end when we consider instead massless particles as we'll see in this section. This should not come as a surprise though since we've see in :math:`\eqref{eq_vector_field_defn_Pi}` for example, that the spinor sum blows up in the massless limit :math:`m \to 0`.
+
+Let's nonetheless kickstart the routine of constructing fields as follows, and see where the problem should arise.
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi_{\ell}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( \kappa e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma) a(\pbf, \sigma) + \lambda e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+		\label{eq_massless_field_defn_psi_field}
+	\end{equation}
+
+This is reasonable because the translation symmetry is the same for massive and massless particles, and hence :math:`\eqref{eq_redefine_u_after_translation}` and :math:`\eqref{eq_redefine_v_after_translation}` apply.
+
+Next, using the general transformation laws :math:`\eqref{eq_lorentz_transformation_formula_for_creation_operator}` and :math:`\eqref{eq_lorentz_transformation_formula_for_annihilation_operator}` for creation and annihilation operators, as well as the :math:`D` matrix :math:`\eqref{eq_little_group_d_matrix_massless}` for massless particles, we can infer the homogeneous Lorentz transformation laws as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		U(\Lambda) a^{\dagger}(\pbf, \sigma) U^{-1}(\Lambda) &= \sqrt{\frac{(\Lambda p)_0}{p_0}} \exp(\ifrak \sigma \theta(\Lambda, p)) a^{\dagger}(\pbf_{\Lambda}, \sigma)
+		\label{eq_massless_vector_field_creation_operator_conjugated_by_lorentz_transformation} \\
+		U(\Lambda) a(\pbf, \sigma) U^{-1}(\Lambda) &= \sqrt{\frac{(\Lambda p)_0}{p_0}} \exp(-\ifrak \sigma \theta(\Lambda, p)) a(\pbf_{\Lambda}, \sigma)
+		\label{eq_massless_vector_field_annihilation_operator_conjugated_by_lorentz_transformation}
+	\end{align}
+
+Just as in the massive case, we'd like :math:`\psi_{\ell}(x)` to satisfy the following transformation law
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		U(\Lambda) \psi_{\ell}(x) U^{-1}(\Lambda) = \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}(\Lambda x)
+		\label{eq_massless_field_psi_transform_by_d_matrix}
+	\end{equation}
+
+To see what conditions the spinors must satisfy, let's first expand the left-hand-side as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		U(\Lambda) \psi_{\ell}(x) U^{-1}(\Lambda) &= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \Big( \kappa e^{\ifrak p \cdot x} \blue{u_{\ell}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} \exp(-\ifrak \sigma \theta(\Lambda, p))} a(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
+			&\phantom{= \Big(} + \lambda e^{-\ifrak p \cdot x} \blue{v_{\ell}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} \exp(\ifrak \sigma \theta(\Lambda, p))} a^{c \dagger}(\pbf_{\Lambda}, \sigma) \Big)
+	\end{align*}
+
+Then the right-hand-side as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}(\Lambda x) &= (2\pi)^{-3/2} \sum_{\sigma} \int \frac{d^3 p}{p_0}~p_0 \sum_{\ell'} \Big( \kappa e^{\ifrak p \cdot \Lambda x} D_{\ell \ell'}(\Lambda^{-1}) u_{\ell'}(\pbf, \sigma) a(\pbf, \sigma) \phantom{\Big)} \\
+			&\phantom{= \Big(} + \lambda e^{-\ifrak p \cdot \Lambda x} D_{\ell \ell'}(\Lambda^{-1}) v_{\ell'}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \Big) \\
+			&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\blue{\frac{(\Lambda p)_0}{p_0} \sum_{\ell'}} \Big( \kappa e^{\ifrak p \cdot x} \blue{D_{\ell \ell'}(\Lambda^{-1}) u_{\ell'}(\pbf_{\Lambda}, \sigma)} a(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
+			&\phantom{= \Big(} + \lambda e^{-\ifrak p \cdot x} \blue{D_{\ell \ell'}(\Lambda^{-1}) v_{\ell'}(\pbf_{\Lambda}, \sigma)} a^{c \dagger}(\pbf_{\Lambda}, \sigma) \Big)
+	\end{align*}
+
+Equating the coefficients of :math:`a(\pbf_{\Lambda, \sigma})` and :math:`a^{c \dagger}(\pbf_{\Lambda}, \sigma)` (i.e., the blue terms), and inverting :math:`D_{\ell \ell'}(\Lambda^{-1})` as in :math:`\eqref{eq_annihilation_u_transformation}`, we get the following conditions on the spinors
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\exp(\ifrak \sigma \theta(\Lambda, p)) u_{\ell'}(\pbf_{\Lambda}, \sigma) &= \sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) u_{\ell}(\pbf, \sigma)
+		\label{eq_massless_field_spinor_u_condition} \\
+		\exp(-\ifrak \sigma \theta(\Lambda, p)) v_{\ell'}(\pbf_{\Lambda}, \sigma) &= \sqrt{\frac{p_0}{(\Lambda p)_0}} \sum_{\ell} D_{\ell' \ell}(\Lambda) v_{\ell}(\pbf, \sigma)
+		\label{eq_massless_field_spinor_v_condition}
+	\end{align}
+
+The next step is to take the massless analogy to the boost operator in the massive case. Namely, if we let :math:`\Lambda = L(p)` be the chosen Lorentz transformation that takes the standard :math:`k = (1, 0, 0, 1)` to :math:`p`, then :math:`\theta(\Lambda, p) = 0`. Taking :math:`p = k` in :math:`\eqref{eq_massless_field_spinor_u_condition}` and :math:`\eqref{eq_massless_field_spinor_v_condition}`, we obtain the following
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		u_{\ell'}(\pbf, \sigma) &= \frac{1}{\sqrt{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) u_{\ell}(\kbf, \sigma)
+		\label{eq_massless_field_u_from_k} \\
+		v_{\ell'}(\pbf, \sigma) &= \frac{1}{\sqrt{p_0}} \sum_{\ell} D_{\ell' \ell}(L(p)) v_{\ell}(\kbf, \sigma)
+		\label{eq_massless_field_v_from_k}
+	\end{align}
+
+Next, in analogy to the rotation transformation, let's consider a little group element :math:`W` that fixes :math:`k`. In this case :math:`\eqref{eq_massless_field_spinor_u_condition}` and :math:`\eqref{eq_massless_field_spinor_v_condition}` take the following form
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\exp(\ifrak \sigma \theta(W, k)) u_{\ell'}(\kbf, \sigma) &= \sum_{\ell} D_{\ell' \ell}(W) u_{\ell}(\kbf, \sigma)
+		\label{eq_massless_field_little_group_u_condition} \\
+		\exp(-\ifrak \sigma \theta(W, k)) v_{\ell'}(\kbf, \sigma) &= \sum_{\ell} D_{\ell' \ell}(W) v_{\ell}(\kbf, \sigma)
+		\label{eq_massless_field_little_group_v_condition}
+	\end{align}
+
+Recall from :ref:`sec_massless_particle_states` that any :math:`W` can be written in the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		W(a, b, \theta) = S(a, b) R(\theta)
+		\label{eq_massless_vector_field_w_equals_s_times_r}
+	\end{equation}
+
+where :math:`S(a, b)` is defined by :math:`\eqref{eq_massless_little_group_s_matrix}`, and :math:`R(\theta)` is defined by :math:`\eqref{eq_massless_little_group_r_matrix}`. Considering separately the two cases :math:`W(0, 0, \theta) = R(\theta)` and :math:`W(a, b, 0) = S(a, b)`, we get the following two consequences of :math:`\eqref{eq_massless_field_spinor_u_condition}`
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		e^{\ifrak \sigma \theta} u_{\ell'}(\kbf, \sigma) &= \sum_{\ell} D_{\ell' \ell}(R(\theta)) u_{\ell}(\kbf, \sigma)
+		\label{eq_massless_field_spinor_u_condition_from_r} \\
+		u_{\ell'}(\kbf, \sigma) &= \sum_{\ell} D_{\ell' \ell}(S(a, b)) u_{\ell}(\kbf, \sigma)
+		\label{eq_massless_field_spinor_u_condition_from_s}
+	\end{align}
+
+Similar constraints hold for :math:`v` as well, but we'll not bother to write them down.
+
+It turns out, however, that these conditions can never be satisfied! To illustrate the difficulties, we'll first consider the case of vector fields, both as a warm-up and for later references when we'll analyze the electromagnetic theory. Then we'll show that the difficulties persist to the general case of arbitrary :math:`(A, B)` fields.
+
+The failure for vector fields
++++++++++++++++++++++++++++++
+
+For vector field :math:`D_{\mu}^{\nu}(\Lambda) = \Lambda_{\mu}^{\nu}` as in the massive case. As a convention, let's write
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		u_{\mu}(\pbf, \sigma) \eqqcolon \frac{1}{\sqrt{2p_0}} e_{\mu}(\pbf, \sigma)
+	\end{equation*}
+
+Since :math:`D_{\mu}^{\nu}(\Lambda)` is real, it follows from :math:`\eqref{eq_massless_field_spinor_u_condition}` and :math:`\eqref{eq_massless_field_spinor_v_condition}` that :math:`v` satisfies equations that are complex conjugate to those that :math:`u` satisfies. Hence :math:`v_{\mu}(\pbf, \sigma) = u^{\ast}_{\mu}(\pbf, \sigma)`.
+
+Now we can translate :math:`\eqref{eq_massless_field_u_from_k}` from a boosting formula for :math:`u` to one for :math:`e` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		e_{\mu}(\pbf, \sigma) = L(p)_{\mu}^{\nu} e_{\nu}(\kbf, \sigma)
+		\label{eq_massless_vector_field_spinor_from_k_to_p}
+	\end{equation}
+
+Moreover :math:`\eqref{eq_massless_field_spinor_u_condition_from_r}` and :math:`\eqref{eq_massless_field_spinor_u_condition_from_s}` can be translated to conditions on :math:`e` as well as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		e^{\ifrak \sigma \theta} e_{\mu}(\kbf, \sigma) &= R(\theta)_{\mu}^{\nu} e_{\nu}(\kbf, \sigma)
+		\label{eq_massless_field_spinor_e_condition_from_r} \\
+		e_{\mu}(\kbf, \sigma) &= S(a, b)_{\mu}^{\nu} e_{\nu}(\kbf, \sigma)
+		\label{eq_massless_field_spinor_e_condition_from_s}
+	\end{align}
+
+Using the explicit formula :math:`\eqref{eq_massless_little_group_r_matrix}` for :math:`R(\theta)`, we can derive from :math:`\eqref{eq_massless_field_spinor_e_condition_from_r}` that the helicity :math:`\sigma = \pm 1`, and moreover,
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		e_{\mu}(\kbf, \pm 1) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ \pm \ifrak \\ 0 \end{bmatrix}
+		\label{eq_massless_vector_field_e_at_k}
+	\end{equation}
+
+up to normalization. However, by the explicit formula :math:`\eqref{eq_massless_little_group_s_matrix}` for :math:`S(a, b)`, we see that :math:`\eqref{eq_massless_field_spinor_e_condition_from_s}` then requires
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		a \pm \ifrak b = 0
+	\end{equation*}
+
+which is impossible for any real :math:`a, b` that are not both zero.
+
+For reasons that will be justified later, it's nonetheless legitimate to adopt the vectors :math:`e_{\mu}` as defined by :math:`\eqref{eq_massless_vector_field_e_at_k}` as the spinors, as well as the condition :math:`\kappa = \lambda = 1` as in the case of massive vector fields. With these assumptions, we can rename :math:`\psi` by :math:`a` (as it'll correspond to the `electromagnetic potential <https://en.wikipedia.org/wiki/Electromagnetic_four-potential>`__ which is conventionally named by :math:`a`), and rewrite :math:`\eqref{eq_massless_field_defn_psi_field}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		a_{\mu}(x) = (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \left( e^{\ifrak p \cdot x} e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} e^{\ast}_{\mu}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
+		\label{eq_massless_vector_field_a}
+	\end{equation}
+
+.. warning::
+
+	The notations are getting slightly out of hands here. Namely, we've used :math:`a` for at least three different things in one place: the vector field :math:`a_{\mu}`, the parameter in :math:`S(a, b)`, and the creation operator :math:`a(\pbf, \sigma)`. There will actually be a fourth place where :math:`a` is used as the spin :math:`z`-component in an :math:`(A, B)` field. We can only hope that the context will make it clear what :math:`a` (or :math:`b`) really represents.
+
+As for massive vector fields, we'll search for field equations that :math:`a_{\mu}(x)` must satisfy. First of all, it satisfies obviously the (massless) Klein-Gordan equation
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\square a_{\mu}(x) = 0
+	\end{equation*}
+
+which is nothing but an incarnation of the mass-shell condition :math:`p_0^2 = |\pbf|^2`. Then let's consider the massless analog to the gauge-fixing condition :math:`\eqref{eq_vector_field_gauge_fixing_condition}`. To this end, we claim that :math:`e_0(\kbf, \pm 1) = 0` and :math:`\kbf \cdot \ebf(\kbf, \pm 1) = 0` imply the following
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		e_0(\pbf, \pm 1) &= 0
+		\label{eq_massless_vector_field_spinor_zero_vanishes} \\
+		\pbf \cdot \ebf(\pbf, \pm 1) &= 0
+		\label{eq_massless_vector_field_spinor_orthogonal_to_momentum}
+	\end{align}
+
+in analogy to :math:`\eqref{eq_vector_field_spinor_orthogonal_to_momentum}` by the following argument. First, note that :math:`e_{\mu}(\pbf, \pm 1)` can be obtained from :math:`e_{\mu}(\kbf, \pm 1)` by applying :math:`L(p)` as in :math:`\eqref{eq_massless_vector_field_spinor_from_k_to_p}`. Second, :math:`L(p)` can be decomposed into a boost along the :math:`z`-axis as in :math:`\eqref{eq_massless_boost}` followed by a :math:`3`-rotation. Finally, we conclude :math:`\eqref{eq_massless_vector_field_spinor_zero_vanishes}` and :math:`\eqref{eq_massless_vector_field_spinor_orthogonal_to_momentum}` by noting that :math:`e_{\mu}(\kbf, \pm 1)` is unaffected by any boost along the :math:`z`, and the dot product is preserved by any :math:`3`-rotation. In contrast to the massless case :math:`\eqref{eq_vector_field_spinor_orthogonal_to_momentum}`, we have a stronger constraint :math:`\eqref{eq_massless_vector_field_spinor_zero_vanishes}` here because the helicity :math:`0` spinor is missing.
+
+The corresponding constraints on :math:`a_{\mu}(x)` is the following
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		a_0(x) &= 0 \\
+		\nabla \cdot \abf(x) &= 0
+	\end{align*}
+
+which is clearly not Lorentz invariant.
+
+But let's calculate :math:`U(\Lambda) a_{\mu}(x) U^{-1}(\Lambda)` anyway and see to some extent :math:`\eqref{eq_massless_field_psi_transform_by_d_matrix}` fails. To this end, we'll need to calculate the action of the :math:`D` matrix on the spinors, and we'll first do this for :math:`e_{\mu}(k, \pm 1)` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		D_{\mu}^{\nu}(W(a, b, \theta)) e_{\nu}(\kbf, \pm 1) &\xlongequal{\eqref{eq_massless_vector_field_w_equals_s_times_r}} S(a, b)_{\mu}^{\lambda} R(\theta)_{\lambda}^{\nu} e_{\nu}(\kbf, \pm 1)
+		\label{eq_massless_vector_field_dw_acts_on_spinor} \\
+			&\xlongequal{\eqref{eq_massless_field_spinor_e_condition_from_r}} e^{\pm \ifrak \theta} S(a, b)_{\mu}^{\lambda} e_{\lambda}(\kbf, \pm 1)
+			\nonumber \\
+			&\xlongequal{\eqref{eq_massless_little_group_s_matrix}} e^{\pm \ifrak \theta} \left( e_{\mu}(\kbf, \pm 1) + \frac{a \pm \ifrak b}{\sqrt{2}} k_{\mu} \right)
+			\nonumber
+	\end{align}
+
+Next we recall the little group element :math:`W(\Lambda, p) = L^{-1}(\Lambda p) \Lambda L(p)` by definition. Plugging into :math:`\eqref{eq_massless_vector_field_dw_acts_on_spinor}`, we obtain the following
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Lambda_{\mu}^{\nu} e_{\nu}(\pbf, \pm 1) = e^{\pm \ifrak \theta(\Lambda, p)} \left(e_{\mu}(\pbf_{\Lambda}, \pm 1) + (\Lambda p)_{\mu} \Omega_{\pm}(\Lambda, p)\right)
+		\label{eq_massless_vector_field_spinor_e_condition}
+	\end{equation}
+
+where
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Omega_{\pm}(\Lambda, p) \coloneqq \frac{a(\Lambda, p) \pm \ifrak b(\Lambda, p)}{\sqrt{2}}
+	\end{equation*}
+
+is the extra term that makes it different from :math:`\eqref{eq_massless_field_spinor_u_condition}` which would have been satisfied if :math:`\eqref{eq_massless_field_psi_transform_by_d_matrix}` holds.
+
+To most conveniently utilize :math:`\eqref{eq_massless_vector_field_spinor_e_condition}`, let's calculate :math:`D_{\mu}^{\nu} \left( U(\Lambda) a_{\nu}(x) U^{-1}(\Lambda) \right)` using :math:`\eqref{eq_massless_vector_field_a}, \eqref{eq_massless_vector_field_creation_operator_conjugated_by_lorentz_transformation}`, and :math:`\eqref{eq_massless_vector_field_annihilation_operator_conjugated_by_lorentz_transformation}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		D_{\mu}^{\nu}(\Lambda) \left(U(\Lambda) a_{\nu}(x) U^{-1}(\Lambda)\right) &= (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot x} \Lambda_{\mu}^{\nu} e_{\nu}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} e^{-\ifrak \sigma \theta(\Lambda, p)} a(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
+			&\phantom{= \Big(} e^{-\ifrak p \cdot x} \Lambda_{\mu}^{\nu} e^{\ast}_{\nu}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} e^{\ifrak \sigma \theta} a^{c \dagger}(\pbf_{\Lambda}, \sigma) \Big) \\
+			&\xlongequal{\eqref{eq_massless_vector_field_spinor_e_condition}} (2\pi)^{-3/2} \int \frac{d^3 p}{p_0} \sqrt{\frac{(\Lambda p)_0}{2}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot x} e_{\mu}(\pbf_{\Lambda}, \sigma) a(\pbf_{\Lambda}, \sigma) + e^{-\ifrak p \cdot x} e^{\ast}_{\mu}(\pbf_{\Lambda}, \sigma) a^{c \dagger}(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
+			&\phantom{\xlongequal{\eqref{eq_massless_vector_field_spinor_e_condition}} \Big(} + (\Lambda p)_{\mu} \left( e^{\ifrak p \cdot x} \Omega_{\sigma}(\Lambda, p) a(\pbf_{\Lambda}, \sigma) + e^{-\ifrak p \cdot x} \Omega^{\ast}_{\sigma}(\Lambda, p) a^{c \dagger}(\pbf_{\Lambda}, \sigma) \right) \Big) \\
+			&= (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot \Lambda x} e_{\mu}(\pbf, \pm 1) a(\pbf, \sigma) + e^{-\ifrak p \cdot \Lambda x} e^{\ast}_{\mu}(\pbf, \pm 1) a^{c \dagger}(\pbf, \sigma) \phantom{\Big)} \\
+			&\phantom{= \Big(} + p_{\mu} \left( e^{\ifrak p \cdot \Lambda x} \Omega_{\sigma}(\Lambda, \Lambda^{-1} p) + e^{-\ifrak p \cdot \Lambda x} \Omega^{\ast}_{\sigma}(\Lambda, \Lambda^{-1} p) a^{c \dagger}(\pbf, \sigma) \right) \Big) \\
+			&= a_{\mu}(\Lambda x) + \frac{\p}{\p (\Lambda_{\mu}^{\nu} x_{\nu})} \Omega(\Lambda, x)
+	\end{align*}
+
+where :math:`\Omega(\Lambda, x)` is a linear combination of creation and annihilation operators, whose precise form is not important here. Finally, moving :math:`D(\Lambda)` to the right-hand-side, we obtain the following variation of :math:`\eqref{eq_massless_field_psi_transform_by_d_matrix}`
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		U(\Lambda) a_{\mu}(x) U^{-1}(\Lambda) = D(\Lambda^{-1})_{\mu}^{\nu} a_{\nu}(\Lambda x) + \p_{\mu} \Omega(\Lambda, x)
+	\end{equation*}
+
+which the massless vector field :math:`\eqref{eq_massless_vector_field_a}` actually satisfies.
 
 .. rubric:: Footnotes
 
