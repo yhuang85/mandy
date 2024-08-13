@@ -3861,7 +3861,7 @@ Then we can try to construct :math:`\Hscr(x)` by a formula similar to :math:`\eq
 		\label{eq_construct_interaction_density_by_fields}
 	\end{equation}
 
-It follows from :math:`\eqref{eq_conjugate_creation_field}` and :math:`\eqref{eq_conjugate_annihilation_field}` that the interaction density defined by :math:`\eqref{eq_construct_interaction_density_by_fields}` is a scalar if the following holds
+It follows from :math:`\eqref{eq_conjugate_annihilation_field}` and :math:`\eqref{eq_conjugate_creation_field}` that the interaction density defined by :math:`\eqref{eq_construct_interaction_density_by_fields}` is a scalar if the following holds
 
 .. math::
 	:nowrap:
@@ -4834,9 +4834,10 @@ This condition turns out to be coincide with a so-called "gauge fixing" conditio
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Hscr(x) = J^{\mu}(x) \psi_{\mu}(x)
-	\end{equation*}
+		\label{eq_vector_field_j_coupling}
+	\end{equation}
 
 where :math:`J^{\mu}(x)` is a :math:`4`-vector current. Suppose we fix the in- and out-states in the interaction. Then according to :math:`\eqref{eq_vector_field_psi_by_creation_and_annihilation_operators}`, the rate of (anti-)particle emission is proportional to
 
@@ -4854,9 +4855,10 @@ where :math:`\langle J^{\mu} \rangle` denotes the matrix element of the current 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\p_{\mu} J^{\mu}(x) = 0
-	\end{equation*}
+		\label{eq_vector_field_j_coupling_condition}
+	\end{equation}
 
 or in other words :math:`J^{\mu}(x)` is a conserved current.
 
@@ -5079,7 +5081,7 @@ Now using the definition :math:`\eqref{eq_dirac_field_defn_j}`, we can calculate
 
 .. _paragraph_dirac_field_representation_not_unitary:
 
-where :math:`i, j \in \{1,2,3\}` and :math:`\epsilon` is the totally antisymmetric sign. We see that the representation :math:`\Jscr_{\mu \nu}` is in fact reducible. Moreover, we see that that the corresponding representation :math:`D` of the Lorentz group given by :math:`\eqref{eq_dirac_field_linearize_representation}` is not unitary, since while :math:`\Jscr_{ij}` are Hermitian, :math:`\Jscr_{i0}` are anti-Hermitian. The fact that :math:`D` is not unitary will have consequences when we try to construct the interaction density as in :math:`\eqref{eq_construct_interaction_density_by_fields}`, because products like :math:`\psi^{\dagger} \psi` will not be a scalar in light of :math:`\eqref{eq_conjugate_annihilation_field}` or :math:`\eqref{eq_conjugate_creation_field}`.
+where :math:`i, j \in \{1,2,3\}` and :math:`\epsilon` is the totally anti-symmetric sign. We see that the representation :math:`\Jscr_{\mu \nu}` is in fact reducible. Moreover, we see that that the corresponding representation :math:`D` of the Lorentz group given by :math:`\eqref{eq_dirac_field_linearize_representation}` is not unitary, since while :math:`\Jscr_{ij}` are Hermitian, :math:`\Jscr_{i0}` are anti-Hermitian. The fact that :math:`D` is not unitary will have consequences when we try to construct the interaction density as in :math:`\eqref{eq_construct_interaction_density_by_fields}`, because products like :math:`\psi^{\dagger} \psi` will not be a scalar in light of :math:`\eqref{eq_conjugate_annihilation_field}` or :math:`\eqref{eq_conjugate_creation_field}`.
 
 Next let's consider the parity transformation in the formalism of gamma matrices. In light of the transformation laws :math:`\eqref{eq_j3_conjugated_by_p}` and :math:`\eqref{eq_k3_conjugated_by_p}`, we can define
 
@@ -6625,7 +6627,7 @@ Since the CPT symmetry is clearly conserved for free particles, it is also conse
 Massless fields
 ^^^^^^^^^^^^^^^
 
-So far the story about quantum fields has been a 100% success. We've namely found the general formula :math:`\eqref{eq_general_field_psi_field}` for *any* field that represents a massive particle. However, such success will come to an end when we consider instead massless particles as we'll see in this section. This should not come as a surprise though since we've see in :math:`\eqref{eq_vector_field_defn_Pi}` for example, that the spinor sum blows up in the massless limit :math:`m \to 0`.
+So far the story about quantum fields has been a 100% success. We've namely found the general formula :math:`\eqref{eq_general_field_psi_field}` for *any* field that represents a massive particle. However, such success will come to an end when we consider instead massless particles as we'll see in this section. This should not come as a surprise though since we've see in :math:`\eqref{eq_vector_field_defn_Pi}` for example, that the spin sum blows up in the massless limit :math:`m \to 0`.
 
 Let's nonetheless kickstart the routine of constructing fields as follows, and see where the problem should arise.
 
@@ -6821,9 +6823,10 @@ As for massive vector fields, we'll search for field equations that :math:`a_{\m
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\square a_{\mu}(x) = 0
-	\end{equation*}
+		\label{eq_massless_vector_field_klein_gordon}
+	\end{equation}
 
 which is nothing but an incarnation of the mass-shell condition :math:`p_0^2 = |\pbf|^2`. Then let's consider the massless analog to the gauge-fixing condition :math:`\eqref{eq_vector_field_gauge_fixing_condition}`. To this end, we claim that :math:`e_0(\kbf, \pm 1) = 0` and :math:`\kbf \cdot \ebf(\kbf, \pm 1) = 0` imply the following
 
@@ -6844,10 +6847,12 @@ The corresponding constraints on :math:`a_{\mu}(x)` is the following
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		a_0(x) &= 0 \\
+	\begin{align}
+		a_0(x) &= 0
+		\label{eq_massless_vector_field_a0_vanishes} \\
 		\nabla \cdot \abf(x) &= 0
-	\end{align*}
+		\label{eq_massless_vector_field_a_divergence_vanishes}
+	\end{align}
 
 which is clearly not Lorentz invariant.
 
@@ -6906,11 +6911,107 @@ where :math:`\Omega(\Lambda, x)` is a linear combination of creation and annihil
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		U(\Lambda) a_{\mu}(x) U^{-1}(\Lambda) = D(\Lambda^{-1})_{\mu}^{\nu} a_{\nu}(\Lambda x) + \p_{\mu} \Omega(\Lambda, x)
-	\end{equation*}
+		\label{eq_massless_vector_field_a_conjugation_by_lorentz_transformation}
+	\end{equation}
 
 which the massless vector field :math:`\eqref{eq_massless_vector_field_a}` actually satisfies.
+
+It follows, using integration by parts, that one can construct interaction densities by coupling :math:`j^{\mu}(x) a_{\mu}(x)` as long as :math:`\p_{\mu} j^{\mu}(x) = 0`. This is completely parallel to :math:`\eqref{eq_vector_field_j_coupling}` and :math:`\eqref{eq_vector_field_j_coupling_condition}` for massive vector fields, and hence partially justifies the choice of the spinors in :math:`\eqref{eq_massless_vector_field_e_at_k}`, which satisfy :math:`\eqref{eq_massless_field_spinor_e_condition_from_r}` but not :math:`\eqref{eq_massless_field_spinor_e_condition_from_s}`.
+
+Another byproduct of :math:`\eqref{eq_massless_vector_field_a_conjugation_by_lorentz_transformation}` is the observation that although :math:`a_{\mu}` fails to be a vector, one can easily construct a :math:`2`-tensor as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		f_{\mu \nu} = \p_{\mu} a_{\nu} - \p_{\nu} a_{\mu}
+	\end{equation*}
+
+which obviously satisfies :math:`U(\Lambda) f_{\mu \nu} U^{-1}(\Lambda) = D_{\mu}^{\lambda}(\Lambda^{-1}) D_{\nu}^{\sigma}(\Lambda^{-1}) f_{\lambda \sigma}`. In fact, using :math:`\eqref{eq_massless_vector_field_klein_gordon}, \eqref{eq_massless_vector_field_a0_vanishes}` and :math:`\eqref{eq_massless_vector_field_a_divergence_vanishes}`, one can show that :math:`f_{\mu \nu}` satisfies the vacuum Maxwell equations
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\p_{\mu} f^{\mu \nu} &= 0 \\
+		\epsilon^{\rho \tau \mu \nu} \p_{\tau} f_{\mu \nu} &= 0
+	\end{align*}
+
+where :math:`\epsilon^{\rho \tau \mu \nu}` is the totally anti-symmetric sign. Indeed :math:`f_{\mu \nu}` is the quantization of the electromagnetic field, while :math:`a_{\mu}` is the quantization of the electromagnetic potential.
+
+.. dropdown:: Build a quantum field with :math:`f_{\mu \nu}`
+	:icon: unlock
+	:animate: fade-in-slide-down
+
+	Since :math:`f_{\mu \nu}` is a tensor, one might try to build a (causal) quantum field with :math:`f_{\mu \nu}`, instead of :math:`a_{\mu}`. The causality condition :math:`\eqref{eq_h_commutativity_for_space_like_separations}` demands that the (anti-)commutator :math:`\left[ f_{\mu \nu}(x), f^{\dagger}_{\rho \tau}(y) \right]` must vanish for space-separated :math:`x` and :math:`y`. As in the other cases, some preliminary calculations are in order. First we calculate the spin sum as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\sum_{\sigma = \pm 1} \ebf_i(\kbf, \sigma) \ebf_j^{\ast}(\kbf, \sigma) = \delta_{ij} - \kbf_i \kbf_j ~~\xRightarrow{\eqref{eq_massless_vector_field_spinor_from_k_to_p}} \
+				\sum_{\sigma = \pm 1} \ebf_i(\pbf, \sigma) \ebf_j^{\ast}(\pbf, \sigma) = \delta_{ij} - \frac{\pbf_i \pbf_j}{|\pbf|^2}
+			\label{eq_massless_vector_field_spin_sum}
+		\end{equation}
+
+	where the first equality can be directly verified using :math:`\eqref{eq_massless_vector_field_e_at_k}`. In particular, we notice that the spin sum is real -- a neat fact that will be used in the next calculation. Moreover, the spin sum vanishes if any index is :math:`0` because of :math:`\eqref{eq_massless_vector_field_spinor_zero_vanishes}`.
+
+	Next we calculate the (anti-)commutator between the derivatives of the components of an :math:`a`-field, with coefficients :math:`\kappa` and :math:`\lambda` as in :math:`\eqref{eq_massless_field_defn_psi_field}` restored, as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\left[ \p_{\mu} a_{\nu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right]_{\pm} &\xlongequal{\eqref{eq_massless_vector_field_a}} (2\pi)^{-3} \int \frac{d^3 p~d^3 p'}{2\sqrt{p_0 p'_0}} \sum_{\sigma, \sigma' = \pm 1} \Big( |\kappa|^2 e^{\ifrak p \cdot x - \ifrak p' \cdot y} p_{\mu} p'_{\rho} e_{\nu}(\pbf, \sigma) e^{\ast}_{\tau}(\pbf', \sigma') \left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right]_{\pm} \phantom{\Big)} \\
+				&\phantom{\xlongequal{\eqref{eq_massless_vector_field_a}} \Big(} + |\lambda|^2 e^{-\ifrak p \cdot x + \ifrak p' \cdot y} p_{\mu} p'_{\rho} e^{\ast}_{\nu}(\pbf, \sigma) e_{\tau}(\pbf', \sigma') \left[ a^{c \dagger}(\pbf, \sigma), a^c(\pbf', \sigma') \right]_{\pm} \Big) \\
+				&\xlongequal{\eqref{eq_creation_annihilation_commutator}} (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \sum_{\sigma = \pm 1} p_{\mu} p_{\rho} \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} e_{\nu}(\pbf, \sigma) e^{\ast}_{\tau}(\pbf, \sigma) \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} e^{\ast}_{\nu}(\pbf, \sigma) e_{\tau}(\pbf, \sigma) \right) \\
+				&\xlongequal{\eqref{eq_massless_vector_field_spin_sum}} (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \blue{p_{\mu} p_{\rho} (1 - \delta_{0\nu})(1 - \delta_{0\tau}) \left( \delta_{\nu \tau} - \frac{p_{\nu} p_{\tau}}{|\pbf|^2} \right)} \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right)
+		\end{align*}
+
+	Notice that the blue terms are the only terms that involve the indexes :math:`\mu, \nu, \rho`, and :math:`\tau`. For the convenience of notations, let's call it :math:`P_{\mu \nu \rho \tau}`. Now we can calculate the (anti-)commutator as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			\left[ f_{\mu \nu}(x), f^{\dagger}_{\rho \tau}(y) \right]_{\pm} &= \left[ \p_{\mu} a_{\nu}(x) - \p_{\nu} a_{\mu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) - \p_{\tau} a^{\dagger}_{\rho}(y) \right]
+			\label{eq_massless_curvature_commutator_first_calculation} \\
+				&= \left[ \p_{\mu} a_{\nu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right] \
+      				- \left[ \p_{\mu} a_{\nu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \
+      				- \left[ \p_{\nu} a_{\mu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right] \
+      				+ \left[ \p_{\nu} a_{\mu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \nonumber \\
+    			&= (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \left( P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} \right) \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right) \nonumber
+		\end{align}
+
+	It remains to calculate the following
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} &= p_{\mu} p_{\rho} \left( \delta_{\nu \tau} - \delta_{0 \nu}\delta_{0 \tau} - (1 - \delta_{0 \nu})(1 - \delta_{0 \tau}) \frac{p_{\nu} p_{\tau}}{|\pbf|^2} \right) \\
+				&\phantom{=} - p_{\mu} p_{\tau} \left( \delta_{\nu \rho} - \delta_{0 \nu}\delta_{0 \rho} - (1 - \delta_{0 \nu})(1 - \delta_{0 \rho}) \frac{p_{\nu} p_{\rho}}{|\pbf|^2} \right) \\
+				&\phantom{=} - p_{\nu} p_{\rho} \left( \delta_{\mu \tau} - \delta_{0 \mu}\delta_{0 \tau} - (1 - \delta_{0 \mu})(1 - \delta_{0 \tau}) \frac{p_{\mu} p_{\tau}}{|\pbf|^2} \right) \\
+				&\phantom{=} + p_{\nu} p_{\tau} \left( \delta_{\mu \rho} - \delta_{0 \mu}\delta_{0 \rho} - (1 - \delta_{0 \mu})(1 - \delta_{0 \rho}) \frac{p_{\mu} p_{\rho}}{|\pbf|^2} \right) \\
+				&= p_{\mu} p_{\rho} (\delta_{\nu \tau} - 2\delta_{0 \nu}\delta_{0 \tau}) - p_{\mu} p_{\tau} (\delta_{\nu \rho} - 2\delta_{0 \nu}\delta_{0 \rho}) \\
+				&\phantom{=} - p_{\nu} p_{\rho} (\delta_{\mu \tau} - 2\delta_{0 \mu}\delta_{0 \tau}) + p_{\nu} p_{\tau} (\delta_{\mu \rho} - 2\delta_{0 \mu}\delta_{0 \rho}) \\
+				&= \eta_{\nu \tau} p_{\mu} p_{\rho} - \eta_{\nu \rho} p_{\mu} p_{\tau} - \eta_{\mu \tau} p_{\nu} p_{\rho} + \eta_{\mu \rho} p_{\nu} p_{\tau}
+		\end{align*}
+
+	Finally we can finish :math:`\eqref{eq_massless_curvature_commutator_first_calculation}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ f_{\mu \nu}(x), f^{\dagger}_{\rho \tau}(y) \right]_{\pm} = -(2\pi)^{-3} \left( \eta_{\nu \tau} \p_{\mu} \p_{\rho} - \eta_{\nu \rho} \p_{\mu} \p_{\tau} - \eta_{\mu \tau} \p_{\nu} \p_{\rho} + \eta_{\mu \rho} \p_{\nu} \p_{\tau} \right) \int \frac{d^3 p}{2p_0} \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right)
+		\end{equation*}
+
+	For this expression to vanish, we must take the bottom sign, i.e., it's a commutator. Moreover, we must have :math:`|\kappa| = |\lambda|` since :math:`\Delta_+(x-y) = \Delta_+(y-x)` if :math:`x-y` is space-like. By further rescaling the creation operator appropriately, we may therefore assume :math:`\kappa = \lambda = 1`, which partially justified the same choice taken for the :math:`a`-field :math:`\eqref{eq_massless_vector_field_a}`. In particular, the massless helicity :math:`\pm 1` (vector) field must be bosonic, as expected.
+
+
 
 .. rubric:: Footnotes
 
