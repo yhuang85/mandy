@@ -1232,7 +1232,7 @@ It follows from :math:`\eqref{eq_vk_is_one}` that we can write :math:`Wv = (1 + 
 	:nowrap:
 
 	\begin{equation}
-		S(a, b) = \begin{bmatrix}
+		S_{\mu}^{\nu}(a, b) = \begin{bmatrix}
 			1 + c & a & b & -c \\
 			a & 1 & 0 & -a \\
 			b & 0 & 1 & -b \\
@@ -5817,10 +5817,12 @@ Let's write :math:`\bm{\Jscr} \coloneqq \left(\Jscr_1, \Jscr_2, \Jscr_3\right)` 
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		\bm{\Ascr} &= \frac{1}{2} \left( \bm{\Jscr} + \ifrak \bm{\Kscr} \right) \\
+	\begin{align}
+		\bm{\Ascr} &= \frac{1}{2} \left( \bm{\Jscr} + \ifrak \bm{\Kscr} \right)
+		\label{eq_general_field_a_from_jk} \\
 		\bm{\Bscr} &= \frac{1}{2} \left( \bm{\Jscr} - \ifrak \bm{\Kscr} \right)
-	\end{align*}
+		\label{eq_general_field_b_from_jk}
+	\end{align}
 
 so that :math:`\eqref{eq_jjj_commutation_general_repr}` -- :math:`\eqref{eq_kkj_commutation_general_repr}` take the following form
 
@@ -6925,9 +6927,10 @@ Another byproduct of :math:`\eqref{eq_massless_vector_field_a_conjugation_by_lor
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		f_{\mu \nu} = \p_{\mu} a_{\nu} - \p_{\nu} a_{\mu}
-	\end{equation*}
+		\label{eq_massless_vector_field_curvature_tensor}
+	\end{equation}
 
 which obviously satisfies :math:`U(\Lambda) f_{\mu \nu} U^{-1}(\Lambda) = D_{\mu}^{\lambda}(\Lambda^{-1}) D_{\nu}^{\sigma}(\Lambda^{-1}) f_{\lambda \sigma}`. In fact, using :math:`\eqref{eq_massless_vector_field_klein_gordon}, \eqref{eq_massless_vector_field_a0_vanishes}` and :math:`\eqref{eq_massless_vector_field_a_divergence_vanishes}`, one can show that :math:`f_{\mu \nu}` satisfies the vacuum Maxwell equations
 
@@ -6945,7 +6948,7 @@ where :math:`\epsilon^{\rho \tau \mu \nu}` is the totally anti-symmetric sign. I
 	:icon: unlock
 	:animate: fade-in-slide-down
 
-	Since :math:`f_{\mu \nu}` is a tensor, one might try to build a (causal) quantum field with :math:`f_{\mu \nu}`, instead of :math:`a_{\mu}`. The causality condition :math:`\eqref{eq_h_commutativity_for_space_like_separations}` demands that the (anti-)commutator :math:`\left[ f_{\mu \nu}(x), f^{\dagger}_{\rho \tau}(y) \right]` must vanish for space-separated :math:`x` and :math:`y`. As in the other cases, some preliminary calculations are in order. First we calculate the spin sum as follows
+	Since :math:`f_{\mu \nu}` is a tensor, one might try to build a (causal) quantum field with :math:`f_{\mu \nu}`, instead of :math:`a_{\mu}`. The causality condition :math:`\eqref{eq_h_commutativity_for_space_like_separations}` demands that the (anti-)commutator :math:`\left[ f_{\mu \nu}(x), f^{\dagger}_{\rho \tau}(y) \right]_{\pm}` must vanish for space-separated :math:`x` and :math:`y`. As in the other cases, some preliminary calculations are in order. First we calculate the spin sum as follows
 
 	.. math::
 		:nowrap:
@@ -7009,8 +7012,106 @@ where :math:`\epsilon^{\rho \tau \mu \nu}` is the totally anti-symmetric sign. I
 			\left[ f_{\mu \nu}(x), f^{\dagger}_{\rho \tau}(y) \right]_{\pm} = -(2\pi)^{-3} \left( \eta_{\nu \tau} \p_{\mu} \p_{\rho} - \eta_{\nu \rho} \p_{\mu} \p_{\tau} - \eta_{\mu \tau} \p_{\nu} \p_{\rho} + \eta_{\mu \rho} \p_{\nu} \p_{\tau} \right) \int \frac{d^3 p}{2p_0} \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right)
 		\end{equation*}
 
-	For this expression to vanish, we must take the bottom sign, i.e., it's a commutator. Moreover, we must have :math:`|\kappa| = |\lambda|` since :math:`\Delta_+(x-y) = \Delta_+(y-x)` if :math:`x-y` is space-like. By further rescaling the creation operator appropriately, we may therefore assume :math:`\kappa = \lambda = 1`, which partially justified the same choice taken for the :math:`a`-field :math:`\eqref{eq_massless_vector_field_a}`. In particular, the massless helicity :math:`\pm 1` (vector) field must be bosonic, as expected.
+	For this expression to vanish, we must take the bottom sign, i.e., it's a commutator. Moreover, we must have :math:`|\kappa| = |\lambda|` since :math:`\Delta_+(x-y) = \Delta_+(y-x)` if :math:`x-y` is space-like. By further rescaling the creation operator if necessary, we may assume :math:`\kappa = \lambda = 1`, which partially justifies the same choice taken for the :math:`a`-field :math:`\eqref{eq_massless_vector_field_a}`. In particular, the massless helicity :math:`\pm 1` (vector) field must be bosonic, as expected.
 
+
+The failure for general fields
+++++++++++++++++++++++++++++++
+
+The problem that massless fields cannot be made to satisfy the transformation law :math:`\eqref{eq_massless_field_psi_transform_by_d_matrix}` is not specific to vector fields. Indeed, we'll show in this section that the same problem persists to all :math:`(A, B)` representations.
+
+Recall from :math:`\eqref{eq_general_field_a_from_jk}` -- :math:`\eqref{eq_general_field_b_from_jk}`, and :math:`\eqref{eq_general_field_a_repr}` -- :math:`\eqref{eq_general_field_b_repr}`, that we can explicitly write the :math:`\Jscr_{\mu \nu}` matrix as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left( \Jscr_{ij} \right)_{a'b', ab} &= \epsilon_{ijk} \left( \delta_{b'b} \left( \Jbf^{(A)}_k \right)_{a'a} + \delta_{a'a} \left( \Jbf^{(B)}_k \right)_{b'b} \right)
+		\label{eq_massless_general_field_jab} \\
+		\left( \Jscr_{k0} \right)_{a'b', ab} &= -\ifrak \left( \delta_{b'b} \left( \Jbf^{(A)}_k \right)_{a'a} - \delta_{a'a} \left( \Jbf^{(B)}_k \right)_{b'b} \right)
+		\label{eq_massless_general_field_kab}
+	\end{align}
+
+It follows from :math:`\eqref{eq_dirac_field_linearize_representation}`, and the fact according to :math:`\eqref{eq_massless_little_group_r_matrix}` that :math:`R(\theta)` is the rotation in the :math:`xy`-plane, that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		D(R(\theta)) = 1 + \ifrak \theta \Jscr_{12}
+	\end{equation*}
+
+for :math:`\theta` infinitesimal. The linearized version of :math:`\eqref{eq_massless_field_spinor_u_condition_from_r}`, and its counterpart for :math:`v`, in this case is given by the following
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sigma u_{a'b'}(\kbf, \sigma) &\xlongequal{\eqref{eq_massless_field_spinor_u_condition_from_r}} \sum_{a'b'} \left( \Jscr_{12} \right)_{a'b', ab} u_{ab}(\kbf, \sigma) \
+			\xlongequal{\eqref{eq_massless_general_field_jab}} \sum_{ab} (a' + b') \delta_{a'a} \delta_{b'b} u_{ab}(\kbf, \sigma) \
+			= (a' + b') u_{a'b'}(\kbf, \sigma) \\
+		-\sigma v_{a'b'}(\kbf, \sigma) &= (a' + b') v_{a'b'}(\kbf, \sigma)
+	\end{align*}
+
+It follows that
+
+.. math::
+	:nowrap:
+
+	\begin{alignat}{2}
+		a' + b' &= \sigma  \quad &&\text{if}~~ u_{a'b'}(\kbf, \sigma) \neq 0
+		\label{eq_massless_general_field_ab_condition_1} \\
+		a' + b' &= -\sigma \quad &&\text{if}~~ v_{a'b'}(\kbf, \sigma) \neq 0
+		\label{eq_massless_general_field_ab_condition_for_v}
+	\end{alignat}
+
+Next let's linearize :math:`\eqref{eq_massless_field_spinor_u_condition_from_s}` using the explicit formula :math:`\eqref{eq_massless_little_group_s_matrix}` for :math:`S(a, b)` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		0 &= \sum_{a, b} \left( \Jscr_{01} + \Jscr_{31} \right)_{a'b', ab} u_{ab}(\kbf, \sigma) \\
+			&= \sum_{a, b} \left( \ifrak \delta_{b'b} \left( \Jbf^{(A)}_1 \right)_{a'a} - \ifrak \delta_{a'a} \left( \Jbf^{(B)}_1 \right)_{b'b} + \delta_{b'b} \left( \Jbf^{(A)}_2 \right)_{a'a} + \delta_{a'a} \left( \Jbf^{(B)}_2 \right)_{b'b} \right) u_{ab}(\kbf, \sigma) \\
+			&= \sum_{a} \left( \ifrak \Jbf^{(A)}_1 + \Jbf^{(A)}_2 \right)_{a'a} u_{ab'}(\kbf, \sigma) + \sum_{b} \left( -\ifrak \Jbf^{(B)}_1 + \Jbf^{(B)}_2 \right)_{b'b} u_{a'b}(\kbf, \sigma) \\
+		0 &= \sum_{a, b} \left( \Jscr_{02} + \Jscr_{32} \right)_{a'b', ab} u_{ab}(\kbf, \sigma) \\
+			&= \sum_{a, b} \left( \ifrak \delta_{b'b} \left( \Jbf^{(A)}_2 \right)_{a'a} - \ifrak \delta_{a'a} \left( \Jbf^{(B)}_2 \right)_{b'b} - \delta_{b'b} \left( \Jbf^{(A)}_1 \right)_{a'a} - \delta_{a'a} \left( \Jbf^{(B)}_1 \right)_{b'b} \right) u_{ab}(\kbf, \sigma) \\
+			&= \sum_{a} \left( -\Jbf^{(A)}_1 + \ifrak \Jbf^{(A)}_2 \right)_{a'a} u_{ab'}(\kbf, \sigma) - \sum_{b} \left( \Jbf^{(B)}_1 + \ifrak \Jbf^{(B)}_2 \right)_{b'b} u_{a'b}(\kbf, \sigma)
+	\end{align*}
+
+which correspond to taking :math:`a` infinitesimal and :math:`b = 0`, and :math:`b` infinitesimal and :math:`a = 0`, respectively. Since :math:`u_{ab}` are linearly independent, the above constraints are equivalent to the following
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\sum_{a} \left( \Jbf^{(A)}_1 - \ifrak \Jbf^{(A)}_2 \right)_{a'a} u_{ab'}(\kbf, \sigma) &= 0 \\
+		\sum_{b} \left( \Jbf^{(B)}_1 + \ifrak \Jbf^{(B)}_2 \right)_{b'b} u_{a'b}(\kbf, \sigma) &= 0
+	\end{align*}
+
+In order for :math:`u_{ab'}` to be annihilated by the lowering operator, and for :math:`u_{a'b}` to be annihilated by the raising operator, we must have
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		a' = -A, \quad b' = B
+		\label{eq_massless_general_field_ab_condition_2}
+	\end{equation}
+
+if :math:`u_{a'b'}(\kbf, \sigma) \neq 0`. Combining :math:`\eqref{eq_massless_general_field_ab_condition_1}` and :math:`\eqref{eq_massless_general_field_ab_condition_2}`, we conclude that for the :math:`u`-spinor to not vanish, we must have
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\sigma = B - A
+		\label{eq_massless_general_field_helicity_condition}
+	\end{equation}
+
+It follows that a general massless :math:`(A, B)` field, according to :math:`\eqref{eq_general_field_defn_psi_field}`, can only destroy particles of helicity :math:`B-A`. Similar argument can be applied to the :math:`v`-spinor, which, together with :math:`\eqref{eq_massless_general_field_ab_condition_for_v}`, implies that the field can only create antiparticles of helicity :math:`A-B`.
+
+As a special case, we see once again that a massless helicity :math:`\pm 1` field cannot be constructed as a vector field, i.e., a :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)` field, because such vector field must be scalar by :math:`\eqref{eq_massless_general_field_helicity_condition}`. Indeed, the simplest massless helicity :math:`\pm 1` field must be a :math:`(1, 0) \oplus (0, 1)` field, which is nothing but the anti-symmetric :math:`2`-tensor :math:`f_{\mu \nu}` defined by :math:`\eqref{eq_massless_vector_field_curvature_tensor}`.
 
 
 .. rubric:: Footnotes
