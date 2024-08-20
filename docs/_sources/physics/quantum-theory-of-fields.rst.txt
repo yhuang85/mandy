@@ -3116,12 +3116,13 @@ It's somewhat inconvenient that the integral limits in :math:`\eqref{eq_s_matrix
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		T\{ V(t) \} &\coloneqq V(t) \\
-		T\{ V(t_1) V(t_2) \} &\coloneqq \theta(t_1 - t_2) V(t_1) V(t_2) + \theta(t_2 - t_1) V(t_2) V(t_1) \\
-		T\{ V(t_1) V(t_2) V(t_3) \} &\coloneqq \theta(t_1 - t_2) \theta(t_2 - t_3) V(t_1) V(t_2) V(t_3) + \cdots \\
-		&\cdots
-	\end{align*}
+	\begin{align}
+		T\{ V(t) \} &\coloneqq V(t)
+		\label{eq_defn_time_ordered_product} \\
+		T\{ V(t_1) V(t_2) \} &\coloneqq \theta(t_1 - t_2) V(t_1) V(t_2) + \theta(t_2 - t_1) V(t_2) V(t_1) \nonumber \\
+		T\{ V(t_1) V(t_2) V(t_3) \} &\coloneqq \theta(t_1 - t_2) \theta(t_2 - t_3) V(t_1) V(t_2) V(t_3) + \cdots \nonumber \\
+		&\cdots \nonumber
+	\end{align}
 
 where :math:`\theta(\tau)` is the step function which equals :math:`1` for :math:`\tau > 0` and :math:`0` for :math:`\tau < 0`, and it doesn't matter what the value at :math:`\tau = 0` is because it doesn't contribute to the integrals in :math:`\eqref{eq_s_matrix_power_series_expansion_raw}` anyway. With this definition, we can rewrite :math:`\eqref{eq_s_matrix_power_series_expansion_raw}` as follows
 
@@ -7112,6 +7113,132 @@ if :math:`u_{a'b'}(\kbf, \sigma) \neq 0`. Combining :math:`\eqref{eq_massless_ge
 It follows that a general massless :math:`(A, B)` field, according to :math:`\eqref{eq_general_field_defn_psi_field}`, can only destroy particles of helicity :math:`B-A`. Similar argument can be applied to the :math:`v`-spinor, which, together with :math:`\eqref{eq_massless_general_field_ab_condition_for_v}`, implies that the field can only create antiparticles of helicity :math:`A-B`.
 
 As a special case, we see once again that a massless helicity :math:`\pm 1` field cannot be constructed as a vector field, i.e., a :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)` field, because such vector field must be scalar by :math:`\eqref{eq_massless_general_field_helicity_condition}`. Indeed, the simplest massless helicity :math:`\pm 1` field must be a :math:`(1, 0) \oplus (0, 1)` field, which is nothing but the anti-symmetric :math:`2`-tensor :math:`f_{\mu \nu}` defined by :math:`\eqref{eq_massless_vector_field_curvature_tensor}`.
+
+
+The Feynman Rules
+-----------------
+
+In :ref:`sec_cluster_decomposable_hamiltonians`, we've discussed the condition that the Hamiltonian must satisfy in order for the cluster decomposition principle to hold. Namely, the Hamiltonian can be written as a polynomial :math:`\eqref{eq_general_expansion_of_hamiltonian}` of creation and annihilation operators in normal order, such that the coefficients contains exactly one momentum conversing delta function. In order to derive this condition, we've encountered the idea of Feynman diagrams, which is a bookkeeping device for the evaluation of S-matrix. We couldn't say more about the coefficients besides the delta function because we had not introduced the building blocks of the Hamiltonian, namely, the quantum fields. Now that we've seen how to construct even the most general fields in the previous chapter, we're ready to spell out the full details of Feynman diagrams.
+
+.. warning::
+
+	We'll consider only fields of massive particles in this chapter.
+
+Derivation of the rules
+^^^^^^^^^^^^^^^^^^^^^^^
+
+We'll derive the Feynman rules in this section, leaving concrete calculations to the next section.
+
+First, recall the S-matrix formulated in terms of the S-operator :math:`\eqref{eq_s_matrix_power_series_expansion_time_ordered_density}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		S_{\pbf'_1, \sigma'_1, n'_1;~\pbf'_2, \sigma'_2, n'_2;~\cdots,~\pbf_1, \sigma_1, n_1;~\pbf_2, \sigma_2, n_2;~\cdots} &= \sum_{n=0}^{\infty} \frac{(-1)^n}{n!} \int d^4 x_1 d^4 x_2 \cdots d^4 x_n \Big( \Phi_{\VAC} \cdots a(\pbf'_2, \sigma'_2, n'_2) a(\pbf'_1, \sigma'_1, n'_2) \phantom{\Big)}
+		\label{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density} \\
+			&\phantom{= \Big(} \times T\left\{ \Hscr(x_1) \cdots \Hscr(x_n) \right\} a^{\dagger}(\pbf_1, \sigma_1, n_1) a^{\dagger}(\pbf_2, \sigma_2, n_2) \cdots \Phi_{\VAC} \Big) \nonumber
+	\end{align}
+
+where :math:`T\{ \cdots \}` is the time-ordered product defined by :math:`\eqref{eq_defn_time_ordered_product}`. As we've seen from the previous chapter, the interaction density :math:`\Hscr(x)` may be written as a polynomial in fields and their adjoint as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Hscr(x) = \sum_{i} g_i \Hscr_i(x)
+		\label{eq_interaction_density_as_sum_of_monomials}
+	\end{equation}
+
+where :math:`\Hscr_i(x)` is monomial of certain fields and their adjoint. Finally, we recall the general formula :math:`\eqref{eq_general_field_psi_field}` for a quantum field as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\psi_{\ell}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma, n) a(\pbf, \sigma, n) + e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma, n) a^{\dagger}(\pbf, \sigma, n^c) \right)
+		\label{eq_generic_field_expression}
+	\end{equation}
+
+where we've restored the particle species index :math:`n`, and absorbed the sign :math:`(-1)^{2B}` in :math:`\eqref{eq_general_field_psi_field}` into the :math:`v`-spinor. Unlike the notation used in :ref:`sec_quantum_lorentz_symmetry`, the sub-index :math:`\ell` here includes not only the running indexes of the Lorentz representation, but also the representation itself, as well as the particle species :math:`n`.
+
+.. warning::
+
+	Any specific field of interest, whether it's scalar, vector, or Dirac, must be first put into the form :math:`\eqref{eq_generic_field_expression}` in order to use the Feynman rules, that we'll introduce below.
+
+According to :math:`\eqref{eq_defn_annihilation_field}` and :math:`\eqref{eq_defn_creation_field}`, we can also write, with obvious modifications, :math:`\psi_{\ell}(x) = \psi^+_{\ell}(x) + \psi^-_{\ell}(x)` such as :math:`\psi^+_{\ell}(x)` is a linear combination of annihilation operators, and :math:`\psi^-_{\ell}(x)` is a linear combination of creation operators.
+
+Now the idea of the Feynman rules to calculate the S-matrix is same as what has been discussed in :ref:`sec_cluster_decomposable_hamiltonians`. Namely, we'd like to move any annihilation operator to the right of a creation operator using the standard commutation rule :math:`\eqref{eq_creation_annihilation_commutator}`. To be more specific, we'll list all the possible scenarios as follows
+
+#. Paring a final particle (in out-state) :math:`(\pbf, \sigma, n)` with a field adjoint :math:`\psi^{\dagger}_{\ell}(x)` gives
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ a(\pbf, \sigma, n), \psi^{\dagger}_{\ell}(x) \right]_{\pm} = (2\pi)^{-3/2} e^{-\ifrak p \cdot x} u^{\ast}_{\ell}(\pbf, \sigma, n)
+		\end{equation*}
+
+#. Paring a final antiparticle :math:`(\pbf, \sigma, n^c)` with a field :math:`\psi_{\ell}(x)` gives
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ a(\pbf, \sigma, n^c), \psi_{\ell}(x) \right]_{\pm} = (2\pi)^{-3/2} e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma, n)
+		\end{equation*}
+
+#. Paring a field :math:`\psi_{\ell}(x)` with an initial particle (in in-state) :math:`(\pbf, \sigma, n)` gives
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ \psi_{\ell}(x), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm} = (2\pi)^{-3/2} e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma, n)
+		\end{equation*}
+
+#. Paring a field adjoint :math:`\psi^{\dagger}_{\ell}(x)` with an initial antiparticle :math:`(\pbf, \sigma, n^c)` gives
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ \psi^{\dagger}(x), a^{\dagger}(\pbf, \sigma, n^c) \right]_{\pm} = (2\pi)^{-3/2} e^{\ifrak p \cdot x} v^{\ast}_{\ell}(\pbf, \sigma, n)
+		\end{equation*}
+
+#. Paring a final particle :math:`(\pbf, \sigma, n)` (or antiparticle) with an initial particle :math:`(\pbf', \sigma', n')` (or antiparticle) gives
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ a(\pbf', \sigma', n'), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm} = \delta^3(\pbf' - \pbf) \delta_{\sigma' \sigma} \delta_{n' n}
+		\end{equation*}
+
+#. Paring a field :math:`\psi_{\ell}(x)` in :math:`\Hscr_i(x)` with a field adjoint :math:`\psi_m^{\dagger}(y)` in :math:`\Hscr_j(y)` gives
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\theta(x_0 - y_0) \left[ \psi^+_{\ell}(x), \psi^{+ \dagger}_m(y) \right]_{\pm} \mp \theta(y_0 - x_0) \left[ \psi^{- \dagger}_m(y), \psi^-_{\ell}(x) \right]_{\pm} \eqqcolon -\ifrak \Delta_{\ell m}(x, y)
+			\label{eq_defn_propagator}
+		\end{equation}
+
+   where :math:`\theta(\tau)` is the step function which equals :math:`1` for :math:`\tau > 0` and vanishes for :math:`\tau < 0`. Here we remind ourselves once again that the Feynman rule is all about moving annihilation operators, e.g. :math:`\psi^+_{\ell}(x)` and :math:`\psi^{- \dagger}_m(y)`, to the right of creation operators, e.g. :math:`\psi^-_{\ell}(x)` and :math:`\psi^{- \dagger}_m(y)`. The sign :math:`\mp` in the middle is due to the fact that when the top sign should to be used, the particles are fermions, and hence the interchange of the fields due to time ordering requires an extra minus sign.
+
+   This quantity is known as a *propagator*, which will be evaluated in the next section.
+
+A great invention of Feynman is the following diagrammatic representation of the above rules, known as the Feynman diagrams.
+
+.. figure:: ./static/quantum-theory-of-fields/space-propagators.svg
+	:align: center
+
+	Figure: All possible edges in Feynman diagrams.
+
+A few comments are in order to clarify the meaning of these diagrams
+
+* The arrow points towards the (positive) direction of time. Unlike the discussions in :ref:`sec_cluster_decomposable_hamiltonians`, where the arrow always points upwards, the arrows in a field theory can point either upwards or downwards, or even horizontally as in (6) which we'll come back to. The reason is that a field or its adjoint doesn't just create or destroy particles -- they create/destroy a particle and at the same time destroy/create the corresponding antiparticle, respectively. Hence it's reasonable to interpret an antiparticle as the corresponding particle that moves backwards in time. This explains the downwards arrows in (2) and (4).
+* The arrow in (6) points from :math:`(m, y)` to :math:`(\ell, x)` since :math:`\psi_{\ell}(x)` is a field and :math:`\psi^{\dagger}_m(y)` is a field adjoint. Two processes happen in this scenario, namely, a particle created by :math:`\psi^{+ \dagger}_m(y)` is absorbed by :math:`\psi^+_{\ell}(x)`, and an antiparticle created by :math:`\psi^-_{\ell}(x)` is absorbed by :math:`\psi^{- \dagger}_m(y)`. The arrow is compatible with both processes.
+* In the case where the particle is its own antiparticle, the arrows in (1) -- (6) will be omitted because one cannot tell apart a field and a field adjoint according to :math:`\eqref{eq_general_field_charge_inversion_transformation}`.
+* We didn't draw the other scenario in (5) where an antiparticle is created and then destroyed without any interaction. In this case we need to flip the direction of the arrow.
+* Every nodes in the diagram, marked by a fat dot, correspond to a monomial :math:`\Hscr_i(x)` in :math:`\eqref{eq_interaction_density_as_sum_of_monomials}`. Moreover, for each node, there are as many incoming edges as there are fields, and as many outgoing edges as there are field adjoints.
+
+To evaluate :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` using Feynman diagrams, we follow the steps similar to those discussed in :ref:`sec_cluster_decomposable_hamiltonians`, but with some extra complications which we now explain. First, we draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to out-state particles and antiparticles; and draw one vertex for each monomial in :math:`\eqref{eq_interaction_density_as_sum_of_monomials}` with incoming and outgoing edges corresponding to fields and field adjoints, respectively.
 
 
 .. rubric:: Footnotes
