@@ -3724,13 +3724,16 @@ where we also recall :math:`V(t) \coloneqq \exp(\ifrak H_0 t) V \exp(-\ifrak H_0
 
 One particularly convenient way to calculate :math:`\eqref{eq_time_dependent_perturbative_s_matrix_element}` is to move all the creation operators to the left of the annihilation operators, while collecting all the delta functions along the way. In the end, the only nonzero term is a vacuum expectation value which is a polynomial of these delta functions. In other words, none of the creation and annihilation operators will survive because otherwise by construction, the rightmost operator is necessarily an annihilation operator, which then would be vanishing by acting on :math:`\Phi_{\VAC}`. This procedure can be rather messy, but luckily, there exists already a convenient bookkeeping device, known as the *Feynman diagrams*. We will encounter Feynman diagrams many times going forward as it is such a convenient tool, and here we'll just focus on the momentum conservations.
 
-Let's write :math:`S^{(n)}_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, T\{V(t_1) \cdots V(t_n)\} \Phi_{\alpha} \right)`. Then the general recipe for constructing a Feynman diagram to keep track of the delta functions in :math:`S^{(n)}_{\beta \alpha}` consists of the following steps
+Let's write :math:`S^{(n)}_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, T\{V(t_1) \cdots V(t_n)\} \Phi_{\alpha} \right)`. Then the general recipe for constructing a Feynman diagram to keep track of the delta functions in :math:`S^{(n)}_{\beta \alpha}` consists of the following steps.
+
+.. warning:: 
+	The Feynman diagram described here will *not* be very useful in quantum-theoretic calculations since, as we'll see in the next chapter, the interaction densities can only be constructed out of quantum fields, rather than the individual annihilation and creation operators. The only purpose of the diagrams to be described below is to illustrate the cluster decomposition principle in terms of the Hamiltonian. The generally useful Feynman diagrams will be introduced in :ref:`sec_the_feynman_rules`.
 
 1. Orient the paper on which the diagram will be drawn so that the time direction goes upwards. (This is of course a random choice just to set up the scene.)
-2. Place as many vertical strands as the number of particles in :math:`\Phi_{\alpha}` at the bottom of the page. Do the same to :math:`\Phi_{\beta}` but at the top of the page. Moreover, all such strands are oriented to flow upwards.
-3. Place one vertex (or a fat dot) for each :math:`V(t)` so that their are sorted vertically by time. Moreover, each vertex has the same number of incoming strands from below as the total number of annihilation operators in the corresponding :math:`V(t)`, written in the form :math:`\eqref{eq_general_operator_expansion_in_creation_and_annihilation}`, and the same number of outgoing strands pointing upwards as the total number of creation operators. Note that since we'll be doing a rather crude analysis of just momentum conservations, the actual structure of :math:`V(t)` plays no role here.
-4. To each strand from the previous step, associate a :math:`3`-momentum :math:`\pbf` corresponding to the created/annihilated particle. To each vertex, associate a momentum-conservation delta function so that the total incoming momenta equals the total outgoing momenta. This is in fact a consequence of an assumption on :math:`V(t)`, which is related to our assumption on :math:`h_{NM}` in :math:`\eqref{eq_general_expansion_of_hamiltonian}`, and will be elaborated on later in this section.
-5. Connect all the loose ends of the strands so that the flow always goes in the positive time direction, i.e., upwards. All loose ends must be connected to qualify as a valid (directed) graph. As we'll see, invalid graphs don't contribute to :math:`S^{(n)}_{\beta \alpha}`.
+2. Place as many vertical strands as the number of particles in :math:`\Phi_{\alpha}` at the bottom of the page. Do the same to :math:`\Phi_{\beta}` but at the top of the page. In actual Feynman diagrams the strands will be oriented according to the flow of time (and a distinction between particles and antiparticles), but it's not important for our purposes here -- we will only use the orientations to guarantee that an annihilation operator is paired with a creation operator. For definiteness, let's orient these strands to point upwards.
+3. Place one vertex (i.e., a fat dot) for each :math:`V(t)`, or more precisely, each monomial in annihilation and creation operators in :math:`V(t)`, with as many incoming strands as the number of annihilation operators, and outgoing strands as the number of creation operators. Note that since we'll only be doing a momentum conservation analysis, the details of :math:`V(t)`, e.g., the coefficients in front of the product of the annihilation and creation operators, which will be worked out in the next chapter, is not important here.
+4. To each strand from the previous two steps, associate a :math:`3`-momentum :math:`\pbf` of the corresponding particle. To each vertex, associate a momentum-conservation delta function so that the total incoming momenta equals the total outgoing momenta. This is in fact a consequence of an assumption on :math:`V(t)`, which is related to our assumption on :math:`h_{NM}` in :math:`\eqref{eq_general_expansion_of_hamiltonian}`, and will be elaborated on later in this section.
+5. Connect all the loose ends of the strands in a way that is compatible with the orientations on the strands.
 6. To each edge from the previous step, which connects two strands with momenta :math:`\pbf` and :math:`\pbf'`, respectively, associate a delta function :math:`\delta(\pbf' - \pbf)`, which comes from the canonical commutation relation :math:`\eqref{eq_creation_annihilation_commutator}`.
 
 Finally :math:`S^{(n)}_{\beta \alpha}` is simply a sum over products of delta functions, one for each such diagram.
@@ -3746,7 +3749,7 @@ As an example to illustrate the above steps, let's consider a five-body scatteri
 		V(t) &= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 	\end{align*}
 
-where we've also suppressed the time factor from :math:`V(t)` as it won't really play a role in the diagram. The figure below illustrates a few summands of the third order :math:`S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)`.
+where the coefficient of :math:`V(t)`, except for the momentum conserving delta function, is suppressed. The figure below illustrates a few summands of the third order :math:`S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)`.
 
 .. figure:: ./static/quantum-theory-of-fields/momenta-feynman-diagram.svg
 	:align: center
@@ -3791,26 +3794,27 @@ which also justifies calling :math:`S^C_{\beta \alpha}` a connected part of :mat
 
 It remains to argue that :math:`S^C_{\beta \alpha}` contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients :math:`h_{NM}` in :math:`\eqref{eq_general_expansion_of_hamiltonian}`. Indeed, since :math:`H = H_0 + V` and the single momentum-conservation condition holds automatically true for :math:`H_0`, the same holds for :math:`V`. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.
 
-To verify that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function, we note a crucial fact that the diagram contains no *directed* loops, which allows us to start from the bottom, i.e., the total momentum of the in-state particles, and work our way up to the top, i.e., the total momentum of the out-state particles, so that there is exactly one momentum-conservation delta function at each step when a(n intermediate) vertex is added, which guarantees that the incoming total momentum equals the outgoing total momentum.
+Finally, we note that the fact that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function is the consequence of an elimination process. More precisely, we can first get rid of delta functions on the internal edges, i.e., edges between vertices, by equating the momenta on the two ends of the edge. So we're left with as many delta functions as there are vertices. Then for each internal edge, we can choose one of its endpoints, and solve the associated momentum in terms of the other momenta. Hence we can get rid of all but one delta function, as claimed. 
 
-As a side remark, we point out that the argument in [Wei95]_ (page 186 --187) in terms of a Euler characteristic calculation of the diagram appears to be wrong. A counterexample (to Weinberg's argument) can be illustrated in the following pseudo Feynman diagram which contains a directed loop
+An example elimination process is presented for the following Feynman diagram.
 
 .. figure:: ./static/quantum-theory-of-fields/pseudo-feynman-diagram.svg
 	:align: center
 
-	Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.
+	Figure: An example Feynman diagram.
 
-Evaluating the momentum-conservation delta function of the diagram then gives
+We skip the first step of equating momenta on the ends of edges, and continue with the conservation delta functions on the vertices as follows
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{align*}
 		\delta^3(\pbf_3 - \pbf_1 - \pbf_4) \delta^3(\pbf_5 - \pbf_2 - \pbf_3) \delta^3(\pbf_6 + \pbf_4 - \pbf_5) \
-			= \delta^3(\pbf_6 - \pbf_1 - \pbf_2) \delta^3(\pbf_4 + \pbf_6 - \pbf_2 - \pbf_3)
-	\end{equation*}
+			&= \delta^3(\pbf_5 - \pbf_1 - \pbf_2 - \pbf_4) \delta^3(\pbf_6 + \pbf_4 - \pbf_5) \\
+			&= \delta^3(\pbf_6 - \pbf_1 - \pbf_2)
+	\end{align*}
 
-where the first factor demands the usual conservation of momentum between in- and out-state particles, and the second demands a conservation of momentum on the edge labeled by :math:`\pbf_5`.
+where we've first eliminated :math:`\pbf_3` using the first delta function, and then :math:`\pbf_5` using either one of the two remaining delta functions, to arrive at the final result.
 
 
 Quantum Fields and Antiparticles
@@ -7115,6 +7119,8 @@ It follows that a general massless :math:`(A, B)` field, according to :math:`\eq
 As a special case, we see once again that a massless helicity :math:`\pm 1` field cannot be constructed as a vector field, i.e., a :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)` field, because such vector field must be scalar by :math:`\eqref{eq_massless_general_field_helicity_condition}`. Indeed, the simplest massless helicity :math:`\pm 1` field must be a :math:`(1, 0) \oplus (0, 1)` field, which is nothing but the anti-symmetric :math:`2`-tensor :math:`f_{\mu \nu}` defined by :math:`\eqref{eq_massless_vector_field_curvature_tensor}`.
 
 
+.. _sec_the_feynman_rules:
+
 The Feynman Rules
 -----------------
 
@@ -7223,6 +7229,9 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 
    This quantity is known as a *propagator*, which will be evaluated in the next section.
 
+.. note::
+	In the above listing, we've assumed that the item on the left in the (anti-)commutators also lies to the left of the item on the right in the (anti-)commutator in the vacuum expectation value in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` if we ignore the time ordering operator. The same applies to case (6) where :math:`\psi_{\ell}(x)` is assumed to lie to the left of :math:`\psi_m^{\dagger}(y)`. In particular, if we assume that the interaction density :math:`\Hscr(x)` is normally ordered in the sense that all the field adjoints lie to the left of the fields, then :math:`\Hscr_i(x)` necessarily lies to the left of :math:`\Hscr_j(y)`, and we don't have to to define :math:`\Delta_{\ell m}(x, x)` which would require certain regulation to not blow up integrals.
+
 A great invention of Feynman is the following diagrammatic representation of the above rules, known as the Feynman diagrams.
 
 .. figure:: ./static/quantum-theory-of-fields/space-propagators.svg
@@ -7232,13 +7241,15 @@ A great invention of Feynman is the following diagrammatic representation of the
 
 A few comments are in order to clarify the meaning of these diagrams
 
-* The arrow points towards the (positive) direction of time. Unlike the discussions in :ref:`sec_cluster_decomposable_hamiltonians`, where the arrow always points upwards, the arrows in a field theory can point either upwards or downwards, or even horizontally as in (6) which we'll come back to. The reason is that a field or its adjoint doesn't just create or destroy particles -- they create/destroy a particle and at the same time destroy/create the corresponding antiparticle, respectively. Hence it's reasonable to interpret an antiparticle as the corresponding particle that moves backwards in time. This explains the downwards arrows in (2) and (4).
+* The arrow points towards the (positive) direction of time, which is upwards for particles and downwards for antiparticles. In other words, we interpret an antiparticle as a particle that moves backwards in time. An exceptional case is (6), where the edge is placed horizontally. The reason is that a field or its adjoint doesn't just create or destroy (anti-)particles -- they create/destroy a particle and at the same time destroy/create the corresponding antiparticle, respectively. In light of :math:`\eqref{eq_defn_propagator}`, there is no reason to prefer either an upward or a downward arrow.
 * The arrow in (6) points from :math:`(m, y)` to :math:`(\ell, x)` since :math:`\psi_{\ell}(x)` is a field and :math:`\psi^{\dagger}_m(y)` is a field adjoint. Two processes happen in this scenario, namely, a particle created by :math:`\psi^{+ \dagger}_m(y)` is absorbed by :math:`\psi^+_{\ell}(x)`, and an antiparticle created by :math:`\psi^-_{\ell}(x)` is absorbed by :math:`\psi^{- \dagger}_m(y)`. The arrow is compatible with both processes.
 * In the case where the particle is its own antiparticle, the arrows in (1) -- (6) will be omitted because one cannot tell apart a field and a field adjoint according to :math:`\eqref{eq_general_field_charge_inversion_transformation}`.
 * We didn't draw the other scenario in (5) where an antiparticle is created and then destroyed without any interaction. In this case we need to flip the direction of the arrow.
 * Every nodes in the diagram, marked by a fat dot, correspond to a monomial :math:`\Hscr_i(x)` in :math:`\eqref{eq_interaction_density_as_sum_of_monomials}`. Moreover, for each node, there are as many incoming edges as there are fields, and as many outgoing edges as there are field adjoints.
 
-To evaluate :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` using Feynman diagrams, we follow the steps similar to those discussed in :ref:`sec_cluster_decomposable_hamiltonians`, but with some extra complications which we now explain. First, we draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to out-state particles and antiparticles; and draw one vertex for each monomial in :math:`\eqref{eq_interaction_density_as_sum_of_monomials}` with incoming and outgoing edges corresponding to fields and field adjoints, respectively.
+With these basic building blocks at hand, we're ready to evaluate :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` using Feynman diagrams. The first thing to notice is that the S-matrix, as defined by :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}`, should be viewed as a power series, where a term of order :math:`N` corresponds to a monomial given as a product of powers, each of which is :math:`N_i`-th power of an interaction type :math:`g_i \Hscr_i(x)` (see :math:`\eqref{eq_interaction_density_as_sum_of_monomials}`), such that :math:`N = \sum_i N_i`.
+
+To a given term of order :math:`N`, one can draw the associated Feynman diagrams in two steps as follows. The first step is to draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to the out-state particles and antiparticles; and draw :math:`N_i` vertices for each interaction types :math:`i`, which corresponds to a monomial :math:`g_i \Hscr_i(x)`, with incoming and outgoing edges corresponding to its fields and field adjoints, respectively. The second step is to connect any pair of open strands by an oriented edge if the particle in question is different from its antiparticle, and by an unoriented edge otherwise. Moreover, the vertices and the edges are labelled as illustrated in the figure above.
 
 
 .. rubric:: Footnotes

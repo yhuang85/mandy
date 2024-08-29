@@ -2533,13 +2533,17 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <li><p>Creation and annihilation operators satisfy the canonical commutation relations <span class="math notranslate nohighlight">\(\eqref{eq_creation_annihilation_commutator}\)</span>, which can be reorganized as <span class="math notranslate nohighlight">\(a(q') a^{\dagger}(q) = \pm a^{\dagger}(q) a(q') + \delta(q' - q)\)</span> to highlight the effect of moving a creation operator left over an annihilation operator – it produces a delta function. Moreover, since we’ll only care about the momentum in this section, we’ll assume that all the Kronecker deltas of discrete quantum numbers have already been summed up , so that <span class="math notranslate nohighlight">\(\delta(q' - q)\)</span> becomes really <span class="math notranslate nohighlight">\(\delta(p' - p)\)</span>, or even <span class="math notranslate nohighlight">\(\delta(\pbf' - \pbf)\)</span> assuming the particles are on their mass shells.</p></li>
 </ol>
 <p>One particularly convenient way to calculate <span class="math notranslate nohighlight">\(\eqref{eq_time_dependent_perturbative_s_matrix_element}\)</span> is to move all the creation operators to the left of the annihilation operators, while collecting all the delta functions along the way. In the end, the only nonzero term is a vacuum expectation value which is a polynomial of these delta functions. In other words, none of the creation and annihilation operators will survive because otherwise by construction, the rightmost operator is necessarily an annihilation operator, which then would be vanishing by acting on <span class="math notranslate nohighlight">\(\Phi_{\VAC}\)</span>. This procedure can be rather messy, but luckily, there exists already a convenient bookkeeping device, known as the <em>Feynman diagrams</em>. We will encounter Feynman diagrams many times going forward as it is such a convenient tool, and here we’ll just focus on the momentum conservations.</p>
-<p>Let’s write <span class="math notranslate nohighlight">\(S^{(n)}_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, T\{V(t_1) \cdots V(t_n)\} \Phi_{\alpha} \right)\)</span>. Then the general recipe for constructing a Feynman diagram to keep track of the delta functions in <span class="math notranslate nohighlight">\(S^{(n)}_{\beta \alpha}\)</span> consists of the following steps</p>
+<p>Let’s write <span class="math notranslate nohighlight">\(S^{(n)}_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, T\{V(t_1) \cdots V(t_n)\} \Phi_{\alpha} \right)\)</span>. Then the general recipe for constructing a Feynman diagram to keep track of the delta functions in <span class="math notranslate nohighlight">\(S^{(n)}_{\beta \alpha}\)</span> consists of the following steps.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Feynman diagram described here will <em>not</em> be very useful in quantum-theoretic calculations since, as we’ll see in the next chapter, the interaction densities can only be constructed out of quantum fields, rather than the individual annihilation and creation operators. The only purpose of the diagrams to be described below is to illustrate the cluster decomposition principle in terms of the Hamiltonian. The generally useful Feynman diagrams will be introduced in <a class="reference internal" href="#sec-the-feynman-rules"><span class="std std-ref">The Feynman Rules</span></a>.</p>
+</div>
 <ol class="arabic simple">
 <li><p>Orient the paper on which the diagram will be drawn so that the time direction goes upwards. (This is of course a random choice just to set up the scene.)</p></li>
-<li><p>Place as many vertical strands as the number of particles in <span class="math notranslate nohighlight">\(\Phi_{\alpha}\)</span> at the bottom of the page. Do the same to <span class="math notranslate nohighlight">\(\Phi_{\beta}\)</span> but at the top of the page. Moreover, all such strands are oriented to flow upwards.</p></li>
-<li><p>Place one vertex (or a fat dot) for each <span class="math notranslate nohighlight">\(V(t)\)</span> so that their are sorted vertically by time. Moreover, each vertex has the same number of incoming strands from below as the total number of annihilation operators in the corresponding <span class="math notranslate nohighlight">\(V(t)\)</span>, written in the form <span class="math notranslate nohighlight">\(\eqref{eq_general_operator_expansion_in_creation_and_annihilation}\)</span>, and the same number of outgoing strands pointing upwards as the total number of creation operators. Note that since we’ll be doing a rather crude analysis of just momentum conservations, the actual structure of <span class="math notranslate nohighlight">\(V(t)\)</span> plays no role here.</p></li>
-<li><p>To each strand from the previous step, associate a <span class="math notranslate nohighlight">\(3\)</span>-momentum <span class="math notranslate nohighlight">\(\pbf\)</span> corresponding to the created/annihilated particle. To each vertex, associate a momentum-conservation delta function so that the total incoming momenta equals the total outgoing momenta. This is in fact a consequence of an assumption on <span class="math notranslate nohighlight">\(V(t)\)</span>, which is related to our assumption on <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>, and will be elaborated on later in this section.</p></li>
-<li><p>Connect all the loose ends of the strands so that the flow always goes in the positive time direction, i.e., upwards. All loose ends must be connected to qualify as a valid (directed) graph. As we’ll see, invalid graphs don’t contribute to <span class="math notranslate nohighlight">\(S^{(n)}_{\beta \alpha}\)</span>.</p></li>
+<li><p>Place as many vertical strands as the number of particles in <span class="math notranslate nohighlight">\(\Phi_{\alpha}\)</span> at the bottom of the page. Do the same to <span class="math notranslate nohighlight">\(\Phi_{\beta}\)</span> but at the top of the page. In actual Feynman diagrams the strands will be oriented according to the flow of time (and a distinction between particles and antiparticles), but it’s not important for our purposes here – we will only use the orientations to guarantee that an annihilation operator is paired with a creation operator. For definiteness, let’s orient these strands to point upwards.</p></li>
+<li><p>Place one vertex (i.e., a fat dot) for each <span class="math notranslate nohighlight">\(V(t)\)</span>, or more precisely, each monomial in annihilation and creation operators in <span class="math notranslate nohighlight">\(V(t)\)</span>, with as many incoming strands as the number of annihilation operators, and outgoing strands as the number of creation operators. Note that since we’ll only be doing a momentum conservation analysis, the details of <span class="math notranslate nohighlight">\(V(t)\)</span>, e.g., the coefficients in front of the product of the annihilation and creation operators, which will be worked out in the next chapter, is not important here.</p></li>
+<li><p>To each strand from the previous two steps, associate a <span class="math notranslate nohighlight">\(3\)</span>-momentum <span class="math notranslate nohighlight">\(\pbf\)</span> of the corresponding particle. To each vertex, associate a momentum-conservation delta function so that the total incoming momenta equals the total outgoing momenta. This is in fact a consequence of an assumption on <span class="math notranslate nohighlight">\(V(t)\)</span>, which is related to our assumption on <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>, and will be elaborated on later in this section.</p></li>
+<li><p>Connect all the loose ends of the strands in a way that is compatible with the orientations on the strands.</p></li>
 <li><p>To each edge from the previous step, which connects two strands with momenta <span class="math notranslate nohighlight">\(\pbf\)</span> and <span class="math notranslate nohighlight">\(\pbf'\)</span>, respectively, associate a delta function <span class="math notranslate nohighlight">\(\delta(\pbf' - \pbf)\)</span>, which comes from the canonical commutation relation <span class="math notranslate nohighlight">\(\eqref{eq_creation_annihilation_commutator}\)</span>.</p></li>
 </ol>
 <p>Finally <span class="math notranslate nohighlight">\(S^{(n)}_{\beta \alpha}\)</span> is simply a sum over products of delta functions, one for each such diagram.</p>
@@ -2549,11 +2553,11 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\alpha} &amp;= a^{\dagger}(\pbf_5) a^{\dagger}(\pbf_4) a^{\dagger_3}(\pbf) a^{\dagger}(\pbf_2) a^{\dagger}(\pbf_1) \Phi_{\VAC} \\
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
-\end{align*}</div><p>where we’ve also suppressed the time factor from <span class="math notranslate nohighlight">\(V(t)\)</span> as it won’t really play a role in the diagram. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id46">
+\end{align*}</div><p>where the coefficient of <span class="math notranslate nohighlight">\(V(t)\)</span>, except for the momentum conserving delta function, is suppressed. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
+<figure class="align-center" id="id45">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id46" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id45" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2575,20 +2579,21 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         S^C_{\beta \alpha} = \sum_{n=0}^{\infty} \frac{(-\ifrak)^n}{n!} \int_{-\infty}^{\infty} dt_1 \cdots dt_n \left( \Phi_{\beta}, T\{V(t_1) \cdots V(t_n)\} \Phi_{\alpha} \right)_C
 \end{equation*}</div><p>which also justifies calling <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> a connected part of <span class="math notranslate nohighlight">\(S_{\beta \alpha}\)</span>, because it corresponds to connected Feynman diagrams.</p>
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
-<p>To verify that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function, we note a crucial fact that the diagram contains no <em>directed</em> loops, which allows us to start from the bottom, i.e., the total momentum of the in-state particles, and work our way up to the top, i.e., the total momentum of the out-state particles, so that there is exactly one momentum-conservation delta function at each step when a(n intermediate) vertex is added, which guarantees that the incoming total momentum equals the outgoing total momentum.</p>
-<p>As a side remark, we point out that the argument in <a class="reference internal" href="../bib.html#wei95" id="id18"><span>[Wei95]</span></a> (page 186 –187) in terms of a Euler characteristic calculation of the diagram appears to be wrong. A counterexample (to Weinberg’s argument) can be illustrated in the following pseudo Feynman diagram which contains a directed loop</p>
-<figure class="align-center" id="id47">
+<p>Finally, we note that the fact that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function is the consequence of an elimination process. More precisely, we can first get rid of delta functions on the internal edges, i.e., edges between vertices, by equating the momenta on the two ends of the edge. So we’re left with as many delta functions as there are vertices. Then for each internal edge, we can choose one of its endpoints, and solve the associated momentum in terms of the other momenta. Hence we can get rid of all but one delta function, as claimed.</p>
+<p>An example elimination process is presented for the following Feynman diagram.</p>
+<figure class="align-center" id="id46">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A pseudo Feynman diagram where time orientation is not respected, and the edge-wise delta functions have been evaluated so that the momentum of an intermediate particle can be put on an edge. In particular, there is a directed closed loop.</span><a class="headerlink" href="#id47" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: An example Feynman diagram.</span><a class="headerlink" href="#id46" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Evaluating the momentum-conservation delta function of the diagram then gives</p>
+<p>We skip the first step of equating momenta on the ends of edges, and continue with the conservation delta functions on the vertices as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{align*}
         \delta^3(\pbf_3 - \pbf_1 - \pbf_4) \delta^3(\pbf_5 - \pbf_2 - \pbf_3) \delta^3(\pbf_6 + \pbf_4 - \pbf_5) \
-                = \delta^3(\pbf_6 - \pbf_1 - \pbf_2) \delta^3(\pbf_4 + \pbf_6 - \pbf_2 - \pbf_3)
-\end{equation*}</div><p>where the first factor demands the usual conservation of momentum between in- and out-state particles, and the second demands a conservation of momentum on the edge labeled by <span class="math notranslate nohighlight">\(\pbf_5\)</span>.</p>
+                &amp;= \delta^3(\pbf_5 - \pbf_1 - \pbf_2 - \pbf_4) \delta^3(\pbf_6 + \pbf_4 - \pbf_5) \\
+                &amp;= \delta^3(\pbf_6 - \pbf_1 - \pbf_2)
+\end{align*}</div><p>where we’ve first eliminated <span class="math notranslate nohighlight">\(\pbf_3\)</span> using the first delta function, and then <span class="math notranslate nohighlight">\(\pbf_5\)</span> using either one of the two remaining delta functions, to arrive at the final result.</p>
 </section>
 </section>
 <section id="quantum-fields-and-antiparticles">
@@ -2613,7 +2618,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \begin{align}
         U_0(\Lambda, b) \psi_{\ell}^+(x) U_0^{-1}(\Lambda, b) &amp;= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^+ (\Lambda x + b) \label{eq_conjugate_annihilation_field} \\
         U_0(\Lambda, b) \psi_{\ell}^-(x) U_0^{-1}(\Lambda, b) &amp;= \sum_{\ell'} D_{\ell \ell'}(\Lambda^{-1}) \psi_{\ell'}^- (\Lambda x + b) \label{eq_conjugate_creation_field}
-\end{align}</div><p>Note that we’ve put <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> inside <span class="math notranslate nohighlight">\(D_{\ell \ell'}\)</span> so that <span class="math notranslate nohighlight">\(D\)</span> furnishes a representation of the homogeneous Lorentz transformations in the sense that <span class="math notranslate nohighlight">\(D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)\)</span>. <a class="footnote-reference brackets" href="#two-ways-of-representation" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> There is a priori no reason to use the same representation <span class="math notranslate nohighlight">\(D\)</span> for both <span class="math notranslate nohighlight">\(\psi^{\pm}_{\ell}\)</span>, but this turns out to be possible just by calculation. Moreover, the representation <span class="math notranslate nohighlight">\(D\)</span> is not assumed to be irreducible. Indeed, as we’ll see later, it generally decomposes into blocks fixed by further labels.</p>
+\end{align}</div><p>Note that we’ve put <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span> inside <span class="math notranslate nohighlight">\(D_{\ell \ell'}\)</span> so that <span class="math notranslate nohighlight">\(D\)</span> furnishes a representation of the homogeneous Lorentz transformations in the sense that <span class="math notranslate nohighlight">\(D(\Lambda_1) D(\Lambda_2) = D(\Lambda_1 \Lambda_2)\)</span>. <a class="footnote-reference brackets" href="#two-ways-of-representation" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> There is a priori no reason to use the same representation <span class="math notranslate nohighlight">\(D\)</span> for both <span class="math notranslate nohighlight">\(\psi^{\pm}_{\ell}\)</span>, but this turns out to be possible just by calculation. Moreover, the representation <span class="math notranslate nohighlight">\(D\)</span> is not assumed to be irreducible. Indeed, as we’ll see later, it generally decomposes into blocks fixed by further labels.</p>
 <p>Then we can try to construct <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> by a formula similar to <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -2708,8 +2713,8 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 </dd>
 </dl>
 </section>
-<section id="id20">
-<h4>The cluster decomposition principle<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<section id="id19">
+<h4>The cluster decomposition principle<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p>Let’s verify that the fields defined by <span class="math notranslate nohighlight">\(\eqref{eq_annihilation_field_simplified_by_translation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_creation_field_simplified_by_translation}\)</span>, when plugged into <span class="math notranslate nohighlight">\(\eqref{eq_construct_interaction_density_by_fields}\)</span>, indeed satisfy the cluster decomposition principle as discussed in <a class="reference internal" href="#sec-the-cluster-decomposition-principle"><span class="std std-ref">The Cluster Decomposition Principle</span></a>. It’s really just a straightforward but tedious calculation which we spell out as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -2815,7 +2820,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p class="admonition-title">Note</p>
 <p>The plus subscript in <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> is there to distinguish it from an anti-symmetrized version <span class="math notranslate nohighlight">\(\Delta(x)\)</span> to be introduced later.</p>
 </div>
-<p>Now we’ll restrict ourselves to the special case of a space-like <span class="math notranslate nohighlight">\(x\)</span> which, up to a Lorentz transformation, can be assumed to take the form <span class="math notranslate nohighlight">\(x = (0, \xbf)\)</span> with <span class="math notranslate nohighlight">\(|\xbf| &gt; 0\)</span>. In this case, we can then calculate <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> as follows <a class="footnote-reference brackets" href="#wrong-integration-of-delta-function" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p>
+<p>Now we’ll restrict ourselves to the special case of a space-like <span class="math notranslate nohighlight">\(x\)</span> which, up to a Lorentz transformation, can be assumed to take the form <span class="math notranslate nohighlight">\(x = (0, \xbf)\)</span> with <span class="math notranslate nohighlight">\(|\xbf| &gt; 0\)</span>. In this case, we can then calculate <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> as follows <a class="footnote-reference brackets" href="#wrong-integration-of-delta-function" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         \Delta_+(x) &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2\sqrt{\pbf^2 + m^2}}~\exp(\ifrak \pbf \cdot \xbf) \\
@@ -3167,8 +3172,8 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_vector_field_j_coupling_condition}
 \end{equation}</div><p>or in other words <span class="math notranslate nohighlight">\(J^{\mu}(x)\)</span> is a conserved current.</p>
 </section>
-<section id="id22">
-<h4>The CPT symmetries<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
+<section id="id21">
+<h4>The CPT symmetries<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
 <p>Let’s start with the spatial inversion. First recall from <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align*}
@@ -3241,7 +3246,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \begin{equation}
         D(\Lambda) \gamma_{\mu} D^{-1}(\Lambda) = \left( \Lambda^{-1} \right)_{\mu}^{\nu} \gamma_{\nu}
         \label{eq_dirac_field_gamma_is_vector}
-\end{equation}</div><p>or in plain words, <span class="math notranslate nohighlight">\(\gamma_{\mu}\)</span> is a vector. Indeed, one can calculate the left-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_gamma_is_vector}\)</span> up to first order as follows <a class="footnote-reference brackets" href="#dirac-gamma-is-vector" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p>
+\end{equation}</div><p>or in plain words, <span class="math notranslate nohighlight">\(\gamma_{\mu}\)</span> is a vector. Indeed, one can calculate the left-hand-side of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_gamma_is_vector}\)</span> up to first order as follows <a class="footnote-reference brackets" href="#dirac-gamma-is-vector" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         D(\Lambda) \gamma_{\mu} D^{-1}(\Lambda) &amp;= \left( 1 + \frac{\ifrak}{2} \omega^{\nu \rho} \Jscr_{\nu \rho} \right) \gamma_{\mu} \left( 1 - \frac{\ifrak}{2} \omega^{\nu \rho} \Jscr_{\nu \rho} \right) \\
@@ -3377,7 +3382,7 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \label{eq_dirac_field_spinor_u_at_finite_momentum} \\
         v(\pbf, \sigma) &amp;= \sqrt{m/p_0} D(L(p)) v(0, \sigma)
         \label{eq_dirac_field_spinor_v_at_finite_momentum}
-\end{align}</div><p>In general the constants <span class="math notranslate nohighlight">\(c_{\pm}\)</span> and <span class="math notranslate nohighlight">\(d_{\pm}\)</span> may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a> to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_minus}\)</span>, we can calculate as follows <a class="footnote-reference brackets" href="#spatial-inversion-on-dirac-fields-sign" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p>
+\end{align}</div><p>In general the constants <span class="math notranslate nohighlight">\(c_{\pm}\)</span> and <span class="math notranslate nohighlight">\(d_{\pm}\)</span> may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from <a class="reference internal" href="#sec-the-lorentz-and-cpt-transformation-laws"><span class="std std-ref">The Lorentz and CPT transformation laws</span></a> to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_plus}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_psi_minus}\)</span>, we can calculate as follows <a class="footnote-reference brackets" href="#spatial-inversion-on-dirac-fields-sign" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{align}
         U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &amp;= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot x} u(\pbf, \sigma) a(-\pbf, \sigma)
@@ -3536,8 +3541,8 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \end{equation*}</div><p class="sd-card-text">However, unlike the original derivation of Dirac, we’ve derived it here as a consequence of parity conservation. In fact, we note that the Dirac equation is not something completely different from the Klein-Gordon equation, because using the Clifford algebra relations <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_clifford_algebra}\)</span>, we see that <span class="math notranslate nohighlight">\(\gamma^{\mu} \p_{\mu}\)</span> is actually a square root of the D’Alembert operator <span class="math notranslate nohighlight">\(\square\)</span>. This is allegedly one of the motivations of Dirac to find these gamma matrices in the first place.</p>
 </div>
 </details></section>
-<section id="id25">
-<h4>The CPT symmetries<a class="headerlink" href="#id25" title="Link to this heading">#</a></h4>
+<section id="id24">
+<h4>The CPT symmetries<a class="headerlink" href="#id24" title="Link to this heading">#</a></h4>
 <p>The transformation law of Dirac fields under spatial inversion has already been worked out in <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_inversion_transformation_law}\)</span>, so we’re left to work out the transformation laws under time inversion and charge conjugation.</p>
 <p>Recall from <a class="reference internal" href="#sec-space-and-time-inversions"><span class="std std-ref">Space and time inversions</span></a> that the time-inversion operator <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> is complex anti-linear. Hence to work out the transformation law under time inversion, we’ll need to work out the complex-conjugated spinors <span class="math notranslate nohighlight">\(u^{\ast}(\pbf, \sigma)\)</span> and <span class="math notranslate nohighlight">\(v^{\ast}(\pbf, \sigma)\)</span>. Now in light of <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spinor_u_at_finite_momentum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spinor_v_at_finite_momentum}\)</span>, and the fact that the spinors are real at zero-momentum, we just need to work out the complex conjugate <span class="math notranslate nohighlight">\(D^{\ast}(L(p))\)</span> in terms of <span class="math notranslate nohighlight">\(D(L(p))\)</span> and the gamma matrices. Now according to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_linearize_representation}\)</span>, it suffices to work out <span class="math notranslate nohighlight">\(\Jscr^{\ast}_{\mu \nu}\)</span>. Finally according to <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_defn_j}\)</span>, it suffices to work out <span class="math notranslate nohighlight">\(\gamma^{\ast}_{\mu}\)</span>.</p>
 <p>Inspecting the explicit forms of the gamma matrices given by <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_defn_gamma_matrices}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_pauli_matrices}\)</span> we see that <span class="math notranslate nohighlight">\(\gamma_0, \gamma_1, \gamma_3\)</span> are anti-Hermitian while <span class="math notranslate nohighlight">\(\gamma_2\)</span> is Hermitian, or more explicitly</p>
@@ -3621,7 +3626,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \begin{equation}
         \xi^{\ast} = \xi^c
         \label{eq_dirac_field_charge_parity_relation}
-\end{equation}</div><p>Under this assumption, we can work out the charge conjugation transformation law as follows <a class="footnote-reference brackets" href="#charge-inversion-on-dirac-fields-sign" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p>
+\end{equation}</div><p>Under this assumption, we can work out the charge conjugation transformation law as follows <a class="footnote-reference brackets" href="#charge-inversion-on-dirac-fields-sign" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \Cscr \beta \psi^{\ast}(x)
@@ -3764,7 +3769,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \begin{equation}
         \sum_{a', b'} C^{AB}(\jfrak', \sigma'; a', b') C^{AB}(\jfrak, \sigma; a', b') = \delta_{\jfrak'\jfrak} \delta_{\sigma'\sigma}
         \label{eq_clebsch_gordan_coefficients_orthonormal_relation}
-\end{equation}</div><p>which follows from the orthonormality of the states <span class="math notranslate nohighlight">\(\Psi^{AB}_{ab}\)</span> and the reality of the Clebsch-Gordan coefficients as constructed in <a class="reference internal" href="#dropdown-clebsch-gordan-coefficients"><span class="std std-ref">Clebsch-Gordan coefficients</span></a>. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficients-orthonormality" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> Now <span class="math notranslate nohighlight">\(\eqref{eq_general_field_calculate_j_in_clebsch_gordan_coefficients}\)</span> will be satisfied if we set the blue terms to equal to the following quantity</p>
+\end{equation}</div><p>which follows from the orthonormality of the states <span class="math notranslate nohighlight">\(\Psi^{AB}_{ab}\)</span> and the reality of the Clebsch-Gordan coefficients as constructed in <a class="reference internal" href="#dropdown-clebsch-gordan-coefficients"><span class="std std-ref">Clebsch-Gordan coefficients</span></a>. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficients-orthonormality" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> Now <span class="math notranslate nohighlight">\(\eqref{eq_general_field_calculate_j_in_clebsch_gordan_coefficients}\)</span> will be satisfied if we set the blue terms to equal to the following quantity</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b} \
@@ -3854,7 +3859,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \begin{pmatrix} A_1 &amp; A_2 &amp; A_3 \\ a_1 &amp; a_2 &amp; a_3 \end{pmatrix} \coloneqq \sum_{a'_3} C^{A_3 A_3}(0 0; a'_3 a_3) C^{A_1 A_3}(A_3 a'_3; a_1 a_2)
-\end{equation*}</div><p class="sd-card-text">We read the definition as a two-step process. Namely, we first (linearly) combine states <span class="math notranslate nohighlight">\(\Psi^{A_1}_{a_1}\)</span> and <span class="math notranslate nohighlight">\(\Psi^{A_2}_{a_2}\)</span> to a state with total angular momentum <span class="math notranslate nohighlight">\(A_3\)</span> (and spin <span class="math notranslate nohighlight">\(z\)</span>-component <span class="math notranslate nohighlight">\(a'_3\)</span>), and then (linearly) combine with the state <span class="math notranslate nohighlight">\(\Psi^{A_3}_{a_3}\)</span> to end up in a spinless final state. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficient-zero-total-angular-momentum" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a></p>
+\end{equation*}</div><p class="sd-card-text">We read the definition as a two-step process. Namely, we first (linearly) combine states <span class="math notranslate nohighlight">\(\Psi^{A_1}_{a_1}\)</span> and <span class="math notranslate nohighlight">\(\Psi^{A_2}_{a_2}\)</span> to a state with total angular momentum <span class="math notranslate nohighlight">\(A_3\)</span> (and spin <span class="math notranslate nohighlight">\(z\)</span>-component <span class="math notranslate nohighlight">\(a'_3\)</span>), and then (linearly) combine with the state <span class="math notranslate nohighlight">\(\Psi^{A_3}_{a_3}\)</span> to end up in a spinless final state. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficient-zero-total-angular-momentum" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a></p>
 </div>
 </details><p>We will now turn to the arguably most interesting causality condition <span class="math notranslate nohighlight">\(\eqref{eq_h_commutativity_for_space_like_separations}\)</span>. Indeed, it is this condition that clarifies the correlation between the spin and whether a particle/field is bosonic or fermionic. As before, we need to evaluate the (anti-)commutator between the fields using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_defn_psi_field}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
@@ -3872,7 +3877,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
         \pi_{ab, a'b'}(\pbf) &amp;= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}') \\
                 &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
                 &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
-\end{align*}</div><p>This looks horribly complicated, but it has been evaluated by the author in <a class="reference internal" href="../bib.html#wei69" id="id29"><span>[Wei69]</span></a>. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that <span class="math notranslate nohighlight">\(\pi_{ab,a'b'}(\pbf)\)</span> is a polynomial <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(p\)</span> on the mass shell as follows</p>
+\end{align*}</div><p>This looks horribly complicated, but it has been evaluated by the author in <a class="reference internal" href="../bib.html#wei69" id="id28"><span>[Wei69]</span></a>. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that <span class="math notranslate nohighlight">\(\pi_{ab,a'b'}(\pbf)\)</span> is a polynomial <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(p\)</span> on the mass shell as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{|\pbf|^2 + m^2}, \pbf \right)
@@ -3998,8 +4003,8 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 \end{equation*}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(\psi_{\sigma}(x)\)</span> is the <span class="math notranslate nohighlight">\((\jfrak, 0)\)</span> field. Swapping the role of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, one can also write it as rank <span class="math notranslate nohighlight">\(2A\)</span> traceless derivatives of the <span class="math notranslate nohighlight">\((0, \jfrak)\)</span> field.</p>
 </div>
 </details></section>
-<section id="id30">
-<h4>The CPT symmetries<a class="headerlink" href="#id30" title="Link to this heading">#</a></h4>
+<section id="id29">
+<h4>The CPT symmetries<a class="headerlink" href="#id29" title="Link to this heading">#</a></h4>
 <p>The calculations of space, time, and charge conjugation transformations in the general case is essentially the same as for the Dirac field. In particular, instead of reverting the <span class="math notranslate nohighlight">\(3\)</span>-momentum in Dirac spinors as in <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spatial_inversion_acts_on_psi_plus}\)</span>, we need to do it for general <span class="math notranslate nohighlight">\((A, B)\)</span> spinors <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span>, which involves the Clebsch-Gordan coefficients.</p>
 <p>Without going to the details, we list the relevant symmetry properties of Clebsch-Gordan coefficients as follows</p>
 <div class="math notranslate nohighlight">
@@ -4008,7 +4013,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
         \label{eq_clebsch_gordan_symmetry_swap} \\
         C^{AB}(\jfrak, \sigma; a, b) &amp;= (-1)^{A+B-\jfrak} C^{AB}(\jfrak, -\sigma; -a, -b)
         \label{eq_clebsch_gordan_symmetry_reverse}
-\end{align}</div><p>The first relation is proved in <a class="reference internal" href="../bib.html#wei00" id="id31"><span>[Wei00]</span></a> page 124, and the second relation can be deduced from the time reversal transformation law <span class="math notranslate nohighlight">\(\eqref{eq_time_inversion_on_massive_general}\)</span>.</p>
+\end{align}</div><p>The first relation is proved in <a class="reference internal" href="../bib.html#wei00" id="id30"><span>[Wei00]</span></a> page 124, and the second relation can be deduced from the time reversal transformation law <span class="math notranslate nohighlight">\(\eqref{eq_time_inversion_on_massive_general}\)</span>.</p>
 <p>Consider first the spatial inversion. Combining <span class="math notranslate nohighlight">\(\eqref{eq_clebsch_gordan_symmetry_swap}\)</span> with <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span>, one obtains the following relations on the spinors</p>
 <div class="math notranslate nohighlight">
 \begin{align}
@@ -4115,7 +4120,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <div class="math notranslate nohighlight">
 \begin{equation*}
         U(CPT) \Hscr(x) U^{-1}(CPT) = -\Hscr(-x)
-\end{equation*}</div><p>Recall from <span class="math notranslate nohighlight">\(\eqref{eq_evolution_equation_of_u_operator}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_defn_v_by_density}\)</span> that the interaction term <span class="math notranslate nohighlight">\(V = \int d^3 x~\Hscr(0, \xbf)\)</span> satisfies the following <a class="footnote-reference brackets" href="#volume-element-inversion-sign-cancels-for-cpt-symmetry" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a></p>
+\end{equation*}</div><p>Recall from <span class="math notranslate nohighlight">\(\eqref{eq_evolution_equation_of_u_operator}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_defn_v_by_density}\)</span> that the interaction term <span class="math notranslate nohighlight">\(V = \int d^3 x~\Hscr(0, \xbf)\)</span> satisfies the following <a class="footnote-reference brackets" href="#volume-element-inversion-sign-cancels-for-cpt-symmetry" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a></p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         U(CPT) V U^{-1}(CPT) = -\int d^3 x~\Hscr(-x) = V
@@ -4397,7 +4402,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </section>
 </section>
 <section id="the-feynman-rules">
-<h2>The Feynman Rules<a class="headerlink" href="#the-feynman-rules" title="Link to this heading">#</a></h2>
+<span id="sec-the-feynman-rules"></span><h2>The Feynman Rules<a class="headerlink" href="#the-feynman-rules" title="Link to this heading">#</a></h2>
 <p>In <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>, we’ve discussed the condition that the Hamiltonian must satisfy in order for the cluster decomposition principle to hold. Namely, the Hamiltonian can be written as a polynomial <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span> of creation and annihilation operators in normal order, such that the coefficients contains exactly one momentum conversing delta function. In order to derive this condition, we’ve encountered the idea of Feynman diagrams, which is a bookkeeping device for the evaluation of S-matrix. We couldn’t say more about the coefficients besides the delta function because we had not introduced the building blocks of the Hamiltonian, namely, the quantum fields. Now that we’ve seen how to construct even the most general fields in the previous chapter, we’re ready to spell out the full details of Feynman diagrams.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4476,35 +4481,40 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <p>This quantity is known as a <em>propagator</em>, which will be evaluated in the next section.</p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above listing, we’ve assumed that the item on the left in the (anti-)commutators also lies to the left of the item on the right in the (anti-)commutator in the vacuum expectation value in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> if we ignore the time ordering operator. The same applies to case (6) where <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> is assumed to lie to the left of <span class="math notranslate nohighlight">\(\psi_m^{\dagger}(y)\)</span>. In particular, if we assume that the interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> is normally ordered in the sense that all the field adjoints lie to the left of the fields, then <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> necessarily lies to the left of <span class="math notranslate nohighlight">\(\Hscr_j(y)\)</span>, and we don’t have to to define <span class="math notranslate nohighlight">\(\Delta_{\ell m}(x, x)\)</span> which would require certain regulation to not blow up integrals.</p>
+</div>
 <p>A great invention of Feynman is the following diagrammatic representation of the above rules, known as the Feynman diagrams.</p>
-<figure class="align-center" id="id48">
+<figure class="align-center" id="id47">
 <img alt="../_images/space-propagators.svg" src="../_images/space-propagators.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: All possible edges in Feynman diagrams.</span><a class="headerlink" href="#id48" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: All possible edges in Feynman diagrams.</span><a class="headerlink" href="#id47" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A few comments are in order to clarify the meaning of these diagrams</p>
 <ul class="simple">
-<li><p>The arrow points towards the (positive) direction of time. Unlike the discussions in <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>, where the arrow always points upwards, the arrows in a field theory can point either upwards or downwards, or even horizontally as in (6) which we’ll come back to. The reason is that a field or its adjoint doesn’t just create or destroy particles – they create/destroy a particle and at the same time destroy/create the corresponding antiparticle, respectively. Hence it’s reasonable to interpret an antiparticle as the corresponding particle that moves backwards in time. This explains the downwards arrows in (2) and (4).</p></li>
+<li><p>The arrow points towards the (positive) direction of time, which is upwards for particles and downwards for antiparticles. In other words, we interpret an antiparticle as a particle that moves backwards in time. An exceptional case is (6), where the edge is placed horizontally. The reason is that a field or its adjoint doesn’t just create or destroy (anti-)particles – they create/destroy a particle and at the same time destroy/create the corresponding antiparticle, respectively. In light of <span class="math notranslate nohighlight">\(\eqref{eq_defn_propagator}\)</span>, there is no reason to prefer either an upward or a downward arrow.</p></li>
 <li><p>The arrow in (6) points from <span class="math notranslate nohighlight">\((m, y)\)</span> to <span class="math notranslate nohighlight">\((\ell, x)\)</span> since <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> is a field and <span class="math notranslate nohighlight">\(\psi^{\dagger}_m(y)\)</span> is a field adjoint. Two processes happen in this scenario, namely, a particle created by <span class="math notranslate nohighlight">\(\psi^{+ \dagger}_m(y)\)</span> is absorbed by <span class="math notranslate nohighlight">\(\psi^+_{\ell}(x)\)</span>, and an antiparticle created by <span class="math notranslate nohighlight">\(\psi^-_{\ell}(x)\)</span> is absorbed by <span class="math notranslate nohighlight">\(\psi^{- \dagger}_m(y)\)</span>. The arrow is compatible with both processes.</p></li>
 <li><p>In the case where the particle is its own antiparticle, the arrows in (1) – (6) will be omitted because one cannot tell apart a field and a field adjoint according to <span class="math notranslate nohighlight">\(\eqref{eq_general_field_charge_inversion_transformation}\)</span>.</p></li>
 <li><p>We didn’t draw the other scenario in (5) where an antiparticle is created and then destroyed without any interaction. In this case we need to flip the direction of the arrow.</p></li>
 <li><p>Every nodes in the diagram, marked by a fat dot, correspond to a monomial <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_interaction_density_as_sum_of_monomials}\)</span>. Moreover, for each node, there are as many incoming edges as there are fields, and as many outgoing edges as there are field adjoints.</p></li>
 </ul>
-<p>To evaluate <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> using Feynman diagrams, we follow the steps similar to those discussed in <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>, but with some extra complications which we now explain. First, we draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to out-state particles and antiparticles; and draw one vertex for each monomial in <span class="math notranslate nohighlight">\(\eqref{eq_interaction_density_as_sum_of_monomials}\)</span> with incoming and outgoing edges corresponding to fields and field adjoints, respectively.</p>
+<p>With these basic building blocks at hand, we’re ready to evaluate <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> using Feynman diagrams. The first thing to notice is that the S-matrix, as defined by <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span>, should be viewed as a power series, where a term of order <span class="math notranslate nohighlight">\(N\)</span> corresponds to a monomial given as a product of powers, each of which is <span class="math notranslate nohighlight">\(N_i\)</span>-th power of an interaction type <span class="math notranslate nohighlight">\(g_i \Hscr_i(x)\)</span> (see <span class="math notranslate nohighlight">\(\eqref{eq_interaction_density_as_sum_of_monomials}\)</span>), such that <span class="math notranslate nohighlight">\(N = \sum_i N_i\)</span>.</p>
+<p>To a given term of order <span class="math notranslate nohighlight">\(N\)</span>, one can draw the associated Feynman diagrams in two steps as follows. The first step is to draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to the out-state particles and antiparticles; and draw <span class="math notranslate nohighlight">\(N_i\)</span> vertices for each interaction types <span class="math notranslate nohighlight">\(i\)</span>, which corresponds to a monomial <span class="math notranslate nohighlight">\(g_i \Hscr_i(x)\)</span>, with incoming and outgoing edges corresponding to its fields and field adjoints, respectively. The second step is to connect any pair of open strands by an oriented edge if the particle in question is different from its antiparticle, and by an unoriented edge otherwise. Moreover, the vertices and the edges are labelled as illustrated in the figure above.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">2</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">3</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
@@ -4512,39 +4522,39 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 <aside class="footnote brackets" id="two-ways-of-representation" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">6</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">6</a><span class="fn-bracket">]</span></span>
 <p>This should be compared with <span class="math notranslate nohighlight">\(\eqref{eq_d_repr_of_little_group}\)</span>, which uses transpose instead of inverse to satisfy the group law. From the viewpoint of representation theory, it’s more natural to use the inverse. But in the case of little group representations, since we’re only interested in unitary representations, there is not much difference between the two choices.</p>
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">7</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">7</a><span class="fn-bracket">]</span></span>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 <aside class="footnote brackets" id="dirac-gamma-is-vector" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">8</a><span class="fn-bracket">]</span></span>
-<p>Our calculation is consistent with eq. (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">8</a><span class="fn-bracket">]</span></span>
+<p>Our calculation is consistent with eq. (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
 </aside>
 <aside class="footnote brackets" id="spatial-inversion-on-dirac-fields-sign" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">9</a><span class="fn-bracket">]</span></span>
-<p>Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id41"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">9</a><span class="fn-bracket">]</span></span>
+<p>Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
 </aside>
 <aside class="footnote brackets" id="charge-inversion-on-dirac-fields-sign" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">10</a><span class="fn-bracket">]</span></span>
-<p>Our calculation, once again, differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id42"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">10</a><span class="fn-bracket">]</span></span>
+<p>Our calculation, once again, differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id41"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficients-orthonormality" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">11</a><span class="fn-bracket">]</span></span>
-<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id43"><span>[Wei15]</span></a> page 121 – 122.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">11</a><span class="fn-bracket">]</span></span>
+<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id42"><span>[Wei15]</span></a> page 121 – 122.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficient-zero-total-angular-momentum" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">12</a><span class="fn-bracket">]</span></span>
-<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id44"><span>[Wei15]</span></a> page 124 – 125.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">12</a><span class="fn-bracket">]</span></span>
+<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id43"><span>[Wei15]</span></a> page 124 – 125.</p>
 </aside>
 <aside class="footnote brackets" id="volume-element-inversion-sign-cancels-for-cpt-symmetry" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">13</a><span class="fn-bracket">]</span></span>
-<p>Comparing with eq. (5.8.9) in <a class="reference internal" href="../bib.html#wei95" id="id45"><span>[Wei95]</span></a> page 246, we get probably the most important result right, even though we’ve insisted in reversing the sign of the volume elements such as <span class="math notranslate nohighlight">\(d^3 p\)</span> and <span class="math notranslate nohighlight">\(d^3 x\)</span>, when <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span> are reversed, respectively.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">13</a><span class="fn-bracket">]</span></span>
+<p>Comparing with eq. (5.8.9) in <a class="reference internal" href="../bib.html#wei95" id="id44"><span>[Wei95]</span></a> page 246, we get probably the most important result right, even though we’ve insisted in reversing the sign of the volume elements such as <span class="math notranslate nohighlight">\(d^3 p\)</span> and <span class="math notranslate nohighlight">\(d^3 x\)</span>, when <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span> are reversed, respectively.</p>
 </aside>
 </aside>
 </section>
@@ -4634,7 +4644,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-fields-and-antiparticles">Quantum Fields and Antiparticles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetries-and-quantum-fields">Symmetries and quantum fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-symmetries">Lorentz symmetries</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">The cluster decomposition principle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">The cluster decomposition principle</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#causality-and-antiparticles">Causality and antiparticles</a></li>
 </ul>
 </li>
@@ -4645,20 +4655,20 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-fields">Vector fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-0-vector-fields">Spin-<span class="math notranslate nohighlight">\(0\)</span> vector fields</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-1-vector-fields">Spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">The CPT symmetries</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">The CPT symmetries</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-fields">Dirac fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-representation-and-gamma-matrices">Dirac representation and gamma matrices</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-dirac-fields">Construction of Dirac fields</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">The CPT symmetries</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">The CPT symmetries</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-the-interaction-density">Construction of the interaction density</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-fields">General fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general-representation-theory-of-the-lorentz-group">General representation theory of the Lorentz group</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-general-fields">Construction of general fields</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">The CPT symmetries</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">The CPT symmetries</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cpt-theorem">The CPT theorem</a></li>
