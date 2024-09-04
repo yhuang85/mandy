@@ -3726,7 +3726,7 @@ One particularly convenient way to calculate :math:`\eqref{eq_time_dependent_per
 
 Let's write :math:`S^{(n)}_{\beta \alpha} \coloneqq \left( \Phi_{\beta}, T\{V(t_1) \cdots V(t_n)\} \Phi_{\alpha} \right)`. Then the general recipe for constructing a Feynman diagram to keep track of the delta functions in :math:`S^{(n)}_{\beta \alpha}` consists of the following steps.
 
-.. warning:: 
+.. warning::
 	The Feynman diagram described here will *not* be very useful in quantum-theoretic calculations since, as we'll see in the next chapter, the interaction densities can only be constructed out of quantum fields, rather than the individual annihilation and creation operators. The only purpose of the diagrams to be described below is to illustrate the cluster decomposition principle in terms of the Hamiltonian. The generally useful Feynman diagrams will be introduced in :ref:`sec_the_feynman_rules`.
 
 1. Orient the paper on which the diagram will be drawn so that the time direction goes upwards. (This is of course a random choice just to set up the scene.)
@@ -3794,7 +3794,7 @@ which also justifies calling :math:`S^C_{\beta \alpha}` a connected part of :mat
 
 It remains to argue that :math:`S^C_{\beta \alpha}` contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients :math:`h_{NM}` in :math:`\eqref{eq_general_expansion_of_hamiltonian}`. Indeed, since :math:`H = H_0 + V` and the single momentum-conservation condition holds automatically true for :math:`H_0`, the same holds for :math:`V`. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.
 
-Finally, we note that the fact that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function is the consequence of an elimination process. More precisely, we can first get rid of delta functions on the internal edges, i.e., edges between vertices, by equating the momenta on the two ends of the edge. So we're left with as many delta functions as there are vertices. Then for each internal edge, we can choose one of its endpoints, and solve the associated momentum in terms of the other momenta. Hence we can get rid of all but one delta function, as claimed. 
+Finally, we note that the fact that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function is the consequence of an elimination process. More precisely, we can first get rid of delta functions on the internal edges, i.e., edges between vertices, by equating the momenta on the two ends of the edge. So we're left with as many delta functions as there are vertices. Then for each internal edge, we can choose one of its endpoints, and solve the associated momentum in terms of the other momenta. Hence we can get rid of all but one delta function, as claimed.
 
 An example elimination process is presented for the following Feynman diagram.
 
@@ -7182,41 +7182,46 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\left[ a(\pbf, \sigma, n), \psi^{\dagger}_{\ell}(x) \right]_{\pm} = (2\pi)^{-3/2} e^{-\ifrak p \cdot x} u^{\ast}_{\ell}(\pbf, \sigma, n)
-		\end{equation*}
+			\label{eq_feynman_rule_a_psi_dagger}
+		\end{equation}
 
 #. Paring a final antiparticle :math:`(\pbf, \sigma, n^c)` with a field :math:`\psi_{\ell}(x)` gives
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\left[ a(\pbf, \sigma, n^c), \psi_{\ell}(x) \right]_{\pm} = (2\pi)^{-3/2} e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma, n)
-		\end{equation*}
+			\label{eq_feynman_rule_a_psi}
+		\end{equation}
 
 #. Paring a field :math:`\psi_{\ell}(x)` with an initial particle (in in-state) :math:`(\pbf, \sigma, n)` gives
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\left[ \psi_{\ell}(x), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm} = (2\pi)^{-3/2} e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma, n)
-		\end{equation*}
+			\label{eq_feynman_rule_psi_a_dagger}
+		\end{equation}
 
 #. Paring a field adjoint :math:`\psi^{\dagger}_{\ell}(x)` with an initial antiparticle :math:`(\pbf, \sigma, n^c)` gives
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\left[ \psi^{\dagger}(x), a^{\dagger}(\pbf, \sigma, n^c) \right]_{\pm} = (2\pi)^{-3/2} e^{\ifrak p \cdot x} v^{\ast}_{\ell}(\pbf, \sigma, n)
-		\end{equation*}
+			\label{eq_feynman_rule_psi_dagger_a}
+		\end{equation}
 
 #. Paring a final particle :math:`(\pbf, \sigma, n)` (or antiparticle) with an initial particle :math:`(\pbf', \sigma', n')` (or antiparticle) gives
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			\left[ a(\pbf', \sigma', n'), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm} = \delta^3(\pbf' - \pbf) \delta_{\sigma' \sigma} \delta_{n' n}
-		\end{equation*}
+			\label{eq_feynman_rule_a_a_dagger}
+		\end{equation}
 
 #. Paring a field :math:`\psi_{\ell}(x)` in :math:`\Hscr_i(x)` with a field adjoint :math:`\psi_m^{\dagger}(y)` in :math:`\Hscr_j(y)` gives
 	.. math::
@@ -7224,7 +7229,7 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 
 		\begin{equation}
 			\theta(x_0 - y_0) \left[ \psi^+_{\ell}(x), \psi^{+ \dagger}_m(y) \right]_{\pm} \mp \theta(y_0 - x_0) \left[ \psi^{- \dagger}_m(y), \psi^-_{\ell}(x) \right]_{\pm} \eqqcolon -\ifrak \Delta_{\ell m}(x, y)
-			\label{eq_defn_propagator}
+			\label{eq_feynman_rule_propagator}
 		\end{equation}
 
    where :math:`\theta(\tau)` is the step function which equals :math:`1` for :math:`\tau > 0` and vanishes for :math:`\tau < 0`. Here we remind ourselves once again that the Feynman rule is all about moving annihilation operators, e.g. :math:`\psi^+_{\ell}(x)` and :math:`\psi^{- \dagger}_m(y)`, to the right of creation operators, e.g. :math:`\psi^-_{\ell}(x)` and :math:`\psi^{- \dagger}_m(y)`. The sign :math:`\mp` in the middle is due to the fact that when the top sign should to be used, the particles are fermions, and hence the interchange of the fields due to time ordering requires an extra minus sign.
@@ -7244,7 +7249,7 @@ A great invention of Feynman is the following diagrammatic representation of the
 
 A few comments are in order to clarify the meaning of these diagrams
 
-* The arrow points towards the (positive) direction of time, which is upwards for particles and downwards for antiparticles. In other words, we interpret an antiparticle as a particle that moves backwards in time. An exceptional case is (6), where the edge is placed horizontally. The reason is that a field or its adjoint doesn't just create or destroy (anti-)particles -- they create/destroy a particle and at the same time destroy/create the corresponding antiparticle, respectively. In light of :math:`\eqref{eq_defn_propagator}`, there is no reason to prefer either an upward or a downward arrow.
+* The arrow points towards the (positive) direction of time, which is upwards for particles and downwards for antiparticles. In other words, we interpret an antiparticle as a particle that moves backwards in time. An exceptional case is (6), where the edge is placed horizontally. The reason is that a field or its adjoint doesn't just create or destroy (anti-)particles -- they create/destroy a particle and at the same time destroy/create the corresponding antiparticle, respectively. In light of :math:`\eqref{eq_feynman_rule_propagator}`, there is no reason to prefer either an upward or a downward arrow.
 * The arrow in (6) points from :math:`(m, y)` to :math:`(\ell, x)` since :math:`\psi_{\ell}(x)` is a field and :math:`\psi^{\dagger}_m(y)` is a field adjoint. Two processes happen in this scenario, namely, a particle created by :math:`\psi^{+ \dagger}_m(y)` is absorbed by :math:`\psi^+_{\ell}(x)`, and an antiparticle created by :math:`\psi^-_{\ell}(x)` is absorbed by :math:`\psi^{- \dagger}_m(y)`. The arrow is compatible with both processes.
 * In the case where the particle is its own antiparticle, the arrows in (1) -- (6) will be omitted because one cannot tell apart a field and a field adjoint according to :math:`\eqref{eq_general_field_charge_inversion_transformation}`.
 * We didn't draw the other scenario in (5) where an antiparticle is created and then destroyed without any interaction. In this case we need to flip the direction of the arrow.
@@ -7260,11 +7265,11 @@ Now knowing how to draw a Feynman diagram of any given order for an interaction,
 2. For each diagram, we assign a factor :math:`-\ifrak` to each vertex, corresponding to one factor of the power :math:`(-\ifrak)^n` in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}`; and a factor :math:`g_i` to each vertex corresponding to the coefficient of :math:`\Hscr_i(x)` in :math:`\eqref{eq_interaction_density_as_sum_of_monomials}`; and a factor in the :ref:`listing of Feynman rules <listing_feynman_rules>` to each edge. Multiplying all the factors together and integrating over all the coordinates :math:`x_1, x_2, \cdots`, one for each vertex, we obtain a (numeric) valuation of the Feynman diagram.
 3. The S-matrix is the "sum" over all the evaluations of the Feynman diagrams. Here the sum is put in quotation marks because we might do subtraction instead of addition when there are fermionic fields involved in the interaction. More precisely, for each Feynman diagram, one can move the fields and field adjoints over each other that the two ends of every edge are next to each other (in the right order). Then we add a minus sign in front of the evaluation if such rearrangement involves an odd number of swaps between fermionic fields (or field adjoints).
 
-These are really all one needs to evaluate S-matrices using Feynman diagrams, but a few further notes may be necessary to make it completely clear. Firstly, note that we've ignored the factor :math:`1 / N!` in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` from our recipe above. The reason lies in the word "distinct" from the first step. More precisely, we consider two Feynman diagrams, which differ by a re-labeling of the vertices, to be the same. Since there are :math:`N!` ways of labeling :math:`N` vertices, we have already taken the fraction :math:`1 / N!` into account by including only distinct diagrams. 
+These are really all one needs to evaluate S-matrices using Feynman diagrams, but a few further notes may be necessary to make it completely clear. Firstly, note that we've ignored the factor :math:`1 / N!` in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` from our recipe above. The reason lies in the word "distinct" from the first step. More precisely, we consider two Feynman diagrams, which differ by a re-labeling of the vertices, to be the same. Since there are :math:`N!` ways of labeling :math:`N` vertices, we have already taken the fraction :math:`1 / N!` into account by including only distinct diagrams.
 
 Secondly, by the discussion in :ref:`sec_cluster_decomposable_hamiltonians`, only connected Feynman diagrams will be included so that the resulting S-matrix satisfies the cluster decomposition principle.
 
-The last note is more of a convention (for convenience), which aims at further remove duplications among Feynman diagrams. Here by duplication we mean diagrams that are not exactly the same but whose evaluations are the same. A basic example is when a monomial in the interaction density :math:`\Hscr(x)` contains a power of the same field (or field adjoint). From the viewpoint of Feynman diagrams, it means that a vertex may have more than one identical attached (incoming or outgoing) strands. Now when other strands want to connect to these identical ones, they may choose which one to connect first, and second, and so on, but the result will be the same regardless of the choices. Hence it's a convention to write the coefficient of :math:`\Hscr_i(x)` as :math:`g_i / k!` if it contains :math:`k` identical fields (or field adjoints), so that in a diagrammatic calculation, one only need to include one of such diagrams. Other numerical factors might be inserted in more complex situations, such as when two vertices with identical attached strands try to connect to each other, or when there is a loop of identical vertices. These cases are discussed in [Wei95]_ page 265 -- 267, and we'll come back to them when they become revelant in calculations.
+The last note is more of a convention (for convenience), which aims at further remove duplications among Feynman diagrams. Here by duplication we mean diagrams that are not exactly the same but whose evaluations are the same. A basic example is when a monomial in the interaction density :math:`\Hscr(x)` contains a power of the same field (or field adjoint). From the viewpoint of Feynman diagrams, it means that a vertex may have more than one identical attached (incoming or outgoing) strands. Now when other strands want to connect to these identical ones, they may choose which one to connect first, and second, and so on, but the result will be the same regardless of the choices. Hence it's a convention to write the coefficient of :math:`\Hscr_i(x)` as :math:`g_i / k!` if it contains :math:`k` identical fields (or field adjoints), so that in a diagrammatic calculation, one only need to include one of such diagrams. Other numerical factors might be inserted in more complex situations, such as when two vertices with identical attached strands try to connect to each other, or when there is a loop of identical vertices. These cases are discussed in [Wei95]_ page 265 -- 267, and we'll come back to them when they become relevant in calculations.
 
 To make things concrete and to prepare for the calculations in the next sections, we conclude the discussion of Feynman rules with two prototypical examples.
 
@@ -7287,49 +7292,65 @@ This type of interaction allows three kinds of scattering processes, namely, fer
 Fermion-fermion scattering
 	The scattering is represented as :math:`12 \to 1'2'`, where all in- and out-state particles :math:`1, 2, 1', 2'` are fermions. Up to the second order, there are two (connected) Feynman diagrams
 
-	.. figure:: ./static/quantum-theory-of-fields/ferrmion-fermion-scattering.svg
+	.. figure:: ./static/quantum-theory-of-fields/fermion-fermion-scattering.svg
 		:align: center
 
-		Figure: Two second-order fermion-fermion scattering diagrams. 
+		Figure: Two second-order fermion-fermion scattering diagrams.
 
-where the solid (directed) edges represent the fermions, and the dashed (undirected) edges represent the (neutral) boson. More explicitly, the two diagrams correspond to the following two contractions
+	where the solid (directed) edges represent the fermions, and the dashed (undirected) edges represent the (neutral) boson. More explicitly, the two diagrams correspond to the following two contractions
 
-.. math:: 
-	:nowrap:
+	.. math::
+		:nowrap:
 
-	\begin{equation}
-		\left[ a(1') \psi^{\dagger}(x_1) \right] \!
-		\left[ a(2') \psi^{\dagger}(x_2) \right] \!
-		\left[ \phi(x_1) \phi(x_2) \right] \!
-		\left[ \psi(x_1), a^{\dagger}(1) \right] \!
-		\left[ \psi(x_2) a^{\dagger}(2) \right]
-		\label{eq_fermion_fermion_scattering_121'2'}
-	\end{equation}
+		\begin{equation}
+			\big[ a(1'), \psi_{\ell}^{\dagger}(x) \big]_+
+			\big[ a(2'), \psi_{\ell'}^{\dagger}(y) \big]_+
+			\big[ \phi_k(x), \phi_{k'}(y) \big]_-
+			\big[ \psi_m(x), a^{\dagger}(1) \big]_+
+			\big[ \psi_{m'}(y), a^{\dagger}(2) \big]_+
+			\label{eq_fermion_fermion_scattering_121'2'}
+		\end{equation}
 
-and
+	and
 
-.. math:: 
-	:nowrap:
+	.. math::
+		:nowrap:
 
-	\begin{equation}
-		\left[ a(2') \psi^{\dagger}(x_1) \right] \!
-		\left[ a(1') \psi^{\dagger}(x_2) \right] \!
-		\left[ \phi(x_1) \phi(x_2) \right] \!
-		\left[ \psi(x_1), a^{\dagger}(1) \right] \!
-		\left[ \psi(x_2) a^{\dagger}(2) \right]
-		\label{eq_fermion_fermion_scattering_122'1'}
-	\end{equation}
+		\begin{equation}
+			\big[ a(2'), \psi_{\ell}^{\dagger}(x) \big]_+
+			\big[ a(1'), \psi_{\ell'}^{\dagger}(y) \big]_+
+			\big[ \phi_k(x), \phi_{k'}(y) \big]_-
+			\big[ \psi_m(x), a^{\dagger}(1) \big]_+
+			\big[ \psi_{m'}(y), a^{\dagger}(2) \big]_+
+			\label{eq_fermion_fermion_scattering_122'1'}
+		\end{equation}
 
-respectively. Moreover, comparing with the original order
+	respectively. Moreover, comparing with the original order
 
-.. math:: 
-	:nowrap:
+	.. math::
+		:nowrap:
 
-	\begin{equation*}
-		a(2') a(1') \psi^{\dagger}(x_1) \psi(x_1) \phi(x_1) \psi^{\dagger}(x_2) \psi(x_2) \phi(x_2) a^{\dagger}(1) a^{\dagger}(2)
-	\end{equation*}
+		\begin{equation*}
+			a(2') a(1') \psi^{\dagger}(x) \psi(x) \phi(x) \psi^{\dagger}(y) \psi(y) \phi(y) a^{\dagger}(1) a^{\dagger}(2)
+		\end{equation*}
 
-we see that the contractions :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` require an even and odd number of swaps between fermionic operators, respectively. We note that whether a given diagram requires an even or odd fermionic swaps is rather arbitrary, and depends on many conventions. However, the fact that the two diagams corresponding to :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` carry opposite signs is independent of the conventions and hence meaningful. Indeed, it's another incarnation of the Fermi statistics in the sense that the S-matrix switches sign if either the in-state fermions :math:`1 \leftrightarrow 2` or the out-state fermions :math:`1' \leftrightarrow 2'` are swapped.
+	we see that the contractions :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` require an even and odd number of swaps between fermionic operators, respectively. We note that whether a given diagram requires an even or odd fermionic swaps is rather arbitrary, and depends on many conventions. However, the fact that the two diagrams corresponding to :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` carry opposite signs is independent of the conventions and hence meaningful. Indeed, it's another incarnation of the Fermi statistics in the sense that the S-matrix switches sign if either the in-state fermions :math:`1 \leftrightarrow 2` or the out-state fermions :math:`1' \leftrightarrow 2'` are swapped.
+
+	Now let's use the Feynman rules :math:`\eqref{eq_feynman_rule_a_psi_dagger}` -- :math:`\eqref{eq_feynman_rule_propagator}` to evaluate the fermion-fermion scattering S-matrix up to 2nd order as follows [#connected_s_matrix_by_feynman_diagrams]_
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			S^C_{\pbf'_1 \sigma'_1 n'_1,~\pbf'_2 \sigma'_2 n'_2;~~\pbf_1 \sigma_1 n_1,~\pbf_2 \sigma_2 n_2} &=
+					\sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y
+					\left( \eqref{eq_fermion_fermion_scattering_121'2'} - \eqref{eq_fermion_fermion_scattering_122'1'} \right) \\
+				&= (2\pi)^{-6} \sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y~\Big( \\
+				&\phantom{=~~} \exp\left(-\ifrak p'_1 \cdot x - \ifrak p'_2 \cdot y + \ifrak p_1 \cdot x + \ifrak p_2 \cdot y\right) \times \\
+				&\phantom{=~~} \times u^{\ast}_{\ell}(\pbf'_1, \sigma'_1, n'_1) u^{\ast}_{\ell'}(\pbf'_2, \sigma'_2, n'_2) u_m(\pbf_1, \sigma_1, n_1) u_{m'}(\pbf_2, \sigma_2, n_2) (-\ifrak) \Delta_{k k'}(x, y) \\
+				&\phantom{=~~} - \exp\left(-\ifrak p'_2 \cdot x - \ifrak p'_1 \cdot y + \ifrak p_1 \cdot x + \ifrak p_2 \cdot y\right) \times \\
+				&\phantom{=~~} \times u^{\ast}_{\ell}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_{\ell'}(\pbf'_1, \sigma'_1, n'_1) u_m(\pbf_1, \sigma_1, n_1) u_{m'}(\pbf_2, \sigma_2, n_2) (-\ifrak) \Delta_{k k'}(x, y) \Big)
+		\end{align*}
 
 
 .. rubric:: Footnotes
@@ -7359,3 +7380,5 @@ we see that the contractions :math:`\eqref{eq_fermion_fermion_scattering_121'2'}
 .. [#clebsch_gordan_coefficient_zero_total_angular_momentum] An explicit evaluation of :math:`C^{AA}(0, 0;a, -a)`, with the only non-vanishing combination of spin :math:`z`-components, can be found in [Wei15]_ page 124 -- 125.
 
 .. [#volume_element_inversion_sign_cancels_for_cpt_symmetry] Comparing with eq. (5.8.9) in [Wei95]_ page 246, we get probably the most important result right, even though we've insisted in reversing the sign of the volume elements such as :math:`d^3 p` and :math:`d^3 x`, when :math:`p` and :math:`x` are reversed, respectively.
+
+.. [#connected_s_matrix_by_feynman_diagrams] It's stated in [Wei95]_ page 271 and afterwards that it's the full S-matrices that are calculated. However, it seems that only the connected part of the S-matrices are calculated.

@@ -70,7 +70,7 @@ html_theme = 'pydata_sphinx_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = [
-    'css/custom.css',
+	'css/custom.css',
 ]
 
 html_logo = '_static/dms.png'
@@ -108,19 +108,19 @@ mathjax3_config = {
 			'ps': ['\\prescript {#1}{#2}{#3}', 3],
 			'psup': ['\\prescript {#1}{}{#2}', 2],
 			'blue': ['{\\color{blue} {#1}}', 1],
-            'bm': ['{{\\boldsymbol{#1}}}', 1],
+			'bm': ['{{\\boldsymbol{#1}}}', 1],
 			'orange': ['{\\color{orange} {#1}}', 1],
 			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std', 'VAC']},
 			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
 			**{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
 			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},
 			**{f'{w}frak': f'{{\\mathfrak {w}}}' for w in string.ascii_letters},
-            **{f'{w}scr': f'{{\\mathscr {w}}}' for w in string.ascii_letters},
+			**{f'{w}scr': f'{{\\mathscr {w}}}' for w in string.ascii_letters},
 		},
 		'packages': {
 			'[+]': [
 				'ams',
-                'boldsymbol',
+				'boldsymbol',
 				'color',
 				'mathtools',
 				'unicode',
@@ -131,7 +131,7 @@ mathjax3_config = {
 	'loader': {
 		'load': [
 			'[tex]/ams',
-            '[tex]/boldsymbol',
+			'[tex]/boldsymbol',
 			'[tex]/color',
 			'[tex]/mathtools',
 			'[tex]/unicode',
