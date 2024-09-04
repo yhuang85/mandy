@@ -2207,7 +2207,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation}</div><p>Under these assumptions, we can further rewrite <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_time_ordered}\)</span> in terms of <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        S = 1 + \sum_{n=1}^{\infty} \frac{(-1)^n}{n!} \int d^4 x_1 \cdots d^4 x_n ~T\{ \Hscr(x_1) \cdots \Hscr(x_n) \}
+        S = 1 + \sum_{n=1}^{\infty} \frac{(-\ifrak)^n}{n!} \int d^4 x_1 \cdots d^4 x_n ~T\{ \Hscr(x_1) \cdots \Hscr(x_n) \}
         \label{eq_s_matrix_power_series_expansion_time_ordered_density}
 \end{equation}</div><p>This expression of <span class="math notranslate nohighlight">\(S\)</span> is manifestly Lorentz invariant, except for the time-ordering part. In fact, the time-ordering between two spacetime points <span class="math notranslate nohighlight">\(x_1, x_2\)</span> are Lorentz invariant if and only if <span class="math notranslate nohighlight">\(x_1 - x_2\)</span> is time-like, namely, <span class="math notranslate nohighlight">\((x_1 - x_2)^2 \geq 0\)</span>. This is consistent with intuition because events with time-like (or light-like) separations may be observed by one observer, who definitely should know which event happened first. Therefore we obtain a sufficient condition for the Lorentz invariance of <span class="math notranslate nohighlight">\(S\)</span> as follows</p>
 <div class="math notranslate nohighlight">
@@ -2554,10 +2554,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 \end{align*}</div><p>where the coefficient of <span class="math notranslate nohighlight">\(V(t)\)</span>, except for the momentum conserving delta function, is suppressed. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id45">
+<figure class="align-center" id="id46">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id45" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id46" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2581,10 +2581,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
 <p>Finally, we note that the fact that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function is the consequence of an elimination process. More precisely, we can first get rid of delta functions on the internal edges, i.e., edges between vertices, by equating the momenta on the two ends of the edge. So we’re left with as many delta functions as there are vertices. Then for each internal edge, we can choose one of its endpoints, and solve the associated momentum in terms of the other momenta. Hence we can get rid of all but one delta function, as claimed.</p>
 <p>An example elimination process is presented for the following Feynman diagram.</p>
-<figure class="align-center" id="id46">
+<figure class="align-center" id="id47">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: An example Feynman diagram.</span><a class="headerlink" href="#id46" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: An example Feynman diagram.</span><a class="headerlink" href="#id47" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We skip the first step of equating momenta on the ends of edges, and continue with the conservation delta functions on the vertices as follows</p>
@@ -4410,13 +4410,13 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </div>
 <section id="derivation-of-the-rules">
 <h3>Derivation of the rules<a class="headerlink" href="#derivation-of-the-rules" title="Link to this heading">#</a></h3>
-<p>We’ll derive the Feynman rules in this section, leaving concrete calculations to the next section.</p>
+<p>We’ll derive the Feynman rules, which will establish a diagrammatic framework for calculating S-matrices, in this section, leaving the actual calculations to the next section.</p>
 <p>First, recall the S-matrix formulated in terms of the S-operator <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_time_ordered_density}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        S_{\pbf'_1, \sigma'_1, n'_1;~\pbf'_2, \sigma'_2, n'_2;~\cdots,~\pbf_1, \sigma_1, n_1;~\pbf_2, \sigma_2, n_2;~\cdots} &amp;= \sum_{n=0}^{\infty} \frac{(-1)^n}{n!} \int d^4 x_1 d^4 x_2 \cdots d^4 x_n \Big( \Phi_{\VAC} \cdots a(\pbf'_2, \sigma'_2, n'_2) a(\pbf'_1, \sigma'_1, n'_2) \phantom{\Big)}
+        S_{\pbf'_1, \sigma'_1, n'_1;~\pbf'_2, \sigma'_2, n'_2;~\cdots,~\pbf_1, \sigma_1, n_1;~\pbf_2, \sigma_2, n_2;~\cdots} &amp;= \sum_{N=0}^{\infty} \frac{(-\ifrak)^N}{N!} \int d^4 x_1 d^4 x_2 \cdots d^4 x_n \Big( \Phi_{\VAC} \cdots a(\pbf'_2, \sigma'_2, n'_2) a(\pbf'_1, \sigma'_1, n'_2) \phantom{\Big)}
         \label{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density} \\
-                &amp;\phantom{= \Big(} \times T\left\{ \Hscr(x_1) \cdots \Hscr(x_n) \right\} a^{\dagger}(\pbf_1, \sigma_1, n_1) a^{\dagger}(\pbf_2, \sigma_2, n_2) \cdots \Phi_{\VAC} \Big) \nonumber
+                &amp;\phantom{= \Big(} \times T\left\{ \Hscr(x_1) \cdots \Hscr(x_N) \right\} a^{\dagger}(\pbf_1, \sigma_1, n_1) a^{\dagger}(\pbf_2, \sigma_2, n_2) \cdots \Phi_{\VAC} \Big) \nonumber
 \end{align}</div><p>where <span class="math notranslate nohighlight">\(T\{ \cdots \}\)</span> is the time-ordered product defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_time_ordered_product}\)</span>. As we’ve seen from the previous chapter, the interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> may be written as a polynomial in fields and their adjoint as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -4434,7 +4434,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </div>
 <p>According to <span class="math notranslate nohighlight">\(\eqref{eq_defn_annihilation_field}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_defn_creation_field}\)</span>, we can also write, with obvious modifications, <span class="math notranslate nohighlight">\(\psi_{\ell}(x) = \psi^+_{\ell}(x) + \psi^-_{\ell}(x)\)</span> such as <span class="math notranslate nohighlight">\(\psi^+_{\ell}(x)\)</span> is a linear combination of annihilation operators, and <span class="math notranslate nohighlight">\(\psi^-_{\ell}(x)\)</span> is a linear combination of creation operators.</p>
 <p>Now the idea of the Feynman rules to calculate the S-matrix is same as what has been discussed in <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>. Namely, we’d like to move any annihilation operator to the right of a creation operator using the standard commutation rule <span class="math notranslate nohighlight">\(\eqref{eq_creation_annihilation_commutator}\)</span>. To be more specific, we’ll list all the possible scenarios as follows</p>
-<ol class="arabic">
+<ol class="arabic" id="listing-feynman-rules">
 <li><dl>
 <dt>Paring a final particle (in out-state) <span class="math notranslate nohighlight">\((\pbf, \sigma, n)\)</span> with a field adjoint <span class="math notranslate nohighlight">\(\psi^{\dagger}_{\ell}(x)\)</span> gives</dt><dd><div class="math notranslate nohighlight">
 \begin{equation*}
@@ -4483,13 +4483,16 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the above listing, we’ve assumed that the item on the left in the (anti-)commutators also lies to the left of the item on the right in the (anti-)commutator in the vacuum expectation value in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> if we ignore the time ordering operator. The same applies to case (6) where <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> is assumed to lie to the left of <span class="math notranslate nohighlight">\(\psi_m^{\dagger}(y)\)</span>. In particular, if we assume that the interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> is normally ordered in the sense that all the field adjoints lie to the left of the fields, then <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> necessarily lies to the left of <span class="math notranslate nohighlight">\(\Hscr_j(y)\)</span>, and we don’t have to to define <span class="math notranslate nohighlight">\(\Delta_{\ell m}(x, x)\)</span> which would require certain regulation to not blow up integrals.</p>
+<ol class="arabic simple">
+<li><p>In the above listing, we’ve assumed that the item on the left in the (anti-)commutators also lies to the left of the item on the right in the (anti-)commutator in the vacuum expectation value in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> if we ignore the time ordering operator. The same applies to case (6) where <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> is assumed to lie to the left of <span class="math notranslate nohighlight">\(\psi_m^{\dagger}(y)\)</span>. In particular, if we assume that the interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> is normally ordered in the sense that all the field adjoints lie to the left of the fields, then <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> necessarily lies to the left of <span class="math notranslate nohighlight">\(\Hscr_j(y)\)</span>, and we don’t have to to define <span class="math notranslate nohighlight">\(\Delta_{\ell m}(x, x)\)</span> which would require certain regulation to not blow up integrals.</p></li>
+<li><p>The parings listed above are commonly known as <a class="reference external" href="https://en.wikipedia.org/wiki/Wick%27s_theorem">Wick contractions</a></p></li>
+</ol>
 </div>
 <p>A great invention of Feynman is the following diagrammatic representation of the above rules, known as the Feynman diagrams.</p>
-<figure class="align-center" id="id47">
+<figure class="align-center" id="id48">
 <img alt="../_images/space-propagators.svg" src="../_images/space-propagators.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: All possible edges in Feynman diagrams.</span><a class="headerlink" href="#id47" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: All possible edges in Feynman diagrams.</span><a class="headerlink" href="#id48" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A few comments are in order to clarify the meaning of these diagrams</p>
@@ -4501,20 +4504,71 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 <li><p>Every nodes in the diagram, marked by a fat dot, correspond to a monomial <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_interaction_density_as_sum_of_monomials}\)</span>. Moreover, for each node, there are as many incoming edges as there are fields, and as many outgoing edges as there are field adjoints.</p></li>
 </ul>
 <p>With these basic building blocks at hand, we’re ready to evaluate <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> using Feynman diagrams. The first thing to notice is that the S-matrix, as defined by <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span>, should be viewed as a power series, where a term of order <span class="math notranslate nohighlight">\(N\)</span> corresponds to a monomial given as a product of powers, each of which is <span class="math notranslate nohighlight">\(N_i\)</span>-th power of an interaction type <span class="math notranslate nohighlight">\(g_i \Hscr_i(x)\)</span> (see <span class="math notranslate nohighlight">\(\eqref{eq_interaction_density_as_sum_of_monomials}\)</span>), such that <span class="math notranslate nohighlight">\(N = \sum_i N_i\)</span>.</p>
-<p>To a given term of order <span class="math notranslate nohighlight">\(N\)</span>, one can draw the associated Feynman diagrams in two steps as follows. The first step is to draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to the out-state particles and antiparticles; and draw <span class="math notranslate nohighlight">\(N_i\)</span> vertices for each interaction types <span class="math notranslate nohighlight">\(i\)</span>, which corresponds to a monomial <span class="math notranslate nohighlight">\(g_i \Hscr_i(x)\)</span>, with incoming and outgoing edges corresponding to its fields and field adjoints, respectively. The second step is to connect any pair of open strands by an oriented edge if the particle in question is different from its antiparticle, and by an unoriented edge otherwise. Moreover, the vertices and the edges are labelled as illustrated in the figure above.</p>
+<p>To a given term of order <span class="math notranslate nohighlight">\(N\)</span>, one can draw the associated Feynman diagrams in two steps as follows. The first step is to draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to the out-state particles and antiparticles at the top; and draw in the middle <span class="math notranslate nohighlight">\(N_i\)</span> vertices for each interaction types <span class="math notranslate nohighlight">\(i\)</span>, which corresponds to a monomial <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span>, with incoming and outgoing edges corresponding to its fields and field adjoints, respectively. The second step is to connect any pair of open strands by an oriented edge if the particle in question is different from its antiparticle, and by an unoriented edge otherwise. Moreover, the vertices and the edges are labelled as illustrated in the figure above.</p>
+<p>Now knowing how to draw a Feynman diagram of any given order for an interaction, we can spell out the recipe for a diagrammatic calculation of the S-matrix given by <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> in the following steps.</p>
+<ol class="arabic simple">
+<li><p>Draw all (distinct) Feynman diagrams (in reality, to a finite order) following the rules described above. We’ll come back to what we mean by “distinct” right after the recipe.</p></li>
+<li><p>For each diagram, we assign a factor <span class="math notranslate nohighlight">\(-\ifrak\)</span> to each vertex, corresponding to one factor of the power <span class="math notranslate nohighlight">\((-\ifrak)^n\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span>; and a factor <span class="math notranslate nohighlight">\(g_i\)</span> to each vertex corresponding to the coefficient of <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_interaction_density_as_sum_of_monomials}\)</span>; and a factor in the <a class="reference internal" href="#listing-feynman-rules"><span class="std std-ref">listing of Feynman rules</span></a> to each edge. Multiplying all the factors together and integrating over all the coordinates <span class="math notranslate nohighlight">\(x_1, x_2, \cdots\)</span>, one for each vertex, we obtain a (numeric) valuation of the Feynman diagram.</p></li>
+<li><p>The S-matrix is the “sum” over all the evaluations of the Feynman diagrams. Here the sum is put in quotation marks because we might do subtraction instead of addition when there are fermionic fields involved in the interaction. More precisely, for each Feynman diagram, one can move the fields and field adjoints over each other that the two ends of every edge are next to each other (in the right order). Then we add a minus sign in front of the evaluation if such rearrangement involves an odd number of swaps between fermionic fields (or field adjoints).</p></li>
+</ol>
+<p>These are really all one needs to evaluate S-matrices using Feynman diagrams, but a few further notes may be necessary to make it completely clear. Firstly, note that we’ve ignored the factor <span class="math notranslate nohighlight">\(1 / N!\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> from our recipe above. The reason lies in the word “distinct” from the first step. More precisely, we consider two Feynman diagrams, which differ by a re-labeling of the vertices, to be the same. Since there are <span class="math notranslate nohighlight">\(N!\)</span> ways of labeling <span class="math notranslate nohighlight">\(N\)</span> vertices, we have already taken the fraction <span class="math notranslate nohighlight">\(1 / N!\)</span> into account by including only distinct diagrams.</p>
+<p>Secondly, by the discussion in <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>, only connected Feynman diagrams will be included so that the resulting S-matrix satisfies the cluster decomposition principle.</p>
+<p>The last note is more of a convention (for convenience), which aims at further remove duplications among Feynman diagrams. Here by duplication we mean diagrams that are not exactly the same but whose evaluations are the same. A basic example is when a monomial in the interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> contains a power of the same field (or field adjoint). From the viewpoint of Feynman diagrams, it means that a vertex may have more than one identical attached (incoming or outgoing) strands. Now when other strands want to connect to these identical ones, they may choose which one to connect first, and second, and so on, but the result will be the same regardless of the choices. Hence it’s a convention to write the coefficient of <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> as <span class="math notranslate nohighlight">\(g_i / k!\)</span> if it contains <span class="math notranslate nohighlight">\(k\)</span> identical fields (or field adjoints), so that in a diagrammatic calculation, one only need to include one of such diagrams. Other numerical factors might be inserted in more complex situations, such as when two vertices with identical attached strands try to connect to each other, or when there is a loop of identical vertices. These cases are discussed in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a> page 265 – 267, and we’ll come back to them when they become revelant in calculations.</p>
+<p>To make things concrete and to prepare for the calculations in the next sections, we conclude the discussion of Feynman rules with two prototypical examples.</p>
+<section id="the-psi-dagger-psi-phi-interaction">
+<h4>The <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-interaction<a class="headerlink" href="#the-psi-dagger-psi-phi-interaction" title="Link to this heading">#</a></h4>
+<p>Consider the following interaction density</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Hscr(x) = \sum_{\ell m k} g_{\ell m k} \psi_{\ell}^{\dagger}(x) \psi_m(x) \phi_k(x)
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\psi(x)\)</span> is a (complex) fermionic field, and <span class="math notranslate nohighlight">\(\phi(x)\)</span> is a real, i.e., <span class="math notranslate nohighlight">\(\phi(x) = \phi^{\dagger}(x)\)</span>, bosonic field. This is an important type of interaction since it shows up not only in quantum electrodynamics, but in fact in the whole Standard Model of electromagnetic, weak, and strong interactions.</p>
+<p>This type of interaction allows three kinds of scattering processes, namely, fermion-fermion, fermion-boson, and boson-boson scattering.</p>
+<dl>
+<dt>Fermion-fermion scattering</dt><dd><p>The scattering is represented as <span class="math notranslate nohighlight">\(12 \to 1'2'\)</span>, where all in- and out-state particles <span class="math notranslate nohighlight">\(1, 2, 1', 2'\)</span> are fermions. Up to the second order, there are two (connected) Feynman diagrams</p>
+<figure class="align-center" id="id49">
+<img alt="../_images/ferrmion-fermion-scattering.svg" src="../_images/ferrmion-fermion-scattering.svg" />
+<figcaption>
+<p><span class="caption-text">Figure: Two second-order fermion-fermion scattering diagrams.</span><a class="headerlink" href="#id49" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</dd>
+</dl>
+<p>where the solid (directed) edges represent the fermions, and the dashed (undirected) edges represent the (neutral) boson. More explicitly, the two diagrams correspond to the following two contractions</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left[ a(1') \psi^{\dagger}(x_1) \right] \!
+        \left[ a(2') \psi^{\dagger}(x_2) \right] \!
+        \left[ \phi(x_1) \phi(x_2) \right] \!
+        \left[ \psi(x_1), a^{\dagger}(1) \right] \!
+        \left[ \psi(x_2) a^{\dagger}(2) \right]
+        \label{eq_fermion_fermion_scattering_121'2'}
+\end{equation}</div><p>and</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left[ a(2') \psi^{\dagger}(x_1) \right] \!
+        \left[ a(1') \psi^{\dagger}(x_2) \right] \!
+        \left[ \phi(x_1) \phi(x_2) \right] \!
+        \left[ \psi(x_1), a^{\dagger}(1) \right] \!
+        \left[ \psi(x_2) a^{\dagger}(2) \right]
+        \label{eq_fermion_fermion_scattering_122'1'}
+\end{equation}</div><p>respectively. Moreover, comparing with the original order</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        a(2') a(1') \psi^{\dagger}(x_1) \psi(x_1) \phi(x_1) \psi^{\dagger}(x_2) \psi(x_2) \phi(x_2) a^{\dagger}(1) a^{\dagger}(2)
+\end{equation*}</div><p>we see that the contractions <span class="math notranslate nohighlight">\(\eqref{eq_fermion_fermion_scattering_121'2'}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_fermion_fermion_scattering_122'1'}\)</span> require an even and odd number of swaps between fermionic operators, respectively. We note that whether a given diagram requires an even or odd fermionic swaps is rather arbitrary, and depends on many conventions. However, the fact that the two diagams corresponding to <span class="math notranslate nohighlight">\(\eqref{eq_fermion_fermion_scattering_121'2'}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_fermion_fermion_scattering_122'1'}\)</span> carry opposite signs is independent of the conventions and hence meaningful. Indeed, it’s another incarnation of the Fermi statistics in the sense that the S-matrix switches sign if either the in-state fermions <span class="math notranslate nohighlight">\(1 \leftrightarrow 2\)</span> or the out-state fermions <span class="math notranslate nohighlight">\(1' \leftrightarrow 2'\)</span> are swapped.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">2</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id33"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">3</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
@@ -4522,7 +4576,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 <aside class="footnote brackets" id="two-ways-of-representation" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">6</a><span class="fn-bracket">]</span></span>
@@ -4530,33 +4584,34 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">7</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 <aside class="footnote brackets" id="dirac-gamma-is-vector" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">8</a><span class="fn-bracket">]</span></span>
-<p>Our calculation is consistent with eq. (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
+<p>Our calculation is consistent with eq. (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
 </aside>
 <aside class="footnote brackets" id="spatial-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">9</a><span class="fn-bracket">]</span></span>
-<p>Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
+<p>Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id41"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
 </aside>
 <aside class="footnote brackets" id="charge-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">10</a><span class="fn-bracket">]</span></span>
-<p>Our calculation, once again, differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id41"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
+<p>Our calculation, once again, differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id42"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficients-orthonormality" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">11</a><span class="fn-bracket">]</span></span>
-<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id42"><span>[Wei15]</span></a> page 121 – 122.</p>
+<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id43"><span>[Wei15]</span></a> page 121 – 122.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficient-zero-total-angular-momentum" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">12</a><span class="fn-bracket">]</span></span>
-<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id43"><span>[Wei15]</span></a> page 124 – 125.</p>
+<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id44"><span>[Wei15]</span></a> page 124 – 125.</p>
 </aside>
 <aside class="footnote brackets" id="volume-element-inversion-sign-cancels-for-cpt-symmetry" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">13</a><span class="fn-bracket">]</span></span>
-<p>Comparing with eq. (5.8.9) in <a class="reference internal" href="../bib.html#wei95" id="id44"><span>[Wei95]</span></a> page 246, we get probably the most important result right, even though we’ve insisted in reversing the sign of the volume elements such as <span class="math notranslate nohighlight">\(d^3 p\)</span> and <span class="math notranslate nohighlight">\(d^3 x\)</span>, when <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span> are reversed, respectively.</p>
+<p>Comparing with eq. (5.8.9) in <a class="reference internal" href="../bib.html#wei95" id="id45"><span>[Wei95]</span></a> page 246, we get probably the most important result right, even though we’ve insisted in reversing the sign of the volume elements such as <span class="math notranslate nohighlight">\(d^3 p\)</span> and <span class="math notranslate nohighlight">\(d^3 x\)</span>, when <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span> are reversed, respectively.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 </section>
@@ -4680,7 +4735,10 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatr
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-feynman-rules">The Feynman Rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-rules">Derivation of the rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-rules">Derivation of the rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-psi-dagger-psi-phi-interaction">The <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-interaction</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

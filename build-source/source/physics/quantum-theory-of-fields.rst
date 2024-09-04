@@ -3162,7 +3162,7 @@ Under these assumptions, we can further rewrite :math:`\eqref{eq_s_matrix_power_
 	:nowrap:
 
 	\begin{equation}
-		S = 1 + \sum_{n=1}^{\infty} \frac{(-1)^n}{n!} \int d^4 x_1 \cdots d^4 x_n ~T\{ \Hscr(x_1) \cdots \Hscr(x_n) \}
+		S = 1 + \sum_{n=1}^{\infty} \frac{(-\ifrak)^n}{n!} \int d^4 x_1 \cdots d^4 x_n ~T\{ \Hscr(x_1) \cdots \Hscr(x_n) \}
 		\label{eq_s_matrix_power_series_expansion_time_ordered_density}
 	\end{equation}
 
@@ -7133,7 +7133,7 @@ In :ref:`sec_cluster_decomposable_hamiltonians`, we've discussed the condition t
 Derivation of the rules
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-We'll derive the Feynman rules in this section, leaving concrete calculations to the next section.
+We'll derive the Feynman rules, which will establish a diagrammatic framework for calculating S-matrices, in this section, leaving the actual calculations to the next section.
 
 First, recall the S-matrix formulated in terms of the S-operator :math:`\eqref{eq_s_matrix_power_series_expansion_time_ordered_density}` as follows
 
@@ -7141,9 +7141,9 @@ First, recall the S-matrix formulated in terms of the S-operator :math:`\eqref{e
 	:nowrap:
 
 	\begin{align}
-		S_{\pbf'_1, \sigma'_1, n'_1;~\pbf'_2, \sigma'_2, n'_2;~\cdots,~\pbf_1, \sigma_1, n_1;~\pbf_2, \sigma_2, n_2;~\cdots} &= \sum_{n=0}^{\infty} \frac{(-1)^n}{n!} \int d^4 x_1 d^4 x_2 \cdots d^4 x_n \Big( \Phi_{\VAC} \cdots a(\pbf'_2, \sigma'_2, n'_2) a(\pbf'_1, \sigma'_1, n'_2) \phantom{\Big)}
+		S_{\pbf'_1, \sigma'_1, n'_1;~\pbf'_2, \sigma'_2, n'_2;~\cdots,~\pbf_1, \sigma_1, n_1;~\pbf_2, \sigma_2, n_2;~\cdots} &= \sum_{N=0}^{\infty} \frac{(-\ifrak)^N}{N!} \int d^4 x_1 d^4 x_2 \cdots d^4 x_n \Big( \Phi_{\VAC} \cdots a(\pbf'_2, \sigma'_2, n'_2) a(\pbf'_1, \sigma'_1, n'_2) \phantom{\Big)}
 		\label{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density} \\
-			&\phantom{= \Big(} \times T\left\{ \Hscr(x_1) \cdots \Hscr(x_n) \right\} a^{\dagger}(\pbf_1, \sigma_1, n_1) a^{\dagger}(\pbf_2, \sigma_2, n_2) \cdots \Phi_{\VAC} \Big) \nonumber
+			&\phantom{= \Big(} \times T\left\{ \Hscr(x_1) \cdots \Hscr(x_N) \right\} a^{\dagger}(\pbf_1, \sigma_1, n_1) a^{\dagger}(\pbf_2, \sigma_2, n_2) \cdots \Phi_{\VAC} \Big) \nonumber
 	\end{align}
 
 where :math:`T\{ \cdots \}` is the time-ordered product defined by :math:`\eqref{eq_defn_time_ordered_product}`. As we've seen from the previous chapter, the interaction density :math:`\Hscr(x)` may be written as a polynomial in fields and their adjoint as follows
@@ -7175,6 +7175,8 @@ where we've restored the particle species index :math:`n`, and absorbed the sign
 According to :math:`\eqref{eq_defn_annihilation_field}` and :math:`\eqref{eq_defn_creation_field}`, we can also write, with obvious modifications, :math:`\psi_{\ell}(x) = \psi^+_{\ell}(x) + \psi^-_{\ell}(x)` such as :math:`\psi^+_{\ell}(x)` is a linear combination of annihilation operators, and :math:`\psi^-_{\ell}(x)` is a linear combination of creation operators.
 
 Now the idea of the Feynman rules to calculate the S-matrix is same as what has been discussed in :ref:`sec_cluster_decomposable_hamiltonians`. Namely, we'd like to move any annihilation operator to the right of a creation operator using the standard commutation rule :math:`\eqref{eq_creation_annihilation_commutator}`. To be more specific, we'll list all the possible scenarios as follows
+
+.. _listing_feynman_rules:
 
 #. Paring a final particle (in out-state) :math:`(\pbf, \sigma, n)` with a field adjoint :math:`\psi^{\dagger}_{\ell}(x)` gives
 	.. math::
@@ -7230,7 +7232,8 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
    This quantity is known as a *propagator*, which will be evaluated in the next section.
 
 .. note::
-	In the above listing, we've assumed that the item on the left in the (anti-)commutators also lies to the left of the item on the right in the (anti-)commutator in the vacuum expectation value in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` if we ignore the time ordering operator. The same applies to case (6) where :math:`\psi_{\ell}(x)` is assumed to lie to the left of :math:`\psi_m^{\dagger}(y)`. In particular, if we assume that the interaction density :math:`\Hscr(x)` is normally ordered in the sense that all the field adjoints lie to the left of the fields, then :math:`\Hscr_i(x)` necessarily lies to the left of :math:`\Hscr_j(y)`, and we don't have to to define :math:`\Delta_{\ell m}(x, x)` which would require certain regulation to not blow up integrals.
+	1. In the above listing, we've assumed that the item on the left in the (anti-)commutators also lies to the left of the item on the right in the (anti-)commutator in the vacuum expectation value in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` if we ignore the time ordering operator. The same applies to case (6) where :math:`\psi_{\ell}(x)` is assumed to lie to the left of :math:`\psi_m^{\dagger}(y)`. In particular, if we assume that the interaction density :math:`\Hscr(x)` is normally ordered in the sense that all the field adjoints lie to the left of the fields, then :math:`\Hscr_i(x)` necessarily lies to the left of :math:`\Hscr_j(y)`, and we don't have to to define :math:`\Delta_{\ell m}(x, x)` which would require certain regulation to not blow up integrals.
+	2. The parings listed above are commonly known as `Wick contractions <https://en.wikipedia.org/wiki/Wick%27s_theorem>`__
 
 A great invention of Feynman is the following diagrammatic representation of the above rules, known as the Feynman diagrams.
 
@@ -7249,7 +7252,84 @@ A few comments are in order to clarify the meaning of these diagrams
 
 With these basic building blocks at hand, we're ready to evaluate :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` using Feynman diagrams. The first thing to notice is that the S-matrix, as defined by :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}`, should be viewed as a power series, where a term of order :math:`N` corresponds to a monomial given as a product of powers, each of which is :math:`N_i`-th power of an interaction type :math:`g_i \Hscr_i(x)` (see :math:`\eqref{eq_interaction_density_as_sum_of_monomials}`), such that :math:`N = \sum_i N_i`.
 
-To a given term of order :math:`N`, one can draw the associated Feynman diagrams in two steps as follows. The first step is to draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to the out-state particles and antiparticles; and draw :math:`N_i` vertices for each interaction types :math:`i`, which corresponds to a monomial :math:`g_i \Hscr_i(x)`, with incoming and outgoing edges corresponding to its fields and field adjoints, respectively. The second step is to connect any pair of open strands by an oriented edge if the particle in question is different from its antiparticle, and by an unoriented edge otherwise. Moreover, the vertices and the edges are labelled as illustrated in the figure above.
+To a given term of order :math:`N`, one can draw the associated Feynman diagrams in two steps as follows. The first step is to draw (on a piece of paper) one upward-pointing and downward-pointing strand for each in-state particle and antiparticle, respectively, at the bottom; do the same to the out-state particles and antiparticles at the top; and draw in the middle :math:`N_i` vertices for each interaction types :math:`i`, which corresponds to a monomial :math:`\Hscr_i(x)`, with incoming and outgoing edges corresponding to its fields and field adjoints, respectively. The second step is to connect any pair of open strands by an oriented edge if the particle in question is different from its antiparticle, and by an unoriented edge otherwise. Moreover, the vertices and the edges are labelled as illustrated in the figure above.
+
+Now knowing how to draw a Feynman diagram of any given order for an interaction, we can spell out the recipe for a diagrammatic calculation of the S-matrix given by :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` in the following steps.
+
+1. Draw all (distinct) Feynman diagrams (in reality, to a finite order) following the rules described above. We'll come back to what we mean by "distinct" right after the recipe.
+2. For each diagram, we assign a factor :math:`-\ifrak` to each vertex, corresponding to one factor of the power :math:`(-\ifrak)^n` in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}`; and a factor :math:`g_i` to each vertex corresponding to the coefficient of :math:`\Hscr_i(x)` in :math:`\eqref{eq_interaction_density_as_sum_of_monomials}`; and a factor in the :ref:`listing of Feynman rules <listing_feynman_rules>` to each edge. Multiplying all the factors together and integrating over all the coordinates :math:`x_1, x_2, \cdots`, one for each vertex, we obtain a (numeric) valuation of the Feynman diagram.
+3. The S-matrix is the "sum" over all the evaluations of the Feynman diagrams. Here the sum is put in quotation marks because we might do subtraction instead of addition when there are fermionic fields involved in the interaction. More precisely, for each Feynman diagram, one can move the fields and field adjoints over each other that the two ends of every edge are next to each other (in the right order). Then we add a minus sign in front of the evaluation if such rearrangement involves an odd number of swaps between fermionic fields (or field adjoints).
+
+These are really all one needs to evaluate S-matrices using Feynman diagrams, but a few further notes may be necessary to make it completely clear. Firstly, note that we've ignored the factor :math:`1 / N!` in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` from our recipe above. The reason lies in the word "distinct" from the first step. More precisely, we consider two Feynman diagrams, which differ by a re-labeling of the vertices, to be the same. Since there are :math:`N!` ways of labeling :math:`N` vertices, we have already taken the fraction :math:`1 / N!` into account by including only distinct diagrams. 
+
+Secondly, by the discussion in :ref:`sec_cluster_decomposable_hamiltonians`, only connected Feynman diagrams will be included so that the resulting S-matrix satisfies the cluster decomposition principle.
+
+The last note is more of a convention (for convenience), which aims at further remove duplications among Feynman diagrams. Here by duplication we mean diagrams that are not exactly the same but whose evaluations are the same. A basic example is when a monomial in the interaction density :math:`\Hscr(x)` contains a power of the same field (or field adjoint). From the viewpoint of Feynman diagrams, it means that a vertex may have more than one identical attached (incoming or outgoing) strands. Now when other strands want to connect to these identical ones, they may choose which one to connect first, and second, and so on, but the result will be the same regardless of the choices. Hence it's a convention to write the coefficient of :math:`\Hscr_i(x)` as :math:`g_i / k!` if it contains :math:`k` identical fields (or field adjoints), so that in a diagrammatic calculation, one only need to include one of such diagrams. Other numerical factors might be inserted in more complex situations, such as when two vertices with identical attached strands try to connect to each other, or when there is a loop of identical vertices. These cases are discussed in [Wei95]_ page 265 -- 267, and we'll come back to them when they become revelant in calculations.
+
+To make things concrete and to prepare for the calculations in the next sections, we conclude the discussion of Feynman rules with two prototypical examples.
+
+The :math:`\psi^{\dagger} \psi \phi`-interaction
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+Consider the following interaction density
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Hscr(x) = \sum_{\ell m k} g_{\ell m k} \psi_{\ell}^{\dagger}(x) \psi_m(x) \phi_k(x)
+	\end{equation*}
+
+where :math:`\psi(x)` is a (complex) fermionic field, and :math:`\phi(x)` is a real, i.e., :math:`\phi(x) = \phi^{\dagger}(x)`, bosonic field. This is an important type of interaction since it shows up not only in quantum electrodynamics, but in fact in the whole Standard Model of electromagnetic, weak, and strong interactions.
+
+This type of interaction allows three kinds of scattering processes, namely, fermion-fermion, fermion-boson, and boson-boson scattering.
+
+Fermion-fermion scattering
+	The scattering is represented as :math:`12 \to 1'2'`, where all in- and out-state particles :math:`1, 2, 1', 2'` are fermions. Up to the second order, there are two (connected) Feynman diagrams
+
+	.. figure:: ./static/quantum-theory-of-fields/ferrmion-fermion-scattering.svg
+		:align: center
+
+		Figure: Two second-order fermion-fermion scattering diagrams. 
+
+where the solid (directed) edges represent the fermions, and the dashed (undirected) edges represent the (neutral) boson. More explicitly, the two diagrams correspond to the following two contractions
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation}
+		\left[ a(1') \psi^{\dagger}(x_1) \right] \!
+		\left[ a(2') \psi^{\dagger}(x_2) \right] \!
+		\left[ \phi(x_1) \phi(x_2) \right] \!
+		\left[ \psi(x_1), a^{\dagger}(1) \right] \!
+		\left[ \psi(x_2) a^{\dagger}(2) \right]
+		\label{eq_fermion_fermion_scattering_121'2'}
+	\end{equation}
+
+and
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation}
+		\left[ a(2') \psi^{\dagger}(x_1) \right] \!
+		\left[ a(1') \psi^{\dagger}(x_2) \right] \!
+		\left[ \phi(x_1) \phi(x_2) \right] \!
+		\left[ \psi(x_1), a^{\dagger}(1) \right] \!
+		\left[ \psi(x_2) a^{\dagger}(2) \right]
+		\label{eq_fermion_fermion_scattering_122'1'}
+	\end{equation}
+
+respectively. Moreover, comparing with the original order
+
+.. math:: 
+	:nowrap:
+
+	\begin{equation*}
+		a(2') a(1') \psi^{\dagger}(x_1) \psi(x_1) \phi(x_1) \psi^{\dagger}(x_2) \psi(x_2) \phi(x_2) a^{\dagger}(1) a^{\dagger}(2)
+	\end{equation*}
+
+we see that the contractions :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` require an even and odd number of swaps between fermionic operators, respectively. We note that whether a given diagram requires an even or odd fermionic swaps is rather arbitrary, and depends on many conventions. However, the fact that the two diagams corresponding to :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` carry opposite signs is independent of the conventions and hence meaningful. Indeed, it's another incarnation of the Fermi statistics in the sense that the S-matrix switches sign if either the in-state fermions :math:`1 \leftrightarrow 2` or the out-state fermions :math:`1' \leftrightarrow 2'` are swapped.
 
 
 .. rubric:: Footnotes
