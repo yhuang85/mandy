@@ -7281,18 +7281,19 @@ Consider the following interaction density
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Hscr(x) = \sum_{\ell m k} g_{\ell m k} \psi_{\ell}^{\dagger}(x) \psi_m(x) \phi_k(x)
-	\end{equation*}
+		\label{eq_psi_dagger_psi_phi_interaction_density}
+	\end{equation}
 
 where :math:`\psi(x)` is a (complex) fermionic field, and :math:`\phi(x)` is a real, i.e., :math:`\phi(x) = \phi^{\dagger}(x)`, bosonic field. This is an important type of interaction since it shows up not only in quantum electrodynamics, but in fact in the whole Standard Model of electromagnetic, weak, and strong interactions.
 
-This type of interaction allows three kinds of scattering processes, namely, fermion-fermion, fermion-boson, and boson-boson scattering.
+This type of interaction allows three kinds of scattering processes, namely, fermion-fermion, fermion-boson, and boson-boson scattering, which we'll discuss one by one.
 
 Fermion-fermion scattering
 	The scattering is represented as :math:`12 \to 1'2'`, where all in- and out-state particles :math:`1, 2, 1', 2'` are fermions. Up to the second order, there are two (connected) Feynman diagrams
 
-	.. figure:: ./static/quantum-theory-of-fields/fermion-fermion-scattering.svg
+	.. figure:: ./static/quantum-theory-of-fields/psi-dagger-psi-phi-fermion-fermion-scattering.svg
 		:align: center
 
 		Figure: Two second-order fermion-fermion scattering diagrams.
@@ -7308,7 +7309,7 @@ Fermion-fermion scattering
 			\big[ \phi_k(x), \phi_{k'}(y) \big]_-
 			\big[ \psi_m(x), a^{\dagger}(1) \big]_+
 			\big[ \psi_{m'}(y), a^{\dagger}(2) \big]_+
-			\label{eq_fermion_fermion_scattering_121'2'}
+			\label{eq_fermion_fermion_scattering_1212}
 		\end{equation}
 
 	and
@@ -7322,7 +7323,7 @@ Fermion-fermion scattering
 			\big[ \phi_k(x), \phi_{k'}(y) \big]_-
 			\big[ \psi_m(x), a^{\dagger}(1) \big]_+
 			\big[ \psi_{m'}(y), a^{\dagger}(2) \big]_+
-			\label{eq_fermion_fermion_scattering_122'1'}
+			\label{eq_fermion_fermion_scattering_1221}
 		\end{equation}
 
 	respectively. Moreover, comparing with the original order
@@ -7330,13 +7331,14 @@ Fermion-fermion scattering
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
+		\begin{equation}
 			a(2') a(1') \psi^{\dagger}(x) \psi(x) \phi(x) \psi^{\dagger}(y) \psi(y) \phi(y) a^{\dagger}(1) a^{\dagger}(2)
-		\end{equation*}
+			\label{eq_two_particles_scattering_original_order}
+		\end{equation}
 
-	we see that the contractions :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` require an even and odd number of swaps between fermionic operators, respectively. We note that whether a given diagram requires an even or odd fermionic swaps is rather arbitrary, and depends on many conventions. However, the fact that the two diagrams corresponding to :math:`\eqref{eq_fermion_fermion_scattering_121'2'}` and :math:`\eqref{eq_fermion_fermion_scattering_122'1'}` carry opposite signs is independent of the conventions and hence meaningful. Indeed, it's another incarnation of the Fermi statistics in the sense that the S-matrix switches sign if either the in-state fermions :math:`1 \leftrightarrow 2` or the out-state fermions :math:`1' \leftrightarrow 2'` are swapped.
+	we see that the contractions :math:`\eqref{eq_fermion_fermion_scattering_1212}` and :math:`\eqref{eq_fermion_fermion_scattering_1221}` require an even and odd number of swaps between fermionic operators, respectively. We note that whether a given diagram requires an even or odd fermionic swaps is rather arbitrary, and depends on many conventions. However, the fact that the two diagrams corresponding to :math:`\eqref{eq_fermion_fermion_scattering_1212}` and :math:`\eqref{eq_fermion_fermion_scattering_1221}` carry opposite signs is independent of the conventions and hence meaningful. Indeed, it's another incarnation of the Fermi statistics in the sense that the S-matrix switches sign if either the in-state fermions :math:`1 \leftrightarrow 2` or the out-state fermions :math:`1' \leftrightarrow 2'` are swapped.
 
-	Now let's use the Feynman rules :math:`\eqref{eq_feynman_rule_a_psi_dagger}` -- :math:`\eqref{eq_feynman_rule_propagator}` to evaluate the fermion-fermion scattering S-matrix up to 2nd order as follows [#connected_s_matrix_by_feynman_diagrams]_
+	Now let's use the Feynman rules :math:`\eqref{eq_feynman_rule_a_psi_dagger}` -- :math:`\eqref{eq_feynman_rule_propagator}` to evaluate the fermion-fermion scattering S-matrix up to second order as follows [#connected_s_matrix_by_feynman_diagrams]_
 
 	.. math::
 		:nowrap:
@@ -7344,13 +7346,87 @@ Fermion-fermion scattering
 		\begin{align*}
 			S^C_{\pbf'_1 \sigma'_1 n'_1,~\pbf'_2 \sigma'_2 n'_2;~~\pbf_1 \sigma_1 n_1,~\pbf_2 \sigma_2 n_2} &=
 					\sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y
-					\left( \eqref{eq_fermion_fermion_scattering_121'2'} - \eqref{eq_fermion_fermion_scattering_122'1'} \right) \\
-				&= (2\pi)^{-6} \sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y~\Big( \\
-				&\phantom{=~~} \exp\left(-\ifrak p'_1 \cdot x - \ifrak p'_2 \cdot y + \ifrak p_1 \cdot x + \ifrak p_2 \cdot y\right) \times \\
-				&\phantom{=~~} \times u^{\ast}_{\ell}(\pbf'_1, \sigma'_1, n'_1) u^{\ast}_{\ell'}(\pbf'_2, \sigma'_2, n'_2) u_m(\pbf_1, \sigma_1, n_1) u_{m'}(\pbf_2, \sigma_2, n_2) (-\ifrak) \Delta_{k k'}(x, y) \\
-				&\phantom{=~~} - \exp\left(-\ifrak p'_2 \cdot x - \ifrak p'_1 \cdot y + \ifrak p_1 \cdot x + \ifrak p_2 \cdot y\right) \times \\
-				&\phantom{=~~} \times u^{\ast}_{\ell}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_{\ell'}(\pbf'_1, \sigma'_1, n'_1) u_m(\pbf_1, \sigma_1, n_1) u_{m'}(\pbf_2, \sigma_2, n_2) (-\ifrak) \Delta_{k k'}(x, y) \Big)
+					\big( \eqref{eq_fermion_fermion_scattering_1212} - \eqref{eq_fermion_fermion_scattering_1221} \big) \\
+				&= (2\pi)^{-6} \sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y~(-\ifrak) \Delta_{k k'}(x, y) \times \\
+				&\phantom{=} \times e^{\ifrak p_1 \cdot x + \ifrak p_2 \cdot y} u_m(\pbf_1, \sigma_1, n_1) u_{m'}(\pbf_2, \sigma_2, n_2) \\
+				&\phantom{=} \times \left( e^{-\ifrak p'_1 \cdot x - \ifrak p'_2 \cdot y} u^{\ast}_{\ell}(\pbf'_1, \sigma'_1, n'_1) u^{\ast}_{\ell'}(\pbf'_2, \sigma'_2, n'_2)
+      				- e^{-\ifrak p'_2 \cdot x - \ifrak p'_1 \cdot y} u^{\ast}_{\ell}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_{\ell'}(\pbf'_1, \sigma'_1, n'_1) \right)
 		\end{align*}
+
+Fermion-boson scattering
+	Consider the scattering :math:`12 \to 1'2'`, where particles :math:`1, 1'` are fermions and :math:`2, 2'` are bosons, under interaction density :math:`\eqref{eq_psi_dagger_psi_phi_interaction_density}`. Up to second order, there are again two Feynman diagrams as follows
+
+	.. figure:: ./static/quantum-theory-of-fields/psi-dagger-psi-phi-fermion-boson-scattering.svg
+		:align: center
+
+		Figure: Two second-order fermion-boson scattering diagrams.
+
+	They correspond to the following two contractions
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\big[ a(2'), \phi_k(x) \big]_-
+			\big[ a(1'), \psi^{\dagger}_{\ell}(x) \big]_+
+			\big[ \psi_m(x), \psi_{\ell'}^{\dagger}(y) \big]_+
+			\big[ \psi_{m'}(y), a^{\dagger}(1) \big]_+
+			\big[ \phi_{k'}(y), a^{\dagger}(2) \big]_-
+			\label{eq_fermion_boson_scattering_1212}
+		\end{equation}
+
+	and
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\big[ a(2'), \phi_{k'}(y) \big]_-
+			\big[ a(1'), \psi_{\ell}^{\dagger}(x) \big]_+
+			\big[ \psi_m(x), \psi_{\ell'}^{\dagger}(y) \big]_+
+			\big[ \psi_{m'}(y), a^{\dagger}(1) \big]_+
+			\big[ \phi_k(x), a^{\dagger}(2) \big]_-
+			\label{eq_fermion_boson_scattering_1221}
+		\end{equation}
+
+	respectively. Comparing with the ordering of operators :math:`\eqref{eq_two_particles_scattering_original_order}`, we see that neither :math:`\eqref{eq_fermion_boson_scattering_1212}` nor :math:`\eqref{eq_fermion_boson_scattering_1221}` require any fermionic swap, and hence no extra signs are need in this case, in contrast to the previous case of fermion-fermion scattering.
+
+	Next let's use :math:`\eqref{eq_feynman_rule_a_psi_dagger}` -- :math:`\eqref{eq_feynman_rule_propagator}` to evaluate the second order S-matrix as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			S^C_{\pbf'_1 \sigma'_1 n'_1,~\pbf'_2 \sigma'_2 n'_2;~\pbf_1 \sigma_1 n_1,~\pbf_2 \sigma_2 n_2} &= \
+					\sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y \
+					\big( \eqref{eq_fermion_boson_scattering_1212} + \eqref{eq_fermion_boson_scattering_1221} \big) \\
+				&= (2\pi)^{-6} \sum_{\ell m k, \ell', m', k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y~(-\ifrak) \Delta_{m \ell'}(x, y) \times \\
+				&\phantom{=} \times e^{-\ifrak p'_1 \cdot x + \ifrak p_1 \cdot y} u^{\ast}_{\ell}(\pbf'_1, \sigma'_1, n'_1) u_{m'}(\pbf_1, \sigma_1, n_1) \\
+				&\phantom{=} \times \left( e^{-\ifrak p'_2 \cdot x + \ifrak p_2 \cdot y} u^{\ast}_k(\pbf'_2, \sigma'_2, n'_2) u_{k'}(\pbf_2, \sigma_2, n_2) \
+					+ e^{-\ifrak p'_2 \cdot y + \ifrak p_2 \cdot x} u^{\ast}_{k'}(\pbf'_2, \sigma'_2, n'_2) u_k(\pbf_2, \sigma_2, n_2) \right)
+		\end{align*}
+
+Boson-boson scattering
+	It turns out that the lowest order boson-boson scattering under the interaction density :math:`\eqref{eq_psi_dagger_psi_phi_interaction_density}` is four, given by the following Feynman diagram
+
+	.. figure:: ./static/quantum-theory-of-fields/psi-dagger-psi-phi-boson-boson-scattering.svg
+		:align: center
+
+		Figure: The 4th order boson-boson scattering diagram.
+
+	which involves a fermionic loop. We'll not evaluate the corresponding S-matrix here, but we note that the corresponding (fermionic) contraction
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\big[ \psi(x_1), \psi^{\dagger}(x_2) \big]_+
+			\big[ \psi(x_2), \psi^{\dagger}(x_3) \big]_+
+			\big[ \psi(x_3), \psi^{\dagger}(x_4) \big]_+
+			\big[ \psi(x_4), \psi^{\dagger}(x_1) \big]_+
+		\end{equation*}
+
+	where we've ignored the terms involving the bosonic operators, requires an odd number of fermionic swaps, which, in turn, requires an extra minus sign. This is a general phenomenon for any diagram that involves a fermionic loop.
 
 
 .. rubric:: Footnotes
