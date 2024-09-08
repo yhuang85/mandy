@@ -1232,12 +1232,12 @@ It follows from :math:`\eqref{eq_vk_is_one}` that we can write :math:`Wv = (1 + 
 	:nowrap:
 
 	\begin{equation}
-		S_{\mu}^{\nu}(a, b) = \begin{bmatrix}
+		S_{\mu}^{\nu}(a, b) = \begin{bmatrix*}[r]
 			1 + c & a & b & -c \\
 			a & 1 & 0 & -a \\
 			b & 0 & 1 & -b \\
 			c & a & b & 1 - c
-		\end{bmatrix}
+		\end{bmatrix*}
 		\label{eq_massless_little_group_s_matrix}
 	\end{equation}
 
@@ -1247,12 +1247,12 @@ which leaves :math:`k` invariant, and satisfies :math:`Sv = Wv`. It follows that
 	:nowrap:
 
 	\begin{equation}
-		R(\theta) = \begin{bmatrix}
+		R(\theta) = \begin{bmatrix*}[r]
 			1 & 0 & 0 & 0 \\
 			0 & \cos\theta & \sin\theta & 0 \\
 			0 & -\sin\theta & \cos\theta & 0 \\
 			0 & 0 & 0 & 1
-		\end{bmatrix}
+		\end{bmatrix*}
 		\label{eq_massless_little_group_r_matrix}
 	\end{equation}
 
@@ -1284,23 +1284,23 @@ As in the massive case, we'll work out :math:`D_{\sigma \sigma'}` up to first or
 	:nowrap:
 
 	\begin{align*}
-		W(a, b, \theta)_{\mu}^{\nu} &= \left(1 + \begin{bmatrix}
+		W(a, b, \theta)_{\mu}^{\nu} &= \left(1 + \begin{bmatrix*}[r]
 				0 & a & b & 0 \\
 				a & 0 & 0 & -a \\
 				b & 0 & 0 & -b \\
 				0 & a & b & 0
-			\end{bmatrix} \right) \left(1 + \begin{bmatrix}
+			\end{bmatrix*} \right) \left(1 + \begin{bmatrix*}[r]
 				0 & 0 & 0 & 0 \\
 				0 & 0 & \theta & 0 \\
 				0 & -\theta & 0 & 0 \\
 				0 & 0 & 0 & 0
-			\end{bmatrix} \right) + \cdots \\
-			&= 1 + \begin{bmatrix}
+			\end{bmatrix*} \right) + \cdots \\
+			&= 1 + \begin{bmatrix*}[r]
 				0 & a & b & 0 \\
 				a & 0 & \theta & -a \\
 				b & -\theta & 0 & -b \\
 				0 & a & b & 0
-			\end{bmatrix} + \cdots
+			\end{bmatrix*} + \cdots
 	\end{align*}
 
 where we've added the :math:`4`-indexes since we recall from discussions in :ref:`sec_quantum_lorentz_symmetry` that we must lift the :math:`\omega` index to make it anti-symmetric. We now rewrite
@@ -1309,12 +1309,12 @@ where we've added the :math:`4`-indexes since we recall from discussions in :ref
 	:nowrap:
 
 	\begin{equation*}
-		W(a, b , \theta)^{\mu \nu} = \eta^{\mu \sigma} W_{\sigma}^{\nu} = 1 + \begin{bmatrix}
+		W(a, b , \theta)^{\mu \nu} = \eta^{\mu \sigma} W_{\sigma}^{\nu} = 1 + \begin{bmatrix*}[r]
 				0 & -a & -b & 0 \\
 				a & 0 & \theta & -a \\
 				b & -\theta & 0 & -b \\
 				0 & a & b & 0
-			\end{bmatrix} + \cdots
+			\end{bmatrix*} + \cdots
 	\end{equation*}
 
 and spell out the expansion of :math:`D(a, b, \theta) \coloneqq D(W(a, b, \theta))` as follows
@@ -4583,7 +4583,7 @@ These, together with :math:`\eqref{eq_vector_field_u0_intertwines_j_sq}`, imply 
 	:nowrap:
 
 	\begin{equation}
-		u_{\mu}(0, 0) = v_{\mu}(0, 0) = (2m)^{-1/2} \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
+		u_{\mu}(0, 0) = v_{\mu}(0, 0) = (2m)^{-1/2} \begin{bmatrix*}[r] 0 \\ 0 \\ 0 \\ 1 \end{bmatrix*}
 		\label{eq_vector_field_uv_spin_z_0}
 	\end{equation}
 
@@ -4632,7 +4632,7 @@ Putting these all together, we have calculated :math:`u_{\mu}(0, 1)` as follows
 	:nowrap:
 
 	\begin{equation*}
-		u_{\mu}(0, 1) = -\frac{1}{2\sqrt{m}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}
+		u_{\mu}(0, 1) = -\frac{1}{2\sqrt{m}} \begin{bmatrix*}[r] 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix*}
 	\end{equation*}
 
 Calculations for :math:`\sigma = -1` as well as for :math:`v` are similar and hence omitted. The results are listed for future reference as follows
@@ -4641,9 +4641,9 @@ Calculations for :math:`\sigma = -1` as well as for :math:`v` are similar and he
 	:nowrap:
 
 	\begin{alignat}{2}
-		u_{\mu}(0, 1) &= -v_{\mu}(0, -1) &&= -\frac{1}{2\sqrt{m}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}
+		u_{\mu}(0, 1) &= -v_{\mu}(0, -1) &&= -\frac{1}{2\sqrt{m}} \begin{bmatrix*}[r] 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix*}
 		\label{eq_vector_field_uv_spin_z_1} \\
-		u_{\mu}(0, -1) &= -v_{\mu}(0, 1) &&= \frac{1}{2\sqrt{m}} \begin{bmatrix} 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix}
+		u_{\mu}(0, -1) &= -v_{\mu}(0, 1) &&= \frac{1}{2\sqrt{m}} \begin{bmatrix*}[r] 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix*}
 		\label{eq_vector_field_uv_spin_z_2}
 	\end{alignat}
 
@@ -4663,9 +4663,9 @@ where
 	:nowrap:
 
 	\begin{equation}
-		e_{\mu}(0, 0) = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}, \quad \
-		e_{\mu}(0, 1) = -\frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix}, \quad \
-		e_{\mu}(0, -1) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix}
+		e_{\mu}(0, 0) = \begin{bmatrix*}[r] 0 \\ 0 \\ 0 \\ 1 \end{bmatrix*}, \quad \
+		e_{\mu}(0, 1) = -\frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ \ifrak \\ 0 \end{bmatrix*}, \quad \
+		e_{\mu}(0, -1) = \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ -\ifrak \\ 0 \end{bmatrix*}
 		\label{eq_vector_field_defn_e_vector_at_rest}
 	\end{equation}
 
@@ -4706,27 +4706,27 @@ To better understand the quantity :math:`\Pi_{\mu \nu}(\pbf)`, let's first evalu
 	:nowrap:
 
 	\begin{equation*}
-		\Pi_{\mu \nu}(0) = \begin{bmatrix}
+		\Pi_{\mu \nu}(0) = \begin{bmatrix*}[r]
 				0 & 0 & 0 & 0 \\
 				0 & 0 & 0 & 0 \\
 				0 & 0 & 0 & 0 \\
 				0 & 0 & 0 & 1
-			\end{bmatrix} + \frac{1}{2} \begin{bmatrix}
+			\end{bmatrix*} + \frac{1}{2} \begin{bmatrix*}[r]
 				0 & 0 & 0 & 0 \\
 				0 & 1 & -\ifrak & 0 \\
 				0 & \ifrak & 1 & 0 \\
 				0 & 0 & 0 & 0
-			\end{bmatrix} + \frac{1}{2} \begin{bmatrix}
+			\end{bmatrix*} + \frac{1}{2} \begin{bmatrix*}[r]
 				0 & 0 & 0 & 0 \\
 				0 & 1 & \ifrak & 0 \\
 				0 & -\ifrak & 1 & 0 \\
 				0 & 0 & 0 & 0
-			\end{bmatrix} = \begin{bmatrix}
+			\end{bmatrix*} = \begin{bmatrix*}[r]
 				0 & 0 & 0 & 0 \\
 				0 & 1 & 0 & 0 \\
 				0 & 0 & 1 & 0 \\
 				0 & 0 & 0 & 1
-			\end{bmatrix}
+			\end{bmatrix*}
 	\end{equation*}
 
 which is nothing but the projection to the spatial :math:`3`-space, or in other words, the orthogonal complement of the time direction :math:`\pbf = 0`. Considering the definition :math:`e_{\mu}(\pbf, \sigma) \coloneqq L(p)_{\mu}^{\nu} e_{\nu}(0, \sigma)` as in :math:`\eqref{eq_vector_field_defn_e_vector_at_p}`, we see that the general :math:`\Pi_{\mu \nu}(\pbf)` is really just a projection to the orthogonal complement of :math:`p`, and therefore can be written as
@@ -5052,8 +5052,8 @@ It turns out that there exists indeed a solution of :math:`\eqref{eq_dirac_field
 	:nowrap:
 
 	\begin{equation}
-		\gamma_0 \coloneqq -\ifrak \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \
-			\bm{\gamma} \coloneqq -\ifrak \begin{bmatrix} 0 & \bm{\sigma} \\ -\bm{\sigma} & 0 \end{bmatrix}
+		\gamma_0 \coloneqq -\ifrak \begin{bmatrix*}[r] 0 & 1 \\ 1 & 0 \end{bmatrix*}, \quad \
+			\bm{\gamma} \coloneqq -\ifrak \begin{bmatrix*}[r] 0 & \bm{\sigma} \\ -\bm{\sigma} & 0 \end{bmatrix*}
 		\label{eq_dirac_field_defn_gamma_matrices}
 	\end{equation}
 
@@ -5063,9 +5063,9 @@ where :math:`\bm{\sigma} = (\sigma_1, \sigma_2, \sigma_3)` is made up of the so-
 	:nowrap:
 
 	\begin{equation}
-		\sigma_1 \coloneqq \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \
-			\sigma_2 \coloneqq \begin{bmatrix} 0 & -\ifrak \\ \ifrak & 0 \end{bmatrix}, \quad \
-			\sigma_3 \coloneqq \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+		\sigma_1 \coloneqq \begin{bmatrix*}[r] 0 & 1 \\ 1 & 0 \end{bmatrix*}, \quad \
+			\sigma_2 \coloneqq \begin{bmatrix*}[r] 0 & -\ifrak \\ \ifrak & 0 \end{bmatrix*}, \quad \
+			\sigma_3 \coloneqq \begin{bmatrix*}[r] 1 & 0 \\ 0 & -1 \end{bmatrix*}
 		\label{eq_pauli_matrices}
 	\end{equation}
 
@@ -5094,7 +5094,7 @@ Next let's consider the parity transformation in the formalism of gamma matrices
 	:nowrap:
 
 	\begin{equation}
-		\beta \coloneqq \ifrak \gamma_0 = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
+		\beta \coloneqq \ifrak \gamma_0 = \begin{bmatrix*}[r] 0 & 1 \\ 1 & 0 \end{bmatrix*}
 		\label{eq_dirac_field_beta_matrix}
 	\end{equation}
 
@@ -5136,7 +5136,7 @@ At last we'll introduce yet another special element to the family of gamma matri
 	:nowrap:
 
 	\begin{equation}
-		\gamma_5 \coloneqq -\ifrak \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+		\gamma_5 \coloneqq -\ifrak \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \begin{bmatrix*}[r] 1 & 0 \\ 0 & -1 \end{bmatrix*}
 		\label{eq_dirac_field_defn_gamma_5}
 	\end{equation}
 
@@ -5205,9 +5205,9 @@ The matrix form of :math:`\Jbf^{(1/2)}` according to :math:`\eqref{eq_j1_j2_matr
 	:nowrap:
 
 	\begin{equation*}
-		J_1^{(1/2)} = \frac{1}{2} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad \
-			J_2^{(1/2)} = \frac{\ifrak}{2} \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \quad \
-			J_3^{(1/2)} = \frac{1}{2} \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
+		J_1^{(1/2)} = \frac{1}{2} \begin{bmatrix*}[r] 0 & 1 \\ 1 & 0 \end{bmatrix*}, \quad \
+			J_2^{(1/2)} = \frac{\ifrak}{2} \begin{bmatrix*}[r] 0 & -1 \\ 1 & 0 \end{bmatrix*}, \quad \
+			J_3^{(1/2)} = \frac{1}{2} \begin{bmatrix*}[r] 1 & 0 \\ 0 & -1 \end{bmatrix*}
 	\end{equation*}
 
 Comparing with the Pauli matrices :math:`\eqref{eq_pauli_matrices}`, we see that
@@ -5237,9 +5237,9 @@ where we've inserted the extra factor :math:`-\ifrak` in front of :math:`d_{\pm}
 	:nowrap:
 
 	\begin{alignat}{2}
-		u(0, 1/2) &= \begin{bmatrix} c_+ \\ 0 \\ c_- \\ 0 \end{bmatrix}, \quad u(0, -1/2) &&= \begin{bmatrix} 0 \\ c_+ \\ 0 \\ c_- \end{bmatrix}
+		u(0, 1/2) &= \begin{bmatrix*}[l] c_+ \\ 0 \\ c_- \\ 0 \end{bmatrix*}, \quad u(0, -1/2) &&= \begin{bmatrix*}[l] 0 \\ c_+ \\ 0 \\ c_- \end{bmatrix*}
 		\label{eq_dirac_field_u_matrix_by_c} \\
-		v(0, 1/2) &= \begin{bmatrix} 0 \\ d_+ \\ 0 \\ d_- \end{bmatrix}, \quad v(0, -1/2) &&= -\begin{bmatrix} d_+ \\ 0 \\ d_- \\ 0 \end{bmatrix}
+		v(0, 1/2) &= \begin{bmatrix*}[l] 0 \\ d_+ \\ 0 \\ d_- \end{bmatrix*}, \quad v(0, -1/2) &&= -\begin{bmatrix*}[l] d_+ \\ 0 \\ d_- \\ 0 \end{bmatrix*}
 		\label{eq_dirac_field_v_matrix_by_d}
 	\end{alignat}
 
@@ -5303,8 +5303,8 @@ Now using :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{
 	:nowrap:
 
 	\begin{alignat*}{2}
-		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_+ \\ 0 \end{bmatrix}, \quad u(0, -1/2) &&= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ b_+ \end{bmatrix} \\
-		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ b_- \end{bmatrix}, \quad v(0, -1/2) &&= -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ b_- \\ 0 \end{bmatrix}
+		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[l] 1 \\ 0 \\ b_+ \\ 0 \end{bmatrix*}, \quad u(0, -1/2) &&= \frac{1}{\sqrt{2}} \begin{bmatrix*}[l] 0 \\ 1 \\ 0 \\ b_+ \end{bmatrix*} \\
+		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[l] 0 \\ 1 \\ 0 \\ b_- \end{bmatrix*}, \quad v(0, -1/2) &&= -\frac{1}{\sqrt{2}} \begin{bmatrix*}[l] 1 \\ 0 \\ b_- \\ 0 \end{bmatrix*}
 	\end{alignat*}
 
 So far we haven't really achieved much by assuming the parity conservation. What eventually pins down the spinors is, once again, the causality condition. To see this, let's try to construct the Dirac field following :math:`\eqref{eq_defn_psi_field}` as follows
@@ -5442,9 +5442,9 @@ where the zero-momentum spinors are
 	:nowrap:
 
 	\begin{alignat}{2}
-		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}, \quad &&u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 1 \end{bmatrix}
+		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ 1 \\ 0 \end{bmatrix*}, \quad &&u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ 1 \end{bmatrix*}
 		\label{eq_dirac_field_u_spinor_zero_momentum} \\
-        v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 0 \\ -1 \end{bmatrix}, \quad &&v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ 0 \\ -1 \\ 0 \end{bmatrix}
+        v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{bmatrix*}, \quad &&v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ -1 \\ 0 \end{bmatrix*}
 		\label{eq_dirac_field_v_spinor_zero_momentum}
 	\end{alignat}
 
@@ -5576,7 +5576,7 @@ While this result could've be satisfactory in its own right, as we'll see, it'll
 	:nowrap:
 
 	\begin{equation}
-		\Cscr \coloneqq \gamma_2 \beta = -\ifrak \begin{bmatrix} \sigma_2 & 0 \\ 0 & -\sigma_2 \end{bmatrix}
+		\Cscr \coloneqq \gamma_2 \beta = -\ifrak \begin{bmatrix*}[r] \sigma_2 & 0 \\ 0 & -\sigma_2 \end{bmatrix*}
 		\label{eq_dirac_field_defn_c_matrix}
 	\end{equation}
 
@@ -5725,9 +5725,9 @@ As mentioned in :ref:`Dirac representation and gamma matrices <paragraph_dirac_f
 	:nowrap:
 
 	\begin{equation*}
-		U_0(\Lambda) \psi^{\dagger}(x) U_0^{-1}(\Lambda) = \left( U_0(\Lambda) \psi(x) U_0^{-1}(\Lambda) \right)^{\dagger} \
-			= \left( D^{-1}(\Lambda) \psi(\Lambda x) \right)^{\dagger} \
-			= \psi^{\dagger}(\Lambda x) \left( D^{-1}(\Lambda) \right)^{\dagger} \
+		U_0(\Lambda) \psi^{\dagger}(x) U_0^{-1}(\Lambda) = \left( U_0(\Lambda) \psi(x) U_0^{-1}(\Lambda) \right)^{\dagger}
+			= \left( D^{-1}(\Lambda) \psi(\Lambda x) \right)^{\dagger}
+			= \psi^{\dagger}(\Lambda x) \left( D^{-1}(\Lambda) \right)^{\dagger}
 			= \psi^{\dagger}(\Lambda x) \beta D(\Lambda) \beta
 	\end{equation*}
 
@@ -6796,7 +6796,7 @@ Using the explicit formula :math:`\eqref{eq_massless_little_group_r_matrix}` for
 	:nowrap:
 
 	\begin{equation}
-		e_{\mu}(\kbf, \pm 1) = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ \pm \ifrak \\ 0 \end{bmatrix}
+		e_{\mu}(\kbf, \pm 1) = \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ \pm \ifrak \\ 0 \end{bmatrix*}
 		\label{eq_massless_vector_field_e_at_k}
 	\end{equation}
 
@@ -7183,7 +7183,9 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 		:nowrap:
 
 		\begin{equation}
-			\left[ a(\pbf, \sigma, n), \psi^{\dagger}_{\ell}(x) \right]_{\pm} = (2\pi)^{-3/2} e^{-\ifrak p \cdot x} u^{\ast}_{\ell}(\pbf, \sigma, n)
+			\underbracket{a(\pbf, \sigma, n) \psi^{\dagger}_{\ell}(x)}
+				\coloneqq \left[ a(\pbf, \sigma, n), \psi^{\dagger}_{\ell}(x) \right]_{\pm}
+				= (2\pi)^{-3/2} e^{-\ifrak p \cdot x} u^{\ast}_{\ell}(\pbf, \sigma, n)
 			\label{eq_feynman_rule_a_psi_dagger}
 		\end{equation}
 
@@ -7192,7 +7194,9 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 		:nowrap:
 
 		\begin{equation}
-			\left[ a(\pbf, \sigma, n^c), \psi_{\ell}(x) \right]_{\pm} = (2\pi)^{-3/2} e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma, n)
+			\underbracket{a(\pbf, \sigma, n^c) \psi_{\ell}(x)}
+				\coloneqq \left[ a(\pbf, \sigma, n^c), \psi_{\ell}(x) \right]_{\pm}
+				= (2\pi)^{-3/2} e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma, n)
 			\label{eq_feynman_rule_a_psi}
 		\end{equation}
 
@@ -7201,7 +7205,9 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 		:nowrap:
 
 		\begin{equation}
-			\left[ \psi_{\ell}(x), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm} = (2\pi)^{-3/2} e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma, n)
+			\underbracket{\psi_{\ell}(x) a^{\dagger}(\pbf, \sigma, n)}
+			\coloneqq \left[ \psi_{\ell}(x), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm}
+			= (2\pi)^{-3/2} e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma, n)
 			\label{eq_feynman_rule_psi_a_dagger}
 		\end{equation}
 
@@ -7210,7 +7216,9 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 		:nowrap:
 
 		\begin{equation}
-			\left[ \psi^{\dagger}(x), a^{\dagger}(\pbf, \sigma, n^c) \right]_{\pm} = (2\pi)^{-3/2} e^{\ifrak p \cdot x} v^{\ast}_{\ell}(\pbf, \sigma, n)
+			\underbracket{\psi^{\dagger}(x) a^{\dagger}(\pbf, \sigma, n^c)}
+			\coloneqq \left[ \psi^{\dagger}(x), a^{\dagger}(\pbf, \sigma, n^c) \right]_{\pm}
+			= (2\pi)^{-3/2} e^{\ifrak p \cdot x} v^{\ast}_{\ell}(\pbf, \sigma, n)
 			\label{eq_feynman_rule_psi_dagger_a}
 		\end{equation}
 
@@ -7219,7 +7227,9 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 		:nowrap:
 
 		\begin{equation}
-			\left[ a(\pbf', \sigma', n'), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm} = \delta^3(\pbf' - \pbf) \delta_{\sigma' \sigma} \delta_{n' n}
+			\underbracket{a(\pbf', \sigma', n') a^{\dagger}(\pbf, \sigma, n)}
+			\coloneqq \left[ a(\pbf', \sigma', n'), a^{\dagger}(\pbf, \sigma, n) \right]_{\pm}
+			= \delta^3(\pbf' - \pbf) \delta_{\sigma' \sigma} \delta_{n' n}
 			\label{eq_feynman_rule_a_a_dagger}
 		\end{equation}
 
@@ -7228,7 +7238,8 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 		:nowrap:
 
 		\begin{equation}
-			\theta(x_0 - y_0) \left[ \psi^+_{\ell}(x), \psi^{+ \dagger}_m(y) \right]_{\pm} \mp \theta(y_0 - x_0) \left[ \psi^{- \dagger}_m(y), \psi^-_{\ell}(x) \right]_{\pm} \eqqcolon -\ifrak \Delta_{\ell m}(x, y)
+			\underbracket{\psi_{\ell}(x) \psi^{\dagger}_m(y)}
+			\coloneqq \theta(x_0 - y_0) \left[ \psi^+_{\ell}(x), \psi^{+ \dagger}_m(y) \right]_{\pm} \mp \theta(y_0 - x_0) \left[ \psi^{- \dagger}_m(y), \psi^-_{\ell}(x) \right]_{\pm} \eqqcolon -\ifrak \Delta_{\ell m}(x, y)
 			\label{eq_feynman_rule_propagator}
 		\end{equation}
 
@@ -7238,7 +7249,7 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 
 .. note::
 	1. In the above listing, we've assumed that the item on the left in the (anti-)commutators also lies to the left of the item on the right in the (anti-)commutator in the vacuum expectation value in :math:`\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}` if we ignore the time ordering operator. The same applies to case (6) where :math:`\psi_{\ell}(x)` is assumed to lie to the left of :math:`\psi_m^{\dagger}(y)`. In particular, if we assume that the interaction density :math:`\Hscr(x)` is normally ordered in the sense that all the field adjoints lie to the left of the fields, then :math:`\Hscr_i(x)` necessarily lies to the left of :math:`\Hscr_j(y)`, and we don't have to to define :math:`\Delta_{\ell m}(x, x)` which would require certain regulation to not blow up integrals.
-	2. The parings listed above are commonly known as `Wick contractions <https://en.wikipedia.org/wiki/Wick%27s_theorem>`__
+	2. The parings listed above are commonly known as `Wick contractions <https://en.wikipedia.org/wiki/Wick%27s_theorem>`__.
 
 A great invention of Feynman is the following diagrammatic representation of the above rules, known as the Feynman diagrams.
 
@@ -7269,6 +7280,8 @@ These are really all one needs to evaluate S-matrices using Feynman diagrams, bu
 
 Secondly, by the discussion in :ref:`sec_cluster_decomposable_hamiltonians`, only connected Feynman diagrams will be included so that the resulting S-matrix satisfies the cluster decomposition principle.
 
+.. _paragraph_interaction_density_symmetry_factor:
+
 The last note is more of a convention (for convenience), which aims at further remove duplications among Feynman diagrams. Here by duplication we mean diagrams that are not exactly the same but whose evaluations are the same. A basic example is when a monomial in the interaction density :math:`\Hscr(x)` contains a power of the same field (or field adjoint). From the viewpoint of Feynman diagrams, it means that a vertex may have more than one identical attached (incoming or outgoing) strands. Now when other strands want to connect to these identical ones, they may choose which one to connect first, and second, and so on, but the result will be the same regardless of the choices. Hence it's a convention to write the coefficient of :math:`\Hscr_i(x)` as :math:`g_i / k!` if it contains :math:`k` identical fields (or field adjoints), so that in a diagrammatic calculation, one only need to include one of such diagrams. Other numerical factors might be inserted in more complex situations, such as when two vertices with identical attached strands try to connect to each other, or when there is a loop of identical vertices. These cases are discussed in [Wei95]_ page 265 -- 267, and we'll come back to them when they become relevant in calculations.
 
 To make things concrete and to prepare for the calculations in the next sections, we conclude the discussion of Feynman rules with two prototypical examples.
@@ -7296,35 +7309,28 @@ Fermion-fermion scattering
 	.. figure:: ./static/quantum-theory-of-fields/psi-dagger-psi-phi-fermion-fermion-scattering.svg
 		:align: center
 
-		Figure: Two second-order fermion-fermion scattering diagrams.
+		Figure: Two second-order fermion-fermion scattering diagrams :math:`\psi^{\dagger} \psi \phi`-theory.
 
 	where the solid (directed) edges represent the fermions, and the dashed (undirected) edges represent the (neutral) boson. More explicitly, the two diagrams correspond to the following two contractions
 
 	.. math::
 		:nowrap:
 
-		\begin{equation}
-			\big[ a(1'), \psi_{\ell}^{\dagger}(x) \big]_+
-			\big[ a(2'), \psi_{\ell'}^{\dagger}(y) \big]_+
-			\big[ \phi_k(x), \phi_{k'}(y) \big]_-
-			\big[ \psi_m(x), a^{\dagger}(1) \big]_+
-			\big[ \psi_{m'}(y), a^{\dagger}(2) \big]_+
-			\label{eq_fermion_fermion_scattering_1212}
-		\end{equation}
+		\begin{align}
+			\underbracket{ a(1') \psi_{\ell}^{\dagger}(x) }
+			\underbracket{ a(2') \psi_{\ell'}^{\dagger}(y) }
+			\underbracket{ \phi_k(x) \phi_{k'}(y) }
+			\underbracket{ \psi_m(x) a^{\dagger}(1) }
+			\underbracket{ \psi_{m'}(y) a^{\dagger}(2) }
+			\label{eq_fermion_fermion_scattering_1212} \\
 
-	and
-
-	.. math::
-		:nowrap:
-
-		\begin{equation}
-			\big[ a(2'), \psi_{\ell}^{\dagger}(x) \big]_+
-			\big[ a(1'), \psi_{\ell'}^{\dagger}(y) \big]_+
-			\big[ \phi_k(x), \phi_{k'}(y) \big]_-
-			\big[ \psi_m(x), a^{\dagger}(1) \big]_+
-			\big[ \psi_{m'}(y), a^{\dagger}(2) \big]_+
+			\underbracket{ a(2') \psi_{\ell}^{\dagger}(x) }
+			\underbracket{ a(1') \psi_{\ell'}^{\dagger}(y) }
+			\underbracket{ \phi_k(x) \phi_{k'}(y) }
+			\underbracket{ \psi_m(x) a^{\dagger}(1) }
+			\underbracket{ \psi_{m'}(y) a^{\dagger}(2) }
 			\label{eq_fermion_fermion_scattering_1221}
-		\end{equation}
+		\end{align}
 
 	respectively. Moreover, comparing with the original order
 
@@ -7359,7 +7365,7 @@ Fermion-boson scattering
 	.. figure:: ./static/quantum-theory-of-fields/psi-dagger-psi-phi-fermion-boson-scattering.svg
 		:align: center
 
-		Figure: Two second-order fermion-boson scattering diagrams.
+		Figure: Two second-order fermion-boson scattering diagrams :math:`\psi^{\dagger} \psi \phi`-theory.
 
 	They correspond to the following two contractions
 
@@ -7367,11 +7373,11 @@ Fermion-boson scattering
 		:nowrap:
 
 		\begin{equation}
-			\big[ a(2'), \phi_k(x) \big]_-
-			\big[ a(1'), \psi^{\dagger}_{\ell}(x) \big]_+
-			\big[ \psi_m(x), \psi_{\ell'}^{\dagger}(y) \big]_+
-			\big[ \psi_{m'}(y), a^{\dagger}(1) \big]_+
-			\big[ \phi_{k'}(y), a^{\dagger}(2) \big]_-
+			\underbracket{ a(2') \phi_k(x) }
+			\underbracket{ a(1') \psi^{\dagger}_{\ell}(x) }
+			\underbracket{ \psi_m(x) \psi_{\ell'}^{\dagger}(y) }
+			\underbracket{ \psi_{m'}(y) a^{\dagger}(1) }
+			\underbracket{ \phi_{k'}(y) a^{\dagger}(2) }
 			\label{eq_fermion_boson_scattering_1212}
 		\end{equation}
 
@@ -7381,11 +7387,11 @@ Fermion-boson scattering
 		:nowrap:
 
 		\begin{equation}
-			\big[ a(2'), \phi_{k'}(y) \big]_-
-			\big[ a(1'), \psi_{\ell}^{\dagger}(x) \big]_+
-			\big[ \psi_m(x), \psi_{\ell'}^{\dagger}(y) \big]_+
-			\big[ \psi_{m'}(y), a^{\dagger}(1) \big]_+
-			\big[ \phi_k(x), a^{\dagger}(2) \big]_-
+			\underbracket{ a(2') \phi_{k'}(y) }
+			\underbracket{ a(1') \psi_{\ell}^{\dagger}(x) }
+			\underbracket{ \psi_m(x) \psi_{\ell'}^{\dagger}(y) }
+			\underbracket{ \psi_{m'}(y) a^{\dagger}(1) }
+			\underbracket{ \phi_k(x) a^{\dagger}(2) }
 			\label{eq_fermion_boson_scattering_1221}
 		\end{equation}
 
@@ -7397,10 +7403,10 @@ Fermion-boson scattering
 		:nowrap:
 
 		\begin{align*}
-			S^C_{\pbf'_1 \sigma'_1 n'_1,~\pbf'_2 \sigma'_2 n'_2;~\pbf_1 \sigma_1 n_1,~\pbf_2 \sigma_2 n_2} &= \
+			S^C_{\pbf'_1 \sigma'_1 n'_1,~\pbf'_2 \sigma'_2 n'_2;~\pbf_1 \sigma_1 n_1,~\pbf_2 \sigma_2 n_2} &=
 					\sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y \
 					\big( \eqref{eq_fermion_boson_scattering_1212} + \eqref{eq_fermion_boson_scattering_1221} \big) \\
-				&= (2\pi)^{-6} \sum_{\ell m k, \ell', m', k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y~(-\ifrak) \Delta_{m \ell'}(x, y) \times \\
+				&= (2\pi)^{-6} \sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y~(-\ifrak) \Delta_{m \ell'}(x, y) \times \\
 				&\phantom{=} \times e^{-\ifrak p'_1 \cdot x + \ifrak p_1 \cdot y} u^{\ast}_{\ell}(\pbf'_1, \sigma'_1, n'_1) u_{m'}(\pbf_1, \sigma_1, n_1) \\
 				&\phantom{=} \times \left( e^{-\ifrak p'_2 \cdot x + \ifrak p_2 \cdot y} u^{\ast}_k(\pbf'_2, \sigma'_2, n'_2) u_{k'}(\pbf_2, \sigma_2, n_2) \
 					+ e^{-\ifrak p'_2 \cdot y + \ifrak p_2 \cdot x} u^{\ast}_{k'}(\pbf'_2, \sigma'_2, n'_2) u_k(\pbf_2, \sigma_2, n_2) \right)
@@ -7412,7 +7418,7 @@ Boson-boson scattering
 	.. figure:: ./static/quantum-theory-of-fields/psi-dagger-psi-phi-boson-boson-scattering.svg
 		:align: center
 
-		Figure: The 4th order boson-boson scattering diagram.
+		Figure: The fourth order boson-boson scattering diagram in :math:`\psi^{\dagger} \psi \phi`-theory.
 
 	which involves a fermionic loop. We'll not evaluate the corresponding S-matrix here, but we note that the corresponding (fermionic) contraction
 
@@ -7420,13 +7426,107 @@ Boson-boson scattering
 		:nowrap:
 
 		\begin{equation*}
-			\big[ \psi(x_1), \psi^{\dagger}(x_2) \big]_+
-			\big[ \psi(x_2), \psi^{\dagger}(x_3) \big]_+
-			\big[ \psi(x_3), \psi^{\dagger}(x_4) \big]_+
-			\big[ \psi(x_4), \psi^{\dagger}(x_1) \big]_+
+			\underbracket{ \psi(x_1) \psi^{\dagger}(x_2) }
+			\underbracket{ \psi(x_2) \psi^{\dagger}(x_3) }
+			\underbracket{ \psi(x_3) \psi^{\dagger}(x_4) }
+			\underbracket{ \psi(x_4) \psi^{\dagger}(x_1) }
 		\end{equation*}
 
 	where we've ignored the terms involving the bosonic operators, requires an odd number of fermionic swaps, which, in turn, requires an extra minus sign. This is a general phenomenon for any diagram that involves a fermionic loop.
+
+
+The :math:`\phi^3`-interaction
+++++++++++++++++++++++++++++++
+
+Now let's consider an interaction density that involves a power of the same field as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Hscr(x) = \frac{1}{3!} \sum_{\ell m k} g_{\ell m k} \phi_{\ell}(x) \phi_m(x) \phi_k(x)
+		\label{eq_phi3_interaction_density}
+	\end{equation}
+
+where :math:`g_{\ell m k}` is totally symmetric, and the extra factor :math:`1/3!` is to :ref:`account for this symmetry <paragraph_interaction_density_symmetry_factor>`.
+
+We'll evaluate the scattering amplitude of two (identical) bosons :math:`12 \to 1'2'`. In this case, there are three connected Feynman diagrams of second order as follows
+
+.. figure:: ./static/quantum-theory-of-fields/phi3-boson-boson-scattering.svg
+	:align: center
+
+	Figure: Three second-order boson-boson scattering diagrams in :math:`\phi^3`-theory.
+
+They correspond to the following three contractions
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		&\underbracket{ a(2') \phi_{\ell}(x) }
+		\underbracket{ a(1') \phi_{\ell'}(y) }
+		\underbracket{ \phi_m(x) \phi_{m'}(y) }
+		\underbracket{ \phi_{k'}(y) a^{\dagger}(1) }
+		\underbracket{ \phi_k(x) a^{\dagger}(2) }
+		\label{eq_phi3_h1212} \\
+
+		&\underbracket{ a(2') \phi_{\ell'}(y) }
+		\underbracket{ a(1') \phi_{\ell}(x) }
+		\underbracket{ \phi_m(x) \phi_{m'}(y) }
+		\underbracket{ \phi_{k'}(y) a^{\dagger}(1) }
+		\underbracket{ \phi_k(x) a^{\dagger}(2) }
+		\label{eq_phi3_h1221} \\
+
+		&\underbracket{ a(2') \phi_{\ell}(x) }
+		\underbracket{ a(1') \phi_k (x)}
+		\underbracket{ \phi_m(x) \phi_{m'}(y) }
+		\underbracket{ \phi_{k'}(y) a^{\dagger}(1) }
+		\underbracket{ \phi_{\ell'}(y) a^{\dagger}(2) }
+		\label{eq_phi3_v1212}
+	\end{align}
+
+respectively. We note once again that the factor :math:`1/3!` in :math:`\eqref{eq_phi3_interaction_density}` allows us to include just the above three contractions, and ignore the other ones obtained by, say, permuting :math:`\ell, m`, and :math:`k` (or equivalently :math:`\ell', m'`, and :math:`k'`). With this in mind, we can now calculate the (connected) S-matrix using :math:`\eqref{eq_feynman_rule_a_psi_dagger}` -- :math:`\eqref{eq_feynman_rule_propagator}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		S^C_{\pbf'_1 \sigma'_1 n'_1,~\pbf'_2 \sigma'_2 n'_2;~\pbf_1 \sigma_1 n_1,~\pbf_2 \sigma_2 n_2} &=
+				\sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y \
+				\big( \eqref{eq_phi3_h1212} + \eqref{eq_phi3_h1221} + \eqref{eq_phi3_v1212} \big) \\
+			&= (2\pi)^{-6} \sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y \
+				(-\ifrak) \Delta_{m m'}(x, y) \times \\
+			&\phantom{=} \times \Big( e^{\ifrak \left( p_2 - p'_2 \right) \cdot x + \ifrak \left( p_1 - p'_1 \right) \cdot y} u^{\ast}_{\ell}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_{\ell'}(\pbf'_1, \sigma'_1, n'_1) u_{k'}(\pbf_1, \sigma_1, n_1) u_k(\pbf_2, \sigma_2, n_2) \\
+			&\phantom{= \times} + e^{\ifrak (p_2 - p'_1) \cdot x + \ifrak (p_1 - p'_2) \cdot y} u^{\ast}_{\ell'}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_{\ell}(\pbf'_1, \sigma'_1, n'_1) u_{k'}(\pbf_1, \sigma_1, n_1) u_k(\pbf_2, \sigma_2, n_2) \\
+			&\phantom{= \times} + e^{-\ifrak (p'_1 + p'_2) \cdot x + \ifrak (p_1 + p_2) \cdot y} u^{\ast}_{\ell}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_k(\pbf'_1, \sigma'_1, n'_1) u_{k'}(\pbf_1, \sigma_1, n_1) u_{\ell'}(\pbf_2, \sigma_2, n_2) \Big)
+	\end{align*}
+
+A special case is when :math:`\phi` is a scalar field so that :math:`\eqref{eq_phi3_interaction_density}` takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Hscr(x) = \frac{g}{3!} \phi^3(x)
+	\end{equation*}
+
+In this case, the S-matrix can be simplified as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		S^C_{\pbf'_1,~\pbf'_2;~\pbf_1,~\pbf_2} &= \frac{\ifrak g}{(2\pi)^6 \sqrt{16 E'_1 E'_2 E_1 E_2}} \int d^4 x d^4 y~\Delta_F(x, y) \times \\
+			&\phantom{=} \times \left( e^{\ifrak \left( p_2 - p'_2 \right) \cdot x + \ifrak \left( p_1 - p'_1 \right) \cdot y}
+			+ e^{\ifrak (p_2 - p'_1) \cdot x + \ifrak (p_1 - p'_2) \cdot y}
+			+ e^{-\ifrak (p'_1 + p'_2) \cdot x + \ifrak (p_1 + p_2) \cdot y} \right)
+	\end{align*}
+
+where :math:`\Delta_F` is the so-called `Feynman propagator <https://en.wikipedia.org/wiki/Propagator#Feynman_propagator>`__ and will be discussed in detail in the next section.
+
+
+Calculation of the propagator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 .. rubric:: Footnotes
