@@ -1522,9 +1522,9 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \begin{align}
         \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^{\pm} \
                 &amp;= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha} \
-                + \int d\alpha d\beta ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon} \label{eq_packet_expansion_by_lippmann_schwinger} \\
-            &amp;= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha} \
-                    + \int d\beta ~\Phi_{\beta} \blue{\int d\alpha ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm})}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon}} \nonumber
+                        + \int d\alpha d\beta ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm}) \Phi_{\beta}}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon} \label{eq_packet_expansion_by_lippmann_schwinger} \\
+                &amp;= \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Phi_{\alpha} \
+                        + \int d\beta ~\Phi_{\beta} \blue{\int d\alpha ~\frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^{\pm})}{E_{\alpha} - E_{\beta} \mp \ifrak \epsilon}} \nonumber
 \end{align}</div><p>Now the integral colored in blue can be integrated over <span class="math notranslate nohighlight">\(E_{\alpha}\)</span> by a contour that runs from <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(+\infty\)</span>, followed by a semicircle at infinity, in the upper-half-plane in the case of <span class="math notranslate nohighlight">\(\Psi_{\alpha}^-\)</span> and the lower-half-plane in the case of <span class="math notranslate nohighlight">\(\Psi_{\alpha}^+\)</span>, back to <span class="math notranslate nohighlight">\(-\infty\)</span>. In either case, the sign in <span class="math notranslate nohighlight">\(\mp \ifrak \epsilon\)</span> is chosen so that the integrant has no poles with infinitesimally small imaginary part, though both <span class="math notranslate nohighlight">\(g(\alpha)\)</span> and <span class="math notranslate nohighlight">\((\Phi_{\beta}, V \Psi_{\alpha}^{\pm})\)</span>, viewed as complex functions, may have poles with finite imaginary parts. It follows then from the residual theorem and the damping factor <span class="math notranslate nohighlight">\(\exp(-\ifrak \tau E_{\alpha})\)</span> as <span class="math notranslate nohighlight">\(\tau \to \pm\infty\)</span> that the integral in blue vanishes, as desired.</p>
 </section>
 <section id="s-matrix-and-its-symmetry">
@@ -1553,9 +1553,9 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \begin{align}
         \int d\alpha ~\exp(-\ifrak \tau E_{\alpha}) g(\alpha) \Psi_{\alpha}^- &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta}
                 \label{eq_positive_limit_of_in_state_by_lippmann_schwinger} \\
-        &amp;\phantom{=} + \int d\beta ~\Phi_{\beta} \int d\alpha \frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)}{E_{\alpha} - E_{\beta} + \ifrak \epsilon} \nonumber \\
+                &amp;\phantom{=} + \int d\beta ~\Phi_{\beta} \int d\alpha \frac{\exp(-\ifrak \tau E_{\alpha}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-)}{E_{\alpha} - E_{\beta} + \ifrak \epsilon} \nonumber \\
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) g(\beta) \Phi_{\beta} \nonumber \\
-        &amp;\phantom{=} - 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \nonumber \\
+                &amp;\phantom{=} - 2\pi\ifrak \int d\beta ~\Phi_{\beta} \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) \exp(-\ifrak \tau E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \nonumber \\
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \left( g(\beta) - 2\pi\ifrak \int d\alpha ~\delta(E_{\alpha} - E_{\beta}) g(\alpha) (\Phi_{\beta}, V \Psi_{\alpha}^-) \right) \nonumber \\
                 &amp;= \int d\beta ~\exp(-\ifrak \tau E_{\beta}) \Phi_{\beta} \int d\alpha ~g(\alpha) \left( \blue{\delta(\alpha - \beta) - 2\pi\ifrak \delta(E_{\alpha} - E_{\beta}) (\Phi_{\beta}, V \Psi_{\alpha}^-)} \right) \nonumber
 \end{align}</div><p>where we’ve used the residue theorem again in the second equality. Next expand the left-hand-side of the equation in terms of the out-states and then let <span class="math notranslate nohighlight">\(\tau \to \infty\)</span></p>
@@ -1973,8 +1973,8 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation*}</div><p>For later use, let’s rewrite <span class="math notranslate nohighlight">\(u_{\alpha}\)</span> in the center-of-mass frame as follows. In the center-of-mass frame, the total momentum vanishes, and therefore we can write <span class="math notranslate nohighlight">\(p_1 = (E_1, \pbf)\)</span> and <span class="math notranslate nohighlight">\(p_2 = (E_2, -\pbf)\)</span>. It follows that</p>
 <div class="math notranslate nohighlight">
 \begin{align}
-        u_{\alpha} &amp;= \frac{\sqrt{(E_1 E_2 + |\pbf|^2)^2 - m_1^2 m_2^2}}{E_1 E_2} \label{eq_two_particles_relative_velocity_in_center_of_mass_frame} \\
-                &amp;= \frac{\sqrt{(E_1 E_2 + |\pbf|^2)^2 - (E_1^2 - |\pbf|^2)(E_2^2 - |\pbf|^2)}}{E_1 E_2} \nonumber \\
+        u_{\alpha} &amp;= \frac{\sqrt{(E_1 E_2 + \pbf^2)^2 - m_1^2 m_2^2}}{E_1 E_2} \label{eq_two_particles_relative_velocity_in_center_of_mass_frame} \\
+                &amp;= \frac{\sqrt{(E_1 E_2 + \pbf^2)^2 - (E_1^2 - \pbf^2)(E_2^2 - \pbf^2)}}{E_1 E_2} \nonumber \\
                 &amp;= \frac{|\pbf| (E_1 + E_2)}{E_1 E_2} \nonumber \\
                 &amp;= \left| \frac{\pbf_1}{E_1} - \frac{\pbf_2}{E_2} \right| \nonumber
 \end{align}</div><p>which indeed looks more like a relative velocity. Note, however, that this is <em>not</em> a physical velocity because its value may approach <span class="math notranslate nohighlight">\(2\)</span> (i.e., faster than the speed of light) in relativistic limit.</p>
@@ -2117,7 +2117,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
         -\frac{d}{dt} \int d\alpha ~P_{\alpha} \ln(P_{\alpha} / c_{\alpha}) \
                 &amp;= -\int d\alpha ~(\ln(P_{\alpha} / c_{\alpha}) + 1) \frac{dP_{\alpha}}{dt} \\
                 &amp;= -\int d\alpha \int d\beta ~(\ln(P_{\alpha} / c_{\alpha}) + 1) \left( P_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \
-                - P_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} \right) \\
+                        - P_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} \right) \\
                 &amp;= \int d\alpha \int d\beta ~P_{\beta} \ln\left( \frac{P_{\beta} c_{\alpha}}{P_{\alpha} c_{\beta}} \right) \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \\
                 &amp;\geq \int d\alpha \int d\beta ~\left( \frac{P_{\beta}}{c_{\beta}} - \frac{P_{\alpha}}{c_{\alpha}} \right) c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} \\
                 &amp;= \int d\alpha \int d\beta ~\frac{P_{\beta}}{c_{\beta}} \left( c_{\beta} \frac{d\Gamma(\beta \to \alpha)}{d\alpha} - c_{\alpha} \frac{d\Gamma(\alpha \to \beta)}{d\beta} \right) \\
@@ -2144,9 +2144,9 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <div class="math notranslate nohighlight">
 \begin{equation}
         \left( \Phi_{\beta}, V\Psi_{\alpha}^- \right) = V_{\beta \alpha} \
-        + \int d\gamma ~\frac{V_{\beta \gamma} V_{\gamma \alpha}}{E_{\alpha} - E_{\gamma} + \ifrak \epsilon} \
-        + \int d\gamma \int d\gamma' ~\frac{V_{\beta \gamma} V_{\gamma \gamma'} V_{\gamma' \alpha}}{(E_{\alpha} - E_{\gamma} + \ifrak \epsilon)(E_{\alpha} - E_{\gamma'} + \ifrak \epsilon)} \
-        + \cdots
+                + \int d\gamma ~\frac{V_{\beta \gamma} V_{\gamma \alpha}}{E_{\alpha} - E_{\gamma} + \ifrak \epsilon} \
+                + \int d\gamma \int d\gamma' ~\frac{V_{\beta \gamma} V_{\gamma \gamma'} V_{\gamma' \alpha}}{(E_{\alpha} - E_{\gamma} + \ifrak \epsilon)(E_{\alpha} - E_{\gamma'} + \ifrak \epsilon)} \
+                + \cdots
         \label{eq_s_matrix_power_series_expansion_old_fashioned}
 \end{equation}</div><p>and therefore a power series expansion in <span class="math notranslate nohighlight">\(V\)</span> of <span class="math notranslate nohighlight">\(S_{\beta \alpha}\)</span> in view of <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_pre_born_approx_repeated}\)</span>.</p>
 <p>One obvious drawback of the expansion <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_old_fashioned}\)</span> is that it obscures the Lorentz symmetry of the S-matrix because the denominators consist of only the energy terms. To overcome this, we shall use instead the other interpretation of the S-matrix in terms of the Hamiltonians given by <span class="math notranslate nohighlight">\(\eqref{eq_s_operator_by_u}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_defn_u_operator}\)</span>, which we recall as follows</p>
@@ -2158,8 +2158,8 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <div class="math notranslate nohighlight">
 \begin{align}
         \ifrak \frac{d}{d\tau} U(\tau, \tau_0) &amp;= -H_0 \exp(\ifrak H_0 \tau) \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \label{eq_evolution_equation_of_u_operator} \\
-        &amp;\phantom{=} + \exp(\ifrak H_0 \tau) H \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \nonumber \\
-    &amp;= \exp(\ifrak H_0 \tau) (H - H_0) \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \nonumber \\
+                &amp;\phantom{=} + \exp(\ifrak H_0 \tau) H \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \nonumber \\
+                &amp;= \exp(\ifrak H_0 \tau) (H - H_0) \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \nonumber \\
                 &amp;= \exp(\ifrak H_0 \tau) V \exp(-\ifrak H_0 \tau) U(\tau, \tau_0) \nonumber \\
                 &amp;\eqqcolon V(\tau) U(\tau, \tau_0) \nonumber
 \end{align}</div><p>Here <span class="math notranslate nohighlight">\(V(\tau) = \exp(\ifrak H_0 \tau) V \exp(-\ifrak H_0 \tau)\)</span> is a time-dependent operator in the so-called <em>interaction picture</em>, to be distinguished from the Heisenberg picture operator where the true Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> should be used in place of <span class="math notranslate nohighlight">\(H_0\)</span>. The differential equation <span class="math notranslate nohighlight">\(\eqref{eq_evolution_equation_of_u_operator}\)</span> can be easily solved as follows</p>
@@ -2170,16 +2170,16 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <div class="math notranslate nohighlight">
 \begin{align*}
         U(\tau, \tau_0) &amp;= 1 - \ifrak \int_{\tau_0}^{\tau} dt_1 ~V(t_1) \
-                + (-\ifrak)^2 \int_{\tau_0}^{\tau} dt_1 \int_{\tau_0}^{t_1} dt_2 ~V(t_1) V(t_2) \\
-        &amp;\phantom{=} + (-\ifrak)^3 \int_{\tau_0}^{\tau} dt_1 \int_{\tau_0}^{t_1} dt_2 \int_{\tau_0}^{t_2} dt_3 ~V(t_1) V(t_2) V(t_3) \
-                + \cdots
+                        + (-\ifrak)^2 \int_{\tau_0}^{\tau} dt_1 \int_{\tau_0}^{t_1} dt_2 ~V(t_1) V(t_2) \\
+                &amp;\phantom{=} + (-\ifrak)^3 \int_{\tau_0}^{\tau} dt_1 \int_{\tau_0}^{t_1} dt_2 \int_{\tau_0}^{t_2} dt_3 ~V(t_1) V(t_2) V(t_3) \
+                        + \cdots
 \end{align*}</div><p>Letting <span class="math notranslate nohighlight">\(\tau \to \infty\)</span> and <span class="math notranslate nohighlight">\(\tau_0 \to -\infty\)</span> we get another power series expansion of <span class="math notranslate nohighlight">\(S\)</span> in <span class="math notranslate nohighlight">\(V\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
         S &amp;= 1 - \ifrak \int_{-\infty}^{\infty} dt_1 ~V(t_1) \
-                + (-\ifrak)^2 \int_{-\infty}^{\infty} dt_1 \int_{-\infty}^{t_1} dt_2 ~V(t_1) V(t_2) \label{eq_s_matrix_power_series_expansion_raw} \\
-        &amp;\phantom{=} + (-\ifrak)^3 \int_{-\infty}^{\infty} dt_1 \int_{-\infty}^{t_1} dt_2 \int_{-\infty}^{t_2} dt_3 ~V(t_1) V(t_2) V(t_3) \
-                + \cdots \nonumber
+                        + (-\ifrak)^2 \int_{-\infty}^{\infty} dt_1 \int_{-\infty}^{t_1} dt_2 ~V(t_1) V(t_2) \label{eq_s_matrix_power_series_expansion_raw} \\
+                &amp;\phantom{=} + (-\ifrak)^3 \int_{-\infty}^{\infty} dt_1 \int_{-\infty}^{t_1} dt_2 \int_{-\infty}^{t_2} dt_3 ~V(t_1) V(t_2) V(t_3) \
+                        + \cdots \nonumber
 \end{align}</div><p>It’s somewhat inconvenient that the integral limits in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_raw}\)</span> ruins the permutation symmetry of the products of <span class="math notranslate nohighlight">\(V\)</span>. But this can be fixed by introducing a <em>time-ordered product</em> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
@@ -2345,7 +2345,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \begin{align*}
         a(q') a^{\dagger}(q) \Phi_{q_1 \cdots q_N} &amp;\xlongequal{\eqref{eq_defn_creation_operator}} a(q') \Phi_{q q_1 \cdots q_N} \\
                 &amp;\xlongequal{\eqref{eq_defn_annihilation_operator}} \delta(q' - q) \Phi_{q_1 \cdots q_N} \
-                + \blue{\sum_{i=1}^N (\pm 1)^{c'_i} \delta(q' - q_i) \Phi_{q q_1 \cdots \hat{q}_i \cdots q_N}}
+                        + \blue{\sum_{i=1}^N (\pm 1)^{c'_i} \delta(q' - q_i) \Phi_{q q_1 \cdots \hat{q}_i \cdots q_N}}
 \end{align*}</div><p>where the power <span class="math notranslate nohighlight">\(c'_i = c_i + 1\)</span> if both <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(q'\)</span> are fermions, and <span class="math notranslate nohighlight">\(c'_i = c_i\)</span> otherwise.</p>
 <p>The second half is more straightforward and is done as follows</p>
 <div class="math notranslate nohighlight">
@@ -2394,10 +2394,10 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <p>Let’s first work out how <span class="math notranslate nohighlight">\(a^{\dagger}(\pbf, \sigma, n)\)</span> and <span class="math notranslate nohighlight">\(a(\pbf, \sigma, n)\)</span> transform under Lorentz transformations. To this end, we recall the general Lorentz transformation law on free-particles state <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_transformation_formula_for_many_free_particles}\)</span>, and use <span class="math notranslate nohighlight">\(b\)</span> for the translational parameter to avoid conflict of notations, as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ \exp(-\ifrak b^{\mu} ((\Lambda p_1)_{\mu} + (\Lambda p_2)_{\mu} + \cdots)) \\
-&amp;\times \sqrt{\frac{(\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p_1)_0 (p_2)_0 \cdots}} \\
-&amp;\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma'_1 \sigma_1}(W_1(\Lambda, p_1)) D_{\sigma'_2 \sigma_2}(W_2(\Lambda, p_2)) \cdots \\
-&amp;\times \Phi_{\Lambda p_1, \sigma'_1, n_1; ~\Lambda p_2, \sigma'_2, n_2; ~\cdots}
+        U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ \exp(-\ifrak b^{\mu} ((\Lambda p_1)_{\mu} + (\Lambda p_2)_{\mu} + \cdots)) \\
+        &amp;\times \sqrt{\frac{(\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p_1)_0 (p_2)_0 \cdots}} \\
+        &amp;\times \sum_{\sigma'_1 \sigma'_2 \cdots} D_{\sigma'_1 \sigma_1}(W_1(\Lambda, p_1)) D_{\sigma'_2 \sigma_2}(W_2(\Lambda, p_2)) \cdots \\
+        &amp;\times \Phi_{\Lambda p_1, \sigma'_1, n_1; ~\Lambda p_2, \sigma'_2, n_2; ~\cdots}
 \end{align*}</div><p>where we also recall that <span class="math notranslate nohighlight">\(U_0\)</span> is the Lorentz transformation on free-particles state. Expanding <span class="math notranslate nohighlight">\(\eqref{eq_particles_state_from_creation_operators}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -2554,10 +2554,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
         \Phi_{\beta} &amp;= a^{\dagger}(\pbf_{14}) a^{\dagger}(\pbf_{13}) a^{\dagger}(\pbf_{12}) a^{\dagger}(\pbf_{11}) a^{\dagger}(\pbf_{10}) \Phi_{\VAC} \\
         V(t) &amp;= \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7) a^{\dagger}(\pbf_9) a^{\dagger}(\pbf_8) a(\pbf_7) a(\pbf_6)
 \end{align*}</div><p>where the coefficient of <span class="math notranslate nohighlight">\(V(t)\)</span>, except for the momentum conserving delta function, is suppressed. The figure below illustrates a few summands of the third order <span class="math notranslate nohighlight">\(S^{(3)}_{\beta \alpha} = \left( \Phi_{\beta}, T\{V(t_1)V(t_2)V(t_3)\}\Phi_{\alpha} \right)\)</span>.</p>
-<figure class="align-center" id="id48">
+<figure class="align-center" id="id50">
 <img alt="../_images/momenta-feynman-diagram.svg" src="../_images/momenta-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id48" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: A few Feynman diagrams and the corresponding products of delta functions. All the connecting strands are directed upwards, i.e., in the positive time direction, and hence we’ve omitted the arrows.</span><a class="headerlink" href="#id50" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Here we’ve used shorthand notations such as <span class="math notranslate nohighlight">\(\delta_{1,6'} \coloneqq \delta^3(\pbf_1 - \pbf'_6)\)</span> and <span class="math notranslate nohighlight">\(\delta_{8,9 - 6,7} \coloneqq \delta^3(\pbf_8 + \pbf_9 - \pbf_6 - \pbf_7)\)</span>.</p>
@@ -2581,10 +2581,10 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <p>It remains to argue that <span class="math notranslate nohighlight">\(S^C_{\beta \alpha}\)</span> contains exactly one momentum-conservation delta function, assuming that the same applies to the coefficients <span class="math notranslate nohighlight">\(h_{NM}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span>. Indeed, since <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> and the single momentum-conservation condition holds automatically true for <span class="math notranslate nohighlight">\(H_0\)</span>, the same holds for <span class="math notranslate nohighlight">\(V\)</span>. In other words, each vertex in the Feynman diagram produces one single momentum-conservation delta function, as promised earlier.</p>
 <p>Finally, we note that the fact that each connected Feynman diagram gives rise to exactly one momentum-conservation delta function is the consequence of an elimination process. More precisely, we can first get rid of delta functions on the internal edges, i.e., edges between vertices, by equating the momenta on the two ends of the edge. So we’re left with as many delta functions as there are vertices. Then for each internal edge, we can choose one of its endpoints, and solve the associated momentum in terms of the other momenta. Hence we can get rid of all but one delta function, as claimed.</p>
 <p>An example elimination process is presented for the following Feynman diagram.</p>
-<figure class="align-center" id="id49">
+<figure class="align-center" id="id51">
 <img alt="../_images/pseudo-feynman-diagram.svg" src="../_images/pseudo-feynman-diagram.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: An example Feynman diagram.</span><a class="headerlink" href="#id49" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: An example Feynman diagram.</span><a class="headerlink" href="#id51" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We skip the first step of equating momenta on the ends of edges, and continue with the conservation delta functions on the vertices as follows</p>
@@ -2824,8 +2824,8 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 <div class="math notranslate nohighlight">
 \begin{align*}
         \Delta_+(x) &amp;= \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2\sqrt{\pbf^2 + m^2}}~\exp(\ifrak \pbf \cdot \xbf) \\
-                &amp;= \frac{4\pi}{(2\pi)^3} \int_0^{\infty} \frac{|\pbf|^2 d|\pbf|}{2\sqrt{|\pbf|^2 + m^2}} \int_{S^2} d^2 \hat{\pbf}~\exp(\ifrak |\pbf| |\xbf| \hat{\pbf} \cdot \hat{\xbf}) \\
-                &amp;= \frac{1}{2\pi} \int_0^{\infty} \frac{|\pbf|^2 d|\pbf|}{2\sqrt{|\pbf|^2 + m^2}} \int_0^{\pi} d\theta~\exp(\ifrak |\pbf| |\xbf| \cos\theta)
+                &amp;= \frac{4\pi}{(2\pi)^3} \int_0^{\infty} \frac{\pbf^2 d|\pbf|}{2\sqrt{\pbf^2 + m^2}} \int_{S^2} d^2 \hat{\pbf}~\exp(\ifrak |\pbf| |\xbf| \hat{\pbf} \cdot \hat{\xbf}) \\
+                &amp;= \frac{1}{2\pi} \int_0^{\infty} \frac{\pbf^2 d|\pbf|}{2\sqrt{\pbf^2 + m^2}} \int_0^{\pi} d\theta~\exp(\ifrak |\pbf| |\xbf| \cos\theta)
 \end{align*}</div><p>The last integral cannot be easily evaluated, at least without some knowledge about special functions. Nonetheless, we observe that <span class="math notranslate nohighlight">\(\Delta_+(x) \neq 0\)</span>, which means that <span class="math notranslate nohighlight">\(\Hscr\)</span> cannot be just any polynomial in <span class="math notranslate nohighlight">\(\psi^{\pm}(x)\)</span>. Moreover, we note that <span class="math notranslate nohighlight">\(\Delta_+(x) = \Delta_+(-x)\)</span> as promised earlier. As already mentioned in <span class="math notranslate nohighlight">\(\eqref{eq_defn_psi_field}\)</span>, let’s try</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -3489,14 +3489,16 @@ U_0(\Lambda, b) \Phi_{p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} =&amp;~ 
 \begin{alignat}{2}
         u(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ 1 \\ 0 \end{bmatrix*}, \quad &amp;&amp;u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ 1 \end{bmatrix*}
         \label{eq_dirac_field_u_spinor_zero_momentum} \\
-v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{bmatrix*}, \quad &amp;&amp;v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ -1 \\ 0 \end{bmatrix*}
+        v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{bmatrix*}, \quad &amp;&amp;v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ -1 \\ 0 \end{bmatrix*}
         \label{eq_dirac_field_v_spinor_zero_momentum}
 \end{alignat}</div><p>and the spin sums are</p>
 <div class="math notranslate nohighlight">
-\begin{align*}
-        N(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} + m \right) \beta \\
+\begin{align}
+        N(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} + m \right) \beta
+        \label{eq_dirac_field_spin_sum_u} \\
         M(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} - m\right) \beta
-\end{align*}</div><p>and the anti-commutator <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_commutator_first_evaluation}\)</span></p>
+        \label{eq_dirac_field_spin_sum_v}
+\end{align}</div><p>and the anti-commutator <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_commutator_first_evaluation}\)</span></p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_+ = \left( \left( -\gamma^{\mu}\p_{\mu} + m \right) \beta \right)_{\ell \ell'} \Delta(x-y)
@@ -3601,7 +3603,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 <div class="math notranslate nohighlight">
 \begin{align*}
         U(\Tcal) \psi(x) U^{-1}(\Tcal) &amp;\xlongequal{\eqref{eq_dirac_field_psi_field}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} u^{\ast}(\pbf, \sigma) U(\Tcal) a(\pbf, \sigma) U^{-1}(\Tcal) \\
-                &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) U(\Tcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Tcal) \big) \\
+                        &amp;\phantom{\eqref{eq_dirac_field_psi_field}} + e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) U(\Tcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Tcal) \big) \\
                 &amp;\xlongequal{\eqref{eq_creation_operator_time_inversion_conjugation_massive}} (2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 - \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} \zeta^{\ast} u^{\ast}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)} \\
                         &amp;\phantom{\eqref{eq_dirac_field_psi_field} \big(} + e^{\ifrak p \cdot x} \zeta^c v^{\ast}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
                 &amp;\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} -(2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 + \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot \Pcal x} \zeta^{\ast} u^{\ast}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \\
@@ -3868,19 +3870,21 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
         \label{eq_general_field_psi_commutator}
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(\pi(\pbf)\)</span> is the (rescaled) spin sum defined by</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         (2p_0)^{-1} \pi_{ab,a'b'}(\pbf) \coloneqq \sum_{\sigma} u_{ab}(\pbf, \sigma) u_{a'b'}^{\prime~\ast}(\pbf, \sigma) = \sum_{\sigma} v_{ab}(\pbf, \sigma) v_{a'b'}^{\prime~\ast}(\pbf, \sigma)
-\end{equation*}</div><p>Here the second equality can be mostly easily seen using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>. Note also that we are considering the general scenario where <span class="math notranslate nohighlight">\(\psi(x)\)</span> is an <span class="math notranslate nohighlight">\((A, B)\)</span> field, while <span class="math notranslate nohighlight">\(\psi'(x)\)</span> is a possibly different <span class="math notranslate nohighlight">\((A', B')\)</span> field.</p>
+        \label{eq_general_field_spin_sums_as_pi}
+\end{equation}</div><p>Here the second equality can be mostly easily seen using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_v_at_finite_momentum}\)</span>. Note also that we are considering the general scenario where <span class="math notranslate nohighlight">\(\psi(x)\)</span> is an <span class="math notranslate nohighlight">\((A, B)\)</span> field, while <span class="math notranslate nohighlight">\(\psi'(x)\)</span> is a possibly different <span class="math notranslate nohighlight">\((A', B')\)</span> field.</p>
 <p>Using <span class="math notranslate nohighlight">\(\eqref{eq_general_field_u_at_finite_momentum}\)</span>, we can spell out more details of the spin sum as follows</p>
 <div class="math notranslate nohighlight">
-\begin{align*}
-        \pi_{ab, a'b'}(\pbf) &amp;= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}') \\
-                &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
-                &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
-\end{align*}</div><p>This looks horribly complicated, but it has been evaluated by the author in <a class="reference internal" href="../bib.html#wei69" id="id28"><span>[Wei69]</span></a>. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that <span class="math notranslate nohighlight">\(\pi_{ab,a'b'}(\pbf)\)</span> is a polynomial <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(p\)</span> on the mass shell as follows</p>
+\begin{align}
+        \pi_{ab, a'b'}(\pbf) &amp;= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}')
+        \label{eq_general_field_spin_sum} \\
+                &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \nonumber \\
+                &amp;\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'} \nonumber
+\end{align}</div><p>This looks horribly complicated, but it has been evaluated by the author in <a class="reference internal" href="../bib.html#wei69" id="id28"><span>[Wei69]</span></a>. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that <span class="math notranslate nohighlight">\(\pi_{ab,a'b'}(\pbf)\)</span> is a polynomial <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(p\)</span> on the mass shell as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
-        \pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{|\pbf|^2 + m^2}, \pbf \right)
+        \pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{\pbf^2 + m^2}, \pbf \right)
         \label{eq_general_field_spin_sum_is_polynomial}
 \end{equation}</div><p>The second is that this polynomial is even or odd depending on the parity of <span class="math notranslate nohighlight">\(2A + 2B'\)</span> as follows</p>
 <div class="math notranslate nohighlight">
@@ -3917,11 +3921,12 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
                 \end{cases}
 \end{equation*}</div><p class="sd-card-text">Finally, to verify <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_polynomial_parity}\)</span>, it suffices to note that <span class="math notranslate nohighlight">\(2a-2b'\)</span> differs from <span class="math notranslate nohighlight">\(2A-2B'\)</span> by an even integer.</p>
 </div>
-</details><p>Assuming <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_is_polynomial}\)</span>, we note that any <span class="math notranslate nohighlight">\(P_{ab, a'b'}\)</span> can be written in such a way that it’s (at most) linear in the first argument <span class="math notranslate nohighlight">\(\sqrt{|\pbf|^2 + m^2}\)</span>. Changing the content of <span class="math notranslate nohighlight">\(P_{ab, a'b'}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_is_polynomial}\)</span>, we may then rewrite it as follows</p>
+</details><p>Assuming <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_is_polynomial}\)</span>, we note that any <span class="math notranslate nohighlight">\(P_{ab, a'b'}\)</span> can be written in such a way that it’s (at most) linear in the first argument <span class="math notranslate nohighlight">\(\sqrt{\pbf^2 + m^2}\)</span>. Changing the content of <span class="math notranslate nohighlight">\(P_{ab, a'b'}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_is_polynomial}\)</span>, we may then rewrite it as follows</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
-        \pi_{ab, a'b'}(\pbf) = P_{ab, a'b'}(\pbf) + 2 \sqrt{|\pbf|^2 + m^2} Q_{ab, a'b'}(\pbf)
-\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(P, Q\)</span> are polynomials in <span class="math notranslate nohighlight">\(\pbf\)</span> that satisfy the following parity conditions</p>
+\begin{equation}
+        \pi_{ab, a'b'}(\pbf) = P_{ab, a'b'}(\pbf) + 2 \sqrt{\pbf^2 + m^2} Q_{ab, a'b'}(\pbf)
+        \label{eq_general_field_spin_sum_as_polynomial}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(P, Q\)</span> are polynomials in <span class="math notranslate nohighlight">\(\pbf\)</span> that satisfy the following parity conditions</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         P_{ab, a'b'}(-\pbf) &amp;= (-1)^{2A+2B'} P_{ab, a'b'}(\pbf) \\
@@ -4063,7 +4068,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 \begin{align}
         U(\Tcal) \psi^{AB}_{ab}(x) U^{-1}(\Tcal) &amp;\xlongequal{\substack{\eqref{eq_general_field_psi_field} \\ \eqref{eq_creation_operator_time_inversion_conjugation_massive}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot x} u^{AB \ast}_{ab}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)}
         \label{eq_general_field_time_inversion_transformation} \\
-        &amp;\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot x} v^{AB \ast}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \nonumber \\
+                &amp;\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot x} v^{AB \ast}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \nonumber \\
                 &amp;\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} -(2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB \ast}_{ab}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \nonumber \\
                 &amp;\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB \ast}_{ab}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \nonumber \\
                 &amp;\xlongequal{\substack{\eqref{eq_general_field_u_symmetry_negation} \\ \eqref{eq_general_field_v_symmetry_negation}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B+a+b-2\sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB}_{-a, -b}(\pbf, \sigma) \phantom{\big)} \nonumber \\
@@ -4237,7 +4242,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 \begin{equation}
         \square a_{\mu}(x) = 0
         \label{eq_massless_vector_field_klein_gordon}
-\end{equation}</div><p>which is nothing but an incarnation of the mass-shell condition <span class="math notranslate nohighlight">\(p_0^2 = |\pbf|^2\)</span>. Then let’s consider the massless analog to the gauge-fixing condition <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_gauge_fixing_condition}\)</span>. To this end, we claim that <span class="math notranslate nohighlight">\(e_0(\kbf, \pm 1) = 0\)</span> and <span class="math notranslate nohighlight">\(\kbf \cdot \ebf(\kbf, \pm 1) = 0\)</span> imply the following</p>
+\end{equation}</div><p>which is nothing but an incarnation of the mass-shell condition <span class="math notranslate nohighlight">\(p_0^2 = \pbf^2\)</span>. Then let’s consider the massless analog to the gauge-fixing condition <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_gauge_fixing_condition}\)</span>. To this end, we claim that <span class="math notranslate nohighlight">\(e_0(\kbf, \pm 1) = 0\)</span> and <span class="math notranslate nohighlight">\(\kbf \cdot \ebf(\kbf, \pm 1) = 0\)</span> imply the following</p>
 <div class="math notranslate nohighlight">
 \begin{align}
         e_0(\pbf, \pm 1) &amp;= 0
@@ -4307,7 +4312,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 <div class="math notranslate nohighlight">
 \begin{equation}
         \sum_{\sigma = \pm 1} \ebf_i(\kbf, \sigma) \ebf_j^{\ast}(\kbf, \sigma) = \delta_{ij} - \kbf_i \kbf_j ~~\xRightarrow{\eqref{eq_massless_vector_field_spinor_from_k_to_p}} \
-                \sum_{\sigma = \pm 1} \ebf_i(\pbf, \sigma) \ebf_j^{\ast}(\pbf, \sigma) = \delta_{ij} - \frac{\pbf_i \pbf_j}{|\pbf|^2}
+                \sum_{\sigma = \pm 1} \ebf_i(\pbf, \sigma) \ebf_j^{\ast}(\pbf, \sigma) = \delta_{ij} - \frac{\pbf_i \pbf_j}{\pbf^2}
         \label{eq_massless_vector_field_spin_sum}
 \end{equation}</div><p class="sd-card-text">where the first equality can be directly verified using <span class="math notranslate nohighlight">\(\eqref{eq_massless_vector_field_e_at_k}\)</span>. In particular, we notice that the spin sum is real – a neat fact that will be used in the next calculation. Moreover, the spin sum vanishes if any index is <span class="math notranslate nohighlight">\(0\)</span> because of <span class="math notranslate nohighlight">\(\eqref{eq_massless_vector_field_spinor_zero_vanishes}\)</span>.</p>
 <p class="sd-card-text">Next we calculate the (anti-)commutator between the derivatives of the components of an <span class="math notranslate nohighlight">\(a\)</span>-field, with coefficients <span class="math notranslate nohighlight">\(\kappa\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> as in <span class="math notranslate nohighlight">\(\eqref{eq_massless_field_defn_psi_field}\)</span> restored, as follows</p>
@@ -4316,24 +4321,24 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
         \left[ \p_{\mu} a_{\nu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right]_{\pm} &amp;\xlongequal{\eqref{eq_massless_vector_field_a}} (2\pi)^{-3} \int \frac{d^3 p~d^3 p'}{2\sqrt{p_0 p'_0}} \sum_{\sigma, \sigma' = \pm 1} \Big( |\kappa|^2 e^{\ifrak p \cdot x - \ifrak p' \cdot y} p_{\mu} p'_{\rho} e_{\nu}(\pbf, \sigma) e^{\ast}_{\tau}(\pbf', \sigma') \left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right]_{\pm} \phantom{\Big)} \\
                 &amp;\phantom{\xlongequal{\eqref{eq_massless_vector_field_a}} \Big(} + |\lambda|^2 e^{-\ifrak p \cdot x + \ifrak p' \cdot y} p_{\mu} p'_{\rho} e^{\ast}_{\nu}(\pbf, \sigma) e_{\tau}(\pbf', \sigma') \left[ a^{c \dagger}(\pbf, \sigma), a^c(\pbf', \sigma') \right]_{\pm} \Big) \\
                 &amp;\xlongequal{\eqref{eq_creation_annihilation_commutator}} (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \sum_{\sigma = \pm 1} p_{\mu} p_{\rho} \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} e_{\nu}(\pbf, \sigma) e^{\ast}_{\tau}(\pbf, \sigma) \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} e^{\ast}_{\nu}(\pbf, \sigma) e_{\tau}(\pbf, \sigma) \right) \\
-                &amp;\xlongequal{\eqref{eq_massless_vector_field_spin_sum}} (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \blue{p_{\mu} p_{\rho} (1 - \delta_{0\nu})(1 - \delta_{0\tau}) \left( \delta_{\nu \tau} - \frac{p_{\nu} p_{\tau}}{|\pbf|^2} \right)} \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right)
+                &amp;\xlongequal{\eqref{eq_massless_vector_field_spin_sum}} (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \blue{p_{\mu} p_{\rho} (1 - \delta_{0\nu})(1 - \delta_{0\tau}) \left( \delta_{\nu \tau} - \frac{p_{\nu} p_{\tau}}{\pbf^2} \right)} \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right)
 \end{align*}</div><p class="sd-card-text">Notice that the blue terms are the only terms that involve the indexes <span class="math notranslate nohighlight">\(\mu, \nu, \rho\)</span>, and <span class="math notranslate nohighlight">\(\tau\)</span>. For the convenience of notations, let’s call it <span class="math notranslate nohighlight">\(P_{\mu \nu \rho \tau}\)</span>. Now we can calculate the (anti-)commutator as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
         \left[ f_{\mu \nu}(x), f^{\dagger}_{\rho \tau}(y) \right]_{\pm} &amp;= \left[ \p_{\mu} a_{\nu}(x) - \p_{\nu} a_{\mu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) - \p_{\tau} a^{\dagger}_{\rho}(y) \right]
         \label{eq_massless_curvature_commutator_first_calculation} \\
                 &amp;= \left[ \p_{\mu} a_{\nu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right] \
-                - \left[ \p_{\mu} a_{\nu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \
-                - \left[ \p_{\nu} a_{\mu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right] \
-                + \left[ \p_{\nu} a_{\mu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \nonumber \\
-        &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \left( P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} \right) \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right) \nonumber
+                        - \left[ \p_{\mu} a_{\nu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \
+                        - \left[ \p_{\nu} a_{\mu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right] \
+                        + \left[ \p_{\nu} a_{\mu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \nonumber \\
+                &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \left( P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} \right) \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right) \nonumber
 \end{align}</div><p class="sd-card-text">It remains to calculate the following</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} &amp;= p_{\mu} p_{\rho} \left( \delta_{\nu \tau} - \delta_{0 \nu}\delta_{0 \tau} - (1 - \delta_{0 \nu})(1 - \delta_{0 \tau}) \frac{p_{\nu} p_{\tau}}{|\pbf|^2} \right) \\
-                &amp;\phantom{=} - p_{\mu} p_{\tau} \left( \delta_{\nu \rho} - \delta_{0 \nu}\delta_{0 \rho} - (1 - \delta_{0 \nu})(1 - \delta_{0 \rho}) \frac{p_{\nu} p_{\rho}}{|\pbf|^2} \right) \\
-                &amp;\phantom{=} - p_{\nu} p_{\rho} \left( \delta_{\mu \tau} - \delta_{0 \mu}\delta_{0 \tau} - (1 - \delta_{0 \mu})(1 - \delta_{0 \tau}) \frac{p_{\mu} p_{\tau}}{|\pbf|^2} \right) \\
-                &amp;\phantom{=} + p_{\nu} p_{\tau} \left( \delta_{\mu \rho} - \delta_{0 \mu}\delta_{0 \rho} - (1 - \delta_{0 \mu})(1 - \delta_{0 \rho}) \frac{p_{\mu} p_{\rho}}{|\pbf|^2} \right) \\
+        P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} &amp;= p_{\mu} p_{\rho} \left( \delta_{\nu \tau} - \delta_{0 \nu}\delta_{0 \tau} - (1 - \delta_{0 \nu})(1 - \delta_{0 \tau}) \frac{p_{\nu} p_{\tau}}{\pbf^2} \right) \\
+                &amp;\phantom{=} - p_{\mu} p_{\tau} \left( \delta_{\nu \rho} - \delta_{0 \nu}\delta_{0 \rho} - (1 - \delta_{0 \nu})(1 - \delta_{0 \rho}) \frac{p_{\nu} p_{\rho}}{\pbf^2} \right) \\
+                &amp;\phantom{=} - p_{\nu} p_{\rho} \left( \delta_{\mu \tau} - \delta_{0 \mu}\delta_{0 \tau} - (1 - \delta_{0 \mu})(1 - \delta_{0 \tau}) \frac{p_{\mu} p_{\tau}}{\pbf^2} \right) \\
+                &amp;\phantom{=} + p_{\nu} p_{\tau} \left( \delta_{\mu \rho} - \delta_{0 \mu}\delta_{0 \rho} - (1 - \delta_{0 \mu})(1 - \delta_{0 \rho}) \frac{p_{\mu} p_{\rho}}{\pbf^2} \right) \\
                 &amp;= p_{\mu} p_{\rho} (\delta_{\nu \tau} - 2\delta_{0 \nu}\delta_{0 \tau}) - p_{\mu} p_{\tau} (\delta_{\nu \rho} - 2\delta_{0 \nu}\delta_{0 \rho}) \\
                 &amp;\phantom{=} - p_{\nu} p_{\rho} (\delta_{\mu \tau} - 2\delta_{0 \mu}\delta_{0 \tau}) + p_{\nu} p_{\tau} (\delta_{\mu \rho} - 2\delta_{0 \mu}\delta_{0 \rho}) \\
                 &amp;= \eta_{\nu \tau} p_{\mu} p_{\rho} - \eta_{\nu \rho} p_{\mu} p_{\tau} - \eta_{\mu \tau} p_{\nu} p_{\rho} + \eta_{\mu \rho} p_{\nu} p_{\tau}
@@ -4403,14 +4408,14 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 </section>
 <section id="the-feynman-rules">
 <span id="sec-the-feynman-rules"></span><h2>The Feynman Rules<a class="headerlink" href="#the-feynman-rules" title="Link to this heading">#</a></h2>
-<p>In <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>, we’ve discussed the condition that the Hamiltonian must satisfy in order for the cluster decomposition principle to hold. Namely, the Hamiltonian can be written as a polynomial <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span> of creation and annihilation operators in normal order, such that the coefficients contains exactly one momentum conversing delta function. In order to derive this condition, we’ve encountered the idea of Feynman diagrams, which is a bookkeeping device for the evaluation of S-matrix. We couldn’t say more about the coefficients besides the delta function because we had not introduced the building blocks of the Hamiltonian, namely, the quantum fields. Now that we’ve seen how to construct even the most general fields in the previous chapter, we’re ready to spell out the full details of Feynman diagrams.</p>
+<p>In <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>, we’ve discussed the condition that the Hamiltonian must satisfy in order for the cluster decomposition principle to hold. Namely, the Hamiltonian can be written as a polynomial <span class="math notranslate nohighlight">\(\eqref{eq_general_expansion_of_hamiltonian}\)</span> of creation and annihilation operators in normal order, such that the coefficients contains exactly one momentum conversing delta function. In order to derive this condition, we’ve encountered the idea of Feynman diagrams, which is a bookkeeping device for the evaluation of S-matrix. We couldn’t say more about the coefficients besides the delta function because we had not introduced the building blocks of the Hamiltonian, namely, the quantum fields. Now that we’ve seen how to construct even the most general fields in the previous chapter, we’re ready to spell out the full details of Feynman diagrams, first in spacetime coordinates, and then in momentum space coordinates.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>We’ll consider only fields of massive particles in this chapter.</p>
 </div>
-<section id="derivation-of-the-rules">
-<h3>Derivation of the rules<a class="headerlink" href="#derivation-of-the-rules" title="Link to this heading">#</a></h3>
-<p>We’ll derive the Feynman rules, which will establish a diagrammatic framework for calculating S-matrices, in this section, leaving the actual calculations to the next section.</p>
+<section id="spacetime-feynman-rules">
+<span id="sec-spacetime-feynman-rules"></span><h3>Spacetime Feynman rules<a class="headerlink" href="#spacetime-feynman-rules" title="Link to this heading">#</a></h3>
+<p>In this section, we’ll derive the Feynman rules in spacetime coordinates, which will establish a diagrammatic framework for calculating S-matrices. In the next section, we’ll translate these rules to the momentum space.</p>
 <p>First, recall the S-matrix formulated in terms of the S-operator <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_time_ordered_density}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align}
@@ -4471,7 +4476,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
         \underbracket{\psi^{\dagger}(x) a^{\dagger}(\pbf, \sigma, n^c)}
         \coloneqq \left[ \psi^{\dagger}(x), a^{\dagger}(\pbf, \sigma, n^c) \right]_{\pm}
         = (2\pi)^{-3/2} e^{\ifrak p \cdot x} v^{\ast}_{\ell}(\pbf, \sigma, n)
-        \label{eq_feynman_rule_psi_dagger_a}
+        \label{eq_feynman_rule_psi_dagger_a_dagger}
 \end{equation}</div></dd>
 </dl>
 </li>
@@ -4505,10 +4510,10 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 </ol>
 </div>
 <p>A great invention of Feynman is the following diagrammatic representation of the above rules, known as the Feynman diagrams.</p>
-<figure class="align-center" id="id50">
-<img alt="../_images/space-propagators.svg" src="../_images/space-propagators.svg" />
+<figure class="align-center" id="id52">
+<span id="fig-spacetime-feynman-diagrams"></span><img alt="../_images/space-propagators.svg" src="../_images/space-propagators.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: All possible edges in Feynman diagrams.</span><a class="headerlink" href="#id50" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: All possible edges in Feynman diagrams.</span><a class="headerlink" href="#id52" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>A few comments are in order to clarify the meaning of these diagrams</p>
@@ -4531,8 +4536,8 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 <p>Secondly, by the discussion in <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>, only connected Feynman diagrams will be included so that the resulting S-matrix satisfies the cluster decomposition principle.</p>
 <p id="paragraph-interaction-density-symmetry-factor">The last note is more of a convention (for convenience), which aims at further remove duplications among Feynman diagrams. Here by duplication we mean diagrams that are not exactly the same but whose evaluations are the same. A basic example is when a monomial in the interaction density <span class="math notranslate nohighlight">\(\Hscr(x)\)</span> contains a power of the same field (or field adjoint). From the viewpoint of Feynman diagrams, it means that a vertex may have more than one identical attached (incoming or outgoing) strands. Now when other strands want to connect to these identical ones, they may choose which one to connect first, and second, and so on, but the result will be the same regardless of the choices. Hence it’s a convention to write the coefficient of <span class="math notranslate nohighlight">\(\Hscr_i(x)\)</span> as <span class="math notranslate nohighlight">\(g_i / k!\)</span> if it contains <span class="math notranslate nohighlight">\(k\)</span> identical fields (or field adjoints), so that in a diagrammatic calculation, one only need to include one of such diagrams. Other numerical factors might be inserted in more complex situations, such as when two vertices with identical attached strands try to connect to each other, or when there is a loop of identical vertices. These cases are discussed in <a class="reference internal" href="../bib.html#wei95" id="id32"><span>[Wei95]</span></a> page 265 – 267, and we’ll come back to them when they become relevant in calculations.</p>
 <p>To make things concrete and to prepare for the calculations in the next sections, we conclude the discussion of Feynman rules with two prototypical examples.</p>
-<section id="the-psi-dagger-psi-phi-interaction">
-<h4>The <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-interaction<a class="headerlink" href="#the-psi-dagger-psi-phi-interaction" title="Link to this heading">#</a></h4>
+<section id="example-1-psi-dagger-psi-phi-interaction">
+<h4>Example 1: <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-interaction<a class="headerlink" href="#example-1-psi-dagger-psi-phi-interaction" title="Link to this heading">#</a></h4>
 <p>Consider the following interaction density</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -4540,12 +4545,12 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
         \label{eq_psi_dagger_psi_phi_interaction_density}
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(\psi(x)\)</span> is a (complex) fermionic field, and <span class="math notranslate nohighlight">\(\phi(x)\)</span> is a real, i.e., <span class="math notranslate nohighlight">\(\phi(x) = \phi^{\dagger}(x)\)</span>, bosonic field. This is an important type of interaction since it shows up not only in quantum electrodynamics, but in fact in the whole Standard Model of electromagnetic, weak, and strong interactions.</p>
 <p>This type of interaction allows three kinds of scattering processes, namely, fermion-fermion, fermion-boson, and boson-boson scattering, which we’ll discuss one by one.</p>
-<dl>
+<dl id="listing-fermion-fermion-scattering">
 <dt>Fermion-fermion scattering</dt><dd><p>The scattering is represented as <span class="math notranslate nohighlight">\(12 \to 1'2'\)</span>, where all in- and out-state particles <span class="math notranslate nohighlight">\(1, 2, 1', 2'\)</span> are fermions. Up to the second order, there are two (connected) Feynman diagrams</p>
-<figure class="align-center" id="id51">
+<figure class="align-center" id="id53">
 <img alt="../_images/psi-dagger-psi-phi-fermion-fermion-scattering.svg" src="../_images/psi-dagger-psi-phi-fermion-fermion-scattering.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: Two second-order fermion-fermion scattering diagrams <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-theory.</span><a class="headerlink" href="#id51" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: Two second-order fermion-fermion scattering diagrams <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-theory.</span><a class="headerlink" href="#id53" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>where the solid (directed) edges represent the fermions, and the dashed (undirected) edges represent the (neutral) boson. More explicitly, the two diagrams correspond to the following two contractions</p>
@@ -4579,13 +4584,15 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
                 &amp;= (2\pi)^{-6} \sum_{\ell m k, \ell' m' k'} (-\ifrak)^2 g_{\ell m k} g_{\ell' m' k'} \int d^4 x d^4 y~(-\ifrak) \Delta_{k k'}(x, y) \times \\
                 &amp;\phantom{=} \times e^{\ifrak p_1 \cdot x + \ifrak p_2 \cdot y} u_m(\pbf_1, \sigma_1, n_1) u_{m'}(\pbf_2, \sigma_2, n_2) \\
                 &amp;\phantom{=} \times \left( e^{-\ifrak p'_1 \cdot x - \ifrak p'_2 \cdot y} u^{\ast}_{\ell}(\pbf'_1, \sigma'_1, n'_1) u^{\ast}_{\ell'}(\pbf'_2, \sigma'_2, n'_2)
-                - e^{-\ifrak p'_2 \cdot x - \ifrak p'_1 \cdot y} u^{\ast}_{\ell}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_{\ell'}(\pbf'_1, \sigma'_1, n'_1) \right)
+                        - e^{-\ifrak p'_2 \cdot x - \ifrak p'_1 \cdot y} u^{\ast}_{\ell}(\pbf'_2, \sigma'_2, n'_2) u^{\ast}_{\ell'}(\pbf'_1, \sigma'_1, n'_1) \right)
 \end{align*}</div></dd>
+</dl>
+<dl id="listing-fermion-boson-scattering">
 <dt>Fermion-boson scattering</dt><dd><p>Consider the scattering <span class="math notranslate nohighlight">\(12 \to 1'2'\)</span>, where particles <span class="math notranslate nohighlight">\(1, 1'\)</span> are fermions and <span class="math notranslate nohighlight">\(2, 2'\)</span> are bosons, under interaction density <span class="math notranslate nohighlight">\(\eqref{eq_psi_dagger_psi_phi_interaction_density}\)</span>. Up to second order, there are again two Feynman diagrams as follows</p>
-<figure class="align-center" id="id52">
+<figure class="align-center" id="id54">
 <img alt="../_images/psi-dagger-psi-phi-fermion-boson-scattering.svg" src="../_images/psi-dagger-psi-phi-fermion-boson-scattering.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: Two second-order fermion-boson scattering diagrams <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-theory.</span><a class="headerlink" href="#id52" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: Two second-order fermion-boson scattering diagrams <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-theory.</span><a class="headerlink" href="#id54" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>They correspond to the following two contractions</p>
@@ -4618,11 +4625,13 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
                 &amp;\phantom{=} \times \left( e^{-\ifrak p'_2 \cdot x + \ifrak p_2 \cdot y} u^{\ast}_k(\pbf'_2, \sigma'_2, n'_2) u_{k'}(\pbf_2, \sigma_2, n_2) \
                         + e^{-\ifrak p'_2 \cdot y + \ifrak p_2 \cdot x} u^{\ast}_{k'}(\pbf'_2, \sigma'_2, n'_2) u_k(\pbf_2, \sigma_2, n_2) \right)
 \end{align*}</div></dd>
+</dl>
+<dl id="listing-boson-boson-scattering">
 <dt>Boson-boson scattering</dt><dd><p>It turns out that the lowest order boson-boson scattering under the interaction density <span class="math notranslate nohighlight">\(\eqref{eq_psi_dagger_psi_phi_interaction_density}\)</span> is four, given by the following Feynman diagram</p>
-<figure class="align-center" id="id53">
+<figure class="align-center" id="id55">
 <img alt="../_images/psi-dagger-psi-phi-boson-boson-scattering.svg" src="../_images/psi-dagger-psi-phi-boson-boson-scattering.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: The fourth order boson-boson scattering diagram in <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-theory.</span><a class="headerlink" href="#id53" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: The fourth order boson-boson scattering diagram in <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-theory.</span><a class="headerlink" href="#id55" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>which involves a fermionic loop. We’ll not evaluate the corresponding S-matrix here, but we note that the corresponding (fermionic) contraction</p>
@@ -4636,8 +4645,8 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 </dd>
 </dl>
 </section>
-<section id="the-phi-3-interaction">
-<h4>The <span class="math notranslate nohighlight">\(\phi^3\)</span>-interaction<a class="headerlink" href="#the-phi-3-interaction" title="Link to this heading">#</a></h4>
+<section id="example-2-phi-3-interaction">
+<h4>Example 2: <span class="math notranslate nohighlight">\(\phi^3\)</span>-interaction<a class="headerlink" href="#example-2-phi-3-interaction" title="Link to this heading">#</a></h4>
 <p>Now let’s consider an interaction density that involves a power of the same field as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -4645,10 +4654,10 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
         \label{eq_phi3_interaction_density}
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(g_{\ell m k}\)</span> is totally symmetric, and the extra factor <span class="math notranslate nohighlight">\(1/3!\)</span> is to <a class="reference internal" href="#paragraph-interaction-density-symmetry-factor"><span class="std std-ref">account for this symmetry</span></a>.</p>
 <p>We’ll evaluate the scattering amplitude of two (identical) bosons <span class="math notranslate nohighlight">\(12 \to 1'2'\)</span>. In this case, there are three connected Feynman diagrams of second order as follows</p>
-<figure class="align-center" id="id54">
+<figure class="align-center" id="id56">
 <img alt="../_images/phi3-boson-boson-scattering.svg" src="../_images/phi3-boson-boson-scattering.svg" />
 <figcaption>
-<p><span class="caption-text">Figure: Three second-order boson-boson scattering diagrams in <span class="math notranslate nohighlight">\(\phi^3\)</span>-theory.</span><a class="headerlink" href="#id54" title="Link to this image">#</a></p>
+<p><span class="caption-text">Figure: Three second-order boson-boson scattering diagrams in <span class="math notranslate nohighlight">\(\phi^3\)</span>-theory.</span><a class="headerlink" href="#id56" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>They correspond to the following three contractions</p>
@@ -4692,28 +4701,229 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 \end{equation*}</div><p>In this case, the S-matrix can be simplified as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        S^C_{\pbf'_1,~\pbf'_2;~\pbf_1,~\pbf_2} &amp;= \frac{\ifrak g}{(2\pi)^6 \sqrt{16 E'_1 E'_2 E_1 E_2}} \int d^4 x d^4 y~\Delta_F(x, y) \times \\
+        S^C_{\pbf'_1,~\pbf'_2;~\pbf_1,~\pbf_2} &amp;= \frac{\ifrak g^2}{(2\pi)^6 \sqrt{16 E'_1 E'_2 E_1 E_2}} \int d^4 x d^4 y~\Delta_F(x, y) \times \\
                 &amp;\phantom{=} \times \left( e^{\ifrak \left( p_2 - p'_2 \right) \cdot x + \ifrak \left( p_1 - p'_1 \right) \cdot y}
                 + e^{\ifrak (p_2 - p'_1) \cdot x + \ifrak (p_1 - p'_2) \cdot y}
                 + e^{-\ifrak (p'_1 + p'_2) \cdot x + \ifrak (p_1 + p_2) \cdot y} \right)
 \end{align*}</div><p>where <span class="math notranslate nohighlight">\(\Delta_F\)</span> is the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Propagator#Feynman_propagator">Feynman propagator</a> and will be discussed in detail in the next section.</p>
 </section>
 </section>
-<section id="calculation-of-the-propagator">
-<h3>Calculation of the propagator<a class="headerlink" href="#calculation-of-the-propagator" title="Link to this heading">#</a></h3>
+<section id="momentum-space-feynman-rules">
+<h3>Momentum space Feynman rules<a class="headerlink" href="#momentum-space-feynman-rules" title="Link to this heading">#</a></h3>
+<p>There turns out to be many advantages in working in the <span class="math notranslate nohighlight">\(4\)</span>-momentum space, instead of the spacetime. Hence the goal of this section is to translate the Feynman rules <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_a_psi_dagger}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_propagator}\)</span> to the momentum space. The biggest challenge, however, lies in the fact that so far we’ve been working exclusively under the assumption that the <span class="math notranslate nohighlight">\(4\)</span>-momentum lies on the mass shell, whether in the spinors appearing in <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_a_psi_dagger}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_psi_a_dagger}\)</span> or in the propagator <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_propagator}\)</span>. We’ll tackle this challenge in three steps. First, we’ll rewrite the propagator as an integral on the momentum space, as opposed to the integral <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta_plus}\)</span> defined on the mass shell. This will then allow us to translate the Feynman rules to the momentum space, except for the external edges which still live on the mass shell because the in- and out-state particles do so. Finally, we’ll discuss how to generalize the Feynman rules so that the “external lines” do not necessarily have to live on the mass shell.</p>
+<section id="propagator-in-momentum-space">
+<h4>Propagator in momentum space<a class="headerlink" href="#propagator-in-momentum-space" title="Link to this heading">#</a></h4>
+<p>Plugging <span class="math notranslate nohighlight">\(\eqref{eq_generic_field_expression}\)</span> into <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_propagator}\)</span>, we can rewrite the propagator in terms of the spin sums as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        -\ifrak \Delta_{\ell m}(x, y) &amp;= \theta(x_0 - y_0) (2\pi)^{-3} \int d^3 p~e^{\ifrak p \cdot (x-y)} \sum_{\sigma} u_{\ell}(\pbf, \sigma, n) u^{\ast}_m(\pbf, \sigma, n)
+        \label{eq_propagator_as_spin_sums} \\
+                &amp;\phantom{=} \pm \theta(y_0 - x_0) (2\pi)^{-3} \int d^3 p~e^{\ifrak p \cdot (y-x)} \sum_{\sigma} v^{\ast}_m(\pbf, \sigma, n) v_{\ell}(\pbf, \sigma, n)
+                \nonumber
+\end{align}</div><p>where the top and bottom signs apply to bosonic and fermionic fields, respectively.</p>
+<p>Then, in light of <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sums_as_pi}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_is_polynomial}\)</span>, we can write the spin sums as polynomials in (on-mass-shell) <span class="math notranslate nohighlight">\(4\)</span>-momenta as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        \sum_{\sigma} u_{\ell}(\pbf, \sigma, n) u^{\ast}_m(\pbf, \sigma, n) &amp;= \left( 2\sqrt{\pbf^2 + M_n^2} \right)^{-1} P_{\ell m} \left( \sqrt{\pbf^2 + M_n^2}, \pbf \right)
+        \label{eq_spin_sum_u_as_polynomial} \\
+        \sum_{\sigma} v_{\ell}(\pbf, \sigma, n) v^{\ast}_m(\pbf, \sigma, n) &amp;= \pm \left( 2\sqrt{\pbf^2 + M_n^2} \right)^{-1} P_{\ell m} \left( -\sqrt{\pbf^2 + M_n^2}, -\pbf \right)
+        \label{eq_spin_sum_v_as_polynomial}
+\end{align}</div><p>where the top and bottom signs correspond to bosonic and fermionic fields, respectively. Note that although according to <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sums_as_pi}\)</span>, the spin sums for <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span> can be made the same (with respect to some basis of representation), we’ve introduced here an additional sign for <span class="math notranslate nohighlight">\(v\)</span> using the symmetry property <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_polynomial_parity}\)</span>. In particular, as we’ll see right below, this extra sign is also needed to be consistent with our previous calculations for Dirac fields.</p>
+<p>Before we continue evaluating the propagator, let’s take a moment to figure out how <span class="math notranslate nohighlight">\(P_{\ell m}(p)\)</span> looks like in the cases of scalar, vector, Dirac, and general <span class="math notranslate nohighlight">\((A, B)\)</span> fields. The case of scalar fields is the simplest, and it follows from <span class="math notranslate nohighlight">\(\eqref{eq_scalar_u_and_v}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        P^{\text{scalar}}(p) = 1
+        \label{eq_p_polynomial_scalar}
+\end{equation}</div><p>Next, for spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields, it follows from <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_Pi_matrix}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_vector_field_defn_Pi}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        P^{\text{vector}}_{\mu \nu}(p) = \eta_{\mu \nu} + p_{\mu} p_{\nu} / M^2
+        \label{eq_p_polynomial_vector}
+\end{equation}</div><p>which is even in <span class="math notranslate nohighlight">\(p\)</span>, and hence consistent with <span class="math notranslate nohighlight">\(\eqref{eq_spin_sum_v_as_polynomial}\)</span>.</p>
+<p>Then for spin-<span class="math notranslate nohighlight">\(1/2\)</span> Dirac fields, it follows from <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_n_matrix_as_spinor_sum}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_m_matrix_as_spinor_sum}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spin_sum_u}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spin_sum_v}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        P^{\text{Dirac}}_{\ell m}(p) = \big( (-\ifrak p^{\mu} \gamma_{\mu} + M) \beta \big)_{\ell m}
+        \label{eq_p_polynomial_dirac}
+\end{equation}</div><p>We see that <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_spin_sum_v}\)</span> is consistent with <span class="math notranslate nohighlight">\(\eqref{eq_spin_sum_v_as_polynomial}\)</span>, thanks to the sign convention.</p>
+<p>Finally, for any <span class="math notranslate nohighlight">\((A, B)\)</span> field, the polynomial <span class="math notranslate nohighlight">\(P_{ab, a'b'}(p) = \pi_{ab, a'b'}(p)\)</span> (on the mass shell) is given by <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum}\)</span>. We note that <span class="math notranslate nohighlight">\(\eqref{eq_spin_sum_v_as_polynomial}\)</span> is consistent with <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sums_as_pi}\)</span> due to the parity symmetry <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_polynomial_parity}\)</span>, which we only proved in a special case.</p>
+<p>Back to the evaluation of the propagator <span class="math notranslate nohighlight">\(\eqref{eq_propagator_as_spin_sums}\)</span>. By plugging <span class="math notranslate nohighlight">\(\eqref{eq_spin_sum_u_as_polynomial}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_spin_sum_v_as_polynomial}\)</span> into <span class="math notranslate nohighlight">\(\eqref{eq_propagator_as_spin_sums}\)</span>, we can further rewrite the propagator as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        -\ifrak \Delta_{\ell m}(x, y) = \theta(x_0 - y_0) P_{\ell m}(-\ifrak \p_x) \Delta_+(x-y) + \theta(y_0 - x_0) P_{\ell m}(-\ifrak \p_x) \Delta_+(y-x)
+        \label{eq_propagator_as_delta_plus}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> is defined by <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta_plus}\)</span>, and <span class="math notranslate nohighlight">\(P_{\ell m}(p)\)</span> takes the form of <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_as_polynomial}\)</span> and is linear in <span class="math notranslate nohighlight">\(p_0 = \sqrt{\pbf^2 + M^2}\)</span>. In particular, we see that <span class="math notranslate nohighlight">\(\Delta_{\ell m}(x, y)\)</span> is really a function of <span class="math notranslate nohighlight">\(x - y\)</span>, and henceforth can be written as</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Delta_{\ell m}(x - y) = \Delta_{\ell m}(x, y)
+\end{equation*}</div><p>Now we must remember that although <span class="math notranslate nohighlight">\(P_{\ell m}(p)\)</span> for scalar, vector, and Dirac fields, look like a polynomial defined generally on the momentum space, they’re really only defined on the mass shell, as shown in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_as_polynomial}\)</span> for general fields. We’ll first try the poor man’s extension of <span class="math notranslate nohighlight">\(P_{\ell m}(p)\)</span> to a genuine momentum space polynomial by the following definition</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        P_{\ell m}^{(L)}(p) \coloneqq P_{\ell m}^{(0)}(\pbf) + p_0 P_{\ell m}^{(1)}(\pbf)
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(P_{\ell m}^{(0)}, P_{\ell m}^{(1)}\)</span> correspond to <span class="math notranslate nohighlight">\(P_{ab, a'b'}, 2Q_{ab, a'b'}\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_general_field_spin_sum_as_polynomial}\)</span>, respectively. Clearly <span class="math notranslate nohighlight">\(P^{(L)}(p) = P(p)\)</span> when <span class="math notranslate nohighlight">\(p\)</span> is on the mass shell, or equivalently <span class="math notranslate nohighlight">\(p_0 = \sqrt{\pbf^2 + M^2}\)</span>. Here the supscript <span class="math notranslate nohighlight">\(L\)</span> stands for linear, since <span class="math notranslate nohighlight">\(P^{(L)}(p)\)</span> is linear in <span class="math notranslate nohighlight">\(p_0\)</span>. This linearity, as we’ll now demonstrate, turns out to be the key feature of this rather naive extension.</p>
+<p>Since the step function <span class="math notranslate nohighlight">\(\theta(\tau)\)</span>, which equals <span class="math notranslate nohighlight">\(1\)</span> for <span class="math notranslate nohighlight">\(\tau &gt; 0\)</span> and vanishes for <span class="math notranslate nohighlight">\(\tau &lt; 0\)</span>, has the following property</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \p_{x_0} \theta(x_0 - y_0) = -\p_{x_0} \theta(y_0 - x_0) = \delta(x_0 - y_0)
+\end{equation*}</div><p>we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_propagator_as_delta_plus}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        -\ifrak \Delta_{\ell m}(x - y) &amp;= P^{(L)}_{\ell m}(-\ifrak \p_x) \big( \theta(x_0-y_0) \Delta_+(x-y) + \theta(y_0-x_0) \Delta_+(y-x) \big) \\
+                &amp;\phantom{=} - \big( \ifrak \p_{x_0} \theta(x_0-y_0) \big) P^{(1)}_{\ell m}(-\ifrak \p_x) \Delta_+(x-y) - \big( \ifrak \p_{x_0} \theta(y_0-x_0) \big) P^{(1)}_{\ell m}(-\ifrak \p_x) \Delta_+(y-x) \\
+                &amp;= P^{(L)}_{\ell m}(-\ifrak \p_x) \big( \theta(x_0-y_0) \Delta_+(x-y) + \theta(y_0-x_0) \Delta_+(y-x) \big) \\
+                &amp;\phantom{=} - \blue{\ifrak  \delta(x_0-y_0) P^{(1)}_{\ell m}(-\ifrak \nabla) \left( \Delta_+(x-y) - \Delta_+(y-x) \right)} \\
+                &amp;= P^{(L)}_{\ell m}(-\ifrak \p_x) \big( \theta(x_0-y_0) \Delta_+(x-y) + \theta(y_0-x_0) \Delta_+(y-x) \big)
+\end{align*}</div><p>where the blue terms vanish since <span class="math notranslate nohighlight">\(\Delta_+(x)\)</span> is even if <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p>
+<p>Define the <em>Feynman propagator</em> <span class="math notranslate nohighlight">\(\Delta_F(x)\)</span> by</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        -\ifrak \Delta_F(x) \coloneqq \theta(x_0) \Delta_+(x) + \theta(-x_0) \Delta_+(-x)
+        \label{eq_defn_feynman_propagator}
+\end{equation}</div><p>which, by the way, is also the propagator for scalar fields. Then the general propagator can be derived from it as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Delta_{\ell m}(x-y) = P^{(L)}_{\ell m}(-\ifrak \p_x) \Delta_F(x-y)
+        \label{eq_general_propagator_from_feynman_propagator}
+\end{equation}</div><p>Now we’ll evaluate <span class="math notranslate nohighlight">\(\eqref{eq_defn_feynman_propagator}\)</span> as an integral over the momentum space. The key trick is to express the step function <span class="math notranslate nohighlight">\(\theta(t)\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \theta(t) = \frac{-1}{2\pi\ifrak} \int_{-\infty}^{\infty} ds~\frac{e^{-\ifrak st}}{s + \ifrak \epsilon}
+        \label{eq_theta_step_function_as_contour_integral}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> is infinitesimally small. The fact that <span class="math notranslate nohighlight">\(\theta(t)\)</span> vanishes for <span class="math notranslate nohighlight">\(t &lt; 0\)</span> and equals <span class="math notranslate nohighlight">\(1\)</span> for <span class="math notranslate nohighlight">\(t &gt; 0\)</span> can be easily verified using the <a class="reference external" href="https://en.wikipedia.org/wiki/Residue_theorem">residue theorem</a>. Plugging <span class="math notranslate nohighlight">\(\eqref{eq_theta_step_function_as_contour_integral}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_defn_Delta_plus}\)</span> into <span class="math notranslate nohighlight">\(\eqref{eq_defn_feynman_propagator}\)</span>, we can calculate as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        -\ifrak \Delta_F(x) &amp;= \frac{-1}{\ifrak (2\pi)^4} \int d^3 q ds~\frac
+                        {\exp(-\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 + \ifrak \qbf \cdot \xbf) + \exp(\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 - \ifrak \qbf \cdot \xbf)}
+                        {2(s + \ifrak \epsilon) \sqrt{\qbf^2 + M^2}} \\
+                &amp;\xlongequal{\substack{p_0 = s + \sqrt{\qbf^2 + M^2} \\ \pbf = \qbf}} \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac
+                        {\exp(\ifrak p \cdot x) + \exp(-\ifrak p \cdot x)}
+                        {2\left( p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon \right) \sqrt{\pbf^2 + M^2}} \\
+                &amp;= \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{2\sqrt{\pbf^2 + M^2}} \left( \frac{1}
+                        {p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon} - \frac{1}{p_0 + \sqrt{\pbf^2 + M^2} - \ifrak \epsilon} \right) \\
+                &amp;= \frac{1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{p^2 + M^2 - \ifrak \epsilon}
+\end{align*}</div><p>where in the last equality we’ve replaced <span class="math notranslate nohighlight">\(2\sqrt{\pbf^2 + M^2} \epsilon\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span>, and ignored the <span class="math notranslate nohighlight">\(\epsilon^2\)</span> term. It follows that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Delta_F(x) = (2\pi)^{-4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{p^2 + M^2 - \ifrak \epsilon}
+        \label{eq_feynman_propagator_as_momentum_space_integral}
+\end{equation}</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Green’s function for the Klein-Gordan equation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The Feynman propagator <span class="math notranslate nohighlight">\(\Delta_F(x)\)</span> defined by <span class="math notranslate nohighlight">\(\eqref{eq_feynman_propagator_as_momentum_space_integral}\)</span> turns out to be also a Green’s function for the Klein-Gordan equation is the sense that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left( \square - M^2 \right) \Delta_F(x) = -\delta^4(x)
+        \label{eq_klein_gordon_greens_function}
+\end{equation}</div><p class="sd-card-text">Indeed, it follows readily from the following formal expansion of the (one-dimensional) Dirac delta function</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \delta(x) = \frac{1}{2\pi} \int dy~e^{\pm \ifrak xy}
+\end{equation*}</div><p class="sd-card-text">Although the factor <span class="math notranslate nohighlight">\(-\ifrak \epsilon\)</span> in the denominator in <span class="math notranslate nohighlight">\(\eqref{eq_feynman_propagator_as_momentum_space_integral}\)</span> plays no role in the defining equation <span class="math notranslate nohighlight">\(\eqref{eq_klein_gordon_greens_function}\)</span> of the Green’s function, it does determine the boundary condition of the Green’s function in the follow sense</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \Delta_F(x) &amp;\to \frac{\ifrak}{(2\pi)^3} \int \frac{d^3 p}{2\sqrt{\pbf^2 + M^2}}~\exp\left( -\ifrak x_0 \sqrt{\pbf^2 + M^2} + \ifrak \pbf \cdot \xbf \right) \quad \text{as}~~x_0 \to +\infty \\
+        \Delta_F(x) &amp;\to \frac{\ifrak}{(2\pi)^3} \int \frac{d^3 p}{2\sqrt{\pbf^2 + M^2}}~\exp\left(+\ifrak x_0 \sqrt{\pbf^2 + M^2} - \ifrak \pbf \cdot \xbf \right) \quad \text{as}~~x_0 \to -\infty
+\end{align*}</div><p class="sd-card-text">This can be seen either directly from <span class="math notranslate nohighlight">\(\eqref{eq_defn_feynman_propagator}\)</span> or by factoring the denominator <span class="math notranslate nohighlight">\(p^2 + M^2 = \left( \sqrt{\pbf^2+M^2} - p_0 \right)\left( \sqrt{\pbf^2+M^2} + p_0 \right)\)</span> and using the residue theorem.</p>
+</div>
+</details><p>Plugging <span class="math notranslate nohighlight">\(\eqref{eq_feynman_propagator_as_momentum_space_integral}\)</span> into <span class="math notranslate nohighlight">\(\eqref{eq_general_propagator_from_feynman_propagator}\)</span>, we can express the propagator as an integral over the entire momentum space (without the mass-shell constraint) as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Delta_{\ell m}(x, y) = \Delta_{\ell m}(x-y) = (2\pi)^{-4} \int d^4 p~\frac{P^{(L)}_{\ell m}(p) e^{\ifrak p \cdot (x-y)}}{p^2 + M^2 - \ifrak \epsilon}
+        \label{eq_propagator_as_momentum_space_integral_linear}
+\end{equation}</div><p>This expression is, however, not Lorentz covariant in general since <span class="math notranslate nohighlight">\(P^{(L)}_{\ell m}(p)\)</span>, being linear in <span class="math notranslate nohighlight">\(p_0\)</span>, is not. More precisely, we’d like <span class="math notranslate nohighlight">\(P_{\ell m}(p)\)</span> to satisfy the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        P_{\ell m}(\Lambda p) = D_{\ell \ell'}(\Lambda) D^{\ast}_{m m'}(\Lambda) P_{\ell' m'}(p)
+\end{equation*}</div><p>where we recall the <span class="math notranslate nohighlight">\(m\)</span> index correspond to a field adjoint according to <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_propagator}\)</span>. Nonetheless, we see from <span class="math notranslate nohighlight">\(\eqref{eq_p_polynomial_scalar}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_p_polynomial_dirac}\)</span> that the polynomial <span class="math notranslate nohighlight">\(P\)</span> is Lorentz covariant in the case of scalar, vector, and Dirac fields. Among these three cases, the only case where <span class="math notranslate nohighlight">\(P\)</span> is not linear in <span class="math notranslate nohighlight">\(p_0\)</span> is vector field. Indeed, we have the following from <span class="math notranslate nohighlight">\(\eqref{eq_p_polynomial_vector}\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        P^{(L)}_{\mu \nu}(p) &amp;= \eta_{\mu \nu} + M^{-2} \left( p_{\mu}p_{\nu} + \delta_{\mu}^0 \delta_{\nu}^0 \left( -p_0^2 + \pbf^2 + M^2 \right) \right) \\
+                &amp;= P_{\mu \nu}(p) + M^{-2} (p^2 + M^2) \delta_{\mu}^0 \delta_{\nu}^0
+\end{align*}</div><p>Plugging into <span class="math notranslate nohighlight">\(\eqref{eq_propagator_as_momentum_space_integral_linear}\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Delta^{\text{vector}}_{\mu \nu}(x, y) = (2\pi)^{-4} \int d^4 p~\frac{P_{\mu \nu}(p) e^{\ifrak p \cdot (x-y)}}{p^2 + M^2 - \ifrak \epsilon} + \blue{M^{-2}\delta^4(x-y) \delta_{\mu}^0 \delta_{\nu}^0}
+\end{equation*}</div><p>We see that the price to pay for making <span class="math notranslate nohighlight">\(P_{\mu \nu}(p)\)</span> Lorentz covariant is the blue term, which is local in the sense that it’s non-vanishing only when <span class="math notranslate nohighlight">\(x = y\)</span>.</p>
+<div class="admonition-todo admonition" id="id35">
+<p class="admonition-title">Todo</p>
+<p>It’s claimed in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a> page 278 – 279 that such an extra non-covariant term may be countered by a modification to the interaction density, but I have had a hard time seeing why that’s the case. In order to not get stuck at this point, we’ll ignore the difference between <span class="math notranslate nohighlight">\(P^{(L)}\)</span> and <span class="math notranslate nohighlight">\(P\)</span> at momentum so that <span class="math notranslate nohighlight">\(\eqref{eq_propagator_as_momentum_space_integral_linear}\)</span> and write</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Delta_{\ell m}(x, y) = (2\pi)^{-4} \int d^4 p~\frac{P_{\ell m}(p) e^{\ifrak p \cdot (x-y)}}{p^2 + M^2 - \ifrak \epsilon}
+        \label{eq_propagator_as_momentum_space_integral}
+\end{equation}</div><p>and remember to be extra careful when, in a concrete case, <span class="math notranslate nohighlight">\(P\)</span> is not linear in <span class="math notranslate nohighlight">\(p_0\)</span>.</p>
+</div>
+</section>
+<section id="feynman-rules-in-momentum-space">
+<h4>Feynman rules in momentum space<a class="headerlink" href="#feynman-rules-in-momentum-space" title="Link to this heading">#</a></h4>
+<p>To turn the Feynman rules derived in <a class="reference internal" href="#sec-spacetime-feynman-rules"><span class="std std-ref">Spacetime Feynman rules</span></a>, specifically <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_a_psi_dagger}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_propagator}\)</span>, from an integral over spacetime coordinates as in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span> to an integral over the momentum space coordinates, we need to integrate out the <span class="math notranslate nohighlight">\(x\)</span> coordinates. Indeed, as can be seen from <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_a_psi_dagger}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_feynman_rule_psi_dagger_a_dagger}\)</span>, as well as <span class="math notranslate nohighlight">\(\eqref{eq_propagator_as_momentum_space_integral}\)</span>, the <span class="math notranslate nohighlight">\(x\)</span> variables appear only in the exponential terms. More precisely, at each vertex, the only term that involves <span class="math notranslate nohighlight">\(x\)</span> is the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \exp\left( \sum \ifrak x \cdot p_{\text{in}} - \sum \ifrak x \cdot p_{\text{out}} + \sum \ifrak x \cdot p_{\text{entering}} - \sum \ifrak x \cdot p_{\text{leaving}} \right)
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(p_{\text{in}}\)</span> and <span class="math notranslate nohighlight">\(p_{\text{out}}\)</span> denote the momenta of the in- and out-state (anti-)particles that connect the vertex, respectively, if there is any, and <span class="math notranslate nohighlight">\(p_{\text{entering}}\)</span> and <span class="math notranslate nohighlight">\(p_{\text{leaving}}\)</span> denote the momenta on the internal edges that entering and leaving the vertex, respectively. Integrating <span class="math notranslate nohighlight">\(x\)</span> out, we get the following momentum-conservation factor</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        (2\pi)^4 \delta^4 \left( \sum p_{\text{in}} - \sum p_{\text{out}} + \sum p_{\text{entering}} - \sum p_{\text{leaving}} \right)
+\end{equation*}</div><p>assigned to each vertex.</p>
+<p>Now with all the <span class="math notranslate nohighlight">\(x\)</span> coordinates integrated out, we can reformulate the <a class="reference internal" href="#fig-spacetime-feynman-diagrams"><span class="std std-ref">diagrammatic Feynman rules</span></a> as follows</p>
+<figure class="align-center" id="id57">
+<img alt="../_images/momenta-propagators.svg" src="../_images/momenta-propagators.svg" />
+<figcaption>
+<p><span class="caption-text">Figure. Feynman rules in momentum space.</span><a class="headerlink" href="#id57" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To evaluate the (connected) S-matrix of the form <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span>, we follow the steps explained in <a class="reference internal" href="#sec-spacetime-feynman-rules"><span class="std std-ref">Spacetime Feynman rules</span></a> with one modification:</p>
+<ul class="simple">
+<li><p>Associate to each vertex a factor <span class="math notranslate nohighlight">\(-\ifrak (2\pi)^4 \delta^4 \left( \sum p_{\text{in}} - \sum p_{\text{out}} + \sum p_{\text{entering}} - \sum p_{\text{leaving}} \right)\)</span>, and to each edge a factor as indicated in the figure above.</p></li>
+</ul>
+<p>Indeed, the momentum-conservation delta functions at the vertices correspond precisely to the delta functions appeared in <a class="reference internal" href="#sec-cluster-decomposable-hamiltonians"><span class="std std-ref">Cluster decomposable Hamiltonians</span></a>. Hence the same argument implies, once again, that the connected S-matrix contains exactly one momentum-conservation delta function.</p>
+<p>Before moving onto the discussion about the external edges, let’s revisit the example calculations of S-matrices in <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-interaction in momentum space as follows.</p>
+<dl>
+<dt><a class="reference internal" href="#listing-fermion-boson-scattering"><span class="std std-ref">Fermion-boson scattering</span></a> in momentum space</dt><dd><p>The goal is to re-evaluate the (connected) S-matrix <span class="math notranslate nohighlight">\(S^C_{1'2',12}\)</span>, where <span class="math notranslate nohighlight">\(1\)</span> stands for the fermion, and <span class="math notranslate nohighlight">\(2\)</span> stands for the boson, in momentum space. Using the momentum space Feynman rules, together with obvious abbreviations, the calculation goes as follows.</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        S^C_{1'2',12} &amp;=
+                        \sum_{\ell m k, \ell' m' k'} (-\ifrak)^{2+1} (2\pi)^{8-6-4} g_{\ell m k} g_{\ell' m' k'} \int d^4 p~\frac{P_{m \ell'}(p)}{p^2 + M^2 - \ifrak \epsilon} u_{m'}(1) u^{\ast}_{\ell}(1') \\
+                &amp;\phantom{=~} \times \left( u_{k'}(2) u^{\ast}_k(2') \delta^4(p-p_1-p_2) \delta^4(p'_1+p'_2-p) + u_k(2) u^{\ast}_{k'}(2') \delta^4(p+p'_2-p_1) \delta^4(p'_1-p_2-p) \right) \\
+                &amp;= \ifrak (2\pi)^{-2} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{\ell m k, \ell' m' k'} g_{\ell m k} g_{\ell' m' k'} u_{m'}(1) u^{\ast}_{\ell}(1') \\
+                &amp;\phantom{=~} \times \left( \frac{P_{m \ell'}(p_1+p_2)}{(p_1+p_2)^2+M^2-\ifrak \epsilon} u_{k'}(2) u^{\ast}_k(2') + \frac{P_{m \ell'}(p_1-p'_2)}{(p_1-p'_2)^2+M^2-\ifrak \epsilon} u_k(2) u^{\ast}_{k'}(2') \right) \\
+                &amp;= \ifrak (2\pi)^{-2} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{k, k'} \bigg( \phantom{)} \\
+                &amp;\phantom{=~} \left( \blue{u^{\dagger}(1') \Gamma_k \frac{P(p_1+p_2)}{(p_1+p_2)^2+M^2-\ifrak \epsilon} \Gamma_{k'} u(1)} \right) u_{k'}(2) u^{\ast}_k(2') \\
+                &amp;\phantom{=~(} + \left( \blue{u^{\dagger}(1') \Gamma_k \frac{P(p_1-p'_2)}{(p_1-p'_2)^2+M^2-\ifrak \epsilon} \Gamma_{k'} u(1)} \right) u_k(2) u^{\ast}_{k'}(2') \bigg)
+\end{align*}</div><p>where the blue terms are supposed to be understood as matrix multiplications with</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        (\Gamma_k)_{\ell m} \coloneqq g_{\ell m k}
+        \label{eq_three_way_coupling_constant_as_matrix}
+\end{equation}</div><p>and <span class="math notranslate nohighlight">\(u^{\dagger}\)</span> as a transpose-conjugated row vector, and <span class="math notranslate nohighlight">\(M\)</span> is the mass of the intermediate fermion.</p>
+<p>One can see from the calculation above that a general S-matrix can readily be read off from the Feynman diagrams, and is made up of the following pieces</p>
+<ol class="arabic simple">
+<li><p>An appropriate power of <span class="math notranslate nohighlight">\(\ifrak\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span> determined by the number of edges and vertices.</p></li>
+<li><p>A momentum-conservation delta function equating the total in- and out-state particles.</p></li>
+<li><p>A summation of (matrix) products of field coefficients, propagator integrands, and coupling constants, one for each Feynman diagram. In particular, the momentum carried by a propagator is determined by the momentum-conservation law at each vertex.</p></li>
+</ol>
+</dd>
+<dt><a class="reference internal" href="#listing-fermion-fermion-scattering"><span class="std std-ref">Fermion-fermion scattering</span></a> in momentum space</dt><dd><p>Using the observation we made from the previous calculation, we can immediately write down the S-matrix <span class="math notranslate nohighlight">\(S^C_{1'2',12}\)</span>, where both <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span> are fermions, as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        S^C_{1'2',12} &amp;= \ifrak (2\pi)^{-2} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{k, k'} \bigg( \phantom{)} \\
+                &amp;\phantom{=~} \frac{P_{k k'}(p'_1 - p_1)}{(p'_1-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(1') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(2') \right) \\
+                &amp;\phantom{=(} - \frac{P_{k k'}(p'_2-p_1)}{(p'_2-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(2') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(1') \right) \bigg)
+\end{align*}</div></dd>
+</dl>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
-<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id34"><span>[Wei95]</span></a> page 61.</p>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a> page 61.</p>
 </aside>
 <aside class="footnote brackets" id="in-out-state-sign-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">2</a><span class="fn-bracket">]</span></span>
-<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id35"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id36"><span>[Wei95]</span></a>.</p>
+<p>I really don’t like the sign convention of the in- and out-states in <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a>, even though Weinberg said that it has become a tradition. So our sign convention, as far as the definitions of in- and out-states are concerned, is the opposite to the one used in <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="pion-deuteron-reaction-final-state" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">3</a><span class="fn-bracket">]</span></span>
-<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id37"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id38"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
+<p>The final state claimed in <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> page 126 has total spin <span class="math notranslate nohighlight">\(1\)</span> rather than <span class="math notranslate nohighlight">\(0\)</span>. I suspect that the claim in <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> is wrong, but otherwise it doesn’t affect any subsequent arguments anyway.</p>
 </aside>
 <aside class="footnote brackets" id="abuse-of-phi-as-both-state-vector-and-flux" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">4</a><span class="fn-bracket">]</span></span>
@@ -4721,7 +4931,7 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 </aside>
 <aside class="footnote brackets" id="weinberg-quote-on-lorentz-invariance-and-quantum-mechanics" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">5</a><span class="fn-bracket">]</span></span>
-<p>See <a class="reference internal" href="../bib.html#wei95" id="id39"><span>[Wei95]</span></a> page 145.</p>
+<p>See <a class="reference internal" href="../bib.html#wei95" id="id41"><span>[Wei95]</span></a> page 145.</p>
 </aside>
 <aside class="footnote brackets" id="two-ways-of-representation" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">6</a><span class="fn-bracket">]</span></span>
@@ -4729,37 +4939,38 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">7</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id40"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../bib.html#wei95" id="id42"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 <aside class="footnote brackets" id="dirac-gamma-is-vector" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">8</a><span class="fn-bracket">]</span></span>
-<p>Our calculation is consistent with eq. (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id41"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
+<p>Our calculation is consistent with eq. (5.4.8) in <a class="reference internal" href="../bib.html#wei95" id="id43"><span>[Wei95]</span></a> because of the convention <span class="math notranslate nohighlight">\({(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}\)</span> introduced in formula (2.3.10).</p>
 </aside>
 <aside class="footnote brackets" id="spatial-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">9</a><span class="fn-bracket">]</span></span>
-<p>Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id42"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
+<p>Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in <a class="reference internal" href="../bib.html#wei95" id="id44"><span>[Wei95]</span></a> by a sign because we take into account the fact that the substitution <span class="math notranslate nohighlight">\(\pbf \to -\pbf\)</span> also reverts the volume element <span class="math notranslate nohighlight">\(d^3 p\)</span>.</p>
 </aside>
 <aside class="footnote brackets" id="charge-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">10</a><span class="fn-bracket">]</span></span>
-<p>Our calculation, once again, differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id43"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
+<p>Our calculation, once again, differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id45"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficients-orthonormality" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">11</a><span class="fn-bracket">]</span></span>
-<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id44"><span>[Wei15]</span></a> page 121 – 122.</p>
+<p>Details of the argument can be found in <a class="reference internal" href="../bib.html#wei15" id="id46"><span>[Wei15]</span></a> page 121 – 122.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficient-zero-total-angular-momentum" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">12</a><span class="fn-bracket">]</span></span>
-<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id45"><span>[Wei15]</span></a> page 124 – 125.</p>
+<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../bib.html#wei15" id="id47"><span>[Wei15]</span></a> page 124 – 125.</p>
 </aside>
 <aside class="footnote brackets" id="volume-element-inversion-sign-cancels-for-cpt-symmetry" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">13</a><span class="fn-bracket">]</span></span>
-<p>Comparing with eq. (5.8.9) in <a class="reference internal" href="../bib.html#wei95" id="id46"><span>[Wei95]</span></a> page 246, we get probably the most important result right, even though we’ve insisted in reversing the sign of the volume elements such as <span class="math notranslate nohighlight">\(d^3 p\)</span> and <span class="math notranslate nohighlight">\(d^3 x\)</span>, when <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span> are reversed, respectively.</p>
+<p>Comparing with eq. (5.8.9) in <a class="reference internal" href="../bib.html#wei95" id="id48"><span>[Wei95]</span></a> page 246, we get probably the most important result right, even though we’ve insisted in reversing the sign of the volume elements such as <span class="math notranslate nohighlight">\(d^3 p\)</span> and <span class="math notranslate nohighlight">\(d^3 x\)</span>, when <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(x\)</span> are reversed, respectively.</p>
 </aside>
 <aside class="footnote brackets" id="connected-s-matrix-by-feynman-diagrams" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">14</a><span class="fn-bracket">]</span></span>
-<p>It’s stated in <a class="reference internal" href="../bib.html#wei95" id="id47"><span>[Wei95]</span></a> page 271 and afterwards that it’s the full S-matrices that are calculated. However, it seems that only the connected part of the S-matrices are calculated.</p>
+<p>It’s stated in <a class="reference internal" href="../bib.html#wei95" id="id49"><span>[Wei95]</span></a> page 271 and afterwards that it’s the full S-matrices that are calculated. However, it seems that only the connected part of the S-matrices are calculated.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 </section>
@@ -4883,12 +5094,16 @@ v(0, 1/2) &amp;= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{b
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-feynman-rules">The Feynman Rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-rules">Derivation of the rules</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-psi-dagger-psi-phi-interaction">The <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-interaction</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phi-3-interaction">The <span class="math notranslate nohighlight">\(\phi^3\)</span>-interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spacetime-feynman-rules">Spacetime Feynman rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-psi-dagger-psi-phi-interaction">Example 1: <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-interaction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-phi-3-interaction">Example 2: <span class="math notranslate nohighlight">\(\phi^3\)</span>-interaction</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-the-propagator">Calculation of the propagator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-space-feynman-rules">Momentum space Feynman rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#propagator-in-momentum-space">Propagator in momentum space</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feynman-rules-in-momentum-space">Feynman rules in momentum space</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
