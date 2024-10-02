@@ -2162,7 +2162,12 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
                 &amp;= \exp(\ifrak H_0 \tau) (H - H_0) \exp(-\ifrak H (\tau - \tau_0)) \exp(-\ifrak H_0 \tau_0) \nonumber \\
                 &amp;= \exp(\ifrak H_0 \tau) V \exp(-\ifrak H_0 \tau) U(\tau, \tau_0) \nonumber \\
                 &amp;\eqqcolon V(\tau) U(\tau, \tau_0) \nonumber
-\end{align}</div><p>Here <span class="math notranslate nohighlight">\(V(\tau) = \exp(\ifrak H_0 \tau) V \exp(-\ifrak H_0 \tau)\)</span> is a time-dependent operator in the so-called <em>interaction picture</em>, to be distinguished from the Heisenberg picture operator where the true Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> should be used in place of <span class="math notranslate nohighlight">\(H_0\)</span>. The differential equation <span class="math notranslate nohighlight">\(\eqref{eq_evolution_equation_of_u_operator}\)</span> can be easily solved as follows</p>
+\end{align}</div><p>Here</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        V(\tau) = \exp(\ifrak H_0 \tau) V \exp(-\ifrak H_0 \tau)
+        \label{eq_defn_interaction_perturbation_term}
+\end{equation}</div><p>is a time-dependent operator in the so-called <em>interaction picture</em>, to be distinguished from the Heisenberg picture operator where the true Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> should be used in place of <span class="math notranslate nohighlight">\(H_0\)</span>. The differential equation <span class="math notranslate nohighlight">\(\eqref{eq_evolution_equation_of_u_operator}\)</span> can be easily solved as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         U(\tau, \tau_0) = 1 - \ifrak \int_{\tau_0}^{\tau} dt ~V(t) U(t, \tau_0)
@@ -4627,14 +4632,14 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{align*}</div></dd>
 </dl>
 <dl id="listing-boson-boson-scattering">
-<dt>Boson-boson scattering</dt><dd><p>It turns out that the lowest order boson-boson scattering under the interaction density <span class="math notranslate nohighlight">\(\eqref{eq_psi_dagger_psi_phi_interaction_density}\)</span> is four, given by the following Feynman diagram</p>
+<dt>Boson-boson scattering</dt><dd><p>It turns out that the lowest order boson-boson scattering under the interaction density <span class="math notranslate nohighlight">\(\eqref{eq_psi_dagger_psi_phi_interaction_density}\)</span> is four. An example of such scattering is given by the following Feynman diagram</p>
 <figure class="align-center" id="id55">
 <img alt="../_images/psi-dagger-psi-phi-boson-boson-scattering.svg" src="../_images/psi-dagger-psi-phi-boson-boson-scattering.svg" />
 <figcaption>
 <p><span class="caption-text">Figure: The fourth order boson-boson scattering diagram in <span class="math notranslate nohighlight">\(\psi^{\dagger} \psi \phi\)</span>-theory.</span><a class="headerlink" href="#id55" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>which involves a fermionic loop. We’ll not evaluate the corresponding S-matrix here, but we note that the corresponding (fermionic) contraction</p>
+<p>which involves a fermionic loop. We’ll not evaluate the corresponding S-matrix here, but note that the corresponding (fermionic) contraction</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \underbracket{ \psi(x_1) \psi^{\dagger}(x_2) }
@@ -4867,7 +4872,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation*}</div><p>assigned to each vertex.</p>
 <p>Now with all the <span class="math notranslate nohighlight">\(x\)</span> coordinates integrated out, we can reformulate the <a class="reference internal" href="#fig-spacetime-feynman-diagrams"><span class="std std-ref">diagrammatic Feynman rules</span></a> as follows</p>
 <figure class="align-center" id="id57">
-<img alt="../_images/momenta-propagators.svg" src="../_images/momenta-propagators.svg" />
+<span id="fig-momentum-space-feynman-diagrams"></span><img alt="../_images/momenta-propagators.svg" src="../_images/momenta-propagators.svg" />
 <figcaption>
 <p><span class="caption-text">Figure. Feynman rules in momentum space.</span><a class="headerlink" href="#id57" title="Link to this image">#</a></p>
 </figcaption>
@@ -4910,8 +4915,92 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
                 &amp;\phantom{=~} \frac{P_{k k'}(p'_1 - p_1)}{(p'_1-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(1') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(2') \right) \\
                 &amp;\phantom{=(} - \frac{P_{k k'}(p'_2-p_1)}{(p'_2-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(2') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(1') \right) \bigg)
 \end{align*}</div></dd>
+<dt><a class="reference internal" href="#listing-boson-boson-scattering"><span class="std std-ref">Boson-boson scattering</span></a> in momentum space</dt><dd><p>We didn’t actually calculate the (4th order) boson-boson scattering S-matrix <span class="math notranslate nohighlight">\(S^C_{1'2',12}\)</span> in spacetime coordinates due to its complexity. But it becomes much simpler in momentum space coordinates, and can be calculated as follows. First, let’s figure out the powers of <span class="math notranslate nohighlight">\(\ifrak\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span>, respectively. Since there are <span class="math notranslate nohighlight">\(4\)</span> vertices and <span class="math notranslate nohighlight">\(4\)</span> internal edges, each of which contribute one <span class="math notranslate nohighlight">\(-\ifrak\)</span>, we get a contribution of <span class="math notranslate nohighlight">\((-\ifrak)^8 = 1\)</span>. Moreover, since there are equal numbers of vertices and internal edges, each of which contribute <span class="math notranslate nohighlight">\((2\pi)^4\)</span> and <span class="math notranslate nohighlight">\((2\pi)^{-4}\)</span>, respectively, and <span class="math notranslate nohighlight">\(4\)</span> external edges, each of which contribute <span class="math notranslate nohighlight">\((2\pi)^{-3/2}\)</span>, we get a total contribution of <span class="math notranslate nohighlight">\((2\pi)^{-6}\)</span>. Remembering an additional minus sign coming from the fermionic loop, we have the following</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        S^C_{1'2',12} &amp;= -(2\pi)^{-6} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{k_1, k_2, k'_1, k'_2} u^{\ast}_{k'_1}(1') u^{\ast}_{k'_2}(2') u_{k_1}(1) u_{k_2}(2) \\
+                &amp;\phantom{=~} \times \int d^4 p~\op{Tr} \bigg( \frac{P(p)}{p^2+M^2-\ifrak\epsilon} \Gamma_{k'_1} \frac{P(p-p'_1)}{(p-p'_1)^2+M^2-\ifrak\epsilon}
+                        \Gamma_{k'_2} \frac{P(p-p'_1-p'_2)}{(p-p'_1-p'_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_2} \\
+                &amp;\phantom{=~} \times \frac{P(p-p'_1-p'_2+p_2)}{(p-p'_1-p'_2+p_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_1} \bigg) + \cdots
+\end{align*}</div><p>where <span class="math notranslate nohighlight">\(\cdots\)</span> denotes valuations of other (4th order) Feynman diagrams.</p>
+</dd>
 </dl>
-<p class="rubric">Footnotes</p>
+</section>
+<section id="external-edges-off-the-mass-shell">
+<h4>External edges off the mass shell<a class="headerlink" href="#external-edges-off-the-mass-shell" title="Link to this heading">#</a></h4>
+<p>By transforming propagators into integrals over the <span class="math notranslate nohighlight">\(4\)</span>-momentum space as in <span class="math notranslate nohighlight">\(\eqref{eq_propagator_as_momentum_space_integral}\)</span>, and integrating out the spacetime coordinates, we’ve been able to express the S-matrix as an integral over a product of <span class="math notranslate nohighlight">\(4\)</span>-momentum space coordinates, one for each internal edge that doesn’t split the Feynman diagram into disconnected components. In particular, as we’ve seen in several examples from the previous section, the S-matrix involves no momentum space integrals at all when the Feynman diagram is a tree.</p>
+<p>However, the external edges are still confined to the mass shell since the in- and out-state particles are. We’d like to relax such confinement to remove any mass-shell constraints. It will allow us to calculate contributions from a large Feynman diagram in terms of its smaller local pieces, and facilitate the derivation of the path integral formalism later. The idea of a “local” Feynman diagram, i.e., a diagram without external edges, is to add additional “vertices at infinity” at the places of in- and out-state particles, which turn the external edges into internal ones. Moreover, unlike the (internal) vertices, whose spacetime coordinates will be integrated as in <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density}\)</span>, the spacetime coordinates of the added vertices will be kept intact. In particular, no momentum conservation law will be imposed on these vertices.</p>
+<p>It turns out that this procedure can be generalized to a field theory with external interaction, in which case the interaction-picture perturbation term takes the following form</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        V_{\epsilon}(t) = V(t) + \sum_a \int d^3 x~\epsilon_a(t, \xbf) o_a(t, \xbf)
+        \label{eq_defn_interaction_perturbation_term_with_external_fields}
+\end{equation}</div><p>Here <span class="math notranslate nohighlight">\(\epsilon_a(t, \xbf)\)</span> are the infinitesimal parameters, and <span class="math notranslate nohighlight">\(o_a(t, \xbf)\)</span> are the external currents in the interaction picture in the following sense</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        o_a(t) = \exp(\ifrak H_0 t) o_a(0) \exp(-\ifrak H_0 t)
+\end{equation*}</div><p>in analogy to <span class="math notranslate nohighlight">\(\eqref{eq_defn_interaction_perturbation_term}\)</span>.</p>
+<p>Now under the perturbation <span class="math notranslate nohighlight">\(V_{\epsilon}(t)\)</span>, the S-matrix, whose entry <span class="math notranslate nohighlight">\(S_{\beta\alpha}\)</span> is a complex number, becomes a functional <span class="math notranslate nohighlight">\(S_{\beta\alpha}[\epsilon]\)</span> in complex functions <span class="math notranslate nohighlight">\(\epsilon_a\)</span>. The functional derivative</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left. \frac{\delta^r S_{\beta\alpha}[\epsilon]}{\delta\epsilon_a(x) \delta\epsilon_b(y) \cdots} \right|_{\epsilon=0}
+        \label{eq_functional_derivative_of_s_matrix}
+\end{equation}</div><p>can be evaluated using the usual Feynman rules. Indeed, besides the internal vertices coming from the interaction density <span class="math notranslate nohighlight">\(\Hscr(t, \xbf)\)</span>, we must also include external vertices coming from <span class="math notranslate nohighlight">\(o(t, \xbf)\)</span>. For example, if <span class="math notranslate nohighlight">\(o(t, \xbf)\)</span> are monomials of fields and field adjoints, then there will be <span class="math notranslate nohighlight">\(r\)</span> external vertices, each of which has as many incoming and outgoing edges as there are fields and field adjoints in the corresponding <span class="math notranslate nohighlight">\(o(t, \xbf)\)</span>, respectively. In particular, if <span class="math notranslate nohighlight">\(o(t, \xbf)\)</span> are all degree one, then we recover the off-mass-shell Feynman diagrams, as promised.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Gell-Mann and Low’s Theorem</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">It’s turns out that <span class="math notranslate nohighlight">\(\eqref{eq_functional_derivative_of_s_matrix}\)</span> may be evaluated to an amplitude as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left. \frac{\delta^r S_{\beta\alpha}[\epsilon]}{\delta\epsilon_{a_1}(x_1) \cdots \delta\epsilon_{a_r}(x_r)} \right|_{\epsilon=0}
+                = (-\ifrak)^r \left( \Psi_{\beta}^+, T\left\{ O_{a_1}(x_1) \cdots O_{a_r}(x_r) \right\} \Psi_{\alpha}^- \right)
+        \label{eq_gell_mann_low_theorem}
+\end{equation}</div><p class="sd-card-text">where</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        O_a(t, \xbf) = \exp(\ifrak H t) o_a(0, \xbf) \exp(-\ifrak H t) = \Omega(t) o_a(t, \xbf) \Omega^{-1}(t)
+        \label{eq_heisenberg_picture_external_field}
+\end{equation}</div><p class="sd-card-text">using the definition <span class="math notranslate nohighlight">\(\eqref{eq_defn_of_Omega}\)</span> represent the Heisenberg picture operators, and <span class="math notranslate nohighlight">\(\Psi_{\alpha}^-, \Psi_{\beta}^+\)</span> are the in- and out-states, respectively.</p>
+<p class="sd-card-text">The formula <span class="math notranslate nohighlight">\(\eqref{eq_gell_mann_low_theorem}\)</span> is know as <a class="reference external" href="https://en.wikipedia.org/wiki/Gell-Mann_and_Low_theorem">Gell-Mann and Low’s theorem</a>. To see this, let’s write out the functional derivative, following <span class="math notranslate nohighlight">\(\eqref{eq_s_matrix_power_series_expansion_time_ordered}\)</span>, as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \left. \frac{\delta^r S_{\beta\alpha[\epsilon]}}{\delta\epsilon_{a_1}(x_1) \cdots \delta\epsilon_{a_r}(x_r)} \right|_{\epsilon=0}
+                = \sum_{N=0}^{\infty} \frac{(-\ifrak)^{N+r}}{N!} \int_{-\infty}^{\infty} d\tau_1 \cdots d\tau_N
+                        \left( \Phi_{\beta}, T\left\{ V(\tau_1) \cdots V(\tau_N) o_{a_1}(x_1) \cdots o_{a_r}(x_r) \right\} \Phi_{\alpha} \right)
+\end{equation*}</div><p class="sd-card-text">where we note that each external vertex corresponding to some <span class="math notranslate nohighlight">\(o_a(x)\)</span> comes with a factor <span class="math notranslate nohighlight">\(-\ifrak\)</span>, but the spacetime coordinates <span class="math notranslate nohighlight">\(x\)</span> are not integrated. Assume without loss of generality that <span class="math notranslate nohighlight">\(x_1, \cdots, x_r\)</span> are already time-ordered in the sense that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        (x_1)_0 \geq (x_2)_0 \geq \cdots \geq (x_r)_0
+        \label{eq_gell_mann_low_external_fields_are_time_ordered}
+\end{equation}</div><p class="sd-card-text">Then we can expand the time-ordered product above as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \left. \frac{\delta^r S_{\beta\alpha[\epsilon]}}{\delta\epsilon_{a_1}(x_1) \cdots \delta\epsilon_{a_r}(x_r)} \right|_{\epsilon=0}
+                &amp;= \sum_{N=0}^{\infty} \frac{(-\ifrak)^{N+r}}{N!} \sum_{N_0 + \cdots N_r = N} \frac{N!}{N_0! \cdots N_r!} \\
+                &amp;\phantom{=~} \times \int_{(x_1)_0}^{\infty} d\tau_{01} \cdots d\tau_{0N_0} \int_{(x_2)_0}^{(x_1)_0} d\tau_{11} \cdots d\tau_{1N1} \cdots \int_{-\infty}^{(x_r)_0} d\tau_{r1} \cdots d\tau_{rN_r} \\
+                &amp;\phantom{=~} \times \Big( \Phi_{\beta}, T\left\{ V(\tau_{01}) \cdots V(\tau_{0N_0}) \right\} o_{a_1}(x_1) T\left\{ V(\tau_{11}) \cdots V(\tau_{1N1}) \right\} o_{a_2}(x_2) \cdots \\
+                &amp;\phantom{=~\times} \times \cdots o_{a_r}(x_r) T\left\{ V(\tau_{r1}) \cdots V(\tau_{rN_r}) \right\} \Phi_{\alpha} \Big)
+\end{align*}</div><p class="sd-card-text">where <span class="math notranslate nohighlight">\(\tau_{01}, \cdots, \tau_{0N0}\)</span> are greater than <span class="math notranslate nohighlight">\((x_1)_0\)</span>, and <span class="math notranslate nohighlight">\(\tau(11), \cdots, \tau(1N1)\)</span> are between <span class="math notranslate nohighlight">\((x_2)_0\)</span> and <span class="math notranslate nohighlight">\((x_1)_0\)</span>, and so on. In other words, we’re summing over a partition of <span class="math notranslate nohighlight">\(\tau_1, \cdots, \tau_N\)</span> into <span class="math notranslate nohighlight">\(r+1\)</span> unordered groups, separated by <span class="math notranslate nohighlight">\((x_1)_0, \cdots, (x_r)_0\)</span>. The combinatorial coefficient <span class="math notranslate nohighlight">\(N! / (N_0! \cdots N_r!)\)</span> counts exactly the number of such partitions.</p>
+<p class="sd-card-text">It follows that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \left. \frac{\delta^r S_{\beta\alpha[\epsilon]}}{\delta\epsilon_{a_1}(x_1) \cdots \delta\epsilon_{a_r}(x_r)} \right|_{\epsilon=0}
+                = (-\ifrak)^r \left( \Phi_{\beta}, U(\infty, (x_1)_0) o_{a_1}(x_1) U((x_1)_0, (x_2)_0) o_{a_2}(x_2) \cdots o_{a_r}(x_r) U((x_r)_0, -\infty) \Phi_{\alpha} \right)
+\end{equation*}</div><p class="sd-card-text">where</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        U(\tau', \tau) = \sum_{N=0}^{\infty} \frac{(-\ifrak)^N}{N!} \int_{\tau}^{\tau'} d\tau_1 \cdots d\tau_N T\left\{ V(\tau_1) \cdots V(\tau_N) \right\}
+                \xlongequal{\eqref{eq_s_matrix_power_series_expansion_time_ordered},~\eqref{eq_s_operator_by_u}}
+                \Omega^{-1}(\tau') \Omega(\tau)
+\end{equation*}</div><p class="sd-card-text">Combining with <span class="math notranslate nohighlight">\(\eqref{eq_heisenberg_picture_external_field}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_defn_of_Omega}\)</span>, we conclude that</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \left. \frac{\delta^r S_{\beta\alpha[\epsilon]}}{\delta\epsilon_{a_1}(x_1) \cdots \delta\epsilon_{a_r}(x_r)} \right|_{\epsilon=0}
+                &amp;= (-\ifrak)^r \left( \Omega(\infty)\Phi_{\beta}, O_{a_1}(x_1) \cdots O_{a_r}(x_r) \Omega(-\infty)\Phi_{\alpha} \right) \\
+                &amp;= (-\ifrak)^r \left( \Psi_{\beta}^+, O_{a_1}(x_1) \cdots O_{a_r}(x_r) \Psi_{\alpha}^- \right)
+\end{align*}</div><p class="sd-card-text">under the assumption <span class="math notranslate nohighlight">\(\eqref{eq_gell_mann_low_external_fields_are_time_ordered}\)</span>. Finally the Gell-Mann and Low theorem <span class="math notranslate nohighlight">\(\eqref{eq_gell_mann_low_theorem}\)</span> follows from the symmetry property that both sides are symmetric under swaps of bosonic (external) fields and anti-symmetric under swaps of fermionic (external) fields.</p>
+</div>
+</details><p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
@@ -5102,6 +5191,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#momentum-space-feynman-rules">Momentum space Feynman rules</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#propagator-in-momentum-space">Propagator in momentum space</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#feynman-rules-in-momentum-space">Feynman rules in momentum space</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#external-edges-off-the-mass-shell">External edges off the mass shell</a></li>
 </ul>
 </li>
 </ul>
