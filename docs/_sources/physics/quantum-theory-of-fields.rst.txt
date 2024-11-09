@@ -7556,6 +7556,8 @@ Momentum space Feynman rules
 
 There turns out to be many advantages in working in the :math:`4`-momentum space, instead of the spacetime. Hence the goal of this section is to translate the Feynman rules :math:`\eqref{eq_feynman_rule_a_psi_dagger}` -- :math:`\eqref{eq_feynman_rule_propagator}` to the momentum space. The biggest challenge, however, lies in the fact that so far we've been working exclusively under the assumption that the :math:`4`-momentum lies on the mass shell, whether in the spinors appearing in :math:`\eqref{eq_feynman_rule_a_psi_dagger}` -- :math:`\eqref{eq_feynman_rule_psi_a_dagger}` or in the propagator :math:`\eqref{eq_feynman_rule_propagator}`. We'll tackle this challenge in three steps. First, we'll rewrite the propagator as an integral on the momentum space, as opposed to the integral :math:`\eqref{eq_defn_Delta_plus}` defined on the mass shell. This will then allow us to translate the Feynman rules to the momentum space, except for the external edges which still live on the mass shell because the in- and out-state particles do so. Finally, we'll discuss how to generalize the Feynman rules so that the "external lines" do not necessarily have to live on the mass shell.
 
+.. _sec_propagator_in_momentum_space:
+
 Propagator in momentum space
 ++++++++++++++++++++++++++++
 
@@ -7802,9 +7804,10 @@ Plugging into :math:`\eqref{eq_propagator_as_momentum_space_integral_linear}`, w
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		\Delta^{\text{vector}}_{\mu \nu}(x, y) = (2\pi)^{-4} \int d^4 p~\frac{P_{\mu \nu}(p) e^{\ifrak p \cdot (x-y)}}{p^2 + M^2 - \ifrak \epsilon} + \blue{M^{-2}\delta^4(x-y) \delta_{\mu}^0 \delta_{\nu}^0}
-	\end{equation*}
+		\label{eq_vector_field_propagator_needs_local_term}
+	\end{equation}
 
 We see that the price to pay for making :math:`P_{\mu \nu}(p)` Lorentz covariant is the blue term, which is local in the sense that it's non-vanishing only when :math:`x = y`.
 
@@ -7820,6 +7823,8 @@ We see that the price to pay for making :math:`P_{\mu \nu}(p)` Lorentz covariant
 		\end{equation}
 
 	and remember to be extra careful when, in a concrete case, :math:`P` is not linear in :math:`p_0`.
+
+.. _sec_feynman_rules_in_momentum_space:
 
 Feynman rules in momentum space
 +++++++++++++++++++++++++++++++
@@ -8062,6 +8067,26 @@ can be evaluated using the usual Feynman rules. Indeed, besides the internal ver
 		\end{align*}
 
 	under the assumption :math:`\eqref{eq_gell_mann_low_external_fields_are_time_ordered}`. Finally the Gell-Mann and Low theorem :math:`\eqref{eq_gell_mann_low_theorem}` follows from the symmetry property that both sides are symmetric under swaps of bosonic (external) fields and anti-symmetric under swaps of fermionic (external) fields.
+
+
+The Canonical Formalism
+-----------------------
+
+The quantum theory we've been developing so far has been based almost solely on the symmetry principles, especially Lorentz symmetries. This is a very satisfying approach since it's logically clean and relies only on the most fundamental principles, however, this is not the way quantum theory historically had been developed. Not surprisingly, the original development of quantum theory is much messier and requires substantial experience in "classical" physics. It's largely based on the so-called *Lagrangian formalism*, which is a readily well-established principle in classical physics and can be "quantized". The main goal of this chapter is to go through this formalism, not for historical sake, but because it offers a particularly convenient way to construct Hamiltonians that generate Lorentz-invariant S-matrices, which has been difficult for us as can be seen in :ref:`sec_feynman_rules_in_momentum_space`.
+
+Canonical variables
+^^^^^^^^^^^^^^^^^^^
+
+As we've seen in our calculations of Feynman diagrams, the propagators as defined by :math:`\eqref{eq_feynman_rule_propagator}` don't take a simple form according to discussions in :ref:`sec_propagator_in_momentum_space`. Indeed, we saw the need of strange-looking local terms as for example in :math:`\eqref{eq_vector_field_propagator_needs_local_term}` to compensate for a Lorentz-invariant momentum space propagator. The offer from the Lagrangian formalism to this issue is the following. Instead of the fields :math:`\eqref{eq_defn_annihilation_field}` -- :math:`\eqref{eq_defn_creation_field}`, which we have used to construct Hamiltonians, we'll construct the so-called *canonical variables*, which have particularly simple commutation relations. More precisely, it consists of a collection of quantum operators :math:`q_n(t, \xbf)` and its canonical conjugates :math:`p_n(t, \xbf)`, which satisfy the following commutation relations
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ q_n(t, \xbf), p_{n'}(t, \ybf) \right] &= \ifrak \delta^3(\xbf - \ybf) \delta_{n n'} \\
+		\left[ q_n(t, \xbf), q_{n'}(t, \ybf) \right] &= 0 \\
+		\left[ p_n(t, \xbf), p_{n'}(t, \ybf) \right] &= 0
+	\end{align*}
 
 
 .. rubric:: Footnotes
