@@ -3826,6 +3826,7 @@ We skip the first step of equating momenta on the ends of edges, and continue wi
 
 where we've first eliminated :math:`\pbf_3` using the first delta function, and then :math:`\pbf_5` using either one of the two remaining delta functions, to arrive at the final result.
 
+.. _sec_quantum_fields_and_antiparticles:
 
 Quantum Fields and Antiparticles
 --------------------------------
@@ -4566,6 +4567,8 @@ Comparing these with :math:`\eqref{eq_scalar_field_psi_plus}` and :math:`\eqref{
 
 It follows that in fact a spinless vector field defined by :math:`\psi_{\mu}(x) \coloneqq \psi^+_{\mu}(x) + \psi^-_{\mu}(x)` as usual is nothing but the gradient vector field of a (spinless) scalar field. Hence we get nothing new from spinless vector fields.
 
+.. _sec_spin_1_vector_fields:
+
 Spin-:math:`1` vector fields
 ++++++++++++++++++++++++++++
 
@@ -5273,9 +5276,9 @@ In general the constants :math:`c_{\pm}` and :math:`d_{\pm}` may be arbitrary. H
 	\begin{align}
 		U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot x} u(\pbf, \sigma) a(-\pbf, \sigma)
 			\label{eq_dirac_field_spatial_inversion_acts_on_psi_plus} \\
-			&= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot \Pcal x} u(-\pbf, \sigma) a(\pbf, \sigma) \nonumber \\
-			&= -(2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot \Pcal x} \sqrt{m/p_0}~\beta D(L(p)) \beta u(0, \sigma) a(\pbf, \sigma) \nonumber \\
-		U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &= -(2\pi)^{-3/2} \eta^c \sum_{\sigma} \int d^3 p~e^{-\ifrak p \cdot \Pcal x} \sqrt{m/p_0}~\beta D(L(p))\beta v(0, \sigma) a^{c \dagger}(\pbf, \sigma)
+			&= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot \Pcal x} u(-\pbf, \sigma) a(\pbf, \sigma) \nonumber \\
+			&= (2\pi)^{-3/2} \eta^{\ast} \sum_{\sigma} \int d^3 p~e^{\ifrak p \cdot \Pcal x} \sqrt{m/p_0}~\beta D(L(p)) \beta u(0, \sigma) a(\pbf, \sigma) \nonumber \\
+		U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &= (2\pi)^{-3/2} \eta^c \sum_{\sigma} \int d^3 p~e^{-\ifrak p \cdot \Pcal x} \sqrt{m/p_0}~\beta D(L(p))\beta v(0, \sigma) a^{c \dagger}(\pbf, \sigma)
 		\label{eq_dirac_field_spatial_inversion_acts_on_psi_minus}
 	\end{align}
 
@@ -5299,9 +5302,9 @@ where :math:`b^2_{\pm} = 1` since :math:`\beta^2 = 1`. Assuming this, we can rew
 	:nowrap:
 
 	\begin{align}
-		U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &= -\eta^{\ast} b_+ \beta \psi^+(\Pcal x)
+		U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &= \eta^{\ast} b_+ \beta \psi^+(\Pcal x)
 		\label{eq_dirac_field_psi_plus_conjugated_by_u} \\
-		U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &= -\eta^c b_- \beta \psi^{- c}(\Pcal x)
+		U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &= \eta^c b_- \beta \psi^{- c}(\Pcal x)
 		\label{eq_dirac_field_psi_minus_conjugated_by_u}
 	\end{align}
 
@@ -5402,7 +5405,7 @@ Plugging them into :math:`\eqref{eq_dirac_field_n_matrix_first_evaluation}` and 
 		M(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right) \beta
 	\end{align*}
 
-Now that we've finished evaluating the spin sums, we can plug them into :math:`\eqref{eq_dirac_field_commutator_raw}` to get the following evaluation of the (anti)-commutator
+Now that we've finished evaluating the spin sums, we can plug them into :math:`\eqref{eq_dirac_field_commutator_raw}` to get the following evaluation of the (anti-)commutator
 
 .. math::
 	:nowrap:
@@ -5411,17 +5414,21 @@ Now that we've finished evaluating the spin sums, we can plug them into :math:`\
 		\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm} &= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~\big( |\kappa|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_+ m) e^{\ifrak p \cdot (x-y)} \beta \phantom{\big)}
 		\label{eq_dirac_field_commutator_first_evaluation} \\
 			&\phantom{= \phantom{\big(}} \pm |\lambda|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_- m) e^{-\ifrak p \cdot (x-y)} \beta \big)_{\ell \ell'} \nonumber \\
-			&= \left( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta(x-y) \beta \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta(y-x) \beta \right)_{\ell \ell'} \nonumber
+			&= \left( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta_+(x-y) \beta \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta_+(y-x) \beta \right)_{\ell \ell'} \nonumber
 	\end{align}
 
-where :math:`\Delta` is defined by :math:`\eqref{eq_defn_Delta_plus}`. Recall that :math:`\Delta(x) = \Delta(-x)` for space-like :math:`x`. Hence for space-like :math:`x-y`, the following holds
+where :math:`\Delta_+` is defined by :math:`\eqref{eq_defn_Delta_plus}`. Recall that :math:`\Delta_+(x) = \Delta_+(-x)` for space-like :math:`x`. Hence for space-like :math:`x-y`, the following holds
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
-		\p_{x_{\mu}} \Delta(x-y) = \p_{x_{\mu}} \Delta(y-x) = -\p_{y_{\mu}} \Delta(y-x)
-	\end{equation*}
+	\begin{equation}
+		\p_{x_{\mu}} \Delta_+(x-y) = \p_{x_{\mu}} \Delta_+(y-x) = -\p_{y_{\mu}} \Delta_+(y-x)
+		\label{eq_delta_plus_derivative_is_odd}
+	\end{equation}
+
+.. error::
+	:math:`\eqref{eq_delta_plus_derivative_is_odd}` is what is claimed in the bottom of page 223 in [Wei95]_, but it's not true! Indeed, the fact that :math:`\Delta_+(x)` is even for space-like :math:`x` only implies that :math:`\p_i \Delta_+(x)` is odd for spatial indexes :math:`i=1,2,3`. However :math:`\dot{\Delta}_+(x)` is not odd even for space-like :math:`x`. It has a serious consequence that the anti-commutator doesn't vanish, which in turn means that the Dirac fields, as constructed here, cannot be arbitrarily assembled into a causal interaction density. This error is obviously not because of Weinberg's ignorance, since he later also pointed out the non-vanishing of the anti-commutator on page 295.
 
 It follows that in order for :math:`\eqref{eq_dirac_field_commutator_first_evaluation}` to vanish for space-separated :math:`x` and :math:`y`, the following must hold
 
@@ -5470,7 +5477,7 @@ and the spin sums are
 		\label{eq_dirac_field_spin_sum_v}
 	\end{align}
 
-and the anti-commutator :math:`\eqref{eq_dirac_field_commutator_first_evaluation}`
+and the anti-commutator, calculated by plugging the spin sums into :math:`\eqref{eq_dirac_field_commutator_raw}`, is
 
 .. math::
 	:nowrap:
@@ -5498,7 +5505,7 @@ It follows that :math:`\eta \eta^c = -1`, or in other words, the intrinsic parit
 	:nowrap:
 
 	\begin{equation}
-		U(\Pcal) \psi(x) U^{-1}(\Pcal) = -\eta^{\ast} \beta \psi(\Pcal x)
+		U(\Pcal) \psi(x) U^{-1}(\Pcal) = \eta^{\ast} \beta \psi(\Pcal x)
 		\label{eq_dirac_field_spatial_inversion_transformation_law}
 	\end{equation}
 
@@ -6840,7 +6847,7 @@ For reasons that will be justified later, it's nonetheless legitimate to adopt t
 
 	The notations are getting slightly out of hands here. Namely, we've used :math:`a` for at least three different things in one place: the vector field :math:`a_{\mu}`, the parameter in :math:`S(a, b)`, and the creation operator :math:`a(\pbf, \sigma)`. There will actually be a fourth place where :math:`a` is used as the spin :math:`z`-component in an :math:`(A, B)` field. We can only hope that the context will make it clear what :math:`a` (or :math:`b`) really represents.
 
-As for massive vector fields, we'll search for field equations that :math:`a_{\mu}(x)` must satisfy. First of all, it satisfies obviously the (massless) Klein-Gordan equation
+As for massive vector fields, we'll search for field equations that :math:`a_{\mu}(x)` must satisfy. First of all, it satisfies obviously the (massless) Klein-Gordon equation
 
 .. math::
 	:nowrap:
@@ -7736,10 +7743,10 @@ where in the last equality we've replaced :math:`2\sqrt{\pbf^2 + M^2} \epsilon` 
 		\label{eq_feynman_propagator_as_momentum_space_integral}
 	\end{equation}
 
-.. dropdown:: Green's function for the Klein-Gordan equation
+.. dropdown:: Green's function for the Klein-Gordon equation
 	:animate: fade-in-slide-down
 
-	The Feynman propagator :math:`\Delta_F(x)` defined by :math:`\eqref{eq_feynman_propagator_as_momentum_space_integral}` turns out to be also a Green's function for the Klein-Gordan equation is the sense that
+	The Feynman propagator :math:`\Delta_F(x)` defined by :math:`\eqref{eq_feynman_propagator_as_momentum_space_integral}` turns out to be also a Green's function for the Klein-Gordon equation is the sense that
 
 	.. math::
 		:nowrap:
@@ -8077,16 +8084,207 @@ The quantum theory we've been developing so far has been based almost solely on 
 Canonical variables
 ^^^^^^^^^^^^^^^^^^^
 
-As we've seen in our calculations of Feynman diagrams, the propagators as defined by :math:`\eqref{eq_feynman_rule_propagator}` don't take a simple form according to discussions in :ref:`sec_propagator_in_momentum_space`. Indeed, we saw the need of strange-looking local terms as for example in :math:`\eqref{eq_vector_field_propagator_needs_local_term}` to compensate for a Lorentz-invariant momentum space propagator. The offer from the Lagrangian formalism to this issue is the following. Instead of the fields :math:`\eqref{eq_defn_annihilation_field}` -- :math:`\eqref{eq_defn_creation_field}`, which we have used to construct Hamiltonians, we'll construct the so-called *canonical variables*, which have particularly simple commutation relations. More precisely, it consists of a collection of quantum operators :math:`q_n(t, \xbf)` and its canonical conjugates :math:`p_n(t, \xbf)`, which satisfy the following commutation relations
+We've seen in :ref:`sec_quantum_fields_and_antiparticles` a few ways of constructing (Lorentz-invariant) interaction densities. However, we don't have a systematic way to do so. The so-called Lagrangian formalism will not provide a systematic solution either, but it'll allow us to construct more interesting interaction densities (from classical physics theories), to the extent that all known quantum field theories arise in this way! In addition, it'll shed light on the mysterious local terms as for example in :math:`\eqref{eq_vector_field_propagator_needs_local_term}`, that are needed to compensate for a Lorentz-invariant momentum space propagator.
+
+The offer from the Lagrangian formalism regarding constructing a quantum field theory is the following. Instead of using the fields :math:`\eqref{eq_defn_annihilation_field}` -- :math:`\eqref{eq_defn_creation_field}` to construct the Hamiltonians, we'll use the so-called *canonical variables*, which have particularly simple (equal time) commutation relations. More precisely, it consists of a collection of quantum operators :math:`q_n(t, \xbf)` and its canonical conjugates :math:`p_n(t, \xbf)`, which satisfy the following commutation relations
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\left[ q_n(t, \xbf), p_{n'}(t, \ybf) \right] &= \ifrak \delta^3(\xbf - \ybf) \delta_{n n'}
+		\label{eq_canonical_commutation_relation_1} \\
+		\left[ q_n(t, \xbf), q_{n'}(t, \ybf) \right] &= 0
+		\label{eq_canonical_commutation_relation_2} \\
+		\left[ p_n(t, \xbf), p_{n'}(t, \ybf) \right] &= 0
+		\label{eq_canonical_commutation_relation_3}
+	\end{align}
+
+Note that the commutator should become anti-commutator when the particle under question is fermionic.
+
+To see how canonical variables may be constructed from fields considered in :ref:`sec_quantum_fields_and_antiparticles`, let's consider a few examples.
+
+Scalar fields
+	Let's start by considering scalar fields of particles that are their own antiparticles. Using notations from :ref:`sec_scalar_field`, it means that :math:`\psi(x) = \psi^{
+	\dagger}(x)`, i.e., the field is Hermitian. It follows then from :math:`\eqref{eq_scalar_field_commutator}` and :math:`\eqref{eq_defn_Delta}` that
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\left[ \psi(x), \psi(y) \right] = \Delta(x-y) = \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0} \left( e^{\ifrak p \cdot (x-y)} - e^{-\ifrak p \cdot (x-y)} \right)
+			\label{eq_scalar_field_commutation_relation_reproduced}
+		\end{equation}
+
+	where :math:`p_0 = \sqrt{\pbf^2 + m^2}`.
+
+	We claim that the canonical commutation relations :math:`\eqref{eq_canonical_commutation_relation_1}` -- :math:`\eqref{eq_canonical_commutation_relation_3}` are satisfied by
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			q(t, \xbf) &\coloneqq \psi(t, \xbf)
+			\label{eq_defn_q_scalar_field_self_dual} \\
+			p(t, \xbf) &\coloneqq \dot{\psi}(t, \xbf)
+			\label{eq_defn_p_scalar_field_self_dual}
+		\end{align}
+
+	Indeed, it follows from the following calculations
+
+	.. math::
+		:nowrap:
+
+		\begin{alignat}{2}
+			\left[ q(t, \xbf), p(t, \xbf) \right] &= \left[ \psi(t, \xbf), \dot{\psi}(t, \ybf) \right] &&= -\dot{\Delta}(0, \xbf-\ybf) = \ifrak \delta^3(\xbf-\ybf)
+			\nonumber \\
+			\left[ q(t, \xbf), q(t, \xbf) \right] &= \left[ \psi(t, \xbf), \psi(t, \ybf) \right] &&= \Delta(0, \xbf-\ybf) = 0
+			\label{eq_canonical_commutator_scalar_field_self_dual_qq} \\
+			\left[ p(t, \xbf), p(t, \xbf) \right] &= \left[ \dot{\psi}(t, \xbf), \dot{\psi}(t, \ybf) \right] &&= -\ddot{\Delta}(0, \xbf-\ybf) = 0
+			\nonumber
+		\end{alignat}
+
+	Now for particles that are different from their antiparticles, we must modify :math:`\eqref{eq_defn_q_scalar_field_self_dual}` -- :math:`\eqref{eq_defn_p_scalar_field_self_dual}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			q(t, \xbf) &= \psi(t, \xbf) \\
+			p(t, \xbf) &= \dot{\psi}^{\dagger}(t, \xbf)
+		\end{align*}
+
+	and note that in this case :math:`\left[ \psi(t, \xbf), \psi(t', \ybf) \right] = 0`, in contrast to :math:`\eqref{eq_canonical_commutator_scalar_field_self_dual_qq}`.
+
+Spin-:math:`1` vector fields
+	Consider once again particles that are self-charge-dual. Using notations from :ref:`sec_spin_1_vector_fields`, we recall the commutation relation :math:`\eqref{eq_vector_field_commutator}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ \psi_{\mu}(x), \psi_{\nu}(y) \right] = \left( \eta_{\mu\nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta(x-y)
+		\end{equation*}
+
+	The canonical variables in this case can be defined as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align}
+			q_i(t, \xbf) &= \psi_i(t, \xbf)
+			\nonumber \\
+			p_i(t, \xbf) &= \dot{\psi}_i(t, \xbf) - \frac{\p \psi_0(t, \xbf)}{\p x_i}
+			\label{eq_defn_p_vector_field_self_dual}
+		\end{align}
+
+	where :math:`i=1,2,3`. Indeed, let's calculate the equal-time commutators as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\left[ q_i(t, \xbf), p_j(t, \ybf) \right] &= \left[ \psi_i(t, \xbf), \dot{\psi}_j(t, \ybf) \right] - \left[ \psi_i(t, \xbf), \frac{\p \psi_0(t, \ybf)}{\p y_j} \right] \\
+				&= -\left( \eta_{ij} -\frac{\p_i \p_j}{m^2} \right) \dot{\Delta}(0, \xbf-\ybf) - \left. \frac{\p_i \p_0}{m^2} \right|_{t=0} \left( \p_j \Delta(t, \xbf-\ybf) \right) \\
+				&= \ifrak \delta^3(\xbf-\ybf) \delta_{ij} \\
+			\left[ q_i(t, \xbf), q_j(t, \ybf) \right] &= \left( \eta_{ij} - \frac{\p_i \p_j}{m^2} \right) \Delta(0, \xbf-\ybf) = 0 \\
+			\left[ p_i(t, \xbf), p_j(t, \ybf) \right] &= \left[ \dot{\psi}_i(t, \xbf), \dot{\psi}_j(t, \ybf)\right] + \p_{x_i} \p_{y_j} \left[ \psi_0(t, \xbf), \psi_0(t, \ybf) \right] \\
+			&\phantom{=} - \p_{x_i} \left[ \psi_0(t, \xbf), \dot{\psi}_j(t, \ybf) \right] - \p_{y_j} \left[ \dot{\psi}_i(t, \xbf), \psi_0(t, \ybf) \right] = 0
+		\end{align*}
+
+	We've omitted some details about the vanishing of the last quantities -- it turns out that the the first and second terms cancel out, and the third and the fourth terms also cancel out.
+
+	In any case, we've constructed three pairs of canonical variables, one for each spatial index. But what about the time index? It turns out that :math:`\psi_0` is *not* an independent variable. Indeed, we can derive from :math:`\eqref{eq_defn_p_vector_field_self_dual}` an expression of :math:`\psi_0` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			& & p_i & = \p_0 \psi_i - \p_i \psi_0 \\
+			& \xRightarrow{\phantom{\eqref{eq_klein_gordon}}} & \p_i p_i & = \p_0 \p_i \psi_i - \p^2_i \psi_0 \\
+			& \xRightarrow{\phantom{\eqref{eq_klein_gordon}}} & \nabla \cdot \pbf & = \p_0 \sum_{i=1}^3 \p_i \psi_i - \sum_{i=1}^3 \p^2_i \psi_0 \\
+			& \xRightarrow{\eqref{eq_vector_field_gauge_fixing_condition}} & \nabla \cdot \pbf & = \p_0^2 \psi_0 - \sum_{i=1}^3 \p_i^2 \psi_0 = -\square \psi_0 \\
+			& \xRightarrow{\eqref{eq_klein_gordon}} & \psi_0 & = -m^{-2} \nabla \cdot \pbf
+		\end{align*}
+
+Spin-:math:`1/2` Dirac fields
+	Recall the anti-commutator of Dirac fields :math:`\eqref{eq_dirac_field_commutator}` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ \psi_{\ell}(x), \psi^{\dagger}_{\ell'}(y) \right]_+ = \left( (-\gamma^{\mu} \p_{\mu} + m) \beta \right)_{\ell \ell'} \Delta(x-y)
+		\end{equation*}
+
+	where :math:`\ell, \ell'` are indexes corresponding to the two spin :math:`z`-component :math:`\pm 1/2`. Assuming that particle under question has distinct antiparticle, i.e., it's not a Majorana fermion, the following holds trivially
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left[ \psi_{\ell}(x), \psi_{\ell'}(y) \right]_+ = 0
+		\end{equation*}
+
+	It follows that the canonical variables can be defined by
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			q_{\ell}(x) &= \psi_{\ell}(x) \\
+			p_{\ell}(x) &= \ifrak \psi^{\dagger}_{\ell}(x)
+		\end{align*}
+
+	Indeed, the only nontrivial (and non-vanishing) anti-commutator can be calculated as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\left[ q_{\ell}(t, \xbf), p_{\ell'}(t, \ybf) \right]_+ &= \ifrak \left[ \psi_{\ell}(t, \xbf), \psi_{\ell'}^{\dagger}(t, \ybf) \right]_+ \\
+				&= -\ifrak \left( \gamma^0 \beta \right)_{\ell \ell'} \dot{\Delta}(0, \xbf-\ybf) \\
+				&= \ifrak \delta^3(\xbf-\ybf) \delta_{\ell \ell'}
+		\end{align*}
+
+Through these examples, we see that there is no particular pattern in how one may define canonical variables. In fact, one doesn't really define canonical variables in this way either -- they are simply given for granted in the Lagrangian formalism as we will see.
+
+We begin by a general discussion on functionals :math:`F[q(t), p(t)]` of canonical variables, since both Hamiltonians and Lagrangians will be such functionals. A few notes are in order. First we've used a shorthand notation :math:`q(t)` and :math:`p(t)` to denote a collection of canonical variables. Moreover, in writing :math:`q(t)` (and similarly for :math:`p(t)`) we've implicitly fixed :math:`t` and think of it as a function of :math:`\xbf`. Finally, we've used square bracket to differentiate it from regular functions of spacetime or momentum variables.
+
+At the heart of the Lagrangian formalism lies a variational principle. Hence it's crucial to be able to take infinitesimal variations on :math:`F[q(t), p(t)]`, which we write as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\delta F[q(t), p(t)] = \int d^3 x \sum_n \left( \delta q_n(t, \xbf) \frac{\delta F[q(t), p(t)]}{\delta q_n(t, \xbf)} + \frac{\delta F[q(t), p(t)]}{\delta p_n(t, \xbf)} \delta p_n(t, \xbf) \right)
+		\label{eq_infinitesimal_variation_of_functional_of_canonical_variables}
+	\end{equation}
+
+Here the infinitesimal fields :math:`\delta q_n` and :math:`\delta p_n` are assumed to (anti-)commute with all other fields. Now assuming :math:`F[q(t), p(t)]` is written so that all the :math:`q` fields lie to the left of all the :math:`p` fields, then :math:`\eqref{eq_infinitesimal_variation_of_functional_of_canonical_variables}` can be realized by the following definition of variational derivatives
 
 .. math::
 	:nowrap:
 
 	\begin{align*}
-		\left[ q_n(t, \xbf), p_{n'}(t, \ybf) \right] &= \ifrak \delta^3(\xbf - \ybf) \delta_{n n'} \\
-		\left[ q_n(t, \xbf), q_{n'}(t, \ybf) \right] &= 0 \\
-		\left[ p_n(t, \xbf), p_{n'}(t, \ybf) \right] &= 0
+		\frac{\delta F[q(t), p(t)]}{\delta q_n(t, \xbf)} \coloneqq \ifrak \big[ p_n(t, \xbf), F[q(t), p(t)] \big] \\
+		\frac{\delta F[q(t), p(t)]}{\delta p_n(t, \xbf)} \coloneqq \ifrak \big[ F[q(t), p(t)], q_n(t, \xbf) \big]
 	\end{align*}
+
+Hamiltonian and Lagrangian for free fields
+++++++++++++++++++++++++++++++++++++++++++
+
+For free fields we have
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		q_n(t, \xbf) &= e^{\ifrak H_0 t} q_n(0, \xbf) e^{-\ifrak H_0 t} \\
+		p_n(t, \xbf) &= e^{\ifrak H_0 t} p_n(0, \xbf) e^{-\ifrak H_0 t}
+	\end{align*}
+
+where :math:`H_0` is the free field Hamiltonian, or in other words, the generator of the time-translation symmetry.
 
 
 .. rubric:: Footnotes
