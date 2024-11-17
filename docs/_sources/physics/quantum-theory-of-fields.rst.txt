@@ -8086,21 +8086,21 @@ Canonical variables
 
 We've seen in :ref:`sec_quantum_fields_and_antiparticles` a few ways of constructing (Lorentz-invariant) interaction densities. However, we don't have a systematic way to do so. The so-called Lagrangian formalism will not provide a systematic solution either, but it'll allow us to construct more interesting interaction densities (from classical physics theories), to the extent that all known quantum field theories arise in this way! In addition, it'll shed light on the mysterious local terms as for example in :math:`\eqref{eq_vector_field_propagator_needs_local_term}`, that are needed to compensate for a Lorentz-invariant momentum space propagator.
 
-The offer from the Lagrangian formalism regarding constructing a quantum field theory is the following. Instead of using the fields :math:`\eqref{eq_defn_annihilation_field}` -- :math:`\eqref{eq_defn_creation_field}` to construct the Hamiltonians, we'll use the so-called *canonical variables*, which have particularly simple (equal time) commutation relations. More precisely, it consists of a collection of quantum operators :math:`q_n(t, \xbf)` and its canonical conjugates :math:`p_n(t, \xbf)`, which satisfy the following commutation relations
+The offer from the Lagrangian formalism regarding constructing a quantum field theory is the following. Instead of using the fields :math:`\eqref{eq_defn_annihilation_field}` -- :math:`\eqref{eq_defn_creation_field}` to construct the Hamiltonians, we'll use the so-called *canonical variables*, which have particularly simple (equal time) commutation relations. More precisely, it consists of a collection of quantum operators :math:`q_n(t, \xbf)` and its canonical conjugates :math:`p_n(t, \xbf)`, which satisfy the following (anti-)commutation relations
 
 .. math::
 	:nowrap:
 
 	\begin{align}
-		\left[ q_n(t, \xbf), p_{n'}(t, \ybf) \right] &= \ifrak \delta^3(\xbf - \ybf) \delta_{n n'}
+		\left[ q_n(t, \xbf), p_{n'}(t, \ybf) \right]_{\pm} &= \ifrak \delta^3(\xbf - \ybf) \delta_{n n'}
 		\label{eq_canonical_commutation_relation_1} \\
-		\left[ q_n(t, \xbf), q_{n'}(t, \ybf) \right] &= 0
+		\left[ q_n(t, \xbf), q_{n'}(t, \ybf) \right]_{\pm} &= 0
 		\label{eq_canonical_commutation_relation_2} \\
-		\left[ p_n(t, \xbf), p_{n'}(t, \ybf) \right] &= 0
+		\left[ p_n(t, \xbf), p_{n'}(t, \ybf) \right]_{\pm} &= 0
 		\label{eq_canonical_commutation_relation_3}
 	\end{align}
 
-Note that the commutator should become anti-commutator when the particle under question is fermionic.
+where :math:`\pm` correspond to when the particle under question is fermionic or bosonic, respectively.
 
 To see how canonical variables may be constructed from fields considered in :ref:`sec_quantum_fields_and_antiparticles`, let's consider a few examples.
 
@@ -8279,12 +8279,187 @@ For free fields we have
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		q_n(t, \xbf) &= e^{\ifrak H_0 t} q_n(0, \xbf) e^{-\ifrak H_0 t} \\
+	\begin{align}
+		q_n(t, \xbf) &= e^{\ifrak H_0 t} q_n(0, \xbf) e^{-\ifrak H_0 t}
+		\label{eq_free_field_q_time_evolution} \\
 		p_n(t, \xbf) &= e^{\ifrak H_0 t} p_n(0, \xbf) e^{-\ifrak H_0 t}
+		\label{eq_free_field_p_time_evolution}
+	\end{align}
+
+where :math:`H_0` is the free field Hamiltonian, also known as the symmetry generator for the time translation, or the energy operator. However, rather than thinking of it as an abstract operator as we've done so far, we'll (momentarily) make it a functional of canonical variables. With this in mind, we can take the time derivative of :math:`\eqref{eq_free_field_q_time_evolution}` and :math:`\eqref{eq_free_field_p_time_evolution}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat}{2}
+		\dot{q}_n(t, \xbf) &= \ifrak \left[ H_0, q_n(t, \xbf) \right] &&= \frac{\delta H_0}{\delta p_n(t, \xbf)}
+		\label{eq_free_field_hamilton_equation_q_dot} \\
+		\dot{p}_n(t, \xbf) &= \ifrak \left[ H_0, p_n(t, \xbf) \right] &&= -\frac{\delta H_0}{\delta q_n(t, \xbf)}
+		\label{eq_free_field_hamilton_equation_p_dot}
+	\end{alignat}
+
+We recognize these as the quantum analog of `Hamilton's equation of motion <https://en.wikipedia.org/wiki/Hamiltonian_mechanics>`__.
+
+To turn :math:`H_0` into a functional of canonical variables, we first make it a functional of creation and annihilation operators. Remembering that :math:`H_0` is the energy operator, and :math:`p_0 = \sqrt{\pbf^2 + m^2}` is the energy in the :math:`4`-momentum, we can write :math:`H_0` as a diagonal operator as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		H_0 = \sum_{n, \sigma} \int d^3 p~a^{\dagger}(\pbf, \sigma, n) a(\pbf, \sigma, n) \sqrt{\pbf^2 + m^2}
+		\label{eq_free_field_hamiltonian_diagonal}
+	\end{equation}
+
+For simplicity, let's consider the case of a real scalar field :math:`\psi(x)` given by :math:`\eqref{eq_scalar_field_psi_by_creation_and_annihilation_operators}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		q(t, \xbf) = \psi(x) = \frac{1}{(2\pi)^{3/2}} \int \frac{d^3 p}{\sqrt{2p_0}} \left( e^{\ifrak p \cdot x} a(\pbf) + e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \right)
+	\end{equation*}
+
+The canonical conjugate variable is
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		p(t, \xbf) = \dot{\psi}(x) = \frac{1}{(2\pi)^{3/2}} \int \frac{d^3 p}{\sqrt{2p_0}} (-\ifrak p_0) \left( e^{\ifrak p \cdot x} a(\pbf) - e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \right)
+	\end{equation*}
+
+These look a bit far from :math:`\eqref{eq_free_field_hamiltonian_diagonal}`. But since :math:`H_0` involves products like :math:`a^{\dagger}(\pbf, \sigma, n) a(\pbf, \sigma, n)`, let's try to square the canonical variables as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\int d^3 x~q^2(t, \xbf) &= \frac{1}{(2\pi)^3} \int \frac{d^3 p~d^3 p'~d^3 x}{2\sqrt{p_0 p'_0}}
+				\Big( e^{\ifrak p \cdot x} a(\pbf) + e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \Big)
+				\Big( e^{\ifrak p' \cdot x} a(\pbf') + e^{-\ifrak p' \cdot x} a^{\dagger}(\pbf') \Big) \\
+			&= \int \frac{d^3 p}{2p_0} \left( \blue{ e^{-2\ifrak p_0 t} a(\pbf) a(-\pbf) + e^{2\ifrak p_0 t} a^{\dagger}(\pbf) a^{\dagger}(-\pbf) } + \left[ a(\pbf), a^{\dagger}(\pbf) \right]_+ \right)
 	\end{align*}
 
-where :math:`H_0` is the free field Hamiltonian, or in other words, the generator of the time-translation symmetry.
+and
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\int d^3 x~p^2(t, \xbf) &= \frac{1}{(2\pi)^3} \int \frac{d^3 p~d^3 p'~d^3 x}{2\sqrt{p_0 p'_0}} (-p_0 p'_0)
+				\Big( e^{\ifrak p \cdot x} a(\pbf) - e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \Big)
+				\Big( e^{\ifrak p' \cdot x} a(\pbf') - e^{-\ifrak p' \cdot x} a^{\dagger}(\pbf') \Big) \\
+			&= \int \frac{d^3 p}{2p_0} \left( -p_0^2 \right) \left( \blue{ e^{-2\ifrak p_0 t} a(\pbf) a(-\pbf) + e^{2\ifrak p_0 t} a^{\dagger}(\pbf) a^{\dagger}(-\pbf) } - \left[ a(\pbf), a^{\dagger}(\pbf) \right]_+ \right)
+	\end{align*}
+
+and finally, inspired by the calculations above
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\int d^3 x~\left( \nabla q(t, \xbf) \right)^2 &= \frac{1}{(2\pi)^3} \int \frac{d^3 p~d^3 p'~d^3 x}{2\sqrt{p_0 p'_0}} \left( -\pbf \cdot \pbf' \right)
+				\Big( e^{\ifrak p \cdot x} a(\pbf) - e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \Big)
+				\Big( e^{\ifrak p' \cdot x} a(\pbf') - e^{-\ifrak p' \cdot x} a^{\dagger}(\pbf') \Big) \\
+			&= \int \frac{d^3 p}{2p_0} \pbf^2 \left( \blue{ e^{-2\ifrak p_0 t} a(\pbf) a(-\pbf) + e^{2\ifrak p_0 t} a^{\dagger}(\pbf) a^{\dagger}(-\pbf) } + \left[ a(\pbf), a^{\dagger}(\pbf) \right]_+ \right)
+	\end{align*}
+
+Putting these calculations together in a specific way, and using the identity :math:`p_0^2 - \pbf^2 = m^2`, we can eliminate the blue terms as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align}
+		\frac{1}{2} \int d^3 x \left( p^2 + \left( \nabla q \right)^2 + m^2 q^2 \right)
+			&= \frac{1}{2} \int d^3 p~p_0 \left[ a(\pbf), a^{\dagger}(\pbf) \right]_+
+			\label{eq_calculate_free_real_scalar_field_hamiltonian} \\
+			&= \int d^3 p~p_0 \left( a^{\dagger}(\pbf) a(\pbf) + \frac{1}{2} \delta^3(\pbf-\pbf) \right)
+			\nonumber \\
+			&= H_0 + \blue{ \frac{1}{2} \int d^3 p~p_0 \delta^3(0) }
+			\nonumber
+	\end{align}
+
+Here we've encountered for the first time an infinite term (which we've marked in blue). As long as the Hamiltonian dynamics :math:`\eqref{eq_free_field_hamilton_equation_q_dot}` -- :math:`\eqref{eq_free_field_hamilton_equation_p_dot}` is concerned, it makes no difference adding a constant to the Hamiltonian. Hence we can write the free Hamiltonian for real scalar fields as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		H_0^{\text{RSF}} = \frac{1}{2} \int d^3 x \left( p^2 + \left( \nabla q \right)^2 + m^2 q^2 \right)
+		\label{eq_free_scalar_field_hamiltonian}
+	\end{equation}
+
+.. warning::
+	Throwing away the infinite term in :math:`\eqref{eq_calculate_free_real_scalar_field_hamiltonian}` is an instance of a well-known criticism in quantum field theory: "just because something is infinite doesn't mean it's zero". Indeed, Weinberg mentioned in page 297 [Wei95]_ that such "infinities" shouldn't be thrown away when, for example, the fields are constrained within a finite space, or there is an involvement of gravity.
+
+Now it's time to introduce the rather mysterious Lagrangian, which can be derived from the Hamiltonian via the so-called `Legendrian transformation <https://en.wikipedia.org/wiki/Legendre_transformation>`__ as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		L_0\left[ q(t), \dot{q}(t) \right] = \sum_n \int d^3 x~p_n(t, \xbf) \dot{q}_n(t, \xbf) - H_0
+	\end{equation*}
+
+where each occurrence of :math:`p_n(t)` is replaced by its expression in :math:`q_n(t)` and :math:`\dot{q}_n(t)`.
+
+As a concrete example, let's consider again the real scalar field, where :math:`p = \dot{q}`. It follows that
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		L_0^{\text{RSF}} &= \int d^3 x \left( p\dot{q} - \frac{1}{2} p^2 - \frac{1}{2} \left( \nabla q \right)^2 - \frac{1}{2} m^2 q^2 \right) \\
+			&= \frac{1}{2} \int d^3 x \left( \dot{q}^2 - \left( \nabla q \right)^2 - m^2 q^2 \right) \\
+			&= -\frac{1}{2} \int d^3 x \left( \p_{\mu} \psi \p^{\mu} \psi + m^2 \psi^2 \right)
+	\end{align*}
+
+It should be noted that expressing :math:`p` in terms of :math:`q` and :math:`\dot{q}` isn't always easy. Indeed, it's far from obvious how the :math:`p_i` defined by :math:`\eqref{eq_defn_p_vector_field_self_dual}` could be expressed in the corresponding :math:`q_i` and :math:`\dot{q}_i`. (Un)Fortunately, we'd never really need to do so -- writing down a Lagrangian turns out to be mostly a guess work.
+
+Hamiltonian and Lagrangian for interacting fields
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Let :math:`H` be the full Hamiltonian. Then the Heisenberg picture canonical variables can be defined as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		Q_n(t, \xbf) &\coloneqq e^{\ifrak Ht} q_n(0, \xbf) e^{-\ifrak Ht} \\
+		P_n(t, \xbf) &\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}
+	\end{align*}
+
+Then obviously these canonical variables also satisfy the canonical (anti-)commutation relations
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ Q_n(t, \xbf), P_{n'}(t, \ybf) \right]_{\pm} &= \ifrak \delta^3(\xbf-\ybf) \delta_{n n'} \\
+		\left[ Q_n(t, \xbf), Q_{n'}(t, \ybf) \right]_{\pm} &= 0 \\
+		\left[ P_n(t, \xbf), P_{n'}(t, \ybf) \right]_{\pm} &= 0
+	\end{align*}
+
+Moreover, the analog of :math:`\eqref{eq_free_field_hamilton_equation_q_dot}` and :math:`\eqref{eq_free_field_hamilton_equation_p_dot}` holds as follows
+
+.. math::
+	:nowrap:
+
+	\begin{alignat*}{2}
+		\dot{Q}_n(t, \xbf) &= \ifrak \left[ H, Q_n(t, \xbf) \right] &&= \frac{\delta H}{\delta P_n(t, \xbf)} \\
+		\dot{P}_n(t, \xbf) &= \ifrak \left[ H, P_n(t, \xbf) \right] &&= -\frac{\delta H}{ \delta Q_n(t, \xbf)}
+	\end{alignat*}
+
+As an example, we note that, in light of :math:`\eqref{eq_free_scalar_field_hamiltonian}`, the full Hamiltonian for real scalar fields may be written as
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		H^{RSF} = \int d^3 x \left( \tfrac{1}{2} P^2 + \tfrac{1}{2} \left( \nabla Q \right)^2 + \tfrac{1}{2} m^2 Q^2 + \Hscr(Q) \right)
+	\end{equation*}
+
+where :math:`\Hscr(Q)` is the perturbation term giving rise to the interaction.
 
 
 .. rubric:: Footnotes
