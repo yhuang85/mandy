@@ -5268,7 +5268,7 @@ These are known as the (Dirac) spinors. Spinors at finite momentum can be determ
 		\label{eq_dirac_field_spinor_v_at_finite_momentum}
 	\end{align}
 
-In general the constants :math:`c_{\pm}` and :math:`d_{\pm}` may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from :ref:`sec_the_lorentz_and_cpt_transformation_laws` to :math:`\eqref{eq_dirac_field_psi_plus}` and :math:`\eqref{eq_dirac_field_psi_minus}`, we can calculate as follows [#spatial_inversion_on_dirac_fields_sign]_
+In general the constants :math:`c_{\pm}` and :math:`d_{\pm}` may be arbitrary. However, if we assume the conservation of parity, or in other words, that the fields transform covariantly under the spatial inversion, then we can determine the constants, and henceforth the spinors uniquely as follows. Applying the spatial inversion transformation laws of creation and annihilation operators from :ref:`sec_the_lorentz_and_cpt_transformation_laws` to :math:`\eqref{eq_dirac_field_psi_plus}` and :math:`\eqref{eq_dirac_field_psi_minus}`, we can calculate as follows
 
 .. math::
 	:nowrap:
@@ -8173,7 +8173,7 @@ Spin-:math:`1` vector fields
 
 		\begin{align}
 			q_i(t, \xbf) &= \psi_i(t, \xbf)
-			\nonumber \\
+			\label{eq_defn_q_vector_field_self_dual} \\
 			p_i(t, \xbf) &= \dot{\psi}_i(t, \xbf) - \frac{\p \psi_0(t, \xbf)}{\p x_i}
 			\label{eq_defn_p_vector_field_self_dual}
 		\end{align}
@@ -8249,7 +8249,7 @@ Spin-:math:`1/2` Dirac fields
 
 Through these examples, we see that there is no particular pattern in how one may define canonical variables. In fact, one doesn't really define canonical variables in this way either -- they are simply given for granted in the Lagrangian formalism as we will see.
 
-We begin by a general discussion on functionals :math:`F[q(t), p(t)]` of canonical variables, since both Hamiltonians and Lagrangians will be such functionals. A few notes are in order. First we've used a shorthand notation :math:`q(t)` and :math:`p(t)` to denote a collection of canonical variables. Moreover, in writing :math:`q(t)` (and similarly for :math:`p(t)`) we've implicitly fixed :math:`t` and think of it as a function of :math:`\xbf`. Finally, we've used square bracket to differentiate it from regular functions of spacetime or momentum variables.
+We begin by a general discussion on functionals :math:`F[q(t), p(t)]` of canonical variables, since both Hamiltonians and Lagrangians will be such functionals. A few notes are in order. First we've used a shorthand notation :math:`q(t)` and :math:`p(t)` to denote a collection of canonical variables. Moreover, in writing :math:`q(t)` (and similarly for :math:`p(t)`) we implicitly think of them as fields at a given time. Indeed, as we'll see, the time variable plays an exceptional role in the Lagrangian formalism, in contrast to our mindset so far that space and time are all mixed up in a Lorentz invariant theory. Finally, we've used square bracket to differentiate it from regular functions of spacetime or momentum variables.
 
 At the heart of the Lagrangian formalism lies a variational principle. Hence it's crucial to be able to take infinitesimal variations on :math:`F[q(t), p(t)]`, which we write as follows
 
@@ -8392,14 +8392,15 @@ Here we've encountered for the first time an infinite term (which we've marked i
 .. warning::
 	Throwing away the infinite term in :math:`\eqref{eq_calculate_free_real_scalar_field_hamiltonian}` is an instance of a well-known criticism in quantum field theory: "just because something is infinite doesn't mean it's zero". Indeed, Weinberg mentioned in page 297 [Wei95]_ that such "infinities" shouldn't be thrown away when, for example, the fields are constrained within a finite space, or there is an involvement of gravity.
 
-Now it's time to introduce the rather mysterious Lagrangian, which can be derived from the Hamiltonian via the so-called `Legendrian transformation <https://en.wikipedia.org/wiki/Legendre_transformation>`__ as follows
+Now it's time to introduce the rather mysterious Lagrangian, which can be derived from the Hamiltonian via the so-called `Legendre transformation <https://en.wikipedia.org/wiki/Legendre_transformation>`__ as follows
 
 .. math::
 	:nowrap:
 
-	\begin{equation*}
-		L_0\left[ q(t), \dot{q}(t) \right] = \sum_n \int d^3 x~p_n(t, \xbf) \dot{q}_n(t, \xbf) - H_0
-	\end{equation*}
+	\begin{equation}
+		L_0\left[ q(t), \dot{q}(t) \right] \coloneqq \sum_n \int d^3 x~p_n(t, \xbf) \dot{q}_n(t, \xbf) - H_0
+		\label{eq_legendre_transformation_lagrangian_from_hamiltonian}
+	\end{equation}
 
 where each occurrence of :math:`p_n(t)` is replaced by its expression in :math:`q_n(t)` and :math:`\dot{q}_n(t)`.
 
@@ -8408,11 +8409,14 @@ As a concrete example, let's consider again the real scalar field, where :math:`
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		L_0^{\text{RSF}} &= \int d^3 x \left( p\dot{q} - \frac{1}{2} p^2 - \frac{1}{2} \left( \nabla q \right)^2 - \frac{1}{2} m^2 q^2 \right) \\
-			&= \frac{1}{2} \int d^3 x \left( \dot{q}^2 - \left( \nabla q \right)^2 - m^2 q^2 \right) \\
+	\begin{align}
+		L_0^{\text{RSF}} &= \int d^3 x \left( p\dot{q} - \frac{1}{2} p^2 - \frac{1}{2} \left( \nabla q \right)^2 - \frac{1}{2} m^2 q^2 \right)
+			\label{eq_free_real_scalar_field_lagrangian} \\
+			&= \frac{1}{2} \int d^3 x \left( \dot{q}^2 - \left( \nabla q \right)^2 - m^2 q^2 \right)
+			\nonumber \\
 			&= -\frac{1}{2} \int d^3 x \left( \p_{\mu} \psi \p^{\mu} \psi + m^2 \psi^2 \right)
-	\end{align*}
+			\nonumber
+	\end{align}
 
 It should be noted that expressing :math:`p` in terms of :math:`q` and :math:`\dot{q}` isn't always easy. Indeed, it's far from obvious how the :math:`p_i` defined by :math:`\eqref{eq_defn_p_vector_field_self_dual}` could be expressed in the corresponding :math:`q_i` and :math:`\dot{q}_i`. (Un)Fortunately, we'd never really need to do so -- writing down a Lagrangian turns out to be mostly a guess work.
 
@@ -8457,9 +8461,273 @@ As an example, we note that, in light of :math:`\eqref{eq_free_scalar_field_hami
 
 	\begin{equation*}
 		H^{RSF} = \int d^3 x \left( \tfrac{1}{2} P^2 + \tfrac{1}{2} \left( \nabla Q \right)^2 + \tfrac{1}{2} m^2 Q^2 + \Hscr(Q) \right)
-	\end{equation*}
+	\end{equation*}``
 
 where :math:`\Hscr(Q)` is the perturbation term giving rise to the interaction.
+
+The Lagrangian formalism
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+We'll leave aside the discussion of canonical variables for a bit to introduce the Lagrangian formalism in its most general form. After that we'll play the game backwards. Namely, instead of constructing canonical variables out of the free fields that we've been exclusively considering since :ref:`sec_quantum_fields_and_antiparticles`, we'll get canonically conjugate fields out of the (magically appearing) Lagrangians, and then *impose* the canonical commutation relations :math:`\eqref{eq_canonical_commutation_relation_1}` -- :math:`\eqref{eq_canonical_commutation_relation_3}` on them -- a procedure generally known as "quantization".
+
+In the classical physical theory of fields, a Lagrangian is a functional :math:`L[\Psi(t), \dot{\Psi}(t)]`, where :math:`\Psi(t)` is any field and :math:`\dot{\Psi}(t)` is its time derivative. Here we've capitalized the field variables to distinguish them from the free fields considered in the previous section. Define the conjugate fields as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Pi_n(t, \xbf) \coloneqq \frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \dot{\Psi}_n(t, \xbf)}
+		\label{eq_general_lagrangian_conjugate_pi}
+	\end{equation}
+
+so that the field equations are given by
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\dot{\Pi}_n(t, \xbf) = \frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \Psi_n(t, \xbf)}
+		\label{eq_equation_of_motion_for_fields}
+	\end{equation}
+
+.. warning::
+	Unlike the functional derivatives considered in :math:`\eqref{eq_infinitesimal_variation_of_functional_of_canonical_variables}` for canonical variables, the functional derivative :math:`\eqref{eq_general_lagrangian_conjugate_pi}`, interpreted quantum mechanically, is not really well-defined since :math:`\Psi(t)` and :math:`\dot{\Psi}(t)` don't in general satisfy a simple (same time) commutation relation. According to Weinberg (see footnote on page 299 in [Wei95]_), "no important issues hinge on the details here". So we'll pretend that it behaves just like usual derivatives.
+
+Indeed, recall that in the classical Lagrangian formalism, the field equations are given by a variational principle applied to the so-called *action*, defined as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		I[\Psi] \coloneqq \int_{-\infty}^{\infty} dt~L[\Psi(t), \dot{\Psi}(t)]
+		\label{eq_defn_action_of_fields}
+	\end{equation}
+
+The infinitesimal variation of :math:`I[\Psi]` is given by
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\delta I[\Psi] &= \int_{-\infty}^{\infty} dt \int d^3 x \left(
+				\frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \Psi_n(t, \xbf)} \delta \Psi_n(t, \xbf) +
+				\frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \dot{\Psi}_n(t, \xbf)} \delta \dot{\Psi}_n(t, \xbf) \right) \\
+			&= \int_{-\infty}^{\infty} dt \int d^3 x \left(
+				\frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \Psi(t, \xbf)} - \frac{d}{dt} \frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \dot{\Psi}_n(t, \xbf)} \right) \delta \Psi_n(t, \xbf)
+	\end{align*}
+
+where for the last equality, integration by parts is used under the assumption that the infinitesimal variation :math:`\delta \Psi_n(t, \xbf)` vanishes at :math:`t \to \pm\infty`. Obviously :math:`\delta I[\Psi]` vanishes for any :math:`\delta \Psi_n(t, \xbf)` if and only if :math:`\eqref{eq_equation_of_motion_for_fields}` is satisfied.
+
+Now we're interested in constructing Lorentz invariant theories, but an action defined by :math:`\eqref{eq_defn_action_of_fields}` apparently distinguishes the time from space variables. This motivates the hypothesis that the Lagrangian itself is given by a spatial integral of a so-called *Lagrangian density* as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		L[\Psi(t), \dot{\Psi}(t)] = \int d^3 x~\Lscr(\Psi(t, \xbf), \nabla\Psi(t, \xbf), \dot{\Psi}(t, \xbf))
+		\label{eq_defn_lagrangian_density}
+	\end{equation}
+
+In terms of the Lagrangian density, we can rewrite the action :math:`\eqref{eq_defn_action_of_fields}` as a :math:`4`-integral as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		I[\Psi] = \int d^4 x~\Lscr(\Psi(x), \p_{\mu} \Psi(x))
+	\end{equation*}
+
+We'd also like to reexpress the field equations :math:`\eqref{eq_equation_of_motion_for_fields}` in terms of the Lagrangian density. To this end, let's first calculate the variation of :math:`\eqref{eq_defn_lagrangian_density}` by an amount :math:`\delta \Psi_n(t, \xbf)` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\delta L &= \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi_n}} \delta\dot{\Psi_n} \right) \\
+			&= \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi_n}} \delta\dot{\Psi_n} \right)
+	\end{align*}
+
+It follows that
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\frac{\delta L}{\delta\Psi_n} &= \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \\
+		\frac{\delta L}{\delta\dot{\Psi_n}} &= \frac{\delta \Lscr}{\delta \dot{\Psi_n}}
+	\end{align*}
+
+Combining these with :math:`\eqref{eq_equation_of_motion_for_fields}`, we've derived the so-called Euler-Lagrange equations for the Lagrangian density
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\frac{\delta \Lscr}{\delta \Psi_n} = \p_{\mu} \frac{\delta \Lscr}{\delta(\p_{\mu} \Psi_n)}
+		\label{eq_euler_lagrange}
+	\end{equation}
+
+Note that the summing :math:`4`-index :math:`\mu` here represents :math:`x_{\mu}`. Most importantly, the field equations given by :math:`\eqref{eq_euler_lagrange}` will be Lorentz invariant if :math:`\Lscr` is. Indeed, guessing such :math:`\Lscr` will be more or less the only way to construct Lorentz invariant (quantum) field theories.
+
+.. note::
+	The Lagrangian density :math:`\Lscr` is assumed to be real for two reasons. First, if :math:`\Lscr` were complex, then splitting it into the real and imaginary parts, :math:`\eqref{eq_euler_lagrange}` would contain twice as many equations as there are fields, regardless whether real or complex. This is undesirable because generically there will be no solutions. The second reason has to wait until the next section, where symmetries will be discussed. It turns out that the reality of :math:`\Lscr` will guarantee that the symmetry generators are Hermitian.
+
+Now recall from the previous section that the anchor of our knowledge is the Hamiltonian -- we know how it must look like, at least for free fields. To go from the Lagrangian to the Hamiltonian, we use again the Legendre transformation (cf. :math:`\eqref{eq_legendre_transformation_lagrangian_from_hamiltonian}`) to *define* the Hamiltonian as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		H[\Psi, \Pi] \coloneqq \sum_n \int d^3 x~\Pi_n(t, \xbf) \dot{\Psi}_n(t, \xbf) - L[\Psi(t), \dot{\Psi}(t)]
+		\label{eq_legendre_transformation_hamiltonian_from_lagrangian}
+	\end{equation}
+
+.. warning::
+	In order to realize :math:`H` as a functional of :math:`\Psi` and :math:`\Pi`, one must in principle be able to solve for :math:`\dot{\Psi}_n` in terms of :math:`\Psi_n` and :math:`\Pi_n` from :math:`\eqref{eq_general_lagrangian_conjugate_pi}`. This isn't always easy, if at all possible, but it rarely pose serious difficulties in applications either.
+
+As a double check, let's verify that the Hamiltonian defined by :math:`\eqref{eq_legendre_transformation_hamiltonian_from_lagrangian}` also satisfies Hamilton's equations (cf. :math:`\eqref{eq_free_field_hamilton_equation_q_dot}` -- :math:`\eqref{eq_free_field_hamilton_equation_p_dot}`). Indeed, the variational derivatives are calculated as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\frac{\delta H}{\delta \Pi_n(t, \xbf)} &= \sum_m \int d^3 y \left( \frac{\delta \Pi_m(t, \ybf)}{\delta \Pi_n(t, \xbf)} \dot{\Psi}_m(t, \ybf) + \Pi_m(t, \ybf) \frac{\delta \dot{\Psi}_m(t, \ybf)}{\delta \Pi_n(t, \xbf)} \right) - \sum_m \int d^3 y \frac{\delta L}{\delta \dot{\Psi}_m(t, \ybf)} \frac{\delta \dot{\Psi}_m(t, \ybf)}{\delta \Pi_n(t, \xbf)} \\
+			&= \sum_m \int d^3 y~\delta_{m,n} \delta^3(\ybf-\xbf) \dot{\Psi}_m(t, \ybf) \\
+			&= \dot{\Psi}_n(t, \xbf) \\
+		\frac{\delta H}{\delta \Psi_n(t, \xbf)} &= \sum_m \int d^3 y~\Pi_m(t, \ybf) \frac{\delta \dot{\Psi}_m(t, \ybf)}{\delta \Psi_n(t, \xbf)} - \sum_m \int d^3 y \left( \frac{\delta L}{\delta \Psi_m(t, \ybf)} \frac{\delta \Psi_m(t, \ybf)}{\delta \Psi_n(t, \xbf)} + \frac{\delta L}{\delta \dot{\Psi}_m(t, \ybf)} \frac{\delta \dot{\Psi}_m(t, \ybf)}{\delta \Psi_n(t, \xbf)} \right) \\
+			&\xlongequal{\eqref{eq_general_lagrangian_conjugate_pi},~\eqref{eq_equation_of_motion_for_fields}} -\sum_m \int d^3 y~\delta_{m, n} \delta^3(\ybf-\xbf) \dot{\Pi}_m(t, \ybf) \\
+			&= -\dot{\Pi}_n(t, \xbf)
+	\end{align*}
+
+It's therefore attempting to demand, in the Lagrangian formalism, that :math:`\Psi_n` and :math:`\Pi_n`, defined by :math:`\eqref{eq_general_lagrangian_conjugate_pi}`, satisfy the canonical commutation relations. In other words, they are (Heisenberg picture) canonically conjugate fields. But this is not true in general, as it turns out.
+
+The issue is that the Lagrangian :math:`L[\Psi(t), \dot{\Psi}(t)]` may contain certain field, but not its time derivative. One example is spin-:math:`1` vector fields, where we see from :math:`\eqref{eq_defn_q_vector_field_self_dual}` that the spatial fields :math:`\psi_i` are part of the canonical variables, but not :math:`\psi_0`, which nonetheless should present in the Lagrangian by Lorentz invariance. It turns out that what's missing from the Lagrangian is :math:`\dot{\psi}_0`, which causes its conjugate variable defined by :math:`\eqref{eq_general_lagrangian_conjugate_pi}` to vanish.
+
+But instead of dealing with vector fields further, we'll turn back to the general ground to establish the fundamental principles. Inspired by above discussion, we can rewrite the Lagrangian as
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		L[Q(t), \dot{Q}(t), C(t)]
+	\end{equation*}
+
+where each :math:`Q_n(t)` has a corresponding :math:`\dot{Q}_n(t)`, but not for :math:`C(t)`. It follows that one can define the canonical conjugates by
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		P_n(t, \xbf) \coloneqq \frac{\delta L[Q(t), \dot{Q}(t), C(t)]}{\delta \dot{Q}_n(t, \xbf)}
+	\end{equation*}
+
+and hence the Hamiltonian takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		H[Q, P] = \sum_n \int d^3 x~P_n \dot{Q}_n - L[Q(t), \dot{Q}(t), C(t)]
+	\end{equation*}
+
+.. dropdown:: Quantization of free scalar fields
+	:animate: fade-in-slide-down
+	:icon: unlock
+
+	We'll illustrate how "quantization" works in the simplest case of free scalar fields :math:`\phi(t, \xbf)`. Namely, we'll reverse our earlier approach to the quantum theory by starting from a Lagrangian, and then work out the field equations, solve them for the fields, impose canonical commutation relations, and finally arrive at the familiar commutation relations between creation and annihilation operators introduced in :ref:`sec_the_cluster_decomposition_principle`.
+
+	Following :math:`\eqref{eq_free_real_scalar_field_lagrangian}`, let's consider the following Lagrangian
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			L_0[\phi, \dot{\phi}] = -\frac{1}{2} \int d^3 x \left( \p_{\mu} \phi \p^{\mu} \phi + m^2 \phi^2 \right)
+		\end{equation*}
+
+	The canonical conjugate of :math:`\phi(t, \xbf)` is then
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\pi(t, \xbf) \coloneqq \frac{\delta L_0}{\delta \dot{\phi}(t, \xbf)} = \dot{\phi}(t, \xbf)
+			\label{eq_free_scalar_field_pi_equals_dot_phi}
+		\end{equation}
+
+	Hence the Hamiltonian takes the following form
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			H_0[\phi, \pi] &= \int d^3 x~\pi(t, \xbf) \dot{\phi}(t, \xbf) - L_0 \\
+				&= \frac{1}{2} \int d^3 x \left( \pi^2(t, \xbf) + \big( \nabla \phi(t, \xbf) \big)^2 + m^2 \phi^2 \right)
+		\end{align*}
+
+	The field equations :math:`\eqref{eq_free_field_hamilton_equation_q_dot}` -- :math:`\eqref{eq_free_field_hamilton_equation_p_dot}` are then given as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{alignat*}{2}
+			\dot{\phi}(t, \xbf) &= \frac{\delta H_0}{\delta \pi(t, \xbf)} &&= \pi(t, \xbf) \\
+			\dot{\pi}(t, \xbf) &= -\frac{\delta H_0}{\delta \phi(t, \xbf)} &&= \nabla^2 \phi(t, \xbf) - m^2 \phi(t, \xbf)
+		\end{alignat*}
+
+	Together, it implies that the field equation is precisely the Klein-Gordon equation
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\left( \square - m^2 \right) \phi(x) = 0
+		\end{equation*}
+
+	Using Fourier transform, the general Hermitian solution, up to a scalar, can be written as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\phi(x) = \frac{1}{(2\pi)^{3/2}} \int \frac{d^3 p}{\sqrt{2p_0}} \left( e^{\ifrak p \cdot x} a(\pbf) + e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \right)
+		\end{equation*}
+
+	where :math:`p_0 = \sqrt{\pbf^2+m^2}` and :math:`a(\pbf)` is, at the moment, just any operator function of :math:`\pbf`. Using :math:`\eqref{eq_free_scalar_field_pi_equals_dot_phi}` we have
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\pi(x) = \frac{-\ifrak}{(2\pi)^{3/2}} \int d^3 p \sqrt{\frac{p_0}{2}} \left( e^{\ifrak p \cdot x}a(\pbf) - e^{-\ifrak p \cdot x}a^{\dagger}(\pbf) \right)
+		\end{equation*}
+
+	One can then verify that if we impose the canonical commutation relations on the conjugate fields :math:`\phi(t, \xbf)` and :math:`\pi(t, \xbf)` as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\left[ \phi(t, \xbf), \pi(y, \ybf) \right] &= \ifrak \delta^3(\xbf-\ybf) \\
+			\left[ \phi(t, \xbf), \phi(t, \ybf) \right] &= 0 \\
+			\left[ \pi(t, \xbf), \pi(t, \ybf) \right] &= 0
+		\end{align*}
+
+	then the familiar commutation relations
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\left[ a(\pbf), a^{\dagger}(\pbf') \right] &= \delta^3(\pbf-\pbf') \\
+			\left[ a(\pbf), a(\pbf') \right] &= 0
+		\end{align*}
+
+	must hold. In this way we've completely reversed the process of deriving a Lagrangian from free fields made up of creation and annihilation operators.
+
+
+Global symmetries
+^^^^^^^^^^^^^^^^^
 
 
 .. rubric:: Footnotes
@@ -8479,8 +8747,6 @@ where :math:`\Hscr(Q)` is the perturbation term giving rise to the interaction.
 .. [#wrong_integration_of_Delta_function] The evaluation of the integral eq. (5.2.8) on [Wei95]_ page 202 seems to be wrong, as the integrand oscillates as :math:`\sin(u)` for :math:`u` large enough, which will cause the integral to diverge.
 
 .. [#dirac_gamma_is_vector] Our calculation is consistent with eq. (5.4.8) in [Wei95]_ because of the convention :math:`{(\Lambda^{-1})^{\nu}}_{\mu} = {\Lambda_{\mu}}^{\nu}` introduced in formula (2.3.10).
-
-.. [#spatial_inversion_on_dirac_fields_sign] Our calculation differs from eq. (5.5.10) and eq. (5.5.11) in [Wei95]_ by a sign because we take into account the fact that the substitution :math:`\pbf \to -\pbf` also reverts the volume element :math:`d^3 p`.
 
 .. [#charge_inversion_on_dirac_fields_sign] Our calculation, once again, differs from the calculation eq. (5.5.47) in [Wei95]_ by a sign, though this time it has nothing to do with the volume element.
 
