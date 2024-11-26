@@ -378,7 +378,7 @@
 \end{equation*}</div><p>In particular, the probability of finding any state in itself is one, due to the normalization above.</p>
 </section>
 <section id="what-is-a-symmetry">
-<h2>What is a Symmetry?<a class="headerlink" href="#what-is-a-symmetry" title="Link to this heading">#</a></h2>
+<span id="sec-what-is-a-symmetry"></span><h2>What is a Symmetry?<a class="headerlink" href="#what-is-a-symmetry" title="Link to this heading">#</a></h2>
 <p>We start with a <em>symmetry transformation</em>, by which we mean a transformation that preserves all quantities that one can ever measure about a system. Since it is the probabilities, rather than the states themselves, that are measurable, one is led to define a quantum symmetry transformation as a transformation of states <span class="math notranslate nohighlight">\(T\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -5250,14 +5250,14 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation*}</div><p>We’d also like to reexpress the field equations <span class="math notranslate nohighlight">\(\eqref{eq_equation_of_motion_for_fields}\)</span> in terms of the Lagrangian density. To this end, let’s first calculate the variation of <span class="math notranslate nohighlight">\(\eqref{eq_defn_lagrangian_density}\)</span> by an amount <span class="math notranslate nohighlight">\(\delta \Psi_n(t, \xbf)\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        \delta L &amp;= \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi_n}} \delta\dot{\Psi_n} \right) \\
-                &amp;= \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi_n}} \delta\dot{\Psi_n} \right)
+        \delta L &amp;= \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right) \\
+                &amp;= \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right)
 \end{align*}</div><p>It follows that</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
         \frac{\delta L}{\delta\Psi_n} &amp;= \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \\
-        \frac{\delta L}{\delta\dot{\Psi_n}} &amp;= \frac{\delta \Lscr}{\delta \dot{\Psi_n}}
-\end{align*}</div><p>Combining these with <span class="math notranslate nohighlight">\(\eqref{eq_equation_of_motion_for_fields}\)</span>, we’ve derived the so-called Euler-Lagrange equations for the Lagrangian density</p>
+        \frac{\delta L}{\delta\dot{\Psi}_n} &amp;= \frac{\delta \Lscr}{\delta \dot{\Psi}_n}
+\end{align*}</div><p>Combining these with <span class="math notranslate nohighlight">\(\eqref{eq_equation_of_motion_for_fields}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_equation_of_motion_for_fields}\)</span>, we’ve derived the so-called Euler-Lagrange equations for the Lagrangian density</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
         \frac{\delta \Lscr}{\delta \Psi_n} = \p_{\mu} \frac{\delta \Lscr}{\delta(\p_{\mu} \Psi_n)}
@@ -5350,6 +5350,80 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </details></section>
 <section id="global-symmetries">
 <h3>Global symmetries<a class="headerlink" href="#global-symmetries" title="Link to this heading">#</a></h3>
+<p>Of course, the reason for introducing the Lagrangian formalism is not to reproduce the Hamiltonians and the fields that we already knew. The main motivation is that, as we’ll see, the Lagrangian formalism provides a framework for studying symmetries. Recall from <a class="reference internal" href="#sec-what-is-a-symmetry"><span class="std std-ref">What is a Symmetry?</span></a> that a symmetry was defined to be a(n anti-)unitary transformation on the Hilbert space of states, i.e., a transformation that preserves amplitudes. Now in the Lagrangian formalism, field equations come out of the stationary action condition. Therefore in this context, we’ll redefine a symmetry as an infinitesimal variation of the fields that leaves the action invariant. As it turns out, symmetries in this sense lead to conserved currents, which are nothing but the symmetry operators considered earlier. Hence besides a slight abuse of terminology, the notion of symmetries will be consistent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Throughout this section, repeated indexes like <span class="math notranslate nohighlight">\(n\)</span>, which are used to index various fields, in an equation are not automatically summed up. On the other hand, repeated <span class="math notranslate nohighlight">\(4\)</span>-indexes like <span class="math notranslate nohighlight">\(\mu\)</span> do follow the Einstein summation convention.</p>
+</div>
+<p>Consider an infinitesimal variation</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Psi_n(x) \mapsto \Psi_n(x) + \ifrak \epsilon \Fscr_n(x)
+        \label{eq_infinitesimal_variation_of_field}
+\end{equation}</div><p>which leaves the action <span class="math notranslate nohighlight">\(I[\Psi]\)</span>  invariant</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        0 = \delta I = \ifrak \epsilon \int d^4 x~\frac{\delta I[\Psi]}{\delta \Psi_n(x)} \Fscr_n(x)
+        \label{eq_vanishing_of_action_under_infinitesimal_variation}
+\end{equation}</div><p>A few remarks are in order. First of all, if we think of <span class="math notranslate nohighlight">\(\eqref{eq_infinitesimal_variation_of_field}\)</span> as an infinitesimal (unitary) symmetry transformation, then the coefficient <span class="math notranslate nohighlight">\(\ifrak\)</span> can be justified by then intention of making <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> Hermitian. Next, although <span class="math notranslate nohighlight">\(\eqref{eq_vanishing_of_action_under_infinitesimal_variation}\)</span> <em>always</em> holds when <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span> is stationary, the infinitesimal <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> being a symmetry demands that <span class="math notranslate nohighlight">\(\eqref{eq_vanishing_of_action_under_infinitesimal_variation}\)</span> holds true for <em>any</em> <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span>. Finally, we emphasize the fact that <span class="math notranslate nohighlight">\(\epsilon\)</span> is an infinitesimal <em>constant</em>, rather than a function of <span class="math notranslate nohighlight">\(x\)</span>, is the defining property for the symmetry to be called “global”. Indeed, we’ll be dealing with symmetries that are not global in the next chapter, namely, the gauge symmetries.</p>
+<section id="from-symmetries-to-conservation-laws">
+<h4>From symmetries to conservation laws<a class="headerlink" href="#from-symmetries-to-conservation-laws" title="Link to this heading">#</a></h4>
+<p>The general principle that “symmetries imply conservation laws” is mathematically known as <a class="reference external" href="https://en.wikipedia.org/wiki/Noether%27s_theorem">Noether’s theorem</a>, but we’ll not bother with any mathematical formality here. To see how to derive conserved quantitites from an assumed symmetry, let’s change <span class="math notranslate nohighlight">\(\eqref{eq_infinitesimal_variation_of_field}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Psi_n(x) \mapsto \Psi_n(x) + \ifrak \epsilon(x) \Fscr_n(x)
+        \label{eq_functional_infinitesimal_variation_of_field}
+\end{equation}</div><p>where <span class="math notranslate nohighlight">\(\epsilon(x)\)</span> now is an infinitesimal function of <span class="math notranslate nohighlight">\(x\)</span>. Under this variation, the corresponding <span class="math notranslate nohighlight">\(\delta I\)</span> may not vanish. But it must take the following form</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \delta I = -\int d^4 x J^{\mu}(x) \p_{\mu} \epsilon(x)
+        \label{eq_variation_of_action_by_functional_deformation}
+\end{equation}</div><p>because it must vanishe when <span class="math notranslate nohighlight">\(\epsilon(x)\)</span> is constant. Here <span class="math notranslate nohighlight">\(J^{\mu}(x)\)</span> is a function(al) to be determined in individual cases, and is usually known as <em>current</em>. Now if <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span> satisfies the field equations, i.e., it’s a stationary point of the action, then <span class="math notranslate nohighlight">\(\eqref{eq_variation_of_action_by_functional_deformation}\)</span> must vanishes for any <span class="math notranslate nohighlight">\(\epsilon(x)\)</span>. Applying integration by parts (and assuming <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> vanishes at infinity), we must have</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \p_{\mu} J^{\mu}(x) = 0
+        \label{eq_general_conservation_of_current}
+\end{equation}</div><p>which is the conservation law for <span class="math notranslate nohighlight">\(J\)</span>, which then can be called a conserved current. One gets also a conserved quantity, i.e., a quantity that doesn’t change by time, by integrating <span class="math notranslate nohighlight">\(\eqref{eq_general_conservation_of_current}\)</span> over the <span class="math notranslate nohighlight">\(3\)</span>-space as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \dot{J}^0(x) = -\nabla \cdot \Jbf(x)
+                \implies \int d^3 x~\dot{J}^0(x) = -\int d^3 x~\nabla \cdot \Jbf(x) = 0
+                \implies F(t) \coloneqq \int d^3 x~J^0(x) \text{ is conserved.}
+\end{equation*}</div><p>Unfortunately, not much more can be said about the conserved current <span class="math notranslate nohighlight">\(J\)</span> at this level of generality. This is, however, not the case if one imposes stronger assumptions on the symmetry, as we now explain.</p>
+<dl>
+<dt>Lagrangian-preserving symmetry</dt><dd><p>This is the first strengthening of the symmetry assumption. Namely, instead of assuming that the variation <span class="math notranslate nohighlight">\(\eqref{eq_infinitesimal_variation_of_field}\)</span> fixes the action, we assume that it fixes the Lagrangian itself. Namely,</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \delta L = \ifrak \epsilon \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\Fscr}_n(t, \xbf) \right) = 0
+        \label{eq_stationary_lagrangian}
+\end{equation}</div><p>Now let <span class="math notranslate nohighlight">\(\epsilon(t)\)</span> be a time-dependent infinitesimal in <span class="math notranslate nohighlight">\(\eqref{eq_functional_infinitesimal_variation_of_field}\)</span>. Then we can calculate <span class="math notranslate nohighlight">\(\delta I\)</span> under such variation as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \delta I &amp;= \ifrak \int dt \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \epsilon(t) \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \frac{d}{dt} \big( \epsilon(t) \Fscr_n(t, \xbf) \big) \right) \\
+                &amp;= \ifrak \int dt \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\epsilon}(t) \Fscr_n(t, \xbf)
+\end{align*}</div><p>Comparing with <span class="math notranslate nohighlight">\(\eqref{eq_variation_of_action_by_functional_deformation}\)</span>, we can derive an explicit formula for the conserved quantity as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        F(t) = -\ifrak \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \Fscr_n(t, \xbf)
+\end{equation*}</div><p>Indeed, one can verify directly that <span class="math notranslate nohighlight">\(\dot{F}(t) = 0\)</span> using <span class="math notranslate nohighlight">\(\eqref{eq_stationary_lagrangian}\)</span> together with the field equations <span class="math notranslate nohighlight">\(\eqref{eq_general_lagrangian_conjugate_pi}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_equation_of_motion_for_fields}\)</span>.</p>
+</dd>
+<dt>Lagrangian-density-preserving symmetry</dt><dd><p>Taking the previous assumption further, let’s impose the even stronger condition that the Lagrangian density is invariant under <span class="math notranslate nohighlight">\(\eqref{eq_infinitesimal_variation_of_field}\)</span>. It means that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \delta \Lscr = \ifrak \epsilon \left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \Fscr_n(x) \right) = 0
+        \label{eq_stationary_lagrangian_density}
+\end{equation}</div><p>Now under <span class="math notranslate nohighlight">\(\eqref{eq_functional_infinitesimal_variation_of_field}\)</span>, we can calculate the variation of the action as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \delta I &amp;= \ifrak \int d^4 x~\left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \epsilon(x) \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \big( \epsilon(x) \Fscr_n(x) \big) \right) \\
+                &amp;= \ifrak \int d^4 x~\frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x) \p_{\mu}\epsilon(x)
+\end{align*}</div><p>Comparing with <span class="math notranslate nohighlight">\(\eqref{eq_variation_of_action_by_functional_deformation}\)</span> as before, we can derive an explicit formula for the conserved current as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        J^{\mu}(x) = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x)
+\end{equation*}</div><p>Once again, one can directly verify that <span class="math notranslate nohighlight">\(\p_{\mu} J^{\mu}(x) = 0\)</span> using <span class="math notranslate nohighlight">\(\eqref{eq_stationary_lagrangian_density}\)</span> together with the Euler-Lagrange equation <span class="math notranslate nohighlight">\(\eqref{eq_euler_lagrange}\)</span>.</p>
+</dd>
+</dl>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
@@ -5405,6 +5479,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <p>It’s stated in <a class="reference internal" href="../bib.html#wei95" id="id50"><span>[Wei95]</span></a> page 271 and afterwards that it’s the full S-matrices that are calculated. However, it seems that only the connected part of the S-matrices are calculated.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 </section>
@@ -5549,7 +5624,10 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-lagrangian-formalism">The Lagrangian formalism</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-symmetries">Global symmetries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-symmetries">Global symmetries</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-symmetries-to-conservation-laws">From symmetries to conservation laws</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

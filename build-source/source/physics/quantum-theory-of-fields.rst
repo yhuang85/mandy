@@ -38,6 +38,8 @@ In fact, we don't really care about the states themselves either, because they a
 
 In particular, the probability of finding any state in itself is one, due to the normalization above.
 
+.. _sec_what_is_a_symmetry:
+
 What is a Symmetry?
 -------------------
 
@@ -8543,8 +8545,8 @@ We'd also like to reexpress the field equations :math:`\eqref{eq_equation_of_mot
 	:nowrap:
 
 	\begin{align*}
-		\delta L &= \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi_n}} \delta\dot{\Psi_n} \right) \\
-			&= \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi_n}} \delta\dot{\Psi_n} \right)
+		\delta L &= \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right) \\
+			&= \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right)
 	\end{align*}
 
 It follows that
@@ -8554,10 +8556,10 @@ It follows that
 
 	\begin{align*}
 		\frac{\delta L}{\delta\Psi_n} &= \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \\
-		\frac{\delta L}{\delta\dot{\Psi_n}} &= \frac{\delta \Lscr}{\delta \dot{\Psi_n}}
+		\frac{\delta L}{\delta\dot{\Psi}_n} &= \frac{\delta \Lscr}{\delta \dot{\Psi}_n}
 	\end{align*}
 
-Combining these with :math:`\eqref{eq_equation_of_motion_for_fields}`, we've derived the so-called Euler-Lagrange equations for the Lagrangian density
+Combining these with :math:`\eqref{eq_equation_of_motion_for_fields}` and :math:`\eqref{eq_equation_of_motion_for_fields}`, we've derived the so-called Euler-Lagrange equations for the Lagrangian density
 
 .. math::
 	:nowrap:
@@ -8728,6 +8730,144 @@ and hence the Hamiltonian takes the following form
 
 Global symmetries
 ^^^^^^^^^^^^^^^^^
+
+Of course, the reason for introducing the Lagrangian formalism is not to reproduce the Hamiltonians and the fields that we already knew. The main motivation is that, as we'll see, the Lagrangian formalism provides a framework for studying symmetries. Recall from :ref:`sec_what_is_a_symmetry` that a symmetry was defined to be a(n anti-)unitary transformation on the Hilbert space of states, i.e., a transformation that preserves amplitudes. Now in the Lagrangian formalism, field equations come out of the stationary action condition. Therefore in this context, we'll redefine a symmetry as an infinitesimal variation of the fields that leaves the action invariant. As it turns out, symmetries in this sense lead to conserved currents, which are nothing but the symmetry operators considered earlier. Hence besides a slight abuse of terminology, the notion of symmetries will be consistent.
+
+.. note::
+	Throughout this section, repeated indexes like :math:`n`, which are used to index various fields, in an equation are not automatically summed up. On the other hand, repeated :math:`4`-indexes like :math:`\mu` do follow the Einstein summation convention.
+
+Consider an infinitesimal variation
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Psi_n(x) \mapsto \Psi_n(x) + \ifrak \epsilon \Fscr_n(x)
+		\label{eq_infinitesimal_variation_of_field}
+	\end{equation}
+
+which leaves the action :math:`I[\Psi]`  invariant
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		0 = \delta I = \ifrak \epsilon \int d^4 x~\frac{\delta I[\Psi]}{\delta \Psi_n(x)} \Fscr_n(x)
+		\label{eq_vanishing_of_action_under_infinitesimal_variation}
+	\end{equation}
+
+A few remarks are in order. First of all, if we think of :math:`\eqref{eq_infinitesimal_variation_of_field}` as an infinitesimal (unitary) symmetry transformation, then the coefficient :math:`\ifrak` can be justified by then intention of making :math:`\Fscr_n(x)` Hermitian. Next, although :math:`\eqref{eq_vanishing_of_action_under_infinitesimal_variation}` *always* holds when :math:`\Psi_n(x)` is stationary, the infinitesimal :math:`\Fscr_n(x)` being a symmetry demands that :math:`\eqref{eq_vanishing_of_action_under_infinitesimal_variation}` holds true for *any* :math:`\Psi_n(x)`. Finally, we emphasize the fact that :math:`\epsilon` is an infinitesimal *constant*, rather than a function of :math:`x`, is the defining property for the symmetry to be called "global". Indeed, we'll be dealing with symmetries that are not global in the next chapter, namely, the gauge symmetries.
+
+From symmetries to conservation laws
+++++++++++++++++++++++++++++++++++++
+
+The general principle that "symmetries imply conservation laws" is mathematically known as `Noether's theorem <https://en.wikipedia.org/wiki/Noether%27s_theorem>`__, but we'll not bother with any mathematical formality here. To see how to derive conserved quantitites from an assumed symmetry, let's change :math:`\eqref{eq_infinitesimal_variation_of_field}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Psi_n(x) \mapsto \Psi_n(x) + \ifrak \epsilon(x) \Fscr_n(x)
+		\label{eq_functional_infinitesimal_variation_of_field}
+	\end{equation}
+
+where :math:`\epsilon(x)` now is an infinitesimal function of :math:`x`. Under this variation, the corresponding :math:`\delta I` may not vanish. But it must take the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\delta I = -\int d^4 x J^{\mu}(x) \p_{\mu} \epsilon(x)
+		\label{eq_variation_of_action_by_functional_deformation}
+	\end{equation}
+
+because it must vanishe when :math:`\epsilon(x)` is constant. Here :math:`J^{\mu}(x)` is a function(al) to be determined in individual cases, and is usually known as *current*. Now if :math:`\Psi_n(x)` satisfies the field equations, i.e., it's a stationary point of the action, then :math:`\eqref{eq_variation_of_action_by_functional_deformation}` must vanishes for any :math:`\epsilon(x)`. Applying integration by parts (and assuming :math:`\Fscr_n(x)` vanishes at infinity), we must have
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\p_{\mu} J^{\mu}(x) = 0
+		\label{eq_general_conservation_of_current}
+	\end{equation}
+
+which is the conservation law for :math:`J`, which then can be called a conserved current. One gets also a conserved quantity, i.e., a quantity that doesn't change by time, by integrating :math:`\eqref{eq_general_conservation_of_current}` over the :math:`3`-space as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\dot{J}^0(x) = -\nabla \cdot \Jbf(x)
+			\implies \int d^3 x~\dot{J}^0(x) = -\int d^3 x~\nabla \cdot \Jbf(x) = 0
+			\implies F(t) \coloneqq \int d^3 x~J^0(x) \text{ is conserved.}
+	\end{equation*}
+
+Unfortunately, not much more can be said about the conserved current :math:`J` at this level of generality. This is, however, not the case if one imposes stronger assumptions on the symmetry, as we now explain.
+
+Lagrangian-preserving symmetry
+	This is the first strengthening of the symmetry assumption. Namely, instead of assuming that the variation :math:`\eqref{eq_infinitesimal_variation_of_field}` fixes the action, we assume that it fixes the Lagrangian itself. Namely,
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\delta L = \ifrak \epsilon \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\Fscr}_n(t, \xbf) \right) = 0
+			\label{eq_stationary_lagrangian}
+		\end{equation}
+
+	Now let :math:`\epsilon(t)` be a time-dependent infinitesimal in :math:`\eqref{eq_functional_infinitesimal_variation_of_field}`. Then we can calculate :math:`\delta I` under such variation as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\delta I &= \ifrak \int dt \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \epsilon(t) \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \frac{d}{dt} \big( \epsilon(t) \Fscr_n(t, \xbf) \big) \right) \\
+				&= \ifrak \int dt \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\epsilon}(t) \Fscr_n(t, \xbf)
+		\end{align*}
+
+	Comparing with :math:`\eqref{eq_variation_of_action_by_functional_deformation}`, we can derive an explicit formula for the conserved quantity as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			F(t) = -\ifrak \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \Fscr_n(t, \xbf)
+		\end{equation*}
+
+	Indeed, one can verify directly that :math:`\dot{F}(t) = 0` using :math:`\eqref{eq_stationary_lagrangian}` together with the field equations :math:`\eqref{eq_general_lagrangian_conjugate_pi}` and :math:`\eqref{eq_equation_of_motion_for_fields}`.
+
+Lagrangian-density-preserving symmetry
+	Taking the previous assumption further, let's impose the even stronger condition that the Lagrangian density is invariant under :math:`\eqref{eq_infinitesimal_variation_of_field}`. It means that
+
+	.. math::
+		:nowrap:
+
+		\begin{equation}
+			\delta \Lscr = \ifrak \epsilon \left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \Fscr_n(x) \right) = 0
+			\label{eq_stationary_lagrangian_density}
+		\end{equation}
+
+	Now under :math:`\eqref{eq_functional_infinitesimal_variation_of_field}`, we can calculate the variation of the action as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{align*}
+			\delta I &= \ifrak \int d^4 x~\left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \epsilon(x) \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \big( \epsilon(x) \Fscr_n(x) \big) \right) \\
+				&= \ifrak \int d^4 x~\frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x) \p_{\mu}\epsilon(x)
+		\end{align*}
+
+	Comparing with :math:`\eqref{eq_variation_of_action_by_functional_deformation}` as before, we can derive an explicit formula for the conserved current as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			J^{\mu}(x) = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x)
+		\end{equation*}
+
+	Once again, one can directly verify that :math:`\p_{\mu} J^{\mu}(x) = 0` using :math:`\eqref{eq_stationary_lagrangian_density}` together with the Euler-Lagrange equation :math:`\eqref{eq_euler_lagrange}`.
+
 
 
 .. rubric:: Footnotes
