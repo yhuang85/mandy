@@ -8422,6 +8422,8 @@ As a concrete example, let's consider again the real scalar field, where :math:`
 
 It should be noted that expressing :math:`p` in terms of :math:`q` and :math:`\dot{q}` isn't always easy. Indeed, it's far from obvious how the :math:`p_i` defined by :math:`\eqref{eq_defn_p_vector_field_self_dual}` could be expressed in the corresponding :math:`q_i` and :math:`\dot{q}_i`. (Un)Fortunately, we'd never really need to do so -- writing down a Lagrangian turns out to be mostly a guess work.
 
+.. _sec_hamiltonian_and_lagrangian_for_interacting_fields:
+
 Hamiltonian and Lagrangian for interacting fields
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -8430,10 +8432,12 @@ Let :math:`H` be the full Hamiltonian. Then the Heisenberg picture canonical var
 .. math::
 	:nowrap:
 
-	\begin{align*}
-		Q_n(t, \xbf) &\coloneqq e^{\ifrak Ht} q_n(0, \xbf) e^{-\ifrak Ht} \\
+	\begin{align}
+		Q_n(t, \xbf) &\coloneqq e^{\ifrak Ht} q_n(0, \xbf) e^{-\ifrak Ht}
+		\label{eq_defn_heisenberg_canonical_q} \\
 		P_n(t, \xbf) &\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}
-	\end{align*}
+		\nonumber
+	\end{align}
 
 Then obviously these canonical variables also satisfy the canonical (anti-)commutation relations
 
@@ -8511,10 +8515,10 @@ The infinitesimal variation of :math:`I[\Psi]` is given by
 	:nowrap:
 
 	\begin{align*}
-		\delta I[\Psi] &= \int_{-\infty}^{\infty} dt \int d^3 x \left(
+		\delta I[\Psi] &= \sum_n \int_{-\infty}^{\infty} dt \int d^3 x \left(
 				\frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \Psi_n(t, \xbf)} \delta \Psi_n(t, \xbf) +
 				\frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \dot{\Psi}_n(t, \xbf)} \delta \dot{\Psi}_n(t, \xbf) \right) \\
-			&= \int_{-\infty}^{\infty} dt \int d^3 x \left(
+			&= \sum_n \int_{-\infty}^{\infty} dt \int d^3 x \left(
 				\frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \Psi(t, \xbf)} - \frac{d}{dt} \frac{\delta L[\Psi(t), \dot{\Psi}(t)]}{\delta \dot{\Psi}_n(t, \xbf)} \right) \delta \Psi_n(t, \xbf)
 	\end{align*}
 
@@ -8545,8 +8549,8 @@ We'd also like to reexpress the field equations :math:`\eqref{eq_equation_of_mot
 	:nowrap:
 
 	\begin{align*}
-		\delta L &= \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right) \\
-			&= \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right)
+		\delta L &= \sum_n \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right) \\
+			&= \sum_n \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right)
 	\end{align*}
 
 It follows that
@@ -8610,9 +8614,10 @@ But instead of dealing with vector fields further, we'll turn back to the genera
 .. math::
 	:nowrap:
 
-	\begin{equation*}
+	\begin{equation}
 		L[Q(t), \dot{Q}(t), C(t)]
-	\end{equation*}
+		\label{eq_general_quantum_lagrangian}
+	\end{equation}
 
 where each :math:`Q_n(t)` has a corresponding :math:`\dot{Q}_n(t)`, but not for :math:`C(t)`. It follows that one can define the canonical conjugates by
 
@@ -8742,7 +8747,7 @@ Consider an infinitesimal variation
 	:nowrap:
 
 	\begin{equation}
-		\Psi_n(x) \mapsto \Psi_n(x) + \ifrak \epsilon \Fscr_n(x)
+		\Psi_n(x) \to \Psi_n(x) + \ifrak \epsilon \Fscr_n(x)
 		\label{eq_infinitesimal_variation_of_field}
 	\end{equation}
 
@@ -8752,7 +8757,7 @@ which leaves the action :math:`I[\Psi]`  invariant
 	:nowrap:
 
 	\begin{equation}
-		0 = \delta I = \ifrak \epsilon \int d^4 x~\frac{\delta I[\Psi]}{\delta \Psi_n(x)} \Fscr_n(x)
+		0 = \delta I = \ifrak \epsilon \sum_n \int d^4 x~\frac{\delta I[\Psi]}{\delta \Psi_n(x)} \Fscr_n(x)
 		\label{eq_vanishing_of_action_under_infinitesimal_variation}
 	\end{equation}
 
@@ -8767,7 +8772,7 @@ The general principle that "symmetries imply conservation laws" is mathematicall
 	:nowrap:
 
 	\begin{equation}
-		\Psi_n(x) \mapsto \Psi_n(x) + \ifrak \epsilon(x) \Fscr_n(x)
+		\Psi_n(x) \to \Psi_n(x) + \ifrak \epsilon(x) \Fscr_n(x)
 		\label{eq_functional_infinitesimal_variation_of_field}
 	\end{equation}
 
@@ -8799,7 +8804,7 @@ which is the conservation law for :math:`J`, which then can be called a conserve
 	\begin{equation*}
 		\dot{J}^0(x) = -\nabla \cdot \Jbf(x)
 			\implies \int d^3 x~\dot{J}^0(x) = -\int d^3 x~\nabla \cdot \Jbf(x) = 0
-			\implies F(t) \coloneqq \int d^3 x~J^0(x) \text{ is conserved.}
+			\implies F \coloneqq \int d^3 x~J^0(x) \text{ is conserved.}
 	\end{equation*}
 
 Unfortunately, not much more can be said about the conserved current :math:`J` at this level of generality. This is, however, not the case if one imposes stronger assumptions on the symmetry, as we now explain.
@@ -8811,7 +8816,7 @@ Lagrangian-preserving symmetry
 		:nowrap:
 
 		\begin{equation}
-			\delta L = \ifrak \epsilon \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\Fscr}_n(t, \xbf) \right) = 0
+			\delta L = \ifrak \epsilon \sum_n \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\Fscr}_n(t, \xbf) \right) = 0
 			\label{eq_stationary_lagrangian}
 		\end{equation}
 
@@ -8821,8 +8826,8 @@ Lagrangian-preserving symmetry
 		:nowrap:
 
 		\begin{align*}
-			\delta I &= \ifrak \int dt \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \epsilon(t) \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \frac{d}{dt} \big( \epsilon(t) \Fscr_n(t, \xbf) \big) \right) \\
-				&= \ifrak \int dt \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\epsilon}(t) \Fscr_n(t, \xbf)
+			\delta I &= \ifrak \sum_n \int dt \int d^3 x \left( \frac{\delta L}{\delta \Psi_n(t, \xbf)} \epsilon(t) \Fscr_n(t, \xbf) + \frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \frac{d}{dt} \big( \epsilon(t) \Fscr_n(t, \xbf) \big) \right) \\
+				&= \ifrak \sum_n \int dt \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \dot{\epsilon}(t) \Fscr_n(t, \xbf)
 		\end{align*}
 
 	Comparing with :math:`\eqref{eq_variation_of_action_by_functional_deformation}`, we can derive an explicit formula for the conserved quantity as follows
@@ -8830,9 +8835,10 @@ Lagrangian-preserving symmetry
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
-			F(t) = -\ifrak \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \Fscr_n(t, \xbf)
-		\end{equation*}
+		\begin{equation}
+			F = -\ifrak \sum_n \int d^3 x~\frac{\delta L}{\delta \dot{\Psi}_n(t, \xbf)} \Fscr_n(t, \xbf)
+			\label{eq_lagrangian_preserving_symmetry_conserved_quantity}
+		\end{equation}
 
 	Indeed, one can verify directly that :math:`\dot{F}(t) = 0` using :math:`\eqref{eq_stationary_lagrangian}` together with the field equations :math:`\eqref{eq_general_lagrangian_conjugate_pi}` and :math:`\eqref{eq_equation_of_motion_for_fields}`.
 
@@ -8843,7 +8849,7 @@ Lagrangian-density-preserving symmetry
 		:nowrap:
 
 		\begin{equation}
-			\delta \Lscr = \ifrak \epsilon \left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \Fscr_n(x) \right) = 0
+			\delta \Lscr = \ifrak \epsilon \sum_n \left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \Fscr_n(x) \right) = 0
 			\label{eq_stationary_lagrangian_density}
 		\end{equation}
 
@@ -8853,8 +8859,8 @@ Lagrangian-density-preserving symmetry
 		:nowrap:
 
 		\begin{align*}
-			\delta I &= \ifrak \int d^4 x~\left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \epsilon(x) \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \big( \epsilon(x) \Fscr_n(x) \big) \right) \\
-				&= \ifrak \int d^4 x~\frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x) \p_{\mu}\epsilon(x)
+			\delta I &= \ifrak \sum_n \int d^4 x~\left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \epsilon(x) \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \big( \epsilon(x) \Fscr_n(x) \big) \right) \\
+				&= \ifrak \sum_n \int d^4 x~\frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x) \p_{\mu}\epsilon(x)
 		\end{align*}
 
 	Comparing with :math:`\eqref{eq_variation_of_action_by_functional_deformation}` as before, we can derive an explicit formula for the conserved current as follows
@@ -8862,12 +8868,246 @@ Lagrangian-density-preserving symmetry
 	.. math::
 		:nowrap:
 
-		\begin{equation*}
-			J^{\mu}(x) = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x)
-		\end{equation*}
+		\begin{equation}
+			J^{\mu}(x) = -\ifrak \sum_n \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x)
+			\label{eq_lagrangian_density_preserving_symmetry_conserved_density}
+		\end{equation}
 
 	Once again, one can directly verify that :math:`\p_{\mu} J^{\mu}(x) = 0` using :math:`\eqref{eq_stationary_lagrangian_density}` together with the Euler-Lagrange equation :math:`\eqref{eq_euler_lagrange}`.
 
+So far everything has been completely classical. To make it a quantum theory, we'll involve the canonical fields introduced in :ref:`sec_hamiltonian_and_lagrangian_for_interacting_fields`. More precisely, instead of any :math:`\Fscr_n(t, \xbf)`, we'll suppose that it takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Fscr_n(Q(t), \xbf)
+	\end{equation*}
+
+where :math:`Q(t)` is defined by :math:`\eqref{eq_defn_heisenberg_canonical_q}`. Next, recall from :math:`\eqref{eq_general_quantum_lagrangian}` that the field :math:`\Psi_n` is either a :math:`Q_n`, in which case :math:`\delta L / \delta \dot{Q}_n = P_n`, or a :math:`C_n`, in which case the functional derivative vaninshes.
+
+Now in the case of a Lagrangian-preserving symmetry, the conserved quantity :math:`\eqref{eq_lagrangian_preserving_symmetry_conserved_quantity}` takes the following form
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		F = -\ifrak \sum_n \int d^3 x~P_n(t, \xbf) \Fscr_n(Q(t), \xbf)
+		\label{eq_lagrangian_preserving_symmetry_generator_formula}
+	\end{equation}
+
+which of course is time-independent. Moreover, one can show that :math:`F` in fact generates the quantum symmetry in the following sense
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\left[ F, Q_n(t, \xbf) \right] = -\ifrak \sum_m \int d^3 y~\left[ P_m(t, \ybf), Q_n(t, \xbf) \right] \Fscr_m(Q(t), \ybf) = -\Fscr_n(Q(t), \xbf)
+		\label{eq_lagrangian_preserving_symmetry_generator}
+	\end{equation}
+
+where we've taken advantage of the time-independency of :math:`F` to arrange the same-time commutator.
+
+Spacetime translations
+++++++++++++++++++++++
+
+So far the symmetries have been rather abstract, to make it more explicit, and also to get warmed up for the general case, let's assume the Lagrangian is invariant under the (spacetime) translation transformation given as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Psi_n(x) \to \Psi_n(x + \epsilon) = \Psi_n(x) + \epsilon^{\mu} \p_{\mu} \Psi_n(x)
+	\end{equation*}
+
+Comparing with :math:`\eqref{eq_infinitesimal_variation_of_field}` we see that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Fscr_{\mu} = -\ifrak \p_{\mu} \Psi_n
+	\end{equation*}
+
+It follows from :math:`\eqref{eq_variation_of_action_by_functional_deformation}` and :math:`\eqref{eq_general_conservation_of_current}` that there exists a conserved :math:`4`-current :math:`T^{\mu}_{\nu}`, which is known as the `energy-momentum tensor <https://en.wikipedia.org/wiki/Stress%E2%80%93energy_tensor>`__, such that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\p_{\mu} T^{\mu}_{\nu} = 0
+	\end{equation*}
+
+The corresponding conserved currents then take the form
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		P_{\nu} \coloneqq \int d^3 x~T^0_{\nu}
+	\end{equation*}
+
+such that :math:`\dot{P}_{\nu} = 0`. Here it's important to not confuse :math:`P_{\nu}` with a canonical variable -- it's just a conserved quantity which turns out to be the :math:`4`-momentum.
+
+Now recall from :math:`\eqref{eq_defn_lagrangian_density}` that the Lagrangian is usually the spatial integral of a density functional. Hence it's not unreasonable to suppose that the Lagrangian is indeed invariant under spatial translations. Under this assumption, we can rewrite :math:`\eqref{eq_lagrangian_preserving_symmetry_generator_formula}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation}
+		\Pbf \coloneqq -\sum_n \int d^3 x~P_n(t, \xbf) \nabla Q_n(t, \xbf)
+		\label{eq_spatial_translation_conserved_quantity}
+	\end{equation}
+
+with the understanding that :math:`\Psi_n = Q_n`.
+
+To verify that :math:`\Pbf` indeed generates spatial translations, let's calculate using the fact that :math:`\Pbf` is time-independent as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ \Pbf, Q_n(t, \xbf) \right] &= \ifrak \nabla Q_n(t, \xbf) \\
+		\left[ \Pbf, P_n(t, \xbf) \right] &= \ifrak \nabla P_n(t, \xbf)
+	\end{align*}
+
+It follows that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left[ \Pbf, \Gscr(Q, P) \right] = \ifrak \nabla \Gscr(Q, P)
+	\end{equation*}
+
+for any functional :math:`\Gscr` of the canonical variables. This verifies that :math:`\Pbf` indeed generates the spatial translation.
+
+In contrast, one cannot hope that the Lagrangian to be invariant under time translation, if there should be any interaction. But we already know the operator that generates time translation, namely, the Hamiltonian. In other words, we have :math:`P_0 = H`.
+
+In general, the Lagrangian density is not invariant under spacetime translations. However, it turns out that the conserved current, which in this case is :math:`T^{\mu}_{\nu}`, can nonetheless be calculated. To spell out the details, let's consider the following variation
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\Psi_n(x) \to \Psi_n(x + \epsilon(x)) = \Psi_n(x) + \epsilon^{\mu}(x) \p_{\mu} \Psi_n(x)
+	\end{equation*}
+
+The corresponding variation of the action is given as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\delta I[\Psi] &= \sum_n \int d^4 x \left( \frac{\delta \Lscr}{\delta \Psi_n} \epsilon^{\mu} \p_{\mu} \Psi_n + \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\nu}(\epsilon^{\mu} \p_{\mu} \Psi_n) \right) \\
+			&= \int d^4 x \left( \epsilon^{\mu} \p_{\mu} \Lscr + \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu}\Psi_n \p_{\nu} \epsilon^{\mu} \right) \\
+			&= -\int d^4 x \left( \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n \right) \p_{\nu} \epsilon^{\mu}
+	\end{align*}
+
+where we've used the chain rule for derivatives in the second equality, and integration by parts in the third. Comparing with :math:`\eqref{eq_variation_of_action_by_functional_deformation}`, we see that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		T^{\nu}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
+	\end{equation*}
+
+Indeed, this calculation recovers :math:`\eqref{eq_spatial_translation_conserved_quantity}` by letting :math:`\nu = 0` and :math:`\mu \neq 0`. Moreover, it recovers the Hamiltonian by letting :math:`\mu = \nu = 0` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		H = -P_0 = \int d^3 x \left( \sum_n P_n \dot{Q}_n - \Lscr \right)
+	\end{equation*}
+
+
+Linear transformations
+++++++++++++++++++++++
+
+As another example, let's consider linear variations as follows
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		Q_n(x) &\to Q_n(x) + \ifrak \epsilon^a (t_a)_n^m Q^m(x) \\
+		C_r(x) &\to C_r(x) + \ifrak \epsilon^a (\tau_a)_r^s C_s(x)
+	\end{align*}
+
+where we've adopted the Einstein summation convention for repeated upper and lower indexes because it'd otherwise be too tedious to write out the summations. Here :math:`(t_{\square})^{\square}_{\square}` should furnish a representation of the Lie algebra of the symmetry group.
+
+As before, the invariance of action under such variations implies the existstence of conserved currents :math:`J_a^{\mu}` such that
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\p_{\mu} J_a^{\mu} = 0
+	\end{equation*}
+
+as well as the conserved quantity
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		T_a \coloneqq \int d^3 x~J^0_a
+	\end{equation*}
+
+If, in addition, the Lagrangian is invariant under such variations, then :math:`T_a` takes the following form by :math:`\eqref{eq_lagrangian_preserving_symmetry_generator_formula}`
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		T_a = -\ifrak \int d^3 x~P_n(t, \xbf) (t_a)^n_m Q^m(t, \xbf)
+	\end{equation*}
+
+It follows that
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ T_a, Q^n(x) \right] &= -(t_a)^n_m Q^m(x) \\
+		\left[ T_a, P_n(x) \right] &= (t_a)^m_n P_m(x)
+	\end{align*}
+
+In particular, when :math:`t_a` is diagonal (e.g., in electrodynamics), the operators :math:`Q^n` and :math:`P_n` may be regarded as raising/lowering operators. In fact, we claim that :math:`T_a` form a Lie algebra by the following calculation
+
+.. math::
+	:nowrap:
+
+	\begin{align*}
+		\left[ T_a, T_b \right] &= -\left[ \int d^3 x~P_n(t, \xbf) (t_a)^n_m Q^m(t, \xbf), \int d^3 y~P_r(t, \ybf) (t_b)^r_s Q^s(t, \ybf) \right] \\
+			&= -\int d^3 x~d^3 y~(t_a)^n_m (t_b)^r_s \left[ P_n(t, \xbf) Q^m(t, \xbf), P_r(t, \ybf) Q^s(t, \ybf) \right] \\
+			&= -\int d^3 x~d^3 y~(t_a)^n_m (t_b)^r_s \Big( P_n(t, \xbf) \left[ Q^m(t, \xbf), P_r(t, \ybf) \right] Q^s(t, \ybf) - P_r(t, \ybf) \left[ Q^s(t, \ybf), P_n(t, \xbf) \right] Q^m(t, \xbf) \Big) \\
+			&= -\ifrak \int d^3 x \Big( (t_a)^n_m (t_b)^m_s P_n(t, \xbf) Q^s(t, \xbf) - (t_a)^n_m (t_b)^r_n P_r(t, \xbf) Q^m(t, \xbf) \Big) \\
+			&= \ifrak \int d^3 x~\left[ t_a, t_b \right]^n_m P_n(t, \xbf) Q^m(t, \xbf)
+	\end{align*}
+
+Now if :math:`t_a` form a Lie algebra with structure constants :math:`f^c_{ab}` as follows
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left[ t_a, t_b \right] = \ifrak f^c_{ab} t_c
+	\end{equation*}
+
+then
+
+.. math::
+	:nowrap:
+
+	\begin{equation*}
+		\left[ T_a, T_b \right] = \ifrak f^c_{ab} T_c
+	\end{equation*}
+
+
+If, in addition, the Lagrangian density is also invariant, then
 
 
 .. rubric:: Footnotes
