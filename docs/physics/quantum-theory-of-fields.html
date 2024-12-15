@@ -641,11 +641,14 @@ U(T(\eta) T(\theta)) &amp;= U \left( 1 + \eta + \theta + f_{ab} \eta^a \theta^b 
         \label{eq_expansion_of_Lambda}
 \end{equation}</div><p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the Kronecker delta, and <em>not</em> a tensor. It follows from <span class="math notranslate nohighlight">\(\eta^{\mu \nu} = \eta^{\rho \kappa} \Lambda^{\mu}_{\rho} \Lambda^{\nu}_{\kappa}\)</span> that</p>
 <div class="math notranslate nohighlight">
-\begin{align*}
-        \eta^{\mu \nu} &amp;= \eta^{\rho \kappa} (\delta_{\rho}^{\mu} + \omega_{\rho}^{\mu} + \cdots) (\delta_{\kappa}^{\nu} + \omega_{\kappa}^{\nu} + \cdots) \\
-                &amp;= \eta^{\mu \nu} + \eta^{\mu \kappa} \omega^{\nu}_{\kappa} + \eta^{\rho \nu} \omega^{\mu}_{\rho} + \cdots \\
+\begin{align}
+        \eta^{\mu \nu} &amp;= \eta^{\rho \kappa} (\delta_{\rho}^{\mu} + \omega_{\rho}^{\mu} + \cdots) (\delta_{\kappa}^{\nu} + \omega_{\kappa}^{\nu} + \cdots)
+                \label{eq_lorentz_lie_algebra_is_antisymmetric} \\
+                &amp;= \eta^{\mu \nu} + \eta^{\mu \kappa} \omega^{\nu}_{\kappa} + \eta^{\rho \nu} \omega^{\mu}_{\rho} + \cdots
+                \nonumber \\
                 &amp;= \eta^{\mu \nu} + \omega^{\mu \nu} + \omega^{\nu \mu} + \cdots
-\end{align*}</div><p>Comparing the first order terms shows that <span class="math notranslate nohighlight">\(\omega^{\mu \nu} = -\omega^{\nu \mu}\)</span> is anti-symmetric. It is therefore more convenient to use <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span>, rather than <span class="math notranslate nohighlight">\(\omega_{\mu}^{\nu}\)</span>, as the infinitesimal parameters in the expansion of <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
+                \nonumber
+\end{align}</div><p>Comparing the first order terms shows that <span class="math notranslate nohighlight">\(\omega^{\mu \nu} = -\omega^{\nu \mu}\)</span> is anti-symmetric. It is therefore more convenient to use <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span>, rather than <span class="math notranslate nohighlight">\(\omega_{\mu}^{\nu}\)</span>, as the infinitesimal parameters in the expansion of <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A count of free parameters shows that the inhomogeneous Lorentz symmetry has <span class="math notranslate nohighlight">\(10\)</span> degrees of freedom, <span class="math notranslate nohighlight">\(4\)</span> of which come from the translation, and the rest <span class="math notranslate nohighlight">\(6\)</span> come from the rank-<span class="math notranslate nohighlight">\(2\)</span> anti-symmetric tensor <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
@@ -705,16 +708,25 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation}</div><p>Now that we have all the commutator relations, let’s reorganize <span class="math notranslate nohighlight">\(\eqref{eq_bracket_p4_p4}, \eqref{eq_bracket_p4_j4}, \eqref{eq_bracket_j4_j4}\)</span> in terms of <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{alignat}{2}
-        \text{let } \mu = 0, \nu = i \text{ in \eqref{eq_bracket_p4_p4}} &amp;\implies [H, P_i] &amp;&amp;= 0  \label{eq_hp_commute} \\
-        \text{let } \mu = 0, \rho = j, \kappa = k \text{ in \eqref{eq_bracket_p4_j4}} &amp;\implies [H, J_i] &amp;&amp;= 0  \label{eq_hj_commute} \\
-        \text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} &amp;\implies [H, K_i] &amp;&amp;= \ifrak P_i  \label{eq_hkp_commutation} \\
-        \text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} &amp;\implies [P_i, P_j] &amp;&amp;= 0  \label{eq_pp_commute} \\
-        \text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} &amp;\implies [P_i, J_j] &amp;&amp;= -\ifrak \epsilon_{ijk} P_k  \nonumber \\
+        \text{let } \mu = 0, \nu = i \text{ in \eqref{eq_bracket_p4_p4}} &amp;\implies [H, P_i] &amp;&amp;= 0
+        \label{eq_hp_commute} \\
+        \text{let } \mu = 0, \rho = j, \kappa = k \text{ in \eqref{eq_bracket_p4_j4}} &amp;\implies [H, J_i] &amp;&amp;= 0
+        \label{eq_hj_commute} \\
+        \text{let } \mu = 0, \rho = 0, \kappa = i \text{ in \eqref{eq_bracket_p4_j4}} &amp;\implies [H, K_i] &amp;&amp;= \ifrak P_i
+        \label{eq_hkp_commutation} \\
+        \text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} &amp;\implies [P_i, P_j] &amp;&amp;= 0
+        \label{eq_pp_commute} \\
+        \text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} &amp;\implies [P_i, J_j] &amp;&amp;= -\ifrak \epsilon_{ijk} P_k  \label{eq_pjp_commutation} \\
         \text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} &amp;\implies [P_i, K_j] &amp;&amp;= \ifrak \delta_{ij} H  \label{eq_pkh_commutation} \\
         \text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &amp;\implies [J_i, J_j] &amp;&amp;= \ifrak \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
         \text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &amp;\implies [J_i, K_j] &amp;&amp;= \ifrak \epsilon_{ijk} K_k  \label{eq_jkk_commutation} \\
-        \text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &amp;\implies [K_i, K_j] &amp;&amp;= -\ifrak \epsilon_{ijk} J_k  \label{eq_kkj_commutation}
+        \text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &amp;\implies [K_i, K_j] &amp;&amp;= -\ifrak \epsilon_{ijk} J_k
+        \label{eq_kkj_commutation}
 \end{alignat}</div><p>where <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> is totally anti-symmetric with respect to permutations of indexes and satisfies <span class="math notranslate nohighlight">\(\epsilon_{123} = 1\)</span>. <a class="footnote-reference brackets" href="#tedious-calc-of-commutations" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Lie algebra generated by <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> with commutation relations <span class="math notranslate nohighlight">\(\eqref{eq_hp_commute}\)</span> – <span class="math notranslate nohighlight">\(\eqref{eq_kkj_commutation}\)</span> is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9_group">Poincaré algebra</a>.</p>
+</div>
 <p>Since the time evolution of a physical system is dictated by the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span>, quantities (i.e., observables) that commute with <span class="math notranslate nohighlight">\(H\)</span> are conserved. In particular <span class="math notranslate nohighlight">\(\eqref{eq_hp_commute}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_hj_commute}\)</span> imply that both momentum and angular momentum are conserved. Boosts, on the other hand, are <em>not</em> conserved, and therefore cannot be used to label (stable) physical states. Moreover <span class="math notranslate nohighlight">\(\eqref{eq_pp_commute}\)</span> implies that translations commute with each other (as expected), which is <em>not</em> the case for the angular momenta according to <span class="math notranslate nohighlight">\(\eqref{eq_jjj_commutation}\)</span>. Indeed, they furnish an infinitesimal representation of the <span class="math notranslate nohighlight">\(3\)</span>-rotation group <span class="math notranslate nohighlight">\(SO(3)\)</span>.</p>
 </section>
 </section>
@@ -5206,7 +5218,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <div class="math notranslate nohighlight">
 \begin{equation*}
         H^{RSF} = \int d^3 x \left( \tfrac{1}{2} P^2 + \tfrac{1}{2} \left( \nabla Q \right)^2 + \tfrac{1}{2} m^2 Q^2 + \Hscr(Q) \right)
-\end{equation*}``</div><p>where <span class="math notranslate nohighlight">\(\Hscr(Q)\)</span> is the perturbation term giving rise to the interaction.</p>
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\Hscr(Q)\)</span> is the perturbation term giving rise to the interaction.</p>
 </section>
 </section>
 <section id="the-lagrangian-formalism">
@@ -5370,7 +5382,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
         \label{eq_vanishing_of_action_under_infinitesimal_variation}
 \end{equation}</div><p>A few remarks are in order. First of all, if we think of <span class="math notranslate nohighlight">\(\eqref{eq_infinitesimal_variation_of_field}\)</span> as an infinitesimal (unitary) symmetry transformation, then the coefficient <span class="math notranslate nohighlight">\(\ifrak\)</span> can be justified by then intention of making <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> Hermitian. Next, although <span class="math notranslate nohighlight">\(\eqref{eq_vanishing_of_action_under_infinitesimal_variation}\)</span> <em>always</em> holds when <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span> is stationary, the infinitesimal <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> being a symmetry demands that <span class="math notranslate nohighlight">\(\eqref{eq_vanishing_of_action_under_infinitesimal_variation}\)</span> holds true for <em>any</em> <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span>. Finally, we emphasize the fact that <span class="math notranslate nohighlight">\(\epsilon\)</span> is an infinitesimal <em>constant</em>, rather than a function of <span class="math notranslate nohighlight">\(x\)</span>, is the defining property for the symmetry to be called “global”. Indeed, we’ll be dealing with symmetries that are not global in the next chapter, namely, the gauge symmetries.</p>
 <section id="from-symmetries-to-conservation-laws">
-<h4>From symmetries to conservation laws<a class="headerlink" href="#from-symmetries-to-conservation-laws" title="Link to this heading">#</a></h4>
+<span id="sec-from-symmetries-to-conservation-laws"></span><h4>From symmetries to conservation laws<a class="headerlink" href="#from-symmetries-to-conservation-laws" title="Link to this heading">#</a></h4>
 <p>The general principle that “symmetries imply conservation laws” is mathematically known as <a class="reference external" href="https://en.wikipedia.org/wiki/Noether%27s_theorem">Noether’s theorem</a>, but we’ll not bother with any mathematical formality here. To see how to derive conserved quantitites from an assumed symmetry, let’s change <span class="math notranslate nohighlight">\(\eqref{eq_infinitesimal_variation_of_field}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -5447,7 +5459,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 \end{equation}</div><p>where we’ve taken advantage of the time-independency of <span class="math notranslate nohighlight">\(F\)</span> to arrange the same-time commutator.</p>
 </section>
 <section id="spacetime-translations">
-<h4>Spacetime translations<a class="headerlink" href="#spacetime-translations" title="Link to this heading">#</a></h4>
+<span id="sec-spacetime-translations"></span><h4>Spacetime translations<a class="headerlink" href="#spacetime-translations" title="Link to this heading">#</a></h4>
 <p>So far the symmetries have been rather abstract, to make it more explicit, and also to get warmed up for the general case, let’s assume the Lagrangian is invariant under the (spacetime) translation transformation given as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -5462,9 +5474,10 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
         \p_{\mu} T^{\mu}_{\nu} = 0
 \end{equation*}</div><p>The corresponding conserved currents then take the form</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
+\begin{equation}
         P_{\nu} \coloneqq \int d^3 x~T^0_{\nu}
-\end{equation*}</div><p>such that <span class="math notranslate nohighlight">\(\dot{P}_{\nu} = 0\)</span>. Here it’s important to not confuse <span class="math notranslate nohighlight">\(P_{\nu}\)</span> with a canonical variable – it’s just a conserved quantity which turns out to be the <span class="math notranslate nohighlight">\(4\)</span>-momentum.</p>
+        \label{eq_spacetime_translation_conserved_quantity_is_momentum}
+\end{equation}</div><p>such that <span class="math notranslate nohighlight">\(\dot{P}_{\nu} = 0\)</span>. Here it’s important to not confuse <span class="math notranslate nohighlight">\(P_{\nu}\)</span> with a canonical variable – it’s just a conserved quantity which turns out to be the <span class="math notranslate nohighlight">\(4\)</span>-momentum.</p>
 <p>Now recall from <span class="math notranslate nohighlight">\(\eqref{eq_defn_lagrangian_density}\)</span> that the Lagrangian is usually the spatial integral of a density functional. Hence it’s not unreasonable to suppose that the Lagrangian is indeed invariant under spatial translations. Under this assumption, we can rewrite <span class="math notranslate nohighlight">\(\eqref{eq_lagrangian_preserving_symmetry_generator_formula}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation}
@@ -5478,10 +5491,16 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
         \left[ \Pbf, P_n(t, \xbf) \right] &amp;= \ifrak \nabla P_n(t, \xbf)
 \end{align*}</div><p>It follows that</p>
 <div class="math notranslate nohighlight">
-\begin{equation*}
-        \left[ \Pbf, \Gscr(Q, P) \right] = \ifrak \nabla \Gscr(Q, P)
-\end{equation*}</div><p>for any functional <span class="math notranslate nohighlight">\(\Gscr\)</span> of the canonical variables. This verifies that <span class="math notranslate nohighlight">\(\Pbf\)</span> indeed generates the spatial translation.</p>
-<p>In contrast, one cannot hope that the Lagrangian to be invariant under time translation, if there should be any interaction. But we already know the operator that generates time translation, namely, the Hamiltonian. In other words, we have <span class="math notranslate nohighlight">\(P_0 = H\)</span>.</p>
+\begin{equation}
+        \left[ \Pbf, \Gscr \right] = \ifrak \nabla \Gscr
+        \label{eq_momenta_act_as_spatial_derivative}
+\end{equation}</div><p>for any functional <span class="math notranslate nohighlight">\(\Gscr\)</span> that doesn’t explicitly involve <span class="math notranslate nohighlight">\(\xbf\)</span>. This verifies that <span class="math notranslate nohighlight">\(\Pbf\)</span> indeed generates the spatial translation.</p>
+<p>In contrast, one cannot hope that the Lagrangian to be invariant under time translation, if there should be any interaction. But we already know the operator that generates time translation, namely, the Hamiltonian. In other words, we define <span class="math notranslate nohighlight">\(P_0 \coloneqq -H\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \left[ H, \Gscr \right] = -\ifrak \dot{\Gscr}
+        \label{eq_hamiltonian_acts_as_time_derivative}
+\end{equation}</div><p>for any functional <span class="math notranslate nohighlight">\(\Gscr\)</span> that doesn’t explicitly involve <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>In general, the Lagrangian density is not invariant under spacetime translations. However, it turns out that the conserved current, which in this case is <span class="math notranslate nohighlight">\(T^{\mu}_{\nu}\)</span>, can nonetheless be calculated. To spell out the details, let’s consider the following variation</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -5496,7 +5515,11 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <div class="math notranslate nohighlight">
 \begin{equation*}
         T^{\nu}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
-\end{equation*}</div><p>Indeed, this calculation recovers <span class="math notranslate nohighlight">\(\eqref{eq_spatial_translation_conserved_quantity}\)</span> by letting <span class="math notranslate nohighlight">\(\nu = 0\)</span> and <span class="math notranslate nohighlight">\(\mu \neq 0\)</span>. Moreover, it recovers the Hamiltonian by letting <span class="math notranslate nohighlight">\(\mu = \nu = 0\)</span> as follows</p>
+\end{equation*}</div><div class="admonition note" id="note-energy-momentum-tensor-not-symmetric">
+<p class="admonition-title">Note</p>
+<p>The energy-momentum tensor <span class="math notranslate nohighlight">\(T_{\mu}^{\nu}\)</span> is not yet suitable for general relativity since it’s not symmetric. As we’ll see in <a class="reference internal" href="#sec-lorentz-symmetry"><span class="std std-ref">Lorentz symmetry</span></a>, when taking homogeneous Lorentz transformation symmetry into account, one can supplement <span class="math notranslate nohighlight">\(T_{\mu}^{\nu}\)</span> with some extra terms to make it both conserved and symmetric.</p>
+</div>
+<p>Indeed, this calculation recovers <span class="math notranslate nohighlight">\(\eqref{eq_spatial_translation_conserved_quantity}\)</span> by letting <span class="math notranslate nohighlight">\(\nu = 0\)</span> and <span class="math notranslate nohighlight">\(\mu \neq 0\)</span>. Moreover, it recovers the Hamiltonian by letting <span class="math notranslate nohighlight">\(\mu = \nu = 0\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
         H = -P_0 = \int d^3 x \left( \sum_n P_n \dot{Q}_n - \Lscr \right)
@@ -5506,7 +5529,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <p>As another example, let’s consider linear variations as follows</p>
 <div class="math notranslate nohighlight">
 \begin{align*}
-        Q_n(x) &amp;\to Q_n(x) + \ifrak \epsilon^a (t_a)_n^m Q^m(x) \\
+        Q_n(x) &amp;\to Q_n(x) + \ifrak \epsilon^a (t_a)_n^m Q_m(x) \\
         C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a (\tau_a)_r^s C_s(x)
 \end{align*}</div><p>where we’ve adopted the Einstein summation convention for repeated upper and lower indexes because it’d otherwise be too tedious to write out the summations. Here <span class="math notranslate nohighlight">\((t_{\square})^{\square}_{\square}\)</span> should furnish a representation of the Lie algebra of the symmetry group.</p>
 <p>As before, the invariance of action under such variations implies the existstence of conserved currents <span class="math notranslate nohighlight">\(J_a^{\mu}\)</span> such that</p>
@@ -5533,7 +5556,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
                 &amp;= -\int d^3 x~d^3 y~(t_a)^n_m (t_b)^r_s \left[ P_n(t, \xbf) Q^m(t, \xbf), P_r(t, \ybf) Q^s(t, \ybf) \right] \\
                 &amp;= -\int d^3 x~d^3 y~(t_a)^n_m (t_b)^r_s \Big( P_n(t, \xbf) \left[ Q^m(t, \xbf), P_r(t, \ybf) \right] Q^s(t, \ybf) - P_r(t, \ybf) \left[ Q^s(t, \ybf), P_n(t, \xbf) \right] Q^m(t, \xbf) \Big) \\
                 &amp;= -\ifrak \int d^3 x \Big( (t_a)^n_m (t_b)^m_s P_n(t, \xbf) Q^s(t, \xbf) - (t_a)^n_m (t_b)^r_n P_r(t, \xbf) Q^m(t, \xbf) \Big) \\
-                &amp;= \ifrak \int d^3 x~\left[ t_a, t_b \right]^n_m P_n(t, \xbf) Q^m(t, \xbf)
+                &amp;= -\ifrak \int d^3 x~\left[ t_a, t_b \right]^n_m P_n(t, \xbf) Q^m(t, \xbf)
 \end{align*}</div><p>Now if <span class="math notranslate nohighlight">\(t_a\)</span> form a Lie algebra with structure constants <span class="math notranslate nohighlight">\(f^c_{ab}\)</span> as follows</p>
 <div class="math notranslate nohighlight">
 \begin{equation*}
@@ -5542,8 +5565,137 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <div class="math notranslate nohighlight">
 \begin{equation*}
         \left[ T_a, T_b \right] = \ifrak f^c_{ab} T_c
-\end{equation*}</div><p>If, in addition, the Lagrangian density is also invariant, then</p>
-<p class="rubric">Footnotes</p>
+\end{equation*}</div><p>In other words, the conserved quantities also form the same Lie algebra.</p>
+<p>Now if, in addition, the Lagrangian density is also invariant, then <span class="math notranslate nohighlight">\(\eqref{eq_lagrangian_density_preserving_symmetry_conserved_density}\)</span> takes the following form</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        J^{\mu}_a = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} Q_n)} (t_a)^m_n Q_m - \ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} C_r)} (\tau_a)^s_r C_s
+        \label{eq_lagrangian_density_invariant_linear_transformation_conserved_current}
+\end{equation}</div><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Interacting equal-mass real scalar fields</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">As a specific example, let’s consider the following Lagrangian density for two interacting equal-mass real scalar fields</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Lscr = -\frac{1}{2} \p_{\mu} \Phi_1 \p^{\mu} \Phi_1 - \frac{1}{2} m^2 \Phi_1^2 - \frac{1}{2} \p_{\mu} \Phi_2 \p^{\mu} \Phi_2 - \frac{1}{2} m^2 \Phi_2^2 - \Hscr(\Phi_1^2 + \Phi_2^2)
+\end{equation}</div><p class="sd-card-text">This density is invariant under the following linear transformation</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        \Phi_1 &amp;\to \Phi_1 - \epsilon \Phi_2 \\
+        \Phi_2 &amp;\to \Phi_2 + \epsilon \Phi_1
+\end{align*}</div><p class="sd-card-text">In this case, we can evaluate <span class="math notranslate nohighlight">\(\eqref{eq_lagrangian_density_invariant_linear_transformation_conserved_current}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        J^{\mu} = -\Psi_2 \p^{\mu} \Phi_1 + \Phi_1 \p^{\mu} \Phi_2
+\end{equation*}</div></div>
+</details><p>Note that since <span class="math notranslate nohighlight">\(\Lscr\)</span> doesn’t have <span class="math notranslate nohighlight">\(\dot{C}_r\)</span> dependencies, we have the following by letting <span class="math notranslate nohighlight">\(\mu = 0\)</span> in <span class="math notranslate nohighlight">\(\eqref{eq_lagrangian_density_invariant_linear_transformation_conserved_current}\)</span></p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        J^0_a = -\ifrak P^n (t_a)^m_n Q_m
+\end{equation*}</div><p>whose equal-time commutation relations with canonical variables <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> can be easily calculated.</p>
+</section>
+</section>
+<section id="lorentz-invariance">
+<span id="sec-lorentz-invariance"></span><h3>Lorentz invariance<a class="headerlink" href="#lorentz-invariance" title="Link to this heading">#</a></h3>
+<p>The goal of this section is to show that the Lorentz invariance of the Lagrangian density implies the Lorentz invariance of the S-matrix, which justifies our interest in the Lagrangian formalism in the first place.</p>
+<p>Recall from <span class="math notranslate nohighlight">\(\eqref{eq_expansion_of_Lambda}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_lie_algebra_is_antisymmetric}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        \Lambda^{\mu}_{\nu} &amp;= \delta^{\mu}_{\nu} + \omega^{\mu}_{\nu}
+        \nonumber \\
+        \omega_{\mu \nu} &amp;= -\omega_{\nu \mu}
+        \label{eq_lorentz_omega_is_antisymmetric}
+\end{align}</div><p>is a <span class="math notranslate nohighlight">\((\mu, \nu)\)</span>-parametrized anti-symmetric variation. It follows then from <span class="math notranslate nohighlight">\(\eqref{eq_variation_of_action_by_functional_deformation}\)</span> that there exist <span class="math notranslate nohighlight">\((\mu, \nu)\)</span>-parametrized anti-symmetric conserved currents as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align}
+        \p_{\rho} \Mscr^{\rho \mu \nu} &amp;= 0
+        \label{eq_lorentz_invariance_m_conservation} \\
+        \Mscr^{\rho \mu \nu} &amp;= -\Mscr^{\rho \nu \mu}
+        \label{eq_lorentz_invariance_conserved_m_antisymmetric}
+\end{align}</div><p>which, in turn, make conversed quantities</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        J^{\mu \nu} \coloneqq \int d^3 x~\Mscr^{0 \mu \nu}
+        \label{eq_lorentz_invariance_conserved_j}
+\end{equation}</div><p>such that <span class="math notranslate nohighlight">\(\dot{J}^{\mu \nu} = 0\)</span>. These, as we’ll see, turn out to be rather familiar objects that we’ve encountered as early as in <span class="math notranslate nohighlight">\(\eqref{eq_u_lorentz_expansion}\)</span>.</p>
+<p>In light of <span class="math notranslate nohighlight">\(\eqref{eq_lagrangian_density_preserving_symmetry_conserved_density}\)</span>, one can work out an explicit formula for <span class="math notranslate nohighlight">\(\Mscr^{\rho \mu \nu}\)</span> if the Lagrangian density is invariant under the symmetry transformation. Now since the Lagrangian density is expressed in terms of quantum fields, one’d like to know how they transform under Lorentz transformations. Since the translation symmetry has already been dealt with in <a class="reference internal" href="#sec-spacetime-translations"><span class="std std-ref">Spacetime translations</span></a>, we’ll consider here homogeneous Lorentz transformations. Luckily this has been worked out already in <a class="reference internal" href="#sec-quantum-fields-and-antiparticles"><span class="std std-ref">Quantum Fields and Antiparticles</span></a>. More precisely, recall from <span class="math notranslate nohighlight">\(\eqref{eq_dirac_field_linearize_representation}\)</span> that the variation term can be written as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \delta \Psi_n = \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \Psi_m
+\end{equation*}</div><p>where <span class="math notranslate nohighlight">\(\Jscr\)</span> are matrices satisfying <span class="math notranslate nohighlight">\(\eqref{eq_bracket_repr_j}\)</span>. The corresponding derivatives then have the following variation term</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \delta (\p_{\kappa} \Psi_n) = \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \p_{\kappa} \Psi_m + \omega_{\kappa}^{\lambda} \p_{\lambda} \Psi_n
+\end{equation*}</div><p>where the second summand on the right-hand-side corresponds to the fact the the Lorentz transformation also acts on the spacetime coordinates.</p>
+<p>Now the invariance of the Lagrangian density under such variation can be written as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \frac{\delta \Lscr}{\delta \Psi_n} \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \Psi_m
+        + \frac{\delta \Lscr}{\delta (\p_{\kappa} \Psi_n)} \left( \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \p_{\kappa} \Psi_m + \omega_{\kappa}^{\lambda} \p_{\lambda} \Psi_n \right) = 0
+\end{equation*}</div><p>Since <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span> is not in general zero, its coefficient must be zero, which, taking <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_omega_is_antisymmetric}\)</span> into account, implies the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \frac{\ifrak}{2} \frac{\delta\Lscr}{\delta\Psi_n} (\Jscr_{\mu\nu})^m_n \Psi_m + \frac{\ifrak}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (\Jscr_{\mu\nu})^m_n \p_{\kappa}\Psi_m + \frac{1}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} \left( \eta_{\kappa \mu} \p_{\nu} - \eta_{\kappa \nu} \p_{\mu} \right) \Psi_n = 0
+        \label{eq_lorentz_invariance_current_raw_identity}
+\end{equation}</div><p>Using <span class="math notranslate nohighlight">\(\eqref{eq_euler_lagrange}\)</span>, we can get rid of the <span class="math notranslate nohighlight">\(\delta\Lscr / \delta\Psi_n\)</span> term in <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariance_current_raw_identity}\)</span> to arrive at the following</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (\Jscr_{\mu\nu})_n^m \Psi_m \right) - \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (T_{\mu\nu} - T_{\nu\mu}) = 0
+        \label{eq_lorentz_invariance_current_identity}
+\end{equation}</div><p>Now we can address the issue of <a class="reference internal" href="#note-energy-momentum-tensor-not-symmetric"><span class="std std-ref">energy-momentum tensor not being symmetric</span></a> by introducing the following so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Belinfante%E2%80%93Rosenfeld_stress%E2%80%93energy_tensor">Belinfante tensor</a></p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Theta_{\mu\nu} \coloneqq T_{\mu\nu} - \frac{\ifrak}{2} \p_{\kappa} \left(
+                \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (\Jscr_{\mu\nu})_n^m \Psi_m -
+                \frac{\delta\Lscr}{\delta(\p_{\mu} \Psi_n)} (\Jscr_{\kappa\nu})_n^m \Psi_m -
+                \frac{\delta\Lscr}{\delta(\p_{\nu} \Psi_n)} (\Jscr_{\kappa\mu})_n^m \Psi_m \right)
+        \label{eq_defn_belinfante_tensor}
+\end{equation}</div><p>which is both conserved in the sense that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \p^{\mu} \Theta_{\mu\nu} = 0
+        \label{eq_belinfante_tensor_is_conserved}
+\end{equation}</div><p>and symmetric in the sense that</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \Theta_{\mu\nu} = \Theta_{\nu\mu}
+        \label{eq_belinfante_tensor_is_symmetric}
+\end{equation}</div><p>Indeed <span class="math notranslate nohighlight">\(\eqref{eq_belinfante_tensor_is_conserved}\)</span> follows from the observation that the term inside the parenthesis of <span class="math notranslate nohighlight">\(\eqref{eq_defn_belinfante_tensor}\)</span> is anti-symmetric in <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\kappa\)</span>, and <span class="math notranslate nohighlight">\(\eqref{eq_belinfante_tensor_is_symmetric}\)</span> is a direct consequence of <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariance_current_identity}\)</span>.</p>
+<p>The conserved quantities corresponding to <span class="math notranslate nohighlight">\(\Theta_{\mu\nu}\)</span> are</p>
+<div class="math notranslate nohighlight">
+\begin{equation}
+        \int d^3 x~\Theta_{0 \nu} = \int d^3 x~T_{0 \nu} \xlongequal{\eqref{eq_spacetime_translation_conserved_quantity_is_momentum}} P_{\nu}
+        \label{eq_p_as_integral_of_belinfante_tensor}
+\end{equation}</div><p>where the first first equality holds because, again, the item in the parenthesis of <span class="math notranslate nohighlight">\(\eqref{eq_defn_belinfante_tensor}\)</span> is anti-symmetric is <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span>, and therefore <span class="math notranslate nohighlight">\(\nu \neq 0\)</span> given <span class="math notranslate nohighlight">\(\mu = 0\)</span>. Hence it’s at least equally legitimate to call <span class="math notranslate nohighlight">\(\Theta_{\mu \nu}\)</span> the energy-momentum tensor. Indeed, the fact that <span class="math notranslate nohighlight">\(\Theta_{\mu \nu}\)</span> is the symmetric makes it the right choice in general relatively.</p>
+<p>Unlike the other conserved currents, which are derived under the general principles explained in <a class="reference internal" href="#sec-from-symmetries-to-conservation-laws"><span class="std std-ref">From symmetries to conservation laws</span></a>, we’ll construct the anti-symmetric <span class="math notranslate nohighlight">\(\Mscr^{\rho \mu \nu}\)</span> declared in <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariance_m_conservation}\)</span> and <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariance_conserved_m_antisymmetric}\)</span> by hand as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \Mscr^{\rho\mu\nu} \coloneqq x^{\mu} \Theta^{\rho\nu} - x^{\nu} \Theta^{\rho\mu}
+\end{equation*}</div><p>While <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_omega_is_antisymmetric}\)</span> is automatically satisfied by definition, we can verify <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariance_m_conservation}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        \p_{\rho} \Mscr^{\rho\mu\nu} \xlongequal{\eqref{eq_belinfante_tensor_is_conserved}} \Theta^{\mu\nu} - \Theta^{\nu\mu} \xlongequal{\eqref{eq_belinfante_tensor_is_symmetric}} 0
+\end{equation*}</div><p>Moreover <span class="math notranslate nohighlight">\(\eqref{eq_lorentz_invariance_conserved_j}\)</span> takes the following form</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        J^{\mu\nu} = \int d^3 x \left( x^{\mu} \Theta^{0\nu} - x^{\nu} \Theta^{0\mu} \right)
+\end{equation*}</div><p>Now if we consider the rotation generators <span class="math notranslate nohighlight">\(J_i \coloneqq \tfrac{1}{2} \epsilon_{ijk} J^{jk}\)</span>, then it follows from <span class="math notranslate nohighlight">\(\eqref{eq_hamiltonian_acts_as_time_derivative}\)</span> that</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        [H, \Jbf] = -\ifrak \dot{\Jbf} = 0
+\end{equation*}</div><p>since <span class="math notranslate nohighlight">\(\Jbf\)</span> doesn’t implicitly involve <span class="math notranslate nohighlight">\(t\)</span>. This recovers one of the commutation relations <span class="math notranslate nohighlight">\(\eqref{eq_hj_commute}\)</span> for the Poincaré algebra. Next, let’s verify <span class="math notranslate nohighlight">\(\eqref{eq_pjp_commutation}\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\begin{align*}
+        [P_i, J_j] &amp;\xlongequal{\phantom{\eqref{eq_momenta_act_as_spatial_derivative}}} \frac{1}{2} \epsilon_{jk\ell} \left[ P_i, J^{k\ell} \right] \\
+                &amp;\xlongequal{\eqref{eq_momenta_act_as_spatial_derivative}} \frac{\ifrak}{2} \epsilon_{jk\ell} \int d^3x \left( x^k \p_i \Theta^{0\ell} - x^{\ell} \p_i \Theta^{0k} \right) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_momenta_act_as_spatial_derivative}}} \frac{\ifrak}{2} \epsilon_{jk\ell} \int d^3x \left( -\delta^k_i \Theta^{0\ell} + \delta^{\ell}_i \Theta^{0k} \right) \\
+                &amp;\xlongequal{\phantom{\eqref{eq_momenta_act_as_spatial_derivative}}} \ifrak \epsilon_{ijk} \int d^3x~\Theta^{0k} \\
+                &amp;\xlongequal{\eqref{eq_p_as_integral_of_belinfante_tensor}} \ifrak \epsilon_{ijk} P^k
+\end{align*}</div><p>What come next are the boost operators defined as follows</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+        K_i = K^i \coloneqq J^{0i} = \int d^3x \left( x^0 \Theta^{0i} - x^i \Theta^{00} \right)
+\end{equation*}</div><p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">1</a><span class="fn-bracket">]</span></span>
@@ -5579,7 +5731,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 </aside>
 <aside class="footnote brackets" id="charge-inversion-on-dirac-fields-sign" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">9</a><span class="fn-bracket">]</span></span>
-<p>Our calculation, once again, differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id46"><span>[Wei95]</span></a> by a sign, though this time it has nothing to do with the volume element.</p>
+<p>Our calculation differs from the calculation eq. (5.5.47) in <a class="reference internal" href="../bib.html#wei95" id="id46"><span>[Wei95]</span></a> by a sign.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficients-orthonormality" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">10</a><span class="fn-bracket">]</span></span>
@@ -5598,7 +5750,6 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <p>It’s stated in <a class="reference internal" href="../bib.html#wei95" id="id50"><span>[Wei95]</span></a> page 271 and afterwards that it’s the full S-matrices that are calculated. However, it seems that only the connected part of the S-matrices are calculated.</p>
 </aside>
 </aside>
-</section>
 </section>
 </section>
 </section>
@@ -5749,6 +5900,7 @@ Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-transformations">Linear transformations</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-invariance">Lorentz invariance</a></li>
 </ul>
 </li>
 </ul>
