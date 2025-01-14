@@ -222,6 +222,32 @@ In fact, it will be of great importance to just look at the symmetry up to the f
 
 where :math:`\theta^a` are the (real) components of :math:`\theta`, and :math:`u_a` are operators independent of :math:`\theta`, and as a convention, repeated indexes are summed up. Here we put a :math:`\ifrak` in front of the linear term so that the unitarity of :math:`U` implies that :math:`u_a` are Hermitian.
 
+.. note::
+	We've implicitly used a summation convention in writing :math:`\eqref{eq_u_expansion}` that the same upper and lower indexes are automatically summed up. For example
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			\theta^a \theta^b u_{ab} \equiv \sum_{a, b} \theta^a \theta^b u_{ab}
+		\end{equation*}
+
+	This convention will be used throughout this note, unless otherwise specified.
+
+	Another noteworthy point is how one writes matrix or tensor elements using indexes. The point is that the indexes must come in certain order. This wouldn't really cause a problem if all indexes are lower or upper. However, care must be taken when both lower and upper indexes appear. For example, an element written as :math:`M^a_b` would be ambiguous as it's unclear whether it refers to :math:`M_{ab}` or :math:`M_{ba}` assuming that one can somehow raise/lower the indexes. To avoid such ambiguity, one writes either :math:`{M^a}_b` or :math:`{M_b}^a`.
+
+	This is a particularly convenient convention when dealing with matrix or tensor multiplications. For example, one can multiply two matrices as follows
+
+	.. math::
+		:nowrap:
+
+		\begin{equation*}
+			{M^a}_b {N^b}_c = {(MN)^a}_c
+		\end{equation*}
+
+	while :math:`{M^a}_b {N_c}^b`, though still summed up over :math:`b`, wouldn't correspond to a matrix multiplication.
+
+
 Now let :math:`\eta` be another element of the Lie algebra, and expand both sides of :math:`U(T(\eta)) U(T(\theta)) = U(T(\eta) T(\theta))` as follows
 
 .. math::
@@ -232,16 +258,16 @@ Now let :math:`\eta` be another element of the Lie algebra, and expand both side
 		&= 1 + \ifrak (\eta^a + \theta^a) u_a \blue{- \eta^a \theta^b u_a u_b} + \cdots \\
 	\\
 	U(T(\eta) T(\theta)) &= U \left( 1 + \eta + \theta + f_{ab} \eta^a \theta^b + \cdots \right) \\
-		&= 1 + \blue{\ifrak} \left( \eta^c + \theta^c + \blue{f^c_{ab} \eta^a \theta^b} + \cdots \right) \blue{u_c} + \blue{\tfrac{1}{2}} \left( \blue{\eta^a + \theta^a} + \cdots \right) \left( \blue{\eta^b + \theta^b} + \cdots \right) \blue{u_{ab}} + \cdots
+		&= 1 + \blue{\ifrak} \left( \eta^c + \theta^c + \blue{{f^c}_{ab} \eta^a \theta^b} + \cdots \right) \blue{u_c} + \blue{\tfrac{1}{2}} \left( \blue{\eta^a + \theta^a} + \cdots \right) \left( \blue{\eta^b + \theta^b} + \cdots \right) \blue{u_{ab}} + \cdots
 	\end{align*}
 
-where :math:`f^c_{ab}` are the coefficients of the expansion of :math:`T(f(\eta, \theta)) = T(\eta) T(\theta)`. Equating the coefficients of :math:`\eta^a \theta^b`, i.e., the terms colored in blue, we get
+where :math:`{f^c}_{ab}` are the coefficients of the expansion of :math:`T(f(\eta, \theta)) = T(\eta) T(\theta)`. Equating the coefficients of :math:`\eta^a \theta^b`, i.e., the terms colored in blue, we get
 
 .. math::
 	:nowrap:
 
 	\begin{equation*}
-		-u_a u_b = \ifrak f^c_{ab} u_c + u_{ab} \implies u_{ab} = -u_a u_b - \ifrak f^c_{ab} u_c.
+		-u_a u_b = \ifrak {f^c}_{ab} u_c + u_{ab} \implies u_{ab} = -u_a u_b - \ifrak {f^c}_{ab} u_c.
 	\end{equation*}
 
 It implies that one can calculate the higher-order operator :math:`u_{ab}` from the lower-order ones, assuming of course that we know the structure of the symmetry (Lie) group/algebra. In fact, this bootstrapping procedure can be continued to all orders, but we'll not be bothered about the details.
@@ -252,10 +278,10 @@ Next, note that :math:`u_{ab} = u_{ba}` since they are just partial derivatives.
 	:nowrap:
 
 	\begin{equation*}
-		[u_a, u_b] \coloneqq u_a u_b - u_b u_a = \ifrak (f^c_{ba} - f^c_{ab}) u_c \eqqcolon \ifrak \Gamma^c_{ab} u_c
+		[u_a, u_b] \coloneqq u_a u_b - u_b u_a = \ifrak ({f^c}_{ba} - {f^c}_{ab}) u_c \eqqcolon \ifrak {C^c}_{ab} u_c
 	\end{equation*}
 
-where the bracket is known as the *Lie bracket* and :math:`\Gamma^c_{ab}` are known as the *structure constants*.
+where the bracket is known as the *Lie bracket* and :math:`{C^c}_{ab}` are known as the *structure constants*.
 
 We conclude the general discussion about continuous symmetry by considering a special, but important, case when :math:`T` is additive in the sense that :math:`T(\eta) T(\theta) = T(\eta + \theta)`. Notable examples of such symmetry include translations and rotations about a fixed axis. In this case :math:`f` vanishes, and it follows from :math:`\eqref{eq_u_expansion}` that
 
@@ -294,10 +320,9 @@ where
 3. :math:`\eta = \op{diag}(-1, 1, 1, 1)` and the indexes :math:`\mu, \nu` run from :math:`0` to :math:`3`.
 
 .. note::
-	1. We will follow the common convention in physics that greek letters such as :math:`\mu, \nu, \dots` run from :math:`0` to :math:`3`, while roman letters such as :math:`i, j, \dots` run from :math:`1` to :math:`3`.
+	1. We will follow the common convention in physics that Greek letters such as :math:`\mu, \nu, \dots` run from :math:`0` to :math:`3`, while Roman letters such as :math:`i, j, \dots` run from :math:`1` to :math:`3`.
 	2. We often write :math:`x` for a spacetime point :math:`(x_0, x_1, x_2, x_3)`, and :math:`\xbf` for a spatial point :math:`(x_1, x_2, x_3)`.
-	3. Matrix/Tensor indexes can will be raised or lowered using :math:`\eta`. For example :math:`dx^0 = \eta^{0 \mu} dx_{\mu} = -dx_0`.
-	4. Einstein's summation convention is implicitly applied, i.e., upper and lower indexes of the same label are summed up. *The same label that appears both as upper or lower indexes are considered illegal expression.* This is particularly important because otherwise we'd run into troublesome expressions such as :math:`x_{\mu} x_{\mu} = x_0^2 + x_1^2 + x_2^2 + x_3^2`.
+	3. A :math:`4`-index, i.e., those named by Greek letters, of a matrix or a tensor can be raised or lowered by :math:`\eta`. For example, one can raise an index of a matrix :math:`M_{\mu \nu}` by :math:`\eta^{\rho \mu} M_{\mu \nu} = {M^{\rho}}_{\nu}` or :math:`\eta^{\rho \nu} M_{\mu \nu} = {M_{\mu}}^{\rho}`, such that the order of (regardless of upper or lower) indexes are kept.
 
 .. dropdown:: Einstein's special theory of relativity
 	:icon: unlock
@@ -342,12 +367,12 @@ which consists of a homogeneous part :math:`\Lambda` and a translation by :math:
 	:nowrap:
 
 	\begin{equation}
-		\eta^{\mu \nu} dx_{\mu} dx_{\nu} = \eta^{\mu \nu} \Lambda^{\rho}_{\mu} \Lambda^{\kappa}_{\nu} dx_{\rho} dx_{\kappa} \
-			\implies \eta^{\mu \nu} = \eta^{\rho \kappa} \Lambda^{\mu}_{\rho} \Lambda^{\nu}_{\kappa}
+		\eta^{\mu \nu} dx_{\mu} dx_{\nu} = \eta^{\mu \nu} {\Lambda_{\mu}}^{\rho} {\Lambda_{\nu}}^{\kappa} dx_{\rho} dx_{\kappa} \
+			\implies \eta^{\mu \nu} = \eta^{\rho \kappa} {\Lambda_{\rho}}^{\mu} {\Lambda_{\kappa}}^{\nu}
 		\label{eq_homogeneous_lorentz_transformation}
 	\end{equation}
 
-for any :math:`\mu, \nu`. Moreover the group law is given by
+for any :math:`\mu` and :math:`\nu`. Moreover the group law is given by
 
 .. math::
 	:nowrap:
@@ -356,28 +381,27 @@ for any :math:`\mu, \nu`. Moreover the group law is given by
 		L(\Lambda', a') L(\Lambda, a) x = L(\Lambda', a')(\Lambda x + a) = \Lambda' \Lambda x + \Lambda' a + a' = L(\Lambda' \Lambda, \Lambda' a + a') x
 	\end{equation*}
 
-For later use, let's also calculate the inverse transformation using :math:`\eqref{eq_homogeneous_lorentz_transformation}`
+For later use, let's also calculate the inverse matrix of :math:`\Lambda` as follows
 
 .. math::
 	:nowrap:
 
 	\begin{equation}
-		\delta_{\sigma}^{\nu} = \eta_{\sigma \mu} \eta^{\mu \nu} = \left(\eta_{\sigma \mu} \eta^{\rho \kappa} \Lambda_{\rho}^{\mu}\right) \Lambda^{\nu}_{\kappa} \
-			\implies (\Lambda^{-1})_{\mu}^{\nu} = \eta_{\mu \sigma} \eta^{\nu \rho} \Lambda_{\rho}^{\sigma} \
-			~\Longleftrightarrow~ (\Lambda^{-1})^{\mu \nu} = \Lambda^{\nu \mu}
+		\delta_{\sigma}^{\nu} = \eta_{\sigma \mu} \eta^{\mu \nu} \xlongequal{\eqref{eq_homogeneous_lorentz_transformation}} \eta_{\sigma \mu} \eta^{\rho \kappa} {\Lambda_{\rho}}^{\mu} {\Lambda_{\kappa}}^{\nu} \
+			\implies {(\Lambda^{-1})_{\sigma}}^{\kappa} = \eta_{\sigma\mu} \eta^{\rho\kappa} {\Lambda_{\rho}}^{\mu} = {\Lambda^{\kappa}}_{\sigma}
 		\label{eq_lambda_inverse}
 	\end{equation}
 
-Taking determinant on :math:`\eqref{eq_homogeneous_lorentz_transformation}` implies that :math:`\op{det}(\Lambda) = \pm 1`, and setting :math:`\mu = \nu = 0` implies that
+Now we'll take a look at the topology of the group of homogeneous Lorentz transformations. Taking determinant on both sides of :math:`\eqref{eq_homogeneous_lorentz_transformation}`, we see that :math:`\op{det}(\Lambda) = \pm 1`. Moreover, setting :math:`\mu = \nu = 0`, we have
 
 .. math::
 	:nowrap:
 
 	\begin{equation*}
-		1 = (\Lambda^0_0)^2 - \sum_{i=1}^3 \Lambda^0_i \Lambda^0_i \implies \left| \Lambda^0_0 \right| \geq 1
+		1 = \left( {\Lambda_0}^0 \right)^2 - \sum_{i=1}^3 \left( {\Lambda_i}^0 \right) \implies \left| {\Lambda_0}^0 \right| \geq 1
 	\end{equation*}
 
-It follows that the homogeneous Lorentz group has four components. In particular, the one with :math:`\op{det}(\Lambda) = 1` and :math:`\Lambda^0_0 \geq 1` is the most common used and is given a name: *proper orthochronous* Lorentz group. Nonetheless, one can map one component to another by composing with either a time reversal transformation
+It follows that the homogeneous Lorentz group has four components. In particular, the one with :math:`\op{det}(\Lambda) = 1` and :math:`{\Lambda_0}^0 \geq 1` is the most common used and is given a name: *proper orthochronous* Lorentz group. Nonetheless, one can map one component to another by composing with either a time reversal transformation
 
 .. math::
 	:nowrap:
@@ -405,7 +429,7 @@ So far everything have been rather abstract, but in fact, the (homogeneous) Lore
 	:nowrap:
 
 	\begin{equation*}
-		dt' = \Lambda^0_0 dt, \quad dx'_i = \Lambda^0_i dt \implies \Lambda^0_i = v_i \Lambda^0_0
+		dt' = {\Lambda_0}^0 dt, \quad dx'_i = {\Lambda_i}^0 dt \implies {\Lambda_i}^0 = v_i {\Lambda_0}^0
 	\end{equation*}
 
 Then using :math:`\eqref{eq_homogeneous_lorentz_transformation}`, we get
@@ -414,8 +438,10 @@ Then using :math:`\eqref{eq_homogeneous_lorentz_transformation}`, we get
 	:nowrap:
 
 	\begin{equation}
-		1 = -\eta^{\mu \nu} \Lambda^0_{\mu} \Lambda^0_{\nu} = (\Lambda^0_0)^2 - \Lambda^0_i \Lambda^0_i = (1 - \vbf^2) (\Lambda^0_0)^2 \
-			\implies \Lambda^0_0 = \frac{1}{\sqrt{1 - \vbf^2}} \eqqcolon \gamma
+		1 = -\eta^{\mu \nu} {\Lambda_{\mu}}^0 {\Lambda_{\nu}}^0
+			= \left( {\Lambda_0}^0 \right)^2 - \left( {\Lambda_i}^0 \right)^2
+			= \left( 1 - \vbf^2 \right) \left( {\Lambda_0}^0 \right)^2
+			\implies {\Lambda_0}^0 = \frac{1}{\sqrt{1 - \vbf^2}} \eqqcolon \gamma
 			\label{eq_def_gamma}
 	\end{equation}
 
@@ -425,20 +451,24 @@ assuming :math:`\Lambda` is proper orthochronous. It follows that
 	:nowrap:
 
 	\begin{equation}
-		\Lambda^0_0 = \gamma, \quad \Lambda^0_i = \gamma v_i
+		{\Lambda_i}^0 = {\Lambda^0}_i = \gamma v_i
 		\label{eq_lambda_boost}
 	\end{equation}
 
-The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely determined because a composition with a (spatial) rotation about the direction of :math:`\vbf` has no effect on :math:`\vbf`. To make it easier, one can apply a rotation so that :math:`\vbf` aligns with the :math:`3`-axis. Then an obvious choice of :math:`\Lambda` is given by
+The other components :math:`{\Lambda_i}^j, 1 \leq i, j \leq 3`, are not uniquely determined because a composition with a (spatial) rotation about the direction of :math:`\vbf` has no effect on :math:`\vbf`. To make it easier, one can apply a rotation so that :math:`\vbf` aligns with the :math:`3`-axis. Then an obvious choice of :math:`\Lambda` is given by
 
 .. math::
 	:nowrap:
 
 	\begin{alignat}{2}
-		t' &=  \Lambda_0^{\mu} x_{\mu} &&= \gamma (t + v_3 x_3)  \label{eq_lambda_in_3_axis} \\
-		x'_1 &= \Lambda_1^{\mu} x_{\mu} &&= x_1  \nonumber \\
-		x'_2 &= \Lambda_2^{\mu} x_{\mu} &&= x_2  \nonumber \\
-		x'_3 &= \Lambda_3^{\mu} x_{\mu} &&= \gamma (x_3 + v_3 t) \nonumber
+		t'   &= {\Lambda_0}^{\mu} x_{\mu} &&= \gamma (t + v_3 x_3)
+		\label{eq_lambda_in_3_axis} \\
+		x'_1 &= {\Lambda_1}^{\mu} x_{\mu} &&= x_1
+		\nonumber \\
+		x'_2 &= {\Lambda_2}^{\mu} x_{\mu} &&= x_2
+		\nonumber \\
+		x'_3 &= {\Lambda_3}^{\mu} x_{\mu} &&= \gamma (x_3 + v_3 t)
+		\nonumber
 	\end{alignat}
 
 .. dropdown:: Time dilation and length contraction
@@ -463,14 +493,14 @@ The other components :math:`\Lambda^i_j, 1 \leq i, j \leq 3`, are not uniquely d
 		:nowrap:
 
 		\begin{equation*}
-			|(\Lambda x)_3 - (\Lambda y)_3| = \gamma |x_3 - y_3 - v_3^2 (x_3 - y_3)| = \frac{|x_3 - y_3|}{\gamma} < |x_3 - y_3|
+			|(\Lambda x)_3 - (\Lambda y)_3| = \gamma \left| x_3 - y_3 - v_3^2 (x_3 - y_3) \right| = \frac{|x_3 - y_3|}{\gamma} < |x_3 - y_3|
 		\end{equation*}
 
 	This calculation says that the length of rod is contracted in the direction of movement.
 
 	It should be emphasized that such contraction of length can only be observed in a frame where the rod is moving. Imagine for example a scenario where you're given a square box with equal sides while standing still, then after some unconscious period of time, e.g., sleeping, you wake up with the same box in hand, and you'd like to know if you're now moving. If you happen to have heard of such contraction of length, you might try to measure the sides of the box again. If one of the sides suddenly becomes shorter, then you know not only that you're moving, but also the direction of movement! This is of course absurd because the box is still at rest relative to you.
 
-Finally, one can apply a rotation to :math:`\eqref{eq_lambda_in_3_axis}` to get the general formulae
+Finally, one can apply a rotation to :math:`\eqref{eq_lambda_in_3_axis}` to get the general formula
 
 .. math::
 	:nowrap:
@@ -480,7 +510,7 @@ Finally, one can apply a rotation to :math:`\eqref{eq_lambda_in_3_axis}` to get 
 		\label{eq_general_lambda_in_spacetime}
 	\end{equation}
 
-for :math:`1 \leq i, j \leq 3`, which, together with :math:`\eqref{eq_lambda_boost}` and :math:`\Lambda_0^i = \Lambda_i^0,` gives the general formula for :math:`\Lambda`.
+for :math:`1 \leq i, j \leq 3`, which, together with :math:`\eqref{eq_lambda_boost}` and :math:`{\Lambda_0}^i = {\Lambda_i}^0,` gives the general formula for :math:`\Lambda`.
 
 .. note::
 	Any Lorentz transformation can be written as the composition of a boost followed by a rotation.
@@ -496,19 +526,19 @@ We will quantize the Lorentz symmetry :math:`L(\Lambda, a)` by looking for unita
 	:nowrap:
 
 	\begin{equation}
-		\Lambda_{\mu}^{\nu} = \delta_{\mu}^{\nu} + \omega_{\mu}^{\nu} + \cdots
+		{\Lambda_{\mu}}^{\nu} = {\delta_{\mu}}^{\nu} + {\omega_{\mu}}^{\nu} + \cdots
 		\label{eq_expansion_of_Lambda}
 	\end{equation}
 
-where :math:`\delta` is the Kronecker delta, and *not* a tensor. It follows from :math:`\eta^{\mu \nu} = \eta^{\rho \kappa} \Lambda^{\mu}_{\rho} \Lambda^{\nu}_{\kappa}` that
+where :math:`\delta` is the Kronecker delta, and *not* a tensor. It follows from :math:`\eta^{\mu \nu} = \eta^{\rho \kappa} {\Lambda_{\rho}}^{\mu} {\Lambda_{\kappa}}^{\nu}` that
 
 .. math::
 	:nowrap:
 
 	\begin{align}
-		\eta^{\mu \nu} &= \eta^{\rho \kappa} (\delta_{\rho}^{\mu} + \omega_{\rho}^{\mu} + \cdots) (\delta_{\kappa}^{\nu} + \omega_{\kappa}^{\nu} + \cdots)
+		\eta^{\mu \nu} &= \eta^{\rho \kappa} ({\delta_{\rho}}^{\mu} + {\omega_{\rho}}^{\mu} + \cdots) ({\delta_{\kappa}}^{\nu} + {\omega_{\kappa}}^{\nu} + \cdots)
 			\label{eq_lorentz_lie_algebra_is_antisymmetric} \\
-			&= \eta^{\mu \nu} + \eta^{\mu \kappa} \omega^{\nu}_{\kappa} + \eta^{\rho \nu} \omega^{\mu}_{\rho} + \cdots
+			&= \eta^{\mu \nu} + \eta^{\mu \kappa} {\omega_{\kappa}}^{\nu} + \eta^{\nu \rho} {\omega_{\rho}}^{\mu} + \cdots
 			\nonumber \\
 			&= \eta^{\mu \nu} + \omega^{\mu \nu} + \omega^{\nu \mu} + \cdots
 			\nonumber
@@ -545,11 +575,10 @@ Let's evaluate how the expansion transformations under conjugation
 			&= U(\Lambda, a) U(1 + \omega, \epsilon) U(\Lambda^{-1}, -\Lambda^{-1} a) \\
 			&= U(\Lambda, a) U((1 + \omega) \Lambda^{-1}, \epsilon - (1 + \omega) \Lambda^{-1} a) \\
 			&= U(1 + \Lambda \omega \Lambda^{-1}, \Lambda \epsilon - \Lambda \omega \Lambda^{-1} a) \\
-			&= 1 - \ifrak (\Lambda^{\rho}_{\mu} \epsilon^{\mu} - (\Lambda \omega \Lambda^{-1})^{\rho \kappa} a_{\kappa}) P_{\rho} \
+			&= 1 - \ifrak ({\Lambda^{\rho}}_{\mu} \epsilon^{\mu} - (\Lambda \omega \Lambda^{-1})^{\rho \kappa} a_{\kappa}) P_{\rho} \
 				+ \tfrac{\ifrak}{2} (\Lambda \omega \Lambda^{-1})^{\rho \kappa} J_{\rho \kappa} + \cdots \\
-			&= 1 -\ifrak \epsilon^{\mu} \Lambda_{\mu}^{\rho} P_{\rho} + \tfrac{\ifrak}{2} (\Lambda \omega \Lambda^{-1})^{\rho \kappa} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots \\
-			&= 1 -\ifrak \epsilon^{\mu} \Lambda_{\mu}^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \Lambda^{\rho \mu} \omega_{\mu \nu} \Lambda^{\kappa \nu} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots \\
-			&= 1 -\ifrak \epsilon^{\mu} \Lambda_{\mu}^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \omega^{\mu \nu} (\Lambda^{-1})^{\rho}_{\mu} (\Lambda^{-1})^{\kappa}_{\nu} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots
+			&= 1 -\ifrak \epsilon^{\mu} {\Lambda^{\rho}}_{\mu} P_{\rho} + \tfrac{\ifrak}{2} (\Lambda \omega \Lambda^{-1})^{\rho \kappa} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots \\
+			&= 1 -\ifrak \epsilon^{\mu} {\Lambda^{\rho}}_{\mu} P_{\rho} + \tfrac{\ifrak}{2} {\Lambda^{\rho}}_{\mu} \omega^{\mu \nu} {\Lambda^{\kappa}}_{\nu} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots
 	\end{align*}
 
 
@@ -559,21 +588,21 @@ where we have used :math:`\eqref{eq_lambda_inverse}` for :math:`\Lambda^{-1}`. S
 	:nowrap:
 
 	\begin{align}
-		U(\Lambda, a) P_{\mu} U^{-1}(\Lambda, a) &= \Lambda^{\rho}_{\mu} P_{\rho}  \label{eq_p_conjugated_by_u} \\
-		U(\Lambda, a) J_{\mu \nu} U^{-1}(\Lambda, a) &= (\Lambda^{-1})^{\rho}_{\mu} (\Lambda^{-1})^{\kappa}_{\nu} (J_{\rho \kappa} + a_{\kappa} P_{\rho} - a_{\rho} P_{\kappa})  \label{eq_j_conjugated_by_u}
+		U(\Lambda, a) P_{\mu} U^{-1}(\Lambda, a) &= {\Lambda^{\rho}}_{\mu} P_{\rho}  \label{eq_p_conjugated_by_u} \\
+		U(\Lambda, a) J_{\mu \nu} U^{-1}(\Lambda, a) &= {\Lambda^{\rho}}_{\mu} {\Lambda^{\kappa}}_{\nu} (J_{\rho \kappa} + a_{\kappa} P_{\rho} - a_{\rho} P_{\kappa})  \label{eq_j_conjugated_by_u}
 	\end{align}
 
 where in the second equation, we have also made the right-hand-side anti-symmetric with respect to :math:`\mu` and :math:`\nu`. It's now clear that :math:`P` transforms like a vector and is translation invariant, while :math:`J` transforms like a :math:`2`-tensor only for homogeneous Lorentz transformations and is not translation invariant in general. These are of course as expected since both :math:`P` and :math:`J` are quantization of rather familiar objects, which we now spell out.
 
 We start with :math:`P` by writing :math:`H \coloneqq P_0` and :math:`\Pbf \coloneqq (P_1, P_2, P_3)`. Then :math:`H` is the energy operator, also know as the *Hamiltonian*, and :math:`\Pbf` is the momentum :math:`3`-vector. Similarly, let's write :math:`\Kbf \coloneqq (J_{01}, J_{02}, J_{03})` and :math:`\Jbf = (J_{23}, J_{31}, J_{12})`, as the *boost* :math:`3`-vector and the *angular momentum* :math:`3`-vector, respectively.
 
-Now that we have named all the players (i.e., :math:`H, \Pbf, \Jbf, \Kbf`) in the game, it remains to find out their mutual commutation relations since they should form a Lie algebra of the (infinitesimal) Lorentz symmetry. This can be done by applying :math:`\eqref{eq_p_conjugated_by_u}` and :math:`\eqref{eq_j_conjugated_by_u}` to :math:`U(\Lambda, a)` that is itself infinitesimal. More precisely, keeping up to first order terms, write :math:`\Lambda_{\mu}^{\nu} = \delta_{\mu}^{\nu} + \omega_{\mu}^{\nu}` and :math:`a^{\mu} = \epsilon^{\mu}` so that :math:`\eqref{eq_p_conjugated_by_u}` becomes
+Now that we have named all the players (i.e., :math:`H, \Pbf, \Jbf, \Kbf`) in the game, it remains to find out their mutual commutation relations since they should form a Lie algebra of the (infinitesimal) Lorentz symmetry. This can be done by applying :math:`\eqref{eq_p_conjugated_by_u}` and :math:`\eqref{eq_j_conjugated_by_u}` to :math:`U(\Lambda, a)` that is itself infinitesimal. More precisely, keeping up to first order terms, we have :math:`{\Lambda^{\rho}}_{\mu} = {\delta^{\rho}}_{\mu} + {\omega^{\rho}}_{\mu}` and :math:`a_{\mu} = \epsilon_{\mu}`. It follows that :math:`\eqref{eq_p_conjugated_by_u}`, up to first order, can be written as follows
 
 .. math::
 	:nowrap:
 
 	\begin{align*}
-		\left( \delta_{\mu}^{\rho} + \omega_{\mu}^{\rho} \right) P_{\rho} &= \left( 1 - \ifrak \epsilon^{\nu} P_{\nu} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) P_{\mu} \left( 1 + \ifrak \epsilon^{\nu} P_{\nu} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
+		\left( {\delta^{\rho}}_{\mu} + {\omega^{\rho}}_{\mu} \right) P_{\rho} &= \left( 1 - \ifrak \epsilon^{\nu} P_{\nu} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) P_{\mu} \left( 1 + \ifrak \epsilon^{\nu} P_{\nu} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
 			&= P_{\mu} - \ifrak \epsilon^{\nu} [P_{\mu}, P_{\nu}] - \tfrac{\ifrak}{2} \omega^{\rho \kappa} [P_{\mu}, J_{\rho \kappa}]
 	\end{align*}
 
@@ -584,17 +613,19 @@ Equating the coefficients of :math:`\epsilon` and :math:`\omega` gives the follo
 
 	\begin{align}
 		[P_{\mu}, P_{\nu}] &= 0  \label{eq_bracket_p4_p4} \\
-		[P_{\mu}, J_{\rho \kappa}] &= \ifrak (\eta_{\mu \rho} P_{\kappa} - \eta_{\mu \kappa} P_{\rho})  \label{eq_bracket_p4_j4}
+		[P_{\mu}, J_{\rho \kappa}] &= \ifrak (\eta_{\kappa \mu} P_{\rho} - \eta_{\rho \mu} P_{\kappa})  \label{eq_bracket_p4_j4}
 	\end{align}
 
-where we've used the identity :math:`\omega_{\mu}^{\rho} P_{\rho} = \eta_{\mu \kappa} \omega^{\kappa \rho} P_{\rho} = \tfrac{1}{2} \omega^{\rho \kappa} (\eta_{\mu \rho} P_{\kappa} - \eta_{\mu \kappa} P_{\rho})`. Next :math:`\eqref{eq_j_conjugated_by_u}` (up to first order) becomes
+where for the second identity, we've also used the fact that :math:`J_{\rho \kappa} = -J_{\kappa \rho}`.
+
+Similarly, expanding :math:`\eqref{eq_j_conjugated_by_u}` up to first order, we have
 
 .. math::
 	:nowrap:
 
 	\begin{align*}
-		J_{\mu \nu} + \epsilon_{\nu} P_{\mu} - \epsilon_{\mu} P_{\nu} - \omega_{\mu}^{\rho} J_{\rho \nu} - \omega_{\nu}^{\kappa} J_{\mu \kappa} \
-			&= (\delta_{\mu}^{\rho} - \omega_{\mu}^{\rho}) (\delta_{\nu}^{\kappa} - \omega_{\nu}^{\kappa}) (J_{\rho \kappa} + \epsilon_{\kappa} P_{\rho} - \epsilon_{\rho} P_{\kappa}) \\
+		J_{\mu \nu} + \epsilon_{\nu} P_{\mu} - \epsilon_{\mu} P_{\nu} + {\omega^{\rho}}_{\mu} J_{\rho \nu} + {\omega^{\kappa}}_{\nu} J_{\mu \kappa} \
+			&= ({\delta^{\rho}}_{\mu} + {\omega^{\rho}}_{\mu}) ({\delta^{\kappa}}_{\nu} + {\omega^{\kappa}}_{\nu}) (J_{\rho \kappa} + \epsilon_{\kappa} P_{\rho} - \epsilon_{\rho} P_{\kappa}) \\
 			&= \left( 1 - \ifrak \epsilon^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) J_{\mu \nu} \left( 1 + \ifrak \epsilon^{\rho} P_{\rho} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
 			&= J_{\mu \nu} - \ifrak \epsilon^{\rho} [P_{\rho}, J_{\mu \nu}] + \tfrac{\ifrak}{2} \omega^{\rho \kappa} [J_{\rho \kappa}, J_{\mu \nu}]
 	\end{align*}
@@ -605,7 +636,7 @@ Equating the coefficients of :math:`\epsilon` reproduces :math:`\eqref{eq_bracke
 	:nowrap:
 
 	\begin{equation}
-		[J_{\rho \kappa}, J_{\mu \nu}] = \ifrak (\eta_{\rho \mu} J_{\kappa \nu} - \eta_{\kappa \mu} J_{\rho \nu} + \eta_{\nu \rho} J_{\mu \kappa} - \eta_{\nu \kappa} J_{\mu \rho})
+		[J_{\rho \kappa}, J_{\mu \nu}] = \ifrak (\eta_{\rho \nu} J_{\mu \kappa} - \eta_{\rho \mu} J_{\nu \kappa} - \eta_{\kappa \mu} J_{\rho \nu} - \eta_{\kappa \nu} J_{\rho \mu})
 		\label{eq_bracket_j4_j4}
 	\end{equation}
 
@@ -623,8 +654,8 @@ Now that we have all the commutator relations, let's reorganize :math:`\eqref{eq
 		\label{eq_hkp_commutation} \\
 		\text{let } \mu = i, \nu = j \text{ in \eqref{eq_bracket_p4_p4}} &\implies [P_i, P_j] &&= 0
 		\label{eq_pp_commute} \\
-		\text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} &\implies [P_i, J_j] &&= -\ifrak \epsilon_{ijk} P_k  \label{eq_pjp_commutation} \\
-		\text{let } \mu = i, \rho = 0 \text{ and enumerate } \kappa \in \{1, 2, 3\} \text{ in \eqref{eq_bracket_p4_j4}} &\implies [P_i, K_j] &&= \ifrak \delta_{ij} H  \label{eq_pkh_commutation} \\
+		\text{let } \mu = i, \rho = k, \kappa = i \text{ in \eqref{eq_bracket_p4_j4} and permutation (anti-)symmetry} &\implies [P_i, J_j] &&= \ifrak \epsilon_{ijk} P_k  \label{eq_pjp_commutation} \\
+		\text{let } \mu = i, \rho = 0, \kappa = j \text{ in \eqref{eq_bracket_p4_j4}} &\implies [P_i, K_j] &&= \ifrak \delta_{ij} H  \label{eq_pkh_commutation} \\
 		\text{let } \rho = j, \kappa = \mu = k, \nu = i \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &\implies [J_i, J_j] &&= \ifrak \epsilon_{ijk} J_k  \label{eq_jjj_commutation} \\
 		\text{let } \rho = \nu = j, \kappa = k, \mu = 0 \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &\implies [J_i, K_j] &&= \ifrak \epsilon_{ijk} K_k  \label{eq_jkk_commutation} \\
 		\text{let } \rho = \mu = 0, \kappa = i, \nu = j \text{ in \eqref{eq_bracket_j4_j4} and permutation (anti-)symmetry} &\implies [K_i, K_j] &&= -\ifrak \epsilon_{ijk} J_k
@@ -643,7 +674,7 @@ Since the time evolution of a physical system is dictated by the Hamiltonian :ma
 One-Particle States
 -------------------
 
-One neat application of our knowledge about Lorentz symmetry is to classify (free) one-particle states according to their transformation laws under (inhomogeneous) Lorentz transformations. Throughout this section, the Lorentz transformations will be assumed to be proper orthochronous, i.e., :math:`\op{det}(\Lambda) = 1` and :math:`\Lambda_0^0 \geq 1`.
+One neat application of our knowledge about Lorentz symmetry is to classify (free) one-particle states according to their transformation laws under (inhomogeneous) Lorentz transformations. Throughout this section, the Lorentz transformations will be assumed to be proper orthochronous, i.e., :math:`\op{det}(\Lambda) = 1` and :math:`{\Lambda_0}^0 \geq 1`.
 
 In order to do so, we need some labels to identify states, which are typically conserved quantities. According to the commutation relations between :math:`H, \Pbf` and :math:`\Jbf` obtained in the previous section, we see that :math:`p = (H, \Pbf)` consists of mutually commutative conserved components, but not :math:`\Jbf`. Hence we can write our one-particle states as :math:`\Psi_{p, \sigma}` such that
 
@@ -675,8 +706,10 @@ where the minus sign comes from our choice of expansion :math:`\eqref{eq_u_loren
 	:nowrap:
 
 	\begin{equation*}
-		P_{\mu} U(\Lambda) \Psi_{p, \sigma} = U(\Lambda) (U^{-1} (\Lambda) P_{\mu} U(\Lambda)) \Psi_{p, \sigma} \
-		\xlongequal{\eqref{eq_p_conjugated_by_u}} U(\Lambda) \Lambda_{\mu}^{\nu} P_{\nu} \Psi_{p, \sigma} = (\Lambda_{\mu}^{\nu} p_{\nu}) U(\Lambda) \Psi_{p, \sigma}
+		P_{\mu} U(\Lambda) \Psi_{p, \sigma}
+			= U(\Lambda) (U^{-1} (\Lambda) P_{\mu} U(\Lambda)) \Psi_{p, \sigma}
+			\xlongequal{\eqref{eq_p_conjugated_by_u}} U(\Lambda) {\Lambda_{\mu}}^{\nu} P_{\nu} \Psi_{p, \sigma}
+			= \left( {\Lambda_{\mu}}^{\nu} p_{\nu} \right) U(\Lambda) \Psi_{p, \sigma}
 	\end{equation*}
 
 that :math:`U(\Lambda) \Psi_{p, \sigma}` has :math:`4`-momentum :math:`\Lambda p`. Therefore we can write
@@ -734,7 +767,7 @@ where :math:`N(p)` is a normalization factor to be determined later. In this way
 
 so that :math:`L(\Lambda p)^{-1} \Lambda L(p)` maps :math:`k` to itself, and hence :math:`U(L(\Lambda p)^{-1} \Lambda L(p))` acts solely on :math:`\sigma`.
 
-At this point, we have reduced the problem to the classification of representations of the so-called *little group* defined as the subgroup of (proper orthochronous) Lorentz transformations :math:`W` that fixes :math:`k`, i.e., :math:`W_{\mu}^{\nu} k_{\nu} = k_{\mu}`. Element in the little group is known as `Wigner rotation <https://en.wikipedia.org/wiki/Wigner_rotation>`__ (and hence :math:`W`). More precisely, the task now is to find (unitary) representations :math:`D(W)` such that
+At this point, we have reduced the problem to the classification of representations of the so-called *little group* defined as the subgroup of (proper orthochronous) Lorentz transformations :math:`W` that fixes :math:`k`, i.e., :math:`{W_{\mu}}^{\nu} k_{\nu} = k_{\mu}`. Element in the little group is known as `Wigner rotation <https://en.wikipedia.org/wiki/Wigner_rotation>`__ (and hence :math:`W`). More precisely, the task now is to find (unitary) representations :math:`D(W)` such that
 
 .. math::
 	:nowrap:
@@ -817,7 +850,7 @@ where :math:`\theta(p_0)` is the step function defined to be :math:`0` if :math:
 	:nowrap:
 
 	\begin{equation}
-		d^3\pbf / \sqrt{\pbf^2 + M^2}  \label{eq_lorentz_invariant_3_momentum_volume_element}
+		\frac{d^3\pbf}{\sqrt{\pbf^2 + M^2}}  \label{eq_lorentz_invariant_3_momentum_volume_element}
 	\end{equation}
 
 We can use it to find the Lorentz-invariant Dirac delta (marked in blue) as follows
@@ -987,7 +1020,7 @@ Using :math:`\eqref{eq_p_from_v}`, we can rewrite :math:`\gamma` defined by :mat
 	:nowrap:
 
 	\begin{equation*}
-		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma = \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)
+		\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma \coloneqq \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)
 	\end{equation*}
 
 It follows that
@@ -996,8 +1029,8 @@ It follows that
 	:nowrap:
 
 	\begin{align}
-		L(p)_0^0 &= \gamma \label{eq_L_transformation_for_massive_1} \\
-		L(p)^i_0 = L(p)_i^0 &= \frac{p_i}{M} \label{eq_L_transformation_for_massive_2} \\
+		{L(p)_0}^0 &= \gamma \label{eq_L_transformation_for_massive_1} \\
+		{L(p)_i}^0 = {L(p)^0}_i &= \frac{p_i}{M} \label{eq_L_transformation_for_massive_2} \\
 		L(p)_{ij} &= \delta_{ij} + \frac{p_i p_j}{\pbf^2} (\gamma - 1) \label{eq_L_transformation_for_massive_3}
 	\end{align}
 
@@ -1245,7 +1278,7 @@ It follows from :math:`\eqref{eq_vk_is_one}` that we can write :math:`Wv = (1 + 
 	:nowrap:
 
 	\begin{equation}
-		S_{\mu}^{\nu}(a, b) = \begin{bmatrix*}[r]
+		{S_{\mu}}^{\nu}(a, b) = \begin{bmatrix*}[r]
 			1 + c & a & b & -c \\
 			a & 1 & 0 & -a \\
 			b & 0 & 1 & -b \\
@@ -1297,7 +1330,7 @@ As in the massive case, we'll work out :math:`D_{\sigma \sigma'}` up to first or
 	:nowrap:
 
 	\begin{align*}
-		W(a, b, \theta)_{\mu}^{\nu} &= \left(1 + \begin{bmatrix*}[r]
+		{W(a, b, \theta)_{\mu}}^{\nu} &= \left(1 + \begin{bmatrix*}[r]
 				0 & a & b & 0 \\
 				a & 0 & 0 & -a \\
 				b & 0 & 0 & -b \\
@@ -1322,7 +1355,7 @@ where we've added the :math:`4`-indexes since we recall from discussions in :ref
 	:nowrap:
 
 	\begin{equation*}
-		W(a, b , \theta)^{\mu \nu} = \eta^{\mu \sigma} W_{\sigma}^{\nu} = 1 + \begin{bmatrix*}[r]
+		W(a, b , \theta)^{\mu \nu} = \eta^{\mu \sigma} {W_{\sigma}}^{\nu} = 1 + \begin{bmatrix*}[r]
 				0 & -a & -b & 0 \\
 				a & 0 & \theta & -a \\
 				b & -\theta & 0 & -b \\
@@ -1488,10 +1521,10 @@ for the corresponding quantum symmetry operators, which we haven't decided wheth
 	:nowrap:
 
 	\begin{align}
-		U(\Pcal) \ifrak P_{\mu} U^{-1}(\Pcal) &= \ifrak \Pcal^{\rho}_{\mu} P_{\rho} \label{eq_p_conjugated_by_p} \\
-		U(\Pcal) \ifrak J_{\mu \nu} U^{-1}(\Pcal) &= \ifrak \Pcal^{\rho}_{\mu} \Pcal^{\kappa}_{\nu} J_{\rho \kappa} \label{eq_j_conjugated_by_p} \\
-		U(\Tcal) \ifrak P_{\mu} U^{-1}(\Tcal) &= \ifrak \Tcal^{\rho}_{\mu} P_{\rho} \label{eq_p_conjugated_by_t} \\
-		U(\Tcal) \ifrak J_{\mu \nu} U^{-1}(\Tcal) &= \ifrak \Tcal^{\rho}_{\mu} \Tcal^{\kappa}_{\nu} J_{\rho \kappa} \label{eq_j_conjugated_by_t}
+		U(\Pcal) \ifrak P_{\mu} U^{-1}(\Pcal) &= \ifrak {\Pcal_{\mu}}^{\rho} P_{\rho} \label{eq_p_conjugated_by_p} \\
+		U(\Pcal) \ifrak J_{\mu \nu} U^{-1}(\Pcal) &= \ifrak {\Pcal_{\mu}}^{\rho} {\Pcal_{\nu}}^{\kappa} J_{\rho \kappa} \label{eq_j_conjugated_by_p} \\
+		U(\Tcal) \ifrak P_{\mu} U^{-1}(\Tcal) &= \ifrak {\Tcal_{\mu}}^{\rho} P_{\rho} \label{eq_p_conjugated_by_t} \\
+		U(\Tcal) \ifrak J_{\mu \nu} U^{-1}(\Tcal) &= \ifrak {\Tcal_{\mu}}^{\rho} {\Tcal_{\nu}}^{\kappa} J_{\rho \kappa} \label{eq_j_conjugated_by_t}
 	\end{align}
 
 The complex (anti-)linearity of :math:`U(\Pcal)` and :math:`U(\Tcal)` can then be decided by the postulation that physically meaningful energy must not be negative. More precisely, recall that :math:`P_0` is the energy operator. Then :math:`\eqref{eq_p_conjugated_by_p}` shows
@@ -1503,7 +1536,7 @@ The complex (anti-)linearity of :math:`U(\Pcal)` and :math:`U(\Tcal)` can then b
 		U(\Pcal) \ifrak P_0 U^{-1}(\Pcal) = \ifrak P_0
 	\end{equation*}
 
-If :math:`U(\Pcal)` were anti-linear, then :math:`U(\Pcal) P_0 U^{-1}(\Pcal) = -P_0`. Then for any state :math:`\Psi` with positive energy, i.e., :math:`P_0 \Psi = p_0 \Psi`, we would have a state :math:`U^{-1}(\Pcal) \Psi` with negative energy :math:`-p_0`. Hence we conclude that :math:`U(\Pcal)` must be linear. The same argument shows also that :math:`U(\Tcal)` must be anti-linear (since :math:`\Tcal_0^0 = -1`).
+If :math:`U(\Pcal)` were anti-linear, then :math:`U(\Pcal) P_0 U^{-1}(\Pcal) = -P_0`. Then for any state :math:`\Psi` with positive energy, i.e., :math:`P_0 \Psi = p_0 \Psi`, we would have a state :math:`U^{-1}(\Pcal) \Psi` with negative energy :math:`-p_0`. Hence we conclude that :math:`U(\Pcal)` must be linear. The same argument shows also that :math:`U(\Tcal)` must be anti-linear (since :math:`{\Tcal_0}^0 = -1`).
 
 As before, it'll be useful to rewrite :math:`\eqref{eq_p_conjugated_by_p}` -- :math:`\eqref{eq_j_conjugated_by_t}` in terms of :math:`H, \Pbf, \Jbf, \Kbf` as follows
 
@@ -2021,7 +2054,7 @@ but this is *not* what we mean by Lorentz symmetry. What we do want to know is, 
 
 	\begin{align}
 		S_{p'_1, \sigma'_1, n'_1; ~p'_2, \sigma'_2, n'_2; ~\cdots, ~~p_1, \sigma_1, n_1; ~p_2, \sigma_2, n_2; ~\cdots} = \
-			&\blue{\exp\left( \ifrak a^{\mu} \Lambda_{\mu}^{\nu} \left( (p'_1)_{\nu} + (p'_2)_{\nu} + \cdots - (p_1)_{\nu} - (p_2)_{\nu} - \cdots \right) \right)}  \label{eq_lorentz_transformation_formula_for_s_matrix} \\
+			&\blue{\exp\left( \ifrak a^{\mu} {\Lambda_{\mu}}^{\nu} \left( (p'_1)_{\nu} + (p'_2)_{\nu} + \cdots - (p_1)_{\nu} - (p_2)_{\nu} - \cdots \right) \right)}  \label{eq_lorentz_transformation_formula_for_s_matrix} \\
 			&\times \sqrt{\frac{(\Lambda p'_1)_0 (\Lambda p'_2)_0 \cdots (\Lambda p_1)_0 (\Lambda p_2)_0 \cdots}{(p'_1)_0 (p'_2)_0 \cdots (p_1)_0 (p_2)_0 \cdots}}  \nonumber \\
 			&\times \sum_{\bar{\sigma}'_1 \bar{\sigma}'_2 \cdots} D^{\ast}_{\bar{\sigma}'_1 \sigma'_1} (W(\Lambda, p'_1)) D^{\ast}_{\bar{\sigma}'_2 \sigma'_2} (W(\Lambda, p'_2)) \cdots  \nonumber \\
 			&\times \sum_{\bar{\sigma}_1 \bar{\sigma}_2 \cdots} D_{\bar{\sigma}_1 \sigma_1} (W(\Lambda, p_1)) D_{\bar{\sigma}_2 \sigma_2} (W(\Lambda, p_2)) \cdots  \nonumber \\
@@ -6904,9 +6937,10 @@ But let's calculate :math:`U(\Lambda) a_{\mu}(x) U^{-1}(\Lambda)` anyway and see
 	:nowrap:
 
 	\begin{align}
-		D_{\mu}^{\nu}(W(a, b, \theta)) e_{\nu}(\kbf, \pm 1) &\xlongequal{\eqref{eq_massless_vector_field_w_equals_s_times_r}} S(a, b)_{\mu}^{\lambda} R(\theta)_{\lambda}^{\nu} e_{\nu}(\kbf, \pm 1)
-		\label{eq_massless_vector_field_dw_acts_on_spinor} \\
-			&\xlongequal{\eqref{eq_massless_field_spinor_e_condition_from_r}} e^{\pm \ifrak \theta} S(a, b)_{\mu}^{\lambda} e_{\lambda}(\kbf, \pm 1)
+		{D_{\mu}}^{\nu}(W(a, b, \theta)) e_{\nu}(\kbf, \pm 1)
+			&\xlongequal{\eqref{eq_massless_vector_field_w_equals_s_times_r}} {S(a, b)_{\mu}}^{\lambda} {R(\theta)_{\lambda}}^{\nu} e_{\nu}(\kbf, \pm 1)
+			\label{eq_massless_vector_field_dw_acts_on_spinor} \\
+			&\xlongequal{\eqref{eq_massless_field_spinor_e_condition_from_r}} e^{\pm \ifrak \theta} {S(a, b)_{\mu}}^{\lambda} e_{\lambda}(\kbf, \pm 1)
 			\nonumber \\
 			&\xlongequal{\eqref{eq_massless_little_group_s_matrix}} e^{\pm \ifrak \theta} \left( e_{\mu}(\kbf, \pm 1) + \frac{a \pm \ifrak b}{\sqrt{2}} k_{\mu} \right)
 			\nonumber
@@ -6918,7 +6952,7 @@ Next we recall the little group element :math:`W(\Lambda, p) = L^{-1}(\Lambda p)
 	:nowrap:
 
 	\begin{equation}
-		\Lambda_{\mu}^{\nu} e_{\nu}(\pbf, \pm 1) = e^{\pm \ifrak \theta(\Lambda, p)} \left(e_{\mu}(\pbf_{\Lambda}, \pm 1) + (\Lambda p)_{\mu} \Omega_{\pm}(\Lambda, p)\right)
+		{\Lambda_{\mu}}^{\nu} e_{\nu}(\pbf, \pm 1) = e^{\pm \ifrak \theta(\Lambda, p)} \left(e_{\mu}(\pbf_{\Lambda}, \pm 1) + (\Lambda p)_{\mu} \Omega_{\pm}(\Lambda, p)\right)
 		\label{eq_massless_vector_field_spinor_e_condition}
 	\end{equation}
 
@@ -6933,19 +6967,22 @@ where
 
 is the extra term that makes it different from :math:`\eqref{eq_massless_field_spinor_u_condition}` which would have been satisfied if :math:`\eqref{eq_massless_field_psi_transform_by_d_matrix}` holds.
 
-To most conveniently utilize :math:`\eqref{eq_massless_vector_field_spinor_e_condition}`, let's calculate :math:`D_{\mu}^{\nu} \left( U(\Lambda) a_{\nu}(x) U^{-1}(\Lambda) \right)` using :math:`\eqref{eq_massless_vector_field_a}, \eqref{eq_massless_vector_field_creation_operator_conjugated_by_lorentz_transformation}`, and :math:`\eqref{eq_massless_vector_field_annihilation_operator_conjugated_by_lorentz_transformation}` as follows
+To most conveniently utilize :math:`\eqref{eq_massless_vector_field_spinor_e_condition}`, let's calculate :math:`{D_{\mu}}^{\nu} \left( U(\Lambda) a_{\nu}(x) U^{-1}(\Lambda) \right)` using :math:`\eqref{eq_massless_vector_field_a}, \eqref{eq_massless_vector_field_creation_operator_conjugated_by_lorentz_transformation}`, and :math:`\eqref{eq_massless_vector_field_annihilation_operator_conjugated_by_lorentz_transformation}` as follows
 
 .. math::
 	:nowrap:
 
 	\begin{align*}
-		D_{\mu}^{\nu}(\Lambda) \left(U(\Lambda) a_{\nu}(x) U^{-1}(\Lambda)\right) &= (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot x} \Lambda_{\mu}^{\nu} e_{\nu}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} e^{-\ifrak \sigma \theta(\Lambda, p)} a(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
-			&\phantom{= \Big(} e^{-\ifrak p \cdot x} \Lambda_{\mu}^{\nu} e^{\ast}_{\nu}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} e^{\ifrak \sigma \theta} a^{c \dagger}(\pbf_{\Lambda}, \sigma) \Big) \\
-			&\xlongequal{\eqref{eq_massless_vector_field_spinor_e_condition}} (2\pi)^{-3/2} \int \frac{d^3 p}{p_0} \sqrt{\frac{(\Lambda p)_0}{2}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot x} e_{\mu}(\pbf_{\Lambda}, \sigma) a(\pbf_{\Lambda}, \sigma) + e^{-\ifrak p \cdot x} e^{\ast}_{\mu}(\pbf_{\Lambda}, \sigma) a^{c \dagger}(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
+		{D_{\mu}}^{\nu}(\Lambda) \left(U(\Lambda) a_{\nu}(x) U^{-1}(\Lambda)\right)
+			&= (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot x} {\Lambda_{\mu}}^{\nu} e_{\nu}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} e^{-\ifrak \sigma \theta(\Lambda, p)} a(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
+			&\phantom{= \Big(} e^{-\ifrak p \cdot x} {\Lambda_{\mu}}^{\nu} e^{\ast}_{\nu}(\pbf, \sigma) \sqrt{\frac{(\Lambda p)_0}{p_0}} e^{\ifrak \sigma \theta} a^{c \dagger}(\pbf_{\Lambda}, \sigma) \Big) \\
+			&\xlongequal{\eqref{eq_massless_vector_field_spinor_e_condition}} (2\pi)^{-3/2} \int \frac{d^3 p}{p_0} \sqrt{\frac{(\Lambda p)_0}{2}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot x} e_{\mu}(\pbf_{\Lambda}, \sigma) a(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
+			&\phantom{\xlongequal{\eqref{eq_massless_vector_field_spinor_e_condition}} \Big(} + e^{-\ifrak p \cdot x} e^{\ast}_{\mu}(\pbf_{\Lambda}, \sigma) a^{c \dagger}(\pbf_{\Lambda}, \sigma) \phantom{\Big)} \\
 			&\phantom{\xlongequal{\eqref{eq_massless_vector_field_spinor_e_condition}} \Big(} + (\Lambda p)_{\mu} \left( e^{\ifrak p \cdot x} \Omega_{\sigma}(\Lambda, p) a(\pbf_{\Lambda}, \sigma) + e^{-\ifrak p \cdot x} \Omega^{\ast}_{\sigma}(\Lambda, p) a^{c \dagger}(\pbf_{\Lambda}, \sigma) \right) \Big) \\
-			&= (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot \Lambda x} e_{\mu}(\pbf, \pm 1) a(\pbf, \sigma) + e^{-\ifrak p \cdot \Lambda x} e^{\ast}_{\mu}(\pbf, \pm 1) a^{c \dagger}(\pbf, \sigma) \phantom{\Big)} \\
+			&= (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \Big( e^{\ifrak p \cdot \Lambda x} e_{\mu}(\pbf, \pm 1) a(\pbf, \sigma) \phantom{\Big)} \\
+			&\phantom{= \Big(} + e^{-\ifrak p \cdot \Lambda x} e^{\ast}_{\mu}(\pbf, \pm 1) a^{c \dagger}(\pbf, \sigma) \phantom{\Big)} \\
 			&\phantom{= \Big(} + p_{\mu} \left( e^{\ifrak p \cdot \Lambda x} \Omega_{\sigma}(\Lambda, \Lambda^{-1} p) + e^{-\ifrak p \cdot \Lambda x} \Omega^{\ast}_{\sigma}(\Lambda, \Lambda^{-1} p) a^{c \dagger}(\pbf, \sigma) \right) \Big) \\
-			&= a_{\mu}(\Lambda x) + \frac{\p}{\p (\Lambda_{\mu}^{\nu} x_{\nu})} \Omega(\Lambda, x)
+			&= a_{\mu}(\Lambda x) + \frac{\p}{\p \left( (\Lambda x)_{\mu} \right)} \Omega(\Lambda, x)
 	\end{align*}
 
 where :math:`\Omega(\Lambda, x)` is a linear combination of creation and annihilation operators, whose precise form is not important here. Finally, moving :math:`D(\Lambda)` to the right-hand-side, we obtain the following variation of :math:`\eqref{eq_massless_field_psi_transform_by_d_matrix}`
@@ -6954,7 +6991,7 @@ where :math:`\Omega(\Lambda, x)` is a linear combination of creation and annihil
 	:nowrap:
 
 	\begin{equation}
-		U(\Lambda) a_{\mu}(x) U^{-1}(\Lambda) = D(\Lambda^{-1})_{\mu}^{\nu} a_{\nu}(\Lambda x) + \p_{\mu} \Omega(\Lambda, x)
+		U(\Lambda) a_{\mu}(x) U^{-1}(\Lambda) = {D(\Lambda^{-1})_{\mu}}^{\nu} a_{\nu}(\Lambda x) + \p_{\mu} \Omega(\Lambda, x)
 		\label{eq_massless_vector_field_a_conjugation_by_lorentz_transformation}
 	\end{equation}
 
@@ -8944,13 +8981,13 @@ Comparing with :math:`\eqref{eq_infinitesimal_variation_of_field}` we see that
 		\Fscr_{\mu} = -\ifrak \p_{\mu} \Psi_n
 	\end{equation*}
 
-It follows from :math:`\eqref{eq_variation_of_action_by_functional_deformation}` and :math:`\eqref{eq_general_conservation_of_current}` that there exists a conserved :math:`4`-current :math:`T^{\mu}_{\nu}`, which is known as the `energy-momentum tensor <https://en.wikipedia.org/wiki/Stress%E2%80%93energy_tensor>`__, such that
+It follows from :math:`\eqref{eq_variation_of_action_by_functional_deformation}` and :math:`\eqref{eq_general_conservation_of_current}` that there exists a conserved :math:`4`-current :math:`{T^{\nu}}_{\mu}`, which is known as the `energy-momentum tensor <https://en.wikipedia.org/wiki/Stress%E2%80%93energy_tensor>`__, such that
 
 .. math::
 	:nowrap:
 
 	\begin{equation*}
-		\p_{\mu} T^{\mu}_{\nu} = 0
+		\p_{\nu} {T^{\nu}}_{\mu} = 0
 	\end{equation*}
 
 The corresponding conserved currents then take the form
@@ -8959,11 +8996,11 @@ The corresponding conserved currents then take the form
 	:nowrap:
 
 	\begin{equation}
-		P_{\nu} \coloneqq \int d^3 x~T^0_{\nu}
+		P_{\mu} \coloneqq \int d^3 x~{T^0}_{\mu}
 		\label{eq_spacetime_translation_conserved_quantity_is_momentum}
 	\end{equation}
 
-such that :math:`\dot{P}_{\nu} = 0`. Here it's important to not confuse :math:`P_{\nu}` with a canonical variable -- it's just a conserved quantity which turns out to be the :math:`4`-momentum.
+such that :math:`\dot{P}_{\mu} = 0`. Here it's important to not confuse :math:`P_{\mu}` with a canonical variable -- it's just a conserved quantity which turns out to be the :math:`4`-momentum.
 
 Now recall from :math:`\eqref{eq_defn_lagrangian_density}` that the Lagrangian is usually the spatial integral of a density functional. Hence it's not unreasonable to suppose that the Lagrangian is indeed invariant under spatial translations. Under this assumption, we can rewrite :math:`\eqref{eq_lagrangian_preserving_symmetry_generator_formula}` as follows
 
@@ -9011,7 +9048,7 @@ In contrast, one cannot hope that the Lagrangian to be invariant under time tran
 
 for any functional :math:`\Gscr` that doesn't explicitly involve :math:`t`.
 
-In general, the Lagrangian density is not invariant under spacetime translations. However, it turns out that the conserved current, which in this case is :math:`T^{\mu}_{\nu}`, can nonetheless be calculated. To spell out the details, let's consider the following variation
+In general, the Lagrangian density is not invariant under spacetime translations. However, it turns out that the conserved current, which in this case is :math:`{T^{\mu}}_{\nu}`, can nonetheless be calculated. To spell out the details, let's consider the following variation
 
 .. math::
 	:nowrap:
@@ -9037,13 +9074,13 @@ where we've used the chain rule for derivatives in the second equality, and inte
 	:nowrap:
 
 	\begin{equation*}
-		T^{\nu}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
+		{T^{\nu}}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
 	\end{equation*}
 
 .. _note_energy_momentum_tensor_not_symmetric:
 
 .. note::
-	The energy-momentum tensor :math:`T_{\mu}^{\nu}` is not yet suitable for general relativity since it's not symmetric. As we'll see in :ref:`sec_lorentz_symmetry`, when taking homogeneous Lorentz transformation symmetry into account, one can supplement :math:`T_{\mu}^{\nu}` with some extra terms to make it both conserved and symmetric.
+	The energy-momentum tensor :math:`{T^{\nu}}_{\mu}` is not yet suitable for general relativity since it's not symmetric. As we'll see in :ref:`sec_lorentz_symmetry`, when taking homogeneous Lorentz transformation symmetry into account, one can supplement :math:`{T^{\nu}}_{\mu}` with some extra terms to make it both conserved and symmetric.
 
 Indeed, this calculation recovers :math:`\eqref{eq_spatial_translation_conserved_quantity}` by letting :math:`\nu = 0` and :math:`\mu \neq 0`. Moreover, it recovers the Hamiltonian by letting :math:`\mu = \nu = 0` as follows
 
@@ -9064,19 +9101,19 @@ As another example, let's consider linear variations as follows
 	:nowrap:
 
 	\begin{align*}
-		Q_n(x) &\to Q_n(x) + \ifrak \epsilon^a (t_a)_n^m Q_m(x) \\
-		C_r(x) &\to C_r(x) + \ifrak \epsilon^a (\tau_a)_r^s C_s(x)
+		Q_n(x) &\to Q_n(x) + \ifrak \epsilon^a {(t_a)_n}^m Q_m(x) \\
+		C_r(x) &\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)
 	\end{align*}
 
 where we've adopted the Einstein summation convention for repeated upper and lower indexes because it'd otherwise be too tedious to write out the summations. Here :math:`(t_{\square})^{\square}_{\square}` should furnish a representation of the Lie algebra of the symmetry group.
 
-As before, the invariance of action under such variations implies the existstence of conserved currents :math:`J_a^{\mu}` such that
+As before, the invariance of action under such variations implies the existstence of conserved currents :math:`J^{\mu}_a` such that
 
 .. math::
 	:nowrap:
 
 	\begin{equation*}
-		\p_{\mu} J_a^{\mu} = 0
+		\p_{\mu} J^{\mu}_a = 0
 	\end{equation*}
 
 as well as the conserved quantity
@@ -9094,7 +9131,7 @@ If, in addition, the Lagrangian is invariant under such variations, then :math:`
 	:nowrap:
 
 	\begin{equation*}
-		T_a = -\ifrak \int d^3 x~P_n(t, \xbf) (t_a)^n_m Q^m(t, \xbf)
+		T_a = -\ifrak \int d^3 x~P_n(t, \xbf) {(t_a)^n}_m Q^m(t, \xbf)
 	\end{equation*}
 
 It follows that
@@ -9103,8 +9140,8 @@ It follows that
 	:nowrap:
 
 	\begin{align*}
-		\left[ T_a, Q^n(x) \right] &= -(t_a)^n_m Q^m(x) \\
-		\left[ T_a, P_n(x) \right] &= (t_a)^m_n P_m(x)
+		\left[ T_a, Q^n(x) \right] &= -{(t_a)^n}_m Q^m(x) \\
+		\left[ T_a, P_n(x) \right] &= {(t_a)_n}^m P_m(x)
 	\end{align*}
 
 In particular, when :math:`t_a` is diagonal (e.g., in electrodynamics), the operators :math:`Q^n` and :math:`P_n` may be regarded as raising/lowering operators. In fact, we claim that :math:`T_a` form a Lie algebra by the following calculation
@@ -9113,20 +9150,20 @@ In particular, when :math:`t_a` is diagonal (e.g., in electrodynamics), the oper
 	:nowrap:
 
 	\begin{align*}
-		\left[ T_a, T_b \right] &= -\left[ \int d^3 x~P_n(t, \xbf) (t_a)^n_m Q^m(t, \xbf), \int d^3 y~P_r(t, \ybf) (t_b)^r_s Q^s(t, \ybf) \right] \\
-			&= -\int d^3 x~d^3 y~(t_a)^n_m (t_b)^r_s \left[ P_n(t, \xbf) Q^m(t, \xbf), P_r(t, \ybf) Q^s(t, \ybf) \right] \\
-			&= -\int d^3 x~d^3 y~(t_a)^n_m (t_b)^r_s \Big( P_n(t, \xbf) \left[ Q^m(t, \xbf), P_r(t, \ybf) \right] Q^s(t, \ybf) - P_r(t, \ybf) \left[ Q^s(t, \ybf), P_n(t, \xbf) \right] Q^m(t, \xbf) \Big) \\
-			&= -\ifrak \int d^3 x \Big( (t_a)^n_m (t_b)^m_s P_n(t, \xbf) Q^s(t, \xbf) - (t_a)^n_m (t_b)^r_n P_r(t, \xbf) Q^m(t, \xbf) \Big) \\
-			&= -\ifrak \int d^3 x~\left[ t_a, t_b \right]^n_m P_n(t, \xbf) Q^m(t, \xbf)
+		\left[ T_a, T_b \right] &= -\left[ \int d^3 x~P_n(t, \xbf) {(t_a)^n}_m Q^m(t, \xbf), \int d^3 y~P_r(t, \ybf) {(t_b)^r}_s Q^s(t, \ybf) \right] \\
+			&= -\int d^3 x~d^3 y~{(t_a)^n}_m {(t_b)^r}_s \left[ P_n(t, \xbf) Q^m(t, \xbf), P_r(t, \ybf) Q^s(t, \ybf) \right] \\
+			&= -\int d^3 x~d^3 y~{(t_a)^n}_m {(t_b)^r}_s \Big( P_n(t, \xbf) \left[ Q^m(t, \xbf), P_r(t, \ybf) \right] Q^s(t, \ybf) - P_r(t, \ybf) \left[ Q^s(t, \ybf), P_n(t, \xbf) \right] Q^m(t, \xbf) \Big) \\
+			&= -\ifrak \int d^3 x \Big( {(t_a)^n}_m {(t_b)^m}_s P_n(t, \xbf) Q^s(t, \xbf) - {(t_a)^n}_m {(t_b)^r}_n P_r(t, \xbf) Q^m(t, \xbf) \Big) \\
+			&= -\ifrak \int d^3 x~{\left[ t_a, t_b \right]^n}_m P_n(t, \xbf) Q^m(t, \xbf)
 	\end{align*}
 
-Now if :math:`t_a` form a Lie algebra with structure constants :math:`f^c_{ab}` as follows
+Now if :math:`t_a` form a Lie algebra with structure constants :math:`{f_{ab}}^c` as follows
 
 .. math::
 	:nowrap:
 
 	\begin{equation*}
-		\left[ t_a, t_b \right] = \ifrak f^c_{ab} t_c
+		\left[ t_a, t_b \right] = \ifrak {f_{ab}}^c t_c
 	\end{equation*}
 
 then
@@ -9135,7 +9172,7 @@ then
 	:nowrap:
 
 	\begin{equation*}
-		\left[ T_a, T_b \right] = \ifrak f^c_{ab} T_c
+		\left[ T_a, T_b \right] = \ifrak {f_{ab}}^c T_c
 	\end{equation*}
 
 In other words, the conserved quantities also form the same Lie algebra.
@@ -9146,7 +9183,7 @@ Now if, in addition, the Lagrangian density is also invariant, then :math:`\eqre
 	:nowrap:
 
 	\begin{equation}
-		J^{\mu}_a = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} Q_n)} (t_a)^m_n Q_m - \ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} C_r)} (\tau_a)^s_r C_s
+		J^{\mu}_a = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} Q_n)} {(t_a)_n}^m Q_m - \ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} C_r)} {(\tau_a)_r}^s C_s
 		\label{eq_lagrangian_density_invariant_linear_transformation_conserved_current}
 	\end{equation}
 
@@ -9188,7 +9225,7 @@ Note that since :math:`\Lscr` doesn't have :math:`\dot{C}_r` dependencies, we ha
 	:nowrap:
 
 	\begin{equation*}
-		J^0_a = -\ifrak P^n (t_a)^m_n Q_m
+		J^0_a = -\ifrak P^n {(t_a)_n}^m Q_m
 	\end{equation*}
 
 whose equal-time commutation relations with canonical variables :math:`P` and :math:`Q` can be easily calculated.
@@ -9207,7 +9244,7 @@ Recall from :math:`\eqref{eq_expansion_of_Lambda}` and :math:`\eqref{eq_lorentz_
 	:nowrap:
 
 	\begin{align}
-		\Lambda^{\mu}_{\nu} &= \delta^{\mu}_{\nu} + \omega^{\mu}_{\nu}
+		{\Lambda_{\mu}}^{\nu} &= {\delta_{\mu}}^{\nu} + {\omega_{\mu}}^{\nu}
 		\nonumber \\
 		\omega_{\mu \nu} &= -\omega_{\nu \mu}
 		\label{eq_lorentz_omega_is_antisymmetric}
@@ -9243,7 +9280,7 @@ In light of :math:`\eqref{eq_lagrangian_density_preserving_symmetry_conserved_de
 	:nowrap:
 
 	\begin{equation*}
-		\delta \Psi_n = \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \Psi_m
+		\delta \Psi_n = \frac{\ifrak}{2} \omega^{\mu \nu} {(\Jscr_{\mu \nu})_n}^m \Psi_m
 	\end{equation*}
 
 where :math:`\Jscr` are matrices satisfying :math:`\eqref{eq_bracket_repr_j}`. The corresponding derivatives then have the following variation term
@@ -9252,7 +9289,7 @@ where :math:`\Jscr` are matrices satisfying :math:`\eqref{eq_bracket_repr_j}`. T
 	:nowrap:
 
 	\begin{equation*}
-		\delta (\p_{\kappa} \Psi_n) = \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \p_{\kappa} \Psi_m + \omega_{\kappa}^{\lambda} \p_{\lambda} \Psi_n
+		\delta (\p_{\kappa} \Psi_n) = \frac{\ifrak}{2} \omega^{\mu \nu} {(\Jscr_{\mu \nu})_n}^m \p_{\kappa} \Psi_m + {\omega_{\kappa}}^{\lambda} \p_{\lambda} \Psi_n
 	\end{equation*}
 
 where the second summand on the right-hand-side corresponds to the fact the the Lorentz transformation also acts on the spacetime coordinates.
@@ -9263,8 +9300,8 @@ Now the invariance of the Lagrangian density under such variation can be written
 	:nowrap:
 
 	\begin{equation*}
-		\frac{\delta \Lscr}{\delta \Psi_n} \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \Psi_m
-      		+ \frac{\delta \Lscr}{\delta (\p_{\kappa} \Psi_n)} \left( \frac{\ifrak}{2} \omega^{\mu \nu} (\Jscr_{\mu \nu})_n^m \p_{\kappa} \Psi_m + \omega_{\kappa}^{\lambda} \p_{\lambda} \Psi_n \right) = 0
+		\frac{\delta \Lscr}{\delta \Psi_n} \frac{\ifrak}{2} \omega^{\mu \nu} {(\Jscr_{\mu \nu})_n}^m \Psi_m
+      		+ \frac{\delta \Lscr}{\delta (\p_{\kappa} \Psi_n)} \left( \frac{\ifrak}{2} \omega^{\mu \nu} ({\Jscr_{\mu \nu})_n}^m \p_{\kappa} \Psi_m + {\omega_{\kappa}}^{\lambda} \p_{\lambda} \Psi_n \right) = 0
 	\end{equation*}
 
 Since :math:`\omega^{\mu \nu}` is not in general zero, its coefficient must be zero, which, taking :math:`\eqref{eq_lorentz_omega_is_antisymmetric}` into account, implies the following
@@ -9273,7 +9310,7 @@ Since :math:`\omega^{\mu \nu}` is not in general zero, its coefficient must be z
 	:nowrap:
 
 	\begin{equation}
-		\frac{\ifrak}{2} \frac{\delta\Lscr}{\delta\Psi_n} (\Jscr_{\mu\nu})^m_n \Psi_m + \frac{\ifrak}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (\Jscr_{\mu\nu})^m_n \p_{\kappa}\Psi_m + \frac{1}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} \left( \eta_{\kappa \mu} \p_{\nu} - \eta_{\kappa \nu} \p_{\mu} \right) \Psi_n = 0
+		\frac{\ifrak}{2} \frac{\delta\Lscr}{\delta\Psi_n} {(\Jscr_{\mu\nu})_n}^m \Psi_m + \frac{\ifrak}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} ({\Jscr_{\mu\nu})_n}^m \p_{\kappa}\Psi_m + \frac{1}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} \left( \eta_{\kappa \mu} \p_{\nu} - \eta_{\kappa \nu} \p_{\mu} \right) \Psi_n = 0
 		\label{eq_lorentz_invariance_current_raw_identity}
 	\end{equation}
 
@@ -9283,7 +9320,7 @@ Using :math:`\eqref{eq_euler_lagrange}`, we can get rid of the :math:`\delta\Lsc
 	:nowrap:
 
 	\begin{equation}
-		\ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (\Jscr_{\mu\nu})_n^m \Psi_m \right) - \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (T_{\mu\nu} - T_{\nu\mu}) = 0
+		\ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m \right) - \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (T_{\mu\nu} - T_{\nu\mu}) = 0
 		\label{eq_lorentz_invariance_current_identity}
 	\end{equation}
 
@@ -9294,9 +9331,9 @@ Now we can address the issue of :ref:`energy-momentum tensor not being symmetric
 
 	\begin{equation}
 		\Theta_{\mu\nu} \coloneqq T_{\mu\nu} - \frac{\ifrak}{2} \p_{\kappa} \left(
-			\frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (\Jscr_{\mu\nu})_n^m \Psi_m -
-			\frac{\delta\Lscr}{\delta(\p_{\mu} \Psi_n)} (\Jscr_{\kappa\nu})_n^m \Psi_m -
-			\frac{\delta\Lscr}{\delta(\p_{\nu} \Psi_n)} (\Jscr_{\kappa\mu})_n^m \Psi_m \right)
+			\frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m -
+			\frac{\delta\Lscr}{\delta(\p_{\mu} \Psi_n)} {(\Jscr_{\kappa\nu})_n}^m \Psi_m -
+			\frac{\delta\Lscr}{\delta(\p_{\nu} \Psi_n)} {(\Jscr_{\kappa\mu})_n}^m \Psi_m \right)
 		\label{eq_defn_belinfante_tensor}
 	\end{equation}
 
