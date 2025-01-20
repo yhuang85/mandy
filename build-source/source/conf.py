@@ -84,6 +84,7 @@ html_theme_options = {
 		}
 	],
 	"navigation_depth": 4,
+	"secondary_sidebar_items": ["page-toc", "edit-this-page"],
 	"show_prev_next": False,
 	"use_edit_page_button": True,
 }
@@ -97,8 +98,19 @@ html_context = {
 
 html_sidebars = {
 	# Hide primary sidebar
-	"**": []
+	"math/*": [],
+	"physics/index": [],
 }
+
+numfig = True
+numfig_format = {
+	'figure': 'Fig. %s',
+    'section': 'Section',
+	'table': 'Table %s',
+}
+numfig_secnum_depth = 2
+math_eqref_format = "Eq.{number}"
+math_numfig = True
 
 mathjax3_config = {
 	'tex': {
