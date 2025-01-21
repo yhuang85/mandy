@@ -1117,14 +1117,10 @@ Now in order for :math:`U(\Pcal) \psi^+(x) U^{-1}(\Pcal)` to be proportional to 
 with :math:`b^2_{\pm} = 1` since :math:`\beta^2 = 1`. Given this, we can rewrite :eq:`eq_dirac_field_spatial_inversion_acts_on_psi` as follows
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_psi_conjugated_by_spatial_inversion
 
-	\begin{align}
-		U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &= \eta^{\ast} b_+ \beta \psi^+(\Pcal x)
-		\label{eq_dirac_field_psi_plus_conjugated_by_u} \\
-		U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &= \eta^c b_- \beta \psi^{- c}(\Pcal x)
-		\label{eq_dirac_field_psi_minus_conjugated_by_u}
-	\end{align}
+	U(\Pcal) \psi^+(x) U^{-1}(\Pcal) &= \eta^{\ast} b_+ \beta \psi^+(\Pcal x) \\
+	U(\Pcal) \psi^{- c}(x) U^{-1}(\Pcal) &= \eta^c b_- \beta \psi^{- c}(\Pcal x)
 
 so that the parity is indeed conserved, or rather, transformed covariantly.
 
@@ -1160,93 +1156,68 @@ where :math:`N_{\ell \ell'}` and :math:`M_{\ell \ell'}` are the spin sums define
 	N_{\ell \ell'}(\pbf) &= \sum_{\sigma} u_{\ell}(\pbf, \sigma) u^{\ast}_{\ell'}(\pbf, \sigma) \\
 	M_{\ell \ell'}(\pbf) &= \sum_{\sigma} v_{\ell}(\pbf, \sigma) v^{\ast}_{\ell'}(\pbf, \sigma)
 
-To evaluate the spin sums, we first turn back to the zero-momentum case and use :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_u}` and :math:`\eqref{eq_dirac_field_beta_eigenvalue_of_v}` to express the values in terms of :math:`\beta` as follows
+To evaluate the spin sums, we first turn back to the zero-momentum case and use :eq:`eq_dirac_field_beta_eigenvalue_of_u_and_v` to express the values in terms of :math:`\beta` as follows
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_spin_sums_at_zero
 
 	\begin{alignat}{2}
-		N(0) &= \sum_{\sigma} u(0, \sigma) u^{\dagger}(0, \sigma) &&= \frac{1 + b_+ \beta}{2}
-		\label{eq_dirac_field_n_matrix_at_zero} \\
+		N(0) &= \sum_{\sigma} u(0, \sigma) u^{\dagger}(0, \sigma) &&= \frac{1 + b_+ \beta}{2} \\
 		M(0) &= \sum_{\sigma} v(0, \sigma) v^{\dagger}(0, \sigma) &&= \frac{1 + b_- \beta}{2}
-		\label{eq_dirac_field_m_matrix_at_zero}
 	\end{alignat}
 
-where :math:`\dagger` here means transpose conjugation. The easiest way to see this is probably to momentarily forget about the spin :math:`z`-component :math:`\sigma` so that :math:`\beta` as in :eq:`eq_dirac_field_beta_matrix` behaves like a :math:`2 \times 2` matrix with obvious eigenvectors :math:`[1, 1]^T` for :math:`b_{\pm} = 1` and :math:`[1, -1]^T` for :math:`b_{\pm} = -1`. Then :math:`\eqref{eq_dirac_field_n_matrix_at_zero}` and :math:`\eqref{eq_dirac_field_m_matrix_at_zero}` can be verified by a direct calculation. Here the superscript :math:`T` means taking transpose so we have column vectors.
+where :math:`\dagger` here means transpose conjugation. The easiest way to see this is probably to momentarily forget about the spin :math:`z`-component :math:`\sigma` so that :math:`\beta` as in :eq:`eq_dirac_field_beta_matrix` behaves like a :math:`2 \times 2` matrix with obvious eigenvectors :math:`[1, 1]^T` for :math:`b_{\pm} = 1` and :math:`[1, -1]^T` for :math:`b_{\pm} = -1`. Then :eq:`eq_dirac_field_spin_sums_at_zero` can be verified by a direct calculation. Here the superscript :math:`T` means taking transpose so we have column vectors.
 
-Now we can evaluate the :math:`N` and :math:`M` matrices in terms of :math:`\beta` as follows
-
-.. math::
-	:nowrap:
-
-	\begin{align}
-		N(\pbf) &\xlongequal{\eqref{eq_dirac_field_n_matrix_as_spinor_sum}} \sum_{\sigma} u(\pbf, \sigma) u^{\dagger}(\pbf, \sigma)
-			\label{eq_dirac_field_n_matrix_first_evaluation} \\
-			&\xlongequal{\eqref{eq_dirac_field_spinor_u_at_finite_momentum}} \frac{m}{p_0} D(L(p)) \left( \sum_{\sigma} u(0, \sigma) u^{\dagger}(0, \sigma) \right) D^{\dagger}(L(p)) \nonumber \\
-			&\xlongequal{\eqref{eq_dirac_field_n_matrix_at_zero}} \frac{m}{2p_0} D(L(p)) (1 + b_+ \beta) D^{\dagger}(L(p)) \nonumber \\
-		M(\pbf) &\xlongequal{\phantom{\eqref{eq_dirac_field_n_matrix_at_zero}}} \frac{m}{2p_0} D(L(p)) (1 + b_- \beta) D^{\dagger}(L(p))
-		\label{eq_dirac_field_m_matrix_first_evaluation}
-	\end{align}
-
-To go further, we need to invoke the the transformation laws of the gamma matrices and their relatives, e.g., :math:`\beta`, under :math:`D(\Lambda)` from :ref:`sec_dirac_representation_and_gamma_matrices`. More precisely, using the pseudo-unitarity :eq:`eq_dirac_field_pseudo_unitarity_of_d_matrix` we have the following
+Using :eq:`eq_dirac_field_n_and_m_matrix_as_spinor_sum`, :eq:`eq_dirac_field_spinor_u_and_v_at_finite_momentum`, and :eq:`eq_dirac_field_spin_sums_at_zero`, we can evaluate the :math:`N` and :math:`M` matrices in terms of :math:`\beta` as follows
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_spin_sums_first_evaluation
 
-	\begin{align}
-		D(L(p)) \beta D^{\dagger}(L(p)) &\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) D^{-1}(L(p)) \beta = \beta \nonumber \\
-		D(L(p)) D^{\dagger}(L(p)) &\xlongequal{\phantom{\eqref{eq_dirac_field_beta_matrix}}} D(L(p)) \beta D^{-1}(L(p)) \beta
-			\label{eq_dirac_field_d_d_dagger_product} \\
-			&\xlongequal{\eqref{eq_dirac_field_beta_matrix}} \ifrak D(L(p)) \gamma_0 D(L(p)) \beta \nonumber \\
-			&\xlongequal{\eqref{eq_dirac_field_gamma_is_vector}} \ifrak \left( L^{-1}(p) \right)_0^{\mu} \gamma_{\mu} \beta \nonumber \\
-			&\xlongequal{\eqref{eq_L_transformation_for_massive_2}} -\ifrak p^{\mu} \gamma_{\mu} \beta / m \
-			= -\ifrak p_{\mu} \gamma^{\mu} \beta / m \nonumber
-	\end{align}
+	N(\pbf) &= \sum_{\sigma} u(\pbf, \sigma) u^{\dagger}(\pbf, \sigma) \\
+		&= \frac{m}{p_0} D(L(p)) \left( \sum_{\sigma} u(0, \sigma) u^{\dagger}(0, \sigma) \right) D^{\dagger}(L(p)) \\
+		&= \frac{m}{2p_0} D(L(p)) (1 + b_+ \beta) D^{\dagger}(L(p)) \\
+	M(\pbf) &= \frac{m}{2p_0} D(L(p)) (1 + b_- \beta) D^{\dagger}(L(p))
 
-Plugging them into :math:`\eqref{eq_dirac_field_n_matrix_first_evaluation}` and :math:`\eqref{eq_dirac_field_m_matrix_first_evaluation}`, respectively, we can continue our evaluation as follows
+To go further, we need to invoke the the transformation laws of the gamma matrices and their relatives, e.g., :math:`\beta`, under :math:`D(\Lambda)` from :ref:`sec_dirac_representation_and_gamma_matrices`. More precisely, using the pseudo-unitarity :eq:`eq_dirac_field_pseudo_unitarity_of_d_matrix`, as well as :eq:`eq_dirac_field_beta_matrix`, :eq:`eq_dirac_field_gamma_is_vector`, and :eq:`eq_L_transformation_for_massive`, we have the following
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_auxilliary_d_beta_products
 
-	\begin{align*}
-		N(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_+ m \right) \beta \\
-		M(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right) \beta
-	\end{align*}
+	D(L(p)) \beta D^{\dagger}(L(p)) &= D(L(p)) D^{-1}(L(p)) \beta = \beta \\
+	D(L(p)) D^{\dagger}(L(p)) &= D(L(p)) \beta D^{-1}(L(p)) \beta \\
+		&= \ifrak D(L(p)) \gamma_0 D^{-1}(L(p)) \beta \\
+		&= \ifrak {\left( L(p) \right)^{\mu}}_0 \gamma_{\mu} \beta \\
+		&= -\ifrak p^{\mu} \gamma_{\mu} \beta / m
+			= -\ifrak p_{\mu} \gamma^{\mu} \beta / m
+
+Plugging them into :eq:`eq_dirac_field_spin_sums_first_evaluation`, respectively, we can continue our evaluation as follows
+
+.. math::
+
+	N(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_+ m \right) \beta \\
+	M(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right) \beta
 
 Now that we've finished evaluating the spin sums, we can plug them into :eq:`eq_dirac_field_commutator_raw` to get the following evaluation of the (anti-)commutator
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_commutator_first_evaluation
 
-	\begin{align}
-		\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm} &= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~\big( |\kappa|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_+ m) e^{\ifrak p \cdot (x-y)} \beta \phantom{\big)}
-		\label{eq_dirac_field_commutator_first_evaluation} \\
-			&\phantom{= \phantom{\big(}} \pm |\lambda|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_- m) e^{-\ifrak p \cdot (x-y)} \beta \big)_{\ell \ell'} \nonumber \\
-			&= \left( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta_+(x-y) \beta \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta_+(y-x) \beta \right)_{\ell \ell'} \nonumber
-	\end{align}
+	\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_{\pm}
+		&= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~\big( |\kappa|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_+ m) e^{\ifrak p \cdot (x-y)} \beta \\
+		&\quad \pm |\lambda|^2 (-\ifrak p_{\mu} \gamma^{\mu} + b_- m) e^{-\ifrak p \cdot (x-y)} \beta \big)_{\ell \ell'} \\
+		&= \big( |\kappa|^2 \left( -\ifrak \gamma^{\mu} \p_{x_{\mu}} + b_+ m \right) \Delta_+(x-y) \beta \\
+		&\quad \pm |\lambda|^2 \left( -\ifrak \gamma^{\mu} \p_{y_{\mu}} + b_- m \right) \Delta_+(y-x) \beta \big)_{\ell \ell'}
 
 where :math:`\Delta_+` is defined by :eq:`eq_defn_Delta_plus`. Recall that :math:`\Delta_+(x) = \Delta_+(-x)` for space-like :math:`x`. Hence for space-like :math:`x-y`, the following holds
 
-.. math::
-	:nowrap:
+.. math:: \p_{x_{\mu}} \Delta_+(x-y) = \p_{x_{\mu}} \Delta_+(y-x) = -\p_{y_{\mu}} \Delta_+(y-x)
 
-	\begin{equation}
-		\p_{x_{\mu}} \Delta_+(x-y) = \p_{x_{\mu}} \Delta_+(y-x) = -\p_{y_{\mu}} \Delta_+(y-x)
-		\label{eq_delta_plus_derivative_is_odd}
-	\end{equation}
-
-.. error::
-	:math:`\eqref{eq_delta_plus_derivative_is_odd}` is what is claimed in the bottom of page 223 in [Wei95]_, but it's not true! Indeed, the fact that :math:`\Delta_+(x)` is even for space-like :math:`x` only implies that :math:`\p_i \Delta_+(x)` is odd for spatial indexes :math:`i=1,2,3`. However :math:`\dot{\Delta}_+(x)` is not odd even for space-like :math:`x`. It has a serious consequence that the anti-commutator doesn't vanish, which in turn means that the Dirac fields, as constructed here, cannot be arbitrarily assembled into a causal interaction density. This error is obviously not because of Weinberg's ignorance, since he later also pointed out the non-vanishing of the anti-commutator on page 295.
-
-It follows that in order for :math:`\eqref{eq_dirac_field_commutator_first_evaluation}` to vanish for space-separated :math:`x` and :math:`y`, the following must hold
+It follows that in order for :eq:`eq_dirac_field_commutator_first_evaluation` to vanish for space-separated :math:`x` and :math:`y`, the following must hold
 
 .. math::
-	:nowrap:
 
-	\begin{align*}
-		|\kappa|^2 \mp |\lambda|^2 &= 0 \\
-		|\kappa|^2 b_+ \pm |\lambda|^2 b_- &= 0
-	\end{align*}
+	|\kappa|^2 \mp |\lambda|^2 &= 0 \\
+	|\kappa|^2 b_+ \pm |\lambda|^2 b_- &= 0
 
 We see that first of all, the top sign applies, which means in particular that we must be considering the anti-commutator in :math:`\eqref{eq_dirac_field_commutator_first_evaluation}`, or in other words, the Dirac fields must be fermionic. In addition, we must also have :math:`|\kappa| = |\lambda|` and :math:`b_+ + b_- = 0`.
 

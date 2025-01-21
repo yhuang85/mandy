@@ -789,8 +789,8 @@ It follows that
 .. math::
 	:label: eq_L_transformation_for_massive
 
-	{L(p)_0}^0 &= \gamma \\
-	{L(p)_i}^0 = {L(p)^0}_i &= \frac{p_i}{M} \\
+	{L(p)_0}^0 = {L(p)^0}_0 &= \gamma \\
+	{L(p)_i}^0 = {L(p)^0}_i = -{L(p)_0}^i = -{L(p)^i}_0 &= \frac{p_i}{M} \\
 	L(p)_{ij} &= \delta_{ij} + \frac{p_i p_j}{\pbf^2} (\gamma - 1)
 
 Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:`3`-rotation, then
