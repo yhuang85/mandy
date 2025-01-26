@@ -324,7 +324,7 @@ assuming :math:`\Lambda` is proper orthochronous. It follows that
 .. math::
 	:label: eq_lambda_boost
 
-	{\Lambda_i}^0 = {\Lambda^0}_i = \gamma v_i
+	{\Lambda_i}^0 = -{\Lambda^0}_i = \gamma v_i
 
 The other components :math:`{\Lambda_i}^j, 1 \leq i, j \leq 3`, are not uniquely determined because a composition with a (spatial) rotation about the direction of :math:`\vbf` has no effect on :math:`\vbf`. To make it easier, one can apply a rotation so that :math:`\vbf` aligns with the :math:`3`-axis. Then an obvious choice of :math:`\Lambda` is given by
 
@@ -790,7 +790,7 @@ It follows that
 	:label: eq_L_transformation_for_massive
 
 	{L(p)_0}^0 = {L(p)^0}_0 &= \gamma \\
-	{L(p)_i}^0 = {L(p)^0}_i = -{L(p)_0}^i = -{L(p)^i}_0 &= \frac{p_i}{M} \\
+	{L(p)_i}^0 = -{L(p)^0}_i &= \frac{p_i}{M} \\
 	L(p)_{ij} &= \delta_{ij} + \frac{p_i p_j}{\pbf^2} (\gamma - 1)
 
 Finally, we note an important fact that when :math:`\Lambda = \Rcal` is a :math:`3`-rotation, then

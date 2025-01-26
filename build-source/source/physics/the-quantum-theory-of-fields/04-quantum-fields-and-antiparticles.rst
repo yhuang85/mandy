@@ -1219,364 +1219,244 @@ It follows that in order for :eq:`eq_dirac_field_commutator_first_evaluation` to
 	|\kappa|^2 \mp |\lambda|^2 &= 0 \\
 	|\kappa|^2 b_+ \pm |\lambda|^2 b_- &= 0
 
-We see that first of all, the top sign applies, which means in particular that we must be considering the anti-commutator in :math:`\eqref{eq_dirac_field_commutator_first_evaluation}`, or in other words, the Dirac fields must be fermionic. In addition, we must also have :math:`|\kappa| = |\lambda|` and :math:`b_+ + b_- = 0`.
+We see that first of all, the top sign applies, which means in particular that we must accept the anti-commutator in :eq:`eq_dirac_field_commutator_first_evaluation`, or in other words, the Dirac fields must be fermionic. In addition, we must also have :math:`|\kappa| = |\lambda|` and :math:`b_+ + b_- = 0`.
 
 By the usual phase adjustments on the creation and annihilation operators and rescaling, we can arrange so that :math:`\kappa = \lambda = 1`. Recalling :eq:`eq_dirac_field_gamma_5_anti_commutes_beta` and replacing :math:`\psi` with :math:`\gamma_5 \psi` if necessary, we can arrange so that :math:`b_{\pm} = \pm 1`. Putting these all together, we have evaluated the Dirac field :eq:`eq_dirac_field_psi_field_raw` as follows
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_psi_field
 
-	\begin{align}
-		\psi(x) &= \psi^+(x) + \psi^{- c}(x)
-			\label{eq_dirac_field_psi_field} \\
-			&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( e^{\ifrak p \cdot x} u(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right) \nonumber
-	\end{align}
+	\psi(x) &= \psi^+(x) + \psi^{- c}(x) \\
+		&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( e^{\ifrak p \cdot x} u(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
 
 where the zero-momentum spinors are
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_spinors_zero_momentum
 
-	\begin{alignat}{2}
-		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ 1 \\ 0 \end{bmatrix*}, \quad &&u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ 1 \end{bmatrix*}
-		\label{eq_dirac_field_u_spinor_zero_momentum} \\
-		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{bmatrix*}, \quad &&v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ -1 \\ 0 \end{bmatrix*}
-		\label{eq_dirac_field_v_spinor_zero_momentum}
-	\end{alignat}
+	\begin{alignat*}{2}
+		u(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ 1 \\ 0 \end{bmatrix*},
+			\quad &&u(0, -1/2) = \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ 1 \end{bmatrix*} \\
+		v(0, 1/2) &= \frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 0 \\ 1 \\ 0 \\ -1 \end{bmatrix*},
+			\quad &&v(0, -1/2) = -\frac{1}{\sqrt{2}} \begin{bmatrix*}[r] 1 \\ 0 \\ -1 \\ 0 \end{bmatrix*}
+	\end{alignat*}
 
 and the spin sums are
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_spin_sum_finite_momentum
 
-	\begin{align}
-		N(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} + m \right) \beta
-		\label{eq_dirac_field_spin_sum_u} \\
+	\begin{align*}
+		N(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} + m \right) \beta \\
 		M(\pbf) &= \frac{1}{2p_0} \left( -\ifrak p^{\mu} \gamma_{\mu} - m\right) \beta
-		\label{eq_dirac_field_spin_sum_v}
-	\end{align}
+	\end{align*}
 
 and the anti-commutator, calculated by plugging the spin sums into :eq:`eq_dirac_field_commutator_raw`, is
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_commutator
 
-	\begin{equation}
-		\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_+ = \left( \left( -\gamma^{\mu}\p_{\mu} + m \right) \beta \right)_{\ell \ell'} \Delta(x-y)
-		\label{eq_dirac_field_commutator}
-	\end{equation}
+	\left[ \psi_{\ell}(x), \psi_{\ell'}^{\dagger}(y) \right]_+ = \left( \left( -\gamma^{\mu}\p_{\mu} + m \right) \beta \right)_{\ell \ell'} \Delta(x-y)
 
 where :math:`\p_{\mu} = \p_{x_{\mu}}` and :math:`\Delta(x-y)` is defined by :eq:`eq_defn_Delta`.
 
-For :math:`\psi(x)` defined by :math:`\eqref{eq_dirac_field_psi_field}` to transform covariantly under spatial inversion, we recall :math:`\eqref{eq_dirac_field_psi_plus_conjugated_by_u}` and :math:`\eqref{eq_dirac_field_psi_minus_conjugated_by_u}` to conclude that
+For :math:`\psi(x)` defined by :eq:`eq_dirac_field_psi_field` to transform covariantly under spatial inversion, we recall :eq:`eq_dirac_field_psi_conjugated_by_spatial_inversion` to conclude that
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\eta^{\ast} + \eta^c = 0
-		\label{eq_dirac_field_spatial_parity_relation}
-	\end{equation}
+.. math:: \eta^{\ast} + \eta^c = 0
+	:label: eq_dirac_field_spatial_parity_relation
 
 It follows that :math:`\eta \eta^c = -1`, or in other words, the intrinsic parity of the state consisting of a spin :math:`1/2` particle and its antiparticle is odd in the sense of :ref:`sec_parity_symmetry`. The parity transformation law for Dirac fields is as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		U(\Pcal) \psi(x) U^{-1}(\Pcal) = \eta^{\ast} \beta \psi(\Pcal x)
-		\label{eq_dirac_field_spatial_inversion_transformation_law}
-	\end{equation}
+.. math:: U(\Pcal) \psi(x) U^{-1}(\Pcal) = \eta^{\ast} \beta \psi(\Pcal x)
+	:label: eq_dirac_field_spatial_inversion_transformation_law
 
 .. dropdown:: The Dirac equation
 	:animate: fade-in-slide-down
 
-	Recall from :math:`\eqref{eq_klein_gordon}` that a general quantum field satisfies Klein-Gordon equation, which is a second-order differential equation. It turns out that the Dirac fields satisfy a first-order equation, known as the `Dirac equation <https://en.wikipedia.org/wiki/Dirac_equation>`_.
+	Recall from :eq:`eq_klein_gordon` that a general quantum field satisfies Klein-Gordon equation, which is a second-order differential equation. It turns out that the Dirac fields satisfy a first-order equation, known as the `Dirac equation <https://en.wikipedia.org/wiki/Dirac_equation>`_.
 
-	To see this, we recall that in the derivation of :math:`\eqref{eq_dirac_field_d_d_dagger_product}`, we've essentially proved the following identity
+	To see this, we recall that in the derivation of :eq:`eq_dirac_field_auxilliary_d_beta_products`, we've essentially proved the following identity
 
-	.. math::
-		:nowrap:
+	.. math:: D(L(p)) \beta D^{-1}(L(p)) = -\ifrak p_{\mu} \gamma^{\mu} / m
 
-		\begin{equation*}
-			D(L(p)) \beta D^{-1}(L(p)) = -\ifrak p_{\mu} \gamma^{\mu} / m
-		\end{equation*}
-
-	Applying the left-hand-side to :math:`u(\pbf, \sigma)`, we see that
+	Applying the left-hand-side to :math:`u(\pbf, \sigma)`, and using :eq:`eq_dirac_field_spinor_u_and_v_at_finite_momentum` and :eq:`eq_dirac_field_beta_eigenvalue_of_u_and_v` we see that
 
 	.. math::
-		:nowrap:
 
-		\begin{align*}
-			D(L(p)) \beta D^{-1}(L(p)) u(\pbf, \sigma) &\xlongequal{\eqref{eq_dirac_field_spinor_u_at_finite_momentum}} \sqrt{m/p_0} D^{-1}(L(p)) \beta u(0, \sigma) \\
-				&\xlongequal{\eqref{eq_dirac_field_beta_eigenvalue_of_u}} \sqrt{m/p_0} D(L(p)) u(0, \sigma) \\
-				&\xlongequal{\eqref{eq_dirac_field_spinor_u_at_finite_momentum}} u(\pbf, \sigma)
-		\end{align*}
+		D(L(p)) \beta D^{-1}(L(p)) u(\pbf, \sigma)
+			&= \sqrt{m/p_0} D^{-1}(L(p)) \beta u(0, \sigma) \\
+			&= \sqrt{m/p_0} D(L(p)) u(0, \sigma) \\
+			&= u(\pbf, \sigma)
 
 	It follows that
 
-	.. math::
-		:nowrap:
-
-		\begin{equation*}
-			\left( \ifrak p_{\mu} \gamma^{\mu} + m \right) u(\pbf, \sigma) = 0
-		\end{equation*}
+	.. math:: \left( \ifrak p_{\mu} \gamma^{\mu} + m \right) u(\pbf, \sigma) = 0
 
 	Similarly one can show that :math:`v(\pbf, \sigma)` satisfies the following
 
-	.. math::
-		:nowrap:
+	.. math:: (-\ifrak p_{\mu} \gamma^{\mu} + m) v(\pbf, \sigma) = 0
 
-		\begin{equation*}
-			(-\ifrak p_{\mu} \gamma^{\mu} + m) v(\pbf, \sigma) = 0
-		\end{equation*}
+	Combining these identities with :eq:`eq_dirac_field_psi_field`, we conclude that the Dirac fields satisfy the following Dirac equation
 
-	Combining these identities with :math:`\eqref{eq_dirac_field_psi_field}`, we conclude that the Dirac fields satisfy the following Dirac equation
-
-	.. math::
-		:nowrap:
-
-		\begin{equation*}
-			\left( \gamma^{\mu} \p_{\mu} + m \right) \psi(x) = 0
-		\end{equation*}
+	.. math:: \left( \gamma^{\mu} \p_{\mu} + m \right) \psi(x) = 0
 
 	However, unlike the original derivation of Dirac, we've derived it here as a consequence of parity conservation. In fact, we note that the Dirac equation is not something completely different from the Klein-Gordon equation, because using the Clifford algebra relations :eq:`eq_dirac_field_clifford_algebra`, we see that :math:`\gamma^{\mu} \p_{\mu}` is actually a square root of the D'Alembert operator :math:`\square`. This is allegedly one of the motivations of Dirac to find these gamma matrices in the first place.
+
 
 The CPT symmetries
 ++++++++++++++++++
 
-The transformation law of Dirac fields under spatial inversion has already been worked out in :math:`\eqref{eq_dirac_field_spatial_inversion_transformation_law}`, so we're left to work out the transformation laws under time inversion and charge conjugation.
+The transformation law of Dirac fields under spatial inversion has already been worked out in :eq:`eq_dirac_field_spatial_inversion_transformation_law`, so we're left to work out the transformation laws under time inversion and charge conjugation.
 
-Recall from :ref:`sec_space_and_time_inversions` that the time-inversion operator :math:`U(\Tcal)` is complex anti-linear. Hence to work out the transformation law under time inversion, we'll need to work out the complex-conjugated spinors :math:`u^{\ast}(\pbf, \sigma)` and :math:`v^{\ast}(\pbf, \sigma)`. Now in light of :math:`\eqref{eq_dirac_field_spinor_u_at_finite_momentum}` and :math:`\eqref{eq_dirac_field_spinor_v_at_finite_momentum}`, and the fact that the spinors are real at zero-momentum, we just need to work out the complex conjugate :math:`D^{\ast}(L(p))` in terms of :math:`D(L(p))` and the gamma matrices. Now according to :eq:`eq_dirac_field_linearize_representation`, it suffices to work out :math:`\Jscr^{\ast}_{\mu \nu}`. Finally according to :eq:`eq_dirac_field_defn_j`, it suffices to work out :math:`\gamma^{\ast}_{\mu}`.
+Recall from :ref:`sec_space_and_time_inversions` that the time-inversion operator :math:`U(\Tcal)` is complex anti-linear. Hence to work out the transformation law under time inversion, we'll need to work out the complex-conjugated spinors :math:`u^{\ast}(\pbf, \sigma)` and :math:`v^{\ast}(\pbf, \sigma)`. Now in light of :eq:`eq_dirac_field_spinor_u_and_v_at_finite_momentum`, and the fact that the spinors are real at zero-momentum, we just need to work out the complex conjugate :math:`D^{\ast}(L(p))` in terms of :math:`D(L(p))` and the gamma matrices. Now according to :eq:`eq_dirac_field_linearize_representation`, it suffices to work out :math:`\Jscr^{\ast}_{\mu \nu}`, and finally according to :eq:`eq_dirac_field_defn_j`, it suffices to work out :math:`\gamma^{\ast}_{\mu}`.
 
 Inspecting the explicit forms of the gamma matrices given by :eq:`eq_dirac_field_defn_gamma_matrices` and :eq:`eq_pauli_matrices` we see that :math:`\gamma_0, \gamma_1, \gamma_3` are anti-Hermitian while :math:`\gamma_2` is Hermitian, or more explicitly
 
 .. math::
-	:nowrap:
 
-	\begin{equation*}
-		\gamma^{\ast}_0 = -\gamma_0, \quad \gamma^{\ast}_1 = -\gamma_1, \quad \gamma^{\ast}_2 = \gamma_2, \quad \gamma^{\ast}_3 = -\gamma_3
-	\end{equation*}
+	\gamma^{\ast}_0 = -\gamma_0, \quad \gamma^{\ast}_1 = -\gamma_1, \quad \gamma^{\ast}_2 = \gamma_2, \quad \gamma^{\ast}_3 = -\gamma_3
 
 Using the Clifford algebra relations, this can be written more concisely as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\gamma^{\ast}_{\mu} = \gamma_2 \gamma_{\mu} \gamma_2
-		\label{eq_dirac_field_gamma_conjugation_by_gamma_2}
-	\end{equation}
+.. math:: \gamma^{\ast}_{\mu} = \gamma_2 \gamma_{\mu} \gamma_2
+	:label: eq_dirac_field_gamma_conjugation_by_gamma_2
 
 While this result could've be satisfactory in its own right, as we'll see, it'll be more convenient to factor out a :math:`\beta` matrix. Hence we're motivated to introduce yet another special matrix
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_defn_c_matrix
 
-	\begin{equation}
-		\Cscr \coloneqq \gamma_2 \beta = -\ifrak \begin{bmatrix*}[r] \sigma_2 & 0 \\ 0 & -\sigma_2 \end{bmatrix*}
-		\label{eq_dirac_field_defn_c_matrix}
-	\end{equation}
+	\Cscr \coloneqq \gamma_2 \beta = -\ifrak \begin{bmatrix*}[r] \sigma_2 & 0 \\ 0 & -\sigma_2 \end{bmatrix*}
 
-and rewrite :math:`\eqref{eq_dirac_field_gamma_conjugation_by_gamma_2}` as follows
+and rewrite :eq:`eq_dirac_field_gamma_conjugation_by_gamma_2` as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		\gamma^{\ast}_{\mu} = \beta \Cscr \gamma_{\mu} \Cscr^{-1} \beta
-	\end{equation*}
+.. math:: \gamma^{\ast}_{\mu} = \beta \Cscr \gamma_{\mu} \Cscr^{-1} \beta
 
 where we also note that :math:`(\Cscr^{-1} \beta)^{-1} = \beta \Cscr`. It follows from :eq:`eq_dirac_field_defn_j` that
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		\Jscr^{\ast}_{\mu \nu} = -\beta\Cscr \Jscr_{\mu \nu} \Cscr^{-1}\beta
-	\end{equation*}
+.. math:: \Jscr^{\ast}_{\mu \nu} = -\beta\Cscr \Jscr_{\mu \nu} \Cscr^{-1}\beta
 
 and hence from :eq:`eq_dirac_field_linearize_representation` that
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_d_matrix_conjugation_1
 
-	\begin{equation}
-		D^{\ast}(L(p)) = 1 - \frac{\ifrak}{2} \omega^{\mu \nu} \Jscr^{\ast}_{\mu \nu} \
-			= 1 + \frac{\ifrak}{2} \omega^{\mu \nu} \beta\Cscr \Jscr_{\mu \nu} \Cscr^{-1}\beta \
-			= \beta \Cscr D(L(p)) \Cscr^{-1} \beta
-		\label{eq_dirac_field_d_matrix_conjugation_1}
-	\end{equation}
+	D^{\ast}(L(p)) = 1 - \frac{\ifrak}{2} \omega^{\mu \nu} \Jscr^{\ast}_{\mu \nu}
+		= 1 + \frac{\ifrak}{2} \omega^{\mu \nu} \beta\Cscr \Jscr_{\mu \nu} \Cscr^{-1}\beta
+		= \beta \Cscr D(L(p)) \Cscr^{-1} \beta
 
-Using the explicit formula :math:`\eqref{eq_dirac_field_defn_c_matrix}` for :math:`\Cscr` as well :math:`\eqref{eq_dirac_field_u_spinor_zero_momentum}` and :math:`\eqref{eq_dirac_field_v_spinor_zero_momentum}` for :math:`u(0, \sigma)` and :math:`v(0, \sigma)`, we get the following
+Using the explicit formula :eq:`eq_dirac_field_defn_c_matrix` for :math:`\Cscr` as well :eq:`eq_dirac_field_spinors_zero_momentum` for :math:`u(0, \sigma)` and :math:`v(0, \sigma)`, we get the following
 
 .. math::
-	:nowrap:
+	:label: eq_dirac_field_u_and_v_conjugate_swapped
 
-	\begin{alignat}{2}
-		u^{\ast}(\pbf, \sigma) &= \sqrt{m/p_0} D^{\ast}(L(p)) u(0, \sigma) &&= -\beta\Cscr v(\pbf, \sigma)
-		\label{eq_dirac_field_u_conjugate_to_v} \\
+	\begin{alignat*}{2}
+		u^{\ast}(\pbf, \sigma) &= \sqrt{m/p_0} D^{\ast}(L(p)) u(0, \sigma) &&= -\beta\Cscr v(\pbf, \sigma) \\
 		v^{\ast}(\pbf, \sigma) &= \sqrt{m/p_0} D^{\ast}(L(p)) v(0, \sigma) &&= -\beta\Cscr u(\pbf, \sigma)
-		\label{eq_dirac_field_v_conjugate_to_u}
-	\end{alignat}
+	\end{alignat*}
 
-These relations turns out to be useful for the charge conjugation transformation, but not for the time inversion because the spinors :math:`u` and :math:`v` are swapped. To remedy this, we notice from :math:`\eqref{eq_dirac_field_u_spinor_zero_momentum}` and :math:`\eqref{eq_dirac_field_v_spinor_zero_momentum}` that the :math:`u` and :math:`v` spinors at zero-momentum are related by :math:`\gamma_5` defined by :eq:`eq_dirac_field_defn_gamma_5`. Moreover, in order to cancel the :math:`\beta` matrices at the two ends of right-hand-side of :math:`\eqref{eq_dirac_field_d_matrix_conjugation_1}`, we can replace :math:`\pbf` with :math:`-\pbf`, which is also desirable as far as the time inversion is concerned in light of :math:`\eqref{eq_creation_operator_time_inversion_conjugation_massive}`. Putting all these considerations together, let's try the following
-
-.. math::
-	:nowrap:
-
-	\begin{align*}
-		D^{\ast}(L(-\pbf)) &= D^{\ast}(\Pcal L(p) \Pcal) \\
-			&= \beta D^{\ast}(L(p)) \beta \\
-			&= \gamma_5 \beta D^{\ast}(L(p)) \beta \gamma_5 \\
-			&= \gamma_5 \Cscr D(L(p)) \Cscr^{-1} \gamma_5
-	\end{align*}
-
-where the third equality holds because of the Clifford relations, namely, :math:`\gamma_5` commutes with :math:`\Jscr_{\mu \nu}`, and hence :math:`D^{\ast}(L(p))`, and anti-commutes with :math:`\beta`. Now instead of :math:`\eqref{eq_dirac_field_u_conjugate_to_v}`, we can calculate as follows
+These relations turns out to be useful for the charge conjugation transformation, but not for the time inversion because the spinors :math:`u` and :math:`v` are swapped. To remedy this, we notice from :eq:`eq_dirac_field_spinors_zero_momentum` that the :math:`u` and :math:`v` spinors at zero-momentum are related by :math:`\gamma_5` defined by :eq:`eq_dirac_field_defn_gamma_5`. Moreover, in order to cancel the :math:`\beta` matrices at the two ends of right-hand-side of :eq:`eq_dirac_field_d_matrix_conjugation_1`, we can replace :math:`\pbf` with :math:`-\pbf`, which is also desirable as far as the time inversion is concerned in light of :eq:`eq_creation_operator_cpt_conjugation`. Putting all these considerations together, let's try the following
 
 .. math::
-	:nowrap:
 
-	\begin{align}
-		u^{\ast}(-\pbf, \sigma) &= \sqrt{m/p_0} D^{\ast}(L(-\pbf)) u(0, \sigma)
-		\label{eq_dirac_field_u_conjugate_to_u} \\
-			&= \sqrt{m/p_0} \gamma_5 \Cscr D^{\ast}(L(p)) \Cscr^{-1} \gamma_5 u(0, \sigma) \nonumber \\
-			&= \sqrt{m/p_0} \gamma_5 \Cscr D^{\ast}(L(p)) (-1)^{1/2 + \sigma} u(0, -\sigma) \nonumber \\
-			&= (-1)^{1/2 + \sigma} \gamma_5 \Cscr u(\pbf, -\sigma) \nonumber
-	\end{align}
+	D^{\ast}(L(-\pbf)) &= D^{\ast}(\Pcal L(p) \Pcal) \\
+		&= \beta D^{\ast}(L(p)) \beta \\
+		&= \gamma_5 \beta D^{\ast}(L(p)) \beta \gamma_5 \\
+		&= \gamma_5 \Cscr D(L(p)) \Cscr^{-1} \gamma_5
+
+where the third equality holds because of the Clifford relations, namely, :math:`\gamma_5` commutes with :math:`\Jscr_{\mu \nu}`, and hence :math:`D^{\ast}(L(p))`, and anti-commutes with :math:`\beta`. Now instead of :eq:`eq_dirac_field_u_and_v_conjugate_swapped`, we can calculate as follows
+
+.. math::
+	:label: eq_dirac_field_u_conjugate_to_u
+
+	u^{\ast}(-\pbf, \sigma) &= \sqrt{m/p_0} D^{\ast}(L(-\pbf)) u(0, \sigma) \\
+		&= \sqrt{m/p_0} \gamma_5 \Cscr D^{\ast}(L(p)) \Cscr^{-1} \gamma_5 u(0, \sigma) \\
+		&= \sqrt{m/p_0} \gamma_5 \Cscr D^{\ast}(L(p)) (-1)^{1/2 + \sigma} u(0, -\sigma) \\
+		&= (-1)^{1/2 + \sigma} \gamma_5 \Cscr u(\pbf, -\sigma)
 
 A similar calculation can be done to show that in fact :math:`v(-\pbf, \sigma)` satisfies exactly the same conjugation formula.
 
-With all the preparations above, we can now calculate the spatial inversion transformation laws as follows
+With all the preparations above, we can now, using :eq:`eq_dirac_field_psi_field`, :eq:`eq_creation_operator_cpt_conjugation`, and :eq:`eq_dirac_field_u_conjugate_to_u`, calculate the spatial inversion transformation laws as follows
 
 .. math::
-	:nowrap:
 
-	\begin{align*}
-		U(\Tcal) \psi(x) U^{-1}(\Tcal) &\xlongequal{\eqref{eq_dirac_field_psi_field}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} u^{\ast}(\pbf, \sigma) U(\Tcal) a(\pbf, \sigma) U^{-1}(\Tcal) \\
-	 			&\phantom{\eqref{eq_dirac_field_psi_field}} + e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) U(\Tcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Tcal) \big) \\
-			&\xlongequal{\eqref{eq_creation_operator_time_inversion_conjugation_massive}} (2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 - \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} \zeta^{\ast} u^{\ast}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)} \\
-				&\phantom{\eqref{eq_dirac_field_psi_field} \big(} + e^{\ifrak p \cdot x} \zeta^c v^{\ast}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
-			&\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} -(2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 + \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot \Pcal x} \zeta^{\ast} u^{\ast}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \\
-			&\phantom{\eqref{eq_dirac_field_psi_field} \big(} + e^{\ifrak p \cdot \Pcal x} \zeta^c v^{\ast}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
-			&\xlongequal{\phantom{\eqref{eq_dirac_field_psi_field}}} (2\pi)^{-3/2} \gamma_5 \Cscr \sum_{\sigma} \int d^3 p~\left( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u(\pbf, \sigma) a(\pbf, \sigma) + \zeta^c e^{\ifrak p \cdot \Pcal x} v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
-	\end{align*}
+	U(\Tcal) \psi(x) U^{-1}(\Tcal) &= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} u^{\ast}(\pbf, \sigma) U(\Tcal) a(\pbf, \sigma) U^{-1}(\Tcal) \\
+			&\qquad + e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) U(\Tcal) a^{c \dagger}(\pbf, \sigma) U^{-1}(\Tcal) \big) \\
+		&= (2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 - \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot x} \zeta^{\ast} u^{\ast}(\pbf, \sigma) a(-\pbf, -\sigma) \\
+			&\qquad + e^{\ifrak p \cdot x} \zeta^c v^{\ast}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \\
+		&= (2\pi)^{-3/2} \sum_{\sigma} (-1)^{1/2 + \sigma} \int d^3 p~\big( e^{-\ifrak p \cdot \Pcal x} \zeta^{\ast} u^{\ast}(-\pbf, -\sigma) a(\pbf, \sigma) \\
+			&\qquad + e^{\ifrak p \cdot \Pcal x} \zeta^c v^{\ast}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \\
+		&= -(2\pi)^{-3/2} \gamma_5 \Cscr \sum_{\sigma} \int d^3 p~\big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u(\pbf, \sigma) a(\pbf, \sigma) \\
+      		&\qquad + \zeta^c e^{\ifrak p \cdot \Pcal x} v(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \big)
 
 In order for :math:`\psi(x)` to transform nicely under the time inversion, we're forced to make the following assumption
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\zeta^{\ast} = \zeta^c
-		\label{eq_dirac_field_time_parity_relation}
-	\end{equation}
+.. math:: \zeta^{\ast} = \zeta^c
+	:label: eq_dirac_field_time_parity_relation
 
 Under this assumption we've finally worked out the time inversion transformation law for Dirac fields
 
-.. math::
-	:nowrap:
+.. math:: U(\Tcal) \psi(x) U^{-1}(\Tcal) = -\zeta^{\ast} \gamma_5 \Cscr \psi(-\Pcal x)
 
-	\begin{equation*}
-		U(\Tcal) \psi(x) U^{-1}(\Tcal) = \zeta^{\ast} \gamma_5 \Cscr \psi(-\Pcal x)
-	\end{equation*}
-
-Next let's calculate the charge inversion transformation as follows
+Next let's calculate the charge inversion transformation, using :eq:`eq_creation_operator_cpt_conjugation` and :eq:`eq_dirac_field_u_and_v_conjugate_swapped`, as follows
 
 .. math::
-	:nowrap:
 
 	\begin{align*}
-		U(\Ccal) \psi(x) U^{-1}(\Ccal) &\xlongequal{\eqref{eq_creation_operator_charge_inversion_conjugation}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( e^{\ifrak p \cdot x} u(\pbf, \sigma) \xi^{\ast} a^c(\pbf, \sigma) + e^{-\ifrak p \cdot x} v(\pbf, \sigma) \xi^c a^{\dagger}(\pbf, \sigma) \right) \\
-			&\xlongequal{\substack{\eqref{eq_dirac_field_u_conjugate_to_v} \\ \eqref{eq_dirac_field_v_conjugate_to_u}}} (2\pi)^{-3/2} \Cscr \beta \sum_{\sigma} \int d^3p~\left( \xi^{\ast} e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) a^c(\pbf, \sigma) + \xi^c e^{-\ifrak p \cdot x} u^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) \right)
+		U(\Ccal) \psi(x) U^{-1}(\Ccal)
+			&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( e^{\ifrak p \cdot x} u(\pbf, \sigma) \xi^{\ast} a^c(\pbf, \sigma) + e^{-\ifrak p \cdot x} v(\pbf, \sigma) \xi^c a^{\dagger}(\pbf, \sigma) \right) \\
+			&= (2\pi)^{-3/2} \Cscr \beta \sum_{\sigma} \int d^3p~\left( \xi^{\ast} e^{\ifrak p \cdot x} v^{\ast}(\pbf, \sigma) a^c(\pbf, \sigma) + \xi^c e^{-\ifrak p \cdot x} u^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) \right)
 	\end{align*}
 
 Just as for the time inversion, we are forced to assuming the following condition on the charge conjugation parities
 
-.. math::
-	:nowrap:
+.. math:: \xi^{\ast} = \xi^c
+	:label: eq_dirac_field_charge_parity_relation
 
-	\begin{equation}
-		\xi^{\ast} = \xi^c
-		\label{eq_dirac_field_charge_parity_relation}
-	\end{equation}
+Under this assumption, we can work out the charge conjugation transformation law as follows
 
-Under this assumption, we can work out the charge conjugation transformation law as follows [#charge_inversion_on_dirac_fields_sign]_
-
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \Cscr \beta \psi^{\ast}(x)
-	\end{equation*}
+.. math:: U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \Cscr \beta \psi^{\ast}(x)
 
 Here we've used :math:`\psi^{\ast}(x)` instead of :math:`\psi^{\dagger}(x)` because we don't want to transpose the spinors, but it should be understood that the :math:`\ast` when applied to the creation/annihilation operators are the same as taking the adjoint.
 
-Finally, let's consider the special case where the spin-:math:`1/2` particles are their own antiparticles. These particles are known as Majorana fermions, as already discussed in :ref:`Parities of elementary particles <dropdown_parities_of_elementary_particles>`. According to :math:`\eqref{eq_dirac_field_spatial_parity_relation}, \eqref{eq_dirac_field_time_parity_relation}` and :math:`\eqref{eq_dirac_field_charge_parity_relation}`, we see that the spatial parity of a Majorana fermion must be :math:`\pm \ifrak`, while the time and charge parity must be :math:`\pm 1`.
+Finally, let's consider the special case where the spin-:math:`1/2` particles are their own antiparticles. These particles are known as Majorana fermions, as already discussed in :ref:`Parities of elementary particles <dropdown_parities_of_elementary_particles>`. According to :eq:`eq_dirac_field_spatial_parity_relation`, :eq:`eq_dirac_field_time_parity_relation` and :eq:`eq_dirac_field_charge_parity_relation`, we see that the spatial parity of a Majorana fermion must be :math:`\pm \ifrak`, while the time and charge parity must be :math:`\pm 1`.
 
 .. _sec_construction_of_the_interaction_density:
 
 Construction of the interaction density
 +++++++++++++++++++++++++++++++++++++++
 
-As mentioned in :ref:`Dirac representation and gamma matrices <paragraph_dirac_field_representation_not_unitary>`, the fact that the Dirac representation is not unitary means that we cannot construct the interaction density using :math:`\psi^{\dagger} \psi` because it won't be a scalar. Indeed, let's work out how :math:`\psi^{\dagger}` transforms under a (homogeneous orthochronous) Lorentz transformation using :eq:`eq_dirac_field_pseudo_unitarity_of_d_matrix` as follows
+As mentioned in :ref:`Dirac representation and gamma matrices <paragraph_dirac_field_representation_not_unitary>`, the fact that the Dirac representation is not unitary means that we cannot construct the interaction density using :math:`\psi^{\dagger} \psi` because it won't be a scalar. Indeed, let's work out how :math:`\psi^{\dagger}` transforms under a (homogeneous orthochronous) Lorentz transformation using :eq:`eq_conjugate_annihilation_and_creation_field` and :eq:`eq_dirac_field_pseudo_unitarity_of_d_matrix` as follows
 
 .. math::
-	:nowrap:
 
-	\begin{equation*}
-		U_0(\Lambda) \psi^{\dagger}(x) U_0^{-1}(\Lambda) = \left( U_0(\Lambda) \psi(x) U_0^{-1}(\Lambda) \right)^{\dagger}
-			= \left( D^{-1}(\Lambda) \psi(\Lambda x) \right)^{\dagger}
-			= \psi^{\dagger}(\Lambda x) \left( D^{-1}(\Lambda) \right)^{\dagger}
-			= \psi^{\dagger}(\Lambda x) \beta D(\Lambda) \beta
-	\end{equation*}
+	U_0(\Lambda) \psi^{\dagger}(x) U_0^{-1}(\Lambda)
+		&= \left( U_0(\Lambda) \psi(x) U_0^{-1}(\Lambda) \right)^{\dagger} \\
+		&= \left( D^{-1}(\Lambda) \psi(\Lambda x) \right)^{\dagger} \\
+		&= \psi^{\dagger}(\Lambda x) \left( D^{-1}(\Lambda) \right)^{\dagger} \\
+		&= \psi^{\dagger}(\Lambda x) \beta D(\Lambda) \beta
 
 We see that if we define a new adjoint
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		\bar{\psi} \coloneqq \psi^{\dagger} \beta
-	\end{equation*}
+.. math:: \bar{\psi} \coloneqq \psi^{\dagger} \beta
 
 then :math:`\bar{\psi}` transforms nicely as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		U_0(\Lambda) \bar{\psi}(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda)
-	\end{equation*}
+.. math:: U_0(\Lambda) \bar{\psi}(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda)
 
 It follows that we can construct a bilinear form as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		\bar{\psi}(x) M \psi(x)
-	\end{equation*}
+.. math:: \bar{\psi}(x) M \psi(x)
 
 where :math:`M` is a :math:`4 \times 4` matrix, so that
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		U_0(\Lambda) \bar{\psi}(x) M \psi(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda) M D^{-1}(\Lambda) \psi(\Lambda x)
-	\end{equation*}
+.. math:: U_0(\Lambda) \bar{\psi}(x) M \psi(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda) M D^{-1}(\Lambda) \psi(\Lambda x)
 
 Letting :math:`M` to be :math:`1, \gamma_{\mu}, \Jscr_{\mu \nu}, \gamma_5 \gamma_{\mu}` or :math:`\gamma_5` then produces a scalar, vector, tensor, axial vector or pseudo-scalar, respectively. Here the adjectives "axial" and "pseudo-" refer to the opposite to usual parities under spatial and/or time inversion.
 
 An important example is Fermi's theory of beta-decay, which involves an interaction density of the following form
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		\bar{\psi}_p \gamma^{\mu} \psi_n \bar{\psi}_e \gamma_{\mu} \psi_{\nu}
-	\end{equation*}
+.. math:: \bar{\psi}_p \gamma^{\mu} \psi_n \bar{\psi}_e \gamma_{\mu} \psi_{\nu}
 
 where :math:`p, n, e, \nu` stand for proton, neutron, electron and neutrino, respectively.
 
@@ -1594,7 +1474,6 @@ General representation theory of the Lorentz group
 The starting point, as in the case of Dirac fields, is the general commutation relation :eq:`eq_bracket_repr_j` that the :math:`\Jscr_{\mu \nu}` matrices must satisfy. As explained in :ref:`sec_quantum_lorentz_symmetry`, we can rename the :math:`\Jscr_{\mu \nu}` matrices as follows
 
 .. math::
-	:nowrap:
 
 	\begin{alignat*}{3}
 		\Jscr_1 &\coloneqq \Jscr_{23}, \quad \Jscr_2 &&\coloneqq \Jscr_{31}, \quad \Jscr_3 &&\coloneqq \Jscr_{12} \\
@@ -1604,70 +1483,47 @@ The starting point, as in the case of Dirac fields, is the general commutation r
 and rewrite :eq:`eq_bracket_repr_j` as a set of equations as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_jk_commutation_relations
 
-	\begin{align}
-		\left[ \Jscr_i, \Jscr_j \right] &= \ifrak \epsilon_{ijk} \Jscr_k
-		\label{eq_jjj_commutation_general_repr} \\
-		\left[ \Jscr_i, \Kscr_j \right] &= \ifrak \epsilon_{ijk} \Kscr_k
-		\label{eq_jkk_commutation_general_repr} \\
-		\left[ \Kscr_i, \Kscr_j \right] &= -\ifrak \epsilon_{ijk} \Jscr_k
-		\label{eq_kkj_commutation_general_repr}
-	\end{align}
+	\left[ \Jscr_i, \Jscr_j \right] &= \ifrak \epsilon_{ijk} \Jscr_k \\
+	\left[ \Jscr_i, \Kscr_j \right] &= \ifrak \epsilon_{ijk} \Kscr_k \\
+	\left[ \Kscr_i, \Kscr_j \right] &= -\ifrak \epsilon_{ijk} \Jscr_k
 
-which correspond to :math:`\eqref{eq_jjj_commutation}, \eqref{eq_jkk_commutation}` and :math:`\eqref{eq_kkj_commutation}`, respectively.
+which correspond to the commutation relations between momentum and boost operators in :eq:`eq_poincare_algebra`.
 
 Let's write :math:`\bm{\Jscr} \coloneqq \left(\Jscr_1, \Jscr_2, \Jscr_3\right)` and :math:`\bm{\Kscr} \coloneqq \left(\Kscr_1, \Kscr_2, \Kscr_3\right)`. It turns out that this Lie algebra generated by :math:`\bm{\Jscr}` and :math:`\bm{\Kscr}` can be *complex* linearly transformed into one that splits. The transformation is defined as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_ab_from_jk
 
-	\begin{align}
-		\bm{\Ascr} &= \frac{1}{2} \left( \bm{\Jscr} + \ifrak \bm{\Kscr} \right)
-		\label{eq_general_field_a_from_jk} \\
-		\bm{\Bscr} &= \frac{1}{2} \left( \bm{\Jscr} - \ifrak \bm{\Kscr} \right)
-		\label{eq_general_field_b_from_jk}
-	\end{align}
+	\bm{\Ascr} &= \frac{1}{2} \left( \bm{\Jscr} + \ifrak \bm{\Kscr} \right) \\
+	\bm{\Bscr} &= \frac{1}{2} \left( \bm{\Jscr} - \ifrak \bm{\Kscr} \right)
 
-so that :math:`\eqref{eq_jjj_commutation_general_repr}` -- :math:`\eqref{eq_kkj_commutation_general_repr}` take the following form
+so that :eq:`eq_general_field_jk_commutation_relations` is equivalent to the following
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_ab_commutation_relations
 
-	\begin{align}
-		\left[ \bm{\Ascr}_i, \bm{\Ascr}_j \right] &= \ifrak \epsilon_{ijk} \bm{\Ascr}_k
-		\label{eq_aaa_commutation} \\
-		\left[ \bm{\Bscr}_i, \bm{\Bscr}_j \right] &= \ifrak \epsilon_{ijk} \bm{\Bscr}_k
-		\label{eq_bbb_commutation} \\
-		\left[ \bm{\Ascr}_i, \bm{\Bscr}_j \right] &= 0
-		\label{eq_ab0_commutation}
-	\end{align}
+	\left[ \bm{\Ascr}_i, \bm{\Ascr}_j \right] &= \ifrak \epsilon_{ijk} \bm{\Ascr}_k \\
+	\left[ \bm{\Bscr}_i, \bm{\Bscr}_j \right] &= \ifrak \epsilon_{ijk} \bm{\Bscr}_k \\
+	\left[ \bm{\Ascr}_i, \bm{\Bscr}_j \right] &= 0
 
-In other words, both :math:`\bm{\Ascr}` and :math:`\bm{\Bscr}` form a Lie algebra of the :math:`3`-dimensional rotation group and they commute each other. It follows then from :ref:`Representations of angular momentum <dropdown_repr_of_angular_momenta>` that representations of the Lie algebra defined by :math:`\eqref{eq_aaa_commutation}` -- :math:`\eqref{eq_ab0_commutation}` can be parametrized by two nonnegative (half-)integers :math:`A` and :math:`B` such that
+In other words, both :math:`\bm{\Ascr}` and :math:`\bm{\Bscr}` form a Lie algebra of the :math:`3`-dimensional rotation group and they commute each other. It follows then from :ref:`Representations of angular momentum <dropdown_repr_of_angular_momenta>` that representations of the Lie algebra defined by :eq:`eq_general_field_ab_commutation_relations` can be parametrized by two nonnegative (half-)integers :math:`A` and :math:`B` such that
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_ab_representation
 
-	\begin{align}
-		\bm{\Ascr}_{a'b', ab} &= \delta_{b'b} \Jbf^{(A)}_{a'a}
-		\label{eq_general_field_a_repr} \\
-		\bm{\Bscr}_{a'b', ab} &= \delta_{a'a} \Jbf^{(B)}_{b'b}
-		\label{eq_general_field_b_repr}
-	\end{align}
+	\bm{\Ascr}_{a'b', ab} &= \delta_{b'b} \Jbf^{(A)}_{a'a} \\
+	\bm{\Bscr}_{a'b', ab} &= \delta_{a'a} \Jbf^{(B)}_{b'b}
 
-where :math:`a, a' \in \{-A, -A+1, \cdots, A\}` and :math:`b, b' \in \{-B, -B+1, \cdots, B\}`, and :math:`\Jbf^{(A)}` and :math:`\Jbf^{(B)}` are matrices given by :math:`\eqref{eq_j1_j2_matrix}` and :math:`\eqref{eq_j3_matrix}`. In particular, all these representations have dimension :math:`(2A+1)(2B+1)` and are unitary.
+where :math:`a, a' \in \{-A, -A+1, \cdots, A\}` and :math:`b, b' \in \{-B, -B+1, \cdots, B\}`, and :math:`\Jbf^{(A)}` and :math:`\Jbf^{(B)}` are matrices given by :eq:`eq_rotation_j_matrix`. In particular, these representations have dimension :math:`(2A+1)(2B+1)` and are unitary.
 
 Now each one of these representations gives rise to a representation of the Lorentz group, which will be referred to as the :math:`(A, B)` representation. As we've seen for Dirac fields, these representations are not unitary, because while :math:`\bm{\Jscr} = \bm{\Ascr} + \bm{\Bscr}` is Hermitian, :math:`\bm{\Kscr} = -\ifrak \left( \bm{\Ascr} - \bm{\Bscr} \right)` is anti-Hermitian. For the corresponding unitary representation of the :math:`3`-dimensional rotation group, we recall from :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>` that it may be split into irreducible components of spin :math:`\jfrak`, which takes values in the following range
 
-.. math::
-	:nowrap:
+.. math:: \jfrak = |A-B|, |A-B| + 1, \cdots, A+B
+	:label: eq_general_field_j_range
 
-	\begin{equation}
-		\jfrak = |A-B|, |A-B| + 1, \cdots, A+B
-		\label{eq_general_field_j_range}
-	\end{equation}
-
-according to :math:`\eqref{eq_composite_total_angular_momentum_range}`. Under this setup, the scalar, vector, and Dirac fields discussed before correspond to the following three scenarios.
+according to :eq:`eq_composite_total_angular_momentum_range`. Under this setup, the scalar, vector, and Dirac fields discussed before correspond to the following three scenarios.
 
 1. Scalar field: :math:`A = B = 0`. In this case :math:`\jfrak` must vanish, and hence no spin is possible.
 2. Vector field: :math:`A = B = \tfrac{1}{2}`. In this case :math:`\jfrak` may be :math:`0` or :math:`1`, which correspond to the time and space components of the vector field, respectively.
@@ -1676,22 +1532,16 @@ according to :math:`\eqref{eq_composite_total_angular_momentum_range}`. Under th
 It turns out that any general :math:`(A, B)` fields can be derived from the above basic ones by taking tensor products and irreducible components. For example :math:`(1, 0)` and :math:`(0, 1)` fields can be derived, using again :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`, by the following calculation
 
 .. math::
-	:nowrap:
 
-	\begin{equation*}
-		\left( \tfrac{1}{2}, \tfrac{1}{2} \right) \otimes \left( \tfrac{1}{2}, \tfrac{1}{2} \right) \
-			= (0, 0) \oplus (0, 1) \oplus (1, 0) \oplus (1, 1)
-	\end{equation*}
+	\left( \tfrac{1}{2}, \tfrac{1}{2} \right) \otimes \left( \tfrac{1}{2}, \tfrac{1}{2} \right)
+		= (0, 0) \oplus (0, 1) \oplus (1, 0) \oplus (1, 1)
 
 In fact, all :math:`(A, B)` fields with :math:`A + B` being an integer can be obtained in this way by tensoring copies of :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)`. To get those fields with :math:`A + B` being a half-integer, we can consider the following calculation
 
 .. math::
-	:nowrap:
 
-	\begin{equation*}
-		\left( \tfrac{1}{2}, \tfrac{1}{2} \right) \otimes \left( \left(\tfrac{1}{2}, 0\right) \oplus \left(0, \tfrac{1}{2}\right) \right) \
-			= \left(0, \tfrac{1}{2}\right) \oplus \left(1, \tfrac{1}{2}\right) \oplus \left(\tfrac{1}{2}, 0\right) \oplus \left(\tfrac{1}{2}, 1\right)
-	\end{equation*}
+	\left( \tfrac{1}{2}, \tfrac{1}{2} \right) \otimes \left( \left(\tfrac{1}{2}, 0\right) \oplus \left(0, \tfrac{1}{2}\right) \right)
+		= \left(0, \tfrac{1}{2}\right) \oplus \left(1, \tfrac{1}{2}\right) \oplus \left(\tfrac{1}{2}, 0\right) \oplus \left(\tfrac{1}{2}, 1\right)
 
 
 Construction of general fields
@@ -1700,191 +1550,131 @@ Construction of general fields
 We've seen that general fields can be indexed by two (half-)integers :math:`a` and :math:`b`, and take the following general form
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_defn_psi_field
 
-	\begin{equation}
-		\psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \kappa e^{\ifrak p \cdot x} u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \lambda e^{-\ifrak p \cdot x} v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
-		\label{eq_general_field_defn_psi_field}
-	\end{equation}
+	\psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~\left( \kappa e^{\ifrak p \cdot x} u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \lambda e^{-\ifrak p \cdot x} v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
 
 As usual, let's translate :eq:`eq_j_intertwines_u_and_v` in the context of :math:`(A, B)` representations as follows
 
 .. math::
-	:nowrap:
 
-	\begin{align*}
-		\sum_{\sigma'} u_{a'b'}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_{a, b} \bm{\Jscr}_{a'b', ab} u_{ab}(0, \sigma) \\
-		-\sum_{\sigma'} v_{a'b'}(0, \sigma') \Jbf^{(\jfrak) \ast}_{\sigma' \sigma} &= \sum_{a, b} \bm{\Jscr}_{a'b', ab} v_{ab}(0, \sigma)
-	\end{align*}
+	\sum_{\sigma'} u_{a'b'}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_{a, b} \bm{\Jscr}_{a'b', ab} u_{ab}(0, \sigma) \\
+	-\sum_{\sigma'} v_{a'b'}(0, \sigma') \Jbf^{(\jfrak) \ast}_{\sigma' \sigma} &= \sum_{a, b} \bm{\Jscr}_{a'b', ab} v_{ab}(0, \sigma)
 
-Using the fact that :math:`\bm{\Jscr} = \bm{\Ascr} + \bm{\Bscr}` and :math:`\eqref{eq_general_field_a_repr}` and :math:`\eqref{eq_general_field_b_repr}`, we can further rewrite these conditions as follows
+Using the fact that :math:`\bm{\Jscr} = \bm{\Ascr} + \bm{\Bscr}` and :eq:`eq_general_field_ab_representation`, we can further rewrite these conditions as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_uvj_relation
 
-	\begin{align}
-		\sum_{\sigma'} u_{a'b'}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_a \Jbf^{(A)}_{a'a} u_{ab'}(0, \sigma) + \sum_b \Jbf^{(B)}_{b'b} u_{a'b}(0, \sigma)
-		\label{eq_general_field_uj_relation} \\
-		-\sum_{\sigma'} v_{a'b'}(0, \sigma') \Jbf^{(\jfrak) \ast}_{\sigma' \sigma} &= \sum_a \Jbf^{(A)}_{a'a} v_{ab'}(0, \sigma) + \sum_b \Jbf^{(B)}_{b'b} v_{a'b}(0, \sigma)
-		\label{eq_general_field_vj_relation}
-	\end{align}
+	\sum_{\sigma'} u_{a'b'}(0, \sigma') \Jbf^{(\jfrak)}_{\sigma' \sigma} &= \sum_a \Jbf^{(A)}_{a'a} u_{ab'}(0, \sigma) + \sum_b \Jbf^{(B)}_{b'b} u_{a'b}(0, \sigma) \\
+	-\sum_{\sigma'} v_{a'b'}(0, \sigma') \Jbf^{(\jfrak) \ast}_{\sigma' \sigma} &= \sum_a \Jbf^{(A)}_{a'a} v_{ab'}(0, \sigma) + \sum_b \Jbf^{(B)}_{b'b} v_{a'b}(0, \sigma)
 
-Looking at :math:`\eqref{eq_general_field_uj_relation}`, it's an identity that relates an angular momentum representation of spin :math:`\jfrak` on the left to the sum of two independent angular momentum representations on the right. Hence it's not unreasonable to guess that :math:`u` might have something to do with the Clebsch-Gordan coefficients defined by :math:`\eqref{eq_defn_clebsch_gordan_coefficients}`. This turns out to be indeed the case as we now demonstrate. Since :math:`\bigoplus_{\jfrak} \Jbf^{(\jfrak)} = \Jbf^{(A)} + \Jbf^{(B)}`, where the direct sum is taken over the range :math:`\eqref{eq_general_field_j_range}` and can be thought of as a block diagonal matrix, we can calculate as follows
+Looking at the equation on the :math:`u`-field in :eq:`eq_general_field_uvj_relation`, it's an identity that relates an angular momentum representation of spin :math:`\jfrak` on the left to the sum of two independent angular momentum representations on the right. Hence it's not unreasonable to guess that :math:`u` might have something to do with the Clebsch-Gordan coefficients defined by :eq:`eq_defn_clebsch_gordan_coefficients`. This turns out to be indeed the case as we now demonstrate. Since :math:`\bigoplus_{\jfrak} \Jbf^{(\jfrak)} = \Jbf^{(A)} + \Jbf^{(B)}`, where the direct sum is taken over the range :eq:`eq_general_field_j_range` and can be thought of as a block diagonal matrix, we can calculate as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_calculate_j_in_clebsch_gordan_coefficients
 
-	\begin{align}
-		\Jbf^{(\jfrak)}_{\sigma' \sigma} &=\left ( \Psi^{AB~\jfrak}_{\sigma'},~\bigoplus_{\jfrak'} \Jbf^{(\jfrak')} \Psi^{AB~\jfrak}_{\sigma} \right)
-		\label{eq_general_field_calculate_j_in_clebsch_gordan_coefficients} \\
-			&\xlongequal{\eqref{eq_defn_clebsch_gordan_coefficients}} \left( \sum_{a', b'} C^{AB}(\jfrak, \sigma'; a', b') \Psi^{AB}_{a'b'},~\sum_{a, b} C^{AB}(\jfrak, \sigma; a, b) \bigoplus_{\jfrak'} \Jbf^{(\jfrak')} \Psi^{AB}_{ab} \right)
-			\nonumber \\
-			&= \sum_{a', b', a, b} C^{AB}(\jfrak, \sigma'; a', b') C^{AB}(\jfrak, \sigma; a, b) \left( \Psi^{AB}_{a'b'},~\left( \Jbf^{(A)} + \Jbf^{(B)} \right) \Psi^{AB}_{ab} \right)
-			\nonumber \\
-			&= \sum_{a', b', a, b} C^{AB}(\jfrak, \sigma'; a', b') C^{AB}(\jfrak, \sigma; a, b) \left( \delta_{b'b} \Jbf^{(A)}_{a'a} + \delta_{a'a} \Jbf^{(B)}_{b'b} \right)
-			\nonumber \\
-			&= \sum_{a', b'} C^{AB}(\jfrak, \sigma'; a', b') \left( \blue{\sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b}} \right)
-			\nonumber
-	\end{align}
+	\Jbf^{(\jfrak)}_{\sigma' \sigma} &=\left ( \Psi^{AB~\jfrak}_{\sigma'},~\bigoplus_{\jfrak'} \Jbf^{(\jfrak')} \Psi^{AB~\jfrak}_{\sigma} \right) \\
+		&= \left( \sum_{a', b'} C^{AB}(\jfrak, \sigma'; a', b') \Psi^{AB}_{a'b'},~\sum_{a, b} C^{AB}(\jfrak, \sigma; a, b) \bigoplus_{\jfrak'} \Jbf^{(\jfrak')} \Psi^{AB}_{ab} \right) \\
+		&= \sum_{a', b', a, b} C^{AB}(\jfrak, \sigma'; a', b') C^{AB}(\jfrak, \sigma; a, b) \left( \Psi^{AB}_{a'b'},~\left( \Jbf^{(A)} + \Jbf^{(B)} \right) \Psi^{AB}_{ab} \right) \\
+		&= \sum_{a', b', a, b} C^{AB}(\jfrak, \sigma'; a', b') C^{AB}(\jfrak, \sigma; a, b) \left( \delta_{b'b} \Jbf^{(A)}_{a'a} + \delta_{a'a} \Jbf^{(B)}_{b'b} \right) \\
+		&= \sum_{a', b'} C^{AB}(\jfrak, \sigma'; a', b') \left( \blue{\sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b}} \right)
 
-We are now one step away from being able to compare with :math:`\eqref{eq_general_field_uj_relation}`. Namely we need to bring the coefficients :math:`C^{AB}(\jfrak, \sigma'; a', b')` to the left side of the equation. To to this, we recall the following identity of Clebsch-Gordan coefficients
+We are now one step away from being able to compare with :eq:`eq_general_field_uvj_relation`. Namely we need to bring the coefficients :math:`C^{AB}(\jfrak, \sigma'; a', b')` to the left side of the equation. To to this, we recall the following identity of Clebsch-Gordan coefficients
 
 .. math::
-	:nowrap:
+	:label: eq_clebsch_gordan_coefficients_orthonormal_relation
 
-	\begin{equation}
-		\sum_{a', b'} C^{AB}(\jfrak', \sigma'; a', b') C^{AB}(\jfrak, \sigma; a', b') = \delta_{\jfrak'\jfrak} \delta_{\sigma'\sigma}
-		\label{eq_clebsch_gordan_coefficients_orthonormal_relation}
-	\end{equation}
+	\sum_{a', b'} C^{AB}(\jfrak', \sigma'; a', b') C^{AB}(\jfrak, \sigma; a', b') = \delta_{\jfrak'\jfrak} \delta_{\sigma'\sigma}
 
-which follows from the orthonormality of the states :math:`\Psi^{AB}_{ab}` and the reality of the Clebsch-Gordan coefficients as constructed in :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`. [#clebsch_gordan_coefficients_orthonormality]_ Now :math:`\eqref{eq_general_field_calculate_j_in_clebsch_gordan_coefficients}` will be satisfied if we set the blue terms to equal to the following quantity
+which follows from the orthonormality of the states :math:`\Psi^{AB}_{ab}` and the reality of the Clebsch-Gordan coefficients as constructed in :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`. [#clebsch_gordan_coefficients_orthonormality]_ Now :eq:`eq_general_field_calculate_j_in_clebsch_gordan_coefficients` will be satisfied if we set the blue terms to equal to the following quantity
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_condition_on_j_by_clebsch_gordan_coefficients
 
-	\begin{equation}
-		\sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b} \
-			= \sum_{\sigma''} C^{AB}(\jfrak, \sigma; a', b') \Jbf^{(\jfrak)}_{\sigma'' \sigma}
-		\label{eq_general_field_condition_on_j_by_clebsch_gordan_coefficients}
-	\end{equation}
+	\sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b}
+		= \sum_{\sigma''} C^{AB}(\jfrak, \sigma; a', b') \Jbf^{(\jfrak)}_{\sigma'' \sigma}
 
-due to :math:`\eqref{eq_clebsch_gordan_coefficients_orthonormal_relation}`.
+due to :eq:`eq_clebsch_gordan_coefficients_orthonormal_relation`.
 
-Now compare :math:`\eqref{eq_general_field_condition_on_j_by_clebsch_gordan_coefficients}` with :math:`\eqref{eq_general_field_uj_relation}`, we've solved the :math:`u`-fields of dimension :math:`(2A+1)(2B+1)` as follows
+Now compare :eq:`eq_general_field_condition_on_j_by_clebsch_gordan_coefficients` with :eq:`eq_general_field_uvj_relation`, we've solved the :math:`u`-fields of dimension :math:`(2A+1)(2B+1)` as follows
 
-.. math::
-	:nowrap:
+.. math:: u_{ab}(0, \sigma) = (2m)^{-1/2} C^{AB}(\jfrak, \sigma; a, b)
+	:label: eq_general_field_u_at_zero_momentum
 
-	\begin{equation}
-		u_{ab}(0, \sigma) = (2m)^{-1/2} C^{AB}(\jfrak, \sigma; a, b)
-		\label{eq_general_field_u_at_zero_momentum}
-	\end{equation}
-
-where :math:`(2m)^{-1/2}` is a conventional coefficient add here to cancel the mass term in :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` later. Using the fact that
+where :math:`(2m)^{-1/2}` is a conventional coefficient add here to cancel the mass term in :eq:`eq_annihilation_and_creation_transformation_simplified_by_boost` later. Using the fact that
 
 .. math::
-	:nowrap:
+	:label: eq_angular_momentum_representation_conjugate_formula
 
-	\begin{equation}
-		-\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-\sigma} \Jbf^{(\jfrak)}_{-\sigma', -\sigma}
-		\label{eq_angular_momentum_representation_conjugate_formula}
-	\end{equation}
+	-\Jbf^{(\jfrak) \ast}_{\sigma'\sigma} = (-1)^{\sigma'-\sigma} \Jbf^{(\jfrak)}_{-\sigma', -\sigma}
 
-which can be verified directly using :math:`\eqref{eq_j1_j2_matrix}` and :math:`\eqref{eq_j3_matrix}`, we can express the :math:`v`-fields in terms of the :math:`u`-fields as follows
+which can be verified directly using :eq:`eq_rotation_j_matrix`, we can express the :math:`v`-fields in terms of the :math:`u`-fields as follows
 
-.. math::
-	:nowrap:
+.. math:: v_{ab}(0, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(0, -\sigma)
+	:label: eq_general_field_v_at_zero_momentum
 
-	\begin{equation}
-		v_{ab}(0, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(0, -\sigma)
-		\label{eq_general_field_v_at_zero_momentum}
-	\end{equation}
+To get the :math:`u` and :math:`v` fields at finite momentum, we need to invoke the general boost formulae :eq:`eq_annihilation_and_creation_transformation_simplified_by_boost`, as well as the :math:`L` transformation :eq:`eq_L_transformation_for_massive`. Here we'll think of a boost as a :math:`1`-parameter transformation in a given direction :math:`\hat{\pbf} \coloneqq \pbf / |\pbf|`. It turns out to be neat to use a `hyperbolic angle <https://en.wikipedia.org/wiki/Hyperbolic_functions>`_ :math:`\theta`, rather than :math:`|\pbf|`, defined by
 
-To get the :math:`u` and :math:`v` fields at finite momentum, we need to invoke the general boost formulae :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}` -- :math:`\eqref{eq_creation_v_transformation_simplified_by_boost}`, as well as the :math:`L` transformation :math:`\eqref{eq_L_transformation_for_massive_1}` -- :math:`\eqref{eq_L_transformation_for_massive_3}`. Here we'll think of a boost as a :math:`1`-parameter transformation in a given direction :math:`\hat{\pbf} \coloneqq \pbf / |\pbf|`. It turns out to be neat to use a `hyperbolic angle <https://en.wikipedia.org/wiki/Hyperbolic_functions>`_ :math:`\theta`, rather than :math:`|\pbf|`, defined by
-
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\cosh\theta = \sqrt{\pbf^2 + m^2} / m, \quad \sinh\theta = |\pbf| / m
-		\label{eq_general_field_defn_theta}
-	\end{equation}
+.. math:: \cosh\theta = \sqrt{\pbf^2 + m^2} / m, \quad \sinh\theta = |\pbf| / m
+	:label: eq_general_field_defn_theta
 
 to parametrize the boost as follows
 
 .. math::
-	:nowrap:
 
-	\begin{align*}
-		L(\theta)^0_0 &= \cosh\theta \\
-		L(\theta)^i_0 = L(\theta)_i^0 &= \hat{\pbf}_i \sinh\theta \\
-		L(\theta)_{ij} &= \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh\theta - 1)
-	\end{align*}
+	{L(\theta)_0}^0 &= \cosh\theta \\
+	{L(\theta)_i}^0 &= \hat{\pbf}_i \sinh\theta \\
+	L(\theta)_{ij} &= \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh\theta - 1)
 
 The nice thing about this parametrization is that :math:`L(\theta)` becomes additive in :math:`\theta` in the following sense
 
-.. math::
-	:nowrap:
+.. math:: L(\theta') L(\theta) = L(\theta' + \theta)
+	:label: eq_general_field_L_transformation_by_theta
 
-	\begin{equation*}
-		L(\theta') L(\theta) = L(\theta' + \theta)
-	\end{equation*}
+.. dropdown:: Proof of :eq:`eq_general_field_L_transformation_by_theta`
+	:animate: fade-in-slide-down
+	:icon: unlock
 
-Indeed, one can verify it by, for example, the following calculation
+	We'll only veryfiy the equality for :math:`1 \leq i, j \leq 3`.
 
-.. math::
-	:nowrap:
+	.. math::
 
-	\begin{align*}
-		L(\theta')^i_{\mu} L(\theta)^{\mu}_j &= L(\theta')^i_0 L(\theta)^0_j + \sum_{k=1}^3 L(\theta')^i_k L(\theta)^k_j \\
-			&= \hat{\pbf}_i \hat{\pbf}_j \sinh\theta' \sinh\theta + \sum_{k=1}^3 \left( \delta_{ik} + \hat{\pbf}_i \hat{\pbf}_k (\cosh\theta' - 1) \right) \left( \delta_{kj} + \hat{\pbf}_k \hat{\pbf}_j (\cosh\theta - 1) \right) \\
-			&= \hat{\pbf}_i \hat{\pbf}_j \sinh\theta' \sinh\theta + \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j \left( \cosh\theta' - 1 + \cosh\theta - 1 + (\cosh\theta' - 1)(\cosh\theta - 1) \right) \\
-			&= \hat{\pbf}_i \hat{\pbf}_j \sinh\theta' \sinh\theta + \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh\theta' \cosh\theta - 1) \\
-			&= \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh(\theta' + \theta) - 1) = L(\theta' + \theta)^i_j
-	\end{align*}
+		{L(\theta')^i}_{\mu} {L(\theta)^{\mu}}_j
+			&= {L(\theta')^i}_0 {L(\theta)^0}_j + \sum_{k=1}^3 {L(\theta')^i}_k {L(\theta)^k}_j \\
+			&= \hat{\pbf}^i \hat{\pbf}_j \sinh\theta' \sinh\theta \\
+				&\quad + \sum_{k=1}^3 \left( \delta^i_k + \hat{\pbf}^i \hat{\pbf}_k (\cosh\theta' - 1) \right) \left( \delta^k_j + \hat{\pbf}^k \hat{\pbf}_j (\cosh\theta - 1) \right) \\
+			&= \hat{\pbf}^i \hat{\pbf}_j \sinh\theta' \sinh\theta + \delta^i_j \\
+      			&\quad + \hat{\pbf}^i \hat{\pbf}_j \left( \cosh\theta' - 1 + \cosh\theta - 1 + (\cosh\theta' - 1)(\cosh\theta - 1) \right) \\
+			&= \hat{\pbf}^i \hat{\pbf}_j \sinh\theta' \sinh\theta + \delta_{ij} + \hat{\pbf}^i \hat{\pbf}_j (\cosh\theta' \cosh\theta - 1) \\
+			&= \delta_{ij} + \hat{\pbf}^i \hat{\pbf}_j (\cosh(\theta' + \theta) - 1) = {L(\theta' + \theta)^i}_j
 
 In light of :eq:`eq_dirac_field_linearize_representation`, we can then write
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		D(L(p)) = \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \bm{\Kscr}\right)
-	\end{equation*}
+.. math:: D(L(p)) = \exp\left(-\ifrak \theta~\hat{\pbf} \cdot \bm{\Kscr}\right)
 
 at least for :math:`\theta` infinitesimal. Here the minus sign comes from the fact that we have to bring the upper-index :math:`\mu=0` in :math:`\omega^{\mu\nu}` down.
 
 For an :math:`(A, B)` representation, we can further write :math:`\ifrak \bm{\Kscr} = \bm{\Ascr} - \bm{\Bscr}`, and henceforth
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_d_transformation_in_ab_repr
 
-	\begin{equation}
-		D(L(p))_{a'b', ab} = \exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b}
-		\label{eq_general_field_d_transformation_in_ab_repr}
-	\end{equation}
+	D(L(p))_{a'b', ab} = \exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)_{a'a} \exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)_{b'b}
 
-since the representation splits into a direct sum of :math:`\bm{\Ascr}` and :math:`\bm{\Bscr}`. Combining :math:`\eqref{eq_general_field_d_transformation_in_ab_repr}` with :math:`\eqref{eq_general_field_u_at_zero_momentum}` and :math:`\eqref{eq_annihilation_u_transformation_simplified_by_boost}`, we obtain the following formula for the :math:`u`-field at finite momentum for an :math:`(A, B)` representation
+since the representation splits into a direct sum of :math:`\bm{\Ascr}` and :math:`\bm{\Bscr}`. Combining :eq:`eq_general_field_d_transformation_in_ab_repr` with :eq:`eq_general_field_u_at_zero_momentum` and :eq:`eq_annihilation_and_creation_transformation_simplified_by_boost`, we obtain the following formula for the :math:`u`-field at finite momentum for an :math:`(A, B)` representation
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_u_at_finite_momentum
 
-	\begin{equation}
-		u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{a'a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
-		\label{eq_general_field_u_at_finite_momentum}
-	\end{equation}
+	u_{ab}(\pbf, \sigma) = \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{a'a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{b'b} C^{AB}(\jfrak \sigma; a'b')
 
-where we assume implicitly that the spin :math:`\jfrak` is within the range :math:`\eqref{eq_general_field_j_range}`, and :math:`\sigma` is the corresponding spin :math:`z`-component.
+where we assume implicitly that the spin :math:`\jfrak` is within the range :eq:`eq_general_field_j_range`, and :math:`\sigma` is the corresponding spin :math:`z`-component.
 
-Parallel to :math:`\eqref{eq_general_field_v_at_zero_momentum}`, we can express the :math:`v`-field at finite momentum in terms of the :math:`u`-field as follows
+Parallel to :eq:`eq_general_field_v_at_zero_momentum`, we can express the :math:`v`-field at finite momentum in terms of the :math:`u`-field as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		v_{ab}(\pbf, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(\pbf, -\sigma)
-		\label{eq_general_field_v_at_finite_momentum}
-	\end{equation}
+.. math:: v_{ab}(\pbf, \sigma) = (-1)^{\jfrak + \sigma} u_{ab}(\pbf, -\sigma)
+	:label: eq_general_field_v_at_finite_momentum
 
 The construction of interaction densities for general :math:`(A, B)` fields relies on Clebsch-Gordan coefficients, and is discussed in some detail in the following dropdown block.
 
@@ -1895,322 +1685,205 @@ The construction of interaction densities for general :math:`(A, B)` fields reli
 	According to :eq:`eq_construct_interaction_density_by_fields` and :eq:`eq_coefficient_g_transformation_law`, a general interaction density can be constructed as follows
 
 	.. math::
-		:nowrap:
+		:label: eq_general_field_interaction_density
 
-		\begin{equation}
-			\Hscr(x) = \sum_{a_1 a_2 \cdots a_n} \sum_{b_1 b_2 \cdots b_n} g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n} \psi^{(1)}_{a_1 b_1}(x) \psi^{(2)}_{a_2 b_2}(x) \cdots \psi^{(n)}_{a_n b_n}(x)
-			\label{eq_general_field_interaction_density}
-		\end{equation}
+		\Hscr(x) = \sum_{a_1 a_2 \cdots a_n} \sum_{b_1 b_2 \cdots b_n} g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n} \psi^{(1)}_{a_1 b_1}(x) \psi^{(2)}_{a_2 b_2}(x) \cdots \psi^{(n)}_{a_n b_n}(x)
 
-	where :math:`\psi^{(i)}_{a_i b_i}(x)` is an :math:`(A_i, B_i)` field, and the coefficients :math:`g_{\underline{a}, \underline{b}} \coloneqq g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n}` are covariant under the product of the :math:`(A_i, B_i)` representations. Looking at :math:`\eqref{eq_general_field_u_at_finite_momentum}` and :math:`\eqref{eq_general_field_v_at_finite_momentum}`, we see that the :math:`D` matrices, as in :math:`\eqref{eq_conjugate_annihilation_field}` -- :math:`\eqref{eq_conjugate_creation_field}`, act on general fields as a product of the angular momentum representations associated with the :math:`A`'s and :math:`B`'s. Therefore we may also split the coefficients :math:`g_{\underline{a}, \underline{b}}` as follows
+	where :math:`\psi^{(i)}_{a_i b_i}(x)` is an :math:`(A_i, B_i)` field, and the coefficients :math:`g_{\underline{a}, \underline{b}} \coloneqq g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n}` are covariant under the product of the :math:`(A_i, B_i)` representations. Looking at :eq:`eq_general_field_u_at_finite_momentum` and :eq:`eq_general_field_v_at_finite_momentum`, we see that the :math:`D` matrices, as in :eq:`eq_conjugate_annihilation_and_creation_field`, act on general fields as a product of the angular momentum representations associated with the :math:`A`'s and :math:`B`'s. Therefore we may also split the coefficients :math:`g_{\underline{a}, \underline{b}}` as follows
 
 	.. math::
-		:nowrap:
 
-		\begin{equation*}
-			g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n} = g_{a_1 a_2 \cdots a_n} g_{b_1 b_2 \cdots b_n}
-		\end{equation*}
+		g_{a_1 a_2 \cdots a_n;~b_1 b_2 \cdots b_n} = g_{a_1 a_2 \cdots a_n} g_{b_1 b_2 \cdots b_n}
 
 	such that :math:`g_{\underline{a}}` and :math:`g_{\underline{b}}` are covariant under the angular momentum representations in the sense that for any :math:`3`-vector :math:`\bm{\theta}` and :math:`J \coloneqq \bm{\theta} \cdot \Jbf`, the following holds
 
 	.. math::
-		:nowrap:
+		:label: eq_general_field_g_coefficients_covariance
 
-		\begin{equation}
-			J^{(A_1)}_{a'_1 a_1} J^{(A_2)}_{a'_2 a_2} \cdots J^{(A_n)}_{a'_n a_n} g_{a_1 a_2 \cdots a_n} = g_{a'_1 a'_2 \cdots a'_n}
-			\label{eq_general_field_g_coefficients_covariance}
-		\end{equation}
+		J^{(A_1)}_{a'_1 a_1} J^{(A_2)}_{a'_2 a_2} \cdots J^{(A_n)}_{a'_n a_n} g_{a_1 a_2 \cdots a_n} = g_{a'_1 a'_2 \cdots a'_n}
 
 	for :math:`g_{\underline{a}}`, and a similar relation holds for :math:`g_{\underline{b}}`.
 
-	Now a particularly neat set of solutions to :math:`\eqref{eq_general_field_g_coefficients_covariance}` is given by identifying :math:`g` with the Clebsch-Gordan coefficients, which we think of as the coefficients of expressing a state with definite total angular momentum in terms of states with definite individual angular momenta. In this setting, the solutions to :math:`\eqref{eq_general_field_g_coefficients_covariance}` correspond to states with zero total angular momenta.
+	Now a particularly neat set of solutions to :eq:`eq_general_field_g_coefficients_covariance` is given by identifying :math:`g` with the Clebsch-Gordan coefficients, which we think of as the coefficients of expressing a state with definite total angular momentum in terms of states with definite individual angular momenta. In this setting, the solutions to :eq:`eq_general_field_g_coefficients_covariance` correspond to states with zero total angular momenta.
 
 	A particularly interesting example of this kind is Wigner's `3j-symbol <https://en.wikipedia.org/wiki/3-j_symbol>`__ defined as follows
 
 	.. math::
-		:nowrap:
 
-		\begin{equation*}
-			\begin{pmatrix} A_1 & A_2 & A_3 \\ a_1 & a_2 & a_3 \end{pmatrix} \coloneqq \sum_{a'_3} C^{A_3 A_3}(0 0; a'_3 a_3) C^{A_1 A_3}(A_3 a'_3; a_1 a_2)
-		\end{equation*}
+		\begin{pmatrix} A_1 & A_2 & A_3 \\ a_1 & a_2 & a_3 \end{pmatrix} \coloneqq \sum_{a'_3} C^{A_3 A_3}(0 0; a'_3 a_3) C^{A_1 A_3}(A_3 a'_3; a_1 a_2)
 
 	We read the definition as a two-step process. Namely, we first (linearly) combine states :math:`\Psi^{A_1}_{a_1}` and :math:`\Psi^{A_2}_{a_2}` to a state with total angular momentum :math:`A_3` (and spin :math:`z`-component :math:`a'_3`), and then (linearly) combine with the state :math:`\Psi^{A_3}_{a_3}` to end up in a spinless final state. [#clebsch_gordan_coefficient_zero_total_angular_momentum]_
 
-We will now turn to the arguably most interesting causality condition :math:`\eqref{eq_h_commutativity_for_space_like_separations}`. Indeed, it is this condition that clarifies the correlation between the spin and whether a particle/field is bosonic or fermionic. As before, we need to evaluate the (anti-)commutator between the fields using :math:`\eqref{eq_general_field_defn_psi_field}` as follows
+We will now turn to the arguably most interesting causality condition :eq:`eq_h_commutativity_for_space_like_separations`. Indeed, it is this condition that clarifies the correlation between the spin and whether a particle/field is bosonic or fermionic. As before, we need to evaluate the (anti-)commutator between the fields using :eq:`eq_general_field_defn_psi_field` as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_psi_commutator
 
-	\begin{equation}
-		\left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(y) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y}) \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right)
-		\label{eq_general_field_psi_commutator}
-	\end{equation}
+	\left[ \psi_{ab}(x), \psi^{\prime\, \dagger}_{a'b'}(y) \right]_{\pm} = (2\pi)^{-3} \int~\frac{d^3 p}{2p_0}~\pi_{ab,a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y}) \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right)
 
 where :math:`\pi(\pbf)` is the (rescaled) spin sum defined by
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_spin_sums_as_pi
 
-	\begin{equation}
-		(2p_0)^{-1} \pi_{ab,a'b'}(\pbf) \coloneqq \sum_{\sigma} u_{ab}(\pbf, \sigma) u_{a'b'}^{\prime~\ast}(\pbf, \sigma) = \sum_{\sigma} v_{ab}(\pbf, \sigma) v_{a'b'}^{\prime~\ast}(\pbf, \sigma)
-		\label{eq_general_field_spin_sums_as_pi}
-	\end{equation}
+	(2p_0)^{-1} \pi_{ab,a'b'}(\pbf) \coloneqq \sum_{\sigma} u_{ab}(\pbf, \sigma) u_{a'b'}^{\prime~\ast}(\pbf, \sigma) = \sum_{\sigma} v_{ab}(\pbf, \sigma) v_{a'b'}^{\prime~\ast}(\pbf, \sigma)
 
-Here the second equality can be mostly easily seen using :math:`\eqref{eq_general_field_v_at_finite_momentum}`. Note also that we are considering the general scenario where :math:`\psi(x)` is an :math:`(A, B)` field, while :math:`\psi'(x)` is a possibly different :math:`(A', B')` field.
+Here the second equality can be mostly easily seen using :eq:`eq_general_field_v_at_finite_momentum`. Note also that we are considering the general scenario where :math:`\psi(x)` is an :math:`(A, B)` field, while :math:`\psi'(x)` is a possibly different :math:`(A', B')` field.
 
-Using :math:`\eqref{eq_general_field_u_at_finite_momentum}`, we can spell out more details of the spin sum as follows
+Using :eq:`eq_general_field_u_at_finite_momentum`, we can spell out more details of the spin sum as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_spin_sum
 
-	\begin{align}
-		\pi_{ab, a'b'}(\pbf) &= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}')
-		\label{eq_general_field_spin_sum} \\
-			&\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \nonumber \\
-			&\phantom{=} \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'} \nonumber
-	\end{align}
+	\pi_{ab, a'b'}(\pbf) &= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}') \\
+		&\quad \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
+		&\quad \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}
 
 This looks horribly complicated, but it has been evaluated by the author in [Wei69]_. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that :math:`\pi_{ab,a'b'}(\pbf)` is a polynomial :math:`P` in :math:`p` on the mass shell as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{\pbf^2 + m^2}, \pbf \right)
-		\label{eq_general_field_spin_sum_is_polynomial}
-	\end{equation}
+.. math:: \pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{\pbf^2 + m^2}, \pbf \right)
+	:label: eq_general_field_spin_sum_is_polynomial
 
 The second is that this polynomial is even or odd depending on the parity of :math:`2A + 2B'` as follows
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		P_{ab,a'b'}(-p) = (-1)^{2A+2B'} P_{ab,a'b'}(p)
-		\label{eq_general_field_spin_sum_polynomial_parity}
-	\end{equation}
+.. math:: P_{ab,a'b'}(-p) = (-1)^{2A+2B'} P_{ab,a'b'}(p)
+	:label: eq_general_field_spin_sum_polynomial_parity
 
 .. dropdown:: Evaluation of the spin sum
 	:icon: unlock
 	:animate: fade-in-slide-down
 
-	We will evaluate :math:`\pi_{ab, a'b'}(\pbf)` in the simplest case where :math:`\pbf` is along the :math:`z`-axis, so that :math:`\hat{\pbf} \cdot \Jbf` is diagonal by :math:`\eqref{eq_j3_matrix}`. In this case we have the following
+	We will evaluate :math:`\pi_{ab, a'b'}(\pbf)` in the simplest case where :math:`\pbf` is along the :math:`z`-axis, so that :math:`\hat{\pbf} \cdot \Jbf` is diagonal by :eq:`eq_rotation_j_matrix`. In this case we have the following
 
 	.. math::
-		:nowrap:
+		:label: eq_general_field_spin_sum_along_z_axis
 
-		\begin{equation}
-			\pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \exp((-a+b-a'+b') \theta)
-			\label{eq_general_field_spin_sum_along_z_axis}
-		\end{equation}
+		\pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \exp((-a+b-a'+b') \theta)
 
 	Since the Clebsch-Gordan coefficients vanish unless
 
-	.. math::
-		:nowrap:
+	.. math:: a + b = a' + b' = \sigma
 
-		\begin{equation*}
-			a + b = a' + b' = \sigma
-		\end{equation*}
+	we can eliminate :math:`b` and :math:`a'` from the exponential in :eq:`eq_general_field_spin_sum_along_z_axis` as follows
 
-	we can eliminate :math:`b` and :math:`a'` from the exponential in :math:`\eqref{eq_general_field_spin_sum_along_z_axis}` as follows
+	.. math:: -a+b-a'+b' = -a+(\sigma - a)-(\sigma - b')+b' = 2b' - 2a
 
-	.. math::
-		:nowrap:
+	Moreover, recall from the definition of :math:`\theta` in :eq:`eq_general_field_defn_theta` that
 
-		\begin{equation*}
-			-a+b-a'+b' = -a+(\sigma - a)-(\sigma - b')+b' = 2b' - 2a
-		\end{equation*}
+	.. math:: \exp(\pm\theta) = \cosh\theta \pm \sinh\theta = \left( p_0 \pm p_3 \right) / m
 
-	Moreover, recall from the definition of :math:`\theta` in :math:`\eqref{eq_general_field_defn_theta}` that
+	where :math:`p_0 = \sqrt{\pbf^2 + m^2}`. Hence we can rewrite :eq:`eq_general_field_spin_sum_along_z_axis` in a polynomial in :math:`p` in two cases as follows
 
 	.. math::
-		:nowrap:
 
-		\begin{equation*}
-			\exp(\pm\theta) = \cosh\theta \pm \sinh\theta = \left( p_0 \pm p_3 \right) / m
-		\end{equation*}
+		\pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \times \!
+			\begin{cases}
+				\left( (p_0 + p_3) / m \right)^{2b'-2a} & \text{if } a \leq b' \\
+				\left( (p_0 - p_3) / m \right)^{2a-2b'} & \text{if } a \geq b'
+			\end{cases}
 
-	where :math:`p_0 = \sqrt{\pbf^2 + m^2}`. Hence we can rewrite :math:`\eqref{eq_general_field_spin_sum_along_z_axis}` in a polynomial in :math:`p` in two cases as follows
+	Finally, to verify :eq:`eq_general_field_spin_sum_polynomial_parity`, it suffices to note that :math:`2a-2b'` differs from :math:`2A-2B'` by an even integer.
 
-	.. math::
-		:nowrap:
+Assuming :eq:`eq_general_field_spin_sum_is_polynomial`, we note that any :math:`P_{ab, a'b'}` can be written in such a way that it's (at most) linear in the first argument :math:`\sqrt{\pbf^2 + m^2}`. Changing the content of :math:`P_{ab, a'b'}` in :eq:`eq_general_field_spin_sum_is_polynomial`, we may then rewrite it as follows
 
-		\begin{equation*}
-			\pi_{ab, a'b'}(\pbf) = \sum_{\sigma} C^{AB}(\jfrak \sigma; ab) C^{A'B'}(\jfrak \sigma; a'b') \times \!
-				\begin{cases}
-					\left( (p_0 + p_3) / m \right)^{2b'-2a} & \text{if } a \leq b' \\
-					\left( (p_0 - p_3) / m \right)^{2a-2b'} & \text{if } a \geq b'
-				\end{cases}
-		\end{equation*}
-
-	Finally, to verify :math:`\eqref{eq_general_field_spin_sum_polynomial_parity}`, it suffices to note that :math:`2a-2b'` differs from :math:`2A-2B'` by an even integer.
-
-Assuming :math:`\eqref{eq_general_field_spin_sum_is_polynomial}`, we note that any :math:`P_{ab, a'b'}` can be written in such a way that it's (at most) linear in the first argument :math:`\sqrt{\pbf^2 + m^2}`. Changing the content of :math:`P_{ab, a'b'}` in :math:`\eqref{eq_general_field_spin_sum_is_polynomial}`, we may then rewrite it as follows
-
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\pi_{ab, a'b'}(\pbf) = P_{ab, a'b'}(\pbf) + 2 \sqrt{\pbf^2 + m^2} Q_{ab, a'b'}(\pbf)
-		\label{eq_general_field_spin_sum_as_polynomial}
-	\end{equation}
+.. math:: \pi_{ab, a'b'}(\pbf) = P_{ab, a'b'}(\pbf) + 2 \sqrt{\pbf^2 + m^2} Q_{ab, a'b'}(\pbf)
+	:label: eq_general_field_spin_sum_as_polynomial
 
 where :math:`P, Q` are polynomials in :math:`\pbf` that satisfy the following parity conditions
 
 .. math::
-	:nowrap:
 
-	\begin{align*}
-		P_{ab, a'b'}(-\pbf) &= (-1)^{2A+2B'} P_{ab, a'b'}(\pbf) \\
-		Q_{ab, a'b'}(-\pbf) &= -(-1)^{2A+2B'} Q_{ab, a'b'}(\pbf)
-	\end{align*}
+	P_{ab, a'b'}(-\pbf) &= (-1)^{2A+2B'} P_{ab, a'b'}(\pbf) \\
+	Q_{ab, a'b'}(-\pbf) &= -(-1)^{2A+2B'} Q_{ab, a'b'}(\pbf)
 
-Returning to the causality condition :math:`\eqref{eq_general_field_psi_commutator}`, let's consider space separated :math:`x` and :math:`y`. Up to a Lorentz transformation, we may assume that :math:`x-y = (0, \xbf-\ybf)`. Under this assumption, we can calculate as follows
+Returning to the causality condition :eq:`eq_general_field_psi_commutator`, let's consider space separated :math:`x` and :math:`y`. Up to a Lorentz transformation, we may assume that :math:`x-y = (0, \xbf-\ybf)`. Under this assumption, we can calculate as follows
 
 .. math::
-	:nowrap:
 
-	\begin{align*}
-		\left[ \psi_{ab}(x), \psi^{\prime~\dagger}_{a'b'}(y) \right]_{\pm} &= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~P_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y)} \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right) \\
-			&\phantom{=} + (2\pi)^{-3} \int d^3p~Q_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y)} \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right) \\
-			&= \kappa\kappa^{\prime~\ast} P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} P_{ab, a'b'}(\ifrak \nabla) \Delta_+(\ybf - \xbf) \\
-			&\phantom{=} + \kappa\kappa^{\prime~\ast} Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} Q_{ab, a'b'}(\ifrak \nabla) \delta^3(\ybf - \xbf) \\
-			&= \left( \kappa\kappa^{\prime~\ast} \pm (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \\
-			&\phantom{=} + \left( \kappa\kappa^{\prime~\ast} \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf)
-	\end{align*}
+	\left[ \psi_{ab}(x), \psi^{\prime~\dagger}_{a'b'}(y) \right]_{\pm} &= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}~P_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y)} \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right) \\
+		&\quad + (2\pi)^{-3} \int d^3p~Q_{ab, a'b'}(\pbf) \left( \kappa \kappa'^{~\ast} e^{\ifrak p \cdot (x-y)} \pm \lambda \lambda'^{~\ast} e^{-\ifrak p \cdot (x-y)} \right) \\
+		&= \kappa\kappa^{\prime~\ast} P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} P_{ab, a'b'}(\ifrak \nabla) \Delta_+(\ybf - \xbf) \\
+		&\quad + \kappa\kappa^{\prime~\ast} Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf) \pm \lambda\lambda^{\prime~\ast} Q_{ab, a'b'}(\ifrak \nabla) \delta^3(\ybf - \xbf) \\
+		&= \left( \kappa\kappa^{\prime~\ast} \pm (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) P_{ab, a'b'}(-\ifrak \nabla) \Delta_+(\xbf - \ybf) \\
+		&\quad + \left( \kappa\kappa^{\prime~\ast} \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast} \right) Q_{ab, a'b'}(-\ifrak \nabla) \delta^3(\xbf - \ybf)
 
 where the derivative :math:`\nabla` is always taken with respect to :math:`x`. Here we've also used the fact that :math:`\Delta_+(x)` (for space-like :math:`x`) and the Dirac delta :math:`\delta^3(x)` are even functions. We see that for the (anti-)commutator to vanish for :math:`\xbf \neq \ybf`, i.e., when :math:`\delta^3(\xbf - \ybf) = 0`, we must have
 
-.. math::
-	:nowrap:
+.. math:: \kappa\kappa^{\prime~\ast} = \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast}
+	:label: eq_general_field_causality_kappa_lambda_condition
 
-	\begin{equation}
-		\kappa\kappa^{\prime~\ast} = \mp (-1)^{2A+2B'} \lambda\lambda^{\prime~\ast}
-		\label{eq_general_field_causality_kappa_lambda_condition}
-	\end{equation}
+Now consider an important special case where :math:`\psi = \psi'`. It implies in particular that :math:`(A, B) = (A', B')` and :math:`(\kappa, \lambda) = (\kappa', \lambda')`. In this case we can rewrite :eq:`eq_general_field_causality_kappa_lambda_condition` as follows
 
-Now consider an important special case where :math:`\psi = \psi'`. It implies in particular that :math:`(A, B) = (A', B')` and :math:`(\kappa, \lambda) = (\kappa', \lambda')`. In this case we can rewrite :math:`\eqref{eq_general_field_causality_kappa_lambda_condition}` as follows
+.. math:: |\kappa|^2 = \mp (-1)^{2A+2B} |\lambda|^2 = \mp (-1)^{2\jfrak} |\lambda|^2
+	:label: eq_general_field_self_kappa_lambda_relation
 
-.. math::
-	:nowrap:
+since :math:`\jfrak` differs from :math:`A+B` by an integer according to :eq:`eq_general_field_j_range`. Hence in addition to the condition :math:`|\kappa| = |\lambda|`, the field (or rather the particle it describes) must be bosonic, i.e., the bottom sign is taken, if :math:`\jfrak` is an integer, and fermionic, i.e., the top sign is taken, if :math:`\jfrak` is a half-integer. This is consistent with the corresponding conclusions for scalar , vector, and Dirac fields found in previous sections, and is indeed a great clarification of the relationship between spin and statistics, e.g., `Pauli's exclusion principle <https://en.wikipedia.org/wiki/Pauli_exclusion_principle>`__.
 
-	\begin{equation}
-		|\kappa|^2 = \mp (-1)^{2A+2B} |\lambda|^2 = \mp (-1)^{2\jfrak} |\lambda|^2
-		\label{eq_general_field_self_kappa_lambda_relation}
-	\end{equation}
-
-since :math:`\jfrak` differs from :math:`A+B` by an integer according to :math:`\eqref{eq_general_field_j_range}`. Hence in addition to the condition :math:`|\kappa| = |\lambda|`, the field (or rather the particle it describes) must be bosonic, i.e., the bottom sign is taken, if :math:`\jfrak` is an integer, and fermionic, i.e., the top sign is taken, if :math:`\jfrak` is a half-integer. This is consistent with the corresponding conclusions for scalar , vector, and Dirac fields found in previous sections, and is indeed a great clarification of the relationship between spin and statistics, e.g., `Pauli's exclusion principle <https://en.wikipedia.org/wiki/Pauli_exclusion_principle>`__.
-
-Back to the general case. We know from :math:`\eqref{eq_general_field_self_kappa_lambda_relation}` that :math:`|\kappa'| = |\lambda'|` and :math:`(-1)^{2A+2B} = (-1)^{2\jfrak} = \mp`, which is the same sign as in :math:`\eqref{eq_general_field_causality_kappa_lambda_condition}`. Hence we can rewrite :math:`\eqref{eq_general_field_causality_kappa_lambda_condition}` by dividing both sides by :math:`|\kappa'|^2 = |\lambda'|^2` as follows
+Back to the general case. We know from :eq:`eq_general_field_self_kappa_lambda_relation` that :math:`|\kappa'| = |\lambda'|` and :math:`(-1)^{2A+2B} = (-1)^{2\jfrak} = \mp`, which is the same sign as in :eq:`eq_general_field_causality_kappa_lambda_condition`. Hence we can rewrite :eq:`eq_general_field_causality_kappa_lambda_condition` by dividing both sides by :math:`|\kappa'|^2 = |\lambda'|^2` as follows
 
 .. math::
-	:nowrap:
 
-	\begin{equation*}
-		\frac{\kappa}{\kappa'} = (-1)^{2B+2B'} \frac{\lambda}{\lambda'} \
+	\frac{\kappa}{\kappa'} = (-1)^{2B+2B'} \frac{\lambda}{\lambda'}
 		\implies (-1)^{2B} \frac{\kappa}{\lambda} = (-1)^{2B'} \frac{\kappa'}{\lambda'}
-	\end{equation*}
 
 Hence we conclude the following relationship between the coefficients :math:`\kappa` and :math:`\lambda`
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		\lambda = (-1)^{2B} c \kappa
-	\end{equation*}
+.. math:: \lambda = (-1)^{2B} c \kappa
 
 where :math:`c` is a constant that depends only on the field, or rather, the particle it describes, and not on the specific representation that gives rise to the field. Moreover we note that :math:`c` is a phase since :math:`|\kappa| = |\lambda|`. Hence by adjusting the phase of the creation operator (and correspondingly the annihilation operator), we can arrange so that :math:`c = 1`.
 
 This marks the end of the discussion about the causality condition on general :math:`(A, B)`. As a result, we've obtained the following grand formula for a general (causal) field.
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_psi_field
 
-	\begin{equation}
-		\psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( e^{\ifrak p \cdot x} u_{ab}(\pbf, \sigma) a(\pbf, \sigma) + \
-			(-1)^{2B} e^{-\ifrak p \cdot x} v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
-		\label{eq_general_field_psi_field}
-	\end{equation}
+	\psi_{ab}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( e^{\ifrak p \cdot x} u_{ab}(\pbf, \sigma) a(\pbf, \sigma)
+      	+ (-1)^{2B} e^{-\ifrak p \cdot x} v_{ab}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
 
-where the spinors :math:`u_{ab}` and :math:`v_{ab}` are given by :math:`\eqref{eq_general_field_u_at_finite_momentum}` and :math:`\eqref{eq_general_field_v_at_finite_momentum}`, respectively.
+where the spinors :math:`u_{ab}` and :math:`v_{ab}` are given by :eq:`eq_general_field_u_at_finite_momentum` and :eq:`eq_general_field_v_at_finite_momentum`, respectively.
 
-.. dropdown:: Same field given by different representations are physically indifferent
+.. dropdown:: Same fields given by different representations are physically indifferent
 	:icon: unlock
 	:animate: fade-in-slide-down
 
 	As we've seen in :ref:`sec_scalar_field` and :ref:`sec_spin_zero_vector_field`, a spin-:math:`0` field can arise either as a scalar field, i.e., a :math:`(0, 0)` field, or from a vector field, i.e., a :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)` field. Moreover, the later turns out to be the (first) derivatives of the former, and hence doesn't produce anything really new. We'll see here that this is a rather general phenomenon.
 
-	Indeed, according to :math:`\eqref{eq_general_field_j_range}`, a spin-:math:`0` field can only arise from an :math:`(A, A)` field. Given a scalar field :math:`\psi(x)`, one can construct a spin-:math:`0` :math:`(A, A)` field as follows
+	Indeed, according to :eq:`eq_general_field_j_range`, a spin-:math:`0` field can only arise from an :math:`(A, A)` field. Given a scalar field :math:`\psi(x)`, one can construct a spin-:math:`0` :math:`(A, A)` field as follows
 
-	.. math::
-		:nowrap:
-
-		\begin{equation}
-			\left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2A}} \right\} \psi(x)
-			\label{eq_general_field_spin_zero_aa_field}
-		\end{equation}
+	.. math:: \left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2A}} \right\} \psi(x)
+		:label: eq_general_field_spin_zero_aa_field
 
 	where :math:`\left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2A}} \right\}` is a traceless (symmetric) product of the partial derivatives. Here the trace of a symmetric tensor :math:`S_{\mu_1 \mu_2 \cdots \mu_n}` is defined to be
 
 	.. math::
-		:nowrap:
+		:label: eq_trace_of_symmetric_tensor
 
-		\begin{equation}
-			\op{tr}(S_{\mu_1 \mu_2 \cdots \mu_n}) \coloneqq \sum_{\mu_1, \mu_2 = 0}^3 \delta_{\mu_1 \mu_2} S_{\mu_1 \mu_2 \cdots \mu_n}
-			\label{eq_trace_of_symmetric_tensor}
-		\end{equation}
+		\op{tr}(S_{\mu_1 \mu_2 \cdots \mu_n}) \coloneqq \sum_{\mu_1, \mu_2 = 0}^3 \delta_{\mu_1 \mu_2} S_{\mu_1 \mu_2 \cdots \mu_n}
 
-	We'll not verify that :math:`\eqref{eq_general_field_spin_zero_aa_field}` indeed transforms as a :math:`(A, A)` field, but we'll verify that it at least has the expected dimension :math:`(2A+1)^2`. To this end, we first note that a rank :math:`2A` symmetric tensor (in :math:`4` dimensions) has dimension
+	We'll not verify that :eq:`eq_general_field_spin_zero_aa_field` indeed transforms as a :math:`(A, A)` field, but we'll verify that it at least has the expected dimension :math:`(2A+1)^2`. To this end, we first note that a rank :math:`2A` symmetric tensor (in :math:`4` dimensions) has dimension
 
-	.. math::
-		:nowrap:
+	.. math:: \frac{(2A+1)(2A+2)(2A+3)}{3!}
 
-		\begin{equation*}
-			\frac{(2A+1)(2A+2)(2A+3)}{3!}
-		\end{equation*}
+	which combinatorially is just the number of ways of having four nonnegative integers sum up to :math:`2A`. Next we must subtract from it the number of traces one can take on these tensors. According to :eq:`eq_trace_of_symmetric_tensor`, each trace fixes two indexes, while the rest is still symmetric. Hence the number of traces is the same combinatorial number with :math:`2A` replaced by :math:`2A-2` as follows
 
-	which combinatorially is just the number of ways of having four nonnegative integers sum up to :math:`2A`. Next we must subtract from it the number of traces one can take on these tensors. According to :math:`\eqref{eq_trace_of_symmetric_tensor}`, each trace fixes two indexes, while the rest is still symmetric. Hence the number of traces is the same combinatorial number with :math:`2A` replaced by :math:`2A-2` as follows
-
-	.. math::
-		:nowrap:
-
-		\begin{equation*}
-			\frac{(2A-1)(2A)(2A+1)}{3!}
-		\end{equation*}
+	.. math:: \frac{(2A-1)(2A)(2A+1)}{3!}
 
 	Now the difference of the two number above, which is the dimension of traceless symmetric tensors, is exactly :math:`(2A+1)^2` as expected.
 
 	In general a spin-:math:`\jfrak` field can arise from an :math:`(A, B)` field as long as the triangle inequality
 
-	.. math::
-		:nowrap:
-
-		\begin{equation}
-			|A-B| \leq \jfrak \leq A+B
-			\label{eq_spin_range_abj_triangle_inequality}
-		\end{equation}
+	.. math:: |A-B| \leq \jfrak \leq A+B
+		:label: eq_spin_range_abj_triangle_inequality
 
 	is satisfied. We claim that the :math:`(A, B)` representation is the same as the tensor product of the :math:`(\jfrak, 0)` representation and the :math:`(B, B)` representation. Indeed, following :ref:`Clebsch-Gordan coefficients <dropdown_clebsch_gordan_coefficients>`, we see that the later is a direct sum of :math:`(A, B)` representations as long as
 
-	.. math::
-		:nowrap:
+	.. math:: |B-\jfrak| \leq A \leq B+\jfrak
 
-		\begin{equation}
-			|B-\jfrak| \leq A \leq B+\jfrak
-		\end{equation}
-
-	but this triangle inequality is exactly the same as :math:`\eqref{eq_spin_range_abj_triangle_inequality}`. Hence the claim is proved.
+	but this triangle inequality is exactly the same as :eq:`eq_spin_range_abj_triangle_inequality`. Hence the claim is proved.
 
 	By the same argument as in the spin-:math:`0` case, we conclude that any spin-:math:`\jfrak` field can be written as
 
-	.. math::
-		:nowrap:
-
-		\begin{equation*}
-			\left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2B}} \right\} \psi_{\sigma}(x)
-		\end{equation*}
+	.. math:: \left\{ \p_{\mu_1} \p_{\mu_2} \cdots \p_{\mu_{2B}} \right\} \psi_{\sigma}(x)
 
 	where :math:`\psi_{\sigma}(x)` is the :math:`(\jfrak, 0)` field. Swapping the role of :math:`A` and :math:`B`, one can also write it as rank :math:`2A` traceless derivatives of the :math:`(0, \jfrak)` field.
 
@@ -2218,147 +1891,115 @@ where the spinors :math:`u_{ab}` and :math:`v_{ab}` are given by :math:`\eqref{e
 The CPT symmetries
 ++++++++++++++++++
 
-The calculations of space, time, and charge conjugation transformations in the general case is essentially the same as for the Dirac field. In particular, instead of reverting the :math:`3`-momentum in Dirac spinors as in :math:`\eqref{eq_dirac_field_spatial_inversion_acts_on_psi_plus}`, we need to do it for general :math:`(A, B)` spinors :math:`\eqref{eq_general_field_u_at_finite_momentum}`, which involves the Clebsch-Gordan coefficients.
+The calculations of space, time, and charge conjugation transformations in the general case is essentially the same as for the Dirac field. In particular, instead of reverting the :math:`3`-momentum in Dirac spinors as in :eq:`eq_dirac_field_spatial_inversion_acts_on_psi`, we need to do it for general :math:`(A, B)` spinors :eq:`eq_general_field_u_at_finite_momentum`, which involves the Clebsch-Gordan coefficients.
 
 Without going to the details, we list the relevant symmetry properties of Clebsch-Gordan coefficients as follows
 
 .. math::
-	:nowrap:
+	:label: eq_clebsch_gordan_coeff_identities
 
-	\begin{align}
-		C^{AB}(\jfrak, \sigma; a, b) &= (-1)^{A+B-\jfrak} C^{BA}(\jfrak, \sigma; b, a)
-		\label{eq_clebsch_gordan_symmetry_swap} \\
-		C^{AB}(\jfrak, \sigma; a, b) &= (-1)^{A+B-\jfrak} C^{AB}(\jfrak, -\sigma; -a, -b)
-		\label{eq_clebsch_gordan_symmetry_reverse}
-	\end{align}
+	C^{AB}(\jfrak, \sigma; a, b) &= (-1)^{A+B-\jfrak} C^{BA}(\jfrak, \sigma; b, a) \\
+	C^{AB}(\jfrak, \sigma; a, b) &= (-1)^{A+B-\jfrak} C^{AB}(\jfrak, -\sigma; -a, -b)
 
-The first relation is proved in [Wei00]_ page 124, and the second relation can be deduced from the time reversal transformation law :math:`\eqref{eq_time_inversion_on_massive_general}`.
 
-Consider first the spatial inversion. Combining :math:`\eqref{eq_clebsch_gordan_symmetry_swap}` with :math:`\eqref{eq_general_field_u_at_finite_momentum}`, one obtains the following relations on the spinors
+The first relation is proved in [Wei00]_ page 124, and the second relation can be deduced from the time reversal transformation law :eq:`eq_time_inversion_on_massive_general`.
+
+Consider first the spatial inversion. Combining :eq:`eq_clebsch_gordan_coeff_identities` with :eq:`eq_general_field_u_at_finite_momentum`, one obtains the following relations on the spinors
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_u_and_v_symmetry_swap
 
-	\begin{align}
-		u^{AB}_{ab}(-\pbf, \sigma) &= (-1)^{A+B-\jfrak} u^{BA}_{ba}(\pbf, \sigma)
-		\label{eq_general_field_u_symmetry_swap} \\
-		v^{AB}_{ab}(-\pbf, \sigma) &= (-1)^{A+B-\jfrak} v^{BA}_{ba}(\pbf, \sigma)
-		\label{eq_general_field_v_symmetry_swap}
-	\end{align}
+	u^{AB}_{ab}(-\pbf, \sigma) &= (-1)^{A+B-\jfrak} u^{BA}_{ba}(\pbf, \sigma) \\
+	v^{AB}_{ab}(-\pbf, \sigma) &= (-1)^{A+B-\jfrak} v^{BA}_{ba}(\pbf, \sigma)
 
-We can calculate the spatial conjugation as follows
+We can then calculate the spatial conjugation as follows
 
 .. math::
-	:nowrap:
 
-	\begin{align*}
-		U(\Pcal) \psi^{AB}_{ab}(x) U^{-1}(\Pcal) &\xlongequal{\eqref{eq_general_field_psi_field}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( \eta^{\ast} e^{\ifrak p \cdot x} u^{AB}_{ab}(\pbf, \sigma) a(-\pbf, \sigma) + (-1)^{2B} \eta^c e^{-\ifrak p \cdot x} v^{AB}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, \sigma) \right) \\
-			&\xlongequal{\substack{\eqref{eq_general_field_u_symmetry_swap} \\ \eqref{eq_general_field_v_symmetry_swap}}} -(2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B-\jfrak} \big( \blue{\eta^{\ast} e^{\ifrak p \cdot \Pcal x} u_{ba}(\pbf, \sigma) a(\pbf, \sigma)} \phantom{\big)} \\
-   			&\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(}~\blue{+ (-1)^{2B} \eta^c e^{-\ifrak p \cdot \Pcal x} v_{ba}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma)} \big)
-	\end{align*}
+	U(\Pcal) \psi^{AB}_{ab}(x) U^{-1}(\Pcal)
+		&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \Big( \eta^{\ast} e^{\ifrak p \cdot x} u^{AB}_{ab}(\pbf, \sigma) a(-\pbf, \sigma) \\
+      		&\qquad + (-1)^{2B} \eta^c e^{-\ifrak p \cdot x} v^{AB}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, \sigma) \Big) \\
+		&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B-\jfrak} \Big( \blue{\eta^{\ast} e^{\ifrak p \cdot \Pcal x} u_{ba}(\pbf, \sigma) a(\pbf, \sigma)} \\
+			&\qquad \blue{ + (-1)^{2B} \eta^c e^{-\ifrak p \cdot \Pcal x} v_{ba}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma)} \Big)
 
 In order for the blue terms to be proportional to the corresponding terms in, in this case, a :math:`(B, A)` field, we must have
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		(-1)^{2B} \eta^c = (-1)^{2A} \eta^{\ast} \iff \eta^c = (-1)^{2\jfrak} \eta^{\ast}
-		\label{eq_general_field_space_inversion_parity_relation}
-	\end{equation}
+.. math:: (-1)^{2B} \eta^c = (-1)^{2A} \eta^{\ast} \iff \eta^c = (-1)^{2\jfrak} \eta^{\ast}
+	:label: eq_general_field_space_inversion_parity_relation
 
 Under this assumption, we can complete the transformation law for spatial inversion as follows
 
-.. math::
-	:nowrap:
+.. math:: U(\Pcal) \psi^{AB}_{ab}(x) U^{-1}(\Pcal) = \eta^{\ast} (-1)^{A+B-\jfrak} \psi^{BA}_{ba}(\Pcal x)
+	:label: eq_general_field_space_inversion_transformation
 
-	\begin{equation}
-		U(\Pcal) \psi^{AB}_{ab}(x) U^{-1}(\Pcal) = -\eta^{\ast} (-1)^{A+B-\jfrak} \psi^{BA}_{ba}(\Pcal x)
-		\label{eq_general_field_space_inversion_transformation}
-	\end{equation}
+which recovers the cases of scalar field :eq:`eq_scalar_field_spatial_inversion_transformation_law` with :math:`A=B=\jfrak=0`, vector field :eq:`eq_vector_field_spatial_inversion_transformation_law` with :math:`A=B=1/2` and :math:`\jfrak=1`, and Dirac field :eq:`eq_dirac_field_spatial_inversion_transformation_law` with :math:`(A, B)=(0, 1/2)` or :math:`(1/2, 0)` and :math:`\jfrak=1/2`, where :math:`\beta`, as defined by :eq:`eq_dirac_field_beta_matrix`, serves the function of swapping :math:`A` and :math:`B`.
 
-which recovers the cases of scalar field :eq:`eq_scalar_field_spatial_inversion_transformation_law`, vector field :eq:`eq_vector_field_spatial_inversion_transformation_law`, and Dirac field :math:`\eqref{eq_dirac_field_spatial_inversion_transformation_law}` where :math:`\beta`, as defined by :eq:`eq_dirac_field_beta_matrix`, serves the function of swapping :math:`A` and :math:`B`.
-
-Next consider the time inversion. As for the spatial inversion, we'll need the following identities
+Next consider the time inversion. As for the spatial inversion, we'll need, using :eq:`eq_general_field_u_at_finite_momentum` and :eq:`eq_clebsch_gordan_coeff_identities`, the following identities
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_u_symmetry_negation
 
-	\begin{align}
-		u^{AB \ast}_{ab}(-\pbf, -\sigma) &\xlongequal{\eqref{eq_general_field_u_at_finite_momentum}} \frac{1}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(A) \ast}\right)\right)_{-a', a} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(B) \ast}\right)\right)_{-b', b} C^{AB}(\jfrak, -\sigma; -a', -b')
-			\label{eq_general_field_u_symmetry_negation} \\
-			&\xlongequal{\eqref{eq_clebsch_gordan_symmetry_reverse}} \frac{(-1)^{A+B-\jfrak}}{\sqrt{2p_0}} \sum_{a'b'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(A) \ast}\right)\right)_{-a', a} \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(B) \ast}\right)\right)_{-b', b} C^{AB}(\jfrak, \sigma; a', b') \nonumber \\
-			&\xlongequal{\substack{\eqref{eq_angular_momentum_representation_conjugate_formula} \\ \eqref{eq_angular_momentum_representation_conjugate_formula_as_matrix}}} \frac{(-1)^{A+B-\jfrak}}{\sqrt{2p_0}} \sum_{a'b'} (-1)^{a-a'+b-b'} \left( \exp(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}) \right)_{a', -a} \left( \exp(\theta~\hat{\pbf} \cdot \Jbf^{(B)}) \right)_{b', -b} C^{AB}(\jfrak, \sigma; a', b') \nonumber \\
-			&= (-1)^{A+B+a+b-\sigma - \jfrak} u^{AB}_{-a, -b}(\pbf, \sigma) \nonumber
-	\end{align}
+	& u^{AB \ast}_{ab}(-\pbf, -\sigma) \\
+		&\quad= \frac{1}{\sqrt{2p_0}} \sum_{a'b'}
+			\left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(A) \ast}\right)\right)_{-a', a}
+			\left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(B) \ast}\right)\right)_{-b', b} \\
+			&\quad\qquad \times C^{AB}(\jfrak, -\sigma; -a', -b') \\
+		&\quad= \frac{(-1)^{A+B-\jfrak}}{\sqrt{2p_0}} \sum_{a'b'}
+			\left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(A) \ast}\right)\right)_{-a', a}
+			\left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(B) \ast}\right)\right)_{-b', b} \\
+			&\quad\qquad \times C^{AB}(\jfrak, \sigma; a', b') \\
+		&\quad= \frac{(-1)^{A+B-\jfrak}}{\sqrt{2p_0}} \sum_{a'b'} (-1)^{a-a'+b-b'}
+			\left( \exp(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}) \right)_{a', -a}
+			\left( \exp(\theta~\hat{\pbf} \cdot \Jbf^{(B)}) \right)_{b', -b} \\
+			&\quad\qquad \times C^{AB}(\jfrak, \sigma; a', b') \\
+		&\quad= (-1)^{A+B+a+b-\sigma - \jfrak} u^{AB}_{-a, -b}(\pbf, \sigma)
 
-where it's convenient for the third equality to reformulate :math:`\eqref{eq_angular_momentum_representation_conjugate_formula}` as follows
-
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\Jbf^{(\jfrak) \ast} = -C \Jbf^{(\jfrak)} C^{-1}, \quad \text{where}~~C_{\sigma' \sigma} = (-1)^{\jfrak - \sigma} \delta_{\sigma', -\sigma}
-		\label{eq_angular_momentum_representation_conjugate_formula_as_matrix}
-	\end{equation}
-
-Since :math:`v^{AB}_{ab}(\pbf, \sigma)` is related to :math:`u^{AB}_{ab}(\pbf, \sigma)` by :math:`\eqref{eq_general_field_v_at_finite_momentum}`, we can derive the :math:`v`-counterpart of :math:`\eqref{eq_general_field_u_symmetry_negation}` as follows
+where it's convenient for the third equality to reformulate :eq:`eq_angular_momentum_representation_conjugate_formula` as follows
 
 .. math::
-	:nowrap:
 
-	\begin{align}
-		v^{AB \ast}_{ab}(-\pbf, -\sigma) &\xlongequal{\eqref{eq_general_field_v_at_finite_momentum}} (-1)^{\jfrak - \sigma} u^{AB \ast}_{ab}(-\pbf, \sigma)
-			\label{eq_general_field_v_symmetry_negation} \\
-			&\xlongequal{\eqref{eq_general_field_u_symmetry_negation}} (-1)^{A+B+a+b} u^{AB}_{-a, -b}(\pbf, -\sigma) \nonumber \\
-			&\xlongequal{\eqref{eq_general_field_v_at_finite_momentum}} (-1)^{A+B+a+b-\sigma - \jfrak} v^{AB}_{-a, -b}(\pbf, \sigma) \nonumber
-	\end{align}
+	\Jbf^{(\jfrak) \ast} = -C \Jbf^{(\jfrak)} C^{-1}, \quad \text{where}~~C_{\sigma' \sigma} = (-1)^{\jfrak - \sigma} \delta_{\sigma', -\sigma}
 
-Remembering that :math:`U(\Tcal)` is anti-unitary, we can calculate the time inversion transformation as follows
+Since :math:`v^{AB}_{ab}(\pbf, \sigma)` is related to :math:`u^{AB}_{ab}(\pbf, \sigma)` by :eq:`eq_general_field_v_at_finite_momentum`, we can derive the :math:`v`-counterpart of :eq:`eq_general_field_u_symmetry_negation`, using :eq:`eq_general_field_v_at_finite_momentum` and :eq:`eq_general_field_u_symmetry_negation`, as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_v_symmetry_negation
 
-	\begin{align}
-		U(\Tcal) \psi^{AB}_{ab}(x) U^{-1}(\Tcal) &\xlongequal{\substack{\eqref{eq_general_field_psi_field} \\ \eqref{eq_creation_operator_time_inversion_conjugation_massive}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot x} u^{AB \ast}_{ab}(\pbf, \sigma) a(-\pbf, -\sigma) \phantom{\big)}
-		\label{eq_general_field_time_inversion_transformation} \\
-	  		&\phantom{\xlongequal{\eqref{eq_general_field_psi_field}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot x} v^{AB \ast}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \big) \nonumber \\
-			&\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} -(2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB \ast}_{ab}(-\pbf, -\sigma) a(\pbf, \sigma) \phantom{\big)} \nonumber \\
-			&\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB \ast}_{ab}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \big) \nonumber \\
-			&\xlongequal{\substack{\eqref{eq_general_field_u_symmetry_negation} \\ \eqref{eq_general_field_v_symmetry_negation}}} (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B+a+b-2\sigma} \big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB}_{-a, -b}(\pbf, \sigma) \phantom{\big)} \nonumber \\
-			&\phantom{\xlongequal{\eqref{eq_general_field_u_symmetry_negation}}\big(} + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB}_{-a, -b}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \big) \nonumber \\
-			&\xlongequal{\phantom{\eqref{eq_general_field_u_symmetry_negation}}} (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} \psi^{AB}_{-a, -b}(-\Pcal x) \nonumber
-	\end{align}
+	v^{AB \ast}_{ab}(-\pbf, -\sigma)
+		&= (-1)^{\jfrak - \sigma} u^{AB \ast}_{ab}(-\pbf, \sigma) \\
+		&= (-1)^{A+B+a+b} u^{AB}_{-a, -b}(\pbf, -\sigma) \\
+		&= (-1)^{A+B+a+b-\sigma - \jfrak} v^{AB}_{-a, -b}(\pbf, \sigma)
+
+Remembering that :math:`U(\Tcal)` is anti-unitary, we can calculate the time inversion transformation, using :eq:`eq_general_field_psi_field`, :eq:`eq_creation_operator_cpt_conjugation`, :eq:`eq_general_field_u_symmetry_negation`, and :eq:`eq_general_field_v_symmetry_negation`, as follows
+
+.. math::
+	:label: eq_general_field_time_inversion_transformation
+
+	U(\Tcal) \psi^{AB}_{ab}(x) U^{-1}(\Tcal)
+		&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \Big( \zeta^{\ast} e^{-\ifrak p \cdot x} u^{AB \ast}_{ab}(\pbf, \sigma) a(-\pbf, -\sigma) \\
+			&\qquad + (-1)^{2B} \zeta^c e^{\ifrak p \cdot x} v^{AB \ast}_{ab}(\pbf, \sigma) a^{c \dagger}(-\pbf, -\sigma) \Big) \\
+		&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{\jfrak - \sigma} \Big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB \ast}_{ab}(-\pbf, -\sigma) a(\pbf, \sigma)  \\
+		&\qquad + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB \ast}_{ab}(-\pbf, -\sigma) a^{c \dagger}(\pbf, \sigma) \Big) \\
+		&= (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p~(-1)^{A+B+a+b-2\sigma} \Big( \zeta^{\ast} e^{-\ifrak p \cdot \Pcal x} u^{AB}_{-a, -b}(\pbf, \sigma) \\
+		&\qquad + (-1)^{2B} \zeta^c e^{\ifrak p \cdot \Pcal x} v^{AB}_{-a, -b}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \Big) \\
+		&= (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} \psi^{AB}_{-a, -b}(-\Pcal x)
 
 where the last equality assumes the following symmetry on the time-reversal parity
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\zeta^{\ast} = \zeta^c
-		\label{eq_general_field_time_inversion_parity_relation}
-	\end{equation}
+.. math:: \zeta^{\ast} = \zeta^c
+	:label: eq_general_field_time_inversion_parity_relation
 
 At this point, we're pretty proficient at (and tired of) this kind of calculation. Hence we'll not spell out the (rather similar) details for the charge conjugation symmetry, but rather list the result as follows
 
 .. math::
-	:nowrap:
+	:label: eq_general_field_charge_inversion_transformation
 
-	\begin{equation}
-		U(\Ccal) \psi^{AB}_{ab}(x) U^{-1}(\Ccal) = (-1)^{-2A-a-b-\jfrak} \xi^{\ast} \psi^{BA \dagger}_{-b, -a}(x)
-		\label{eq_general_field_charge_inversion_transformation}
-	\end{equation}
+	U(\Ccal) \psi^{AB}_{ab}(x) U^{-1}(\Ccal) = (-1)^{-2A-a-b-\jfrak} \xi^{\ast} \psi^{BA \dagger}_{-b, -a}(x)
 
 under the following assumption on the charge-reversal parity
 
-.. math::
-	:nowrap:
-
-	\begin{equation}
-		\xi^{\ast} = \xi^c
-		\label{eq_general_field_charge_inversion_parity_relation}
-	\end{equation}
+.. math:: \xi^{\ast} = \xi^c
+	:label: eq_general_field_charge_inversion_parity_relation
 
 
 The CPT Theorem
@@ -2368,90 +2009,60 @@ With all the hard work we've done in :ref:`sec_general_fields`, we can now rewar
 
 	For an appropriate choice of the inversion phases :math:`\eta` (space), :math:`\zeta` (time), and :math:`\xi` (charge), the product :math:`U(CPT)` is conserved.
 
-We'll skip over the special case of scalar, vector, and Dirac fields, and jump directly into the general, and in fact simpler, case of :math:`(A, B)` fields.
+We'll skip over the special case of scalar, vector, and Dirac fields, and jump directly into the general, and in fact simpler, case of :math:`(A, B)` fields. Using :eq:`eq_general_field_time_inversion_transformation`, :eq:`eq_general_field_space_inversion_transformation`, and :eq:`eq_general_field_charge_inversion_transformation`, we have the following
 
 .. math::
-	:nowrap:
+	:label: eq_cpt_conjugation_general_field_calculation
 
-	\begin{align}
-		U(CPT) \psi^{AB}_{ab}(x) U^{-1}(CPT) &\xlongequal{\eqref{eq_general_field_time_inversion_transformation}} (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} U(CP) \psi^{AB}_{-a, -b}(-\Pcal x) U^{-1}(CP)
-		\label{eq_cpt_conjugation_general_field_calculation} \\
-			&\xlongequal{\eqref{eq_general_field_space_inversion_transformation}} -(-1)^{a+b-\jfrak} \zeta^{\ast} \eta^{\ast} U(C) \psi^{BA}_{-b, -a}(-x) U^{-1}(C) \nonumber \\
-			&\xlongequal{\eqref{eq_general_field_charge_inversion_transformation}} -(-1)^{-2B} \zeta^{\ast} \eta^{\ast} \xi^{\ast} \psi^{AB \dagger}_{ab}(-x) \nonumber
-	\end{align}
+	U(CPT) \psi^{AB}_{ab}(x) U^{-1}(CPT)
+		&= (-1)^{A+B+a+b-2\jfrak} \zeta^{\ast} U(CP) \psi^{AB}_{-a, -b}(-\Pcal x) U^{-1}(CP) \\
+		&= (-1)^{a+b-\jfrak} \zeta^{\ast} \eta^{\ast} U(C) \psi^{BA}_{-b, -a}(-x) U^{-1}(C) \\
+		&= (-1)^{-2B} \zeta^{\ast} \eta^{\ast} \xi^{\ast} \psi^{AB \dagger}_{ab}(-x)
 
 Hence if we assume the following condition on the inversion parities
 
 .. admonition:: Assumption on the inversion parities
 	:class: Important
 
-	.. math::
-		:nowrap:
+	.. math:: \zeta~\eta~\xi = 1
+		:label: eq_cpt_parities_product_assumption
 
-		\begin{equation}
-			\zeta~\eta~\xi = 1
-			\label{eq_cpt_parities_product_assumption}
-		\end{equation}
+then we can rewrite :eq:`eq_cpt_conjugation_general_field_calculation` as follows
 
-then we can rewrite :math:`\eqref{eq_cpt_conjugation_general_field_calculation}` as follows
+.. math:: U(CPT) \psi^{AB}_{ab}(x) U^{-1}(CPT) = (-1)^{2B} \psi^{AB \dagger}_{ab}(-x)
 
-.. math::
-	:nowrap:
+A few words are needed, however, to justify the seemingly strange assumption on the product of inversion parities. Indeed, it is physically meaningless to specify any inversion parity for a single species of particles because it's just a phase. The only conditions that we've seen on the parities come from pairs of particles and their antiparticles, notably :eq:`eq_general_field_space_inversion_parity_relation`, :eq:`eq_general_field_time_inversion_parity_relation`, and :eq:`eq_general_field_charge_inversion_parity_relation`. We saw that the time and charge inversion parities are the same between the particle and its antiparticle, respectively. However, a sign :math:`(-1)^{2\jfrak}` is involved in the space inversion parity. So if we impose :eq:`eq_cpt_parities_product_assumption` on one particle species, then it will fail on its antiparticle species if the particle in question is a fermion! We're eventually saved by the fact that the interaction density must involve an even number of fermions (cf. discussions in :ref:`sec_causality_and_antiparticles`). In any case :eq:`eq_cpt_parities_product_assumption` is a rather sloppy assumption, which cannot hold in general, but it also doesn't make a difference to the CPT theorem.
 
-	\begin{equation*}
-		U(CPT) \psi^{AB}_{ab}(x) U^{-1}(CPT) = -(-1)^{2B} \psi^{AB \dagger}_{ab}(-x)
-	\end{equation*}
+Now suppose the interaction density :math:`\Hscr(x)` is defined by :eq:`eq_general_field_interaction_density` as a linear combination of monomials like
 
-A few words are needed, however, to justify the seemingly strange assumption on the product of inversion parities. Indeed, it is physically meaningless to specify any inversion parity for a single species of particles because it's just a phase. The only conditions that we've seen on the parities come from pairs of particles and their antiparticles, notably :math:`\eqref{eq_general_field_space_inversion_parity_relation}, \eqref{eq_general_field_time_inversion_parity_relation}`, and :math:`\eqref{eq_general_field_charge_inversion_parity_relation}`. We saw that the time and charge inversion parities are the same between the particle and its antiparticle, respectively. However, a sign :math:`(-1)^{2\jfrak}` is involved in the space inversion parity. So if we impose :math:`\eqref{eq_cpt_parities_product_assumption}` on one particle species, then it will fail on its antiparticle species if the particle in question is a fermion! We're eventually saved by the fact that the interaction density must involve an even number of fermions (cf. discussions in :ref:`sec_causality_and_antiparticles`). In any case :math:`\eqref{eq_cpt_parities_product_assumption}` is a fairly sloppy assumption, which cannot hold in general, but it also doesn't make a difference to the CPT theorem.
+.. math:: \psi^{A_1 B_1}_{a_1 b_1}(x) \psi^{A_2 B_2}_{a_2 b_2}(x) \cdots \psi^{A_n B_n}_{a_n b_n}(x)
 
-Now suppose the interaction density :math:`\Hscr(x)` is defined by :math:`\eqref{eq_general_field_interaction_density}` as a linear combination of monomials like
+Hence in light of :eq:`eq_general_field_g_coefficients_covariance`, we know that both :math:`A_1 + A_2 + \cdots + A_n` and :math:`B_1 + B_2 + \cdots + B_n` must be integers, for otherwise they cannot be coupled to a spinless state. It follows then the following CPT transformation law on the interaction density
 
-.. math::
-	:nowrap:
+.. math:: U(CPT) \Hscr(x) U^{-1}(CPT) = -\Hscr(-x)
 
-	\begin{equation*}
-		\psi^{A_1 B_1}_{a_1 b_1}(x) \psi^{A_2 B_2}_{a_2 b_2}(x) \cdots \psi^{A_n B_n}_{a_n b_n}(x)
-	\end{equation*}
+Recall from :eq:`eq_evolution_equation_of_u_operator` and :eq:`eq_defn_v_by_density` that the interaction term :math:`V = \int d^3 x~\Hscr(0, \xbf)` satisfies the following
 
-Hence in light of :math:`\eqref{eq_general_field_g_coefficients_covariance}`, we know that both :math:`A_1 + A_2 + \cdots + A_n` and :math:`B_1 + B_2 + \cdots + B_n` must be integers, for otherwise they cannot be coupled to a spinless state. It follows then the following CPT transformation law on the interaction density
+.. math:: U(CPT) V U^{-1}(CPT) = -\int d^3 x~\Hscr(-x) = V
 
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		U(CPT) \Hscr(x) U^{-1}(CPT) = -\Hscr(-x)
-	\end{equation*}
-
-Recall from :math:`\eqref{eq_evolution_equation_of_u_operator}` and :math:`\eqref{eq_defn_v_by_density}` that the interaction term :math:`V = \int d^3 x~\Hscr(0, \xbf)` satisfies the following
-
-.. math::
-	:nowrap:
-
-	\begin{equation*}
-		U(CPT) V U^{-1}(CPT) = -\int d^3 x~\Hscr(-x) = V
-	\end{equation*}
-
-Since the CPT symmetry is clearly conserved for free particles, it is also conserved in interactions according to :math:`\eqref{eq_h_as_h0_plus_v}`.
+Since the CPT symmetry is clearly conserved for free particles, it is also conserved in interactions according to :eq:`eq_h_as_h0_plus_v`.
 
 
 Massless Fields
 ---------------
 
-So far the story about quantum fields has been a 100% success. We've namely found the general formula :math:`\eqref{eq_general_field_psi_field}` for *any* field that represents a massive particle. However, such success will come to an end when we consider instead massless particles as we'll see in this section. This should not come as a surprise though since we've see in :eq:`eq_vector_field_defn_Pi` for example, that the spin sum blows up in the massless limit :math:`m \to 0`.
+So far the story about quantum fields has been a 100% success. We've namely found the general formula :eq:`eq_general_field_psi_field` for *any* field that represents a massive particle. However, such success will come to an end when we consider instead massless particles as we'll see in this section. This should not come as a surprise though since we've see in :eq:`eq_vector_field_defn_Pi` for example, that the spin sum blows up in the massless limit :math:`m \to 0`.
 
 Let's nonetheless kickstart the routine of constructing fields as follows, and see where the problem should arise.
 
 .. math::
-	:nowrap:
+	:label: eq_massless_field_defn_psi_field
 
-	\begin{equation}
-		\psi_{\ell}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( \kappa e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma) a(\pbf, \sigma) + \lambda e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
-		\label{eq_massless_field_defn_psi_field}
-	\end{equation}
+	\psi_{\ell}(x) = (2\pi)^{-3/2} \sum_{\sigma} \int d^3 p \left( \kappa e^{\ifrak p \cdot x} u_{\ell}(\pbf, \sigma) a(\pbf, \sigma) + \lambda e^{-\ifrak p \cdot x} v_{\ell}(\pbf, \sigma) a^{c \dagger}(\pbf, \sigma) \right)
 
 This is reasonable because the translation symmetry is the same for massive and massless particles, and hence :eq:`eq_redefine_u_after_translation` and :eq:`eq_redefine_v_after_translation` apply.
 
-Next, using the general transformation laws :math:`\eqref{eq_lorentz_transformation_formula_for_creation_operator}` and :math:`\eqref{eq_lorentz_transformation_formula_for_annihilation_operator}` for creation and annihilation operators, as well as the :math:`D` matrix :math:`\eqref{eq_little_group_d_matrix_massless}` for massless particles, we can infer the homogeneous Lorentz transformation laws as follows
+Next, using the general transformation laws :eq:`eq_lorentz_transformation_formula_for_annihilation_and_creation_operator_revisited` for creation and annihilation operators, as well as the :math:`D` matrix :eq:`eq_little_group_d_matrix_massless` for massless particles, we can infer the homogeneous Lorentz transformation laws as follows
 
 .. math::
 	:nowrap:
@@ -2614,7 +2225,7 @@ up to normalization. However, by the explicit formula :math:`\eqref{eq_massless_
 
 which is impossible for any real :math:`a, b` that are not both zero.
 
-For reasons that will be justified later, it's nonetheless legitimate to adopt the vectors :math:`e_{\mu}` as defined by :math:`\eqref{eq_massless_vector_field_e_at_k}` as the spinors, as well as the condition :math:`\kappa = \lambda = 1` as in the case of massive vector fields. With these assumptions, we can rename :math:`\psi` by :math:`a` (as it'll correspond to the `electromagnetic potential <https://en.wikipedia.org/wiki/Electromagnetic_four-potential>`__ which is conventionally named by :math:`a`), and rewrite :math:`\eqref{eq_massless_field_defn_psi_field}` as follows
+For reasons that will be justified later, it's nonetheless legitimate to adopt the vectors :math:`e_{\mu}` as defined by :math:`\eqref{eq_massless_vector_field_e_at_k}` as the spinors, as well as the condition :math:`\kappa = \lambda = 1` as in the case of massive vector fields. With these assumptions, we can rename :math:`\psi` by :math:`a` (as it'll correspond to the `electromagnetic potential <https://en.wikipedia.org/wiki/Electromagnetic_four-potential>`__ which is conventionally named by :math:`a`), and rewrite :eq:`eq_massless_field_defn_psi_field` as follows
 
 .. math::
 	:nowrap:
@@ -2773,7 +2384,7 @@ where :math:`\epsilon^{\rho \tau \mu \nu}` is the totally anti-symmetric sign. I
 
 	where the first equality can be directly verified using :math:`\eqref{eq_massless_vector_field_e_at_k}`. In particular, we notice that the spin sum is real -- a neat fact that will be used in the next calculation. Moreover, the spin sum vanishes if any index is :math:`0` because of :math:`\eqref{eq_massless_vector_field_spinor_zero_vanishes}`.
 
-	Next we calculate the (anti-)commutator between the derivatives of the components of an :math:`a`-field, with coefficients :math:`\kappa` and :math:`\lambda` as in :math:`\eqref{eq_massless_field_defn_psi_field}` restored, as follows
+	Next we calculate the (anti-)commutator between the derivatives of the components of an :math:`a`-field, with coefficients :math:`\kappa` and :math:`\lambda` as in :eq:`eq_massless_field_defn_psi_field` restored, as follows
 
 	.. math::
 		:nowrap:
@@ -2796,8 +2407,8 @@ where :math:`\epsilon^{\rho \tau \mu \nu}` is the totally anti-symmetric sign. I
 				&= \left[ \p_{\mu} a_{\nu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right] \
 	  				- \left[ \p_{\mu} a_{\nu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \
 	  				- \left[ \p_{\nu} a_{\mu}(x), \p_{\rho} a^{\dagger}_{\tau}(y) \right] \
-	  				+ \left[ \p_{\nu} a_{\mu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \nonumber \\
-				&= (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \left( P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} \right) \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right) \nonumber
+	  				+ \left[ \p_{\nu} a_{\mu}(x), \p_{\tau} a^{\dagger}_{\rho}(y) \right] \\
+				&= (2\pi)^{-3} \int \frac{d^3 p}{2p_0} \left( P_{\mu \nu \rho \tau} - P_{\mu \nu \tau \rho} - P_{\nu \mu \rho \tau} + P_{\nu \mu \tau \rho} \right) \left( |\kappa|^2 e^{\ifrak p \cdot (x-y)} \pm |\lambda|^2 e^{-\ifrak p \cdot (x-y)} \right)
 		\end{align}
 
 	It remains to calculate the following
@@ -2921,7 +2532,7 @@ if :math:`u_{a'b'}(\kbf, \sigma) \neq 0`. Combining :math:`\eqref{eq_massless_ge
 		\label{eq_massless_general_field_helicity_condition}
 	\end{equation}
 
-It follows that a general massless :math:`(A, B)` field, according to :math:`\eqref{eq_general_field_defn_psi_field}`, can only destroy particles of helicity :math:`B-A`. Similar argument can be applied to the :math:`v`-spinor, which, together with :math:`\eqref{eq_massless_general_field_ab_condition_for_v}`, implies that the field can only create antiparticles of helicity :math:`A-B`.
+It follows that a general massless :math:`(A, B)` field, according to :eq:`eq_general_field_defn_psi_field`, can only destroy particles of helicity :math:`B-A`. Similar argument can be applied to the :math:`v`-spinor, which, together with :math:`\eqref{eq_massless_general_field_ab_condition_for_v}`, implies that the field can only create antiparticles of helicity :math:`A-B`.
 
 As a special case, we see once again that a massless helicity :math:`\pm 1` field cannot be constructed as a vector field, i.e., a :math:`\left( \tfrac{1}{2}, \tfrac{1}{2} \right)` field, because such vector field must be scalar by :math:`\eqref{eq_massless_general_field_helicity_condition}`. Indeed, the simplest massless helicity :math:`\pm 1` field must be a :math:`(1, 0) \oplus (0, 1)` field, which is nothing but the anti-symmetric :math:`2`-tensor :math:`f_{\mu \nu}` defined by :math:`\eqref{eq_massless_vector_field_curvature_tensor}`.
 
@@ -2930,8 +2541,6 @@ As a special case, we see once again that a massless helicity :math:`\pm 1` fiel
 .. [#two_ways_of_representation] This should be compared with :eq:`eq_d_repr_of_little_group`, which uses transpose instead of inverse to satisfy the group law. From the viewpoint of representation theory, it's more natural to use the inverse. But in the case of little group representations, since we're only interested in unitary representations, there is not much difference between the two choices.
 
 .. [#wrong_integration_of_Delta_function] The evaluation of the integral eq. (5.2.8) on [Wei95]_ page 202 seems to be wrong, as the integrand oscillates as :math:`\sin(u)` for :math:`u` large enough, which will cause the integral to diverge.
-
-.. [#charge_inversion_on_dirac_fields_sign] Our calculation differs from the calculation eq. (5.5.47) in [Wei95]_ by a sign.
 
 .. [#clebsch_gordan_coefficients_orthonormality] Details of the argument can be found in [Wei15]_ page 121 -- 122.
 
