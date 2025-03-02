@@ -1,0 +1,1449 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Quantum Mechanics &#8212; Mandy&#39;s wonderland</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=afd1b14a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"op": ["\\operatorname {#1}", 1], "p": "{\\partial}", "ps": ["\\prescript {#1}{#2}{#3}", 3], "psup": ["\\prescript {#1}{}{#2}", 2], "blue": ["{\\color{blue} {#1}}", 1], "bm": ["{{\\boldsymbol{#1}}}", 1], "orange": ["{\\color{orange} {#1}}", 1], "dist": "{\\operatorname{dist}}", "ind": "{\\operatorname{ind}}", "std": "{\\operatorname{std}}", "VAC": "{\\operatorname{VAC}}", "abb": "{\\mathbb a}", "bbb": "{\\mathbb b}", "cbb": "{\\mathbb c}", "dbb": "{\\mathbb d}", "ebb": "{\\mathbb e}", "fbb": "{\\mathbb f}", "gbb": "{\\mathbb g}", "hbb": "{\\mathbb h}", "ibb": "{\\mathbb i}", "jbb": "{\\mathbb j}", "kbb": "{\\mathbb k}", "lbb": "{\\mathbb l}", "mbb": "{\\mathbb m}", "nbb": "{\\mathbb n}", "obb": "{\\mathbb o}", "pbb": "{\\mathbb p}", "qbb": "{\\mathbb q}", "rbb": "{\\mathbb r}", "sbb": "{\\mathbb s}", "tbb": "{\\mathbb t}", "ubb": "{\\mathbb u}", "vbb": "{\\mathbb v}", "wbb": "{\\mathbb w}", "xbb": "{\\mathbb x}", "ybb": "{\\mathbb y}", "zbb": "{\\mathbb z}", "Abb": "{\\mathbb A}", "Bbb": "{\\mathbb B}", "Cbb": "{\\mathbb C}", "Dbb": "{\\mathbb D}", "Ebb": "{\\mathbb E}", "Fbb": "{\\mathbb F}", "Gbb": "{\\mathbb G}", "Hbb": "{\\mathbb H}", "Ibb": "{\\mathbb I}", "Jbb": "{\\mathbb J}", "Kbb": "{\\mathbb K}", "Lbb": "{\\mathbb L}", "Mbb": "{\\mathbb M}", "Nbb": "{\\mathbb N}", "Obb": "{\\mathbb O}", "Pbb": "{\\mathbb P}", "Qbb": "{\\mathbb Q}", "Rbb": "{\\mathbb R}", "Sbb": "{\\mathbb S}", "Tbb": "{\\mathbb T}", "Ubb": "{\\mathbb U}", "Vbb": "{\\mathbb V}", "Wbb": "{\\mathbb W}", "Xbb": "{\\mathbb X}", "Ybb": "{\\mathbb Y}", "Zbb": "{\\mathbb Z}", "abf": "{\\mathbf a}", "bbf": "{\\mathbf b}", "cbf": "{\\mathbf c}", "dbf": "{\\mathbf d}", "ebf": "{\\mathbf e}", "fbf": "{\\mathbf f}", "gbf": "{\\mathbf g}", "hbf": "{\\mathbf h}", "ibf": "{\\mathbf i}", "jbf": "{\\mathbf j}", "kbf": "{\\mathbf k}", "lbf": "{\\mathbf l}", "mbf": "{\\mathbf m}", "nbf": "{\\mathbf n}", "obf": "{\\mathbf o}", "pbf": "{\\mathbf p}", "qbf": "{\\mathbf q}", "rbf": "{\\mathbf r}", "sbf": "{\\mathbf s}", "tbf": "{\\mathbf t}", "ubf": "{\\mathbf u}", "vbf": "{\\mathbf v}", "wbf": "{\\mathbf w}", "xbf": "{\\mathbf x}", "ybf": "{\\mathbf y}", "zbf": "{\\mathbf z}", "Abf": "{\\mathbf A}", "Bbf": "{\\mathbf B}", "Cbf": "{\\mathbf C}", "Dbf": "{\\mathbf D}", "Ebf": "{\\mathbf E}", "Fbf": "{\\mathbf F}", "Gbf": "{\\mathbf G}", "Hbf": "{\\mathbf H}", "Ibf": "{\\mathbf I}", "Jbf": "{\\mathbf J}", "Kbf": "{\\mathbf K}", "Lbf": "{\\mathbf L}", "Mbf": "{\\mathbf M}", "Nbf": "{\\mathbf N}", "Obf": "{\\mathbf O}", "Pbf": "{\\mathbf P}", "Qbf": "{\\mathbf Q}", "Rbf": "{\\mathbf R}", "Sbf": "{\\mathbf S}", "Tbf": "{\\mathbf T}", "Ubf": "{\\mathbf U}", "Vbf": "{\\mathbf V}", "Wbf": "{\\mathbf W}", "Xbf": "{\\mathbf X}", "Ybf": "{\\mathbf Y}", "Zbf": "{\\mathbf Z}", "acal": "{\\mathcal a}", "bcal": "{\\mathcal b}", "ccal": "{\\mathcal c}", "dcal": "{\\mathcal d}", "ecal": "{\\mathcal e}", "fcal": "{\\mathcal f}", "gcal": "{\\mathcal g}", "hcal": "{\\mathcal h}", "ical": "{\\mathcal i}", "jcal": "{\\mathcal j}", "kcal": "{\\mathcal k}", "lcal": "{\\mathcal l}", "mcal": "{\\mathcal m}", "ncal": "{\\mathcal n}", "ocal": "{\\mathcal o}", "pcal": "{\\mathcal p}", "qcal": "{\\mathcal q}", "rcal": "{\\mathcal r}", "scal": "{\\mathcal s}", "tcal": "{\\mathcal t}", "ucal": "{\\mathcal u}", "vcal": "{\\mathcal v}", "wcal": "{\\mathcal w}", "xcal": "{\\mathcal x}", "ycal": "{\\mathcal y}", "zcal": "{\\mathcal z}", "Acal": "{\\mathcal A}", "Bcal": "{\\mathcal B}", "Ccal": "{\\mathcal C}", "Dcal": "{\\mathcal D}", "Ecal": "{\\mathcal E}", "Fcal": "{\\mathcal F}", "Gcal": "{\\mathcal G}", "Hcal": "{\\mathcal H}", "Ical": "{\\mathcal I}", "Jcal": "{\\mathcal J}", "Kcal": "{\\mathcal K}", "Lcal": "{\\mathcal L}", "Mcal": "{\\mathcal M}", "Ncal": "{\\mathcal N}", "Ocal": "{\\mathcal O}", "Pcal": "{\\mathcal P}", "Qcal": "{\\mathcal Q}", "Rcal": "{\\mathcal R}", "Scal": "{\\mathcal S}", "Tcal": "{\\mathcal T}", "Ucal": "{\\mathcal U}", "Vcal": "{\\mathcal V}", "Wcal": "{\\mathcal W}", "Xcal": "{\\mathcal X}", "Ycal": "{\\mathcal Y}", "Zcal": "{\\mathcal Z}", "afrak": "{\\mathfrak a}", "bfrak": "{\\mathfrak b}", "cfrak": "{\\mathfrak c}", "dfrak": "{\\mathfrak d}", "efrak": "{\\mathfrak e}", "ffrak": "{\\mathfrak f}", "gfrak": "{\\mathfrak g}", "hfrak": "{\\mathfrak h}", "ifrak": "{\\mathfrak i}", "jfrak": "{\\mathfrak j}", "kfrak": "{\\mathfrak k}", "lfrak": "{\\mathfrak l}", "mfrak": "{\\mathfrak m}", "nfrak": "{\\mathfrak n}", "ofrak": "{\\mathfrak o}", "pfrak": "{\\mathfrak p}", "qfrak": "{\\mathfrak q}", "rfrak": "{\\mathfrak r}", "sfrak": "{\\mathfrak s}", "tfrak": "{\\mathfrak t}", "ufrak": "{\\mathfrak u}", "vfrak": "{\\mathfrak v}", "wfrak": "{\\mathfrak w}", "xfrak": "{\\mathfrak x}", "yfrak": "{\\mathfrak y}", "zfrak": "{\\mathfrak z}", "Afrak": "{\\mathfrak A}", "Bfrak": "{\\mathfrak B}", "Cfrak": "{\\mathfrak C}", "Dfrak": "{\\mathfrak D}", "Efrak": "{\\mathfrak E}", "Ffrak": "{\\mathfrak F}", "Gfrak": "{\\mathfrak G}", "Hfrak": "{\\mathfrak H}", "Ifrak": "{\\mathfrak I}", "Jfrak": "{\\mathfrak J}", "Kfrak": "{\\mathfrak K}", "Lfrak": "{\\mathfrak L}", "Mfrak": "{\\mathfrak M}", "Nfrak": "{\\mathfrak N}", "Ofrak": "{\\mathfrak O}", "Pfrak": "{\\mathfrak P}", "Qfrak": "{\\mathfrak Q}", "Rfrak": "{\\mathfrak R}", "Sfrak": "{\\mathfrak S}", "Tfrak": "{\\mathfrak T}", "Ufrak": "{\\mathfrak U}", "Vfrak": "{\\mathfrak V}", "Wfrak": "{\\mathfrak W}", "Xfrak": "{\\mathfrak X}", "Yfrak": "{\\mathfrak Y}", "Zfrak": "{\\mathfrak Z}", "ascr": "{\\mathscr a}", "bscr": "{\\mathscr b}", "cscr": "{\\mathscr c}", "dscr": "{\\mathscr d}", "escr": "{\\mathscr e}", "fscr": "{\\mathscr f}", "gscr": "{\\mathscr g}", "hscr": "{\\mathscr h}", "iscr": "{\\mathscr i}", "jscr": "{\\mathscr j}", "kscr": "{\\mathscr k}", "lscr": "{\\mathscr l}", "mscr": "{\\mathscr m}", "nscr": "{\\mathscr n}", "oscr": "{\\mathscr o}", "pscr": "{\\mathscr p}", "qscr": "{\\mathscr q}", "rscr": "{\\mathscr r}", "sscr": "{\\mathscr s}", "tscr": "{\\mathscr t}", "uscr": "{\\mathscr u}", "vscr": "{\\mathscr v}", "wscr": "{\\mathscr w}", "xscr": "{\\mathscr x}", "yscr": "{\\mathscr y}", "zscr": "{\\mathscr z}", "Ascr": "{\\mathscr A}", "Bscr": "{\\mathscr B}", "Cscr": "{\\mathscr C}", "Dscr": "{\\mathscr D}", "Escr": "{\\mathscr E}", "Fscr": "{\\mathscr F}", "Gscr": "{\\mathscr G}", "Hscr": "{\\mathscr H}", "Iscr": "{\\mathscr I}", "Jscr": "{\\mathscr J}", "Kscr": "{\\mathscr K}", "Lscr": "{\\mathscr L}", "Mscr": "{\\mathscr M}", "Nscr": "{\\mathscr N}", "Oscr": "{\\mathscr O}", "Pscr": "{\\mathscr P}", "Qscr": "{\\mathscr Q}", "Rscr": "{\\mathscr R}", "Sscr": "{\\mathscr S}", "Tscr": "{\\mathscr T}", "Uscr": "{\\mathscr U}", "Vscr": "{\\mathscr V}", "Wscr": "{\\mathscr W}", "Xscr": "{\\mathscr X}", "Yscr": "{\\mathscr Y}", "Zscr": "{\\mathscr Z}"}, "packages": {"[+]": ["ams", "boldsymbol", "color", "mathtools", "unicode"]}, "tags": "ams"}, "loader": {"load": ["[tex]/ams", "[tex]/boldsymbol", "[tex]/color", "[tex]/mathtools", "[tex]/unicode"]}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'physics/the-quantum-theory-of-fields/01-quantum-mechanics';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Scattering Theory" href="02-scattering-theory.html" />
+    <link rel="prev" title="The Quantum Theory of Fields" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/dms.png" class="logo__image only-light" alt="Mandy's wonderland - Home"/>
+    <img src="../../_static/dms.png" class="logo__image only-dark pst-js-only" alt="Mandy's wonderland - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Mathematics
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Physics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../bib.html">
+    Bibliography
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math/index.html">
+    Mathematics
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Physics
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../bib.html">
+    Bibliography
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/yhuang85/mandy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">The Quantum Theory of Fields (S. Weinberg)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1. Quantum Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-scattering-theory.html">2. Scattering Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-the-cluster-decomposition-principle.html">3. The Cluster Decomposition Principle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-quantum-fields-and-antiparticles.html">4. Quantum Fields and Antiparticles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-the-feynman-rules.html">5. The Feynman Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-the-canonical-formalism.html">6. The Canonical Formalism</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Physics</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">The Quantum Theory of Fields</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><span class="section-number">1. </span>Quantum Mechanics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quantum-mechanics">
+<h1><span class="section-number">1. </span>Quantum Mechanics<a class="headerlink" href="#quantum-mechanics" title="Link to this heading">#</a></h1>
+<p>The goal of this chapter it to cover the basics of quantum mechanics, i.e., the quantum theory of particles.</p>
+<section id="what-is-a-quantum-state">
+<h2><span class="section-number">1.1. </span>What is a Quantum State?<a class="headerlink" href="#what-is-a-quantum-state" title="Link to this heading">#</a></h2>
+<p>Quantum theory postulates that <em>any</em> physical state (of the world) can be represented by a <em>ray</em> in some complex Hilbert space. It’s worth noting that it is the state, rather than the Hilbert space, that we actually care about. Let’s write a state as</p>
+<div class="math notranslate nohighlight">
+\[[\Psi] \coloneqq \{ c\Psi ~|~ c \in \Cbb \setminus 0 \}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Psi\)</span> is a nonzero vector in the Hilbert space. It is, however, rather inconvenient to have to deal with <span class="math notranslate nohighlight">\([\Psi]\)</span> all the time. So instead, we will almost always pick a representative <span class="math notranslate nohighlight">\(\Psi\)</span>, often out of a natural choice, and call it a <em>state vector</em>, and keep in mind that anything physically meaningful must not be sensitive to a scalar multiplication.</p>
+<div class="important admonition">
+<p class="admonition-title">Assumption</p>
+<p>Throughout this post we always assume that state vectors are normalized so that <span class="math notranslate nohighlight">\(||\Psi|| = 1\)</span>.</p>
+</div>
+<p>In fact, we don’t really care about the states themselves either, because they are more of an abstraction rather than something one can physically measure. What we do care about are the (Hermitian) inner products between state vectors, denoted by <span class="math notranslate nohighlight">\((\Psi, \Phi)\)</span>. According to the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Copenhagen_interpretation">Copenhagen interpretation</a> of quantum mechanics, such inner product represents an <em>amplitude</em>, i.e., its squared norm gives the probability of finding a state <span class="math notranslate nohighlight">\([\Psi]\)</span> in <span class="math notranslate nohighlight">\([\Phi]\)</span> if we ever perform a measurement. We can write this statement as an equation as follows</p>
+<div class="math notranslate nohighlight">
+\[P([\Psi] \to [\Phi]) = |(\Psi, \Phi)|^2\]</div>
+<p>In particular, the probability of finding any state in itself is one, due to the normalization above.</p>
+</section>
+<section id="what-is-a-symmetry">
+<span id="sec-what-is-a-symmetry"></span><h2><span class="section-number">1.2. </span>What is a Symmetry?<a class="headerlink" href="#what-is-a-symmetry" title="Link to this heading">#</a></h2>
+<p>We start with a <em>symmetry transformation</em>, by which we mean a transformation that preserves all quantities that one can ever measure about a system. Since it is the probabilities, rather than the states themselves, that are measurable, one is led to define a quantum symmetry transformation as a transformation of states <span class="math notranslate nohighlight">\(T\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-eq-t-preserves-probability">
+<span class="eqno">(1.2.1)<a class="headerlink" href="#equation-eq-t-preserves-probability" title="Link to this equation">#</a></span>\[P(T[\Psi] \to T[\Phi]) = P([\Psi] \to [\Phi])\]</div>
+<p>for any states <span class="math notranslate nohighlight">\([\Psi]\)</span> and <span class="math notranslate nohighlight">\([\Phi]\)</span>. Now a theorem of E. Wigner asserts that such <span class="math notranslate nohighlight">\(T\)</span> can be realized either as a linear unitary or as an anti-linear anti-unitary transformation <span class="math notranslate nohighlight">\(U = U(T)\)</span> of state vectors in the sense that <span class="math notranslate nohighlight">\([U\Psi] = T[\Psi]\)</span> for any <span class="math notranslate nohighlight">\(\Psi\)</span>. In other words, <span class="math notranslate nohighlight">\(U\)</span> satisfies either</p>
+<div class="math notranslate nohighlight">
+\[U(c\Psi) = cU\Psi, \quad (U\Psi, U\Phi) = (\Psi, \Phi)\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[U(c\Psi) = c^{\ast} U\Psi, \quad (U\Psi, U\Phi) = (\Psi, \Phi)^{\ast}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c\)</span> is any complex number.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Proof of Wigner’s theorem</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The construction of a realization <span class="math notranslate nohighlight">\(U\)</span> of <span class="math notranslate nohighlight">\(T\)</span> takes the following steps.</p>
+<dl class="field-list">
+<dt class="field-odd">Step 1<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text">Fix an orthonormal basis <span class="math notranslate nohighlight">\(\Psi_i, i \in \Nbb\)</span>, of the Hilbert space.</p>
+</dd>
+<dt class="field-even">Step 2<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text">For each <span class="math notranslate nohighlight">\(\Psi_i\)</span>, choose a unit vector <span class="math notranslate nohighlight">\(\Psi'_i\)</span> such that <span class="math notranslate nohighlight">\(P[\Psi_i] = [\Psi'_i]\)</span>. Then <span class="math notranslate nohighlight">\(\Psi'_i, i \in \Nbb\)</span>, also form an orthonormal basis by <a class="reference internal" href="#equation-eq-t-preserves-probability">Eq.1.2.1</a>. We’d like to define <span class="math notranslate nohighlight">\(U\)</span> by asking</p>
+<div class="math notranslate nohighlight">
+\[U\Psi_i = \Psi'_i\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i\)</span>, and extend by (anti-)linearity. But this is not going to realize <span class="math notranslate nohighlight">\(T\)</span> in general because we haven’t fixed the extra degrees of freedom – the phases of <span class="math notranslate nohighlight">\(\Psi'_i\)</span>.</p>
+</dd>
+<dt class="field-odd">Step 3<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="sd-card-text">We fix the phases of <span class="math notranslate nohighlight">\(\Psi'_k, k \geq 1\)</span>, relative to <span class="math notranslate nohighlight">\(\Psi'_0\)</span>, by asking</p>
+<div class="math notranslate nohighlight">
+\[T[\Psi_0 + \Psi_k] = [\Psi'_0 + \Psi'_k]\]</div>
+<p class="sd-card-text">To see why this is possible, note first that <span class="math notranslate nohighlight">\(T[\Psi_0 + \Psi_k] = [\alpha \Psi'_0 + \beta \Psi'_k]\)</span>, where <span class="math notranslate nohighlight">\(\alpha, \beta\)</span> are phase factors, due to <a class="reference internal" href="#equation-eq-t-preserves-probability">Eq.1.2.1</a> and the basis being orthonormal. Now <span class="math notranslate nohighlight">\([\alpha \Psi'_0 + \beta \Psi'_k] = [\Psi'_0 + (\beta/\alpha) \Psi'_k]\)</span> and we can absorb the phase <span class="math notranslate nohighlight">\(\beta/\alpha\)</span> into the definition of <span class="math notranslate nohighlight">\(\Psi'_k\)</span>. This is indeed the best one can do, because the last one degree of freedom, which is to multiply all <span class="math notranslate nohighlight">\(\Psi'_i\)</span> by a phase, cannot be fixed.</p>
+</dd>
+<dt class="field-even">Step 4<span class="colon">:</span></dt>
+<dd class="field-even"><p class="sd-card-text">We have so far specified the value of <span class="math notranslate nohighlight">\(U\)</span> on all of <span class="math notranslate nohighlight">\(\Psi_i, i \geq 0\)</span>, and <span class="math notranslate nohighlight">\(\Psi_0 + \Psi_k, k \geq 1\)</span>. Notice that all the coefficients of <span class="math notranslate nohighlight">\(\Psi\)</span> are real. It is therefore instructive to ask what <span class="math notranslate nohighlight">\(\Psi_0 + \ifrak \Psi_1\)</span> should be. By the same argument as in the previous step, we can write</p>
+<div class="math notranslate nohighlight">
+\[T[\Psi_0 + \ifrak \Psi_1] = [\Psi'_0 + c \Psi'_1]\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(c\)</span> is a phase. Let’s apply <a class="reference internal" href="#equation-eq-t-preserves-probability">Eq.1.2.1</a> once again as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sqrt{2} &amp;= \left| \left( [\Psi_0 + \ifrak \Psi_1], [\Psi_0 + \Psi_1] \right) \right| \\
+        &amp;= \left| \left( T[\Psi_0 + \ifrak \Psi_1], T[\Psi_0 + \Psi_1] \right) \right| \\
+        &amp;= \left| \left( [\Psi'_0 + c \Psi'_1], [\Psi'_0 + \Psi'_1] \right) \right| \\
+        &amp;= |1 + c|\end{split}\]</div>
+<p class="sd-card-text">It follows that <span class="math notranslate nohighlight">\(c = \pm \ifrak\)</span>, which correspond to <span class="math notranslate nohighlight">\(U\)</span> being (complex) linear or anti-linear, respectively.</p>
+</dd>
+</dl>
+<p class="sd-card-text">At this point, we can extend <span class="math notranslate nohighlight">\(U\)</span> to either a linear or anti-linear map of the Hilbert space. But we’ll not be bothered about any further formal argument, including showing that (anti-)linearity must be coupled with (anti-)unitarity, respectively.</p>
+</div>
+</details><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>adjoint</em> of a linear operator <span class="math notranslate nohighlight">\(A\)</span> is another linear operator <span class="math notranslate nohighlight">\(A^{\dagger}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[(\Psi, A\Phi) = (A^{\dagger} \Psi, \Phi)\]</div>
+<p>for all any two state vectors <span class="math notranslate nohighlight">\(\Psi\)</span> and <span class="math notranslate nohighlight">\(\Phi\)</span>. On the other hand, the adjoint of an anti-linear <span class="math notranslate nohighlight">\(A\)</span> is another anti-linear <span class="math notranslate nohighlight">\(A^{\dagger}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[(\Psi, A\Phi) = (A^{\dagger} \Psi, \Phi)^{\ast}\]</div>
+<p>A (anti-)unitary operator <span class="math notranslate nohighlight">\(U\)</span> thus satisfies <span class="math notranslate nohighlight">\(U^{\dagger} = U^{-1}\)</span>.</p>
+</div>
+<p>In general we’re not interested in just one symmetry transformation, but rather a group – whether continuous or discrete – of symmetry transformations, or just symmetry for short. In particular, if <span class="math notranslate nohighlight">\(T_1, T_2\)</span> are two symmetry transformations, then we’d like <span class="math notranslate nohighlight">\(T_2 T_1\)</span> to also be a symmetry transformation. In light of the <span class="math notranslate nohighlight">\(U\)</span>-realization of symmetry transformations discussed above, we can rephrase this condition as</p>
+<div class="math notranslate nohighlight" id="equation-eq-u-depends-on-psi">
+<span class="eqno">(1.2.2)<a class="headerlink" href="#equation-eq-u-depends-on-psi" title="Link to this equation">#</a></span>\[U(T_2 T_1) \Psi = \exp(\ifrak \theta(T_1, T_2, \Psi)) U(T_2) U(T_1) \Psi\]</div>
+<p>where <span class="math notranslate nohighlight">\(\ifrak = \sqrt{-1}\)</span>, and <span class="math notranslate nohighlight">\(\theta(T_1, T_2, \Psi)\)</span> is an angle, which depends a priori on <span class="math notranslate nohighlight">\(T_1, T_2\)</span>, and <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
+<p>It turns out, however, the angle <span class="math notranslate nohighlight">\(\theta(T_1, T_2, \Psi)\)</span> cannot depend on the state because if we apply <a class="reference internal" href="#equation-eq-u-depends-on-psi">Eq.1.2.2</a> to the sum of two linearly independent state vectors <span class="math notranslate nohighlight">\(\Psi_A + \Psi_B\)</span>, then we’ll find</p>
+<div class="math notranslate nohighlight">
+\[\exp(\pm \ifrak \theta(\Psi_A)) \Psi_A + \exp(\pm \ifrak \theta(\Psi_B)) \Psi_B
+        = \exp(\pm \ifrak \theta(\Psi_A + \Psi_B)) (\Psi_A + \Psi_B)\]</div>
+<p>where we have suppressed the dependency of <span class="math notranslate nohighlight">\(\theta\)</span> on <span class="math notranslate nohighlight">\(T\)</span>, and the signs correspond to the cases of <span class="math notranslate nohighlight">\(U\)</span> being linear or anti-linear, respectively. In any case, it follows that</p>
+<div class="math notranslate nohighlight">
+\[\exp(\pm \ifrak \theta(\Psi_A)) = \exp(\pm \ifrak \theta(\Psi_B))
+        = \exp(\pm \ifrak \theta(\Psi_A + \Psi_B))\]</div>
+<p>which says nothing but the independence of <span class="math notranslate nohighlight">\(\theta\)</span> on <span class="math notranslate nohighlight">\(\Psi\)</span>.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>While the argument here appears to be purely mathematical, Weinberg pointed out in <a class="reference internal" href="../../bib.html#wei95" id="id1"><span>[Wei95]</span></a> (page 53) the potential inabilities to create a state like <span class="math notranslate nohighlight">\(\Psi_A + \Psi_B\)</span>. More precisely, he mentioned the general believe that it’s impossible to prepare a superposition of two states, one with integer total angular momentum and the other with half-integer total angular momentum, in which case there will be a “super-selection rule” between different classes of states. After all, one Hilbert space may just not be enough to describe all states. It’d be nice to elaborate a bit more on the super-selection rules.</p>
+</div>
+<p>We can now simplify <a class="reference internal" href="#equation-eq-u-depends-on-psi">Eq.1.2.2</a> to the following</p>
+<div class="math notranslate nohighlight">
+\[U(T_2 T_1) = \exp(\ifrak \theta(T_1, T_2)) U(T_2) U(T_1)\]</div>
+<p>which, in mathematical terms, says that <span class="math notranslate nohighlight">\(U\)</span> furnishes a <em>projective representation</em> of <span class="math notranslate nohighlight">\(T\)</span>, or a representation up to a phase. It becomes a genuine representation if the phase is constantly one.</p>
+<div class="important admonition" id="assump-genuine-repr">
+<p class="admonition-title">Assumption</p>
+<p>We will assume that <span class="math notranslate nohighlight">\(U\)</span> furnishes a genuine representation of <span class="math notranslate nohighlight">\(T\)</span> unless otherwise stated, because it’s simpler and will be suffice for most scenarios of interest.</p>
+</div>
+<section id="continuous-symmetry">
+<span id="sec-continuous-symmetry"></span><h3><span class="section-number">1.2.1. </span>Continuous symmetry<a class="headerlink" href="#continuous-symmetry" title="Link to this heading">#</a></h3>
+<p>Besides a handful of important discrete symmetries such as the time, charge, and parity conjugations, most of the interesting symmetries come in a continuous family, mathematically known as <em>Lie groups</em>. Note that continuous symmetries are necessarily unitary (and linear) because they can be continuously deformed into the identity, which is obviously unitary.</p>
+<p>In fact, it will be of great importance to just look at the symmetry up to the first order at the identity transformation, mathematically known as the <em>Lie algebra</em>. Let <span class="math notranslate nohighlight">\(\theta\)</span> be an element in the Lie algebra such that <span class="math notranslate nohighlight">\(T(\theta) = 1 + \theta\)</span> up to the first order. We can expand <span class="math notranslate nohighlight">\(U(T(\theta))\)</span> in a power series as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-u-expansion">
+<span class="eqno">(1.2.3)<a class="headerlink" href="#equation-eq-u-expansion" title="Link to this equation">#</a></span>\[U(T(\theta)) = 1 + \ifrak \theta^a u_a + \tfrac{1}{2} \theta^a \theta^b u_{ab} + \cdots\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta^a\)</span> are the (real) components of <span class="math notranslate nohighlight">\(\theta\)</span>, and <span class="math notranslate nohighlight">\(u_a\)</span> are operators independent of <span class="math notranslate nohighlight">\(\theta\)</span>, and as a convention, repeated indexes are summed up. Here we put a <span class="math notranslate nohighlight">\(\ifrak\)</span> in front of the linear term so that the unitarity of <span class="math notranslate nohighlight">\(U\)</span> implies that <span class="math notranslate nohighlight">\(u_a\)</span> are Hermitian.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’ve implicitly used a summation convention in writing <a class="reference internal" href="#equation-eq-u-expansion">Eq.1.2.3</a> that the same upper and lower indexes are automatically summed up. For example</p>
+<div class="math notranslate nohighlight">
+\[\theta^a \theta^b u_{ab} \equiv \sum_{a, b} \theta^a \theta^b u_{ab}\]</div>
+<p>This convention will be used throughout this note, unless otherwise specified.</p>
+<p>Another noteworthy point is how one writes matrix or tensor elements using indexes. The point is that the indexes must come in certain order. This wouldn’t really cause a problem if all indexes are lower or upper. However, care must be taken when both lower and upper indexes appear. For example, an element written as <span class="math notranslate nohighlight">\(M^a_b\)</span> would be ambiguous as it’s unclear whether it refers to <span class="math notranslate nohighlight">\(M_{ab}\)</span> or <span class="math notranslate nohighlight">\(M_{ba}\)</span> assuming that one can somehow raise/lower the indexes. To avoid such ambiguity, one writes either <span class="math notranslate nohighlight">\({M^a}_b\)</span> or <span class="math notranslate nohighlight">\({M_b}^a\)</span>.</p>
+<p>This is a particularly convenient convention when dealing with matrix or tensor multiplications. For example, one can multiply two matrices as follows</p>
+<div class="math notranslate nohighlight">
+\[{M^a}_b {N^b}_c = {(MN)^a}_c\]</div>
+<p>while <span class="math notranslate nohighlight">\({M^a}_b {N_c}^b\)</span>, though still summed up over <span class="math notranslate nohighlight">\(b\)</span>, wouldn’t correspond to a matrix multiplication.</p>
+</div>
+<p>Now let <span class="math notranslate nohighlight">\(\eta\)</span> be another element of the Lie algebra, and expand both sides of the equality <span class="math notranslate nohighlight">\(U(T(\eta)) U(T(\theta)) = U(T(\eta) T(\theta))\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}U(T(\eta)) U(T(\theta))
+        &amp;= \left( 1 + \ifrak \eta^a u_a + \tfrac{1}{2} \eta^a \eta^b u_{ab} + \cdots \right) \left( 1 + \ifrak \theta^a u_a + \tfrac{1}{2} \theta^a \theta^b u_{ab} + \cdots \right) \\
+        &amp;= 1 + \ifrak (\eta^a + \theta^a) u_a \blue{- \eta^a \theta^b u_a u_b} + \cdots \\
+U(T(\eta) T(\theta))
+        &amp;= U \left( 1 + \eta + \theta + f_{ab} \eta^a \theta^b + \cdots \right) \\
+        &amp;= 1 + \blue{\ifrak} \left( \eta^c + \theta^c + \blue{{f^c}_{ab} \eta^a \theta^b} + \cdots \right) \blue{u_c} \\
+        &amp;\phantom{=} + \blue{\tfrac{1}{2}} \left( \blue{\eta^a + \theta^a} + \cdots \right) \left( \blue{\eta^b + \theta^b} + \cdots \right) \blue{u_{ab}} + \cdots\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\({f^c}_{ab}\)</span> are the coefficients of the expansion of <span class="math notranslate nohighlight">\(T(f(\eta, \theta)) = T(\eta) T(\theta)\)</span>. Equating the coefficients of <span class="math notranslate nohighlight">\(\eta^a \theta^b\)</span>, i.e., the terms colored in blue, we get</p>
+<div class="math notranslate nohighlight">
+\[-u_a u_b = \ifrak {f^c}_{ab} u_c + u_{ab} \implies u_{ab} = -u_a u_b - \ifrak {f^c}_{ab} u_c.\]</div>
+<p>It implies that one can calculate the higher-order operator <span class="math notranslate nohighlight">\(u_{ab}\)</span> from the lower-order ones, assuming of course that we know the structure of the symmetry (Lie) group/algebra. In fact, this bootstrapping procedure can be continued to all orders, but we’ll not be bothered about the details.</p>
+<p>Next, note that <span class="math notranslate nohighlight">\(u_{ab} = u_{ba}\)</span> since they are just partial derivatives. It follows that</p>
+<div class="math notranslate nohighlight">
+\[[u_a, u_b] \coloneqq u_a u_b - u_b u_a = \ifrak ({f^c}_{ba} - {f^c}_{ab}) u_c \eqqcolon \ifrak {C^c}_{ab} u_c\]</div>
+<p>where the bracket is known as the <em>Lie bracket</em> and <span class="math notranslate nohighlight">\({C^c}_{ab}\)</span> are known as the <em>structure constants</em>.</p>
+<p>We conclude the general discussion about continuous symmetry by considering a special, but important, case when <span class="math notranslate nohighlight">\(T\)</span> is additive in the sense that <span class="math notranslate nohighlight">\(T(\eta) T(\theta) = T(\eta + \theta)\)</span>. Notable examples of such symmetry include translations and rotations about a fixed axis. In this case <span class="math notranslate nohighlight">\(f\)</span> vanishes, and it follows from <a class="reference internal" href="#equation-eq-u-expansion">Eq.1.2.3</a> that</p>
+<div class="math notranslate nohighlight" id="equation-eq-additive-symmetry">
+<span class="eqno">(1.2.4)<a class="headerlink" href="#equation-eq-additive-symmetry" title="Link to this equation">#</a></span>\[U(T(\theta)) = \lim_{N \to \infty} (U(T(\theta / N)))^N = \lim_{N \to \infty} (1 + \ifrak \theta^a u_a / N)^N = \exp(\ifrak \theta^a u_a)\]</div>
+</section>
+<section id="lorentz-symmetry">
+<span id="sec-lorentz-symmetry"></span><h3><span class="section-number">1.2.2. </span>Lorentz symmetry<a class="headerlink" href="#lorentz-symmetry" title="Link to this heading">#</a></h3>
+<p>A particularly prominent continuous symmetry in our physical world is the Lorentz symmetry postulated by Einstein’s special relativity, which supersedes the Galilean symmetry, which is respected by the Newtonian mechanics. We shall start from the classical theory of Lorentz symmetry, and then quantize it following the procedure discussed in the previous section.</p>
+<section id="classical-lorentz-symmetry">
+<h4><span class="section-number">1.2.2.1. </span>Classical Lorentz symmetry<a class="headerlink" href="#classical-lorentz-symmetry" title="Link to this heading">#</a></h4>
+<p>Classical Lorentz symmetry is a symmetry that acts on the (flat) spacetime and preserves the so-called <em>proper time</em></p>
+<div class="math notranslate nohighlight" id="equation-eq-proper-time">
+<span class="eqno">(1.2.5)<a class="headerlink" href="#equation-eq-proper-time" title="Link to this equation">#</a></span>\[d\tau^2 \coloneqq dx_0^2 - dx_1^2 - dx_2^2 - dx_3^2 \eqqcolon -\eta^{\mu \nu} dx_{\mu} dx_{\nu}\]</div>
+<p>where</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_0\)</span> is also known as the time, and sometimes denoted by <span class="math notranslate nohighlight">\(t\)</span>, and</p></li>
+<li><p>the speed of light is set to <span class="math notranslate nohighlight">\(1\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta = \op{diag}(-1, 1, 1, 1)\)</span> and the indexes <span class="math notranslate nohighlight">\(\mu, \nu\)</span> run from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(3\)</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>We will follow the common convention in physics that Greek letters such as <span class="math notranslate nohighlight">\(\mu, \nu, \dots\)</span> run from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(3\)</span>, while Roman letters such as <span class="math notranslate nohighlight">\(i, j, \dots\)</span> run from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(3\)</span>.</p></li>
+<li><p>We often write <span class="math notranslate nohighlight">\(x\)</span> for a spacetime point <span class="math notranslate nohighlight">\((x_0, x_1, x_2, x_3)\)</span>, and <span class="math notranslate nohighlight">\(\xbf\)</span> for a spatial point <span class="math notranslate nohighlight">\((x_1, x_2, x_3)\)</span>.</p></li>
+<li><p>A <span class="math notranslate nohighlight">\(4\)</span>-index, i.e., those named by Greek letters, of a matrix or a tensor can be raised or lowered by <span class="math notranslate nohighlight">\(\eta\)</span>. For example, one can raise an index of a matrix <span class="math notranslate nohighlight">\(M_{\mu \nu}\)</span> by <span class="math notranslate nohighlight">\(\eta^{\rho \mu} M_{\mu \nu} = {M^{\rho}}_{\nu}\)</span> or <span class="math notranslate nohighlight">\(\eta^{\rho \nu} M_{\mu \nu} = {M_{\mu}}^{\rho}\)</span>, such that the order of (regardless of upper or lower) indexes are kept.</p></li>
+</ol>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Einstein’s special theory of relativity</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Using the notations introduced above, we can rewrite <a class="reference internal" href="#equation-eq-proper-time">Eq.1.2.5</a> as <span class="math notranslate nohighlight">\(d\tau^2 = dt^2 - d\xbf^2\)</span>, so that it’s obvious that if a particle travels at the speed of light in one inertial frame, i.e., <span class="math notranslate nohighlight">\(|d\xbf / dt| = 1\)</span>, and equivalently <span class="math notranslate nohighlight">\(d\tau = 0\)</span>, then it travels at the speed of light in any other inertial frame, in direct contradiction with Newtonian mechanics.</p>
+<p class="sd-card-text">Instead of working with the spacetime coordinates, it can sometimes be convenient to work with the “dual” energy-momentum coordinates, also known as the <em>four momentum</em>. The transition can be done by imagining a particle of mass <span class="math notranslate nohighlight">\(m\)</span>, and defining <span class="math notranslate nohighlight">\(p = (E, \pbf) \coloneqq m dx / d\tau\)</span>. It follows from <a class="reference internal" href="#equation-eq-proper-time">Eq.1.2.5</a> that</p>
+<div class="math notranslate nohighlight" id="equation-eq-four-momentum-mass-identity">
+<span class="eqno">(1.2.6)<a class="headerlink" href="#equation-eq-four-momentum-mass-identity" title="Link to this equation">#</a></span>\[1 = (dt / d\tau)^2 - (d\xbf / d\tau)^2 \implies m^2 = (m dt / d\tau)^2 - (m d\xbf / d\tau)^2 = E^2 - \pbf^2\]</div>
+<p class="sd-card-text">which looks just like <a class="reference internal" href="#equation-eq-proper-time">Eq.1.2.5</a>, and indeed, the mass (in our convention) is invariant in all inertial frames.</p>
+<p class="sd-card-text">One can also recover Newtonian mechanics at the low-speed limit (i.e., <span class="math notranslate nohighlight">\(|\vbf| \ll 1\)</span>) using <span class="math notranslate nohighlight">\(d\tau / dt = \sqrt{1 - \vbf^2}\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-p-from-v">
+<span class="eqno">(1.2.7)<a class="headerlink" href="#equation-eq-p-from-v" title="Link to this equation">#</a></span>\[\begin{split}\begin{alignat*}{2}
+        \pbf &amp;= m d\xbf / d\tau &amp;&amp;= \frac{m \vbf}{\sqrt{1 - \vbf^2}} = m \vbf + O(|\vbf|^3) \\
+        E &amp;= m dt / d\tau &amp;&amp;= m + \tfrac{1}{2} m \vbf^2 + O(|\vbf|^4)
+\end{alignat*}\end{split}\]</div>
+</div>
+</details><p>More precisely, by a Lorentz transformation we mean an inhomogeneous linear transformation</p>
+<div class="math notranslate nohighlight">
+\[L(\Lambda, a)x \coloneqq \Lambda x + a\]</div>
+<p>which consists of a homogeneous part <span class="math notranslate nohighlight">\(\Lambda\)</span> and a translation by <span class="math notranslate nohighlight">\(a\)</span>. The proper time is obviously preserved by any translation, and also by <span class="math notranslate nohighlight">\(\Lambda\)</span> if</p>
+<div class="math notranslate nohighlight" id="equation-eq-homogeneous-lorentz-transformation">
+<span class="eqno">(1.2.8)<a class="headerlink" href="#equation-eq-homogeneous-lorentz-transformation" title="Link to this equation">#</a></span>\[\eta^{\mu \nu} dx_{\mu} dx_{\nu} = \eta^{\mu \nu} {\Lambda_{\mu}}^{\rho} {\Lambda_{\nu}}^{\kappa} dx_{\rho} dx_{\kappa} \
+        \implies \eta^{\mu \nu} = \eta^{\rho \kappa} {\Lambda_{\rho}}^{\mu} {\Lambda_{\kappa}}^{\nu}\]</div>
+<p>for any <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span>. Moreover the group law is given by</p>
+<div class="math notranslate nohighlight">
+\[L(\Lambda', a') L(\Lambda, a) x = L(\Lambda', a')(\Lambda x + a) = \Lambda' \Lambda x + \Lambda' a + a' = L(\Lambda' \Lambda, \Lambda' a + a') x\]</div>
+<p>For later use, let’s also calculate the inverse matrix of <span class="math notranslate nohighlight">\(\Lambda\)</span> using <a class="reference internal" href="#equation-eq-homogeneous-lorentz-transformation">Eq.1.2.8</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-lambda-inverse">
+<span class="eqno">(1.2.9)<a class="headerlink" href="#equation-eq-lambda-inverse" title="Link to this equation">#</a></span>\[\delta_{\sigma}^{\nu}
+        = \eta_{\sigma \mu} \eta^{\mu \nu} = \eta_{\sigma \mu} \eta^{\rho \kappa} {\Lambda_{\rho}}^{\mu} {\Lambda_{\kappa}}^{\nu}
+        \implies {(\Lambda^{-1})_{\sigma}}^{\kappa} = \eta_{\sigma\mu} \eta^{\rho\kappa} {\Lambda_{\rho}}^{\mu} = {\Lambda^{\kappa}}_{\sigma}\]</div>
+<p>Now we’ll take a look at the topology of the group of homogeneous Lorentz transformations. Taking determinant on both sides of <a class="reference internal" href="#equation-eq-homogeneous-lorentz-transformation">Eq.1.2.8</a>, we see that <span class="math notranslate nohighlight">\(\op{det}(\Lambda) = \pm 1\)</span>. Moreover, setting <span class="math notranslate nohighlight">\(\mu = \nu = 0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[1 = \left( {\Lambda_0}^0 \right)^2 - \sum_{i=1}^3 \left( {\Lambda_i}^0 \right) \implies \left| {\Lambda_0}^0 \right| \geq 1\]</div>
+<p>It follows that the homogeneous Lorentz group has four components. In particular, the one with <span class="math notranslate nohighlight">\(\op{det}(\Lambda) = 1\)</span> and <span class="math notranslate nohighlight">\({\Lambda_0}^0 \geq 1\)</span> is the most common used and is given a name: <em>proper orthochronous</em> Lorentz group. Nonetheless, one can map one component to another by composing with either a time reversal transformation</p>
+<div class="math notranslate nohighlight" id="equation-eq-time-inversion">
+<span class="eqno">(1.2.10)<a class="headerlink" href="#equation-eq-time-inversion" title="Link to this equation">#</a></span>\[\Tcal: (t, \xbf) \mapsto (-t, \xbf)\]</div>
+<p>or a space reversal transformation</p>
+<div class="math notranslate nohighlight" id="equation-eq-space-inversion">
+<span class="eqno">(1.2.11)<a class="headerlink" href="#equation-eq-space-inversion" title="Link to this equation">#</a></span>\[\Pcal: (t, \xbf) \mapsto (t, -\xbf)\]</div>
+<p>or both.</p>
+<p>So far everything have been rather abstract, but in fact, the (homogeneous) Lorentz group can be understood quite intuitively. There are basically two building blocks: one is a rotation in the <span class="math notranslate nohighlight">\(3\)</span>-space, which says that the space is homogeneous in all (spatial) directions, and the other is a so-called <em>boost</em>, which says that, as G. Galileo originally noted, one cannot tell if a system is at rest or is moving in a constant velocity without making a reference to outside of the system. To spell out the details, let’s consider a rest frame with <span class="math notranslate nohighlight">\(d\xbf = 0\)</span> and a moving frame with <span class="math notranslate nohighlight">\(d\xbf' / dt' = \vbf\)</span>. Then the transformation <span class="math notranslate nohighlight">\(dx' = \Lambda dx\)</span> can be simplified as</p>
+<div class="math notranslate nohighlight">
+\[dt' = {\Lambda_0}^0 dt, \quad dx'_i = {\Lambda_i}^0 dt \implies {\Lambda_i}^0 = v_i {\Lambda_0}^0\]</div>
+<p>Then using <a class="reference internal" href="#equation-eq-homogeneous-lorentz-transformation">Eq.1.2.8</a>, we get</p>
+<div class="math notranslate nohighlight" id="equation-eq-def-gamma">
+<span class="eqno">(1.2.12)<a class="headerlink" href="#equation-eq-def-gamma" title="Link to this equation">#</a></span>\[\begin{split}1 &amp;= -\eta^{\mu \nu} {\Lambda_{\mu}}^0 {\Lambda_{\nu}}^0 \\
+        &amp;= \left( {\Lambda_0}^0 \right)^2 - \left( {\Lambda_i}^0 \right)^2 \\
+        &amp;= \left( 1 - \vbf^2 \right) \left( {\Lambda_0}^0 \right)^2
+                \implies {\Lambda_0}^0 = \frac{1}{\sqrt{1 - \vbf^2}} \eqqcolon \gamma\end{split}\]</div>
+<p>assuming <span class="math notranslate nohighlight">\(\Lambda\)</span> is proper orthochronous. It follows that</p>
+<div class="math notranslate nohighlight" id="equation-eq-lambda-boost">
+<span class="eqno">(1.2.13)<a class="headerlink" href="#equation-eq-lambda-boost" title="Link to this equation">#</a></span>\[{\Lambda_i}^0 = -{\Lambda^0}_i = \gamma v_i\]</div>
+<p>The other components <span class="math notranslate nohighlight">\({\Lambda_i}^j, 1 \leq i, j \leq 3\)</span>, are not uniquely determined because a composition with a (spatial) rotation about the direction of <span class="math notranslate nohighlight">\(\vbf\)</span> has no effect on <span class="math notranslate nohighlight">\(\vbf\)</span>. To make it easier, one can apply a rotation so that <span class="math notranslate nohighlight">\(\vbf\)</span> aligns with the <span class="math notranslate nohighlight">\(3\)</span>-axis. Then an obvious choice of <span class="math notranslate nohighlight">\(\Lambda\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-lambda-in-3-axis">
+<span class="eqno">(1.2.14)<a class="headerlink" href="#equation-eq-lambda-in-3-axis" title="Link to this equation">#</a></span>\[\begin{split}\begin{alignat*}{2}
+        t'   &amp;= {\Lambda_0}^{\mu} x_{\mu} &amp;&amp;= \gamma (t + v_3 x_3) \\
+        x'_1 &amp;= {\Lambda_1}^{\mu} x_{\mu} &amp;&amp;= x_1 \\
+        x'_2 &amp;= {\Lambda_2}^{\mu} x_{\mu} &amp;&amp;= x_2 \\
+        x'_3 &amp;= {\Lambda_3}^{\mu} x_{\mu} &amp;&amp;= \gamma (x_3 + v_3 t)
+\end{alignat*}\end{split}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Time dilation and length contraction</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A few consequences can be drawn from the boost transformation, most notably the effects of <a class="reference external" href="https://en.wikipedia.org/wiki/Time_dilation">time dilation</a> and <a class="reference external" href="https://en.wikipedia.org/wiki/Length_contraction">length contraction</a>. The time dilation, i.e., a clock ticks slower in a moving frame than in a rest frame, is quite obvious from <a class="reference internal" href="#equation-eq-lambda-boost">Eq.1.2.13</a> and the fact that <span class="math notranslate nohighlight">\(\gamma &gt; 1\)</span>. But the length contraction requires some elaboration.</p>
+<p class="sd-card-text">To be more concrete, let’s consider a rode of some fixed length. To measure the length, the measurement must be done <em>simultaneously</em> at the two ends of the rod. This constraint causes not much trouble in a rest frame, but must be taken care of in a moving frame since being simultaneous is not a Lorentz invariant property. Let <span class="math notranslate nohighlight">\(x = (t, \xbf)\)</span> and <span class="math notranslate nohighlight">\(y = (t', \ybf)\)</span> be the two endpoints of the rod in the rest frame, so that the length is <span class="math notranslate nohighlight">\(|\xbf - \ybf|\)</span> regardless of whether <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t'\)</span> are the same or not. Under the Lorentz transformation defined by <a class="reference internal" href="#equation-eq-lambda-in-3-axis">Eq.1.2.14</a>, they become</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Lambda x &amp;= (\gamma (t + v_3 x_3), x_1, x_2, \gamma(x_3 + v_3 t))  \\
+\Lambda y &amp;= (\gamma (t' + v_3 y_3), y_1, y_2, \gamma(y_3 + v_3 t'))\end{split}\]</div>
+<p class="sd-card-text">respectively. Setting the equal-time condition <span class="math notranslate nohighlight">\((\Lambda x)_0 = (\Lambda y)_0\)</span> gives <span class="math notranslate nohighlight">\(t' = t + v_3 (x_3 - y_3)\)</span>. Substituting it into <span class="math notranslate nohighlight">\((\Lambda x)_3\)</span> and <span class="math notranslate nohighlight">\((\Lambda y)_3\)</span> then gives</p>
+<div class="math notranslate nohighlight">
+\[|(\Lambda x)_3 - (\Lambda y)_3| = \gamma \left| x_3 - y_3 - v_3^2 (x_3 - y_3) \right| = \frac{|x_3 - y_3|}{\gamma} &lt; |x_3 - y_3|\]</div>
+<p class="sd-card-text">This calculation says that the length of rod is contracted in the direction of movement.</p>
+<p class="sd-card-text">It should be emphasized that such contraction of length can only be observed in a frame where the rod is moving. Imagine for example a scenario where you’re given a square box with equal sides while standing still, then after some unconscious period of time, e.g., sleeping, you wake up with the same box in hand, and you’d like to know if you’re now moving. If you happen to have heard of such contraction of length, you might try to measure the sides of the box again. If one of the sides suddenly becomes shorter, then you know not only that you’re moving, but also the direction of movement! This is of course absurd because the box is still at rest relative to you.</p>
+</div>
+</details><p>Finally, one can apply a rotation to <a class="reference internal" href="#equation-eq-lambda-in-3-axis">Eq.1.2.14</a> to get the general formula</p>
+<div class="math notranslate nohighlight" id="equation-eq-general-lambda-in-spacetime">
+<span class="eqno">(1.2.15)<a class="headerlink" href="#equation-eq-general-lambda-in-spacetime" title="Link to this equation">#</a></span>\[\Lambda_{ij} = \delta_{ij} + \frac{v_i v_j}{\vbf^2} (\gamma - 1)\]</div>
+<p>for <span class="math notranslate nohighlight">\(1 \leq i, j \leq 3\)</span>, which, together with <a class="reference internal" href="#equation-eq-lambda-boost">Eq.1.2.13</a> and <span class="math notranslate nohighlight">\({\Lambda_0}^i = {\Lambda_i}^0,\)</span> gives the general formula for <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any Lorentz transformation can be written as the composition of a boost followed by a rotation.</p>
+</div>
+</section>
+<section id="quantum-lorentz-symmetry">
+<span id="sec-quantum-lorentz-symmetry"></span><h4><span class="section-number">1.2.2.2. </span>Quantum Lorentz symmetry<a class="headerlink" href="#quantum-lorentz-symmetry" title="Link to this heading">#</a></h4>
+<p>We will quantize the Lorentz symmetry <span class="math notranslate nohighlight">\(L(\Lambda, a)\)</span> by looking for unitarity representations <span class="math notranslate nohighlight">\(U(\Lambda, a)\)</span>. As discussed in <a class="reference internal" href="#sec-continuous-symmetry"><span class="std std-ref">Continuous symmetry</span></a>, we proceed by looking for infinitesimal symmetries. First of all, let’s expand <span class="math notranslate nohighlight">\(\Lambda\)</span> as</p>
+<div class="math notranslate nohighlight" id="equation-eq-expansion-of-lambda">
+<span class="eqno">(1.2.16)<a class="headerlink" href="#equation-eq-expansion-of-lambda" title="Link to this equation">#</a></span>\[{\Lambda_{\mu}}^{\nu} = {\delta_{\mu}}^{\nu} + {\omega_{\mu}}^{\nu} + \cdots\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the Kronecker delta, and <em>not</em> a tensor. It follows from <span class="math notranslate nohighlight">\(\eta^{\mu \nu} = \eta^{\rho \kappa} {\Lambda_{\rho}}^{\mu} {\Lambda_{\kappa}}^{\nu}\)</span> that</p>
+<div class="math notranslate nohighlight" id="equation-eq-lorentz-lie-algebra-is-antisymmetric">
+<span class="eqno">(1.2.17)<a class="headerlink" href="#equation-eq-lorentz-lie-algebra-is-antisymmetric" title="Link to this equation">#</a></span>\[\begin{split}\eta^{\mu \nu} &amp;= \eta^{\rho \kappa} ({\delta_{\rho}}^{\mu} + {\omega_{\rho}}^{\mu} + \cdots) ({\delta_{\kappa}}^{\nu} + {\omega_{\kappa}}^{\nu} + \cdots) \\
+        &amp;= \eta^{\mu \nu} + \eta^{\mu \kappa} {\omega_{\kappa}}^{\nu} + \eta^{\nu \rho} {\omega_{\rho}}^{\mu} + \cdots \\
+        &amp;= \eta^{\mu \nu} + \omega^{\mu \nu} + \omega^{\nu \mu} + \cdots\end{split}\]</div>
+<p>Comparing the first order terms shows that <span class="math notranslate nohighlight">\(\omega^{\mu \nu} = -\omega^{\nu \mu}\)</span> is anti-symmetric. It is therefore more convenient to use <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span>, rather than <span class="math notranslate nohighlight">\(\omega_{\mu}^{\nu}\)</span>, as the infinitesimal parameters in the expansion of <span class="math notranslate nohighlight">\(\Lambda\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A count of free parameters shows that the inhomogeneous Lorentz symmetry has <span class="math notranslate nohighlight">\(10\)</span> degrees of freedom, <span class="math notranslate nohighlight">\(4\)</span> of which come from the translation, and the rest <span class="math notranslate nohighlight">\(6\)</span> come from the rank-<span class="math notranslate nohighlight">\(2\)</span> anti-symmetric tensor <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
+</div>
+<p>We first postulate that <span class="math notranslate nohighlight">\(U(1, 0) = 1\)</span> is the identity operator because the Lorentz transformation itself is the identity. Then we can write the power series expansion up to first order as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-u-lorentz-expansion">
+<span class="eqno">(1.2.18)<a class="headerlink" href="#equation-eq-u-lorentz-expansion" title="Link to this equation">#</a></span>\[U(1 + \omega, \epsilon) = 1 - \ifrak \epsilon^{\mu} P_{\mu} + \frac{\ifrak}{2} \omega^{\mu \nu} J_{\mu \nu} + \cdots\]</div>
+<p>Here we have inserted <span class="math notranslate nohighlight">\(\ifrak\)</span> as usual so that the unitarity of <span class="math notranslate nohighlight">\(U\)</span> implies that both <span class="math notranslate nohighlight">\(P_{\mu}\)</span> and <span class="math notranslate nohighlight">\(J_{\mu \nu}\)</span> are
+Hermitian. Moreover, since <span class="math notranslate nohighlight">\(\omega^{\mu \nu}\)</span> is anti-symmetric, we can assume the same holds for <span class="math notranslate nohighlight">\(J_{\mu \nu}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since we are expanding <span class="math notranslate nohighlight">\(U(1 + \epsilon)\)</span> which is complex linear, the operators <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(J\)</span> are also complex linear. Hence we can freely move <span class="math notranslate nohighlight">\(\ifrak\)</span> around these operators in calculations that follow. However, this will become an issue when we later consider other operators such as the space and time inversions, which can potentially be either complex linear or anti-linear. In the later case, a sign needs to be added when commuting with the multiplication by <span class="math notranslate nohighlight">\(\ifrak\)</span>.</p>
+</div>
+<p>Let’s evaluate how the expansion transformations under conjugation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}U(\Lambda, a) U(1 + \omega, \epsilon) U^{-1}(\Lambda, a)
+        &amp;= U(\Lambda, a) U(1 + \omega, \epsilon) U(\Lambda^{-1}, -\Lambda^{-1} a) \\
+        &amp;= U(\Lambda, a) U((1 + \omega) \Lambda^{-1}, \epsilon - (1 + \omega) \Lambda^{-1} a) \\
+        &amp;= U(1 + \Lambda \omega \Lambda^{-1}, \Lambda \epsilon - \Lambda \omega \Lambda^{-1} a) \\
+        &amp;= 1 - \ifrak ({\Lambda^{\rho}}_{\mu} \epsilon^{\mu} - (\Lambda \omega \Lambda^{-1})^{\rho \kappa} a_{\kappa}) P_{\rho} \
+                + \tfrac{\ifrak}{2} (\Lambda \omega \Lambda^{-1})^{\rho \kappa} J_{\rho \kappa} + \cdots \\
+        &amp;= 1 -\ifrak \epsilon^{\mu} {\Lambda^{\rho}}_{\mu} P_{\rho} + \tfrac{\ifrak}{2} (\Lambda \omega \Lambda^{-1})^{\rho \kappa} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots \\
+        &amp;= 1 -\ifrak \epsilon^{\mu} {\Lambda^{\rho}}_{\mu} P_{\rho} + \tfrac{\ifrak}{2} {\Lambda^{\rho}}_{\mu} \omega^{\mu \nu} {\Lambda^{\kappa}}_{\nu} (J_{\rho \kappa} + 2a_{\kappa} P_{\rho}) + \cdots\end{split}\]</div>
+<p>where we have used <a class="reference internal" href="#equation-eq-lambda-inverse">Eq.1.2.9</a> for <span class="math notranslate nohighlight">\(\Lambda^{-1}\)</span>. Substituting <span class="math notranslate nohighlight">\(U(1 + \omega, \epsilon)\)</span> with the expansion <a class="reference internal" href="#equation-eq-u-lorentz-expansion">Eq.1.2.18</a> and equating the coefficients of <span class="math notranslate nohighlight">\(\epsilon^{\mu}\)</span> and <span class="math notranslate nohighlight">\(\omega_{\mu \nu}\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq-p-and-j-conjugated-by-u">
+<span class="eqno">(1.2.19)<a class="headerlink" href="#equation-eq-p-and-j-conjugated-by-u" title="Link to this equation">#</a></span>\[\begin{split}U(\Lambda, a) P_{\mu} U^{-1}(\Lambda, a) &amp;= {\Lambda^{\rho}}_{\mu} P_{\rho} \\
+U(\Lambda, a) J_{\mu \nu} U^{-1}(\Lambda, a) &amp;= {\Lambda^{\rho}}_{\mu} {\Lambda^{\kappa}}_{\nu} (J_{\rho \kappa} + a_{\kappa} P_{\rho} - a_{\rho} P_{\kappa})\end{split}\]</div>
+<p>where in the second equation, we have also made the right-hand-side anti-symmetric with respect to <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span>. It’s now clear that <span class="math notranslate nohighlight">\(P\)</span> transforms like a vector and is translation invariant, while <span class="math notranslate nohighlight">\(J\)</span> transforms like a <span class="math notranslate nohighlight">\(2\)</span>-tensor only for homogeneous Lorentz transformations and is not translation invariant in general. These are of course as expected since both <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(J\)</span> are quantization of rather familiar objects, which we now spell out.</p>
+<p>We start with <span class="math notranslate nohighlight">\(P\)</span> by writing <span class="math notranslate nohighlight">\(H \coloneqq P_0\)</span> and <span class="math notranslate nohighlight">\(\Pbf \coloneqq (P_1, P_2, P_3)\)</span>. Then <span class="math notranslate nohighlight">\(H\)</span> is the energy operator, also know as the <em>Hamiltonian</em>, and <span class="math notranslate nohighlight">\(\Pbf\)</span> is the momentum <span class="math notranslate nohighlight">\(3\)</span>-vector. Similarly, let’s write <span class="math notranslate nohighlight">\(\Kbf \coloneqq (J_{01}, J_{02}, J_{03})\)</span> and <span class="math notranslate nohighlight">\(\Jbf = (J_{23}, J_{31}, J_{12})\)</span>, as the <em>boost</em> <span class="math notranslate nohighlight">\(3\)</span>-vector and the <em>angular momentum</em> <span class="math notranslate nohighlight">\(3\)</span>-vector, respectively.</p>
+<p>Now that we have named all the players (i.e., <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span>) in the game, it remains to find out their mutual commutation relations since they should form a Lie algebra of the (infinitesimal) Lorentz symmetry. This can be done by applying <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-u">Eq.1.2.19</a> to <span class="math notranslate nohighlight">\(U(\Lambda, a)\)</span> that is itself infinitesimal. More precisely, keeping up to first order terms, we have <span class="math notranslate nohighlight">\({\Lambda^{\rho}}_{\mu} = {\delta^{\rho}}_{\mu} + {\omega^{\rho}}_{\mu}\)</span> and <span class="math notranslate nohighlight">\(a_{\mu} = \epsilon_{\mu}\)</span>. It follows that <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-u">Eq.1.2.19</a>, up to first order, can be written as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left( {\delta^{\rho}}_{\mu} + {\omega^{\rho}}_{\mu} \right) P_{\rho}
+        &amp;= \left( 1 - \ifrak \epsilon^{\nu} P_{\nu} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) P_{\mu} \left( 1 + \ifrak \epsilon^{\nu} P_{\nu} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
+        &amp;= P_{\mu} - \ifrak \epsilon^{\nu} [P_{\mu}, P_{\nu}] - \tfrac{\ifrak}{2} \omega^{\rho \kappa} [P_{\mu}, J_{\rho \kappa}]\end{split}\]</div>
+<p>Equating the coefficients of <span class="math notranslate nohighlight">\(\epsilon\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span> gives the following</p>
+<div class="math notranslate nohighlight" id="equation-eq-bracket-pp-and-pj">
+<span class="eqno">(1.2.20)<a class="headerlink" href="#equation-eq-bracket-pp-and-pj" title="Link to this equation">#</a></span>\[\begin{split}[P_{\mu}, P_{\nu}] &amp;= 0  \label{eq_bracket_p4_p4} \\
+[P_{\mu}, J_{\rho \kappa}] &amp;= \ifrak (\eta_{\kappa \mu} P_{\rho} - \eta_{\rho \mu} P_{\kappa})\end{split}\]</div>
+<p>where for the second identity, we’ve also used the fact that <span class="math notranslate nohighlight">\(J_{\rho \kappa} = -J_{\kappa \rho}\)</span>.</p>
+<p>Similarly, expanding <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-u">Eq.1.2.19</a> up to first order, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}J_{\mu \nu} + \epsilon_{\nu} P_{\mu} - \epsilon_{\mu} P_{\nu} + {\omega^{\rho}}_{\mu} J_{\rho \nu} + {\omega^{\kappa}}_{\nu} J_{\mu \kappa}
+        &amp;= ({\delta^{\rho}}_{\mu} + {\omega^{\rho}}_{\mu}) ({\delta^{\kappa}}_{\nu} + {\omega^{\kappa}}_{\nu}) (J_{\rho \kappa} + \epsilon_{\kappa} P_{\rho} - \epsilon_{\rho} P_{\kappa}) \\
+        &amp;= \left( 1 - \ifrak \epsilon^{\rho} P_{\rho} + \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) J_{\mu \nu} \left( 1 + \ifrak \epsilon^{\rho} P_{\rho} - \tfrac{\ifrak}{2} \omega^{\rho \kappa} J_{\rho \kappa} \right) \\
+        &amp;= J_{\mu \nu} - \ifrak \epsilon^{\rho} [P_{\rho}, J_{\mu \nu}] + \tfrac{\ifrak}{2} \omega^{\rho \kappa} [J_{\rho \kappa}, J_{\mu \nu}]\end{split}\]</div>
+<p>Equating the coefficients of <span class="math notranslate nohighlight">\(\epsilon\)</span> reproduces <a class="reference internal" href="#equation-eq-bracket-pp-and-pj">Eq.1.2.20</a>, but equating the coefficients of <span class="math notranslate nohighlight">\(\omega\)</span> gives the following additional</p>
+<div class="math notranslate nohighlight" id="equation-eq-bracket-j4-j4">
+<span class="eqno">(1.2.21)<a class="headerlink" href="#equation-eq-bracket-j4-j4" title="Link to this equation">#</a></span>\[[J_{\rho \kappa}, J_{\mu \nu}] = \ifrak (\eta_{\rho \nu} J_{\mu \kappa} - \eta_{\rho \mu} J_{\nu \kappa} - \eta_{\kappa \mu} J_{\rho \nu} - \eta_{\kappa \nu} J_{\rho \mu})\]</div>
+<p>Now that we have all the commutator relations, let’s reorganize <a class="reference internal" href="#equation-eq-bracket-pp-and-pj">Eq.1.2.20</a> and <a class="reference internal" href="#equation-eq-bracket-j4-j4">Eq.1.2.21</a> in terms of <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-poincare-algebra">
+<span class="eqno">(1.2.22)<a class="headerlink" href="#equation-eq-poincare-algebra" title="Link to this equation">#</a></span>\[\begin{split}[H, P_i] &amp;= 0 \\
+[H, J_i] &amp;= 0 \\
+[H, K_i] &amp;= \ifrak P_i \\
+[P_i, P_j] &amp;= 0 \\
+[P_i, J_j] &amp;= \ifrak \epsilon_{ijk} P_k \\
+[P_i, K_j] &amp;= \ifrak \delta_{ij} H \\
+[J_i, J_j] &amp;= \ifrak \epsilon_{ijk} J_k \\
+[J_i, K_j] &amp;= \ifrak \epsilon_{ijk} K_k \\
+[K_i, K_j] &amp;= -\ifrak \epsilon_{ijk} J_k\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> is totally anti-symmetric with respect to permutations of indexes and satisfies <span class="math notranslate nohighlight">\(\epsilon_{123} = 1\)</span>. <a class="footnote-reference brackets" href="#tedious-calc-of-commutations" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Lie algebra generated by <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> with commutation relations <a class="reference internal" href="#equation-eq-poincare-algebra">Eq.1.2.22</a> is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9_group">Poincaré algebra</a>.</p>
+</div>
+<p>Since the time evolution of a physical system is dictated by the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span>, quantities that commute with <span class="math notranslate nohighlight">\(H\)</span> are conserved. In particular we see from <a class="reference internal" href="#equation-eq-poincare-algebra">Eq.1.2.22</a> that both momentum <span class="math notranslate nohighlight">\(\Pbf\)</span> and angular momentum <span class="math notranslate nohighlight">\(\Jbf\)</span> are conserved. Boosts <span class="math notranslate nohighlight">\(\Kbf\)</span>, on the other hand, are <em>not</em> conserved, and therefore cannot be used to label (stable) physical states. Moreover, momenta (which generate translations) commute with each other, while angular momenta (which generate rotation) do not, indeed, they furnish an infinitesimal representation of the <span class="math notranslate nohighlight">\(3\)</span>-rotation group <span class="math notranslate nohighlight">\(SO(3)\)</span>. This should be all consistent with our intuition.</p>
+</section>
+</section>
+</section>
+<section id="one-particle-states">
+<span id="sec-one-particle-states"></span><h2><span class="section-number">1.3. </span>One-Particle States<a class="headerlink" href="#one-particle-states" title="Link to this heading">#</a></h2>
+<p>One neat application of our knowledge about Lorentz symmetry is to classify (free) one-particle states according to their transformation laws under (inhomogeneous) Lorentz transformations. Throughout this section, the Lorentz transformations will be assumed to be proper orthochronous, i.e., <span class="math notranslate nohighlight">\(\op{det}(\Lambda) = 1\)</span> and <span class="math notranslate nohighlight">\({\Lambda_0}^0 \geq 1\)</span>.</p>
+<p>In order to do so, we need some labels to identify states, which are typically conserved quantities. According to the commutation relations between <span class="math notranslate nohighlight">\(H, \Pbf\)</span> and <span class="math notranslate nohighlight">\(\Jbf\)</span> obtained in the previous section, we see that <span class="math notranslate nohighlight">\(p = (H, \Pbf)\)</span> consists of mutually commutative conserved components, but not <span class="math notranslate nohighlight">\(\Jbf\)</span>. Hence we can write our one-particle states as <span class="math notranslate nohighlight">\(\Psi_{p, \sigma}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[P_{\mu} \Psi_{p, \sigma} = p_{\mu}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> are additional labels such as spin components that we will later specify.</p>
+<section id="reduction-to-the-little-group">
+<h3><span class="section-number">1.3.1. </span>Reduction to the little group<a class="headerlink" href="#reduction-to-the-little-group" title="Link to this heading">#</a></h3>
+<p>Let’s first consider translations <span class="math notranslate nohighlight">\(U(1, a)\)</span>. Since translations form an abelian group, it follows from <a class="reference internal" href="#equation-eq-additive-symmetry">Eq.1.2.4</a> that</p>
+<div class="math notranslate nohighlight" id="equation-eq-translation-formula-for-particle-state">
+<span class="eqno">(1.3.1)<a class="headerlink" href="#equation-eq-translation-formula-for-particle-state" title="Link to this equation">#</a></span>\[U(1, a) \Psi_{p, \sigma} = \exp(-\ifrak a^{\mu} P_{\mu}) \Psi_{p, \sigma} = \exp(-\ifrak a^{\mu} p_{\mu}) \Psi_{p, \sigma}\]</div>
+<p>where the minus sign comes from our choice of expansion <a class="reference internal" href="#equation-eq-u-lorentz-expansion">Eq.1.2.18</a>. Hence it remains to consider the action of homogeneous Lorentz transformations. For the convenience of notation, let’s write <span class="math notranslate nohighlight">\(U(\Lambda) \coloneqq U(\Lambda, 0)\)</span>. We would first like to know how <span class="math notranslate nohighlight">\(U(\Lambda)\)</span> affects the <span class="math notranslate nohighlight">\(4\)</span>-momentum. It follows from the following calculation (using <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-u">Eq.1.2.19</a>)</p>
+<div class="math notranslate nohighlight">
+\[P_{\mu} U(\Lambda) \Psi_{p, \sigma}
+        = U(\Lambda) (U^{-1} (\Lambda) P_{\mu} U(\Lambda)) \Psi_{p, \sigma}
+        = U(\Lambda) {\Lambda_{\mu}}^{\nu} P_{\nu} \Psi_{p, \sigma}
+        = \left( {\Lambda_{\mu}}^{\nu} p_{\nu} \right) U(\Lambda) \Psi_{p, \sigma}\]</div>
+<p>that <span class="math notranslate nohighlight">\(U(\Lambda) \Psi_{p, \sigma}\)</span> has <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(\Lambda p\)</span>. Therefore we can write</p>
+<div class="math notranslate nohighlight" id="equation-eq-lorentz-acts-on-p-and-sigma">
+<span class="eqno">(1.3.2)<a class="headerlink" href="#equation-eq-lorentz-acts-on-p-and-sigma" title="Link to this equation">#</a></span>\[U(\Lambda) \Psi_{p, \sigma} = C_{\sigma \sigma'} (\Lambda, p) \Psi_{\Lambda p, \sigma'}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> furnishes a representation of <span class="math notranslate nohighlight">\(\Lambda\)</span> and <span class="math notranslate nohighlight">\(p\)</span> under straightforward transformation rules, and an implicit summation over <span class="math notranslate nohighlight">\(\sigma'\)</span> is assumed although it’s not a <span class="math notranslate nohighlight">\(4\)</span>-index.</p>
+<p>Next we’d like to remove the dependency of <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> on <span class="math notranslate nohighlight">\(p\)</span> since, after all, it is <span class="math notranslate nohighlight">\(\Lambda\)</span> that carries the symmetry. We can achieve this by noticing that <span class="math notranslate nohighlight">\(U(\Lambda)\)</span> acts on the <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span> transitively. The <span class="math notranslate nohighlight">\(\Lambda\)</span>-orbits of <span class="math notranslate nohighlight">\(p\)</span>, in turn, are uniquely determined by the value of <span class="math notranslate nohighlight">\(p^2\)</span>, and in the case of <span class="math notranslate nohighlight">\(p^2 \leq 0\)</span>, also by the sign of <span class="math notranslate nohighlight">\(p_0\)</span>. In light of <a class="reference internal" href="#equation-eq-four-momentum-mass-identity">Eq.1.2.6</a>, we can pick a convenient representative <span class="math notranslate nohighlight">\(k\)</span> for each case as follows</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Case</p></th>
+<th class="head"><p>Standard <span class="math notranslate nohighlight">\(k\)</span></p></th>
+<th class="head"><p>Physical</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p^2 = -M^2 &lt; 0,~p_0 &gt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((M, 0, 0, 0)\)</span></p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p^2 = -M^2 &lt; 0,~p_0 &lt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((-M, 0, 0, 0)\)</span></p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p^2 = 0,~p_0 &gt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((1, 0, 0, 1)\)</span></p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p^2 = 0,~p_0 = 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((0, 0, 0, 0)\)</span></p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p^2 = 0,~p_0 &lt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((-1, 0, 0, 1)\)</span></p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p^2 = N^2 &gt; 0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((0, N, 0, 0)\)</span></p></td>
+<td><p>No</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It turns out that only three of these cases are realized physically, and they correspond to the cases of a massive particle of mass <span class="math notranslate nohighlight">\(M\)</span>, a massless particle and the vacuum, respectively. Since there is not much to say about the vacuum state, there are only two cases that we need to investigate.</p>
+<p>With the choices of the standard <span class="math notranslate nohighlight">\(k\)</span> in hand, we need to make one more set of choices. Namely, we will choose for each <span class="math notranslate nohighlight">\(p\)</span> a standard Lorentz transformation <span class="math notranslate nohighlight">\(L(p)\)</span> such that <span class="math notranslate nohighlight">\(L(p) k = p\)</span>. Such <span class="math notranslate nohighlight">\(L(p)\)</span> for a massive particle has been chosen in <a class="reference internal" href="#equation-eq-general-lambda-in-spacetime">Eq.1.2.15</a>, albeit in spacetime coordinates, and we’ll also handle the case of massless particles later. Once these choices have been made, we can <em>define</em></p>
+<div class="math notranslate nohighlight" id="equation-eq-def-of-one-particle-psi">
+<span class="eqno">(1.3.3)<a class="headerlink" href="#equation-eq-def-of-one-particle-psi" title="Link to this equation">#</a></span>\[\Psi_{p, \sigma} \coloneqq N(p) U(L(p)) \Psi_{k, \sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N(p)\)</span> is a normalization factor to be determined later. In this way, we’ve also determined how <span class="math notranslate nohighlight">\(\sigma\)</span> depends on <span class="math notranslate nohighlight">\(p\)</span>. Applying <a class="reference internal" href="#equation-eq-lorentz-acts-on-p-and-sigma">Eq.1.3.2</a> to <a class="reference internal" href="#equation-eq-def-of-one-particle-psi">Eq.1.3.3</a> we can refactor the terms as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-def-of-one-particle-psi-refactored">
+<span class="eqno">(1.3.4)<a class="headerlink" href="#equation-eq-def-of-one-particle-psi-refactored" title="Link to this equation">#</a></span>\[\begin{split}U(\Lambda) \Psi_{p, \sigma}
+        &amp;= N(p) U(\Lambda) U(L(p)) \Psi_{k, \sigma} \\
+        &amp;= N(p) U(L(\Lambda p)) U(L(\Lambda p)^{-1} \Lambda L(p)) \Psi_{k, \sigma}\end{split}\]</div>
+<p>so that <span class="math notranslate nohighlight">\(L(\Lambda p)^{-1} \Lambda L(p)\)</span> maps <span class="math notranslate nohighlight">\(k\)</span> to itself, and hence <span class="math notranslate nohighlight">\(U(L(\Lambda p)^{-1} \Lambda L(p))\)</span> acts solely on <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
+<p>At this point, we have reduced the problem to the classification of representations of the so-called <em>little group</em> defined as the subgroup of (proper orthochronous) Lorentz transformations <span class="math notranslate nohighlight">\(W\)</span> that fixes <span class="math notranslate nohighlight">\(k\)</span>, i.e., <span class="math notranslate nohighlight">\({W_{\mu}}^{\nu} k_{\nu} = k_{\mu}\)</span>. Element in the little group is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Wigner_rotation">Wigner rotation</a> (and hence <span class="math notranslate nohighlight">\(W\)</span>). More precisely, the task now is to find (unitary) representations <span class="math notranslate nohighlight">\(D(W)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\sum_{\sigma'} D_{\sigma \sigma'}(W_1) D_{\sigma' \sigma''}(W_2) \Psi_{k, \sigma''} = D_{\sigma \sigma''}(W_1 W_2) \Psi_{k, \sigma''}\]</div>
+<p>Once this is done, we can define</p>
+<div class="math notranslate nohighlight" id="equation-eq-d-repr-of-little-group">
+<span class="eqno">(1.3.5)<a class="headerlink" href="#equation-eq-d-repr-of-little-group" title="Link to this equation">#</a></span>\[U(W) \Psi_{k, \sigma} \coloneqq \sum_{\sigma'} D_{\sigma' \sigma}(W) \Psi_{k, \sigma'},  \quad\text{where}~~
+        W(\Lambda, p) \coloneqq L(\Lambda p)^{-1} \Lambda L(p)\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Validation of <a class="reference internal" href="#equation-eq-d-repr-of-little-group">Eq.1.3.5</a></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">One can verify that <a class="reference internal" href="#equation-eq-d-repr-of-little-group">Eq.1.3.5</a> indeed respects the group law as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}U(W_2) U(W_1) \Psi_{k, \sigma}
+        &amp;= U(W_2) \sum_{\sigma'} D_{\sigma' \sigma}(W_1) \Psi_{k, \sigma'} \\
+        &amp;= \sum_{\sigma' \sigma''} D_{\sigma' \sigma}(W_1) D_{\sigma'' \sigma'}(W_2) \Psi_{k, \sigma''} \\
+        &amp;= \sum_{\sigma''} D_{\sigma'' \sigma}(W_2 W_1) \Psi_{k, \sigma''}\end{split}\]</div>
+</div>
+</details><p>Now we can rewrite <a class="reference internal" href="#equation-eq-def-of-one-particle-psi-refactored">Eq.1.3.4</a> (using <a class="reference internal" href="#equation-eq-def-of-one-particle-psi">Eq.1.3.3</a> and <a class="reference internal" href="#equation-eq-d-repr-of-little-group">Eq.1.3.5</a>) as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-little-group-acts-on-p-and-sigma">
+<span class="eqno">(1.3.6)<a class="headerlink" href="#equation-eq-little-group-acts-on-p-and-sigma" title="Link to this equation">#</a></span>\[\begin{split}U(\Lambda) \Psi_{p, \sigma}
+        &amp;= N(p) U(L(\Lambda p)) U(W(\Lambda, p)) \Psi_{k, \sigma} \\
+        &amp;= N(p) \sum_{\sigma'} D_{\sigma' \sigma}(W(\Lambda, p)) U(L(\Lambda p)) \Psi_{k, \sigma'} \\
+        &amp;= \frac{N(p)}{N(\Lambda p)} \sum_{\sigma'} D_{\sigma' \sigma}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}\end{split}\]</div>
+<p>which gives the sought-after coefficients <span class="math notranslate nohighlight">\(C_{\sigma \sigma'}\)</span> in <a class="reference internal" href="#equation-eq-lorentz-acts-on-p-and-sigma">Eq.1.3.2</a>.</p>
+<p>It remains now, as far as the general discussion is concerned, to settle the normalization factor <span class="math notranslate nohighlight">\(N(p)\)</span>. Indeed, it’d not have been needed at all if we’d like <span class="math notranslate nohighlight">\(\Psi_{p, \sigma}\)</span> be to orthonormal in the sense that</p>
+<div class="math notranslate nohighlight" id="equation-eq-psi-p4-sigma-orthonormal">
+<span class="eqno">(1.3.7)<a class="headerlink" href="#equation-eq-psi-p4-sigma-orthonormal" title="Link to this equation">#</a></span>\[(\Psi_{p', \sigma'}, \Psi_{p, \sigma}) = \delta_{\sigma' \sigma} \delta(p' - p)\]</div>
+<p>where the first delta is the Kronecker delta (for discrete indexes) and the second is the Dirac delta (for continuous indexes), since they are eigenvectors of the (Hermitian) operator <span class="math notranslate nohighlight">\(P\)</span>. All we need is <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}\)</span> being unitary as is obvious from <a class="reference internal" href="#equation-eq-little-group-acts-on-p-and-sigma">Eq.1.3.6</a>.</p>
+<p>However, the Dirac delta in <a class="reference internal" href="#equation-eq-psi-p4-sigma-orthonormal">Eq.1.3.7</a> is tricky to use since <span class="math notranslate nohighlight">\(p\)</span> is constrained to the so-called <em>mass shell</em>, i.e., <span class="math notranslate nohighlight">\(p_0 &gt; 0\)</span> together with <span class="math notranslate nohighlight">\(p^2 = -M^2\)</span> in the massive case and <span class="math notranslate nohighlight">\(p^2 = 0\)</span> in the massless case, respectively. Hence the actual normalization we’d like to impose on the one-particle states is, instead of <a class="reference internal" href="#equation-eq-psi-p4-sigma-orthonormal">Eq.1.3.7</a>, the following</p>
+<div class="math notranslate nohighlight" id="equation-eq-psi-p3-sigma-orthonormal">
+<span class="eqno">(1.3.8)<a class="headerlink" href="#equation-eq-psi-p3-sigma-orthonormal" title="Link to this equation">#</a></span>\[(\Psi_{p', \sigma'}, \Psi_{p, \sigma}) = \delta_{\sigma' \sigma} \delta(\pbf' - \pbf)\]</div>
+<p>In fact, the problem eventually boils down to how to define the <span class="math notranslate nohighlight">\(3\)</span>-momentum space Dirac delta in a Lorentz-invariant manner.</p>
+<p>Since <span class="math notranslate nohighlight">\(\Psi_{p, \sigma}\)</span> can be derived from <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> by <a class="reference internal" href="#equation-eq-def-of-one-particle-psi">Eq.1.3.3</a>, we can first ask <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> to be orthonormal in the sense of <a class="reference internal" href="#equation-eq-psi-p3-sigma-orthonormal">Eq.1.3.8</a>, where the Dirac delta plays no role, and then figure out how integration works on the mass shell (because Dirac delta is defined by integrals against test functions). As far as the mass shell integration is concerned, we can temporarily unify the massive and massless cases by allowing <span class="math notranslate nohighlight">\(M \geq 0\)</span>. Consider a general mass shell integral of an arbitrary test function <span class="math notranslate nohighlight">\(f(p)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int d^4 p ~\delta(p^2 + M^2) \theta(p_0) f(p)
+        &amp;= \int d^3\pbf dp_0 ~\delta(p_0^2 - \pbf^2 - M^2) \theta(p_0) f(p_0, \pbf) \\
+        &amp;= \int d^3\pbf ~\frac{f\left( \sqrt{\pbf^2 + M^2}, \pbf \right)}{2 \sqrt{\pbf^2 + M^2}}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta(p_0)\)</span> is the step function defined to be <span class="math notranslate nohighlight">\(0\)</span> if <span class="math notranslate nohighlight">\(p_0 \leq 0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> if <span class="math notranslate nohighlight">\(p_0 &gt; 1\)</span>. It follows that the Lorentz-invariant volume element in the <span class="math notranslate nohighlight">\(3\)</span>-momentum space is</p>
+<div class="math notranslate nohighlight" id="equation-eq-lorentz-invariant-3-momentum-volume-element">
+<span class="eqno">(1.3.9)<a class="headerlink" href="#equation-eq-lorentz-invariant-3-momentum-volume-element" title="Link to this equation">#</a></span>\[\frac{d^3\pbf}{\sqrt{\pbf^2 + M^2}}\]</div>
+<p>We can use it to find the Lorentz-invariant Dirac delta (marked in blue) as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(\pbf') &amp;\eqqcolon \int d^3\pbf ~\delta(\pbf' - \pbf) f(\pbf) \\
+        &amp;= \int \frac{d^3\pbf}{\sqrt{\pbf^2 + M^2}} \blue{p_0 \delta(\pbf' - \pbf)} f(\pbf)\end{split}\]</div>
+<p>It follows from Lorentz invariance that <span class="math notranslate nohighlight">\(p_0 \delta(\pbf' - \pbf) = k_0 \delta(\kbf' - \kbf)\)</span>. Hence we can finally establish <a class="reference internal" href="#equation-eq-psi-p3-sigma-orthonormal">Eq.1.3.8</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}(\Psi_{p', \sigma'}, \Psi_{p, \sigma})
+        &amp;= N(p) N(p')^{\ast} (U(L(p')) \Psi_{k', \sigma'}, U(L(p)) \Psi_{k, \sigma}) \\
+        &amp;= |N(p)|^2 \delta_{\sigma' \sigma} \delta(\kbf' - \kbf) \\
+        &amp;= \delta_{\sigma' \sigma} \delta(\pbf' - \pbf)\end{split}\]</div>
+<p>if we define <span class="math notranslate nohighlight">\(N(p) = \sqrt{k_0 / p_0}\)</span>.</p>
+<p>Putting everything together, we’ve obtained the following grand formula for the Lorentz transformation law</p>
+<div class="math notranslate nohighlight" id="equation-eq-lorentz-transformation-formula-for-particle-state">
+<span class="eqno">(1.3.10)<a class="headerlink" href="#equation-eq-lorentz-transformation-formula-for-particle-state" title="Link to this equation">#</a></span>\[U(\Lambda) \Psi_{p, \sigma} = \sqrt{\frac{(\Lambda p)_0}{p_0}} \sum_{\sigma'} D_{\sigma' \sigma}(W(\Lambda, p)) \Psi_{\Lambda p, \sigma'}\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_{\sigma' \sigma}\)</span> is a unitary representation of the little group, and <span class="math notranslate nohighlight">\(W(\Lambda, p)\)</span> is defined by <a class="reference internal" href="#equation-eq-d-repr-of-little-group">Eq.1.3.5</a>.</p>
+</section>
+<section id="massive-particle-states">
+<h3><span class="section-number">1.3.2. </span>Massive particle states<a class="headerlink" href="#massive-particle-states" title="Link to this heading">#</a></h3>
+<p>Recall the standard <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(k = (M, 0, 0, 0)\)</span> in this case. Obviously the little group here is nothing but the <span class="math notranslate nohighlight">\(3\)</span>-rotation group <span class="math notranslate nohighlight">\(SO(3)\)</span>. We can work out <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}(\Rcal)\)</span> by a rotation <span class="math notranslate nohighlight">\(\Rcal \in SO(3)\)</span> up to first order as follows.</p>
+<p>First write <span class="math notranslate nohighlight">\(\Rcal^{ij} = \delta^{ij} + \Theta^{ij}\)</span> such that <span class="math notranslate nohighlight">\(\Theta\)</span> is anti-symmetric. Then expand <span class="math notranslate nohighlight">\(D_{\sigma \sigma'} (\Rcal)\)</span> similar to <a class="reference internal" href="#equation-eq-u-lorentz-expansion">Eq.1.2.18</a> up to first order as follows</p>
+<div class="math notranslate nohighlight">
+\[D_{\sigma \sigma'} (\Rcal) = \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} (J_{ij})_{\sigma \sigma'}\]</div>
+<p>where <span class="math notranslate nohighlight">\(J_{ij}\)</span> is a collection of Hermitian operators that satisfy <span class="math notranslate nohighlight">\(J_{ij} = -J_{ji}\)</span> and the commutation relations <a class="reference internal" href="#equation-eq-poincare-algebra">Eq.1.2.22</a>. It turns out that there exists an infinite number of such unitary representations indexed by nonnegative half-integers <span class="math notranslate nohighlight">\(\jfrak = 0, \tfrac{1}{2}, 1, \tfrac{3}{2}, \cdots\)</span>, each of which has dimension <span class="math notranslate nohighlight">\(2\jfrak + 1\)</span>. Choosing the <span class="math notranslate nohighlight">\(3\)</span>-axis as the preferred axis of (definite) spin, we can summarize the result as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-representation-rotation-first-order">
+<span class="eqno">(1.3.11)<a class="headerlink" href="#equation-eq-representation-rotation-first-order" title="Link to this equation">#</a></span>\[D^{(\jfrak)}_{\sigma \sigma'} (\Rcal) = \delta_{\sigma \sigma'} + \tfrac{\ifrak}{2} \Theta^{ij} \left( J^{(\jfrak)}_{ij} \right)_{\sigma \sigma'}\]</div>
+<p>where <span class="math notranslate nohighlight">\(J^{\jfrak}_{ij}\)</span> satisfy the following commutation relations</p>
+<div class="math notranslate nohighlight" id="equation-eq-rotation-j-matrix">
+<span class="eqno">(1.3.12)<a class="headerlink" href="#equation-eq-rotation-j-matrix" title="Link to this equation">#</a></span>\[\begin{split}\left( J^{(\jfrak)}_{23} \pm \ifrak J^{(\jfrak)}_{31} \right)_{\sigma \sigma'}
+        \equiv \left( J^{(\jfrak)}_1 \pm \ifrak J^{(\jfrak)}_2 \right)_{\sigma \sigma'}
+        &amp;= \delta_{\sigma \pm 1, \sigma'} \sqrt{(\jfrak \mp \sigma)(\jfrak \pm \sigma + 1)} \\
+\left( J^{(\jfrak)}_{12} \right)_{\sigma \sigma'}
+        \equiv \left( J^{(\jfrak)}_3 \right)_{\sigma \sigma'}
+        &amp;= \sigma \delta_{\sigma \sigma'}  \label{eq_j3_matrix}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma, \sigma'\)</span> run through the values <span class="math notranslate nohighlight">\(-\jfrak, -\jfrak + 1, \cdots, \jfrak - 1, \jfrak\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="dropdown-repr-of-angular-momenta">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Representations of angular momenta</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Recall from <a class="reference internal" href="#equation-eq-poincare-algebra">Eq.1.2.22</a> that the (quantum) angular momenta vector <span class="math notranslate nohighlight">\(\Jbf\)</span> satisfy the commutation relations <span class="math notranslate nohighlight">\([J_i, J_j] = \ifrak \epsilon_{ijk} J_k\)</span>. Hence they cannot be simultaneously diagonalized. It’s then a convention to use the angular momentum along the <span class="math notranslate nohighlight">\(3\)</span>-axis to label the spin. The following two identities are straightforward but important</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}[\Jbf^2, J_i] &amp;= 0, ~\forall i = 1, 2, 3 \\
+[J_3, J_1 \pm \ifrak J_2] &amp;= \pm (J_1 \pm \ifrak J_2)\end{split}\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(\Jbf^2 = J_1^2 + J_2^2 + J_3^2\)</span> as usual.</p>
+<p class="sd-card-text">Now if <span class="math notranslate nohighlight">\(\Psi_{\sigma}\)</span> is an eigenstate of <span class="math notranslate nohighlight">\(J_3\)</span> with eigenvalue <span class="math notranslate nohighlight">\(\sigma\)</span>, then</p>
+<div class="math notranslate nohighlight" id="equation-eq-j1-j2-raises-or-lowers-state">
+<span class="eqno">(1.3.13)<a class="headerlink" href="#equation-eq-j1-j2-raises-or-lowers-state" title="Link to this equation">#</a></span>\[J_3 (J_1 \pm \ifrak J_2) \Psi_{\sigma} = [J_3, J_1 \pm \ifrak J_2] \Psi_{\sigma} + (J_1 \pm \ifrak J_2) J_3 \Psi_{\sigma} = (\sigma \pm 1) \Psi_{\sigma}\]</div>
+<p class="sd-card-text">In other words, applying <span class="math notranslate nohighlight">\(J_1 \pm \ifrak J_2\)</span> to any eigenstate of <span class="math notranslate nohighlight">\(J_3\)</span> raises or lowers the eigenvalue by one, and henceforth they are called <em>raising</em> and <em>lowering</em> operators, respectively. Moreover, since <span class="math notranslate nohighlight">\(\Jbf^2\)</span> commutes with <span class="math notranslate nohighlight">\(J_3\)</span>, we may assume that <span class="math notranslate nohighlight">\(\Psi_{\sigma}\)</span> is also an eigenstate of <span class="math notranslate nohighlight">\(\Jbf^2\)</span>, and since <span class="math notranslate nohighlight">\(\Jbf^2\)</span> also commutes with <span class="math notranslate nohighlight">\(J_1 \pm \ifrak J_2\)</span>, the whole series of <span class="math notranslate nohighlight">\(J_3\)</span>-eigenstates obtained by applying the raising/lowering operators have the same <span class="math notranslate nohighlight">\(\Jbf^2\)</span>-eigenvalue.</p>
+<p class="sd-card-text">We’ll from now on focus on eigenstates with a fixed <span class="math notranslate nohighlight">\(\Jbf^2\)</span>-eigenvalue. Moreover we’d like the eigenvalues of <span class="math notranslate nohighlight">\(J_3\)</span> to be bounded, so both the raising and the lowering operations must stop after finite steps. Let <span class="math notranslate nohighlight">\(\Psi_{\jfrak}\)</span> be the <span class="math notranslate nohighlight">\(J_3\)</span>-eigenstate with the highest eigenvalue (if there are more than one, the representation is reducible). By repeatedly applying the lowering operator to <span class="math notranslate nohighlight">\(\Psi_{\jfrak}\)</span>, we’ll eventually reach the eigenstate <span class="math notranslate nohighlight">\(\Psi_{\jfrak'}\)</span> with the lowest eigenvalue. Since the lowering operator decreases the eigenvalue by one, we know that <span class="math notranslate nohighlight">\(\jfrak - \jfrak'\)</span> must be an integer.</p>
+<p class="sd-card-text">Consider the following two operators</p>
+<div class="math notranslate nohighlight" id="equation-eq-j1-j2-mixed-product">
+<span class="eqno">(1.3.14)<a class="headerlink" href="#equation-eq-j1-j2-mixed-product" title="Link to this equation">#</a></span>\[\begin{split}(J_1 - \ifrak J_2) (J_1 + \ifrak J_2) &amp;= J_1^2 + J_2^2 + \ifrak [J_1, J_2] = \Jbf^2 - J_3^2 - J_3 \\
+(J_1 + \ifrak J_2) (J_1 - \ifrak J_2) &amp;= J_1^2 + J_2^2 - \ifrak [J_1, J_2] = \Jbf^2 - J_3^2 + J_3\end{split}\]</div>
+<p class="sd-card-text">Note that the first operator annihilates <span class="math notranslate nohighlight">\(\Psi_{\jfrak}\)</span> and the second operator annihilates <span class="math notranslate nohighlight">\(\Psi_{\jfrak'}\)</span> by assumption, which, together with the fact that <span class="math notranslate nohighlight">\(\Jbf^2 \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'}\)</span>, implies</p>
+<div class="math notranslate nohighlight" id="equation-eq-angular-momentum-squared-eigenvalue">
+<span class="eqno">(1.3.15)<a class="headerlink" href="#equation-eq-angular-momentum-squared-eigenvalue" title="Link to this equation">#</a></span>\[\Jbf^2 \Psi_{\jfrak} = (\jfrak^2 + \jfrak) \Psi_{\jfrak} = ((\jfrak')^2 - \jfrak') \Psi_{\jfrak} = \Jbf^2 \Psi_{\jfrak'} \implies \jfrak (\jfrak + 1) = \jfrak' (\jfrak' - 1)\]</div>
+<p class="sd-card-text">The equation has two potential solutions: either <span class="math notranslate nohighlight">\(\jfrak' = \jfrak + 1\)</span> or <span class="math notranslate nohighlight">\(\jfrak = -\jfrak'\)</span>. The first option violates the maximality of <span class="math notranslate nohighlight">\(\jfrak\)</span>, and so we must accept the second option. Since we also know <span class="math notranslate nohighlight">\(\jfrak - \jfrak'\)</span> must be integral, we conclude that <span class="math notranslate nohighlight">\(\jfrak\)</span> is itself a half-integer.</p>
+<p class="sd-card-text">As a piece of notation, we’ll from now on write <span class="math notranslate nohighlight">\(\Psi^{\jfrak}_{\sigma}\)</span> for the eigenstate of both <span class="math notranslate nohighlight">\(\Jbf^2\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-eq-3j-square-eigenstate">
+<span class="eqno">(1.3.16)<a class="headerlink" href="#equation-eq-3j-square-eigenstate" title="Link to this equation">#</a></span>\[\begin{split}\Jbf^2 \Psi^{\jfrak}_{\sigma} &amp;= \jfrak (\jfrak + 1) \Psi^{\jfrak}_{\sigma} \\
+J_3 \Psi^{\jfrak}_{\sigma} &amp;= \sigma \Psi^{\jfrak}_{\sigma}\end{split}\]</div>
+<p class="sd-card-text">We’ll also write <span class="math notranslate nohighlight">\(J_i^{(\jfrak)} \coloneqq J_i\)</span> to explicitly indicate the dependency on <span class="math notranslate nohighlight">\(\jfrak\)</span>.</p>
+<p class="sd-card-text">It remains to settle the constant term on the right-hand-side of <a class="reference internal" href="#equation-eq-rotation-j-matrix">Eq.1.3.12</a>. By <a class="reference internal" href="#equation-eq-j1-j2-raises-or-lowers-state">Eq.1.3.13</a> we can assume</p>
+<div class="math notranslate nohighlight">
+\[\left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma} = \alpha_{\pm}(\jfrak, \sigma) \Psi^{\jfrak}_{\sigma \pm 1}\]</div>
+<p class="sd-card-text">Applying <a class="reference internal" href="#equation-eq-j1-j2-mixed-product">Eq.1.3.14</a> to <span class="math notranslate nohighlight">\(\Psi^{\jfrak}_{\sigma}\)</span> then implies</p>
+<div class="math notranslate nohighlight">
+\[\alpha_{\mp} (\jfrak, \sigma \pm 1) \alpha_{\pm} (\jfrak, \sigma) = \jfrak^2 + \jfrak - \sigma^2 \mp \sigma\]</div>
+<p class="sd-card-text">Now we use the fact that <span class="math notranslate nohighlight">\(J^{(\jfrak)}_i, i = 1, 2, 3\)</span>, are Hermitian operators to calculate</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}|\alpha_{\pm} (\jfrak, \sigma)|^2 (\Psi^{\jfrak}_{\sigma}, \Psi^{\jfrak}_{\sigma})
+        &amp;= \left( \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma}, \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma} \right) \\
+        &amp;= \left( \Psi^{\jfrak}_{\sigma}, \left( J_1^{(\jfrak)} \mp \ifrak J_2^{(\jfrak)} \right) \left( J_1^{(\jfrak)} \pm \ifrak J_2^{(\jfrak)} \right) \Psi^{\jfrak}_{\sigma} \right) \\
+        &amp;= (\jfrak^2 + \jfrak - \sigma^2 \mp \sigma) (\Psi^{\jfrak}_{\sigma}, \Psi^{\jfrak}_{\sigma})\end{split}\]</div>
+<p class="sd-card-text">It follows that, up to a choice of phase, <span class="math notranslate nohighlight">\(\alpha_{\pm} (\jfrak, \sigma) = \sqrt{\jfrak^2 + \jfrak - \sigma^2 \mp \sigma} = \sqrt{(j \mp \sigma)(j \pm \sigma + 1)}\)</span>, which confirms <a class="reference internal" href="#equation-eq-rotation-j-matrix">Eq.1.3.12</a>.</p>
+</div>
+</details><p>We end the discussion about massive particle states by working out the little group elements <span class="math notranslate nohighlight">\(W(\Lambda, p)\)</span> defined by <a class="reference internal" href="#equation-eq-d-repr-of-little-group">Eq.1.3.5</a>. To this end, it suffices to work out the standard <span class="math notranslate nohighlight">\(L(p)\)</span> such that <span class="math notranslate nohighlight">\(L(p) k = p\)</span>, where <span class="math notranslate nohighlight">\(k = (M, 0, 0, 0)\)</span>. We have already worked out such a transformation in <a class="reference internal" href="#equation-eq-lambda-boost">Eq.1.2.13</a> and <a class="reference internal" href="#equation-eq-general-lambda-in-spacetime">Eq.1.2.15</a> in spacetime coordinates, so we only need to translate it into <span class="math notranslate nohighlight">\(4\)</span>-momentum coordinates.</p>
+<p>Using <a class="reference internal" href="#equation-eq-p-from-v">Eq.1.2.7</a>, we can rewrite <span class="math notranslate nohighlight">\(\gamma\)</span> defined by <a class="reference internal" href="#equation-eq-def-gamma">Eq.1.2.12</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\pbf = \frac{M \vbf}{\sqrt{1 - \vbf^2}} \implies \gamma \coloneqq \frac{1}{\sqrt{1 - \vbf^2}} = \frac{\sqrt{M^2 + \pbf^2}}{M} \left( = \frac{p_0}{M} \right)\]</div>
+<p>It follows that</p>
+<div class="math notranslate nohighlight" id="equation-eq-l-transformation-for-massive">
+<span class="eqno">(1.3.17)<a class="headerlink" href="#equation-eq-l-transformation-for-massive" title="Link to this equation">#</a></span>\[\begin{split}{L(p)_0}^0 = {L(p)^0}_0 &amp;= \gamma \\
+{L(p)_i}^0 = -{L(p)^0}_i &amp;= \frac{p_i}{M} \\
+L(p)_{ij} &amp;= \delta_{ij} + \frac{p_i p_j}{\pbf^2} (\gamma - 1)\end{split}\]</div>
+<p>Finally, we note an important fact that when <span class="math notranslate nohighlight">\(\Lambda = \Rcal\)</span> is a <span class="math notranslate nohighlight">\(3\)</span>-rotation, then</p>
+<div class="math notranslate nohighlight" id="equation-eq-little-group-rotation">
+<span class="eqno">(1.3.18)<a class="headerlink" href="#equation-eq-little-group-rotation" title="Link to this equation">#</a></span>\[W(\Rcal, p) = \Rcal\]</div>
+<p>for any <span class="math notranslate nohighlight">\(p\)</span>. To see this, we’ll work out how <span class="math notranslate nohighlight">\(W(\Rcal, p)\)</span> acts on <span class="math notranslate nohighlight">\((1, \mathbf{0}), (0, \pbf)\)</span>, and <span class="math notranslate nohighlight">\((0, \qbf)\)</span>, respectively, where <span class="math notranslate nohighlight">\(\qbf\)</span> is any <span class="math notranslate nohighlight">\(3\)</span>-vector perpendicular to <span class="math notranslate nohighlight">\(\pbf\)</span>, as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{alignat*}{2}
+        W(\Rcal, p)(1, \mathbf{0}) &amp;= L(\Rcal p)^{-1} \Rcal (\gamma, \pbf / M) &amp;&amp;= L(\Rcal p)^{-1} (\gamma, \Rcal p / M) &amp;&amp;= (1, \mathbf{0}) \\
+        W(\Rcal, p)(0, \pbf) &amp;= L(\Rcal p)^{-1} \Rcal (\pbf^2 / M, \gamma \pbf) &amp;&amp;= L(\Rcal p)^{-1} (\pbf^2 / M, \gamma \Rcal p) &amp;&amp;= (0, \Rcal \pbf) \\
+        W(\Rcal, p)(0, \qbf) &amp;= L(\Rcal p)^{-1} \Rcal (0, \qbf) &amp;&amp;= L(\Rcal p)^{-1} (0, \Rcal \qbf) &amp;&amp;= (0, \Rcal \qbf)
+\end{alignat*}\end{split}\]</div>
+<p>where we have used that fact that <span class="math notranslate nohighlight">\(\gamma\)</span> is <span class="math notranslate nohighlight">\(\Rcal\)</span>-invariant.</p>
+<p>This observation is important since it implies that non-relativistic calculations about angular momenta, such as the <a class="reference external" href="https://en.wikipedia.org/wiki/Clebsch%E2%80%93Gordan_coefficients">Clebsch-Gordan coefficients</a>, can be literally carried over to the relativistic setting.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="dropdown-clebsch-gordan-coefficients">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Clebsch-Gordan coefficients</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">In a scenario where multiple particles present, or even just a single particle with both orbital angular momentum (i.e., the quantization of the classical angular momentum <span class="math notranslate nohighlight">\(\xbf \times \Pbf\)</span>) and spin, it may happen that the full Hamiltonian doesn’t commute with each individual <span class="math notranslate nohighlight">\(3\)</span>-momentum <span class="math notranslate nohighlight">\(\Jbf\)</span>, but commute with a “total” angular momentum. Therefore a formula, in terms of the so-called Clebsch-Gordan coefficients, that expresses the total angular momentum in terms of the individual ones is desirable. This section follows closely §4 from <a class="reference internal" href="../../bib.html#wei15" id="id4"><span>[Wei15]</span></a>. Note that the discussions that follow will be</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">non-relativistic, which is justified by <a class="reference internal" href="#equation-eq-little-group-rotation">Eq.1.3.18</a>, and</p></li>
+<li><p class="sd-card-text">applicable mostly (but not necessarily) to multi-particles states, rather than single-particle states.</p></li>
+</ol>
+<p class="sd-card-text">We shall focus on the composition of two angular momentum <span class="math notranslate nohighlight">\(3\)</span>-vectors <span class="math notranslate nohighlight">\(\Jbf'\)</span> and <span class="math notranslate nohighlight">\(\Jbf''\)</span>, whether orbital or spin, that commute, i.e., they each satisfies <a class="reference internal" href="#equation-eq-poincare-algebra">Eq.1.2.22</a> and in addition</p>
+<div class="math notranslate nohighlight">
+\[[J'_i, J''_j] = 0\]</div>
+<p class="sd-card-text">for <span class="math notranslate nohighlight">\(1 \leq i, j \leq 3\)</span>.</p>
+<p class="sd-card-text">Let’s recollect the eigenstate representations <a class="reference internal" href="#equation-eq-rotation-j-matrix">Eq.1.3.12</a> and <a class="reference internal" href="#equation-eq-3j-square-eigenstate">Eq.1.3.16</a> as follows,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\Jbf'}^2 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &amp;= \jfrak' (\jfrak' + 1) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+J'_3 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &amp;= \sigma' \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+(J'_1 \pm \ifrak J'_2) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &amp;= \sqrt{{\jfrak'}^2 + \jfrak' - {\sigma'}^2 \mp \sigma'} ~\Psi^{\jfrak' ~\jfrak''}_{\sigma' \pm 1, \sigma''} \\
+{\Jbf''}^2 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &amp;= \jfrak'' (\jfrak'' + 1) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+J''_3 \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &amp;= \sigma'' \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} \\
+(J''_1 \pm \ifrak J''_2) \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''} &amp;= \sqrt{{\jfrak''}^2 + \jfrak'' - {\sigma''}^2 \mp \sigma''} ~\Psi^{\jfrak' ~\jfrak''}_{\sigma', \sigma'' \pm 1}\end{split}\]</div>
+<p class="sd-card-text">Without knowing exactly how the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> looks like, we cannot really say what combinations of these angular momentum operators commute with <span class="math notranslate nohighlight">\(H\)</span>, and therefore may be used to label states. However, one can imagine that a rotationally invariant Hamiltonian may contain terms like <span class="math notranslate nohighlight">\({\Jbf'}^2, {\Jbf''}^2\)</span> and interactions like <span class="math notranslate nohighlight">\(\Jbf' \cdot \Jbf''\)</span>. In this case, we may choose to consider the following collection of (mutually commuting) operators</p>
+<div class="math notranslate nohighlight">
+\[{\Jbf'}^2, ~{\Jbf''}^2, ~\Jbf^2, \text{ and } J_3\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(\Jbf \coloneqq \Jbf' + \Jbf''\)</span> is the total angular momentum, and <span class="math notranslate nohighlight">\(J_i, i=1,2,3,\)</span> is its <span class="math notranslate nohighlight">\(i\)</span>-th component.</p>
+<p class="sd-card-text">Now our goal is to express the eigenstates <span class="math notranslate nohighlight">\(\Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma}\)</span> which satisfy the following</p>
+<div class="math notranslate nohighlight" id="equation-eq-raising-lowering-am-pair">
+<span class="eqno">(1.3.19)<a class="headerlink" href="#equation-eq-raising-lowering-am-pair" title="Link to this equation">#</a></span>\[\begin{split}{\Jbf'}^2 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &amp;= \jfrak' (\jfrak' + 1) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \\
+{\Jbf''}^2 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &amp;= \jfrak'' (\jfrak'' + 1) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \\
+\Jbf^2 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &amp;= \jfrak (\jfrak + 1) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \\
+J_3 \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &amp;= \sigma \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} \\
+(J_1 \pm \ifrak J_2) \Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} &amp;= \sqrt{\jfrak^2 + \jfrak - \sigma^2 \mp \sigma} ~\Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma \pm 1}\end{split}\]</div>
+<p class="sd-card-text">in terms of <span class="math notranslate nohighlight">\(\Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''}\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-defn-clebsch-gordan-coefficients">
+<span class="eqno">(1.3.20)<a class="headerlink" href="#equation-eq-defn-clebsch-gordan-coefficients" title="Link to this equation">#</a></span>\[\Psi^{\jfrak' ~\jfrak'' ~\jfrak}_{\sigma} = \sum_{\sigma' \sigma''} C^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \Psi^{\jfrak' ~\jfrak''}_{\sigma' \sigma''}\]</div>
+<p class="sd-card-text">where the coefficients are known as Clebsch-Gordan coefficients. For the clarity of exposition, let’s divide the solution into a few steps.</p>
+<dl>
+<dt>Step 1.</dt><dd><p class="sd-card-text">First of all, note that since <span class="math notranslate nohighlight">\(J_3 = J'_3 + J''_3\)</span>, we have the following constraint</p>
+<div class="math notranslate nohighlight" id="equation-eq-sigma-additive">
+<span class="eqno">(1.3.21)<a class="headerlink" href="#equation-eq-sigma-additive" title="Link to this equation">#</a></span>\[C^{\jfrak' ~\jfrak''}(\jfrak ~\sigma; \sigma' \sigma'') \neq 0 \implies \sigma = \sigma' + \sigma''\]</div>
+<p class="sd-card-text">Moreover, we see that the maximum possible value of <span class="math notranslate nohighlight">\(\sigma\)</span> is <span class="math notranslate nohighlight">\(\jfrak' + \jfrak''\)</span>, and it’s achieved exactly when <span class="math notranslate nohighlight">\(\sigma' = \jfrak'\)</span> and <span class="math notranslate nohighlight">\(\sigma'' = \jfrak''\)</span>. It follows, assuming the non-degeneracy of the representation at least, that</p>
+<div class="math notranslate nohighlight" id="equation-eq-highest-weight-am-pair">
+<span class="eqno">(1.3.22)<a class="headerlink" href="#equation-eq-highest-weight-am-pair" title="Link to this equation">#</a></span>\[\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak''} =  \Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak''}\]</div>
+<p class="sd-card-text">or equivalently</p>
+<div class="math notranslate nohighlight">
+\[C^{\jfrak' ~\jfrak''}(\jfrak' + \jfrak'' ~\jfrak' + \jfrak''; \sigma' \sigma'') = \delta_{\sigma' ~\jfrak'} \delta_{\sigma'' ~\jfrak''}\]</div>
+</dd>
+<dt>Step 2.</dt><dd><p class="sd-card-text">Next consider a state with <span class="math notranslate nohighlight">\(\sigma = \jfrak' + \jfrak'' - 1\)</span>. It follows from <a class="reference internal" href="#equation-eq-sigma-additive">Eq.1.3.21</a> that it must be a superposition of <span class="math notranslate nohighlight">\(\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''}\)</span> and <span class="math notranslate nohighlight">\(\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1}\)</span> unless <span class="math notranslate nohighlight">\(\jfrak'\)</span> and/or <span class="math notranslate nohighlight">\(\jfrak''\)</span> vanishes, which leads to even simpler situations. Now we have two possible values of <span class="math notranslate nohighlight">\(\jfrak\)</span>, namely <span class="math notranslate nohighlight">\(\jfrak' + \jfrak''\)</span> and <span class="math notranslate nohighlight">\(\jfrak' + \jfrak'' - 1\)</span>.</p>
+<p class="sd-card-text">In the former case, we can use <a class="reference internal" href="#equation-eq-raising-lowering-am-pair">Eq.1.3.19</a> with <span class="math notranslate nohighlight">\(\sigma = \jfrak = \jfrak' + \jfrak''\)</span> and <a class="reference internal" href="#equation-eq-highest-weight-am-pair">Eq.1.3.22</a> to calculate as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\sqrt{2(\jfrak' + \jfrak'')} ~\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak'' - 1} \
+        &amp;= (J_1 - \ifrak J_2) \Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak''} \\
+        &amp;= (J_1 - \ifrak J_2) \Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak''} \\
+        &amp;= (J'_1 - \ifrak J'_2 + J''_2 - \ifrak J''_2) \Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak''} \\
+        &amp;= \sqrt{2 \jfrak'} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''} + \sqrt{2 \jfrak''} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1}\end{split}\]</div>
+<p class="sd-card-text">This gives us one of the <span class="math notranslate nohighlight">\(\sigma = \jfrak' + \jfrak'' - 1\)</span> states</p>
+<div class="math notranslate nohighlight" id="equation-eq-second-highest-weight-am-pair-one">
+<span class="eqno">(1.3.23)<a class="headerlink" href="#equation-eq-second-highest-weight-am-pair-one" title="Link to this equation">#</a></span>\[\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak''}_{\jfrak' + \jfrak'' - 1}
+        = (\jfrak' + \jfrak'')^{-1/2} \left( \sqrt{\jfrak'} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak''} + \sqrt{\jfrak''} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1} \right)\]</div>
+<p class="sd-card-text">The other one, which has <span class="math notranslate nohighlight">\(\jfrak = \jfrak' + \jfrak'' - 1\)</span>, must be orthogonal to <a class="reference internal" href="#equation-eq-second-highest-weight-am-pair-one">Eq.1.3.23</a>. Therefore up to a normalization factor, we can write</p>
+<div class="math notranslate nohighlight" id="equation-eq-second-highest-weight-am-pair-two">
+<span class="eqno">(1.3.24)<a class="headerlink" href="#equation-eq-second-highest-weight-am-pair-two" title="Link to this equation">#</a></span>\[\Psi^{\jfrak' ~\jfrak'' ~\jfrak' + \jfrak'' - 1}_{\jfrak' + \jfrak'' - 1}
+        = (\jfrak' + \jfrak'')^{-1/2} \left( \sqrt{\jfrak''} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak'-1 ~\jfrak''} - \sqrt{\jfrak'} ~\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 1} \right)\]</div>
+<p class="sd-card-text">We can translate <a class="reference internal" href="#equation-eq-second-highest-weight-am-pair-one">Eq.1.3.23</a> and <a class="reference internal" href="#equation-eq-second-highest-weight-am-pair-two">Eq.1.3.24</a> into Clebsch-Gordan coefficients as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-clebsch-gordan-second-highest-weight">
+<span class="eqno">(1.3.25)<a class="headerlink" href="#equation-eq-clebsch-gordan-second-highest-weight" title="Link to this equation">#</a></span>\[\begin{split}&amp; C^{\jfrak' ~\jfrak''}(\jfrak' + \jfrak'' ~\jfrak' + \jfrak'' - 1; \sigma' \sigma'') \\
+&amp; \quad = \sqrt{\frac{\jfrak'}{\jfrak' + \jfrak''}} ~\delta_{\sigma' ~\jfrak' - 1} \delta_{\sigma'' ~\jfrak''} +
+                \sqrt{\frac{\jfrak''}{\jfrak' + \jfrak''}} ~\delta_{\sigma' ~\jfrak'} \delta_{\sigma'' ~\jfrak'' - 1} \\
+&amp; C^{\jfrak' ~\jfrak''}(\jfrak' + \jfrak'' -1 ~\jfrak' + \jfrak'' - 1; \sigma' \sigma'') \\
+&amp; \quad = \sqrt{\frac{\jfrak''}{\jfrak' + \jfrak''}} ~\delta_{\sigma' ~\jfrak' - 1} \delta_{\sigma'' ~\jfrak''} -
+        \sqrt{\frac{\jfrak''}{\jfrak' + \jfrak''}} \delta_{\sigma' ~\jfrak'} \delta_{\sigma'' ~\jfrak'' - 1}\end{split}\]</div>
+</dd>
+<dt>Step 3.</dt><dd><p class="sd-card-text">The pattern should now be clear. Namely for <span class="math notranslate nohighlight">\(\sigma = \jfrak' + \jfrak'' - 2\)</span>, the <span class="math notranslate nohighlight">\(J_3\)</span>-eigenspace must be <span class="math notranslate nohighlight">\(3\)</span>-dimensional and spanned by <span class="math notranslate nohighlight">\(\Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 2 ~\jfrak''}, \Psi^{\jfrak' ~\jfrak''}_{\jfrak' - 1 ~\jfrak'' - 1}\)</span> and <span class="math notranslate nohighlight">\(\Psi^{\jfrak' ~\jfrak''}_{\jfrak' ~\jfrak'' - 2}\)</span>. Two of them come from <a class="reference internal" href="#equation-eq-second-highest-weight-am-pair-one">Eq.1.3.23</a> and <a class="reference internal" href="#equation-eq-second-highest-weight-am-pair-two">Eq.1.3.24</a> by applying the lowering operator <span class="math notranslate nohighlight">\(J_1 - \ifrak J_2\)</span>, and the third orthogonally complements the first two.</p>
+<p class="sd-card-text">This procedure can be continued but will eventually terminate because of the bounds <span class="math notranslate nohighlight">\(|\sigma'| \leq \jfrak'\)</span> and <span class="math notranslate nohighlight">\(|\sigma''| \leq \jfrak''\)</span>. It follows that <span class="math notranslate nohighlight">\(\jfrak\)</span> can only take the following values</p>
+<div class="math notranslate nohighlight" id="equation-eq-composite-total-angular-momentum-range">
+<span class="eqno">(1.3.26)<a class="headerlink" href="#equation-eq-composite-total-angular-momentum-range" title="Link to this equation">#</a></span>\[\jfrak = |\jfrak' - \jfrak''|, ~|\jfrak' - \jfrak''| + 1, \cdots, ~\jfrak' + \jfrak''\]</div>
+</dd>
+</dl>
+<p class="sd-card-text">To make the above rather abstract calculations more concrete, let’s consider the example of a hydrogen atom, where the single electron is subject to the (radial) Coulomb force. Without actually spelling out the Hamiltonian, let’s jump directly to the result. The result is that the energy levels can be labeled by positive integers <span class="math notranslate nohighlight">\(n = 1, 2, \cdots\)</span>. For each <span class="math notranslate nohighlight">\(n\)</span>, the orbital angular momentum <span class="math notranslate nohighlight">\(\ell\)</span> can take any value from <span class="math notranslate nohighlight">\(0, 1, \cdots, n - 1\)</span>, traditionally labeled by <span class="math notranslate nohighlight">\(s, p, d, f, g, \cdots\)</span>. Finally the electron spin is <span class="math notranslate nohighlight">\(\sfrak = 1/2\)</span>. We can then make the following table for the first few states with <span class="math notranslate nohighlight">\(n \leq 2\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">State</p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\ell(=\jfrak')\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\sfrak(=\jfrak'')\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\jfrak\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\sigma\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\sigma'\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\sigma''\)</span></p></th>
+<th class="head"><p class="sd-card-text"><span class="math notranslate nohighlight">\(C^{\ell~\sfrak}(\jfrak~\sigma;~\sigma' \sigma'')\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1s_{1/2}\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(2s_{1/2}\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-even"><td rowspan="2"><p class="sd-card-text"><span class="math notranslate nohighlight">\(2p_{1/2}\)</span></p></td>
+<td rowspan="2"><p class="sd-card-text"><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td rowspan="2"><p class="sd-card-text"><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td rowspan="2"><p class="sd-card-text"><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td rowspan="2"><p class="sd-card-text"><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td rowspan="2"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm \sqrt{1/3}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\mp 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\mp \sqrt{2/3}\)</span></p></td>
+</tr>
+<tr class="row-even"><td rowspan="3"><p class="sd-card-text"><span class="math notranslate nohighlight">\(2p_{3/2}\)</span></p></td>
+<td rowspan="3"><p class="sd-card-text"><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td rowspan="3"><p class="sd-card-text"><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td rowspan="3"><p class="sd-card-text"><span class="math notranslate nohighlight">\(1/2\)</span></p></td>
+<td rowspan="3"><p class="sd-card-text"><span class="math notranslate nohighlight">\(3/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 3/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\sqrt{2/3}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pm 1\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\mp 1/2\)</span></p></td>
+<td><p class="sd-card-text"><span class="math notranslate nohighlight">\(\sqrt{1/3}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="sd-card-text">where a state is structured as <span class="math notranslate nohighlight">\(\{n\}\{\ell\}_{\{\jfrak\}}\)</span>. Interpreting the Clebsch-Gordan coefficients as probability amplitudes, we see for example that if one measures the <span class="math notranslate nohighlight">\(3\)</span>-components of the orbital and spin of the electron in a hydrogen atom in state <span class="math notranslate nohighlight">\(2p_{1/2}\)</span> with <span class="math notranslate nohighlight">\(\sigma = 1/2\)</span>, then one gets either <span class="math notranslate nohighlight">\((0, 1/2)\)</span> or <span class="math notranslate nohighlight">\((1, -1/2)\)</span> with probabilities <span class="math notranslate nohighlight">\(1/3\)</span> and <span class="math notranslate nohighlight">\(2/3\)</span>, respectively.</p>
+<p class="sd-card-text">We end this (long) excursion with a few interesting facts that we’ll come back to later.</p>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">The energy difference between <span class="math notranslate nohighlight">\(1s_{1/2}\)</span> and <span class="math notranslate nohighlight">\(2s_{1/2}\)</span>, plotted on a spectrometer, is the famous <a class="reference external" href="https://en.wikipedia.org/wiki/Hydrogen_line">21-centimeter line</a>.</p></li>
+<li><p class="sd-card-text">The energy difference between <span class="math notranslate nohighlight">\(2p_{1/2}\)</span> and <span class="math notranslate nohighlight">\(2p_{3/2}\)</span>, i.e., same orbital but different total angular momentum, is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Fine_structure">fine structure</a> of the hydrogen atom.</p></li>
+<li><p class="sd-card-text">The energy difference between <span class="math notranslate nohighlight">\(2s_{1/2}\)</span> and <span class="math notranslate nohighlight">\(2p_{1/2}\)</span>, i.e., same total but different orbital angular momentum, is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Lamb_shift">Lamb shift</a>.</p></li>
+<li><p class="sd-card-text">The energy difference between states with the same orbital and total angular momentum, e.g., <span class="math notranslate nohighlight">\(1s_{1/2}\)</span>, but different spin <span class="math notranslate nohighlight">\(z\)</span>-component <span class="math notranslate nohighlight">\(\sigma\)</span>, e.g., <span class="math notranslate nohighlight">\(\pm 1/2\)</span>, due to the magnetic moment is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Hyperfine_structure">hyperfine structure</a>.</p></li>
+</ol>
+</div>
+</details></section>
+<section id="massless-particle-states">
+<span id="sec-massless-particle-states"></span><h3><span class="section-number">1.3.3. </span>Massless particle states<a class="headerlink" href="#massless-particle-states" title="Link to this heading">#</a></h3>
+<p>Recall the standard <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> for massless particles. Our first task is to work out the little group, i.e., Lorentz transformations <span class="math notranslate nohighlight">\(W\)</span> such that <span class="math notranslate nohighlight">\(Wk = k\)</span>. More precisely, we’ll work out the column vectors of <span class="math notranslate nohighlight">\(W\)</span> by thinking of them as the results of <span class="math notranslate nohighlight">\(W\)</span> acting on the standard basis vectors. Let’s start by <span class="math notranslate nohighlight">\(v \coloneqq (1, 0, 0, 0)\)</span>, and perform the following calculations to <span class="math notranslate nohighlight">\(Wv\)</span> using properties of Lorentz transformation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{alignat*}{2}
+        (Wv)^{\mu} (Wv)_{\mu} &amp;= v^{\mu} v_{\mu} &amp;&amp;= 1 \\
+        (Wv)^{\mu} k_\mu &amp;= v^{\mu} k_{\mu} &amp;&amp;= 1
+\end{alignat*}\end{split}\]</div>
+<p>It follows that we can write <span class="math notranslate nohighlight">\(Wv = (1 + c, a, b, c)\)</span> with <span class="math notranslate nohighlight">\(a^2 + b^2 = 2c\)</span>. Playing similar games to the other basis vectors, we can engineer a particular Lorentz transformation as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-massless-little-group-s-matrix">
+<span class="eqno">(1.3.27)<a class="headerlink" href="#equation-eq-massless-little-group-s-matrix" title="Link to this equation">#</a></span>\[\begin{split}{S_{\mu}}^{\nu}(a, b) = \begin{bmatrix*}[r]
+        1 + c &amp; a &amp; b &amp; -c \\
+        a &amp; 1 &amp; 0 &amp; -a \\
+        b &amp; 0 &amp; 1 &amp; -b \\
+        c &amp; a &amp; b &amp; 1 - c
+\end{bmatrix*}\end{split}\]</div>
+<p>which leaves <span class="math notranslate nohighlight">\(k\)</span> invariant, and satisfies <span class="math notranslate nohighlight">\(Sv = Wv\)</span>. It follows that <span class="math notranslate nohighlight">\(S^{-1} W\)</span> must be a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, which can be written as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-massless-little-group-r-matrix">
+<span class="eqno">(1.3.28)<a class="headerlink" href="#equation-eq-massless-little-group-r-matrix" title="Link to this equation">#</a></span>\[\begin{split}R(\theta) = \begin{bmatrix*}[r]
+        1 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; \cos\theta &amp; \sin\theta &amp; 0 \\
+        0 &amp; -\sin\theta &amp; \cos\theta &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix*}\end{split}\]</div>
+<p>Hence we can write any element in the little group as <span class="math notranslate nohighlight">\(W(a, b, \theta) = S(a, b) R(\theta)\)</span>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">The little group is <span class="math notranslate nohighlight">\(~E^+(2)\)</span></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Although not necessary for our purposes here, we’d like to better understand the little group for <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> in terms of more familiar groups. It turns out that it’s isomorphic to the <span class="math notranslate nohighlight">\(2\)</span>-dimensional orientation-preserving <a class="reference external" href="https://en.wikipedia.org/wiki/Euclidean_group">Euclidean group</a> <span class="math notranslate nohighlight">\(E^+(2)\)</span>, i.e., the group of rotations and translations on the plane.</p>
+<p class="sd-card-text">To see this, we go back to the defining property of <span class="math notranslate nohighlight">\(W\)</span> that it fixes <span class="math notranslate nohighlight">\(k\)</span>. It follows that it must also fix the orthogonal complement <span class="math notranslate nohighlight">\(k^{\bot}\)</span> with respect to the bilinear form <span class="math notranslate nohighlight">\(d\tau^2\)</span> defined in <a class="reference internal" href="#equation-eq-proper-time">Eq.1.2.5</a>. Since <span class="math notranslate nohighlight">\(k\)</span> is orthogonal to itself, we can uniquely determine <span class="math notranslate nohighlight">\(W\)</span> by knowing its action on <span class="math notranslate nohighlight">\((1, 1, 0, 1)\)</span> and <span class="math notranslate nohighlight">\((1, 0, 1, 1)\)</span>. Letting <span class="math notranslate nohighlight">\(S(a, b)\)</span> act on them, we see</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S(a, b)(1, 1, 0, 1) &amp;= (1 + a, 1, 0, 1 + a) \\
+S(a, b)(1, 0, 1, 1) &amp;= (1 + b, 0, 1, 1 + b)\end{split}\]</div>
+<p class="sd-card-text">Hence <span class="math notranslate nohighlight">\(S\)</span> is isomorphic to a <span class="math notranslate nohighlight">\(2\)</span>-dimensional translation group. Moreover, the direction of translation is determined by the rotation on the plane spanned by the second the the third coordinates, which is nothing but <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p class="sd-card-text">Note that <span class="math notranslate nohighlight">\(E^+ (2)\)</span> is not semisimple in the sense that it possesses an abelian normal subgroup. Indeed, it’s obvious from the above discussion that a translation conjugated by a rotation is again a translation (in the rotated direction). The non-semisimplicity will have consequences on the representation as we will see below.</p>
+</div>
+</details><p>As in the massive case, we’ll work out <span class="math notranslate nohighlight">\(D_{\sigma \sigma'}\)</span> up to first order. To this end, note that up to first order</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{W(a, b, \theta)_{\mu}}^{\nu} &amp;= \left(1 + \begin{bmatrix*}[r]
+                0 &amp; a &amp; b &amp; 0 \\
+                a &amp; 0 &amp; 0 &amp; -a \\
+                b &amp; 0 &amp; 0 &amp; -b \\
+                0 &amp; a &amp; b &amp; 0
+        \end{bmatrix*} \right) \left(1 + \begin{bmatrix*}[r]
+                0 &amp; 0 &amp; 0 &amp; 0 \\
+                0 &amp; 0 &amp; \theta &amp; 0 \\
+                0 &amp; -\theta &amp; 0 &amp; 0 \\
+                0 &amp; 0 &amp; 0 &amp; 0
+        \end{bmatrix*} \right) + \cdots \\
+        &amp;= 1 + \begin{bmatrix*}[r]
+                0 &amp; a &amp; b &amp; 0 \\
+                a &amp; 0 &amp; \theta &amp; -a \\
+                b &amp; -\theta &amp; 0 &amp; -b \\
+                0 &amp; a &amp; b &amp; 0
+        \end{bmatrix*} + \cdots\end{split}\]</div>
+<p>where we’ve added the <span class="math notranslate nohighlight">\(4\)</span>-indexes since we recall from discussions in <a class="reference internal" href="#sec-quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a> that we must lift the <span class="math notranslate nohighlight">\(\omega\)</span> index to make it anti-symmetric. We now rewrite</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}W(a, b , \theta)^{\mu \nu} = \eta^{\mu \sigma} {W_{\sigma}}^{\nu} = 1 + \begin{bmatrix*}[r]
+                0 &amp; -a &amp; -b &amp; 0 \\
+                a &amp; 0 &amp; \theta &amp; -a \\
+                b &amp; -\theta &amp; 0 &amp; -b \\
+                0 &amp; a &amp; b &amp; 0
+        \end{bmatrix*} + \cdots\end{split}\]</div>
+<p>and spell out the expansion of <span class="math notranslate nohighlight">\(D(a, b, \theta) \coloneqq D(W(a, b, \theta))\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-massless-d-matrix-expansion">
+<span class="eqno">(1.3.29)<a class="headerlink" href="#equation-eq-massless-d-matrix-expansion" title="Link to this equation">#</a></span>\[D(a, b, \theta) = 1 + \ifrak aA + \ifrak bB + \ifrak \theta J_3\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{alignat*}{2}
+        A &amp;= -J_{01} - J_{13} &amp;&amp;= -K_1 + J_2 \\
+        B &amp;= -J_{02} - J_{23} &amp;&amp;= -K_2 - J_1
+\end{alignat*}\end{split}\]</div>
+<p>Next we use <a class="reference internal" href="#equation-eq-poincare-algebra">Eq.1.2.22</a> to calculate commutation relations between <span class="math notranslate nohighlight">\(A, B\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{alignat*}{2}
+        [J_3, A] &amp;= -&amp;&amp;\ifrak K_2 &amp;&amp;- \ifrak J_1 &amp;&amp;= \ifrak B \\
+        [J_3, B] &amp;= &amp;&amp;\ifrak K_1 &amp;&amp;- \ifrak J_2 &amp;&amp;= -\ifrak A \\
+        [A, B] &amp;= -&amp;&amp;\ifrak J_3 &amp;&amp;+ \ifrak J_3 &amp;&amp;= 0
+\end{alignat*}\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(A, B\)</span> commute, we can use their eigenvalues to label states as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A \Psi_{k, a, b} &amp;= a \Psi_{k, a, b} \\
+B \Psi_{k, a, b} &amp;= b \Psi_{k, a, b}\end{split}\]</div>
+<p>In fact, these states, corresponding to translation symmetries, come in continuous families as shown below</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}AU^{-1}(R(\theta)) \Psi_{a, b, k} &amp;= (a\cos\theta - b\sin\theta)U^{-1}(R(\theta)) \Psi_{a, b, k} \\
+BU^{-1}(R(\theta)) \Psi_{a, b, k} &amp;= (a\sin\theta + b\cos\theta)U^{-1}(R(\theta)) \Psi_{a, b, k}\end{split}\]</div>
+<p>According to <a class="reference internal" href="../../bib.html#wei95" id="id5"><span>[Wei95]</span></a> (page 72), massless particle states are not observed to come in such <span class="math notranslate nohighlight">\(S^1\)</span>-families. Hence the only possibility is that <span class="math notranslate nohighlight">\(a = b = 0\)</span> and the only symmetry left then is <span class="math notranslate nohighlight">\(J_3\)</span>, which corresponds to a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis.</p>
+<p>Unlike the <span class="math notranslate nohighlight">\(SO(3)\)</span>-symmetry discussed in <a class="reference internal" href="#dropdown-repr-of-angular-momenta"><span class="std std-ref">Representations of angular momenta</span></a>, representations of <span class="math notranslate nohighlight">\(J_3\)</span> alone cannot be characterized at the infinitesimal level, which would have resulted in a continuous spectrum. Instead, since a <span class="math notranslate nohighlight">\(2\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis gives the identity transformation, one might expect an integer spectrum for <span class="math notranslate nohighlight">\(J_3\)</span>. This is indeed the case if we <a class="reference internal" href="#assump-genuine-repr"><span class="std std-ref">assume the representation is genuine</span></a>. However, since the Lorentz group is not simplify connected (with fundamental group <span class="math notranslate nohighlight">\(\Zbb/2\)</span>), one may encounter projective representations. Indeed, the <span class="math notranslate nohighlight">\(2\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis represents a generator of the fundamental group, which has order <span class="math notranslate nohighlight">\(2\)</span>, i.e., only the <span class="math notranslate nohighlight">\(4\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis represents a contractible loop in the Lorentz group (see the <a class="reference external" href="https://en.wikipedia.org/wiki/Plate_trick">Plate trick</a>). As a result, the <span class="math notranslate nohighlight">\(J_3\)</span>-spectrum actually consists of half-integers, just like the spins. We can therefore write a general massless particle state as <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[J_3 \Psi_{k, \sigma} = \sigma \Psi_{k, \sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> are half-integers, known as the <em>helicity</em>.</p>
+<p>Combining the discussions so far, we can write down the <span class="math notranslate nohighlight">\(D\)</span>-matrix defined by <a class="reference internal" href="#equation-eq-massless-d-matrix-expansion">Eq.1.3.29</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-little-group-d-matrix-massless">
+<span class="eqno">(1.3.30)<a class="headerlink" href="#equation-eq-little-group-d-matrix-massless" title="Link to this equation">#</a></span>\[D_{\sigma \sigma'}(W(a, b, \theta)) = \exp(\ifrak \theta \sigma) \delta_{\sigma \sigma'}\]</div>
+<p>where we recall <span class="math notranslate nohighlight">\(W(a, b, \theta) = L(\Lambda p)^{-1} \Lambda L(p) = S(a, b)R(\theta)\)</span>. The Lorentz transformation formula <a class="reference internal" href="#equation-eq-lorentz-transformation-formula-for-particle-state">Eq.1.3.10</a> for massless particles now becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-lorentz-transformation-formula-for-massless">
+<span class="eqno">(1.3.31)<a class="headerlink" href="#equation-eq-lorentz-transformation-formula-for-massless" title="Link to this equation">#</a></span>\[U(\Lambda) \Psi_{p, \sigma} = \sqrt{\frac{(\Lambda p)_0}{p_0}} \exp(\ifrak \theta(\Lambda, p) \sigma) \Psi_{\Lambda p, \sigma}\]</div>
+<p>In particular, we see that, unlike the spin <span class="math notranslate nohighlight">\(z\)</span>-component of massive particles, helicity is Lorentz invariant (at least under genuine representations). It is reasonable, therefore, to think of massless particles of different helicity as different particle species. Examples include photons with <span class="math notranslate nohighlight">\(\sigma = \pm 1\)</span> and gravitons with <span class="math notranslate nohighlight">\(\sigma = \pm 2\)</span>, but <em>not</em> (anti-)neutrinos with hypothetical <span class="math notranslate nohighlight">\(\sigma = \pm \tfrac{1}{2}\)</span> as otherwise stated in <a class="reference internal" href="../../bib.html#wei95" id="id6"><span>[Wei95]</span></a> (page 73 – 74), which are now known to have a nonzero mass. Here the <span class="math notranslate nohighlight">\(\pm\)</span> signs are related to the space-inversion symmetry <a class="reference internal" href="#equation-eq-space-inversion">Eq.1.2.11</a>, which will be discussed in detail later.</p>
+<p>In order to use <a class="reference internal" href="#equation-eq-little-group-d-matrix-massless">Eq.1.3.30</a> for a general <span class="math notranslate nohighlight">\((\Lambda, p)\)</span>, we first need to fix the choices of <span class="math notranslate nohighlight">\(L(p)\)</span> that takes the standard <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> to <span class="math notranslate nohighlight">\(p\)</span>. This can be done in two steps. First apply a (pure) boost along the <span class="math notranslate nohighlight">\(3\)</span>-axis</p>
+<div class="math notranslate nohighlight" id="equation-eq-massless-boost">
+<span class="eqno">(1.3.32)<a class="headerlink" href="#equation-eq-massless-boost" title="Link to this equation">#</a></span>\[\begin{split}\begin{bmatrix}
+        (p_0^2 + 1) / 2p_0 &amp; 0 &amp; 0 &amp; (p_0^2 - 1) / 2p_0 \\
+        0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 1 &amp; 0 \\
+        (p_0^2 - 1) / 2p_0 &amp; 0 &amp; 0 &amp; (p_0^2 + 1) / 2p_0
+\end{bmatrix}
+\begin{bmatrix}
+        1 \\
+        0 \\
+        0 \\
+        1
+\end{bmatrix} = \begin{bmatrix}
+        p_0 \\
+        0 \\
+        0 \\
+        p_0
+\end{bmatrix} = \begin{bmatrix}
+        p_0 \\
+        0 \\
+        0 \\
+        |\pbf|
+\end{bmatrix}\end{split}\]</div>
+<p>Then apply a (pure) rotation that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. However, in contrast to the massive case <a class="reference internal" href="#equation-eq-l-transformation-for-massive">Eq.1.3.17</a>, where <span class="math notranslate nohighlight">\(L(p)\)</span> depends continuously on <span class="math notranslate nohighlight">\(p\)</span>, there exists no continuous family of rotations that take <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to any other <span class="math notranslate nohighlight">\(3\)</span>-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, which, according to <a class="reference internal" href="#equation-eq-little-group-d-matrix-massless">Eq.1.3.30</a>, only produces a physically immaterial phase factor.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Polarization of photons</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">General photon states of definite momentum can be written as a superposition</p>
+<div class="math notranslate nohighlight">
+\[\Psi_{p, \alpha} \coloneqq \alpha_+ \Psi_{p, +1} + \alpha_- \Psi_{p, -1}\]</div>
+<p class="sd-card-text">such that <span class="math notranslate nohighlight">\(|\alpha_+|^2 + |\alpha_-|^2 = 1\)</span>. They are not in general Lorentz invariant due to the angle <span class="math notranslate nohighlight">\(\theta\)</span> presented in the phase factor in <a class="reference internal" href="#equation-eq-little-group-d-matrix-massless">Eq.1.3.30</a>. Here the base states <span class="math notranslate nohighlight">\(\Psi_{p, \pm 1}\)</span> are known as (right and left-handedly) <em>circularly polarized</em>, and the other extreme cases where <span class="math notranslate nohighlight">\(|\alpha_+| = |\alpha_-|\)</span> are known as <em>linearly polarized</em>. All other intermediate cases are then called <em>elliptically polarized</em>.</p>
+<p class="sd-card-text">It’s not obvious at all why these states are named the way they are, if only viewed as abstract combinations of eigenstates of an abstract operator <span class="math notranslate nohighlight">\(J_3\)</span>. They are named after analogies, either with <a class="reference external" href="https://en.wikipedia.org/wiki/Helicity_(particle_physics)">helicity</a> from classical mechanics or with classical electromagnetic fields (in vacuum) from Maxwell’s theory.</p>
+</div>
+</details></section>
+<section id="space-and-time-inversions">
+<span id="sec-space-and-time-inversions"></span><h3><span class="section-number">1.3.4. </span>Space and time inversions<a class="headerlink" href="#space-and-time-inversions" title="Link to this heading">#</a></h3>
+<p>So far the discussions have been focused on orthochronous (and mostly homogeneous) Lorentz transformations, and in particular, the infinitesimal symmetries at the vicinity of the identity. Now it’s time to take a look at the space and time inversions, defined in <a class="reference internal" href="#equation-eq-space-inversion">Eq.1.2.11</a> and <a class="reference internal" href="#equation-eq-time-inversion">Eq.1.2.10</a>, respectively, which takes us to the other components of the Lorentz group. The main goal is to understand their actions on the one-particle states, that have been worked out in the previous two sections.</p>
+<p>Let’s write</p>
+<div class="math notranslate nohighlight">
+\[U(\Pcal) \coloneqq U(\Pcal, 0), \quad U(\Tcal) \coloneqq U(\Tcal, 0)\]</div>
+<p>for the corresponding quantum symmetry operators, which we haven’t decided whether should be complex linear or anti-linear. The same calculations that led to <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-u">Eq.1.2.19</a> now give</p>
+<div class="math notranslate nohighlight" id="equation-eq-p-and-j-conjugated-by-space-and-time-inversions">
+<span class="eqno">(1.3.33)<a class="headerlink" href="#equation-eq-p-and-j-conjugated-by-space-and-time-inversions" title="Link to this equation">#</a></span>\[\begin{split}U(\Pcal) \ifrak P_{\mu} U^{-1}(\Pcal) &amp;= \ifrak {\Pcal_{\mu}}^{\rho} P_{\rho} \\
+U(\Pcal) \ifrak J_{\mu \nu} U^{-1}(\Pcal) &amp;= \ifrak {\Pcal_{\mu}}^{\rho} {\Pcal_{\nu}}^{\kappa} J_{\rho \kappa} \\
+U(\Tcal) \ifrak P_{\mu} U^{-1}(\Tcal) &amp;= \ifrak {\Tcal_{\mu}}^{\rho} P_{\rho} \\
+U(\Tcal) \ifrak J_{\mu \nu} U^{-1}(\Tcal) &amp;= \ifrak {\Tcal_{\mu}}^{\rho} {\Tcal_{\nu}}^{\kappa} J_{\rho \kappa}\end{split}\]</div>
+<p>The complex (anti-)linearity of <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> and <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> can then be decided by the postulation that physically meaningful energy must not be negative. More precisely, recall that <span class="math notranslate nohighlight">\(P_0\)</span> is the energy operator. Then <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-space-and-time-inversions">Eq.1.3.33</a> shows</p>
+<div class="math notranslate nohighlight">
+\[U(\Pcal) \ifrak P_0 U^{-1}(\Pcal) = \ifrak P_0\]</div>
+<p>If <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> were anti-linear, then <span class="math notranslate nohighlight">\(U(\Pcal) P_0 U^{-1}(\Pcal) = -P_0\)</span>. Then for any state <span class="math notranslate nohighlight">\(\Psi\)</span> with positive energy, i.e., <span class="math notranslate nohighlight">\(P_0 \Psi = p_0 \Psi\)</span>, we would have a state <span class="math notranslate nohighlight">\(U^{-1}(\Pcal) \Psi\)</span> with negative energy <span class="math notranslate nohighlight">\(-p_0\)</span>. Hence we conclude that <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> must be linear. The same argument shows also that <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> must be anti-linear (since <span class="math notranslate nohighlight">\({\Tcal_0}^0 = -1\)</span>).</p>
+<p>As before, it’ll be useful to rewrite <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-space-and-time-inversions">Eq.1.3.33</a> in terms of <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-hpjk-cojugated-by-space-and-time-inversions">
+<span class="eqno">(1.3.34)<a class="headerlink" href="#equation-eq-hpjk-cojugated-by-space-and-time-inversions" title="Link to this equation">#</a></span>\[\begin{split}\begin{alignat*}{3}
+        U(\Pcal) &amp;H U^{-1}(\Pcal) &amp;&amp;= &amp;&amp;H \\
+        U(\Pcal) &amp;\Pbf U^{-1}(\Pcal) &amp;&amp;= -&amp;&amp;\Pbf \\
+        U(\Pcal) &amp;\Jbf U^{-1}(\Pcal) &amp;&amp;= &amp;&amp;\Jbf \\
+        U(\Pcal) &amp;\Kbf U^{-1}(\Pcal) &amp;&amp;= -&amp;&amp;\Kbf \\
+        U(\Tcal) &amp;H U^{-1}(\Tcal) &amp;&amp;= &amp;&amp;H \\
+        U(\Tcal) &amp;\Pbf U^{-1}(\Tcal) &amp;&amp;= -&amp;&amp;\Pbf \\
+        U(\Tcal) &amp;\Jbf U^{-1}(\Tcal) &amp;&amp;= -&amp;&amp;\Jbf \\
+        U(\Tcal) &amp;\Kbf U^{-1}(\Tcal) &amp;&amp;= &amp;&amp;\Kbf \\
+\end{alignat*}\end{split}\]</div>
+<p>One can (and should) try to reconcile these implications with commonsense. For example, the <span class="math notranslate nohighlight">\(3\)</span>-momentum <span class="math notranslate nohighlight">\(\Pbf\)</span> changes direction under either space or time inversion as expected. Moreover, the spin (of for example a basketball) remains the same under space inversion because both the direction of the axis and the handedness of the rotation get reversed simultaneously, but it gets reversed under time inversion because the direction of rotation is reversed if time flows backwards.</p>
+<p>In what follows we will work out the effects of space and time inversions on massive and massless particles, respectively.</p>
+<section id="space-inversion-for-massive-particles">
+<span id="sec-space-inversion-for-massive-particles"></span><h4><span class="section-number">1.3.4.1. </span>Space inversion for massive particles<a class="headerlink" href="#space-inversion-for-massive-particles" title="Link to this heading">#</a></h4>
+<p>We start by considering a state at rest <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span>, where <span class="math notranslate nohighlight">\(k = (M, 0, 0, 0)\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is an eigenvalue of <span class="math notranslate nohighlight">\(J_3\)</span> under one of the spin representations discussed in <a class="reference internal" href="#dropdown-repr-of-angular-momenta"><span class="std std-ref">Representations of angular momenta</span></a>. Since the state is at rest and <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with <span class="math notranslate nohighlight">\(J_3\)</span> according to <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-space-and-time-inversions">Eq.1.3.33</a>, we can write</p>
+<div class="math notranslate nohighlight" id="equation-eq-space-inversion-on-massive-standard">
+<span class="eqno">(1.3.35)<a class="headerlink" href="#equation-eq-space-inversion-on-massive-standard" title="Link to this equation">#</a></span>\[U(\Pcal) \Psi_{k, \sigma} = \eta \Psi_{k, \sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is a phase that depends a priori on <span class="math notranslate nohighlight">\(\sigma\)</span>. It turns out, however, that <span class="math notranslate nohighlight">\(\eta\)</span> is actually independent of <span class="math notranslate nohighlight">\(\sigma\)</span>, and hence justifies the notation, since <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with the raising/lowering operators <span class="math notranslate nohighlight">\(J_1 \pm \ifrak J_2\)</span> by <a class="reference internal" href="#equation-eq-hpjk-cojugated-by-space-and-time-inversions">Eq.1.3.34</a>.</p>
+<p>To move on to the general case, we recall that the general formula <a class="reference internal" href="#equation-eq-def-of-one-particle-psi">Eq.1.3.3</a> takes the following form</p>
+<div class="math notranslate nohighlight">
+\[\Psi_{p, \sigma} = \sqrt{\frac{M}{p_0}} U(L(p)) \Psi_{k, \sigma}\]</div>
+<p>We can calculate as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-space-inversion-on-massive-general">
+<span class="eqno">(1.3.36)<a class="headerlink" href="#equation-eq-space-inversion-on-massive-general" title="Link to this equation">#</a></span>\[U(\Pcal) \Psi_{p, \sigma} = \sqrt{\frac{M}{p_0}} U(\Pcal L(p) \Pcal^{-1}) U(\Pcal) \Psi_{k, \sigma} = \eta~\sqrt{\frac{M}{p_0}} U(L(\Pcal p)) \Psi_{k, \sigma} = \eta \Psi_{\Pcal p, \sigma}\]</div>
+<p>which generalizes <a class="reference internal" href="#equation-eq-space-inversion-on-massive-standard">Eq.1.3.35</a>. Such <span class="math notranslate nohighlight">\(\eta\)</span> is known as the <em>intrinsic parity</em>, which is intrinsic to a particle species.</p>
+</section>
+<section id="time-inversion-for-massive-particles">
+<span id="sec-time-inversion-for-massive-particles"></span><h4><span class="section-number">1.3.4.2. </span>Time inversion for massive particles<a class="headerlink" href="#time-inversion-for-massive-particles" title="Link to this heading">#</a></h4>
+<p>Consider the same <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> as in the space inversion case. Now since <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> anti-commutes with <span class="math notranslate nohighlight">\(J_3\)</span> according to <a class="reference internal" href="#equation-eq-p-and-j-conjugated-by-space-and-time-inversions">Eq.1.3.33</a>, we can write</p>
+<div class="math notranslate nohighlight">
+\[U(\Tcal) \Psi_{k, \sigma} = \zeta_{\sigma} \Psi_{k, -\sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\zeta_{\sigma}\)</span> is a phase. Applying the raising/lowering operators and using <a class="reference internal" href="#equation-eq-rotation-j-matrix">Eq.1.3.12</a>, we can calculate the left-hand-side, recalling that <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> is anti-linear, as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}(J_1 \pm \ifrak J_2) U(\Tcal) \Psi_{k, \sigma}
+        &amp;= -U(\Tcal) (J_1 \mp \ifrak J_2) \Psi_{k, \sigma} \\
+        &amp;= -U(\Tcal) \sqrt{(\jfrak \pm \sigma)(\jfrak \mp \sigma + 1)} \Psi_{k, \sigma \mp 1} \\
+        &amp;= -\zeta_{\sigma \mp 1} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\jfrak\)</span> is the particle spin, and the right-hand-side as follows</p>
+<div class="math notranslate nohighlight">
+\[(J_1 \pm \ifrak J_2) \zeta_{\sigma} \Psi_{k, -\sigma} = \zeta_{\sigma} \sqrt{(\jfrak \pm 1)(\jfrak \mp \sigma + 1)} \Psi_{k, -\sigma \pm 1}\]</div>
+<p>Equating the two sides, we see that <span class="math notranslate nohighlight">\(\zeta_{\sigma} = -\zeta_{\sigma \pm 1}\)</span>. Up to an overall phase, we can set <span class="math notranslate nohighlight">\(\zeta_{\sigma} = \zeta (-1)^{\jfrak - \sigma}\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[U(\Tcal) \Psi_{k, \sigma} = \zeta (-1)^{\jfrak - \sigma} \Psi_{k, -\sigma}\]</div>
+<p>Here we have chosen to keep the option of a physically inconsequential phase <span class="math notranslate nohighlight">\(\zeta\)</span> open. As in the case of space inversion, the formula generalizes to any <span class="math notranslate nohighlight">\(4\)</span>-momentum <span class="math notranslate nohighlight">\(p\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-time-inversion-on-massive-general">
+<span class="eqno">(1.3.37)<a class="headerlink" href="#equation-eq-time-inversion-on-massive-general" title="Link to this equation">#</a></span>\[U(\Tcal) \Psi_{p, \sigma} = \zeta (-1)^{\jfrak - \sigma} \Psi_{\Pcal p, -\sigma}\]</div>
+<p>since <span class="math notranslate nohighlight">\(\Tcal L(p) \Tcal^{-1} = L(\Pcal p)\)</span>.</p>
+</section>
+<section id="space-inversion-for-massless-particles">
+<h4><span class="section-number">1.3.4.3. </span>Space inversion for massless particles<a class="headerlink" href="#space-inversion-for-massless-particles" title="Link to this heading">#</a></h4>
+<p>Let’s consider a state <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span> with <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> being the helicity, i.e., <span class="math notranslate nohighlight">\(J_3 \Psi_{k, \sigma} = \sigma \Psi_{k, \sigma}\)</span>. Since <span class="math notranslate nohighlight">\(U(\Pcal)\)</span> commutes with <span class="math notranslate nohighlight">\(J_3\)</span>, the space inversion preserves <span class="math notranslate nohighlight">\(\sigma\)</span>, just as in the massive case. However, since <span class="math notranslate nohighlight">\(\Pcal\)</span> reverses the direction of motion, the helicity in the direction of motion actually reverses sign. It follows, in particular, that (massless) particles that respect the space inversion symmetry must come in companion with another particle of opposite helicity.</p>
+<p>To spell out more details, note that since <span class="math notranslate nohighlight">\(\Pcal\)</span> doesn’t fix <span class="math notranslate nohighlight">\(k\)</span>, it’ll be convenient to introduce an additional rotation <span class="math notranslate nohighlight">\(R_2\)</span>, which is defined to be a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(2\)</span>-axis, so that <span class="math notranslate nohighlight">\(U(R_2) = \exp(\ifrak \pi J_2)\)</span> and <span class="math notranslate nohighlight">\(R_2 \Pcal k = k\)</span>. Since <span class="math notranslate nohighlight">\(U(R_2)\)</span> flips the sign of <span class="math notranslate nohighlight">\(J_3\)</span>, as can be seen from the very definition of <span class="math notranslate nohighlight">\(J_3\)</span> in <a class="reference internal" href="#equation-eq-u-lorentz-expansion">Eq.1.2.18</a>, we have</p>
+<div class="math notranslate nohighlight">
+\[U(R_2 \Pcal) \Psi_{k, \sigma} = \eta_{\sigma} \Psi_{k, -\sigma}\]</div>
+<p>where we see indeed that the helicity reverses sign (when <span class="math notranslate nohighlight">\(k\)</span> is fixed).</p>
+<p>To move on to the general case, recall that the <span class="math notranslate nohighlight">\(L(p)\)</span> that takes <span class="math notranslate nohighlight">\(k\)</span> to <span class="math notranslate nohighlight">\(p\)</span> consists of a boost <span class="math notranslate nohighlight">\(B\)</span> defined by <a class="reference internal" href="#equation-eq-massless-boost">Eq.1.3.32</a> followed by a (chosen) pure rotation <span class="math notranslate nohighlight">\(R(\pbf)\)</span> that takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span>. We calculate as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-space-inversion-on-massless-undetermined-phase">
+<span class="eqno">(1.3.38)<a class="headerlink" href="#equation-eq-space-inversion-on-massless-undetermined-phase" title="Link to this equation">#</a></span>\[\begin{split}U(\Pcal) \Psi_{p, \sigma} &amp;= p_0^{-1/2} U(\Pcal R(\pbf)B) \Psi_{k, \sigma} \\
+        &amp;= p_0^{-1/2} U(R(\pbf) B R_2^{-1}) U(R_2 \Pcal) \Psi_{k, \sigma} \\
+        &amp;= p_0^{-1/2} \eta_{\sigma} U(R(\pbf) R_2^{-1} B) \Psi_{k, -\sigma} \\
+        &amp;= \eta_{\sigma} \rho \Psi_{\Pcal p, -\sigma}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is an extra phase due to the fact that although <span class="math notranslate nohighlight">\(R(\pbf) R_2^{-1}\)</span> takes <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(-\pbf\)</span>, it may not be the chosen one.</p>
+<p>To spell out <span class="math notranslate nohighlight">\(\rho\)</span>, we need to be a bit more specific about <span class="math notranslate nohighlight">\(R(\pbf)\)</span>. Following the usual convention of <a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_coordinate_system">spherical coordinates</a>, we can get from <span class="math notranslate nohighlight">\((0, 0, |\pbf|)\)</span> to <span class="math notranslate nohighlight">\(\pbf\)</span> by first rotate (according to the right-handed rule) about the <span class="math notranslate nohighlight">\(1\)</span>-axis at an angle <span class="math notranslate nohighlight">\(0 \leq \phi \leq \pi\)</span>, known as the polar angle, and then rotate about the <span class="math notranslate nohighlight">\(3\)</span>-axis at an angle <span class="math notranslate nohighlight">\(0 \leq \theta &lt; 2\pi\)</span>, known as the azimuthal angle. Now since we know that <span class="math notranslate nohighlight">\(R(\pbf)R_2^{-1}\)</span> differs from <span class="math notranslate nohighlight">\(R(-\pbf)\)</span> by a rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis, we can figure the rotation out by examining their actions on some suitably generic <span class="math notranslate nohighlight">\(\pbf\)</span>, for example, the unit vector along the <span class="math notranslate nohighlight">\(2\)</span>-axis, which is fixed by <span class="math notranslate nohighlight">\(R_2\)</span>. In this case <span class="math notranslate nohighlight">\(R(-\pbf)\)</span> is a <span class="math notranslate nohighlight">\(\pi/2\)</span>-rotation about the <span class="math notranslate nohighlight">\(1\)</span>-axis, while <span class="math notranslate nohighlight">\(R(\pbf)R_2^{-1}\)</span> is the same <span class="math notranslate nohighlight">\(\pi/2\)</span>-rotation by the <span class="math notranslate nohighlight">\(1\)</span>-axis, followed by a a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis. Therefore we conclude that the difference is a <span class="math notranslate nohighlight">\(\pi\)</span>-rotation about the <span class="math notranslate nohighlight">\(3\)</span>-axis. In other words, we should have <span class="math notranslate nohighlight">\(\rho = \exp(-\ifrak \pi \sigma)\)</span>. However, recalling that the helicity <span class="math notranslate nohighlight">\(\sigma\)</span> may be a half-integer (thought not yet being found in Nature), there is a sign difference between <span class="math notranslate nohighlight">\(\pm \pi\)</span>-rotations about the <span class="math notranslate nohighlight">\(3\)</span>-axis. Without going into further details, we write down the general formula the space inversion as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-space-inversion-on-massless-general">
+<span class="eqno">(1.3.39)<a class="headerlink" href="#equation-eq-space-inversion-on-massless-general" title="Link to this equation">#</a></span>\[U(\Pcal) \Psi_{p, \sigma} = \eta_{\sigma} \exp(\mp \ifrak \pi \sigma) \Psi_{\Pcal p, -\sigma}\]</div>
+<p>where the sign depends on the sign of <span class="math notranslate nohighlight">\(p_2\)</span> (which can be seen by playing the same game as above with the negative unit vector along the <span class="math notranslate nohighlight">\(2\)</span>-axis).</p>
+</section>
+<section id="time-inversion-for-massless-particles">
+<h4><span class="section-number">1.3.4.4. </span>Time inversion for massless particles<a class="headerlink" href="#time-inversion-for-massless-particles" title="Link to this heading">#</a></h4>
+<p>Let <span class="math notranslate nohighlight">\(k = (1, 0, 0, 1)\)</span> as usual and consider the state <span class="math notranslate nohighlight">\(\Psi_{k, \sigma}\)</span>. Since <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> anti-commutes with both <span class="math notranslate nohighlight">\(\Pbf\)</span> and <span class="math notranslate nohighlight">\(J_3\)</span> by <a class="reference internal" href="#equation-eq-hpjk-cojugated-by-space-and-time-inversions">Eq.1.3.34</a>, we have</p>
+<div class="math notranslate nohighlight">
+\[U(\Tcal) \Psi_{k, \sigma} = \Psi_{\Pcal k, -\sigma}.\]</div>
+<p>Composing with the rotation <span class="math notranslate nohighlight">\(R_2\)</span> as in the previous section to fix <span class="math notranslate nohighlight">\(k\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[U(R_2 \Tcal) \Psi_{k, \sigma} = \zeta_{\sigma} \Psi_{k, \sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\zeta_{\sigma}\)</span> is (yet another) phase. We see that, unlike the space inversion, the time inversion doesn’t produce a doublet of opposite helicity. Processing as in the space inversion case, one can derive the following general formula similar to <a class="reference internal" href="#equation-eq-space-inversion-on-massless-general">Eq.1.3.39</a></p>
+<div class="math notranslate nohighlight" id="equation-eq-time-inversion-on-massless-general">
+<span class="eqno">(1.3.40)<a class="headerlink" href="#equation-eq-time-inversion-on-massless-general" title="Link to this equation">#</a></span>\[U(\Tcal) \Psi_{p, \sigma} = \zeta_{\sigma} \exp(\pm \ifrak \pi \sigma) \Psi_{\Pcal p, \sigma}\]</div>
+<p>where the sign depends on the sign of <span class="math notranslate nohighlight">\(p_2\)</span> as before.</p>
+</section>
+<section id="kramers-degeneracy">
+<h4><span class="section-number">1.3.4.5. </span>Kramers’ degeneracy<a class="headerlink" href="#kramers-degeneracy" title="Link to this heading">#</a></h4>
+<p>We end our discussion about space and time inversions of one-particle states with an interesting observation on the squared time inversion <span class="math notranslate nohighlight">\(U(\Tcal)^2\)</span>. It follows from both <a class="reference internal" href="#equation-eq-time-inversion-on-massive-general">Eq.1.3.37</a> and <a class="reference internal" href="#equation-eq-time-inversion-on-massless-general">Eq.1.3.40</a> that</p>
+<div class="math notranslate nohighlight">
+\[U(\Tcal)^2 \Psi_{p, \sigma} = (-1)^{2 s} \Psi_{p, \sigma}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s \in \tfrac{1}{2} \Zbb\)</span> equals the spin <span class="math notranslate nohighlight">\(\jfrak\)</span> in the massive case and the absolute helicity <span class="math notranslate nohighlight">\(|\sigma|\)</span> in the massless case.</p>
+<p>Hence in a non-interacting system consisting of an odd number of half-integer spin/helicity particles and any number of integer spin/helicity particles, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq-time-inversion-squared-reverse-sign">
+<span class="eqno">(1.3.41)<a class="headerlink" href="#equation-eq-time-inversion-squared-reverse-sign" title="Link to this equation">#</a></span>\[U(\Tcal)^2 \Psi = -\Psi\]</div>
+<p>Now for any eigenstate <span class="math notranslate nohighlight">\(\Psi\)</span> of the Hamiltonian, there is an accompanying eigenstate <span class="math notranslate nohighlight">\(U(\Tcal) \Psi\)</span> since <span class="math notranslate nohighlight">\(U(\Tcal)\)</span> commutes with the Hamiltonian. The key observation then is that they are necessarily different states! To see this, let’s suppose otherwise that <span class="math notranslate nohighlight">\(U(\Tcal) \Psi = \zeta \Psi\)</span> represent the same state, where <span class="math notranslate nohighlight">\(\zeta\)</span> is a phase. Then</p>
+<div class="math notranslate nohighlight">
+\[U(\Tcal)^2 \Psi = U(\Tcal) \zeta \Psi = \zeta^{\ast} U(\Tcal) \Psi = |\zeta|^2 \Psi = \Psi\]</div>
+<p>contradicts <a class="reference internal" href="#equation-eq-time-inversion-squared-reverse-sign">Eq.1.3.41</a>.</p>
+<p>As a conclusion, we see that for such systems, any energy eigenvalue has at least a two-fold degeneracy. This is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Kramers%27_theorem">Kramers’ degeneracy</a>.</p>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="tedious-calc-of-commutations" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>These are some rather tedious and error-prone calculations, but in the end, we manage to arrive at the same results as stated in <a class="reference internal" href="../../bib.html#wei95" id="id8"><span>[Wei95]</span></a> page 61.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-quantum-state">1.1. What is a Quantum State?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-symmetry">1.2. What is a Symmetry?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-symmetry">1.2.1. Continuous symmetry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-symmetry">1.2.2. Lorentz symmetry</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-lorentz-symmetry">1.2.2.1. Classical Lorentz symmetry</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-lorentz-symmetry">1.2.2.2. Quantum Lorentz symmetry</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-particle-states">1.3. One-Particle States</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-to-the-little-group">1.3.1. Reduction to the little group</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massive-particle-states">1.3.2. Massive particle states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massless-particle-states">1.3.3. Massless particle states</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-and-time-inversions">1.3.4. Space and time inversions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#space-inversion-for-massive-particles">1.3.4.1. Space inversion for massive particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-inversion-for-massive-particles">1.3.4.2. Time inversion for massive particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#space-inversion-for-massless-particles">1.3.4.3. Space inversion for massless particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#time-inversion-for-massless-particles">1.3.4.4. Time inversion for massless particles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kramers-degeneracy">1.3.4.5. Kramers’ degeneracy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/yhuang85/mandy/edit/main/build-source/source/physics/the-quantum-theory-of-fields/01-quantum-mechanics.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2021, Mandy.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

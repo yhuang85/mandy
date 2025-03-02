@@ -6,6 +6,7 @@ After spending many years as a mathematician, I found out that I'm actually more
 As a complete beginner, who is trying to teach himself this huge subject, some note-taking is certainly helpful for my own sanity. This is indeed the main, if not the only, purpose of the following posts.
 
 .. toctree::
+	:titlesonly:
 	:maxdepth: 1
 
-	quantum-theory-of-fields
+	The Quantum Theory of Fields (S. Weinberg) <the-quantum-theory-of-fields/index>
