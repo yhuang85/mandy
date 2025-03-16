@@ -5,3 +5,25 @@
 .red {
   color: red;
 }
+
+.section-number {
+  display: none;
+}
+
+.bd-main .bd-content .bd-article-container {
+  max-width: 100%;  /* default is 60em */
+}
+
+.eq-tooltip {
+  display: none;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.equation-link:hover .eq-tooltip {
+  display: block;
+}
