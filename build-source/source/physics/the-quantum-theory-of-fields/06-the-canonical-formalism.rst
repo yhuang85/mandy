@@ -8,19 +8,14 @@ Canonical variables
 
 We've seen in :ref:`sec_quantum_fields_and_antiparticles` a few ways of constructing (Lorentz-invariant) interaction densities. However, we don't have a systematic way to do so. The so-called Lagrangian formalism will not provide a systematic solution either, but it'll allow us to construct more interesting interaction densities (from classical physics theories), to the extent that all known quantum field theories arise in this way! In addition, it'll shed light on the mysterious local terms as for example in :eq:`eq_vector_field_propagator_needs_local_term`, that are needed to compensate for a Lorentz-invariant momentum space propagator.
 
-The offer from the Lagrangian formalism regarding constructing a quantum field theory is the following. Instead of using the fields :math:`\eqref{eq_defn_annihilation_field}` -- :math:`\eqref{eq_defn_creation_field}` to construct the Hamiltonians, we'll use the so-called *canonical variables*, which have particularly simple (equal time) commutation relations. More precisely, it consists of a collection of quantum operators :math:`q_n(t, \xbf)` and its canonical conjugates :math:`p_n(t, \xbf)`, which satisfy the following (anti-)commutation relations
+The offer from the Lagrangian formalism regarding constructing a quantum field theory is the following. Instead of using the  creation and annihilation fields defined by :eq:`eq_defn_annihilation_and_creation_field` to construct the Hamiltonians, we'll use the so-called *canonical variables*, which have particularly simple (equal time) commutation relations. More precisely, it consists of a collection of quantum operators :math:`q_n(t, \xbf)` and its canonical conjugates :math:`p_n(t, \xbf)`, which satisfy the following (anti-)commutation relations
 
 .. math::
-	:nowrap:
+	:label: eq_canonical_commutation_relations
 
-	\begin{align}
-		\left[ q_n(t, \xbf), p_{n'}(t, \ybf) \right]_{\pm} &= \ifrak \delta^3(\xbf - \ybf) \delta_{n n'}
-		\label{eq_canonical_commutation_relation_1} \\
-		\left[ q_n(t, \xbf), q_{n'}(t, \ybf) \right]_{\pm} &= 0
-		\label{eq_canonical_commutation_relation_2} \\
-		\left[ p_n(t, \xbf), p_{n'}(t, \ybf) \right]_{\pm} &= 0
-		\label{eq_canonical_commutation_relation_3}
-	\end{align}
+	\left[ q_n(t, \xbf), p_{n'}(t, \ybf) \right]_{\pm} &= \ifrak \delta^3(\xbf - \ybf) \delta_{n n'} \\
+	\left[ q_n(t, \xbf), q_{n'}(t, \ybf) \right]_{\pm} &= 0 \\
+	\left[ p_n(t, \xbf), p_{n'}(t, \ybf) \right]_{\pm} &= 0 \\
 
 where :math:`\pm` correspond to when the particle under question is fermionic or bosonic, respectively.
 
@@ -28,106 +23,85 @@ To see how canonical variables may be constructed from fields considered in :ref
 
 Scalar fields
 	Let's start by considering scalar fields of particles that are their own antiparticles. Using notations from :ref:`sec_scalar_field`, it means that :math:`\psi(x) = \psi^{
-	\dagger}(x)`, i.e., the field is Hermitian. It follows then from :eq:`eq_scalar_field_commutator` and :math:`\eqref{eq_defn_Delta}` that
+	\dagger}(x)`, i.e., the field is Hermitian. It follows then from :eq:`eq_scalar_field_commutator` and :eq:`eq_defn_Delta` that
 
 	.. math::
-		:nowrap:
 
-		\begin{equation}
-			\left[ \psi(x), \psi(y) \right] = \Delta(x-y) = \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0} \left( e^{\ifrak p \cdot (x-y)} - e^{-\ifrak p \cdot (x-y)} \right)
-			\label{eq_scalar_field_commutation_relation_reproduced}
-		\end{equation}
+		\left[ \psi(x), \psi(y) \right] = \Delta(x-y) = \frac{1}{(2\pi)^3} \int \frac{d^3 p}{2p_0} \left( e^{\ifrak p \cdot (x-y)} - e^{-\ifrak p \cdot (x-y)} \right)
 
 	where :math:`p_0 = \sqrt{\pbf^2 + m^2}`.
 
-	We claim that the canonical commutation relations :math:`\eqref{eq_canonical_commutation_relation_1}` -- :math:`\eqref{eq_canonical_commutation_relation_3}` are satisfied by
+	We claim that the canonical commutation relations :eq:`eq_canonical_commutation_relations` are satisfied by
 
 	.. math::
-		:nowrap:
+		:label: eq_defn_q_and_p_scalar_field_self_dual
 
-		\begin{align}
-			q(t, \xbf) &\coloneqq \psi(t, \xbf)
-			\label{eq_defn_q_scalar_field_self_dual} \\
-			p(t, \xbf) &\coloneqq \dot{\psi}(t, \xbf)
-			\label{eq_defn_p_scalar_field_self_dual}
-		\end{align}
+		q(t, \xbf) &\coloneqq \psi(t, \xbf) \\
+		p(t, \xbf) &\coloneqq \dot{\psi}(t, \xbf)
 
 	Indeed, it follows from the following calculations
 
 	.. math::
-		:nowrap:
+		:label: eq_canonical_commutators_scalar_field_self_dual
 
-		\begin{alignat}{2}
-			\left[ q(t, \xbf), p(t, \xbf) \right] &= \left[ \psi(t, \xbf), \dot{\psi}(t, \ybf) \right] &&= -\dot{\Delta}(0, \xbf-\ybf) = \ifrak \delta^3(\xbf-\ybf)
-			\nonumber \\
-			\left[ q(t, \xbf), q(t, \xbf) \right] &= \left[ \psi(t, \xbf), \psi(t, \ybf) \right] &&= \Delta(0, \xbf-\ybf) = 0
-			\label{eq_canonical_commutator_scalar_field_self_dual_qq} \\
-			\left[ p(t, \xbf), p(t, \xbf) \right] &= \left[ \dot{\psi}(t, \xbf), \dot{\psi}(t, \ybf) \right] &&= -\ddot{\Delta}(0, \xbf-\ybf) = 0
-			\nonumber
-		\end{alignat}
+		\begin{alignat*}{3}
+			\left[ q(t, \xbf), p(t, \ybf) \right]
+				&= \left[ \psi(t, \xbf), \dot{\psi}(t, \ybf) \right]
+				&&= -\dot{\Delta}(0, \xbf-\ybf)
+				&&= \ifrak \delta^3(\xbf-\ybf) \\
+			\left[ q(t, \xbf), q(t, \ybf) \right]
+				&= \left[ \psi(t, \xbf), \psi(t, \ybf) \right]
+				&&= \Delta(0, \xbf-\ybf)
+				&&= 0 \\
+			\left[ p(t, \xbf), p(t, \ybf) \right] &= \left[ \dot{\psi}(t, \xbf), \dot{\psi}(t, \ybf) \right] &&= -\ddot{\Delta}(0, \xbf-\ybf) = 0
+		\end{alignat*}
 
-	Now for particles that are different from their antiparticles, we must modify :math:`\eqref{eq_defn_q_scalar_field_self_dual}` -- :math:`\eqref{eq_defn_p_scalar_field_self_dual}` as follows
+	Now for particles that are different from their antiparticles, we must modify :eq:`eq_defn_q_and_p_scalar_field_self_dual` as follows
 
 	.. math::
-		:nowrap:
 
-		\begin{align*}
-			q(t, \xbf) &= \psi(t, \xbf) \\
-			p(t, \xbf) &= \dot{\psi}^{\dagger}(t, \xbf)
-		\end{align*}
+		q(t, \xbf) &= \psi(t, \xbf) \\
+		p(t, \xbf) &= \dot{\psi}^{\dagger}(t, \xbf)
 
-	and note that in this case :math:`\left[ \psi(t, \xbf), \psi(t', \ybf) \right] = 0`, in contrast to :math:`\eqref{eq_canonical_commutator_scalar_field_self_dual_qq}`.
+	and note that in this case :math:`\left[ \psi(t, \xbf), \psi(t', \ybf) \right] = 0`, in contrast to the second equation in :eq:`eq_canonical_commutators_scalar_field_self_dual`.
 
 Spin-:math:`1` vector fields
-	Consider once again particles that are self-charge-dual. Using notations from :ref:`sec_spin_1_vector_fields`, we recall the commutation relation :math:`\eqref{eq_vector_field_commutator}` as follows
+	Consider once again particles that are self-charge-dual. Using notations from :ref:`sec_spin_1_vector_fields`, we recall the commutation relation :eq:`eq_vector_field_commutator` as follows
 
 	.. math::
-		:nowrap:
 
-		\begin{equation*}
-			\left[ \psi_{\mu}(x), \psi_{\nu}(y) \right] = \left( \eta_{\mu\nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta(x-y)
-		\end{equation*}
+		\left[ \psi_{\mu}(x), \psi_{\nu}(y) \right] = \left( \eta_{\mu\nu} - \frac{\p_{\mu} \p_{\nu}}{m^2} \right) \Delta(x-y)
 
 	The canonical variables in this case can be defined as follows
 
 	.. math::
-		:nowrap:
+		:label: eq_defn_q_and_p_vector_field_self_dual
 
-		\begin{align}
-			q_i(t, \xbf) &= \psi_i(t, \xbf)
-			\label{eq_defn_q_vector_field_self_dual} \\
-			p_i(t, \xbf) &= \dot{\psi}_i(t, \xbf) - \frac{\p \psi_0(t, \xbf)}{\p x_i}
-			\label{eq_defn_p_vector_field_self_dual}
-		\end{align}
+		q_i(t, \xbf) &= \psi_i(t, \xbf) \\
+		p_i(t, \xbf) &= \dot{\psi}_i(t, \xbf) - \frac{\p \psi_0(t, \xbf)}{\p x_i}
 
 	where :math:`i=1,2,3`. Indeed, let's calculate the equal-time commutators as follows
 
 	.. math::
-		:nowrap:
 
-		\begin{align*}
-			\left[ q_i(t, \xbf), p_j(t, \ybf) \right] &= \left[ \psi_i(t, \xbf), \dot{\psi}_j(t, \ybf) \right] - \left[ \psi_i(t, \xbf), \frac{\p \psi_0(t, \ybf)}{\p y_j} \right] \\
-				&= -\left( \eta_{ij} -\frac{\p_i \p_j}{m^2} \right) \dot{\Delta}(0, \xbf-\ybf) - \left. \frac{\p_i \p_0}{m^2} \right|_{t=0} \left( \p_j \Delta(t, \xbf-\ybf) \right) \\
-				&= \ifrak \delta^3(\xbf-\ybf) \delta_{ij} \\
-			\left[ q_i(t, \xbf), q_j(t, \ybf) \right] &= \left( \eta_{ij} - \frac{\p_i \p_j}{m^2} \right) \Delta(0, \xbf-\ybf) = 0 \\
-			\left[ p_i(t, \xbf), p_j(t, \ybf) \right] &= \left[ \dot{\psi}_i(t, \xbf), \dot{\psi}_j(t, \ybf)\right] + \p_{x_i} \p_{y_j} \left[ \psi_0(t, \xbf), \psi_0(t, \ybf) \right] \\
-			&\phantom{=} - \p_{x_i} \left[ \psi_0(t, \xbf), \dot{\psi}_j(t, \ybf) \right] - \p_{y_j} \left[ \dot{\psi}_i(t, \xbf), \psi_0(t, \ybf) \right] = 0
-		\end{align*}
+		\left[ q_i(t, \xbf), p_j(t, \ybf) \right] &= \left[ \psi_i(t, \xbf), \dot{\psi}_j(t, \ybf) \right] - \left[ \psi_i(t, \xbf), \frac{\p \psi_0(t, \ybf)}{\p y_j} \right] \\
+			&= -\left( \eta_{ij} -\frac{\p_i \p_j}{m^2} \right) \dot{\Delta}(0, \xbf-\ybf) - \left. \frac{\p_i \p_0}{m^2} \right|_{t=0} \left( \p_j \Delta(t, \xbf-\ybf) \right) \\
+			&= \ifrak \delta^3(\xbf-\ybf) \delta_{ij} \\
+		\left[ q_i(t, \xbf), q_j(t, \ybf) \right] &= \left( \eta_{ij} - \frac{\p_i \p_j}{m^2} \right) \Delta(0, \xbf-\ybf) = 0 \\
+		\left[ p_i(t, \xbf), p_j(t, \ybf) \right] &= \left[ \dot{\psi}_i(t, \xbf), \dot{\psi}_j(t, \ybf)\right] + \p_{x_i} \p_{y_j} \left[ \psi_0(t, \xbf), \psi_0(t, \ybf) \right] \\
+		&\qquad - \p_{x_i} \left[ \psi_0(t, \xbf), \dot{\psi}_j(t, \ybf) \right] - \p_{y_j} \left[ \dot{\psi}_i(t, \xbf), \psi_0(t, \ybf) \right] = 0
 
 	We've omitted some details about the vanishing of the last quantities -- it turns out that the the first and second terms cancel out, and the third and the fourth terms also cancel out.
 
-	In any case, we've constructed three pairs of canonical variables, one for each spatial index. But what about the time index? It turns out that :math:`\psi_0` is *not* an independent variable. Indeed, we can derive from :math:`\eqref{eq_defn_p_vector_field_self_dual}` an expression of :math:`\psi_0` as follows
+	In any case, we've constructed three pairs of canonical variables, one for each spatial index. But what about the time index? It turns out that :math:`\psi_0` is *not* an independent variable. Indeed, we can derive from :eq:`eq_defn_q_and_p_vector_field_self_dual`, using :eq:`eq_vector_field_gauge_fixing_condition` and :eq:`eq_klein_gordon`, an expression of :math:`\psi_0` as follows
 
 	.. math::
-		:nowrap:
 
-		\begin{align*}
-			& & p_i & = \p_0 \psi_i - \p_i \psi_0 \\
-			& \xRightarrow{\phantom{\eqref{eq_klein_gordon}}} & \p_i p_i & = \p_0 \p_i \psi_i - \p^2_i \psi_0 \\
-			& \xRightarrow{\phantom{\eqref{eq_klein_gordon}}} & \nabla \cdot \pbf & = \p_0 \sum_{i=1}^3 \p_i \psi_i - \sum_{i=1}^3 \p^2_i \psi_0 \\
-			& \xRightarrow{\eqref{eq_vector_field_gauge_fixing_condition}} & \nabla \cdot \pbf & = \p_0^2 \psi_0 - \sum_{i=1}^3 \p_i^2 \psi_0 = -\square \psi_0 \\
-			& \xRightarrow{\eqref{eq_klein_gordon}} & \psi_0 & = -m^{-2} \nabla \cdot \pbf
-		\end{align*}
+		p_i = \p_0 \psi_i - \p_i \psi_0
+			& \implies \p_i p_i = \p_0 \p_i \psi_i - \p^2_i \psi_0 \\
+			& \implies \nabla \cdot \pbf = \p_0 \sum_{i=1}^3 \p_i \psi_i - \sum_{i=1}^3 \p^2_i \psi_0 \\
+			& \implies \nabla \cdot \pbf = \p_0^2 \psi_0 - \sum_{i=1}^3 \p_i^2 \psi_0 = -\square \psi_0 \\
+			& \implies \psi_0 = -m^{-2} \nabla \cdot \pbf
 
 Spin-:math:`1/2` Dirac fields
 	Recall the anti-commutator of Dirac fields :math:`\eqref{eq_dirac_field_commutator}` as follows
