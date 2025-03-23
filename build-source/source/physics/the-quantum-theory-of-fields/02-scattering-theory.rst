@@ -216,6 +216,9 @@ Equating the blue terms from :eq:`eq_positive_limit_of_in_state_by_lippmann_schw
 
 Up to the first order in :math:`V`, one can replace :math:`\Psi_{\alpha}^-` on the right-hand-side by :math:`\Phi_{\alpha}` and arrive at the so-called `Born approximation <https://en.wikipedia.org/wiki/Born_approximation>`_ of the S-matrix.
 
+
+.. _sec_s_matrix_lorentz_symmetry:
+
 Lorentz symmetry
 ++++++++++++++++
 

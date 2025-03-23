@@ -649,7 +649,10 @@ The corresponding variation of the action is given as follows
 
 where we've used the chain rule for derivatives in the second equality, and integration by parts in the third. Comparing with :eq:`eq_variation_of_action_by_functional_deformation`, we see that
 
-.. math:: {T^{\nu}}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
+.. math::
+	:label: eq_energy_momentum_tensor_from_translation_invariance
+
+	{T^{\nu}}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
 
 
 .. _note_energy_momentum_tensor_not_symmetric:
@@ -812,9 +815,9 @@ Using :eq:`eq_euler_lagrange`, we can get rid of the :math:`\delta\Lscr / \delta
 .. math::
 	:label: eq_lorentz_invariance_current_identity
 
-	\ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m \right) - \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (T_{\mu\nu} - T_{\nu\mu}) = 0
+	\ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m \right) - T_{\mu\nu} + T_{\nu\mu} = 0
 
-Now we can address the issue of :ref:`energy-momentum tensor not being symmetric <note_energy_momentum_tensor_not_symmetric>` by introducing the following so-called `Belinfante tensor <https://en.wikipedia.org/wiki/Belinfante%E2%80%93Rosenfeld_stress%E2%80%93energy_tensor>`__
+where we've also used :eq:`eq_energy_momentum_tensor_from_translation_invariance`. Now we can address the issue of :ref:`energy-momentum tensor not being symmetric <note_energy_momentum_tensor_not_symmetric>` by introducing the following so-called `Belinfante tensor <https://en.wikipedia.org/wiki/Belinfante%E2%80%93Rosenfeld_stress%E2%80%93energy_tensor>`__
 
 .. math::
 	:label: eq_defn_belinfante_tensor
@@ -839,10 +842,10 @@ Indeed :eq:`eq_belinfante_tensor_is_conserved` follows from the observation that
 
 The conserved quantities corresponding to :math:`\Theta_{\mu\nu}`, according to :eq:`eq_spacetime_translation_conserved_quantity_is_momentum` are
 
-.. math:: \int d^3 x~\Theta_{0 \nu} = \int d^3 x~T_{0 \nu} = P_{\nu}
+.. math:: \int d^3 x~{\Theta^0}_\nu = \int d^3 x~{T^0}_\nu = P_{\nu}
 	:label: eq_p_as_integral_of_belinfante_tensor
 
-where the first first equality holds because, again, the item in the parenthesis of :eq:`eq_defn_belinfante_tensor` is anti-symmetric is :math:`\mu` and :math:`\nu`, and therefore :math:`\nu \neq 0` given :math:`\mu = 0`. Hence it's at least equally legitimate to call :math:`\Theta_{\mu \nu}` the energy-momentum tensor. Indeed, the fact that :math:`\Theta_{\mu \nu}` is the symmetric makes it the right choice in general relatively.
+where the first equality holds because, again, the item in the parenthesis of :eq:`eq_defn_belinfante_tensor` is anti-symmetric is :math:`\mu` and :math:`\kappa`, and therefore :math:`\kappa \neq 0` given :math:`\mu = 0`. Hence it's at least equally legitimate to call :math:`\Theta_{\mu \nu}` the energy-momentum tensor. Indeed, the fact that :math:`\Theta_{\mu \nu}` is the symmetric makes it suitable for general relativity.
 
 Unlike the other conserved currents, which are derived under the general principles explained in :ref:`sec_from_symmetries_to_conservation_laws`, we'll construct the anti-symmetric :math:`\Mscr^{\rho \mu \nu}` declared in :eq:`eq_lorentz_invariance_m_conservation_and_antisymmetry` by hand as follows
 
@@ -855,8 +858,13 @@ While :eq:`eq_lorentz_omega_is_antisymmetric` is automatically satisfied by defi
 Moreover :eq:`eq_lorentz_invariance_conserved_j` takes the following form
 
 .. math:: J^{\mu\nu} = \int d^3 x \left( x^{\mu} \Theta^{0\nu} - x^{\nu} \Theta^{0\mu} \right)
+	:label: eq_j_by_belinfante_tensor
 
-Now if we consider the rotation generators :math:`J_i \coloneqq \tfrac{1}{2} \epsilon_{ijk} J^{jk}`, then it follows from :eq:`eq_hamiltonian_acts_as_time_derivative` that
+Now if we consider the rotation generators defined by
+
+.. math:: J_i \coloneqq \tfrac{1}{2} \epsilon_{ijk} J^{jk}
+
+then it follows from :eq:`eq_hamiltonian_acts_as_time_derivative` that
 
 .. math:: [H, \Jbf] = -\ifrak \dot{\Jbf} = 0
 
@@ -870,6 +878,74 @@ since :math:`\Jbf` doesn't implicitly involve :math:`t`. This recovers one of th
 		&= \ifrak \epsilon_{ijk} \int d^3x~\Theta^{0k} \\
 		&= \ifrak \epsilon_{ijk} P^k
 
-What come next are the boost operators defined as follows
+What come next are the boost operators defined as follows [#k_convention]_
 
-.. math:: K_i = K^i \coloneqq J^{0i} = \int d^3x \left( x^0 \Theta^{0i} - x^i \Theta^{00} \right)
+.. math:: K^i \coloneqq J^{0i} = \int d^3x \left( x^0 \Theta^{0i} - x^i \Theta^{00} \right)
+	:label: eq_boost_k_by_belinfante_tensor
+
+Bringing down the index, we can rewrite :eq:`eq_boost_k_by_belinfante_tensor` in vector form as follows
+
+.. math:: \Kbf = t \Pbf - \int d^3 x~\xbf \Theta^{00}
+	:label: eq_boost_k_by_belinfante_tensor_vector_form
+
+Now it follows from :eq:`eq_hamiltonian_acts_as_time_derivative` that
+
+.. math::
+
+	[H, \Kbf] &= t[H, \Pbf] + \ifrak \int d^3 x~\xbf \dot{\Theta}^{00} \\
+		&= \ifrak \int d^3 x~\xbf \dot{\Theta}^{00} \\
+		&= \ifrak (\Pbf - \dot{\Kbf}) = \ifrak \Pbf
+
+which is consistent with :eq:`eq_poincare_algebra`.
+
+Finally, using :eq:`eq_momenta_act_as_spatial_derivative` and :eq:`eq_boost_k_by_belinfante_tensor_vector_form` together with the fact that :math:`\Pbf` commutes with itself, one can evaluate the commutator between :math:`\Pbf` and :math:`\Kbf` as follows
+
+.. math::
+
+	\left[ P_j, K_k \right] = -\ifrak \int d^3 x~x_k \p_j \Theta^{00} = \ifrak \delta_{kj} \int d^3 x \Theta^{00} = \ifrak \delta_{kj} P^0 = \ifrak \delta_{kj} H
+
+which, again, is consistent with :eq:`eq_poincare_algebra`.
+
+It turns out, following the lines of argument in :ref:`Lorentz symmetry of S-matrix <sec_s_matrix_lorentz_symmetry>`, these commutation relations are enough to show the Lorentz invariance of S-matrix under the same "smootheness" assumptions on the interaction terms. In addition, the other commutation relations between :math:`H, \Pbf, \Jbf, \Kbf` also follows.
+
+Though not necessary, it's indeed possible to verify the other Poincaré algebra relations directly. In particular, the commutation relations between the rotation generators are verified as follows.
+
+.. dropdown:: An explicit formula for rotation generators :math:`J^{ij}`
+	:animate: fade-in-slide-down
+	:icon: unlock
+	:open:
+
+	According to :eq:`eq_j_by_belinfante_tensor`, :eq:`eq_defn_belinfante_tensor`, and :eq:`eq_energy_momentum_tensor_from_translation_invariance`, the rotation generator :math:`J^{ij}` can be calculated as follows
+
+	.. math::
+
+		J^{ij} &= \int d^3 x \left( x^i \Theta^{0j} - x^j \Theta^{0i} \right) \\
+			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) \\
+				&\mkern-24mu - \frac{\ifrak}{2} \int d^3 x~x^i \p_k \left(
+					\frac{\delta \Lscr}{\delta (\p_k \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
+					- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{kj} \right)_n}^m \Psi_m
+					- \frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
+				\right) \\
+				&\mkern-24mu + \frac{\ifrak}{2} \int d^3 x~x^j \p_k \left(
+					\frac{\delta \Lscr}{\delta (\p_k \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
+					- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ki} \right)_n}^m \Psi_m
+					- \frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
+				\right) \\
+			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) \\
+				&\mkern-24mu + \frac{\ifrak}{2} \int d^3 x \left(
+					\frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
+					- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m
+					- \frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{i0} \right)_n}^m \Psi_m
+				\right) \\
+				&\mkern-24mu - \frac{\ifrak}{2} \int d^3 x \left(
+						\frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
+						- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ji} \right)_n}^m \Psi_m
+						- \frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{j0} \right)_n}^m \Psi_m
+					\right) \\
+			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
+			&= \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)
+
+
+.. rubric:: Footnotes
+
+.. [#k_convention] The definition :math:`K_k \coloneqq J^{k0}` on page 317 in [Wei95]_ differs from the very same definition on page 61 by a sign, which leads to, among others, inconsistency in the Poincaré algebra relations :eq:`eq_poincare_algebra`. We will stick to our convention in :ref:`sec_quantum_lorentz_symmetry`, which is consistent with Weinberg's convention on page 61.

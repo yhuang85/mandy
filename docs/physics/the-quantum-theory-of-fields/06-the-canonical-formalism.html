@@ -786,8 +786,8 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
         &amp;= \int d^4 x \left( \epsilon^{\mu} \p_{\mu} \Lscr + \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu}\Psi_n \p_{\nu} \epsilon^{\mu} \right) \\
         &amp;= -\int d^4 x \left( \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n \right) \p_{\nu} \epsilon^{\mu}\end{split}\]</div>
 <p>where we’ve used the chain rule for derivatives in the second equality, and integration by parts in the third. Comparing with <a class="reference internal" href="#equation-eq-variation-of-action-by-functional-deformation">Eq.6.3.4</a>, we see that</p>
-<div class="math notranslate nohighlight">
-\[{T^{\nu}}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-energy-momentum-tensor-from-translation-invariance">
+<span class="eqno">(6.3.15)<a class="headerlink" href="#equation-eq-energy-momentum-tensor-from-translation-invariance" title="Link to this equation">#</a></span>\[{T^{\nu}}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n\]</div>
 <div class="admonition note" id="note-energy-momentum-tensor-not-symmetric">
 <p class="admonition-title">Note</p>
 <p>The energy-momentum tensor <span class="math notranslate nohighlight">\({T^{\nu}}_{\mu}\)</span> is not yet suitable for general relativity since it’s not symmetric. As we’ll see in <a class="reference internal" href="01-quantum-mechanics.html#sec-lorentz-symmetry"><span class="std std-ref">Lorentz symmetry</span></a>, when taking homogeneous Lorentz transformation symmetry into account, one can supplement <span class="math notranslate nohighlight">\({T^{\nu}}_{\mu}\)</span> with some extra terms to make it both conserved and symmetric.</p>
@@ -833,7 +833,7 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 <p>In other words, the conserved quantities also form the same Lie algebra.</p>
 <p>Now if, in addition, the Lagrangian density is also invariant, then <a class="reference internal" href="#equation-eq-lagrangian-density-preserving-symmetry-conserved-density">Eq.6.3.9</a> takes the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-lagrangian-density-invariant-linear-transformation-conserved-current">
-<span class="eqno">(6.3.15)<a class="headerlink" href="#equation-eq-lagrangian-density-invariant-linear-transformation-conserved-current" title="Link to this equation">#</a></span>\[J^{\mu}_a = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} Q_n)} {(t_a)_n}^m Q_m - \ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} C_r)} {(\tau_a)_r}^s C_s\]</div>
+<span class="eqno">(6.3.16)<a class="headerlink" href="#equation-eq-lagrangian-density-invariant-linear-transformation-conserved-current" title="Link to this equation">#</a></span>\[J^{\mu}_a = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} Q_n)} {(t_a)_n}^m Q_m - \ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} C_r)} {(\tau_a)_r}^s C_s\]</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Interacting equal-mass real scalar fields</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
@@ -844,11 +844,11 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 <div class="math notranslate nohighlight">
 \[\begin{split}\Phi_1 &amp;\to \Phi_1 - \epsilon \Phi_2 \\
 \Phi_2 &amp;\to \Phi_2 + \epsilon \Phi_1\end{split}\]</div>
-<p class="sd-card-text">In this case, we can evaluate <a class="reference internal" href="#equation-eq-lagrangian-density-invariant-linear-transformation-conserved-current">Eq.6.3.15</a> as follows</p>
+<p class="sd-card-text">In this case, we can evaluate <a class="reference internal" href="#equation-eq-lagrangian-density-invariant-linear-transformation-conserved-current">Eq.6.3.16</a> as follows</p>
 <div class="math notranslate nohighlight">
 \[J^{\mu} = -\Psi_2 \p^{\mu} \Phi_1 + \Phi_1 \p^{\mu} \Phi_2\]</div>
 </div>
-</details><p>Note that since <span class="math notranslate nohighlight">\(\Lscr\)</span> doesn’t have <span class="math notranslate nohighlight">\(\dot{C}_r\)</span> dependencies, we have the following by letting <span class="math notranslate nohighlight">\(\mu = 0\)</span> in <a class="reference internal" href="#equation-eq-lagrangian-density-invariant-linear-transformation-conserved-current">Eq.6.3.15</a></p>
+</details><p>Note that since <span class="math notranslate nohighlight">\(\Lscr\)</span> doesn’t have <span class="math notranslate nohighlight">\(\dot{C}_r\)</span> dependencies, we have the following by letting <span class="math notranslate nohighlight">\(\mu = 0\)</span> in <a class="reference internal" href="#equation-eq-lagrangian-density-invariant-linear-transformation-conserved-current">Eq.6.3.16</a></p>
 <div class="math notranslate nohighlight">
 \[J^0_a = -\ifrak P^n {(t_a)_n}^m Q_m\]</div>
 <p>whose equal-time commutation relations with canonical variables <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> can be easily calculated.</p>
@@ -887,8 +887,8 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
         &amp; \qquad + \frac{1}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} \left( \eta_{\kappa \mu} \p_{\nu} - \eta_{\kappa \nu} \p_{\mu} \right) \Psi_n = 0\end{split}\]</div>
 <p>Using <a class="reference internal" href="#equation-eq-euler-lagrange">Eq.6.2.5</a>, we can get rid of the <span class="math notranslate nohighlight">\(\delta\Lscr / \delta\Psi_n\)</span> term in <a class="reference internal" href="#equation-eq-lorentz-invariance-current-raw-identity">Eq.6.4.4</a> to arrive at the following</p>
 <div class="math notranslate nohighlight" id="equation-eq-lorentz-invariance-current-identity">
-<span class="eqno">(6.4.5)<a class="headerlink" href="#equation-eq-lorentz-invariance-current-identity" title="Link to this equation">#</a></span>\[\ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m \right) - \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} (T_{\mu\nu} - T_{\nu\mu}) = 0\]</div>
-<p>Now we can address the issue of <a class="reference internal" href="#note-energy-momentum-tensor-not-symmetric"><span class="std std-ref">energy-momentum tensor not being symmetric</span></a> by introducing the following so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Belinfante%E2%80%93Rosenfeld_stress%E2%80%93energy_tensor">Belinfante tensor</a></p>
+<span class="eqno">(6.4.5)<a class="headerlink" href="#equation-eq-lorentz-invariance-current-identity" title="Link to this equation">#</a></span>\[\ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m \right) - T_{\mu\nu} + T_{\nu\mu} = 0\]</div>
+<p>where we’ve also used <a class="reference internal" href="#equation-eq-energy-momentum-tensor-from-translation-invariance">Eq.6.3.15</a>. Now we can address the issue of <a class="reference internal" href="#note-energy-momentum-tensor-not-symmetric"><span class="std std-ref">energy-momentum tensor not being symmetric</span></a> by introducing the following so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Belinfante%E2%80%93Rosenfeld_stress%E2%80%93energy_tensor">Belinfante tensor</a></p>
 <div class="math notranslate nohighlight" id="equation-eq-defn-belinfante-tensor">
 <span class="eqno">(6.4.6)<a class="headerlink" href="#equation-eq-defn-belinfante-tensor" title="Link to this equation">#</a></span>\[\begin{split}\Theta_{\mu\nu}
         &amp;\coloneqq T_{\mu\nu} - \frac{\ifrak}{2} \p_{\kappa} \Big(
@@ -904,8 +904,8 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 <p>Indeed <a class="reference internal" href="#equation-eq-belinfante-tensor-is-conserved">Eq.6.4.7</a> follows from the observation that the term inside the parenthesis of <a class="reference internal" href="#equation-eq-defn-belinfante-tensor">Eq.6.4.6</a> is anti-symmetric in <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\kappa\)</span>, and <a class="reference internal" href="#equation-eq-belinfante-tensor-is-symmetric">Eq.6.4.8</a> is a direct consequence of <a class="reference internal" href="#equation-eq-lorentz-invariance-current-identity">Eq.6.4.5</a>.</p>
 <p>The conserved quantities corresponding to <span class="math notranslate nohighlight">\(\Theta_{\mu\nu}\)</span>, according to <a class="reference internal" href="#equation-eq-spacetime-translation-conserved-quantity-is-momentum">Eq.6.3.11</a> are</p>
 <div class="math notranslate nohighlight" id="equation-eq-p-as-integral-of-belinfante-tensor">
-<span class="eqno">(6.4.9)<a class="headerlink" href="#equation-eq-p-as-integral-of-belinfante-tensor" title="Link to this equation">#</a></span>\[\int d^3 x~\Theta_{0 \nu} = \int d^3 x~T_{0 \nu} = P_{\nu}\]</div>
-<p>where the first first equality holds because, again, the item in the parenthesis of <a class="reference internal" href="#equation-eq-defn-belinfante-tensor">Eq.6.4.6</a> is anti-symmetric is <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span>, and therefore <span class="math notranslate nohighlight">\(\nu \neq 0\)</span> given <span class="math notranslate nohighlight">\(\mu = 0\)</span>. Hence it’s at least equally legitimate to call <span class="math notranslate nohighlight">\(\Theta_{\mu \nu}\)</span> the energy-momentum tensor. Indeed, the fact that <span class="math notranslate nohighlight">\(\Theta_{\mu \nu}\)</span> is the symmetric makes it the right choice in general relatively.</p>
+<span class="eqno">(6.4.9)<a class="headerlink" href="#equation-eq-p-as-integral-of-belinfante-tensor" title="Link to this equation">#</a></span>\[\int d^3 x~{\Theta^0}_\nu = \int d^3 x~{T^0}_\nu = P_{\nu}\]</div>
+<p>where the first equality holds because, again, the item in the parenthesis of <a class="reference internal" href="#equation-eq-defn-belinfante-tensor">Eq.6.4.6</a> is anti-symmetric is <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\kappa\)</span>, and therefore <span class="math notranslate nohighlight">\(\kappa \neq 0\)</span> given <span class="math notranslate nohighlight">\(\mu = 0\)</span>. Hence it’s at least equally legitimate to call <span class="math notranslate nohighlight">\(\Theta_{\mu \nu}\)</span> the energy-momentum tensor. Indeed, the fact that <span class="math notranslate nohighlight">\(\Theta_{\mu \nu}\)</span> is the symmetric makes it suitable for general relativity.</p>
 <p>Unlike the other conserved currents, which are derived under the general principles explained in <a class="reference internal" href="#sec-from-symmetries-to-conservation-laws"><span class="std std-ref">From symmetries to conservation laws</span></a>, we’ll construct the anti-symmetric <span class="math notranslate nohighlight">\(\Mscr^{\rho \mu \nu}\)</span> declared in <a class="reference internal" href="#equation-eq-lorentz-invariance-m-conservation-and-antisymmetry">Eq.6.4.2</a> by hand as follows</p>
 <div class="math notranslate nohighlight">
 \[\Mscr^{\rho\mu\nu} \coloneqq x^{\mu} \Theta^{\rho\nu} - x^{\nu} \Theta^{\rho\mu}\]</div>
@@ -913,9 +913,12 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 <div class="math notranslate nohighlight">
 \[\p_{\rho} \Mscr^{\rho\mu\nu} = \Theta^{\mu\nu} - \Theta^{\nu\mu} = 0\]</div>
 <p>Moreover <a class="reference internal" href="#equation-eq-lorentz-invariance-conserved-j">Eq.6.4.3</a> takes the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-j-by-belinfante-tensor">
+<span class="eqno">(6.4.10)<a class="headerlink" href="#equation-eq-j-by-belinfante-tensor" title="Link to this equation">#</a></span>\[J^{\mu\nu} = \int d^3 x \left( x^{\mu} \Theta^{0\nu} - x^{\nu} \Theta^{0\mu} \right)\]</div>
+<p>Now if we consider the rotation generators defined by</p>
 <div class="math notranslate nohighlight">
-\[J^{\mu\nu} = \int d^3 x \left( x^{\mu} \Theta^{0\nu} - x^{\nu} \Theta^{0\mu} \right)\]</div>
-<p>Now if we consider the rotation generators <span class="math notranslate nohighlight">\(J_i \coloneqq \tfrac{1}{2} \epsilon_{ijk} J^{jk}\)</span>, then it follows from <a class="reference internal" href="#equation-eq-hamiltonian-acts-as-time-derivative">Eq.6.3.14</a> that</p>
+\[J_i \coloneqq \tfrac{1}{2} \epsilon_{ijk} J^{jk}\]</div>
+<p>then it follows from <a class="reference internal" href="#equation-eq-hamiltonian-acts-as-time-derivative">Eq.6.3.14</a> that</p>
 <div class="math notranslate nohighlight">
 \[[H, \Jbf] = -\ifrak \dot{\Jbf} = 0\]</div>
 <p>since <span class="math notranslate nohighlight">\(\Jbf\)</span> doesn’t implicitly involve <span class="math notranslate nohighlight">\(t\)</span>. This recovers one of the commutation relations <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a> for the Poincaré algebra. Next, let’s verify the commutation relation between <span class="math notranslate nohighlight">\(\Pbf\)</span> and <span class="math notranslate nohighlight">\(\Jbf\)</span>, using <a class="reference internal" href="#equation-eq-momenta-act-as-spatial-derivative">Eq.6.3.13</a> and <a class="reference internal" href="#equation-eq-p-as-integral-of-belinfante-tensor">Eq.6.4.9</a>, as follows</p>
@@ -925,9 +928,62 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
         &amp;= \frac{\ifrak}{2} \epsilon_{jk\ell} \int d^3x \left( -\delta^k_i \Theta^{0\ell} + \delta^{\ell}_i \Theta^{0k} \right) \\
         &amp;= \ifrak \epsilon_{ijk} \int d^3x~\Theta^{0k} \\
         &amp;= \ifrak \epsilon_{ijk} P^k\end{split}\]</div>
-<p>What come next are the boost operators defined as follows</p>
+<p>What come next are the boost operators defined as follows <a class="footnote-reference brackets" href="#k-convention" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<div class="math notranslate nohighlight" id="equation-eq-boost-k-by-belinfante-tensor">
+<span class="eqno">(6.4.11)<a class="headerlink" href="#equation-eq-boost-k-by-belinfante-tensor" title="Link to this equation">#</a></span>\[K^i \coloneqq J^{0i} = \int d^3x \left( x^0 \Theta^{0i} - x^i \Theta^{00} \right)\]</div>
+<p>Bringing down the index, we can rewrite <a class="reference internal" href="#equation-eq-boost-k-by-belinfante-tensor">Eq.6.4.11</a> in vector form as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-boost-k-by-belinfante-tensor-vector-form">
+<span class="eqno">(6.4.12)<a class="headerlink" href="#equation-eq-boost-k-by-belinfante-tensor-vector-form" title="Link to this equation">#</a></span>\[\Kbf = t \Pbf - \int d^3 x~\xbf \Theta^{00}\]</div>
+<p>Now it follows from <a class="reference internal" href="#equation-eq-hamiltonian-acts-as-time-derivative">Eq.6.3.14</a> that</p>
 <div class="math notranslate nohighlight">
-\[K_i = K^i \coloneqq J^{0i} = \int d^3x \left( x^0 \Theta^{0i} - x^i \Theta^{00} \right)\]</div>
+\[\begin{split}[H, \Kbf] &amp;= t[H, \Pbf] + \ifrak \int d^3 x~\xbf \dot{\Theta}^{00} \\
+        &amp;= \ifrak \int d^3 x~\xbf \dot{\Theta}^{00} \\
+        &amp;= \ifrak (\Pbf - \dot{\Kbf}) = \ifrak \Pbf\end{split}\]</div>
+<p>which is consistent with <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>.</p>
+<p>Finally, using <a class="reference internal" href="#equation-eq-momenta-act-as-spatial-derivative">Eq.6.3.13</a> and <a class="reference internal" href="#equation-eq-boost-k-by-belinfante-tensor-vector-form">Eq.6.4.12</a> together with the fact that <span class="math notranslate nohighlight">\(\Pbf\)</span> commutes with itself, one can evaluate the commutator between <span class="math notranslate nohighlight">\(\Pbf\)</span> and <span class="math notranslate nohighlight">\(\Kbf\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[\left[ P_j, K_k \right] = -\ifrak \int d^3 x~x_k \p_j \Theta^{00} = \ifrak \delta_{kj} \int d^3 x \Theta^{00} = \ifrak \delta_{kj} P^0 = \ifrak \delta_{kj} H\]</div>
+<p>which, again, is consistent with <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>.</p>
+<p>It turns out, following the lines of argument in <a class="reference internal" href="02-scattering-theory.html#sec-s-matrix-lorentz-symmetry"><span class="std std-ref">Lorentz symmetry of S-matrix</span></a>, these commutation relations are enough to show the Lorentz invariance of S-matrix under the same “smootheness” assumptions on the interaction terms. In addition, the other commutation relations between <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> also follows.</p>
+<p>Though not necessary, it’s indeed possible to verify the other Poincaré algebra relations directly. In particular, the commutation relations between the rotation generators are verified as follows.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">An explicit formula for rotation generators <span class="math notranslate nohighlight">\(J^{ij}\)</span></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">According to <a class="reference internal" href="#equation-eq-j-by-belinfante-tensor">Eq.6.4.10</a>, <a class="reference internal" href="#equation-eq-defn-belinfante-tensor">Eq.6.4.6</a>, and <a class="reference internal" href="#equation-eq-energy-momentum-tensor-from-translation-invariance">Eq.6.3.15</a>, the rotation generator <span class="math notranslate nohighlight">\(J^{ij}\)</span> can be calculated as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}J^{ij} &amp;= \int d^3 x \left( x^i \Theta^{0j} - x^j \Theta^{0i} \right) \\
+        &amp;= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) \\
+                &amp;\mkern-24mu - \frac{\ifrak}{2} \int d^3 x~x^i \p_k \left(
+                        \frac{\delta \Lscr}{\delta (\p_k \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
+                        - \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{kj} \right)_n}^m \Psi_m
+                        - \frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
+                \right) \\
+                &amp;\mkern-24mu + \frac{\ifrak}{2} \int d^3 x~x^j \p_k \left(
+                        \frac{\delta \Lscr}{\delta (\p_k \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
+                        - \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ki} \right)_n}^m \Psi_m
+                        - \frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
+                \right) \\
+        &amp;= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) \\
+                &amp;\mkern-24mu + \frac{\ifrak}{2} \int d^3 x \left(
+                        \frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
+                        - \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m
+                        - \frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{i0} \right)_n}^m \Psi_m
+                \right) \\
+                &amp;\mkern-24mu - \frac{\ifrak}{2} \int d^3 x \left(
+                                \frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
+                                - \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ji} \right)_n}^m \Psi_m
+                                - \frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{j0} \right)_n}^m \Psi_m
+                        \right) \\
+        &amp;= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
+        &amp;= \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)\end{split}\]</div>
+</div>
+</details><p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="k-convention" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>The definition <span class="math notranslate nohighlight">\(K_k \coloneqq J^{k0}\)</span> on page 317 in <a class="reference internal" href="../../bib.html#wei95" id="id4"><span>[Wei95]</span></a> differs from the very same definition on page 61 by a sign, which leads to, among others, inconsistency in the Poincaré algebra relations <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>. We will stick to our convention in <a class="reference internal" href="01-quantum-mechanics.html#sec-quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a>, which is consistent with Weinberg’s convention on page 61.</p>
+</aside>
+</aside>
 </section>
 </section>
 
