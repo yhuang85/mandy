@@ -913,7 +913,6 @@ Though not necessary, it's indeed possible to verify the other Poincaré algebra
 .. dropdown:: An explicit formula for rotation generators :math:`J^{ij}`
 	:animate: fade-in-slide-down
 	:icon: unlock
-	:open:
 
 	According to :eq:`eq_j_by_belinfante_tensor`, :eq:`eq_defn_belinfante_tensor`, and :eq:`eq_energy_momentum_tensor_from_translation_invariance`, the rotation generator :math:`J^{ij}` can be calculated as follows
 
@@ -945,6 +944,18 @@ Though not necessary, it's indeed possible to verify the other Poincaré algebra
 			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
 			&= \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)
 
+	Now since :math:`\delta \Lscr / \delta \dot{\Psi}_n` vanishes when :math:`\Psi_n` is an auxilliary field, we can rewrite :math:`J^{ij}` in terms of canonical variables as follows
+
+	.. math:: J^{ij} = \int d^3 x~P^n \left( -x^i \p^j Q_n + x^j \p^i Q_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m Q_m \right)
+
+	The commutator between :math:`J^{ij}` and the canonical variables follows
+
+	.. math::
+
+		\left[ J^{ij}, Q_n \right] &= -\ifrak \left( -x^i \p^j + x^j \p^i \right) Q_n - {\left( \Jscr^{ij} \right)_n}^m Q_m \\
+		\left[ J^{ij}, P^n \right] &= \ifrak \left( -x^i \p^j + x^j \p^i \right) P^n + {\left( \Jscr^{ij} \right)_m}^n P^m
+
+	where we've used integration-by-parts in the second equality. The standard commutation relation between the components of :math:`\Jbf` follows readily.
 
 .. rubric:: Footnotes
 

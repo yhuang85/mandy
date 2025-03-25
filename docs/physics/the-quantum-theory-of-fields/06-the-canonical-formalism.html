@@ -946,7 +946,7 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 <p>which, again, is consistent with <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>.</p>
 <p>It turns out, following the lines of argument in <a class="reference internal" href="02-scattering-theory.html#sec-s-matrix-lorentz-symmetry"><span class="std std-ref">Lorentz symmetry of S-matrix</span></a>, these commutation relations are enough to show the Lorentz invariance of S-matrix under the same “smootheness” assumptions on the interaction terms. In addition, the other commutation relations between <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> also follows.</p>
 <p>Though not necessary, it’s indeed possible to verify the other Poincaré algebra relations directly. In particular, the commutation relations between the rotation generators are verified as follows.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" open="open">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">An explicit formula for rotation generators <span class="math notranslate nohighlight">\(J^{ij}\)</span></span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">According to <a class="reference internal" href="#equation-eq-j-by-belinfante-tensor">Eq.6.4.10</a>, <a class="reference internal" href="#equation-eq-defn-belinfante-tensor">Eq.6.4.6</a>, and <a class="reference internal" href="#equation-eq-energy-momentum-tensor-from-translation-invariance">Eq.6.3.15</a>, the rotation generator <span class="math notranslate nohighlight">\(J^{ij}\)</span> can be calculated as follows</p>
@@ -976,6 +976,14 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
                         \right) \\
         &amp;= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
         &amp;= \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)\end{split}\]</div>
+<p class="sd-card-text">Now since <span class="math notranslate nohighlight">\(\delta \Lscr / \delta \dot{\Psi}_n\)</span> vanishes when <span class="math notranslate nohighlight">\(\Psi_n\)</span> is an auxilliary field, we can rewrite <span class="math notranslate nohighlight">\(J^{ij}\)</span> in terms of canonical variables as follows</p>
+<div class="math notranslate nohighlight">
+\[J^{ij} = \int d^3 x~P^n \left( -x^i \p^j Q_n + x^j \p^i Q_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m Q_m \right)\]</div>
+<p class="sd-card-text">The commutator between <span class="math notranslate nohighlight">\(J^{ij}\)</span> and the canonical variables follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ J^{ij}, Q_n \right] &amp;= -\ifrak \left( -x^i \p^j + x^j \p^i \right) Q_n - {\left( \Jscr^{ij} \right)_n}^m Q_m \\
+\left[ J^{ij}, P^n \right] &amp;= \ifrak \left( -x^i \p^j + x^j \p^i \right) P^n + {\left( \Jscr^{ij} \right)_m}^n P^m\end{split}\]</div>
+<p class="sd-card-text">where we’ve used integration-by-parts in the second equality. The standard commutation relation between the components of <span class="math notranslate nohighlight">\(\Jbf\)</span> follows readily.</p>
 </div>
 </details><p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
