@@ -555,8 +555,8 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
         \dot{P}_n(t, \xbf) &amp;= \ifrak \left[ H, P_n(t, \xbf) \right] &amp;&amp;= -\frac{\delta H}{ \delta Q_n(t, \xbf)}
 \end{alignat*}\end{split}\]</div>
 <p>As an example, we note that, in light of <a class="reference internal" href="#equation-eq-free-scalar-field-hamiltonian">Eq.6.1.10</a>, the full Hamiltonian for real scalar fields may be written as</p>
-<div class="math notranslate nohighlight">
-\[H^{RSF} = \int d^3 x \left( \tfrac{1}{2} P^2 + \tfrac{1}{2} \left( \nabla Q \right)^2 + \tfrac{1}{2} m^2 Q^2 + \Hscr(Q) \right)\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-real-scalar-field-hamiltonian">
+<span class="eqno">(6.1.14)<a class="headerlink" href="#equation-eq-real-scalar-field-hamiltonian" title="Link to this equation">#</a></span>\[H^{RSF} = \int d^3 x \left( \frac{1}{2} P^2 + \frac{1}{2} \left( \nabla Q \right)^2 + \frac{1}{2} m^2 Q^2 + \Hscr(Q) \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Hscr(Q)\)</span> is the perturbation term giving rise to the interaction.</p>
 </section>
 </section>
@@ -633,9 +633,9 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
 <div class="math notranslate nohighlight">
 \[P_n(t, \xbf) \coloneqq \frac{\delta L[Q(t), \dot{Q}(t), C(t)]}{\delta \dot{Q}_n(t, \xbf)}\]</div>
 <p>and hence the Hamiltonian takes the following form</p>
-<div class="math notranslate nohighlight">
-\[H[Q, P] = \sum_n \int d^3 x~P_n \dot{Q}_n - L[Q(t), \dot{Q}(t), C(t)]\]</div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<div class="math notranslate nohighlight" id="equation-eq-general-quantum-hamiltonian">
+<span class="eqno">(6.2.8)<a class="headerlink" href="#equation-eq-general-quantum-hamiltonian" title="Link to this equation">#</a></span>\[H[Q, P] = \sum_n \int d^3 x~P_n \dot{Q}_n - L[Q(t), \dot{Q}(t), C(t)]\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down" id="dropdown-quantization-of-free-scalar-fields">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Quantization of free scalar fields</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">We’ll illustrate how “quantization” works in the simplest case of free scalar fields <span class="math notranslate nohighlight">\(\phi(t, \xbf)\)</span>. Namely, we’ll reverse our earlier approach to the quantum theory by starting from a Lagrangian, and then work out the field equations, solve them for the fields, impose canonical commutation relations, and finally arrive at the familiar commutation relations between creation and annihilation operators introduced in <a class="reference internal" href="03-the-cluster-decomposition-principle.html#sec-the-cluster-decomposition-principle"><span class="std std-ref">The Cluster Decomposition Principle</span></a>.</p>
@@ -644,12 +644,12 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
 \[L_0[\phi, \dot{\phi}] = -\frac{1}{2} \int d^3 x \left( \p_{\mu} \phi \p^{\mu} \phi + m^2 \phi^2 \right)\]</div>
 <p class="sd-card-text">The canonical conjugate of <span class="math notranslate nohighlight">\(\phi(t, \xbf)\)</span> is then</p>
 <div class="math notranslate nohighlight" id="equation-eq-free-scalar-field-pi-equals-dot-phi">
-<span class="eqno">(6.2.8)<a class="headerlink" href="#equation-eq-free-scalar-field-pi-equals-dot-phi" title="Link to this equation">#</a></span>\[\pi(t, \xbf) \coloneqq \frac{\delta L_0}{\delta \dot{\phi}(t, \xbf)} = \dot{\phi}(t, \xbf)\]</div>
+<span class="eqno">(6.2.9)<a class="headerlink" href="#equation-eq-free-scalar-field-pi-equals-dot-phi" title="Link to this equation">#</a></span>\[\pi(t, \xbf) \coloneqq \frac{\delta L_0}{\delta \dot{\phi}(t, \xbf)} = \dot{\phi}(t, \xbf)\]</div>
 <p class="sd-card-text">Hence the Hamiltonian takes the following form</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}H_0[\phi, \pi]
+<div class="math notranslate nohighlight" id="equation-eq-free-scalar-field-hamiltonian-in-interaction-picture">
+<span class="eqno">(6.2.10)<a class="headerlink" href="#equation-eq-free-scalar-field-hamiltonian-in-interaction-picture" title="Link to this equation">#</a></span>\[\begin{split}H_0[\phi, \pi]
         &amp;= \int d^3 x~\pi(t, \xbf) \dot{\phi}(t, \xbf) - L_0 \\
-        &amp;= \frac{1}{2} \int d^3 x \left( \pi^2(t, \xbf) + \big( \nabla \phi(t, \xbf) \big)^2 + m^2 \phi^2 \right)\end{split}\]</div>
+        &amp;= \frac{1}{2} \int d^3 x \left( \pi^2(t, \xbf) + \big( \nabla \phi(t, \xbf) \big)^2 + m^2 \phi^2(t, \xbf) \right)\end{split}\]</div>
 <p class="sd-card-text">The field equations <a class="reference internal" href="#equation-eq-free-field-hamilton-equation-q-and-p-dot">Eq.6.1.7</a> are then given as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{alignat*}{2}
@@ -662,7 +662,7 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
 <p class="sd-card-text">Using Fourier transform, the general Hermitian solution, up to a scalar, can be written as follows</p>
 <div class="math notranslate nohighlight">
 \[\phi(x) = \frac{1}{(2\pi)^{3/2}} \int \frac{d^3 p}{\sqrt{2p_0}} \left( e^{\ifrak p \cdot x} a(\pbf) + e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \right)\]</div>
-<p class="sd-card-text">where <span class="math notranslate nohighlight">\(p_0 = \sqrt{\pbf^2+m^2}\)</span> and <span class="math notranslate nohighlight">\(a(\pbf)\)</span> is, at the moment, just any operator function of <span class="math notranslate nohighlight">\(\pbf\)</span>. Using <a class="reference internal" href="#equation-eq-free-scalar-field-pi-equals-dot-phi">Eq.6.2.8</a> we have</p>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\(p_0 = \sqrt{\pbf^2+m^2}\)</span> and <span class="math notranslate nohighlight">\(a(\pbf)\)</span> is, at the moment, just any operator function of <span class="math notranslate nohighlight">\(\pbf\)</span>. Using <a class="reference internal" href="#equation-eq-free-scalar-field-pi-equals-dot-phi">Eq.6.2.9</a> we have</p>
 <div class="math notranslate nohighlight">
 \[\pi(x) = \frac{-\ifrak}{(2\pi)^{3/2}} \int d^3 p \sqrt{\frac{p_0}{2}} \left( e^{\ifrak p \cdot x}a(\pbf) - e^{-\ifrak p \cdot x}a^{\dagger}(\pbf) \right)\]</div>
 <p class="sd-card-text">One can then verify that if we impose the canonical commutation relations on the conjugate fields <span class="math notranslate nohighlight">\(\phi(t, \xbf)\)</span> and <span class="math notranslate nohighlight">\(\pi(t, \xbf)\)</span> as follows</p>
@@ -985,13 +985,56 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 \left[ J^{ij}, P^n \right] &amp;= \ifrak \left( -x^i \p^j + x^j \p^i \right) P^n + {\left( \Jscr^{ij} \right)_m}^n P^m\end{split}\]</div>
 <p class="sd-card-text">where we’ve used integration-by-parts in the second equality. The standard commutation relation between the components of <span class="math notranslate nohighlight">\(\Jbf\)</span> follows readily.</p>
 </div>
-</details><p class="rubric">Footnotes</p>
+</details></section>
+<section id="transition-to-interaction-picture">
+<h2><span class="section-number">6.5. </span>Transition to interaction picture<a class="headerlink" href="#transition-to-interaction-picture" title="Link to this heading">#</a></h2>
+<p>In this section, we will investigate, through examples, how to derive from the Lagrangian formalism an interaction picture, on which our entire approach to quantum field theory has been based. As a byproduct, we will also generalize the quantization procedure considered in <a class="reference internal" href="#dropdown-quantization-of-free-scalar-fields"><span class="std std-ref">Quantization of Free Scalar Fields</span></a>.</p>
+<section id="scalar-field-with-derivative-coupling">
+<h3><span class="section-number">6.5.1. </span>Scalar field with derivative coupling<a class="headerlink" href="#scalar-field-with-derivative-coupling" title="Link to this heading">#</a></h3>
+<p>In light of the Lagrangian <a class="reference internal" href="#equation-eq-free-real-scalar-field-lagrangian">Eq.6.1.12</a> for free scalar field, let’s consider the following Lagrangian density with derivative coupling and interaction</p>
+<div class="math notranslate nohighlight">
+\[\Lscr = -\frac{1}{2} \p_{\mu} \Phi \p^{\mu} \Phi - \frac{1}{2} m^2 \Phi^2 - J^{\mu} \p_{\mu} \Phi - \Hscr(\Phi)\]</div>
+<p>where coupling <span class="math notranslate nohighlight">\(J^{\mu}\)</span> may be either a scalar current or a functional of other fields, and should not be confused with the conserved quantity defined in <a class="reference internal" href="#equation-eq-j-by-belinfante-tensor">Eq.6.4.10</a>.</p>
+<p>Now the canonical conjugate variable <span class="math notranslate nohighlight">\(\Pi\)</span> is, according to <a class="reference internal" href="#equation-eq-general-lagrangian-conjugate-pi">Eq.6.2.1</a>, given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-scalar-field-with-coupling-canonical-pi">
+<span class="eqno">(6.5.1)<a class="headerlink" href="#equation-eq-scalar-field-with-coupling-canonical-pi" title="Link to this equation">#</a></span>\[\Pi \coloneqq \frac{\delta \Lscr}{\delta \dot{\Phi}} = \dot{\Phi} - J^0\]</div>
+<p>and the Hamiltonian is, according to <a class="reference internal" href="#equation-eq-general-quantum-hamiltonian">Eq.6.2.8</a> and <a class="reference internal" href="#equation-eq-scalar-field-with-coupling-canonical-pi">Eq.6.5.1</a>, given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H &amp;= \int d^3 x \left( \Pi \dot{\Phi} - \Lscr \right) \\
+        &amp;= \int d^3 x \bigg(
+                \Pi (\Pi + J^0)
+                - \frac{1}{2} (\Pi + J^0)^2
+                + \frac{1}{2} (\nabla \Phi)^2
+                + \frac{1}{2} m^2 \Phi^2 \\
+        &amp;\qquad + J^0 (\Pi + J^0)
+                + \Jbf \cdot \nabla \Phi
+                + \Hscr(\Phi)
+        \bigg) \\
+        &amp;= \int d^3 x \left(
+                \frac{1}{2} \Pi^2 + \frac{1}{2} (\nabla \Phi)^2 + \frac{1}{2} m^2 \Phi^2 + \Pi J^0 + \frac{1}{2} (J^0)^2 + \Jbf \cdot \nabla \Phi + \Hscr(\Phi)
+        \right)\end{split}\]</div>
+<p>In light of <a class="reference internal" href="#equation-eq-real-scalar-field-hamiltonian">Eq.6.1.14</a>, we recognize the first three summands in the integrand as the free Hamiltonian density, and the rest as the interaction density. More explicitly, we can rewrite <span class="math notranslate nohighlight">\(H\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H &amp;= H_0 + V \\
+H_0 &amp;= \frac{1}{2} \int d^3 x \left( \Pi^2 + (\nabla \Phi)^2 + m^2 \Phi^2 \right) \\
+V &amp;= \int d^3 x \left( \Pi J^0 + \frac{1}{2} (J^0)^2 + \Jbf \cdot \nabla \Phi + \Hscr(\Phi) \right)\end{split}\]</div>
+<p>Now we can pass to the interaction picture in the sense of <a class="reference internal" href="02-scattering-theory.html#equation-eq-defn-interaction-perturbation-term">Eq.2.5.7</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_0 &amp;= \frac{1}{2} \int d^3 x \left( \pi^2(t, \xbf) + (\nabla \phi(t, \xbf))^2 + m^2 \phi^2(t, \xbf) \right) \\
+V(t) &amp;= \int d^3 x \left( \pi(t, \xbf) J^0(t, \xbf) + \frac{1}{2} (J^0(t, \xbf))^2 + \Jbf(t, \xbf) \cdot \nabla \phi(t, \xbf) + \Hscr(\phi(t, \xbf)) \right)\end{split}\]</div>
+<p>where, for example, <span class="math notranslate nohighlight">\(\pi(t, \xbf) \coloneqq e^{\ifrak H_0 t} \Pi(0, \xbf) e^{-\ifrak H_0 t}\)</span>. Moreover, we note that the free Hamiltonian <span class="math notranslate nohighlight">\(H_0\)</span> is time-independent, and recovers <a class="reference internal" href="#equation-eq-free-scalar-field-hamiltonian-in-interaction-picture">Eq.6.2.10</a>.</p>
+<p>Finally, in order to get the interaction density in terms of fields as explained in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#sec-quantum-fields-and-antiparticles"><span class="std std-ref">Quantum Fields and Antiparticles</span></a>, we simply replace <span class="math notranslate nohighlight">\(\pi(t, \xbf)\)</span> with <span class="math notranslate nohighlight">\(\dot{\phi}(t, \xbf)\)</span> to get the following</p>
+<div class="math notranslate nohighlight">
+\[V(t) = \int d^3 x \left( J^{\mu}(t, \xbf) \phi_{\mu}(t, \xbf) + \frac{1}{2} (J^0(t, \xbf))^2 + \Hscr(t, \xbf) \right)\]</div>
+<p>It’s said in <a class="reference internal" href="../../bib.html#wei95" id="id4"><span>[Wei95]</span></a> that the manifestly non-Lorentz-invariant summand <span class="math notranslate nohighlight">\(\tfrac{1}{2} (J^0(t, \xbf))^2\)</span> corresponds exactly to the local term in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-vector-field-propagator-needs-local-term">Eq.5.2.13</a>, but I haven’t been able to see how.</p>
+<p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="k-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
-<p>The definition <span class="math notranslate nohighlight">\(K_k \coloneqq J^{k0}\)</span> on page 317 in <a class="reference internal" href="../../bib.html#wei95" id="id4"><span>[Wei95]</span></a> differs from the very same definition on page 61 by a sign, which leads to, among others, inconsistency in the Poincaré algebra relations <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>. We will stick to our convention in <a class="reference internal" href="01-quantum-mechanics.html#sec-quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a>, which is consistent with Weinberg’s convention on page 61.</p>
+<p>The definition <span class="math notranslate nohighlight">\(K_k \coloneqq J^{k0}\)</span> on page 317 in <a class="reference internal" href="../../bib.html#wei95" id="id5"><span>[Wei95]</span></a> differs from the very same definition on page 61 by a sign, which leads to, among others, inconsistency in the Poincaré algebra relations <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>. We will stick to our convention in <a class="reference internal" href="01-quantum-mechanics.html#sec-quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a>, which is consistent with Weinberg’s convention on page 61.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 
@@ -1031,6 +1074,10 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-invariance">6.4. Lorentz invariance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-to-interaction-picture">6.5. Transition to interaction picture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-field-with-derivative-coupling">6.5.1. Scalar field with derivative coupling</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

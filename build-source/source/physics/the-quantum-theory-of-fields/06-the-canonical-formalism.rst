@@ -289,8 +289,9 @@ Moreover, the analog of :eq:`eq_free_field_hamilton_equation_q_and_p_dot` holds 
 As an example, we note that, in light of :eq:`eq_free_scalar_field_hamiltonian`, the full Hamiltonian for real scalar fields may be written as
 
 .. math::
+	:label: eq_real_scalar_field_hamiltonian
 
-	H^{RSF} = \int d^3 x \left( \tfrac{1}{2} P^2 + \tfrac{1}{2} \left( \nabla Q \right)^2 + \tfrac{1}{2} m^2 Q^2 + \Hscr(Q) \right)
+	H^{RSF} = \int d^3 x \left( \frac{1}{2} P^2 + \frac{1}{2} \left( \nabla Q \right)^2 + \frac{1}{2} m^2 Q^2 + \Hscr(Q) \right)
 
 where :math:`\Hscr(Q)` is the perturbation term giving rise to the interaction.
 
@@ -401,6 +402,9 @@ where each :math:`Q_n(t)` has a corresponding :math:`\dot{Q}_n(t)`, but not for 
 and hence the Hamiltonian takes the following form
 
 .. math:: H[Q, P] = \sum_n \int d^3 x~P_n \dot{Q}_n - L[Q(t), \dot{Q}(t), C(t)]
+	:label: eq_general_quantum_hamiltonian
+
+.. _dropdown_quantization_of_free_scalar_fields:
 
 .. dropdown:: Quantization of free scalar fields
 	:animate: fade-in-slide-down
@@ -420,10 +424,11 @@ and hence the Hamiltonian takes the following form
 	Hence the Hamiltonian takes the following form
 
 	.. math::
+		:label: eq_free_scalar_field_hamiltonian_in_interaction_picture
 
 		H_0[\phi, \pi]
 			&= \int d^3 x~\pi(t, \xbf) \dot{\phi}(t, \xbf) - L_0 \\
-			&= \frac{1}{2} \int d^3 x \left( \pi^2(t, \xbf) + \big( \nabla \phi(t, \xbf) \big)^2 + m^2 \phi^2 \right)
+			&= \frac{1}{2} \int d^3 x \left( \pi^2(t, \xbf) + \big( \nabla \phi(t, \xbf) \big)^2 + m^2 \phi^2(t, \xbf) \right)
 
 	The field equations :eq:`eq_free_field_hamilton_equation_q_and_p_dot` are then given as follows
 
@@ -956,6 +961,70 @@ Though not necessary, it's indeed possible to verify the other Poincaré algebra
 		\left[ J^{ij}, P^n \right] &= \ifrak \left( -x^i \p^j + x^j \p^i \right) P^n + {\left( \Jscr^{ij} \right)_m}^n P^m
 
 	where we've used integration-by-parts in the second equality. The standard commutation relation between the components of :math:`\Jbf` follows readily.
+
+
+Transition to interaction picture
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this section, we will investigate, through examples, how to derive from the Lagrangian formalism an interaction picture, on which our entire approach to quantum field theory has been based. As a byproduct, we will also generalize the quantization procedure considered in :ref:`Quantization of Free Scalar Fields <dropdown_quantization_of_free_scalar_fields>`.
+
+Scalar field with derivative coupling
++++++++++++++++++++++++++++++++++++++
+
+In light of the Lagrangian :eq:`eq_free_real_scalar_field_lagrangian` for free scalar field, let's consider the following Lagrangian density with derivative coupling and interaction
+
+.. math:: \Lscr = -\frac{1}{2} \p_{\mu} \Phi \p^{\mu} \Phi - \frac{1}{2} m^2 \Phi^2 - J^{\mu} \p_{\mu} \Phi - \Hscr(\Phi)
+
+where coupling :math:`J^{\mu}` may be either a scalar current or a functional of other fields, and should not be confused with the conserved quantity defined in :eq:`eq_j_by_belinfante_tensor`.
+
+Now the canonical conjugate variable :math:`\Pi` is, according to :eq:`eq_general_lagrangian_conjugate_pi`, given by
+
+.. math:: \Pi \coloneqq \frac{\delta \Lscr}{\delta \dot{\Phi}} = \dot{\Phi} - J^0
+	:label: eq_scalar_field_with_coupling_canonical_pi
+
+and the Hamiltonian is, according to :eq:`eq_general_quantum_hamiltonian` and :eq:`eq_scalar_field_with_coupling_canonical_pi`, given by
+
+.. math::
+
+	H &= \int d^3 x \left( \Pi \dot{\Phi} - \Lscr \right) \\
+		&= \int d^3 x \bigg(
+			\Pi (\Pi + J^0)
+			- \frac{1}{2} (\Pi + J^0)^2
+			+ \frac{1}{2} (\nabla \Phi)^2
+			+ \frac{1}{2} m^2 \Phi^2 \\
+		&\qquad + J^0 (\Pi + J^0)
+			+ \Jbf \cdot \nabla \Phi
+			+ \Hscr(\Phi)
+		\bigg) \\
+		&= \int d^3 x \left(
+			\frac{1}{2} \Pi^2 + \frac{1}{2} (\nabla \Phi)^2 + \frac{1}{2} m^2 \Phi^2 + \Pi J^0 + \frac{1}{2} (J^0)^2 + \Jbf \cdot \nabla \Phi + \Hscr(\Phi)
+		\right)
+
+In light of :eq:`eq_real_scalar_field_hamiltonian`, we recognize the first three summands in the integrand as the free Hamiltonian density, and the rest as the interaction density. More explicitly, we can rewrite :math:`H` as follows
+
+.. math::
+
+	H &= H_0 + V \\
+	H_0 &= \frac{1}{2} \int d^3 x \left( \Pi^2 + (\nabla \Phi)^2 + m^2 \Phi^2 \right) \\
+	V &= \int d^3 x \left( \Pi J^0 + \frac{1}{2} (J^0)^2 + \Jbf \cdot \nabla \Phi + \Hscr(\Phi) \right)
+
+Now we can pass to the interaction picture in the sense of :eq:`eq_defn_interaction_perturbation_term` as follows
+
+.. math::
+
+	H_0 &= \frac{1}{2} \int d^3 x \left( \pi^2(t, \xbf) + (\nabla \phi(t, \xbf))^2 + m^2 \phi^2(t, \xbf) \right) \\
+	V(t) &= \int d^3 x \left( \pi(t, \xbf) J^0(t, \xbf) + \frac{1}{2} (J^0(t, \xbf))^2 + \Jbf(t, \xbf) \cdot \nabla \phi(t, \xbf) + \Hscr(\phi(t, \xbf)) \right)
+
+where, for example, :math:`\pi(t, \xbf) \coloneqq e^{\ifrak H_0 t} \Pi(0, \xbf) e^{-\ifrak H_0 t}`. Moreover, we note that the free Hamiltonian :math:`H_0` is time-independent, and recovers :eq:`eq_free_scalar_field_hamiltonian_in_interaction_picture`.
+
+Finally, in order to get the interaction density in terms of fields as explained in :ref:`sec_quantum_fields_and_antiparticles`, we simply replace :math:`\pi(t, \xbf)` with :math:`\dot{\phi}(t, \xbf)` to get the following
+
+.. math::
+
+	V(t) = \int d^3 x \left( J^{\mu}(t, \xbf) \phi_{\mu}(t, \xbf) + \frac{1}{2} (J^0(t, \xbf))^2 + \Hscr(t, \xbf) \right)
+
+It's said in [Wei95]_ that the manifestly non-Lorentz-invariant summand :math:`\tfrac{1}{2} (J^0(t, \xbf))^2` corresponds exactly to the local term in :eq:`eq_vector_field_propagator_needs_local_term`, but I haven't been able to see how.
+
 
 .. rubric:: Footnotes
 

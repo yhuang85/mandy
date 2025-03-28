@@ -698,16 +698,18 @@ C'_{121'2'} &amp;\coloneqq \underbracket{ a(2') \phi_{\ell}(x) }
 <span class="eqno">(5.2.9)<a class="headerlink" href="#equation-eq-theta-step-function-as-contour-integral" title="Link to this equation">#</a></span>\[\theta(t) = \frac{-1}{2\pi\ifrak} \int_{-\infty}^{\infty} ds~\frac{e^{-\ifrak st}}{s + \ifrak \epsilon}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> is infinitesimally small. The fact that <span class="math notranslate nohighlight">\(\theta(t)\)</span> vanishes for <span class="math notranslate nohighlight">\(t &lt; 0\)</span> and equals <span class="math notranslate nohighlight">\(1\)</span> for <span class="math notranslate nohighlight">\(t &gt; 0\)</span> can be easily verified using the <a class="reference external" href="https://en.wikipedia.org/wiki/Residue_theorem">residue theorem</a>. Plugging <a class="reference internal" href="#equation-eq-theta-step-function-as-contour-integral">Eq.5.2.9</a> and <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-defn-delta-plus">Eq.4.2.4</a> into <a class="reference internal" href="#equation-eq-defn-feynman-propagator">Eq.5.2.7</a>, we can calculate as follows</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}&amp; -\ifrak \Delta_F(x) \\
-        &amp;~ = \frac{-1}{\ifrak (2\pi)^4} \int d^3 q ds~\frac
-                {\exp(-\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 + \ifrak \qbf \cdot \xbf) + \exp(\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 - \ifrak \qbf \cdot \xbf)}
-                {2(s + \ifrak \epsilon) \sqrt{\qbf^2 + M^2}} \\
-        &amp;~ \xlongequal{\substack{p_0 = s + \sqrt{\qbf^2 + M^2} \\ \pbf = \qbf}} \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac
-                {\exp(\ifrak p \cdot x) + \exp(-\ifrak p \cdot x)}
-                {2\left( p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon \right) \sqrt{\pbf^2 + M^2}} \\
-        &amp;~ = \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{2\sqrt{\pbf^2 + M^2}} \left( \frac{1}
-                {p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon} - \frac{1}{p_0 + \sqrt{\pbf^2 + M^2} - \ifrak \epsilon} \right) \\
-        &amp;~ = \frac{1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{p^2 + M^2 - \ifrak \epsilon}\end{split}\]</div>
+\[\begin{split}\begin{align*}
+        &amp; -\ifrak \Delta_F(x) \\
+                &amp;~ = \frac{-1}{\ifrak (2\pi)^4} \int d^3 q ds~\frac
+                        {\exp(-\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 + \ifrak \qbf \cdot \xbf) + \exp(\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 - \ifrak \qbf \cdot \xbf)}
+                        {2(s + \ifrak \epsilon) \sqrt{\qbf^2 + M^2}} \\
+                &amp;~ \xlongequal{\substack{p_0 = s + \sqrt{\qbf^2 + M^2} \\ \pbf = \qbf}} \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac
+                        {\exp(\ifrak p \cdot x) + \exp(-\ifrak p \cdot x)}
+                        {2\left( p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon \right) \sqrt{\pbf^2 + M^2}} \\
+                &amp;~ = \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{2\sqrt{\pbf^2 + M^2}} \left( \frac{1}
+                        {p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon} - \frac{1}{p_0 + \sqrt{\pbf^2 + M^2} - \ifrak \epsilon} \right) \\
+                &amp;~ = \frac{1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{p^2 + M^2 - \ifrak \epsilon}
+\end{align*}\end{split}\]</div>
 <p>where in the last equality we’ve replaced <span class="math notranslate nohighlight">\(2\sqrt{\pbf^2 + M^2} \epsilon\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span>, and ignored the <span class="math notranslate nohighlight">\(\epsilon^2\)</span> term. It follows that</p>
 <div class="math notranslate nohighlight" id="equation-eq-feynman-propagator-as-momentum-space-integral">
 <span class="eqno">(5.2.10)<a class="headerlink" href="#equation-eq-feynman-propagator-as-momentum-space-integral" title="Link to this equation">#</a></span>\[\Delta_F(x) = (2\pi)^{-4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{p^2 + M^2 - \ifrak \epsilon}\]</div>

@@ -440,16 +440,18 @@ where :math:`\epsilon > 0` is infinitesimally small. The fact that :math:`\theta
 
 .. math::
 
-	& -\ifrak \Delta_F(x) \\
-		&~ = \frac{-1}{\ifrak (2\pi)^4} \int d^3 q ds~\frac
-			{\exp(-\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 + \ifrak \qbf \cdot \xbf) + \exp(\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 - \ifrak \qbf \cdot \xbf)}
-			{2(s + \ifrak \epsilon) \sqrt{\qbf^2 + M^2}} \\
-		&~ \xlongequal{\substack{p_0 = s + \sqrt{\qbf^2 + M^2} \\ \pbf = \qbf}} \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac
-			{\exp(\ifrak p \cdot x) + \exp(-\ifrak p \cdot x)}
-			{2\left( p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon \right) \sqrt{\pbf^2 + M^2}} \\
-		&~ = \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{2\sqrt{\pbf^2 + M^2}} \left( \frac{1}
-			{p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon} - \frac{1}{p_0 + \sqrt{\pbf^2 + M^2} - \ifrak \epsilon} \right) \\
-		&~ = \frac{1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{p^2 + M^2 - \ifrak \epsilon}
+	\begin{align*}
+		& -\ifrak \Delta_F(x) \\
+			&~ = \frac{-1}{\ifrak (2\pi)^4} \int d^3 q ds~\frac
+				{\exp(-\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 + \ifrak \qbf \cdot \xbf) + \exp(\ifrak (s + \sqrt{\qbf^2 + M^2}) x_0 - \ifrak \qbf \cdot \xbf)}
+				{2(s + \ifrak \epsilon) \sqrt{\qbf^2 + M^2}} \\
+			&~ \xlongequal{\substack{p_0 = s + \sqrt{\qbf^2 + M^2} \\ \pbf = \qbf}} \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac
+				{\exp(\ifrak p \cdot x) + \exp(-\ifrak p \cdot x)}
+				{2\left( p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon \right) \sqrt{\pbf^2 + M^2}} \\
+			&~ = \frac{-1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{2\sqrt{\pbf^2 + M^2}} \left( \frac{1}
+				{p_0 - \sqrt{\pbf^2 + M^2} + \ifrak \epsilon} - \frac{1}{p_0 + \sqrt{\pbf^2 + M^2} - \ifrak \epsilon} \right) \\
+			&~ = \frac{1}{\ifrak (2\pi)^4} \int d^4 p~\frac{\exp(\ifrak p \cdot x)}{p^2 + M^2 - \ifrak \epsilon}
+	\end{align*}
 
 where in the last equality we've replaced :math:`2\sqrt{\pbf^2 + M^2} \epsilon` with :math:`\epsilon`, and ignored the :math:`\epsilon^2` term. It follows that
 
