@@ -442,6 +442,7 @@ and hence the Hamiltonian takes the following form
 	Together, it implies that the field equation is precisely the Klein-Gordon equation
 
 	.. math:: \left( \square - m^2 \right) \phi(x) = 0
+		:label: eq_field_scalar_field_equation_of_motion
 
 	Using Fourier transform, the general Hermitian solution, up to a scalar, can be written as follows
 
@@ -499,7 +500,7 @@ A few remarks are in order. First of all, if we think of :eq:`eq_infinitesimal_v
 From symmetries to conservation laws
 ++++++++++++++++++++++++++++++++++++
 
-The general principle that "symmetries imply conservation laws" is mathematically known as `Noether's theorem <https://en.wikipedia.org/wiki/Noether%27s_theorem>`__, but we'll not bother with any mathematical formality here. To see how to derive conserved quantitites from an assumed symmetry, let's change :eq:`eq_infinitesimal_variation_of_field` as follows
+The general principle that "symmetries imply conservation laws" is mathematically known as `Noether's theorem <https://en.wikipedia.org/wiki/Noether%27s_theorem>`__, but we'll not bother with any mathematical formality here. To see how to derive conserved quantities from an assumed symmetry, let's change :eq:`eq_infinitesimal_variation_of_field` as follows
 
 .. math:: \Psi_n(x) \to \Psi_n(x) + \ifrak \epsilon(x) \Fscr_n(x)
 	:label: eq_functional_infinitesimal_variation_of_field
@@ -509,7 +510,7 @@ where :math:`\epsilon(x)` now is an infinitesimal function of :math:`x`. Under t
 .. math:: \delta I = -\int d^4 x J^{\mu}(x) \p_{\mu} \epsilon(x)
 	:label: eq_variation_of_action_by_functional_deformation
 
-because it must vanishe when :math:`\epsilon(x)` is constant. Here :math:`J^{\mu}(x)` is a function(al) to be determined in individual cases, and is usually known as *current*. Now if :math:`\Psi_n(x)` satisfies the field equations, i.e., it's a stationary point of the action, then :eq:`eq_variation_of_action_by_functional_deformation` must vanishes for any :math:`\epsilon(x)`. Applying integration by parts (and assuming :math:`\Fscr_n(x)` vanishes at infinity), we must have
+because it must vanish when :math:`\epsilon(x)` is constant. Here :math:`J^{\mu}(x)` is a function(al) to be determined in individual cases, and is usually known as *current*. Now if :math:`\Psi_n(x)` satisfies the field equations, i.e., it's a stationary point of the action, then :eq:`eq_variation_of_action_by_functional_deformation` must vanishes for any :math:`\epsilon(x)`. Applying integration by parts (and assuming :math:`\Fscr_n(x)` vanishes at infinity), we must have
 
 .. math:: \p_{\mu} J^{\mu}(x) = 0
 	:label: eq_general_conservation_of_current
@@ -572,7 +573,7 @@ So far everything has been completely classical. To make it a quantum theory, we
 
 .. math:: \Fscr_n(Q(t), \xbf)
 
-where :math:`Q(t)` is defined by :eq:`eq_defn_heisenberg_canonical_q_and_p`. Next, recall from :eq:`eq_general_quantum_lagrangian` that the field :math:`\Psi_n` is either a :math:`Q_n`, in which case :math:`\delta L / \delta \dot{Q}_n = P_n`, or a :math:`C_n`, in which case the functional derivative vaninshes.
+where :math:`Q(t)` is defined by :eq:`eq_defn_heisenberg_canonical_q_and_p`. Next, recall from :eq:`eq_general_quantum_lagrangian` that the field :math:`\Psi_n` is either a :math:`Q_n`, in which case :math:`\delta L / \delta \dot{Q}_n = P_n`, or a :math:`C_n`, in which case the functional derivative vanishes.
 
 Now in the case of a Lagrangian-preserving symmetry, the conserved quantity :eq:`eq_lagrangian_preserving_symmetry_conserved_quantity` takes the following form
 
@@ -682,7 +683,7 @@ As another example, let's consider linear variations as follows
 
 where we've adopted the Einstein summation convention for repeated upper and lower indexes because it'd otherwise be too tedious to write out the summations. Here :math:`(t_{\square})^{\square}_{\square}` should furnish a representation of the Lie algebra of the symmetry group.
 
-As before, the invariance of action under such variations implies the existstence of conserved currents :math:`J^{\mu}_a` such that
+As before, the invariance of action under such variations implies the existence of conserved currents :math:`J^{\mu}_a` such that
 
 .. math:: \p_{\mu} J^{\mu}_a = 0
 
@@ -911,7 +912,7 @@ Finally, using :eq:`eq_momenta_act_as_spatial_derivative` and :eq:`eq_boost_k_by
 
 which, again, is consistent with :eq:`eq_poincare_algebra`.
 
-It turns out, following the lines of argument in :ref:`Lorentz symmetry of S-matrix <sec_s_matrix_lorentz_symmetry>`, these commutation relations are enough to show the Lorentz invariance of S-matrix under the same "smootheness" assumptions on the interaction terms. In addition, the other commutation relations between :math:`H, \Pbf, \Jbf, \Kbf` also follows.
+It turns out, following the lines of argument in :ref:`Lorentz symmetry of S-matrix <sec_s_matrix_lorentz_symmetry>`, these commutation relations are enough to show the Lorentz invariance of S-matrix under the same "smoothness" assumptions on the interaction terms. In addition, the other commutation relations between :math:`H, \Pbf, \Jbf, \Kbf` also follows.
 
 Though not necessary, it's indeed possible to verify the other Poincaré algebra relations directly. In particular, the commutation relations between the rotation generators are verified as follows.
 
@@ -949,7 +950,7 @@ Though not necessary, it's indeed possible to verify the other Poincaré algebra
 			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
 			&= \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)
 
-	Now since :math:`\delta \Lscr / \delta \dot{\Psi}_n` vanishes when :math:`\Psi_n` is an auxilliary field, we can rewrite :math:`J^{ij}` in terms of canonical variables as follows
+	Now since :math:`\delta \Lscr / \delta \dot{\Psi}_n` vanishes when :math:`\Psi_n` is an auxiliary field, we can rewrite :math:`J^{ij}` in terms of canonical variables as follows
 
 	.. math:: J^{ij} = \int d^3 x~P^n \left( -x^i \p^j Q_n + x^j \p^i Q_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m Q_m \right)
 
@@ -1024,6 +1025,86 @@ Finally, in order to get the interaction density in terms of fields as explained
 	V(t) = \int d^3 x \left( J^{\mu}(t, \xbf) \phi_{\mu}(t, \xbf) + \frac{1}{2} (J^0(t, \xbf))^2 + \Hscr(t, \xbf) \right)
 
 It's said in [Wei95]_ that the manifestly non-Lorentz-invariant summand :math:`\tfrac{1}{2} (J^0(t, \xbf))^2` corresponds exactly to the local term in :eq:`eq_vector_field_propagator_needs_local_term`, but I haven't been able to see how.
+
+
+Vector field with spin-:math:`1`
+++++++++++++++++++++++++++++++++
+
+We start with a very general Lagrangian density defined as follows
+
+.. math::
+	:label: eq_general_vector_field_lagrangian
+
+	\Lscr = -\frac{1}{2} \alpha \p_{\mu} V_{\nu} \p^{\mu} V^{\nu}
+		- \frac{1}{2} \beta \p_{\mu} V_{\nu} \p^{\nu} V^{\mu}
+		- \frac{1}{2} m^2 V_{\mu} V^{\mu}
+		+ J^{\mu} V_{\mu}
+
+where :math:`J^{\mu}` is a coupling current just as in the case of scalar fields. As explained in :ref:`sec_vector_fields`, vector fields may come with spin :math:`0` or :math:`1`, and we would like to consider here only the spin-:math:`1` part. To achieve this, consider the Euler-Lagrange equation :eq:`eq_euler_lagrange` which takes the following form
+
+.. math::
+	:label: eq_general_vector_field_euler_lagrangian_equation
+
+	-m^2 V^{\mu} + J^{\mu} = -\alpha \square V^{\mu} - \beta \p^{\mu} (\p_{\nu} V^{\nu})
+
+Taking the divergence, we get
+
+.. math::
+
+	-(\alpha + \beta) \square (\p_{\mu} V^{\mu}) + m^2 (\p_{\mu} V^{\mu}) = \p_{\mu} J^{\mu}
+
+which we recognize, in light of :eq:`eq_field_scalar_field_equation_of_motion`, as the field equation of a scalar field, or more precisely, a spin-:math:`0` vector field. To avoid the appearance of :math:`\p_{\mu} V^{\mu}` as an independently propagating (scalar) field, we take :math:`\alpha = -\beta = 1`, so that :math:`\p_{\mu} V^{\mu}` may be expressed in terms of the external current :math:`J`.
+
+Now we can rewrite :eq:`eq_general_vector_field_lagrangian` as follows
+
+.. math::
+
+	\Lscr = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu} - \frac{1}{2} m^2 V_{\mu} V^{\mu} + J^{\mu} V_{\mu}
+
+where
+
+.. math:: F_{\mu \nu} \coloneqq \p_{\mu} V_{\nu} - \p_{\nu} V_{\mu}
+
+in analogous to :eq:`eq_massless_vector_field_curvature_tensor`, where we've tried to construct a tensor for massless spin-:math:`1` particles. This is the general Lagrangian for spin-:math:`1` vector fields.
+
+To work out the canonical variables, we note that
+
+.. math:: \frac{\delta \Lscr}{\delta \dot{V}_{\mu}} = -F^{0\mu}
+
+which is nonzero for :math:`\mu \neq 0`. It follows that for spatial indexes :math:`i`, we have the the canonical variables :math:`V_i` whose canonical dual is, according to :eq:`eq_general_lagrangian_conjugate_pi`, given by
+
+.. math:: \Pi^i = \frac{\delta \Lscr}{\delta \dot{V}_i} = F^{i0} = \p^i V^0 + \dot{V}^i
+	:label: eq_spin_1_vector_field_canonical_pi
+
+while :math:`V_0` is auxiliary since :math:`\delta \Lscr / \delta \dot{V}_0 = 0`. It turns out :math:`V_0` can be explicitly solved in terms of the other fields as follows. Setting :math:`\mu = 0` in :eq:`eq_general_vector_field_euler_lagrangian_equation` and remembering :math:`\alpha = -\beta = 1`, we have
+
+.. math::
+
+	& -m^2 V^0 + J^0 = -\square V^0 + \p^0(\p_{\nu} V^{\nu}) = \p_{\nu} F^{0 \nu} = \p_i F^{0i} \\
+	\implies & V^0 = \frac{1}{m^2} (\p_i F^{i0} + J^0) = \frac{1}{m^2} (\nabla \cdot \bm{\Pi} + J^0)
+
+To be able to write down the Hamiltonian, we need the following preparations. First, using :eq:`eq_spin_1_vector_field_canonical_pi`, we can write
+
+.. math:: \dot{\Vbf} = \bm{\Pi} - \nabla V^0 = \bm{\Pi} - \frac{1}{m^2} \nabla(\nabla \cdot \bm{\Pi} + J^0)
+
+and second, we can expand
+
+.. math::
+
+	\frac{1}{4} F_{\mu \nu} F^{\mu \nu} = \frac{1}{2} F_{0i} F^{0i} + \frac{1}{4} F_{ij} F^{ij} = -\frac{1}{2} \bm{\Pi}^2 + \frac{1}{2} (\nabla \times \Vbf)^2
+
+Putting these all together, we can finally write down the Hamiltonian as follows
+
+.. math::
+
+	H &= \int d^3 x \left( \bm{\Pi} \cdot \dot{\Vbf} - \Lscr \right) \\
+		&= \int d^3 x \left( \bm{\Pi} \cdot \dot{\Vbf} + \frac{1}{4} F_{\mu \nu} F^{\mu \nu} + \frac{1}{2} m^2 V_{\mu} V^{\mu} - J^{\mu} V_{\mu} \right) \\
+		&= \int d^3 x \Big(
+			\bm{\Pi}^2 + \frac{1}{m^2} (\nabla \cdot \bm{\Pi}) (\nabla \cdot \bm{\Pi} + J^0) \\
+			&\qquad - \frac{1}{2} \bm{\Pi}^2 + \frac{1}{2} (\nabla \times \Vbf)^2 \\
+			&\qquad - \frac{1}{2m^2} (\nabla \cdot \bm{\Pi} + J^0)^2 + \frac{1}{2} m^2 \Vbf^2 \\
+			&\qquad + \frac{1}{m^2} J^0 (\nabla \cdot \bm{\Pi} + J^0) - \Jbf \cdot \Vbf
+		\Big)
 
 
 .. rubric:: Footnotes

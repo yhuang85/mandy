@@ -1199,7 +1199,7 @@ If :math:`U(\Pcal)` were anti-linear, then :math:`U(\Pcal) P_0 U^{-1}(\Pcal) = -
 As before, it'll be useful to rewrite :eq:`eq_p_and_j_conjugated_by_space_and_time_inversions` in terms of :math:`H, \Pbf, \Jbf, \Kbf` as follows
 
 .. math::
-	:label: eq_hpjk_cojugated_by_space_and_time_inversions
+	:label: eq_hpjk_conjugated_by_space_and_time_inversions
 
 	\begin{alignat*}{3}
 		U(\Pcal) &H U^{-1}(\Pcal) &&= &&H \\
@@ -1229,7 +1229,7 @@ We start by considering a state at rest :math:`\Psi_{k, \sigma}`, where :math:`k
 
 	U(\Pcal) \Psi_{k, \sigma} = \eta \Psi_{k, \sigma}
 
-where :math:`\eta` is a phase that depends a priori on :math:`\sigma`. It turns out, however, that :math:`\eta` is actually independent of :math:`\sigma`, and hence justifies the notation, since :math:`U(\Pcal)` commutes with the raising/lowering operators :math:`J_1 \pm \ifrak J_2` by :eq:`eq_hpjk_cojugated_by_space_and_time_inversions`.
+where :math:`\eta` is a phase that depends a priori on :math:`\sigma`. It turns out, however, that :math:`\eta` is actually independent of :math:`\sigma`, and hence justifies the notation, since :math:`U(\Pcal)` commutes with the raising/lowering operators :math:`J_1 \pm \ifrak J_2` by :eq:`eq_hpjk_conjugated_by_space_and_time_inversions`.
 
 To move on to the general case, we recall that the general formula :eq:`eq_def_of_one_particle_psi` takes the following form
 
@@ -1317,7 +1317,7 @@ where the sign depends on the sign of :math:`p_2` (which can be seen by playing 
 Time inversion for massless particles
 +++++++++++++++++++++++++++++++++++++
 
-Let :math:`k = (1, 0, 0, 1)` as usual and consider the state :math:`\Psi_{k, \sigma}`. Since :math:`U(\Tcal)` anti-commutes with both :math:`\Pbf` and :math:`J_3` by :eq:`eq_hpjk_cojugated_by_space_and_time_inversions`, we have
+Let :math:`k = (1, 0, 0, 1)` as usual and consider the state :math:`\Psi_{k, \sigma}`. Since :math:`U(\Tcal)` anti-commutes with both :math:`\Pbf` and :math:`J_3` by :eq:`eq_hpjk_conjugated_by_space_and_time_inversions`, we have
 
 .. math:: U(\Tcal) \Psi_{k, \sigma} = \Psi_{\Pcal k, -\sigma}.
 

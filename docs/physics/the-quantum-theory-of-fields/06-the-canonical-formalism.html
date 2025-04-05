@@ -657,8 +657,8 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
         \dot{\pi}(t, \xbf) &amp;= -\frac{\delta H_0}{\delta \phi(t, \xbf)} &amp;&amp;= \nabla^2 \phi(t, \xbf) - m^2 \phi(t, \xbf)
 \end{alignat*}\end{split}\]</div>
 <p class="sd-card-text">Together, it implies that the field equation is precisely the Klein-Gordon equation</p>
-<div class="math notranslate nohighlight">
-\[\left( \square - m^2 \right) \phi(x) = 0\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-field-scalar-field-equation-of-motion">
+<span class="eqno">(6.2.11)<a class="headerlink" href="#equation-eq-field-scalar-field-equation-of-motion" title="Link to this equation">#</a></span>\[\left( \square - m^2 \right) \phi(x) = 0\]</div>
 <p class="sd-card-text">Using Fourier transform, the general Hermitian solution, up to a scalar, can be written as follows</p>
 <div class="math notranslate nohighlight">
 \[\phi(x) = \frac{1}{(2\pi)^{3/2}} \int \frac{d^3 p}{\sqrt{2p_0}} \left( e^{\ifrak p \cdot x} a(\pbf) + e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \right)\]</div>
@@ -693,13 +693,13 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
 <p>A few remarks are in order. First of all, if we think of <a class="reference internal" href="#equation-eq-infinitesimal-variation-of-field">Eq.6.3.1</a> as an infinitesimal (unitary) symmetry transformation, then the coefficient <span class="math notranslate nohighlight">\(\ifrak\)</span> can be justified by then intention of making <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> Hermitian. Next, although <a class="reference internal" href="#equation-eq-vanishing-of-action-under-infinitesimal-variation">Eq.6.3.2</a> <em>always</em> holds when <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span> is stationary, the infinitesimal <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> being a symmetry demands that <a class="reference internal" href="#equation-eq-vanishing-of-action-under-infinitesimal-variation">Eq.6.3.2</a> holds true for <em>any</em> <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span>. Finally, we emphasize the fact that <span class="math notranslate nohighlight">\(\epsilon\)</span> is an infinitesimal <em>constant</em>, rather than a function of <span class="math notranslate nohighlight">\(x\)</span>, is the defining property for the symmetry to be called “global”. Indeed, we’ll be dealing with symmetries that are not global in the next chapter, namely, the gauge symmetries.</p>
 <section id="from-symmetries-to-conservation-laws">
 <span id="sec-from-symmetries-to-conservation-laws"></span><h3><span class="section-number">6.3.1. </span>From symmetries to conservation laws<a class="headerlink" href="#from-symmetries-to-conservation-laws" title="Link to this heading">#</a></h3>
-<p>The general principle that “symmetries imply conservation laws” is mathematically known as <a class="reference external" href="https://en.wikipedia.org/wiki/Noether%27s_theorem">Noether’s theorem</a>, but we’ll not bother with any mathematical formality here. To see how to derive conserved quantitites from an assumed symmetry, let’s change <a class="reference internal" href="#equation-eq-infinitesimal-variation-of-field">Eq.6.3.1</a> as follows</p>
+<p>The general principle that “symmetries imply conservation laws” is mathematically known as <a class="reference external" href="https://en.wikipedia.org/wiki/Noether%27s_theorem">Noether’s theorem</a>, but we’ll not bother with any mathematical formality here. To see how to derive conserved quantities from an assumed symmetry, let’s change <a class="reference internal" href="#equation-eq-infinitesimal-variation-of-field">Eq.6.3.1</a> as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-functional-infinitesimal-variation-of-field">
 <span class="eqno">(6.3.3)<a class="headerlink" href="#equation-eq-functional-infinitesimal-variation-of-field" title="Link to this equation">#</a></span>\[\Psi_n(x) \to \Psi_n(x) + \ifrak \epsilon(x) \Fscr_n(x)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\epsilon(x)\)</span> now is an infinitesimal function of <span class="math notranslate nohighlight">\(x\)</span>. Under this variation, the corresponding <span class="math notranslate nohighlight">\(\delta I\)</span> may not vanish. But it must take the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-variation-of-action-by-functional-deformation">
 <span class="eqno">(6.3.4)<a class="headerlink" href="#equation-eq-variation-of-action-by-functional-deformation" title="Link to this equation">#</a></span>\[\delta I = -\int d^4 x J^{\mu}(x) \p_{\mu} \epsilon(x)\]</div>
-<p>because it must vanishe when <span class="math notranslate nohighlight">\(\epsilon(x)\)</span> is constant. Here <span class="math notranslate nohighlight">\(J^{\mu}(x)\)</span> is a function(al) to be determined in individual cases, and is usually known as <em>current</em>. Now if <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span> satisfies the field equations, i.e., it’s a stationary point of the action, then <a class="reference internal" href="#equation-eq-variation-of-action-by-functional-deformation">Eq.6.3.4</a> must vanishes for any <span class="math notranslate nohighlight">\(\epsilon(x)\)</span>. Applying integration by parts (and assuming <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> vanishes at infinity), we must have</p>
+<p>because it must vanish when <span class="math notranslate nohighlight">\(\epsilon(x)\)</span> is constant. Here <span class="math notranslate nohighlight">\(J^{\mu}(x)\)</span> is a function(al) to be determined in individual cases, and is usually known as <em>current</em>. Now if <span class="math notranslate nohighlight">\(\Psi_n(x)\)</span> satisfies the field equations, i.e., it’s a stationary point of the action, then <a class="reference internal" href="#equation-eq-variation-of-action-by-functional-deformation">Eq.6.3.4</a> must vanishes for any <span class="math notranslate nohighlight">\(\epsilon(x)\)</span>. Applying integration by parts (and assuming <span class="math notranslate nohighlight">\(\Fscr_n(x)\)</span> vanishes at infinity), we must have</p>
 <div class="math notranslate nohighlight" id="equation-eq-general-conservation-of-current">
 <span class="eqno">(6.3.5)<a class="headerlink" href="#equation-eq-general-conservation-of-current" title="Link to this equation">#</a></span>\[\p_{\mu} J^{\mu}(x) = 0\]</div>
 <p>which is the conservation law for <span class="math notranslate nohighlight">\(J\)</span>, which then can be called a conserved current. One gets also a conserved quantity, i.e., a quantity that doesn’t change by time, by integrating <a class="reference internal" href="#equation-eq-general-conservation-of-current">Eq.6.3.5</a> over the <span class="math notranslate nohighlight">\(3\)</span>-space as follows</p>
@@ -737,7 +737,7 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
 <p>So far everything has been completely classical. To make it a quantum theory, we’ll involve the canonical fields introduced in <a class="reference internal" href="#sec-hamiltonian-and-lagrangian-for-interacting-fields"><span class="std std-ref">Hamiltonian and Lagrangian for interacting fields</span></a>. More precisely, instead of any <span class="math notranslate nohighlight">\(\Fscr_n(t, \xbf)\)</span>, we’ll suppose that it takes the following form</p>
 <div class="math notranslate nohighlight">
 \[\Fscr_n(Q(t), \xbf)\]</div>
-<p>where <span class="math notranslate nohighlight">\(Q(t)\)</span> is defined by <a class="reference internal" href="#equation-eq-defn-heisenberg-canonical-q-and-p">Eq.6.1.13</a>. Next, recall from <a class="reference internal" href="#equation-eq-general-quantum-lagrangian">Eq.6.2.7</a> that the field <span class="math notranslate nohighlight">\(\Psi_n\)</span> is either a <span class="math notranslate nohighlight">\(Q_n\)</span>, in which case <span class="math notranslate nohighlight">\(\delta L / \delta \dot{Q}_n = P_n\)</span>, or a <span class="math notranslate nohighlight">\(C_n\)</span>, in which case the functional derivative vaninshes.</p>
+<p>where <span class="math notranslate nohighlight">\(Q(t)\)</span> is defined by <a class="reference internal" href="#equation-eq-defn-heisenberg-canonical-q-and-p">Eq.6.1.13</a>. Next, recall from <a class="reference internal" href="#equation-eq-general-quantum-lagrangian">Eq.6.2.7</a> that the field <span class="math notranslate nohighlight">\(\Psi_n\)</span> is either a <span class="math notranslate nohighlight">\(Q_n\)</span>, in which case <span class="math notranslate nohighlight">\(\delta L / \delta \dot{Q}_n = P_n\)</span>, or a <span class="math notranslate nohighlight">\(C_n\)</span>, in which case the functional derivative vanishes.</p>
 <p>Now in the case of a Lagrangian-preserving symmetry, the conserved quantity <a class="reference internal" href="#equation-eq-lagrangian-preserving-symmetry-conserved-quantity">Eq.6.3.7</a> takes the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-lagrangian-preserving-symmetry-generator-formula">
 <span class="eqno">(6.3.10)<a class="headerlink" href="#equation-eq-lagrangian-preserving-symmetry-generator-formula" title="Link to this equation">#</a></span>\[F = -\ifrak \sum_n \int d^3 x~P_n(t, \xbf) \Fscr_n(Q(t), \xbf)\]</div>
@@ -803,7 +803,7 @@ P_n(t, \xbf) &amp;\coloneqq e^{\ifrak Ht} p_n(0, \xbf) e^{-\ifrak Ht}\end{split}
 \[\begin{split}Q_n(x) &amp;\to Q_n(x) + \ifrak \epsilon^a {(t_a)_n}^m Q_m(x) \\
 C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</div>
 <p>where we’ve adopted the Einstein summation convention for repeated upper and lower indexes because it’d otherwise be too tedious to write out the summations. Here <span class="math notranslate nohighlight">\((t_{\square})^{\square}_{\square}\)</span> should furnish a representation of the Lie algebra of the symmetry group.</p>
-<p>As before, the invariance of action under such variations implies the existstence of conserved currents <span class="math notranslate nohighlight">\(J^{\mu}_a\)</span> such that</p>
+<p>As before, the invariance of action under such variations implies the existence of conserved currents <span class="math notranslate nohighlight">\(J^{\mu}_a\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[\p_{\mu} J^{\mu}_a = 0\]</div>
 <p>as well as the conserved quantity</p>
@@ -944,7 +944,7 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
 <div class="math notranslate nohighlight">
 \[\left[ P_j, K_k \right] = -\ifrak \int d^3 x~x_k \p_j \Theta^{00} = \ifrak \delta_{kj} \int d^3 x \Theta^{00} = \ifrak \delta_{kj} P^0 = \ifrak \delta_{kj} H\]</div>
 <p>which, again, is consistent with <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>.</p>
-<p>It turns out, following the lines of argument in <a class="reference internal" href="02-scattering-theory.html#sec-s-matrix-lorentz-symmetry"><span class="std std-ref">Lorentz symmetry of S-matrix</span></a>, these commutation relations are enough to show the Lorentz invariance of S-matrix under the same “smootheness” assumptions on the interaction terms. In addition, the other commutation relations between <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> also follows.</p>
+<p>It turns out, following the lines of argument in <a class="reference internal" href="02-scattering-theory.html#sec-s-matrix-lorentz-symmetry"><span class="std std-ref">Lorentz symmetry of S-matrix</span></a>, these commutation relations are enough to show the Lorentz invariance of S-matrix under the same “smoothness” assumptions on the interaction terms. In addition, the other commutation relations between <span class="math notranslate nohighlight">\(H, \Pbf, \Jbf, \Kbf\)</span> also follows.</p>
 <p>Though not necessary, it’s indeed possible to verify the other Poincaré algebra relations directly. In particular, the commutation relations between the rotation generators are verified as follows.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
@@ -976,7 +976,7 @@ C_r(x) &amp;\to C_r(x) + \ifrak \epsilon^a {(\tau_a)_r}^s C_s(x)\end{split}\]</d
                         \right) \\
         &amp;= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
         &amp;= \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)\end{split}\]</div>
-<p class="sd-card-text">Now since <span class="math notranslate nohighlight">\(\delta \Lscr / \delta \dot{\Psi}_n\)</span> vanishes when <span class="math notranslate nohighlight">\(\Psi_n\)</span> is an auxilliary field, we can rewrite <span class="math notranslate nohighlight">\(J^{ij}\)</span> in terms of canonical variables as follows</p>
+<p class="sd-card-text">Now since <span class="math notranslate nohighlight">\(\delta \Lscr / \delta \dot{\Psi}_n\)</span> vanishes when <span class="math notranslate nohighlight">\(\Psi_n\)</span> is an auxiliary field, we can rewrite <span class="math notranslate nohighlight">\(J^{ij}\)</span> in terms of canonical variables as follows</p>
 <div class="math notranslate nohighlight">
 \[J^{ij} = \int d^3 x~P^n \left( -x^i \p^j Q_n + x^j \p^i Q_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m Q_m \right)\]</div>
 <p class="sd-card-text">The commutator between <span class="math notranslate nohighlight">\(J^{ij}\)</span> and the canonical variables follows</p>
@@ -1027,6 +1027,55 @@ V(t) &amp;= \int d^3 x \left( \pi(t, \xbf) J^0(t, \xbf) + \frac{1}{2} (J^0(t, \x
 <div class="math notranslate nohighlight">
 \[V(t) = \int d^3 x \left( J^{\mu}(t, \xbf) \phi_{\mu}(t, \xbf) + \frac{1}{2} (J^0(t, \xbf))^2 + \Hscr(t, \xbf) \right)\]</div>
 <p>It’s said in <a class="reference internal" href="../../bib.html#wei95" id="id4"><span>[Wei95]</span></a> that the manifestly non-Lorentz-invariant summand <span class="math notranslate nohighlight">\(\tfrac{1}{2} (J^0(t, \xbf))^2\)</span> corresponds exactly to the local term in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-vector-field-propagator-needs-local-term">Eq.5.2.13</a>, but I haven’t been able to see how.</p>
+</section>
+<section id="vector-field-with-spin-1">
+<h3><span class="section-number">6.5.2. </span>Vector field with spin-<span class="math notranslate nohighlight">\(1\)</span><a class="headerlink" href="#vector-field-with-spin-1" title="Link to this heading">#</a></h3>
+<p>We start with a very general Lagrangian density defined as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-general-vector-field-lagrangian">
+<span class="eqno">(6.5.2)<a class="headerlink" href="#equation-eq-general-vector-field-lagrangian" title="Link to this equation">#</a></span>\[\Lscr = -\frac{1}{2} \alpha \p_{\mu} V_{\nu} \p^{\mu} V^{\nu}
+        - \frac{1}{2} \beta \p_{\mu} V_{\nu} \p^{\nu} V^{\mu}
+        - \frac{1}{2} m^2 V_{\mu} V^{\mu}
+        + J^{\mu} V_{\mu}\]</div>
+<p>where <span class="math notranslate nohighlight">\(J^{\mu}\)</span> is a coupling current just as in the case of scalar fields. As explained in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#sec-vector-fields"><span class="std std-ref">Vector Fields</span></a>, vector fields may come with spin <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span>, and we would like to consider here only the spin-<span class="math notranslate nohighlight">\(1\)</span> part. To achieve this, consider the Euler-Lagrange equation <a class="reference internal" href="#equation-eq-euler-lagrange">Eq.6.2.5</a> which takes the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-general-vector-field-euler-lagrangian-equation">
+<span class="eqno">(6.5.3)<a class="headerlink" href="#equation-eq-general-vector-field-euler-lagrangian-equation" title="Link to this equation">#</a></span>\[-m^2 V^{\mu} + J^{\mu} = -\alpha \square V^{\mu} - \beta \p^{\mu} (\p_{\nu} V^{\nu})\]</div>
+<p>Taking the divergence, we get</p>
+<div class="math notranslate nohighlight">
+\[-(\alpha + \beta) \square (\p_{\mu} V^{\mu}) + m^2 (\p_{\mu} V^{\mu}) = \p_{\mu} J^{\mu}\]</div>
+<p>which we recognize, in light of <a class="reference internal" href="#equation-eq-field-scalar-field-equation-of-motion">Eq.6.2.11</a>, as the field equation of a scalar field, or more precisely, a spin-<span class="math notranslate nohighlight">\(0\)</span> vector field. To avoid the appearance of <span class="math notranslate nohighlight">\(\p_{\mu} V^{\mu}\)</span> as an independently propagating (scalar) field, we take <span class="math notranslate nohighlight">\(\alpha = -\beta = 1\)</span>, so that <span class="math notranslate nohighlight">\(\p_{\mu} V^{\mu}\)</span> may be expressed in terms of the external current <span class="math notranslate nohighlight">\(J\)</span>.</p>
+<p>Now we can rewrite <a class="reference internal" href="#equation-eq-general-vector-field-lagrangian">Eq.6.5.2</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\Lscr = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu} - \frac{1}{2} m^2 V_{\mu} V^{\mu} + J^{\mu} V_{\mu}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[F_{\mu \nu} \coloneqq \p_{\mu} V_{\nu} - \p_{\nu} V_{\mu}\]</div>
+<p>in analogous to <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-curvature-tensor">Eq.4.7.19</a>, where we’ve tried to construct a tensor for massless spin-<span class="math notranslate nohighlight">\(1\)</span> particles. This is the general Lagrangian for spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields.</p>
+<p>To work out the canonical variables, we note that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\delta \Lscr}{\delta \dot{V}_{\mu}} = -F^{0\mu}\]</div>
+<p>which is nonzero for <span class="math notranslate nohighlight">\(\mu \neq 0\)</span>. It follows that for spatial indexes <span class="math notranslate nohighlight">\(i\)</span>, we have the the canonical variables <span class="math notranslate nohighlight">\(V_i\)</span> whose canonical dual is, according to <a class="reference internal" href="#equation-eq-general-lagrangian-conjugate-pi">Eq.6.2.1</a>, given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-canonical-pi">
+<span class="eqno">(6.5.4)<a class="headerlink" href="#equation-eq-spin-1-vector-field-canonical-pi" title="Link to this equation">#</a></span>\[\Pi^i = \frac{\delta \Lscr}{\delta \dot{V}_i} = F^{i0} = \p^i V^0 + \dot{V}^i\]</div>
+<p>while <span class="math notranslate nohighlight">\(V_0\)</span> is auxiliary since <span class="math notranslate nohighlight">\(\delta \Lscr / \delta \dot{V}_0 = 0\)</span>. It turns out <span class="math notranslate nohighlight">\(V_0\)</span> can be explicitly solved in terms of the other fields as follows. Setting <span class="math notranslate nohighlight">\(\mu = 0\)</span> in <a class="reference internal" href="#equation-eq-general-vector-field-euler-lagrangian-equation">Eq.6.5.3</a> and remembering <span class="math notranslate nohighlight">\(\alpha = -\beta = 1\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; -m^2 V^0 + J^0 = -\square V^0 + \p^0(\p_{\nu} V^{\nu}) = \p_{\nu} F^{0 \nu} = \p_i F^{0i} \\
+\implies &amp; V^0 = \frac{1}{m^2} (\p_i F^{i0} + J^0) = \frac{1}{m^2} (\nabla \cdot \bm{\Pi} + J^0)\end{split}\]</div>
+<p>To be able to write down the Hamiltonian, we need the following preparations. First, using <a class="reference internal" href="#equation-eq-spin-1-vector-field-canonical-pi">Eq.6.5.4</a>, we can write</p>
+<div class="math notranslate nohighlight">
+\[\dot{\Vbf} = \bm{\Pi} - \nabla V^0 = \bm{\Pi} - \frac{1}{m^2} \nabla(\nabla \cdot \bm{\Pi} + J^0)\]</div>
+<p>and second, we can expand</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{4} F_{\mu \nu} F^{\mu \nu} = \frac{1}{2} F_{0i} F^{0i} + \frac{1}{4} F_{ij} F^{ij} = -\frac{1}{2} \bm{\Pi}^2 + \frac{1}{2} (\nabla \times \Vbf)^2\]</div>
+<p>Putting these all together, we can finally write down the Hamiltonian as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H &amp;= \int d^3 x \left( \bm{\Pi} \cdot \dot{\Vbf} - \Lscr \right) \\
+        &amp;= \int d^3 x \left( \bm{\Pi} \cdot \dot{\Vbf} + \frac{1}{4} F_{\mu \nu} F^{\mu \nu} + \frac{1}{2} m^2 V_{\mu} V^{\mu} - J^{\mu} V_{\mu} \right) \\
+        &amp;= \int d^3 x \Big(
+                \bm{\Pi}^2 + \frac{1}{m^2} (\nabla \cdot \bm{\Pi}) (\nabla \cdot \bm{\Pi} + J^0) \\
+                &amp;\qquad - \frac{1}{2} \bm{\Pi}^2 + \frac{1}{2} (\nabla \times \Vbf)^2 \\
+                &amp;\qquad - \frac{1}{2m^2} (\nabla \cdot \bm{\Pi} + J^0)^2 + \frac{1}{2} m^2 \Vbf^2 \\
+                &amp;\qquad + \frac{1}{m^2} J^0 (\nabla \cdot \bm{\Pi} + J^0) - \Jbf \cdot \Vbf
+        \Big)\end{split}\]</div>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="k-convention" role="doc-footnote">
@@ -1076,6 +1125,7 @@ V(t) &amp;= \int d^3 x \left( \pi(t, \xbf) J^0(t, \xbf) + \frac{1}{2} (J^0(t, \x
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lorentz-invariance">6.4. Lorentz invariance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-to-interaction-picture">6.5. Transition to interaction picture</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-field-with-derivative-coupling">6.5.1. Scalar field with derivative coupling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-field-with-spin-1">6.5.2. Vector field with spin-<span class="math notranslate nohighlight">\(1\)</span></a></li>
 </ul>
 </li>
 </ul>

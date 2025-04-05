@@ -445,6 +445,8 @@ As before, we must have :math:`\xi^{\ast} = \xi^c` and therefore
 .. math:: U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \psi^{\dagger}(x)
 
 
+.. _sec_vector_fields:
+
 Vector Fields
 -------------
 
@@ -490,7 +492,7 @@ where :math:`\{i,j,k\} = \{1,2,3\}`. From this one can then calculate :math:`\ha
 It follows then from :eq:`eq_vector_field_angular_momentum_intertwines_u_and_v` that
 
 .. math::
-	:label: eq_vector_field_u_and_v_multiply_j_sqaured
+	:label: eq_vector_field_u_and_v_multiply_j_squared
 
 	\sum_{\sigma'} u_0(0, \sigma') \left( \Jbf^{(\jfrak)} \right)^2_{\sigma' \sigma}
 		&= \sum_{\nu} \left( \hat{\Jbf}^2 \right)_{0 \nu} u_{\nu}(0, \sigma)
@@ -510,7 +512,7 @@ Now recall from :eq:`eq_angular_momentum_squared_eigenvalue` that
 
 .. math:: \left( \Jbf^{(\jfrak)} \right)^2_{\sigma \sigma'} = \jfrak (\jfrak + 1) \delta_{\sigma \sigma'}
 
-It follows that in order for :eq:`eq_vector_field_u_and_v_multiply_j_sqaured` to have nonzero solutions, one must have either :math:`\jfrak = 0`, in which case only the time-components :math:`u_0(0)` and :math:`v_0(0)` may be nonzero, where we've also suppressed :math:`\sigma` because spin vanishes, or :math:`\jfrak = 1`, in which case only the space-components :math:`u_i(0, \sigma)` and :math:`v_i(0, \sigma)` may be nonzero. These two cases are discussed in more details as follows.
+It follows that in order for :eq:`eq_vector_field_u_and_v_multiply_j_squared` to have nonzero solutions, one must have either :math:`\jfrak = 0`, in which case only the time-components :math:`u_0(0)` and :math:`v_0(0)` may be nonzero, where we've also suppressed :math:`\sigma` because spin vanishes, or :math:`\jfrak = 1`, in which case only the space-components :math:`u_i(0, \sigma)` and :math:`v_i(0, \sigma)` may be nonzero. These two cases are discussed in more details as follows.
 
 .. _sec_spin_zero_vector_field:
 
@@ -957,7 +959,7 @@ Now using the Clifford relations for both gamma and Pauli matrices, we can evalu
 
 where :math:`i, j \in \{1,2,3\}` and :math:`\epsilon` is the totally anti-symmetric sign. We see that the representation :math:`\Jscr_{\mu \nu}` is in fact reducible. Moreover, we see that that the corresponding representation :math:`D` of the Lorentz group given by :eq:`eq_dirac_field_linearize_representation` is not unitary, since while :math:`\Jscr_{ij}` are Hermitian, :math:`\Jscr_{i0}` are anti-Hermitian. The fact that :math:`D` is not unitary will have consequences when we try to construct the interaction density as in :eq:`eq_construct_interaction_density_by_fields`, because products like :math:`\psi^{\dagger} \psi` will not be a scalar (see :ref:`Construction of the Interaction Density for Dirac Fields <sec_construction_of_the_interaction_density>`).
 
-Next let's consider the parity transformation, i.e., the transformation under spatial inversion, in the context of gamma matrices. In comparison with the transformation laws :eq:`eq_hpjk_cojugated_by_space_and_time_inversions`, we can define
+Next let's consider the parity transformation, i.e., the transformation under spatial inversion, in the context of gamma matrices. In comparison with the transformation laws :eq:`eq_hpjk_conjugated_by_space_and_time_inversions`, we can define
 
 .. math:: \beta \coloneqq \ifrak \gamma_0 = \begin{bmatrix*}[r] 0 & 1 \\ 1 & 0 \end{bmatrix*}
 	:label: eq_dirac_field_beta_matrix
@@ -975,7 +977,7 @@ which, in turn, implies that
 
 	\beta \Jscr_{ij} \beta^{-1} = \Jscr_{ij}, \quad \beta \Jscr_{0i} \beta^{-1} = - \Jscr_{0i}
 
-which is consistent with :eq:`eq_hpjk_cojugated_by_space_and_time_inversions` if we think of :math:`\Jscr_{ij}` as the angular momenta and :math:`\Jscr_{0i}` as the boosts.
+which is consistent with :eq:`eq_hpjk_conjugated_by_space_and_time_inversions` if we think of :math:`\Jscr_{ij}` as the angular momenta and :math:`\Jscr_{0i}` as the boosts.
 
 In connection to the non-unitarity of :math:`D(\Lambda)`, let's note that since :math:`\beta \gamma_{\mu}^{\dagger} \beta^{-1} = -\gamma_{\mu}` (which can be verified by :eq:`eq_dirac_field_beta_conjugate_gamma` and :eq:`eq_dirac_field_defn_gamma_matrices`), we have :math:`\beta \Jscr_{\mu \nu}^{\dagger} \beta^{-1} = \Jscr_{\mu \nu}`, and therefore
 
@@ -1173,7 +1175,7 @@ Using :eq:`eq_dirac_field_n_and_m_matrix_as_spinor_sum`, :eq:`eq_dirac_field_spi
 To go further, we need to invoke the the transformation laws of the gamma matrices and their relatives, e.g., :math:`\beta`, under :math:`D(\Lambda)` from :ref:`sec_dirac_representation_and_gamma_matrices`. More precisely, using the pseudo-unitarity :eq:`eq_dirac_field_pseudo_unitarity_of_d_matrix`, as well as :eq:`eq_dirac_field_beta_matrix`, :eq:`eq_dirac_field_gamma_is_vector`, and :eq:`eq_L_transformation_for_massive`, we have the following
 
 .. math::
-	:label: eq_dirac_field_auxilliary_d_beta_products
+	:label: eq_dirac_field_auxiliary_d_beta_products
 
 	D(L(p)) \beta D^{\dagger}(L(p)) &= D(L(p)) D^{-1}(L(p)) \beta = \beta \\
 	D(L(p)) D^{\dagger}(L(p)) &= D(L(p)) \beta D^{-1}(L(p)) \beta \\
@@ -1267,7 +1269,7 @@ It follows that :math:`\eta \eta^c = -1`, or in other words, the intrinsic parit
 
 	Recall from :eq:`eq_klein_gordon` that a general quantum field satisfies Klein-Gordon equation, which is a second-order differential equation. It turns out that the Dirac fields satisfy a first-order equation, known as the `Dirac equation <https://en.wikipedia.org/wiki/Dirac_equation>`_.
 
-	To see this, we recall that in the derivation of :eq:`eq_dirac_field_auxilliary_d_beta_products`, we've essentially proved the following identity
+	To see this, we recall that in the derivation of :eq:`eq_dirac_field_auxiliary_d_beta_products`, we've essentially proved the following identity
 
 	.. math:: D(L(p)) \beta D^{-1}(L(p)) = -\ifrak p_{\mu} \gamma^{\mu} / m
 
@@ -1628,7 +1630,7 @@ The nice thing about this parametrization is that :math:`L(\theta)` becomes addi
 	:animate: fade-in-slide-down
 	:icon: unlock
 
-	We'll only veryfiy the equality for :math:`1 \leq i, j \leq 3`.
+	We'll only verify the equality for :math:`1 \leq i, j \leq 3`.
 
 	.. math::
 
