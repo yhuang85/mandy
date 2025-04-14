@@ -1,10 +1,12 @@
+.. _sec_the_canonical_formalism:
+
 The Canonical Formalism
------------------------
+=======================
 
 The quantum theory we've been developing so far has been based almost solely on the symmetry principles, especially Lorentz symmetries. This is a very satisfying approach since it's logically clean and relies only on the most fundamental principles, however, this is not the way quantum theory historically had been developed. Not surprisingly, the original development of quantum theory is much messier and requires substantial experience in "classical" physics. It's largely based on the so-called *Lagrangian formalism*, which is a readily well-established principle in classical physics and can be "quantized". The main goal of this chapter is to go through this formalism, not for historical sake, but because it offers a particularly convenient way to construct Hamiltonians that generate Lorentz-invariant S-matrices, which has been difficult for us as can be seen in :ref:`sec_feynman_rules_in_momentum_space`.
 
-Canonical variables
-^^^^^^^^^^^^^^^^^^^
+Canonical Variables
+-------------------
 
 We've seen in :ref:`sec_quantum_fields_and_antiparticles` a few ways of constructing (Lorentz-invariant) interaction densities. However, we don't have a systematic way to do so. The so-called Lagrangian formalism will not provide a systematic solution either, but it'll allow us to construct more interesting interaction densities (from classical physics theories), to the extent that all known quantum field theories arise in this way! In addition, it'll shed light on the mysterious local terms as for example in :eq:`eq_vector_field_propagator_needs_local_term`, that are needed to compensate for a Lorentz-invariant momentum space propagator.
 
@@ -296,8 +298,8 @@ As an example, we note that, in light of :eq:`eq_free_scalar_field_hamiltonian`,
 where :math:`\Hscr(Q)` is the perturbation term giving rise to the interaction.
 
 
-The Lagrangian formalism
-^^^^^^^^^^^^^^^^^^^^^^^^
+The Lagrangian Formalism
+------------------------
 
 We'll leave aside the discussion of canonical variables for a bit to introduce the Lagrangian formalism in its most general form. After that we'll play the game backwards. Namely, instead of constructing canonical variables out of the free fields that we've been exclusively considering since :ref:`sec_quantum_fields_and_antiparticles`, we'll get canonically conjugate fields out of the (magically appearing) Lagrangians, and then *impose* the canonical commutation relations :eq:`eq_canonical_commutation_relations` on them -- a procedure generally known as "quantization".
 
@@ -375,6 +377,7 @@ Now recall from the previous section that the anchor of our knowledge is the Ham
 As a double check, let's verify that the Hamiltonian defined by :eq:`eq_legendre_transformation_hamiltonian_from_lagrangian` also satisfies Hamilton's equations (cf. :eq:`eq_free_field_hamilton_equation_q_and_p_dot`). Indeed, the variational derivatives are calculated, using :eq:`eq_general_lagrangian_conjugate_pi` and :eq:`eq_equation_of_motion_for_fields`, as follows
 
 .. math::
+	:label: eq_variational_derivative_hamiltonian
 
 	\frac{\delta H}{\delta \Pi_n(t, \xbf)}
 		&= \sum_m \int d^3 y \left( \frac{\delta \Pi_m(t, \ybf)}{\delta \Pi_n(t, \xbf)} \dot{\Psi}_m(t, \ybf) + \Pi_m(t, \ybf) \frac{\delta \dot{\Psi}_m(t, \ybf)}{\delta \Pi_n(t, \xbf)} \right) \\
@@ -497,8 +500,8 @@ A few remarks are in order. First of all, if we think of :eq:`eq_infinitesimal_v
 
 .. _sec_from_symmetries_to_conservation_laws:
 
-From symmetries to conservation laws
-++++++++++++++++++++++++++++++++++++
+From Symmetries to Conservation Laws
+------------------------------------
 
 The general principle that "symmetries imply conservation laws" is mathematically known as `Noether's theorem <https://en.wikipedia.org/wiki/Noether%27s_theorem>`__, but we'll not bother with any mathematical formality here. To see how to derive conserved quantities from an assumed symmetry, let's change :eq:`eq_infinitesimal_variation_of_field` as follows
 
@@ -761,7 +764,7 @@ whose equal-time commutation relations with canonical variables :math:`P` and :m
 .. _sec_lorentz_invariance:
 
 Lorentz invariance
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 The goal of this section is to show that the Lorentz invariance of the Lagrangian density implies the Lorentz invariance of the S-matrix, which justifies our interest in the Lagrangian formalism in the first place.
 
@@ -964,8 +967,8 @@ Though not necessary, it's indeed possible to verify the other Poincaré algebra
 	where we've used integration-by-parts in the second equality. The standard commutation relation between the components of :math:`\Jbf` follows readily.
 
 
-Transition to interaction picture
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Transition to Interaction Picture
+---------------------------------
 
 In this section, we will investigate, through examples, how to derive from the Lagrangian formalism an interaction picture, on which our entire approach to quantum field theory has been based. As a byproduct, we will also generalize the quantization procedure considered in :ref:`Quantization of Free Scalar Fields <dropdown_quantization_of_free_scalar_fields>`.
 
@@ -1021,6 +1024,7 @@ where, for example, :math:`\pi(t, \xbf) \coloneqq e^{\ifrak H_0 t} \Pi(0, \xbf) 
 Finally, in order to get the interaction density in terms of fields as explained in :ref:`sec_quantum_fields_and_antiparticles`, we simply replace :math:`\pi(t, \xbf)` with :math:`\dot{\phi}(t, \xbf)` to get the following
 
 .. math::
+	:label: eq_scalar_field_interaction_vt
 
 	V(t) = \int d^3 x \left( J^{\mu}(t, \xbf) \phi_{\mu}(t, \xbf) + \frac{1}{2} (J^0(t, \xbf))^2 + \Hscr(t, \xbf) \right)
 
@@ -1079,6 +1083,7 @@ which is nonzero for :math:`\mu \neq 0`. It follows that for spatial indexes :ma
 while :math:`V_0` is auxiliary since :math:`\delta \Lscr / \delta \dot{V}_0 = 0`. It turns out :math:`V_0` can be explicitly solved in terms of the other fields as follows. Setting :math:`\mu = 0` in :eq:`eq_general_vector_field_euler_lagrangian_equation` and remembering :math:`\alpha = -\beta = 1`, we have
 
 .. math::
+	:label: eq_spin_1_vector_field_heisenberg_v0
 
 	& -m^2 V^0 + J^0 = -\square V^0 + \p^0(\p_{\nu} V^{\nu}) = \p_{\nu} F^{0 \nu} = \p_i F^{0i} \\
 	\implies & V^0 = \frac{1}{m^2} (\p_i F^{i0} + J^0) = \frac{1}{m^2} (\nabla \cdot \bm{\Pi} + J^0)
@@ -1104,7 +1109,195 @@ Putting these all together, we can finally write down the Hamiltonian as follows
 			&\qquad - \frac{1}{2} \bm{\Pi}^2 + \frac{1}{2} (\nabla \times \Vbf)^2 \\
 			&\qquad - \frac{1}{2m^2} (\nabla \cdot \bm{\Pi} + J^0)^2 + \frac{1}{2} m^2 \Vbf^2 \\
 			&\qquad + \frac{1}{m^2} J^0 (\nabla \cdot \bm{\Pi} + J^0) - \Jbf \cdot \Vbf
+		\Big) \\
+		&= \int d^3 x \Big(
+			\frac{1}{2} \bm{\Pi}^2 + \frac{1}{2m^2} (\nabla \cdot \bm{\Pi})^2 + \frac{1}{2} (\nabla \times \Vbf)^2 + \frac{1}{2} m^2 \Vbf^2 \\
+			&\qquad + \frac{1}{m^2} J^0 \nabla \cdot \bm{\Pi} + \frac{1}{2m^2} (J^0)^2 - \Jbf \cdot \Vbf
 		\Big)
+
+where the last equality serves the purpose of separating the Hamiltonian :math:`H = H_0 + V` into the free part and the interacting part.
+
+Now we pass to the interaction picture by writing
+
+.. math::
+	:label: eq_spin_1_vector_field_interaction_picture_h0_and_vt
+
+	H_0 &= \int d^3 x \left( \frac{1}{2} \bm{\pi}^2 + \frac{1}{2m^2} (\nabla \cdot \bm{\pi})^2 + \frac{1}{2} (\nabla \times \vbf)^2 + \frac{1}{2} m^2 \vbf^2 \right) \\
+	V(t) &= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}{2m^2} (J^0)^2 - \Jbf \cdot \bm{\vbf} \right)
+
+The Hamilton's equations :eq:`eq_free_field_hamilton_equation_q_and_p_dot` take the following form (cf. :eq:`eq_variational_derivative_hamiltonian`)
+
+.. math::
+	:label: eq_spin_1_vector_field_hamilton_equations
+
+	\begin{alignat*}{2}
+		\dot{\vbf} &= \frac{\delta H_0}{\delta \bm{\pi}} &&= \bm{\pi} - \frac{1}{m^2} \nabla(\nabla \cdot \bm{\pi}) \\
+		\dot{\bm{\pi}} &= -\frac{\delta H_0}{\delta \vbf} &&= m^2 \vbf - \nabla \times (\nabla \times \vbf) = m^2 \vbf^2 + \nabla^2 \vbf - \nabla(\nabla \cdot \vbf)
+	\end{alignat*}
+
+We're still missing :math:`v^0` since :math:`V^0` was an auxiliary variable, which was solved by :eq:`eq_spin_1_vector_field_heisenberg_v0`. Inspired by :eq:`eq_spin_1_vector_field_heisenberg_v0`, let's *define*
+
+.. math:: v^0 \coloneqq \frac{1}{m^2} \nabla \cdot \bm{\pi}
+	:label: eq_spin_1_vector_field_defn_interaction_v0
+
+This enables us to rewrite :eq:`eq_spin_1_vector_field_interaction_picture_h0_and_vt` as follows
+
+.. math:: V(t) = \int d^3 x \left( -J^{\mu} v_{\mu} + \frac{1}{2m^2} (J^0)^2 \right)
+
+where we see again, just as in :eq:`eq_scalar_field_interaction_vt`, the non-Lorentz-invariant local term.
+
+We can now solve for :math:`\bm{\pi}` using :eq:`eq_spin_1_vector_field_defn_interaction_v0` and :eq:`eq_spin_1_vector_field_hamilton_equations` by
+
+.. math:: \bm{\pi} =  \dot{\vbf} + \nabla v^0
+
+and write down the field equations, again using :eq:`eq_spin_1_vector_field_defn_interaction_v0` and :eq:`eq_spin_1_vector_field_hamilton_equations` as follows
+
+.. math::
+
+	m^2 v^0 &= \nabla \cdot \dot{\vbf} + \nabla^2 v^0 \\
+	\ddot{\vbf} + \nabla \dot{v}^0 &= m^2 \vbf^2 + \nabla^2 \vbf - \nabla(\nabla \cdot \vbf)
+
+These two equations can be unified using the :math:`4`-vector notation as follows
+
+.. math:: \square v^{\mu} - \p^{\mu} \p_{\nu} v^{\nu} - m^2 v^{\mu} = 0
+	:label: eq_spin_1_vector_field_equation
+
+Taking the divergence, we get
+
+.. math:: \p_{\mu} v^{\mu} = 0
+	:label: eq_spin_1_vector_field_is_divergence_free
+
+in agreement with :eq:`eq_vector_field_gauge_fixing_condition`. Moreover it follows that :eq:`eq_spin_1_vector_field_equation` reduces to the Klein-Gordon equation
+
+.. math:: (\square - m^2) v^{\mu} = 0
+	:label: eq_spin_1_vector_field_satisfies_klein_gordon
+
+General real solutions to :eq:`eq_spin_1_vector_field_is_divergence_free` and :eq:`eq_spin_1_vector_field_satisfies_klein_gordon` take the following form
+
+.. math::
+
+	v^{\mu} = (2\pi)^{-3/2} \sum_{\sigma} \int \frac{d^3 p}{\sqrt{2p^0}} \left( e^{\mu}(\pbf, \sigma) a(\pbf, \sigma) e^{\ifrak p \cdot x} + {e^{\mu}}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) e^{-\ifrak p \cdot x} \right)
+
+where :math:`p^0 = \sqrt{\pbf^2 + m^2}` and :math:`\sigma` takes value in :math:`\{-1, 0, 1\}` by convention so that :math:`e(\pbf, \sigma)` correspond to the three :math:`4`-vectors orthogonal to :math:`p`, namely
+
+.. math:: p_{\mu} e^{\mu}(\pbf, \sigma) = 0
+
+As explained in :eq:`eq_vector_field_defn_e_vector_at_rest`, :eq:`eq_vector_field_Pi_matrix` and :eq:`eq_vector_field_defn_Pi`, we may choose the spinors :math:`e^{\mu}(\pbf, \sigma)` such that
+
+.. math:: \sum_{\sigma} e^{\mu}(\pbf, \sigma) {e^{\nu}}^{\ast}(\pbf, \sigma) = \eta^{\mu \nu} + m^{-2} p^{\mu} p^{\nu}
+
+It's then straightforward to verified the desired canonical commutation relations :eq:`eq_canonical_commutation_relations`
+
+.. math::
+
+	\left[ v^i(t, \xbf), \pi^j(t, \ybf) \right] &= \ifrak \delta^{ij} \delta(\xbf - \ybf) \\
+	\left[ v^i(t, \xbf), v^j(t, \xbf) \right] &= 0 \\
+	\left[ \pi^i(t, \xbf), \pi^j(t, \ybf) \right] &= 0
+
+given that the following hold
+
+.. math::
+
+	\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] &= \delta_{\sigma \sigma'} \delta(\pbf - \pbf') \\
+	\left[ a(\pbf, \sigma), a(\pbf', \sigma') \right] &= 0
+
+This is a rather convincing evidence for the validity of the free field Hamiltonian :eq:`eq_spin_1_vector_field_interaction_picture_h0_and_vt`.
+
+
+Dirac field with spin-:math:`1/2`
++++++++++++++++++++++++++++++++++
+
+Recall from :eq:`eq_dirac_field_jscr_matrix` that the Dirac representation is *not* unitary, which eventually led to the definition of :math:`\bar{\psi}` in :eq:`eq_dirac_field_psi_field_bar` for constructing interaction densities for Dirac fields. Motivated by discussions in :ref:`sec_construction_of_the_interaction_density` and the desire to make Lagrangian real, let's consider the following
+
+.. math:: \Lscr = -\bar{\Psi} \left( \gamma^{\mu} \p_{\mu} + m \right) \Psi - \Hscr(\Psi, \bar{\Psi})
+
+where :math:`\Hscr` is a real function. Such :math:`\Lscr` is nonetheless not real, which can be seen by the following calculation using :eq:`eq_dirac_field_beta_matrix`, :eq:`eq_dirac_field_beta_conjugate_gamma_dagger`, and :eq:`eq_dirac_field_psi_field_bar`
+
+.. math::
+
+	\bar{\Psi} \gamma^{\mu} \p_{\mu}\Psi - \left( \bar{\Psi} \gamma^{\mu} \p_{\mu}\Psi \right)^{\dagger}
+		&= \bar{\Psi} \gamma^{\mu} \p_{\mu}\Psi - \left( \p_{\mu}\Psi^{\dagger} \right) {\gamma^{\mu}}^{\dagger} \beta \Psi \\
+		&= \bar{\Psi} \gamma^{\mu} \p_{\mu}\Psi + \left( \p_{\mu} \bar{\Psi} \right) \gamma^{\mu} \Psi \\
+		&= \p_{\mu} \left( \bar{\Psi} \gamma^{\mu} \Psi \right)
+
+However, the same calculation shows that the action, i.e., the spacetime integral of the Lagrangian, is real. It follows that one needs not to treat :math:`\Psi` and :math:`\bar{\Psi}` as independent variables since the field equations, given as the stationary point of the action functional, for :math:`\Psi` is adjoint to that for :math:`\bar{\Psi}`. Therefore we can simply define the canonical conjugate
+
+.. math:: \Pi \coloneqq \frac{\delta \Lscr}{\delta \dot{\Psi}} = -\bar{\Psi} \gamma^0
+
+and write the Hamiltonian
+
+.. math::
+
+	H &= \int d^3 x \left( \Pi \dot{\Psi} - \Lscr \right) \\
+		&= \int d^3 x \left( \bar{\Psi} (\gamma^i \p_i + m) \Psi + \Hscr \right) \\
+		&= \int d^3 x \left( \Pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \Psi + \Hscr \right)
+
+where the two summands in the last integrand give the usual splitting :math:`H = H_0 + V`.
+
+Passing to the interaction picture, we can write
+
+.. math:: H_0 = \int d^3 x~\pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
+	:label: eq_dirac_field_free_hamiltonian
+
+so that the field equation is simply
+
+.. math::
+	:label: eq_dirac_field_hamilton_equation
+
+	\dot{\psi} = \frac{\delta H_0}{\delta \pi} = \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
+		\iff (\gamma^{\mu} \p_{\mu} + m) \psi = 0
+
+which is recognized as the Dirac equation :eq:`eq_dirac_equation_psi`. Indeed, the other Hamilton's equation :math:`\dot{\pi} = -\delta H_0 / \delta \psi` gives nothing but the adjoint of the Dirac equation, hence no new information.
+
+A general solution to :eq:`eq_dirac_field_hamilton_equation` can be written as
+
+.. math::
+
+	\psi(x) = (2\pi)^{-3/2} \int d^3 p \sum_{\sigma = \pm 1/2} \left( u(\pbf, \sigma) e^{\ifrak p \cdot x} a(\pbf, \sigma) + v(\pbf, \sigma) e^{-\ifrak p \cdot x} b^{\dagger}(\pbf, \sigma) \right)
+
+where :math:`u(\pbf, \pm 1/2)` are the two independent solutions of
+
+.. math:: \left( \ifrak \gamma^{\mu} p_{\mu} + m \right) u(\pbf, \sigma) = 0
+
+and similarly :math:`v(\pbf, \pm 1/2)` are solutions of
+
+.. math:: \left( -\ifrak \gamma^{\mu} p_{\mu} + m \right) v(\pbf, \sigma) = 0
+
+Now observe that :math:`\ifrak \gamma^{\mu} p_{\mu}`, being a :math:`4 \times 4` matrix, has two eigenvalues :math:`\pm m`. It follows from a straightforward matrix calculation that
+
+.. math:: \sum_{\sigma = \pm 1/2} u(\pbf, \sigma) \bar{u}(\pbf, \sigma) = \sum_{\sigma = \pm 1/2} u(\pbf, \sigma) u^{\dagger}(\pbf, \sigma) \beta
+
+must be proportional to the projection :math:`-\ifrak \gamma^{\mu} p_{\mu} + m`. Likewise
+
+.. math:: \sum_{\sigma = \pm 1/2} v(\pbf, \sigma) \bar{v}(\pbf, \sigma)
+
+must be proportional to the other projection :math:`\ifrak \gamma^{\mu} p_{\mu} + m`.
+
+Hence we can normalize :math:`u, v` such that
+
+.. math::
+
+	\sum_{\sigma = \pm 1/2} u(\pbf, \sigma) \bar{u}(\pbf, \sigma) &= (2p_0)^{-1} (-\ifrak \gamma^{\mu} p_{\mu} + m) \\
+	\sum_{\sigma = \pm 1/2} v(\pbf, \sigma) \bar{v}(\pbf, \sigma) &= -(2p_0)^{-1} (\ifrak \gamma^{\mu} p_{\mu} + m)
+
+which is consistent with the spin sum calculations :eq:`eq_dirac_field_spin_sum_finite_momentum`.
+
+Knowing that spin :math:`1/2` particles are fermions, one can verified that the canonical commutation relations
+
+.. math::
+
+	\left[ \psi_{\alpha}(t, \xbf), \bar{\psi}_{\beta}(t, \ybf) \right]_+
+		&= \sum_{\kappa} \left[ \psi_{\alpha}(t, \xbf), \pi_{\kappa}(t, \ybf) \right]_+ (\gamma^0)_{\kappa \beta} \\
+		&= \ifrak (\gamma^0)_{\alpha \beta} \delta^3(\xbf - \ybf) \\
+	\left[ \psi_{\alpha}(t, \xbf), \psi_{\beta}(t, \beta) \right]_+ &= 0
+
+are satisfied if operators :math:`a, b` satisfy the following
+
+.. math::
+
+	\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right]_+ = \left[ b(\pbf, \sigma), b^{\dagger}(\pbf', \sigma') \right]_+ = \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'}
+
+and all the other anti-commutators vanish.
 
 
 .. rubric:: Footnotes

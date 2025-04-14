@@ -1,7 +1,7 @@
 .. _sec_the_feynman_rules:
 
 The Feynman Rules
------------------
+=================
 
 In :ref:`sec_cluster_decomposable_hamiltonians`, we've discussed the condition that the Hamiltonian must satisfy in order for the cluster decomposition principle to hold. Namely, the Hamiltonian can be written as a polynomial :eq:`eq_general_expansion_of_hamiltonian` of creation and annihilation operators in normal order, such that the coefficients contains exactly one momentum conversing delta function. In order to derive this condition, we've encountered the idea of Feynman diagrams, which is a bookkeeping device for the evaluation of S-matrix. We couldn't say more about the coefficients besides the delta function because we had not introduced the building blocks of the Hamiltonian, namely, the quantum fields. Now that we've seen how to construct even the most general fields in the previous chapter, we're ready to spell out the full details of Feynman diagrams, first in spacetime coordinates, and then in momentum space coordinates.
 
@@ -12,8 +12,8 @@ In :ref:`sec_cluster_decomposable_hamiltonians`, we've discussed the condition t
 
 .. _sec_spacetime_feynman_rules:
 
-Spacetime Feynman rules
-^^^^^^^^^^^^^^^^^^^^^^^
+Spacetime Feynman Rules
+-----------------------
 
 In this section, we'll derive the Feynman rules in spacetime coordinates, which will establish a diagrammatic framework for calculating S-matrices. In the next section, we'll translate these rules to the momentum space.
 
@@ -146,7 +146,7 @@ The last note is more of a convention (for convenience), which aims at further r
 To make things concrete and to prepare for the calculations in the next sections, we conclude the discussion of Feynman rules with two prototypical examples.
 
 Example 1: :math:`\psi^{\dagger} \psi \phi`-interaction
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Consider the following interaction density
 
@@ -273,7 +273,7 @@ Boson-boson scattering
 
 
 Example 2: :math:`\phi^3`-interaction
-+++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now let's consider an interaction density that involves a power of the same field as follows
 
@@ -338,15 +338,15 @@ In this case, the S-matrix can be simplified as follows
 where :math:`\Delta_F` is the so-called `Feynman propagator <https://en.wikipedia.org/wiki/Propagator#Feynman_propagator>`__ and will be discussed in detail in the next section.
 
 
-Momentum space Feynman rules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Momentum Space Feynman Rules
+----------------------------
 
 There turns out to be many advantages in working in the :math:`4`-momentum space, instead of the spacetime. Hence the goal of this section is to translate the Feynman rules :eq:`eq_feynman_rule_a_psi_dagger` -- :eq:`eq_feynman_rule_propagator` to the momentum space. The biggest challenge, however, lies in the fact that so far we've been working exclusively under the assumption that the :math:`4`-momentum lies on the mass shell, whether in the spinors appearing in :eq:`eq_feynman_rule_a_psi_dagger` -- :eq:`eq_feynman_rule_psi_a_dagger` or in the propagator :eq:`eq_feynman_rule_propagator`. We'll tackle this challenge in three steps. First, we'll rewrite the propagator as an integral on the momentum space, as opposed to the integral :eq:`eq_defn_Delta_plus` defined on the mass shell. This will then allow us to translate the Feynman rules to the momentum space, except for the external edges which still live on the mass shell because the in- and out-state particles do so. Finally, we'll discuss how to generalize the Feynman rules so that the "external lines" do not necessarily have to live on the mass shell.
 
 .. _sec_propagator_in_momentum_space:
 
 Propagator in momentum space
-++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Plugging :eq:`eq_generic_field_expression` into :eq:`eq_feynman_rule_propagator`, we can rewrite the propagator in terms of the spin sums as follows
 
@@ -519,7 +519,7 @@ We see that the price to pay for making :math:`P_{\mu \nu}(p)` Lorentz covariant
 .. _sec_feynman_rules_in_momentum_space:
 
 Feynman rules in momentum space
-+++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To turn the Feynman rules derived in :ref:`sec_spacetime_feynman_rules`, specifically :eq:`eq_feynman_rule_a_psi_dagger` -- :eq:`eq_feynman_rule_propagator`, from an integral over spacetime coordinates as in :eq:`eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density` to an integral over the momentum space coordinates, we need to integrate out the :math:`x` coordinates. Indeed, as can be seen from :eq:`eq_feynman_rule_a_psi_dagger` -- :eq:`eq_feynman_rule_psi_dagger_a_dagger`, as well as :eq:`eq_propagator_as_momentum_space_integral`, the :math:`x` variables appear only in the exponential terms. More precisely, at each vertex, the only term that involves :math:`x` is the following
 
@@ -602,7 +602,7 @@ Before moving onto the discussion about the external edges, let's revisit the ex
 
 
 External edges off the mass shell
-+++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By transforming propagators into integrals over the :math:`4`-momentum space as in :eq:`eq_propagator_as_momentum_space_integral`, and integrating out the spacetime coordinates, we've been able to express the S-matrix as an integral over a product of :math:`4`-momentum space coordinates, one for each internal edge that doesn't split the Feynman diagram into disconnected components. In particular, as we've seen in several examples from the previous section, the S-matrix involves no momentum space integrals at all when the Feynman diagram is a tree.
 

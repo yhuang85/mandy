@@ -979,7 +979,12 @@ which, in turn, implies that
 
 which is consistent with :eq:`eq_hpjk_conjugated_by_space_and_time_inversions` if we think of :math:`\Jscr_{ij}` as the angular momenta and :math:`\Jscr_{0i}` as the boosts.
 
-In connection to the non-unitarity of :math:`D(\Lambda)`, let's note that since :math:`\beta \gamma_{\mu}^{\dagger} \beta^{-1} = -\gamma_{\mu}` (which can be verified by :eq:`eq_dirac_field_beta_conjugate_gamma` and :eq:`eq_dirac_field_defn_gamma_matrices`), we have :math:`\beta \Jscr_{\mu \nu}^{\dagger} \beta^{-1} = \Jscr_{\mu \nu}`, and therefore
+In connection to the non-unitarity of :math:`D(\Lambda)`, let's note that since
+
+.. math::  \beta \gamma_{\mu}^{\dagger} \beta^{-1} = -\gamma_{\mu}
+	:label: eq_dirac_field_beta_conjugate_gamma_dagger
+
+which can be verified by :eq:`eq_dirac_field_beta_conjugate_gamma` and :eq:`eq_dirac_field_defn_gamma_matrices`, we have :math:`\beta \Jscr_{\mu \nu}^{\dagger} \beta^{-1} = \Jscr_{\mu \nu}`, and therefore
 
 .. math:: \beta D^{\dagger}(\Lambda) \beta^{-1} = D^{-1}(\Lambda)
 	:label: eq_dirac_field_pseudo_unitarity_of_d_matrix
@@ -1293,6 +1298,7 @@ It follows that :math:`\eta \eta^c = -1`, or in other words, the intrinsic parit
 	Combining these identities with :eq:`eq_dirac_field_psi_field`, we conclude that the Dirac fields satisfy the following Dirac equation
 
 	.. math:: \left( \gamma^{\mu} \p_{\mu} + m \right) \psi(x) = 0
+		:label: eq_dirac_equation_psi
 
 	However, unlike the original derivation of Dirac, we've derived it here as a consequence of parity conservation. In fact, we note that the Dirac equation is not something completely different from the Klein-Gordon equation, because using the Clifford algebra relations :eq:`eq_dirac_field_clifford_algebra`, we see that :math:`\gamma^{\mu} \p_{\mu}` is actually a square root of the D'Alembert operator :math:`\square`. This is allegedly one of the motivations of Dirac to find these gamma matrices in the first place.
 
@@ -1433,6 +1439,7 @@ As mentioned in :ref:`Dirac representation and gamma matrices <paragraph_dirac_f
 We see that if we define a new adjoint
 
 .. math:: \bar{\psi} \coloneqq \psi^{\dagger} \beta
+	:label: eq_dirac_field_psi_field_bar
 
 then :math:`\bar{\psi}` transforms nicely as follows
 
@@ -2042,6 +2049,8 @@ Recall from :eq:`eq_evolution_equation_of_u_operator` and :eq:`eq_defn_v_by_dens
 Since the CPT symmetry is clearly conserved for free particles, it is also conserved in interactions according to :eq:`eq_h_as_h0_plus_v`.
 
 
+.. _sec_massless_fields:
+
 Massless Fields
 ---------------
 
@@ -2128,6 +2137,8 @@ Similar constraints hold for :math:`v` as well, but we'll not bother to write th
 
 It turns out, however, that these conditions can never be satisfied! To illustrate the difficulties, we'll first consider the case of vector fields, both as a warm-up and for later references when we'll analyze the electromagnetic theory. Then we'll show that the difficulties persist to the general case of arbitrary :math:`(A, B)` fields.
 
+
+.. _sec_the_failure_for_vector_fields:
 
 The failure for vector fields
 +++++++++++++++++++++++++++++
