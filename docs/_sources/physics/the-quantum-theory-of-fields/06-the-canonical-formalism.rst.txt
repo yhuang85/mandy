@@ -477,8 +477,10 @@ and hence the Hamiltonian takes the following form
 	must hold. In this way we've completely reversed the process of deriving a Lagrangian from free fields made up of creation and annihilation operators.
 
 
+.. _sec_global_symmetries:
+
 Global symmetries
-^^^^^^^^^^^^^^^^^
+-----------------
 
 Of course, the reason for introducing the Lagrangian formalism is not to reproduce the Hamiltonians and the fields that we already knew. The main motivation is that, as we'll see, the Lagrangian formalism provides a framework for studying symmetries. Recall from :ref:`sec_what_is_a_symmetry` that a symmetry was defined to be a(n anti-)unitary transformation on the Hilbert space of states, i.e., a transformation that preserves amplitudes. Now in the Lagrangian formalism, field equations come out of the stationary action condition. Therefore in this context, we'll redefine a symmetry as an infinitesimal variation of the fields that leaves the action invariant. As it turns out, symmetries in this sense lead to conserved currents, which are nothing but the symmetry operators considered earlier. Hence besides a slight abuse of terminology, the notion of symmetries will be consistent.
 
@@ -495,13 +497,7 @@ which leaves the action :math:`I[\Psi]`  invariant
 .. math:: 0 = \delta I = \ifrak \epsilon \sum_n \int d^4 x~\frac{\delta I[\Psi]}{\delta \Psi_n(x)} \Fscr_n(x)
 	:label: eq_vanishing_of_action_under_infinitesimal_variation
 
-A few remarks are in order. First of all, if we think of :eq:`eq_infinitesimal_variation_of_field` as an infinitesimal (unitary) symmetry transformation, then the coefficient :math:`\ifrak` can be justified by then intention of making :math:`\Fscr_n(x)` Hermitian. Next, although :eq:`eq_vanishing_of_action_under_infinitesimal_variation` *always* holds when :math:`\Psi_n(x)` is stationary, the infinitesimal :math:`\Fscr_n(x)` being a symmetry demands that :eq:`eq_vanishing_of_action_under_infinitesimal_variation` holds true for *any* :math:`\Psi_n(x)`. Finally, we emphasize the fact that :math:`\epsilon` is an infinitesimal *constant*, rather than a function of :math:`x`, is the defining property for the symmetry to be called "global". Indeed, we'll be dealing with symmetries that are not global in the next chapter, namely, the gauge symmetries.
-
-
-.. _sec_from_symmetries_to_conservation_laws:
-
-From Symmetries to Conservation Laws
-------------------------------------
+A few remarks are in order. First of all, if we think of :eq:`eq_infinitesimal_variation_of_field` as an infinitesimal (unitary) symmetry transformation, then the coefficient :math:`\ifrak` can be justified by the intention of making :math:`\Fscr_n(x)` Hermitian. Next, although :eq:`eq_vanishing_of_action_under_infinitesimal_variation` *always* holds when :math:`\Psi_n(x)` is stationary, the infinitesimal :math:`\Fscr_n(x)` being a symmetry demands that :eq:`eq_vanishing_of_action_under_infinitesimal_variation` holds true for *any* :math:`\Psi_n(x)`. Finally, we emphasize the fact that :math:`\epsilon` is an infinitesimal *constant*, rather than a function of :math:`x`, is the defining property for the symmetry to be called "global". Indeed, we'll be dealing with symmetries that are not global in the next chapter, namely, the gauge symmetries.
 
 The general principle that "symmetries imply conservation laws" is mathematically known as `Noether's theorem <https://en.wikipedia.org/wiki/Noether%27s_theorem>`__, but we'll not bother with any mathematical formality here. To see how to derive conserved quantities from an assumed symmetry, let's change :eq:`eq_infinitesimal_variation_of_field` as follows
 
@@ -550,6 +546,9 @@ Lagrangian-preserving symmetry
 
 	Indeed, one can verify directly that :math:`\dot{F}(t) = 0` using :eq:`eq_stationary_lagrangian` together with the field equations :eq:`eq_general_lagrangian_conjugate_pi` and :eq:`eq_equation_of_motion_for_fields`.
 
+
+.. _list_lagrangian_density_preserving_symmetry:
+
 Lagrangian-density-preserving symmetry
 	Taking the previous assumption further, let's impose the even stronger condition that the Lagrangian density is invariant under :eq:`eq_infinitesimal_variation_of_field`. It means that
 
@@ -586,6 +585,7 @@ Now in the case of a Lagrangian-preserving symmetry, the conserved quantity :eq:
 which of course is time-independent. Moreover, one can show that :math:`F` in fact generates the quantum symmetry in the following sense
 
 .. math::
+	:label: eq_lagrangian_formalism_conserved_f_acts_as_symmetry_generator
 
 	\left[ F, Q_n(t, \xbf) \right] = -\ifrak \sum_m \int d^3 y~\left[ P_m(t, \ybf), Q_n(t, \xbf) \right] \Fscr_m(Q(t), \ybf) = -\Fscr_n(Q(t), \xbf)
 
@@ -856,7 +856,7 @@ The conserved quantities corresponding to :math:`\Theta_{\mu\nu}`, according to 
 
 where the first equality holds because, again, the item in the parenthesis of :eq:`eq_defn_belinfante_tensor` is anti-symmetric is :math:`\mu` and :math:`\kappa`, and therefore :math:`\kappa \neq 0` given :math:`\mu = 0`. Hence it's at least equally legitimate to call :math:`\Theta_{\mu \nu}` the energy-momentum tensor. Indeed, the fact that :math:`\Theta_{\mu \nu}` is the symmetric makes it suitable for general relativity.
 
-Unlike the other conserved currents, which are derived under the general principles explained in :ref:`sec_from_symmetries_to_conservation_laws`, we'll construct the anti-symmetric :math:`\Mscr^{\rho \mu \nu}` declared in :eq:`eq_lorentz_invariance_m_conservation_and_antisymmetry` by hand as follows
+Unlike the other conserved currents, which are derived under the general principles explained in :ref:`sec_global_symmetries`, we'll construct the anti-symmetric :math:`\Mscr^{\rho \mu \nu}` declared in :eq:`eq_lorentz_invariance_m_conservation_and_antisymmetry` by hand as follows
 
 .. math:: \Mscr^{\rho\mu\nu} \coloneqq x^{\mu} \Theta^{\rho\nu} - x^{\nu} \Theta^{\rho\mu}
 
@@ -1062,6 +1062,7 @@ which we recognize, in light of :eq:`eq_field_scalar_field_equation_of_motion`, 
 Now we can rewrite :eq:`eq_general_vector_field_lagrangian` as follows
 
 .. math::
+	:label: eq_spin_1_vector_field_lagrangian_density
 
 	\Lscr = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu} - \frac{1}{2} m^2 V_{\mu} V^{\mu} + J^{\mu} V_{\mu}
 

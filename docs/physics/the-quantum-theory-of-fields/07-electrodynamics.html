@@ -393,9 +393,94 @@
 <h2><span class="section-number">7.1. </span>Gauge Invariance and Action<a class="headerlink" href="#gauge-invariance-and-action" title="Link to this heading">#</a></h2>
 <p>Recall from <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#sec-the-failure-for-vector-fields"><span class="std std-ref">The failure for vector fields</span></a> that we’ve tried to write down a quantum vector field <span class="math notranslate nohighlight">\(a_{\mu}(x)\)</span> for massless helicity-<span class="math notranslate nohighlight">\(1\)</span> particle in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a">Eq.4.7.12</a>. The issue, which stems from the obviously non-Lorentz-invariant gauge fixing condition <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-spinor-e-and-p-condition">Eq.4.7.14</a>, is that <span class="math notranslate nohighlight">\(a_{\mu}(x)\)</span> fails to be covariant in light of <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a-conjugation-by-lorentz-transformation">Eq.4.7.18</a>.</p>
 <p>From perspective of Lagrangian formalism, however, it’s completely fine that the field itself is not covariant, as long as the action is Lorentz invariant. This consideration motivates the introduction of the co-called <em>mass action</em> <span class="math notranslate nohighlight">\(I_M\)</span>, which is required to be invariant under the gauge transformation</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-a-field-gauge-transformation">
+<span class="eqno">(7.1.1)<a class="headerlink" href="#equation-eq-qed-a-field-gauge-transformation" title="Link to this equation">#</a></span>\[A_{\mu}(x) \to A_{\mu}(x) + \p_{\mu} \epsilon(x)\]</div>
+<p>Here we switch to the uppercase <span class="math notranslate nohighlight">\(A_{\mu}\)</span> to indicate that it is considered to be a Heisenberg-picture field, i.e., a field that knows everything about the interactions. Note also that an explicit formula for <span class="math notranslate nohighlight">\(I_M\)</span> will only be worked out much later, after we formally apply all sorts of symmetry principles.</p>
+<p>Now the variation of <span class="math notranslate nohighlight">\(I_M\)</span> with respect to <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> can be written as follows</p>
 <div class="math notranslate nohighlight">
-\[A_{\mu}(x) \to A_{\mu}(x) + \p_{\mu} \epsilon(x)\]</div>
-</section>
+\[\delta I_M = \int d^4 x \frac{\delta I_M}{\delta A_{\mu}(x)} \p_{\mu} \epsilon(x)\]</div>
+<p>It follows from integration-by-parts that in order for <span class="math notranslate nohighlight">\(\delta I_M = 0\)</span>, one must have</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-4-derivative-of-action-vanishes">
+<span class="eqno">(7.1.2)<a class="headerlink" href="#equation-eq-qed-4-derivative-of-action-vanishes" title="Link to this equation">#</a></span>\[\p_{\mu} \frac{\delta I_M}{\delta A_{\mu}(x)} = 0\]</div>
+<p>Note that this is trivially true if <span class="math notranslate nohighlight">\(I_M\)</span> is a functional of</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-defn-f-field">
+<span class="eqno">(7.1.3)<a class="headerlink" href="#equation-eq-qed-defn-f-field" title="Link to this equation">#</a></span>\[F_{\mu \nu} = \p_{\mu} A_{\nu} - \p_{\nu} A_{\mu}\]</div>
+<p>and its derivatives.</p>
+<p>To construct an <span class="math notranslate nohighlight">\(I_M\)</span> that satisfies <a class="reference internal" href="#equation-eq-qed-4-derivative-of-action-vanishes">Eq.7.1.2</a>, we need to couple <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> to a conserved <span class="math notranslate nohighlight">\(4\)</span>-current <span class="math notranslate nohighlight">\(J^{\mu}(x)\)</span> in the sense that <span class="math notranslate nohighlight">\(\p_{\mu} J^{\mu} = 0\)</span>. This will guarantee</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-matter-lagrangian-variational-derivative-in-a-field">
+<span class="eqno">(7.1.4)<a class="headerlink" href="#equation-eq-qed-matter-lagrangian-variational-derivative-in-a-field" title="Link to this equation">#</a></span>\[\frac{\delta I_M}{\delta A_{\mu}(x)} = J^{\mu}(x)\]</div>
+<p>and hence <a class="reference internal" href="#equation-eq-qed-4-derivative-of-action-vanishes">Eq.7.1.2</a>. Here we’ve secretly absorbed a potential proportional constant into the definition of <span class="math notranslate nohighlight">\(J^{\mu}\)</span>, which, in turn, will be absorbed into the definition of charges will be discussed below.</p>
+<p>Now recall from <a class="reference internal" href="06-the-canonical-formalism.html#sec-global-symmetries"><span class="std std-ref">Global symmetries</span></a> that such conserved <span class="math notranslate nohighlight">\(4\)</span>-current can be obtained by assuming symmetries on <span class="math notranslate nohighlight">\(I_M\)</span> in the form of <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-functional-infinitesimal-variation-of-field">Eq.6.3.3</a>. In QED, we’re specifically interested in variations of the following form</p>
+<div class="math notranslate nohighlight">
+\[\delta \Psi_{\ell}(x) = \ifrak \epsilon(x) q_{\ell} \Psi_{\ell}(x)\]</div>
+<p>which is diagonalized into charges <span class="math notranslate nohighlight">\(q_{\ell}\)</span>. Following discussions in <a class="reference internal" href="06-the-canonical-formalism.html#list-lagrangian-density-preserving-symmetry"><span class="std std-ref">Lagrangian density preserving symmetry</span></a>, if we assume</p>
+<div class="math notranslate nohighlight">
+\[I_M = \int d^4 x~\Lscr_M(\Psi_{\ell}(x), \p_{\mu} \Psi_{\ell}(x))\]</div>
+<p>such that <span class="math notranslate nohighlight">\(\Lscr_M\)</span> is invariant under <span class="math notranslate nohighlight">\(\Psi_{\ell} \to \Psi_{\ell} + \delta \Psi_{\ell}\)</span> with a constant <span class="math notranslate nohighlight">\(\epsilon(x) = \epsilon\)</span>. Then the conserved current, according to <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-lagrangian-density-preserving-symmetry-conserved-density">Eq.6.3.9</a>, takes the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-conserved-current-j">
+<span class="eqno">(7.1.5)<a class="headerlink" href="#equation-eq-qed-conserved-current-j" title="Link to this equation">#</a></span>\[J^{\mu}(x) = -\ifrak \sum_{\ell} \frac{\delta \Lscr_M}{\delta (\p_{\mu} \Psi_{\ell}(x))} q_{\ell} \Psi_{\ell}(x)\]</div>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[Q \coloneqq \int d^3 x~J^0\]</div>
+<p>be the conserved charge operator. Then it follows from <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-lagrangian-formalism-conserved-f-acts-as-symmetry-generator">Eq.6.3.11</a> (modulo an extremely confusing shuffle of notations)</p>
+<div class="math notranslate nohighlight">
+\[\left[ Q, \Psi_{\ell}(x) \right] = -q_{\ell} \Psi_{\ell}(x)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Psi_{\ell}\)</span> is now officially one of the canonical variables.</p>
+<p>To summarize, we have concluded that the matter action <span class="math notranslate nohighlight">\(I_M\)</span> is invariant under the joint (local) transformation</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-gauge-symmetry">
+<span class="eqno">(7.1.6)<a class="headerlink" href="#equation-eq-qed-gauge-symmetry" title="Link to this equation">#</a></span>\[\begin{split}\delta A_{\mu}(x) &amp;= \p_{\mu} \epsilon(x) \\
+\delta \Psi_{\ell}(x) &amp;= \ifrak \epsilon(x) q_{\ell} \Psi_{\ell}(x)\end{split}\]</div>
+<p>on <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> and <span class="math notranslate nohighlight">\(\Psi_{\ell}(x)\)</span>. Symmetries like this are known as <em>gauge symmetries</em>.</p>
+<p>It turns out that in QED, besides the matter action, we also need a light action which takes the following form</p>
+<div class="math notranslate nohighlight">
+\[I_{\gamma} = -\frac{1}{4} \int d^4 x~F_{\mu \nu} F^{\mu \nu}\]</div>
+<p>It’s hard to argue logically for why such a term is needed, but it turns out to work, and it appears also in the Lagrangian density <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-lagrangian-density">Eq.6.4.5</a> of massive spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields.</p>
+<p>Combining the mass and light actions together, we see that the field equation is given by the variational principle as follows</p>
+<div class="math notranslate nohighlight">
+\[0 = \frac{\delta (I_M + I_{\gamma})}{\delta A_{\nu}} = \p_{\mu} F^{\mu \nu} + J^{\nu}\]</div>
+<p>which is recognized as the inhomogeneous Maxwell equations. The homogeneous Maxwell equations</p>
+<div class="math notranslate nohighlight">
+\[\p_{\mu} F_{\nu \kappa} + \p_{\nu} F_{\kappa \mu} + \p_{\kappa} F_{\mu \nu} = 0\]</div>
+<p>follows readily from the definition <a class="reference internal" href="#equation-eq-qed-defn-f-field">Eq.7.1.3</a>.</p>
+<p>To recap our (or rather, Weinberg’s) approach to QED, it starts with a partially successful construction of a massless helicity-<span class="math notranslate nohighlight">\(1\)</span> vector field <span class="math notranslate nohighlight">\(a_{\mu}(x)\)</span> from <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a">Eq.4.7.12</a>. Its transformation law <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a-conjugation-by-lorentz-transformation">Eq.4.7.18</a>, abstracted into <a class="reference internal" href="#equation-eq-qed-a-field-gauge-transformation">Eq.7.1.1</a>, necessitates a conserved coupling field <span class="math notranslate nohighlight">\(J^{\mu}\)</span>, which then comes out of a variational principle. In the end, we’ve <em>derived</em> the gauge symmetry <a class="reference internal" href="#equation-eq-qed-gauge-symmetry">Eq.7.1.6</a> as a consequence of the need of a Lorentz invariant Lagrangian density.</p>
+<p>It’s very interesting that the above argument can be totally reverted, as is done in most textbooks. We outline this reversed argument in the dropdown below.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-unlock" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 4v2h7A1.5 1.5 0 0 1 14 7.5v6a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-6A1.5 1.5 0 0 1 3.499 6H4V4a4 4 0 0 1 7.371-2.154.75.75 0 0 1-1.264.808A2.5 2.5 0 0 0 5.5 4Zm-2 3.5v6h9v-6h-9Z"></path></svg></span><span class="sd-summary-text">Gauge theoretic approach to the QED Lagrangian</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Suppose the particles of interest have some global internal symmetry (e.g. electric charge) of the following form</p>
+<div class="math notranslate nohighlight">
+\[\delta \Psi_{\ell}(x) = \ifrak \epsilon q_{\ell} \Psi_{\ell}(x)\]</div>
+<p class="sd-card-text">with constant <span class="math notranslate nohighlight">\(\epsilon\)</span>. The starting point then is the promise to promote these global symmetries to local ones, i.e., gauge symmetries, of the following form</p>
+<div class="math notranslate nohighlight">
+\[\delta \Psi_{\ell}(x) = \ifrak \epsilon(x) q_{\ell} \Psi_{\ell}(x)\]</div>
+<p class="sd-card-text">with function <span class="math notranslate nohighlight">\(\epsilon(x)\)</span>.</p>
+<p class="sd-card-text">Now if the Lagrangian involves any derivatives of the fields <span class="math notranslate nohighlight">\(\Psi_{\ell}(x)\)</span>, which is almost certainly the case in reality, then such promotion cannot be done for free because of the following simple rule of differentiation</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-variation-of-field-derivative">
+<span class="eqno">(7.1.7)<a class="headerlink" href="#equation-eq-qed-variation-of-field-derivative" title="Link to this equation">#</a></span>\[\delta \p_{\mu} \Psi_{\ell}(x) = \ifrak \epsilon(x) q_{\ell} \p_{\mu} \Psi_{\ell}(x) + \ifrak q_{\ell} \Psi_{\ell}(x) \p_{\mu} \epsilon(x)\]</div>
+<p class="sd-card-text">The cure to this problem is to “invent” a vector field <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> with transformation rule</p>
+<div class="math notranslate nohighlight">
+\[\delta A_{\mu}(x) = \p_{\mu} \epsilon(x)\]</div>
+<p class="sd-card-text">and observe that if we introduce the following <a class="reference external" href="https://en.wikipedia.org/wiki/Covariant_derivative">covariant derivative</a></p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-defn-covariant-derivative">
+<span class="eqno">(7.1.8)<a class="headerlink" href="#equation-eq-qed-defn-covariant-derivative" title="Link to this equation">#</a></span>\[D_{\mu} \Psi_{\ell} \coloneqq \p_{\mu} \Psi_{\ell} - \ifrak q_{\ell} A_{\mu} \Psi_{\ell}\]</div>
+<p class="sd-card-text">then <a class="reference internal" href="#equation-eq-qed-variation-of-field-derivative">Eq.7.1.7</a> can be replaced by the following</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\delta D_{\mu} \Psi_{\ell}(x) &amp;= \delta \p_{\mu} \Psi_{\ell}(x) - \ifrak q_{\ell} \left( A_{\mu}(x) \delta \Psi_{\ell}(x) + \Psi_{\ell}(x) \delta A_{\mu}(x) \right) \\
+    &amp;= \ifrak \epsilon(x) q_{\ell} D_{\mu} \Psi_{\ell}(x)\end{split}\]</div>
+<p class="sd-card-text">It follows that the gauge symmetry can be restored if any dependence of the matter Lagrangian <span class="math notranslate nohighlight">\(\Lscr_M\)</span> on <span class="math notranslate nohighlight">\(\p_{\mu} \Psi_{\ell}\)</span> actually depends on the covariant derivative <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.8</a>. In other words, we can write</p>
+<div class="math notranslate nohighlight">
+\[\Lscr_M = \Lscr_M(\Psi, D_{\mu} \Psi)\]</div>
+<p class="sd-card-text">We can also verify <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-variational-derivative-in-a-field">Eq.7.1.4</a> and <a class="reference internal" href="#equation-eq-qed-conserved-current-j">Eq.7.1.5</a> in this setup as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\delta I_M}{\delta A_{\mu}(x)} &amp;= \int d^4 y~\frac{\delta \Lscr_M(\Psi_{\ell}(y), D_{\mu} \Psi_{\ell}(y))}{\delta A_{\mu}(x)} \\
+    &amp;= \sum_{\ell} \frac{\delta \Lscr_M}{\delta D_{\mu} \Psi_{\ell}} \left( -\ifrak q_{\ell} \Psi_{\ell}(x) \right) \\
+    &amp;= -\ifrak \sum_{\ell} \frac{\delta \Lscr_M}{\delta (\p_{\mu} \Psi_{\ell})} q_{\ell} \Psi_{\ell}(x)\end{split}\]</div>
+<p class="sd-card-text">Comparing with the Lagrangian density of massive spin-<span class="math notranslate nohighlight">\(1\)</span> vector field <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-lagrangian-density">Eq.6.4.5</a>, we see that the following term</p>
+<div class="math notranslate nohighlight">
+\[-\frac{1}{2} m^2 A_{\mu} A^{\mu}\]</div>
+<p class="sd-card-text">is missing, or <span class="math notranslate nohighlight">\(m=0\)</span>. Indeed, the appearance of such quadratic term would obviously violate the postulated gauge symmetry. This is really fantastic since we’ve deduced from just the existence of gauge symmetry that the particle represented by <span class="math notranslate nohighlight">\(A_{\mu}\)</span>, which turns out to be photon, is massless. This is in fact one the two greatest predictions of QED that photons are massless – the other one being that they travel at the speed of light, and has been tested against experiment up to great precision.</p>
+</div>
+</details></section>
 </section>
 
 
