@@ -342,23 +342,27 @@ In terms of the Lagrangian density, we can rewrite the action :eq:`eq_defn_actio
 
 .. math:: I[\Psi] = \int d^4 x~\Lscr(\Psi(x), \p_{\mu} \Psi(x))
 
+.. note::
+
+	The Lagrangian density :math:`\Lscr(\Psi, \p_{\mu} \Psi)` is to be considered as a function-valued functional of :math:`\Psi` and :math:`\p_{\mu} \Psi`. Thus it makes sense to take partial derivatives, instead of variational derivatives, with respect to its variables such as :math:`\p \Lscr / \p \Psi`.
+
 We'd also like to reexpress the field equations :eq:`eq_equation_of_motion_for_fields` in terms of the Lagrangian density. To this end, let's first calculate the variation of :eq:`eq_defn_lagrangian_density` by an amount :math:`\delta \Psi_n(t, \xbf)` as follows
 
 .. math::
 
-	\delta L &= \sum_n \int d^3 x \left( \frac{\delta\Lscr}{\delta\Psi_n} \delta\Psi_n + \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right) \\
-		&= \sum_n \int d^3 x \left( \left( \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\delta\Lscr}{\delta\dot{\Psi}_n} \delta\dot{\Psi}_n \right)
+	\delta L &= \sum_n \int d^3 x \left( \frac{\p \Lscr}{\p \Psi_n} \delta\Psi_n + \frac{\p \Lscr}{\p (\nabla \Psi_n)} \cdot \nabla \delta\Psi_n + \frac{\p \Lscr}{\p \dot{\Psi}_n} \delta\dot{\Psi}_n \right) \\
+		&= \sum_n \int d^3 x \left( \left( \frac{\p \Lscr}{\p \Psi_n} - \nabla \cdot \frac{\p \Lscr}{\p (\nabla \Psi_n)} \right) \delta\Psi_n + \frac{\p \Lscr}{\p \dot{\Psi}_n} \delta\dot{\Psi}_n \right)
 
 It follows that
 
 .. math::
 
-	\frac{\delta L}{\delta\Psi_n} &= \frac{\delta\Lscr}{\delta\Psi_n} - \nabla \cdot \frac{\delta\Lscr}{\delta(\nabla \Psi_n)} \\
-	\frac{\delta L}{\delta\dot{\Psi}_n} &= \frac{\delta \Lscr}{\delta \dot{\Psi}_n}
+	\frac{\delta L}{\delta\Psi_n} &= \frac{\p \Lscr}{\p \Psi_n} - \nabla \cdot \frac{\p \Lscr}{\p (\nabla \Psi_n)} \\
+	\frac{\delta L}{\delta\dot{\Psi}_n} &= \frac{\p \Lscr}{\p \dot{\Psi}_n}
 
 Combining these with :eq:`eq_equation_of_motion_for_fields` and :eq:`eq_equation_of_motion_for_fields`, we've derived the so-called Euler-Lagrange equations for the Lagrangian density
 
-.. math:: \frac{\delta \Lscr}{\delta \Psi_n} = \p_{\mu} \frac{\delta \Lscr}{\delta(\p_{\mu} \Psi_n)}
+.. math:: \frac{\p \Lscr}{\p \Psi_n} = \p_{\mu} \frac{\p \Lscr}{\p (\p_{\mu} \Psi_n)}
 	:label: eq_euler_lagrange
 
 Note that the summing :math:`4`-index :math:`\mu` here represents :math:`x_{\mu}`. Most importantly, the field equations given by :eq:`eq_euler_lagrange` will be Lorentz invariant if :math:`\Lscr` is. Indeed, guessing such :math:`\Lscr` will be more or less the only way to construct Lorentz invariant (quantum) field theories.
@@ -555,18 +559,18 @@ Lagrangian-density-preserving symmetry
 	.. math::
 		:label: eq_stationary_lagrangian_density
 
-		\delta \Lscr = \ifrak \epsilon \sum_n \left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \Fscr_n(x) \right) = 0
+		\delta \Lscr = \ifrak \epsilon \sum_n \left( \frac{\p \Lscr}{\p \Psi_n} \Fscr_n(x) + \frac{\p \Lscr}{\p (\p_{\mu} \Psi_n)} \p_{\mu} \Fscr_n(x) \right) = 0
 
 	Now under :eq:`eq_functional_infinitesimal_variation_of_field`, we can calculate the variation of the action as follows
 
 	.. math::
 
-		\delta I &= \ifrak \sum_n \int d^4 x~\left( \frac{\delta \Lscr}{\delta \Psi_n(x)} \epsilon(x) \Fscr_n(x) + \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \p_{\mu} \big( \epsilon(x) \Fscr_n(x) \big) \right) \\
-			&= \ifrak \sum_n \int d^4 x~\frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x) \p_{\mu}\epsilon(x)
+		\delta I &= \ifrak \sum_n \int d^4 x~\left( \frac{\p \Lscr}{\p \Psi_n} \epsilon(x) \Fscr_n(x) + \frac{\p \Lscr}{\p (\p_{\mu} \Psi_n)} \p_{\mu} \big( \epsilon(x) \Fscr_n(x) \big) \right) \\
+			&= \ifrak \sum_n \int d^4 x~\frac{\p \Lscr}{\p (\p_{\mu} \Psi_n)} \Fscr_n(x) \p_{\mu}\epsilon(x)
 
 	Comparing with :eq:`eq_variation_of_action_by_functional_deformation` as before, we can derive an explicit formula for the conserved current as follows
 
-	.. math:: J^{\mu}(x) = -\ifrak \sum_n \frac{\delta \Lscr}{\delta (\p_{\mu} \Psi_n(x))} \Fscr_n(x)
+	.. math:: J^{\mu}(x) = -\ifrak \sum_n \frac{\p \Lscr}{\p (\p_{\mu} \Psi_n)} \Fscr_n(x)
 		:label: eq_lagrangian_density_preserving_symmetry_conserved_density
 
 	Once again, one can directly verify that :math:`\p_{\mu} J^{\mu}(x) = 0` using :eq:`eq_stationary_lagrangian_density` together with the Euler-Lagrange equation :eq:`eq_euler_lagrange`.
@@ -652,16 +656,16 @@ The corresponding variation of the action is given as follows
 
 .. math::
 
-	\delta I[\Psi] &= \sum_n \int d^4 x \left( \frac{\delta \Lscr}{\delta \Psi_n} \epsilon^{\mu} \p_{\mu} \Psi_n + \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\nu}(\epsilon^{\mu} \p_{\mu} \Psi_n) \right) \\
-		&= \int d^4 x \left( \epsilon^{\mu} \p_{\mu} \Lscr + \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu}\Psi_n \p_{\nu} \epsilon^{\mu} \right) \\
-		&= -\int d^4 x \left( \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n \right) \p_{\nu} \epsilon^{\mu}
+	\delta I[\Psi] &= \sum_n \int d^4 x \left( \frac{\p \Lscr}{\p \Psi_n} \epsilon^{\mu} \p_{\mu} \Psi_n + \frac{\p \Lscr}{\p (\p_{\nu} \Psi_n)} \p_{\nu}(\epsilon^{\mu} \p_{\mu} \Psi_n) \right) \\
+		&= \int d^4 x \left( \epsilon^{\mu} \p_{\mu} \Lscr + \sum_n \frac{\p \Lscr}{\p (\p_{\nu} \Psi_n)} \p_{\mu}\Psi_n \p_{\nu} \epsilon^{\mu} \right) \\
+		&= -\int d^4 x \left( \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\p \Lscr}{\p (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n \right) \p_{\nu} \epsilon^{\mu}
 
 where we've used the chain rule for derivatives in the second equality, and integration by parts in the third. Comparing with :eq:`eq_variation_of_action_by_functional_deformation`, we see that
 
 .. math::
 	:label: eq_energy_momentum_tensor_from_translation_invariance
 
-	{T^{\nu}}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\delta \Lscr}{\delta (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
+	{T^{\nu}}_{\mu} = \delta^{\nu}_{\mu} \Lscr - \sum_n \frac{\p \Lscr}{\p (\p_{\nu} \Psi_n)} \p_{\mu} \Psi_n
 
 
 .. _note_energy_momentum_tensor_not_symmetric:
@@ -671,7 +675,7 @@ where we've used the chain rule for derivatives in the second equality, and inte
 
 Indeed, this calculation recovers :eq:`eq_spatial_translation_conserved_quantity` by letting :math:`\nu = 0` and :math:`\mu \neq 0`. Moreover, it recovers the Hamiltonian by letting :math:`\mu = \nu = 0` as follows
 
-.. math:: H = -P_0 = \int d^3 x \left( \sum_n P_n \dot{Q}_n - \Lscr \right)
+.. math:: H = -P_0 = -\int d^3 x~{T^0}_0 = \int d^3 x \left( \sum_n P_n \dot{Q}_n - \Lscr \right)
 
 
 Linear transformations
@@ -731,7 +735,7 @@ Now if, in addition, the Lagrangian density is also invariant, then :eq:`eq_lagr
 .. math::
 	:label: eq_lagrangian_density_invariant_linear_transformation_conserved_current
 
-	J^{\mu}_a = -\ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} Q_n)} {(t_a)_n}^m Q_m - \ifrak \frac{\delta \Lscr}{\delta (\p_{\mu} C_r)} {(\tau_a)_r}^s C_s
+	J^{\mu}_a = -\ifrak \frac{\p \Lscr}{\p (\p_{\mu} Q_n)} {(t_a)_n}^m Q_m - \ifrak \frac{\p \Lscr}{\p (\p_{\mu} C_r)} {(\tau_a)_r}^s C_s
 
 .. dropdown:: Interacting equal-mass real scalar fields
 	:animate: fade-in-slide-down
@@ -807,24 +811,24 @@ Now the invariance of the Lagrangian density under such variation can be written
 
 .. math::
 
-	\frac{\delta \Lscr}{\delta \Psi_n} \frac{\ifrak}{2} \omega^{\mu \nu} {(\Jscr_{\mu \nu})_n}^m \Psi_m
-		+ \frac{\delta \Lscr}{\delta (\p_{\kappa} \Psi_n)} \left( \frac{\ifrak}{2} \omega^{\mu \nu} ({\Jscr_{\mu \nu})_n}^m \p_{\kappa} \Psi_m + {\omega_{\kappa}}^{\lambda} \p_{\lambda} \Psi_n \right) = 0
+	\frac{\p \Lscr}{\p \Psi_n} \frac{\ifrak}{2} \omega^{\mu \nu} {(\Jscr_{\mu \nu})_n}^m \Psi_m
+		+ \frac{\p \Lscr}{\p (\p_{\kappa} \Psi_n)} \left( \frac{\ifrak}{2} \omega^{\mu \nu} ({\Jscr_{\mu \nu})_n}^m \p_{\kappa} \Psi_m + {\omega_{\kappa}}^{\lambda} \p_{\lambda} \Psi_n \right) = 0
 
 Since :math:`\omega^{\mu \nu}` is not in general zero, its coefficient must be zero, which, taking :eq:`eq_lorentz_omega_is_antisymmetric` into account, implies the following
 
 .. math::
 	:label: eq_lorentz_invariance_current_raw_identity
 
-	& \frac{\ifrak}{2} \frac{\delta\Lscr}{\delta\Psi_n} {(\Jscr_{\mu\nu})_n}^m \Psi_m
-		+ \frac{\ifrak}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} ({\Jscr_{\mu\nu})_n}^m \p_{\kappa}\Psi_m \\
-		& \qquad + \frac{1}{2} \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} \left( \eta_{\kappa \mu} \p_{\nu} - \eta_{\kappa \nu} \p_{\mu} \right) \Psi_n = 0
+	& \frac{\ifrak}{2} \frac{\p \Lscr}{\p \Psi_n} {(\Jscr_{\mu\nu})_n}^m \Psi_m
+		+ \frac{\ifrak}{2} \frac{\p \Lscr}{\p (\p_{\kappa} \Psi_n)} ({\Jscr_{\mu\nu})_n}^m \p_{\kappa}\Psi_m \\
+		& \qquad + \frac{1}{2} \frac{\p \Lscr}{\p (\p_{\kappa} \Psi_n)} \left( \eta_{\kappa \mu} \p_{\nu} - \eta_{\kappa \nu} \p_{\mu} \right) \Psi_n = 0
 
-Using :eq:`eq_euler_lagrange`, we can get rid of the :math:`\delta\Lscr / \delta\Psi_n` term in :eq:`eq_lorentz_invariance_current_raw_identity` to arrive at the following
+Using the Euler-Lagrange equation :eq:`eq_euler_lagrange`, we can get rid of the :math:`\delta\Lscr / \delta\Psi_n` term in :eq:`eq_lorentz_invariance_current_raw_identity` to arrive at the following
 
 .. math::
 	:label: eq_lorentz_invariance_current_identity
 
-	\ifrak \p_{\kappa} \left( \frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m \right) - T_{\mu\nu} + T_{\nu\mu} = 0
+	\ifrak \p_{\kappa} \left( \frac{\p \Lscr}{\p (\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m \right) - T_{\mu\nu} + T_{\nu\mu} = 0
 
 where we've also used :eq:`eq_energy_momentum_tensor_from_translation_invariance`. Now we can address the issue of :ref:`energy-momentum tensor not being symmetric <note_energy_momentum_tensor_not_symmetric>` by introducing the following so-called `Belinfante tensor <https://en.wikipedia.org/wiki/Belinfante%E2%80%93Rosenfeld_stress%E2%80%93energy_tensor>`__
 
@@ -833,9 +837,9 @@ where we've also used :eq:`eq_energy_momentum_tensor_from_translation_invariance
 
 	\Theta_{\mu\nu}
 		&\coloneqq T_{\mu\nu} - \frac{\ifrak}{2} \p_{\kappa} \Big(
-			\frac{\delta\Lscr}{\delta(\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m -
-			\frac{\delta\Lscr}{\delta(\p_{\mu} \Psi_n)} {(\Jscr_{\kappa\nu})_n}^m \Psi_m \\
-		&\qquad - \frac{\delta\Lscr}{\delta(\p_{\nu} \Psi_n)} {(\Jscr_{\kappa\mu})_n}^m \Psi_m \Big)
+			\frac{\p \Lscr}{\p (\p_{\kappa} \Psi_n)} {(\Jscr_{\mu\nu})_n}^m \Psi_m -
+			\frac{\p \Lscr}{\p (\p_{\mu} \Psi_n)} {(\Jscr_{\kappa\nu})_n}^m \Psi_m \\
+		&\qquad - \frac{\p \Lscr}{\p (\p_{\nu} \Psi_n)} {(\Jscr_{\kappa\mu})_n}^m \Psi_m \Big)
 
 which is both conserved in the sense that
 
@@ -930,30 +934,30 @@ Though not necessary, it's indeed possible to verify the other Poincaré algebra
 		J^{ij} &= \int d^3 x \left( x^i \Theta^{0j} - x^j \Theta^{0i} \right) \\
 			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) \\
 				&\mkern-24mu - \frac{\ifrak}{2} \int d^3 x~x^i \p_k \left(
-					\frac{\delta \Lscr}{\delta (\p_k \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
-					- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{kj} \right)_n}^m \Psi_m
-					- \frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
+					\frac{\p \Lscr}{\p (\p_k \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
+					- \frac{\p \Lscr}{\p \dot{\Psi}_n} {\left( \Jscr^{kj} \right)_n}^m \Psi_m
+					- \frac{\p \Lscr}{\p (\p_j \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
 				\right) \\
 				&\mkern-24mu + \frac{\ifrak}{2} \int d^3 x~x^j \p_k \left(
-					\frac{\delta \Lscr}{\delta (\p_k \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
-					- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ki} \right)_n}^m \Psi_m
-					- \frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
+					\frac{\p \Lscr}{\p (\p_k \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
+					- \frac{\p \Lscr}{\p \dot{\Psi}_n} {\left( \Jscr^{ki} \right)_n}^m \Psi_m
+					- \frac{\p \Lscr}{\p (\p_i \Psi_n)} {\left( \Jscr^{k0} \right)_n}^m \Psi_m
 				\right) \\
 			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) \\
 				&\mkern-24mu + \frac{\ifrak}{2} \int d^3 x \left(
-					\frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
-					- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m
-					- \frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{i0} \right)_n}^m \Psi_m
+					\frac{\p \Lscr}{\p (\p_i \Psi_n)} {\left( \Jscr^{0j} \right)_n}^m \Psi_m
+					- \frac{\p \Lscr}{\p \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m
+					- \frac{\p \Lscr}{\p (\p_j \Psi_n)} {\left( \Jscr^{i0} \right)_n}^m \Psi_m
 				\right) \\
 				&\mkern-24mu - \frac{\ifrak}{2} \int d^3 x \left(
-						\frac{\delta \Lscr}{\delta (\p_j \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
-						- \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ji} \right)_n}^m \Psi_m
-						- \frac{\delta \Lscr}{\delta (\p_i \Psi_n)} {\left( \Jscr^{j0} \right)_n}^m \Psi_m
+						\frac{\p \Lscr}{\p (\p_j \Psi_n)} {\left( \Jscr^{0i} \right)_n}^m \Psi_m
+						- \frac{\p \Lscr}{\p \dot{\Psi}_n} {\left( \Jscr^{ji} \right)_n}^m \Psi_m
+						- \frac{\p \Lscr}{\p (\p_i \Psi_n)} {\left( \Jscr^{j0} \right)_n}^m \Psi_m
 					\right) \\
-			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
-			&= \int d^3 x \frac{\delta \Lscr}{\delta \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)
+			&= \int d^3 x \left( x^i T^{0j} - x^j T^{0i} \right) - \ifrak \int d^3 x \frac{\p \Lscr}{\p \dot{\Psi}_n} {\left( \Jscr^{ij} \right)_n}^m \Psi_m \\
+			&= \int d^3 x \frac{\p \Lscr}{\p \dot{\Psi}_n} \left( -x^i \p^j \Psi_n + x^j \p^i \Psi_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m \Psi_m \right)
 
-	Now since :math:`\delta \Lscr / \delta \dot{\Psi}_n` vanishes when :math:`\Psi_n` is an auxiliary field, we can rewrite :math:`J^{ij}` in terms of canonical variables as follows
+	Now since :math:`\p \Lscr / \p \dot{\Psi}_n` vanishes when :math:`\Psi_n` is an auxiliary field, we can rewrite :math:`J^{ij}` in terms of canonical variables as follows
 
 	.. math:: J^{ij} = \int d^3 x~P^n \left( -x^i \p^j Q_n + x^j \p^i Q_n - \ifrak {\left( \Jscr^{ij} \right)_n}^m Q_m \right)
 
@@ -983,7 +987,7 @@ where coupling :math:`J^{\mu}` may be either a scalar current or a functional of
 
 Now the canonical conjugate variable :math:`\Pi` is, according to :eq:`eq_general_lagrangian_conjugate_pi`, given by
 
-.. math:: \Pi \coloneqq \frac{\delta \Lscr}{\delta \dot{\Phi}} = \dot{\Phi} - J^0
+.. math:: \Pi \coloneqq \frac{\p \Lscr}{\p \dot{\Phi}} = \dot{\Phi} - J^0
 	:label: eq_scalar_field_with_coupling_canonical_pi
 
 and the Hamiltonian is, according to :eq:`eq_general_quantum_hamiltonian` and :eq:`eq_scalar_field_with_coupling_canonical_pi`, given by
@@ -1074,14 +1078,14 @@ in analogous to :eq:`eq_massless_vector_field_curvature_tensor`, where we've tri
 
 To work out the canonical variables, we note that
 
-.. math:: \frac{\delta \Lscr}{\delta \dot{V}_{\mu}} = -F^{0\mu}
+.. math:: \frac{\p \Lscr}{\p \dot{V}_{\mu}} = -F^{0\mu}
 
 which is nonzero for :math:`\mu \neq 0`. It follows that for spatial indexes :math:`i`, we have the the canonical variables :math:`V_i` whose canonical dual is, according to :eq:`eq_general_lagrangian_conjugate_pi`, given by
 
-.. math:: \Pi^i = \frac{\delta \Lscr}{\delta \dot{V}_i} = F^{i0} = \p^i V^0 + \dot{V}^i
+.. math:: \Pi^i = \frac{\p \Lscr}{\p \dot{V}_i} = F^{i0} = \p^i V^0 + \dot{V}^i
 	:label: eq_spin_1_vector_field_canonical_pi
 
-while :math:`V_0` is auxiliary since :math:`\delta \Lscr / \delta \dot{V}_0 = 0`. It turns out :math:`V_0` can be explicitly solved in terms of the other fields as follows. Setting :math:`\mu = 0` in :eq:`eq_general_vector_field_euler_lagrangian_equation` and remembering :math:`\alpha = -\beta = 1`, we have
+while :math:`V_0` is auxiliary since :math:`\p \Lscr / \p \dot{V}_0 = 0`. It turns out :math:`V_0` can be explicitly solved in terms of the other fields as follows. Setting :math:`\mu = 0` in :eq:`eq_general_vector_field_euler_lagrangian_equation` and remembering :math:`\alpha = -\beta = 1`, we have
 
 .. math::
 	:label: eq_spin_1_vector_field_heisenberg_v0
@@ -1223,7 +1227,7 @@ where :math:`\Hscr` is a real function. Such :math:`\Lscr` is nonetheless not re
 
 However, the same calculation shows that the action, i.e., the spacetime integral of the Lagrangian, is real. It follows that one needs not to treat :math:`\Psi` and :math:`\bar{\Psi}` as independent variables since the field equations, given as the stationary point of the action functional, for :math:`\Psi` is adjoint to that for :math:`\bar{\Psi}`. Therefore we can simply define the canonical conjugate
 
-.. math:: \Pi \coloneqq \frac{\delta \Lscr}{\delta \dot{\Psi}} = -\bar{\Psi} \gamma^0
+.. math:: \Pi \coloneqq \frac{\p \Lscr}{\p \dot{\Psi}} = -\bar{\Psi} \gamma^0
 
 and write the Hamiltonian
 

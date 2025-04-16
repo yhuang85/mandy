@@ -52,7 +52,7 @@ which is diagonalized into charges :math:`q_{\ell}`. Following discussions in :r
 
 such that :math:`\Lscr_M` is invariant under :math:`\Psi_{\ell} \to \Psi_{\ell} + \delta \Psi_{\ell}` with a constant :math:`\epsilon(x) = \epsilon`. Then the conserved current, according to :eq:`eq_lagrangian_density_preserving_symmetry_conserved_density`, takes the following form
 
-.. math:: J^{\mu}(x) = -\ifrak \sum_{\ell} \frac{\delta \Lscr_M}{\delta (\p_{\mu} \Psi_{\ell}(x))} q_{\ell} \Psi_{\ell}(x)
+.. math:: J^{\mu}(x) = -\ifrak \sum_{\ell} \frac{\p \Lscr_M}{\p (\p_{\mu} \Psi_{\ell}(x))} q_{\ell} \Psi_{\ell}(x)
     :label: eq_qed_conserved_current_j
 
 Let
@@ -138,9 +138,9 @@ It's very interesting that the above argument can be totally reverted, as is don
 
     .. math::
 
-        \frac{\delta I_M}{\delta A_{\mu}(x)} &= \int d^4 y~\frac{\delta \Lscr_M(\Psi_{\ell}(y), D_{\mu} \Psi_{\ell}(y))}{\delta A_{\mu}(x)} \\
-            &= \sum_{\ell} \frac{\delta \Lscr_M}{\delta D_{\mu} \Psi_{\ell}} \left( -\ifrak q_{\ell} \Psi_{\ell}(x) \right) \\
-            &= -\ifrak \sum_{\ell} \frac{\delta \Lscr_M}{\delta (\p_{\mu} \Psi_{\ell})} q_{\ell} \Psi_{\ell}(x)
+        \frac{\delta I_M}{\delta A_{\mu}(x)} &= \int d^4 y~\frac{\p \Lscr_M(\Psi_{\ell}(y), D_{\mu} \Psi_{\ell}(y))}{\p A_{\mu}(x)} \\
+            &= \sum_{\ell} \frac{\p \Lscr_M}{\p D_{\mu} \Psi_{\ell}} \left( -\ifrak q_{\ell} \Psi_{\ell}(x) \right) \\
+            &= -\ifrak \sum_{\ell} \frac{\p \Lscr_M}{\p (\p_{\mu} \Psi_{\ell})} q_{\ell} \Psi_{\ell}(x)
 
     Comparing with the Lagrangian density of massive spin-:math:`1` vector field :eq:`eq_spin_1_vector_field_lagrangian_density`, we see that the following term
 

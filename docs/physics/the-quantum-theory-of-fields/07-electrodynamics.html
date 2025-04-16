@@ -418,7 +418,7 @@
 \[I_M = \int d^4 x~\Lscr_M(\Psi_{\ell}(x), \p_{\mu} \Psi_{\ell}(x))\]</div>
 <p>such that <span class="math notranslate nohighlight">\(\Lscr_M\)</span> is invariant under <span class="math notranslate nohighlight">\(\Psi_{\ell} \to \Psi_{\ell} + \delta \Psi_{\ell}\)</span> with a constant <span class="math notranslate nohighlight">\(\epsilon(x) = \epsilon\)</span>. Then the conserved current, according to <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-lagrangian-density-preserving-symmetry-conserved-density">Eq.6.3.9</a>, takes the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-conserved-current-j">
-<span class="eqno">(7.1.5)<a class="headerlink" href="#equation-eq-qed-conserved-current-j" title="Link to this equation">#</a></span>\[J^{\mu}(x) = -\ifrak \sum_{\ell} \frac{\delta \Lscr_M}{\delta (\p_{\mu} \Psi_{\ell}(x))} q_{\ell} \Psi_{\ell}(x)\]</div>
+<span class="eqno">(7.1.5)<a class="headerlink" href="#equation-eq-qed-conserved-current-j" title="Link to this equation">#</a></span>\[J^{\mu}(x) = -\ifrak \sum_{\ell} \frac{\p \Lscr_M}{\p (\p_{\mu} \Psi_{\ell}(x))} q_{\ell} \Psi_{\ell}(x)\]</div>
 <p>Let</p>
 <div class="math notranslate nohighlight">
 \[Q \coloneqq \int d^3 x~J^0\]</div>
@@ -472,9 +472,9 @@
 \[\Lscr_M = \Lscr_M(\Psi, D_{\mu} \Psi)\]</div>
 <p class="sd-card-text">We can also verify <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-variational-derivative-in-a-field">Eq.7.1.4</a> and <a class="reference internal" href="#equation-eq-qed-conserved-current-j">Eq.7.1.5</a> in this setup as follows</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\frac{\delta I_M}{\delta A_{\mu}(x)} &amp;= \int d^4 y~\frac{\delta \Lscr_M(\Psi_{\ell}(y), D_{\mu} \Psi_{\ell}(y))}{\delta A_{\mu}(x)} \\
-    &amp;= \sum_{\ell} \frac{\delta \Lscr_M}{\delta D_{\mu} \Psi_{\ell}} \left( -\ifrak q_{\ell} \Psi_{\ell}(x) \right) \\
-    &amp;= -\ifrak \sum_{\ell} \frac{\delta \Lscr_M}{\delta (\p_{\mu} \Psi_{\ell})} q_{\ell} \Psi_{\ell}(x)\end{split}\]</div>
+\[\begin{split}\frac{\delta I_M}{\delta A_{\mu}(x)} &amp;= \int d^4 y~\frac{\p \Lscr_M(\Psi_{\ell}(y), D_{\mu} \Psi_{\ell}(y))}{\p A_{\mu}(x)} \\
+    &amp;= \sum_{\ell} \frac{\p \Lscr_M}{\p D_{\mu} \Psi_{\ell}} \left( -\ifrak q_{\ell} \Psi_{\ell}(x) \right) \\
+    &amp;= -\ifrak \sum_{\ell} \frac{\p \Lscr_M}{\p (\p_{\mu} \Psi_{\ell})} q_{\ell} \Psi_{\ell}(x)\end{split}\]</div>
 <p class="sd-card-text">Comparing with the Lagrangian density of massive spin-<span class="math notranslate nohighlight">\(1\)</span> vector field <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-lagrangian-density">Eq.6.4.5</a>, we see that the following term</p>
 <div class="math notranslate nohighlight">
 \[-\frac{1}{2} m^2 A_{\mu} A^{\mu}\]</div>
