@@ -386,7 +386,7 @@
 <span id="sec-the-canonical-formalism"></span><h1><span class="section-number">6. </span>The Canonical Formalism<a class="headerlink" href="#the-canonical-formalism" title="Link to this heading">#</a></h1>
 <p>The quantum theory we’ve been developing so far has been based almost solely on the symmetry principles, especially Lorentz symmetries. This is a very satisfying approach since it’s logically clean and relies only on the most fundamental principles, however, this is not the way quantum theory historically had been developed. Not surprisingly, the original development of quantum theory is much messier and requires substantial experience in “classical” physics. It’s largely based on the so-called <em>Lagrangian formalism</em>, which is a readily well-established principle in classical physics and can be “quantized”. The main goal of this chapter is to go through this formalism, not for historical sake, but because it offers a particularly convenient way to construct Hamiltonians that generate Lorentz-invariant S-matrices, which has been difficult for us as can be seen in <a class="reference internal" href="05-the-feynman-rules.html#sec-feynman-rules-in-momentum-space"><span class="std std-ref">Feynman rules in momentum space</span></a>.</p>
 <section id="canonical-variables">
-<h2><span class="section-number">6.1. </span>Canonical Variables<a class="headerlink" href="#canonical-variables" title="Link to this heading">#</a></h2>
+<span id="sec-canonical-variables"></span><h2><span class="section-number">6.1. </span>Canonical Variables<a class="headerlink" href="#canonical-variables" title="Link to this heading">#</a></h2>
 <p>We’ve seen in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#sec-quantum-fields-and-antiparticles"><span class="std std-ref">Quantum Fields and Antiparticles</span></a> a few ways of constructing (Lorentz-invariant) interaction densities. However, we don’t have a systematic way to do so. The so-called Lagrangian formalism will not provide a systematic solution either, but it’ll allow us to construct more interesting interaction densities (from classical physics theories), to the extent that all known quantum field theories arise in this way! In addition, it’ll shed light on the mysterious local terms as for example in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-vector-field-propagator-needs-local-term">Eq.5.2.13</a>, that are needed to compensate for a Lorentz-invariant momentum space propagator.</p>
 <p>The offer from the Lagrangian formalism regarding constructing a quantum field theory is the following. Instead of using the  creation and annihilation fields defined by <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-defn-annihilation-and-creation-field">Eq.4.1.1</a> to construct the Hamiltonians, we’ll use the so-called <em>canonical variables</em>, which have particularly simple (equal time) commutation relations. More precisely, it consists of a collection of quantum operators <span class="math notranslate nohighlight">\(q_n(t, \xbf)\)</span> and its canonical conjugates <span class="math notranslate nohighlight">\(p_n(t, \xbf)\)</span>, which satisfy the following (anti-)commutation relations</p>
 <div class="math notranslate nohighlight" id="equation-eq-canonical-commutation-relations">
@@ -1033,7 +1033,7 @@ V(t) &amp;= \int d^3 x \left( \pi(t, \xbf) J^0(t, \xbf) + \frac{1}{2} (J^0(t, \x
 <p>It’s said in <a class="reference internal" href="../../bib.html#wei95" id="id4"><span>[Wei95]</span></a> that the manifestly non-Lorentz-invariant summand <span class="math notranslate nohighlight">\(\tfrac{1}{2} (J^0(t, \xbf))^2\)</span> corresponds exactly to the local term in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-vector-field-propagator-needs-local-term">Eq.5.2.13</a>, but I haven’t been able to see how.</p>
 </section>
 <section id="vector-field-with-spin-1">
-<h3><span class="section-number">6.4.2. </span>Vector field with spin-<span class="math notranslate nohighlight">\(1\)</span><a class="headerlink" href="#vector-field-with-spin-1" title="Link to this heading">#</a></h3>
+<span id="sec-vector-field-with-spin-1"></span><h3><span class="section-number">6.4.2. </span>Vector field with spin-<span class="math notranslate nohighlight">\(1\)</span><a class="headerlink" href="#vector-field-with-spin-1" title="Link to this heading">#</a></h3>
 <p>We start with a very general Lagrangian density defined as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-general-vector-field-lagrangian">
 <span class="eqno">(6.4.3)<a class="headerlink" href="#equation-eq-general-vector-field-lagrangian" title="Link to this equation">#</a></span>\[\Lscr = -\frac{1}{2} \alpha \p_{\mu} V_{\nu} \p^{\mu} V^{\nu}
@@ -1055,16 +1055,16 @@ V(t) &amp;= \int d^3 x \left( \pi(t, \xbf) J^0(t, \xbf) + \frac{1}{2} (J^0(t, \x
 \[F_{\mu \nu} \coloneqq \p_{\mu} V_{\nu} - \p_{\nu} V_{\mu}\]</div>
 <p>in analogous to <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-curvature-tensor">Eq.4.7.19</a>, where we’ve tried to construct a tensor for massless spin-<span class="math notranslate nohighlight">\(1\)</span> particles. This is the general Lagrangian for spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields.</p>
 <p>To work out the canonical variables, we note that</p>
-<div class="math notranslate nohighlight">
-\[\frac{\p \Lscr}{\p \dot{V}_{\mu}} = -F^{0\mu}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-lagrangian-density-v-dot-derivative">
+<span class="eqno">(6.4.6)<a class="headerlink" href="#equation-eq-spin-1-vector-field-lagrangian-density-v-dot-derivative" title="Link to this equation">#</a></span>\[\frac{\p \Lscr}{\p \dot{V}_{\mu}} = -F^{0\mu}\]</div>
 <p>which is nonzero for <span class="math notranslate nohighlight">\(\mu \neq 0\)</span>. It follows that for spatial indexes <span class="math notranslate nohighlight">\(i\)</span>, we have the the canonical variables <span class="math notranslate nohighlight">\(V_i\)</span> whose canonical dual is, according to <a class="reference internal" href="#equation-eq-general-lagrangian-conjugate-pi">Eq.6.2.1</a>, given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-canonical-pi">
-<span class="eqno">(6.4.6)<a class="headerlink" href="#equation-eq-spin-1-vector-field-canonical-pi" title="Link to this equation">#</a></span>\[\Pi^i = \frac{\p \Lscr}{\p \dot{V}_i} = F^{i0} = \p^i V^0 + \dot{V}^i\]</div>
+<span class="eqno">(6.4.7)<a class="headerlink" href="#equation-eq-spin-1-vector-field-canonical-pi" title="Link to this equation">#</a></span>\[\Pi^i = \frac{\p \Lscr}{\p \dot{V}_i} = F^{i0} = \p^i V^0 + \dot{V}^i\]</div>
 <p>while <span class="math notranslate nohighlight">\(V_0\)</span> is auxiliary since <span class="math notranslate nohighlight">\(\p \Lscr / \p \dot{V}_0 = 0\)</span>. It turns out <span class="math notranslate nohighlight">\(V_0\)</span> can be explicitly solved in terms of the other fields as follows. Setting <span class="math notranslate nohighlight">\(\mu = 0\)</span> in <a class="reference internal" href="#equation-eq-general-vector-field-euler-lagrangian-equation">Eq.6.4.4</a> and remembering <span class="math notranslate nohighlight">\(\alpha = -\beta = 1\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-heisenberg-v0">
-<span class="eqno">(6.4.7)<a class="headerlink" href="#equation-eq-spin-1-vector-field-heisenberg-v0" title="Link to this equation">#</a></span>\[\begin{split}&amp; -m^2 V^0 + J^0 = -\square V^0 + \p^0(\p_{\nu} V^{\nu}) = \p_{\nu} F^{0 \nu} = \p_i F^{0i} \\
+<span class="eqno">(6.4.8)<a class="headerlink" href="#equation-eq-spin-1-vector-field-heisenberg-v0" title="Link to this equation">#</a></span>\[\begin{split}&amp; -m^2 V^0 + J^0 = -\square V^0 + \p^0(\p_{\nu} V^{\nu}) = \p_{\nu} F^{0 \nu} = \p_i F^{0i} \\
 \implies &amp; V^0 = \frac{1}{m^2} (\p_i F^{i0} + J^0) = \frac{1}{m^2} (\nabla \cdot \bm{\Pi} + J^0)\end{split}\]</div>
-<p>To be able to write down the Hamiltonian, we need the following preparations. First, using <a class="reference internal" href="#equation-eq-spin-1-vector-field-canonical-pi">Eq.6.4.6</a>, we can write</p>
+<p>To be able to write down the Hamiltonian, we need the following preparations. First, using <a class="reference internal" href="#equation-eq-spin-1-vector-field-canonical-pi">Eq.6.4.7</a>, we can write</p>
 <div class="math notranslate nohighlight">
 \[\dot{\Vbf} = \bm{\Pi} - \nabla V^0 = \bm{\Pi} - \frac{1}{m^2} \nabla(\nabla \cdot \bm{\Pi} + J^0)\]</div>
 <p>and second, we can expand</p>
@@ -1087,38 +1087,38 @@ V(t) &amp;= \int d^3 x \left( \pi(t, \xbf) J^0(t, \xbf) + \frac{1}{2} (J^0(t, \x
 <p>where the last equality serves the purpose of separating the Hamiltonian <span class="math notranslate nohighlight">\(H = H_0 + V\)</span> into the free part and the interacting part.</p>
 <p>Now we pass to the interaction picture by writing</p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-interaction-picture-h0-and-vt">
-<span class="eqno">(6.4.8)<a class="headerlink" href="#equation-eq-spin-1-vector-field-interaction-picture-h0-and-vt" title="Link to this equation">#</a></span>\[\begin{split}H_0 &amp;= \int d^3 x \left( \frac{1}{2} \bm{\pi}^2 + \frac{1}{2m^2} (\nabla \cdot \bm{\pi})^2 + \frac{1}{2} (\nabla \times \vbf)^2 + \frac{1}{2} m^2 \vbf^2 \right) \\
+<span class="eqno">(6.4.9)<a class="headerlink" href="#equation-eq-spin-1-vector-field-interaction-picture-h0-and-vt" title="Link to this equation">#</a></span>\[\begin{split}H_0 &amp;= \int d^3 x \left( \frac{1}{2} \bm{\pi}^2 + \frac{1}{2m^2} (\nabla \cdot \bm{\pi})^2 + \frac{1}{2} (\nabla \times \vbf)^2 + \frac{1}{2} m^2 \vbf^2 \right) \\
 V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}{2m^2} (J^0)^2 - \Jbf \cdot \bm{\vbf} \right)\end{split}\]</div>
 <p>The Hamilton’s equations <a class="reference internal" href="#equation-eq-free-field-hamilton-equation-q-and-p-dot">Eq.6.1.7</a> take the following form (cf. <a class="reference internal" href="#equation-eq-variational-derivative-hamiltonian">Eq.6.2.7</a>)</p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-hamilton-equations">
-<span class="eqno">(6.4.9)<a class="headerlink" href="#equation-eq-spin-1-vector-field-hamilton-equations" title="Link to this equation">#</a></span>\[\begin{split}\begin{alignat*}{2}
+<span class="eqno">(6.4.10)<a class="headerlink" href="#equation-eq-spin-1-vector-field-hamilton-equations" title="Link to this equation">#</a></span>\[\begin{split}\begin{alignat*}{2}
         \dot{\vbf} &amp;= \frac{\delta H_0}{\delta \bm{\pi}} &amp;&amp;= \bm{\pi} - \frac{1}{m^2} \nabla(\nabla \cdot \bm{\pi}) \\
         \dot{\bm{\pi}} &amp;= -\frac{\delta H_0}{\delta \vbf} &amp;&amp;= m^2 \vbf - \nabla \times (\nabla \times \vbf) = m^2 \vbf^2 + \nabla^2 \vbf - \nabla(\nabla \cdot \vbf)
 \end{alignat*}\end{split}\]</div>
-<p>We’re still missing <span class="math notranslate nohighlight">\(v^0\)</span> since <span class="math notranslate nohighlight">\(V^0\)</span> was an auxiliary variable, which was solved by <a class="reference internal" href="#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.7</a>. Inspired by <a class="reference internal" href="#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.7</a>, let’s <em>define</em></p>
+<p>We’re still missing <span class="math notranslate nohighlight">\(v^0\)</span> since <span class="math notranslate nohighlight">\(V^0\)</span> was an auxiliary variable, which was solved by <a class="reference internal" href="#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.8</a>. Inspired by <a class="reference internal" href="#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.8</a>, let’s <em>define</em></p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-defn-interaction-v0">
-<span class="eqno">(6.4.10)<a class="headerlink" href="#equation-eq-spin-1-vector-field-defn-interaction-v0" title="Link to this equation">#</a></span>\[v^0 \coloneqq \frac{1}{m^2} \nabla \cdot \bm{\pi}\]</div>
-<p>This enables us to rewrite <a class="reference internal" href="#equation-eq-spin-1-vector-field-interaction-picture-h0-and-vt">Eq.6.4.8</a> as follows</p>
+<span class="eqno">(6.4.11)<a class="headerlink" href="#equation-eq-spin-1-vector-field-defn-interaction-v0" title="Link to this equation">#</a></span>\[v^0 \coloneqq \frac{1}{m^2} \nabla \cdot \bm{\pi}\]</div>
+<p>This enables us to rewrite <a class="reference internal" href="#equation-eq-spin-1-vector-field-interaction-picture-h0-and-vt">Eq.6.4.9</a> as follows</p>
 <div class="math notranslate nohighlight">
 \[V(t) = \int d^3 x \left( -J^{\mu} v_{\mu} + \frac{1}{2m^2} (J^0)^2 \right)\]</div>
 <p>where we see again, just as in <a class="reference internal" href="#equation-eq-scalar-field-interaction-vt">Eq.6.4.2</a>, the non-Lorentz-invariant local term.</p>
-<p>We can now solve for <span class="math notranslate nohighlight">\(\bm{\pi}\)</span> using <a class="reference internal" href="#equation-eq-spin-1-vector-field-defn-interaction-v0">Eq.6.4.10</a> and <a class="reference internal" href="#equation-eq-spin-1-vector-field-hamilton-equations">Eq.6.4.9</a> by</p>
+<p>We can now solve for <span class="math notranslate nohighlight">\(\bm{\pi}\)</span> using <a class="reference internal" href="#equation-eq-spin-1-vector-field-defn-interaction-v0">Eq.6.4.11</a> and <a class="reference internal" href="#equation-eq-spin-1-vector-field-hamilton-equations">Eq.6.4.10</a> by</p>
 <div class="math notranslate nohighlight">
 \[\bm{\pi} =  \dot{\vbf} + \nabla v^0\]</div>
-<p>and write down the field equations, again using <a class="reference internal" href="#equation-eq-spin-1-vector-field-defn-interaction-v0">Eq.6.4.10</a> and <a class="reference internal" href="#equation-eq-spin-1-vector-field-hamilton-equations">Eq.6.4.9</a> as follows</p>
+<p>and write down the field equations, again using <a class="reference internal" href="#equation-eq-spin-1-vector-field-defn-interaction-v0">Eq.6.4.11</a> and <a class="reference internal" href="#equation-eq-spin-1-vector-field-hamilton-equations">Eq.6.4.10</a> as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}m^2 v^0 &amp;= \nabla \cdot \dot{\vbf} + \nabla^2 v^0 \\
 \ddot{\vbf} + \nabla \dot{v}^0 &amp;= m^2 \vbf^2 + \nabla^2 \vbf - \nabla(\nabla \cdot \vbf)\end{split}\]</div>
 <p>These two equations can be unified using the <span class="math notranslate nohighlight">\(4\)</span>-vector notation as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-equation">
-<span class="eqno">(6.4.11)<a class="headerlink" href="#equation-eq-spin-1-vector-field-equation" title="Link to this equation">#</a></span>\[\square v^{\mu} - \p^{\mu} \p_{\nu} v^{\nu} - m^2 v^{\mu} = 0\]</div>
+<span class="eqno">(6.4.12)<a class="headerlink" href="#equation-eq-spin-1-vector-field-equation" title="Link to this equation">#</a></span>\[\square v^{\mu} - \p^{\mu} \p_{\nu} v^{\nu} - m^2 v^{\mu} = 0\]</div>
 <p>Taking the divergence, we get</p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-is-divergence-free">
-<span class="eqno">(6.4.12)<a class="headerlink" href="#equation-eq-spin-1-vector-field-is-divergence-free" title="Link to this equation">#</a></span>\[\p_{\mu} v^{\mu} = 0\]</div>
-<p>in agreement with <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-vector-field-gauge-fixing-condition">Eq.4.3.19</a>. Moreover it follows that <a class="reference internal" href="#equation-eq-spin-1-vector-field-equation">Eq.6.4.11</a> reduces to the Klein-Gordon equation</p>
+<span class="eqno">(6.4.13)<a class="headerlink" href="#equation-eq-spin-1-vector-field-is-divergence-free" title="Link to this equation">#</a></span>\[\p_{\mu} v^{\mu} = 0\]</div>
+<p>in agreement with <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-vector-field-gauge-fixing-condition">Eq.4.3.19</a>. Moreover it follows that <a class="reference internal" href="#equation-eq-spin-1-vector-field-equation">Eq.6.4.12</a> reduces to the Klein-Gordon equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-satisfies-klein-gordon">
-<span class="eqno">(6.4.13)<a class="headerlink" href="#equation-eq-spin-1-vector-field-satisfies-klein-gordon" title="Link to this equation">#</a></span>\[(\square - m^2) v^{\mu} = 0\]</div>
-<p>General real solutions to <a class="reference internal" href="#equation-eq-spin-1-vector-field-is-divergence-free">Eq.6.4.12</a> and <a class="reference internal" href="#equation-eq-spin-1-vector-field-satisfies-klein-gordon">Eq.6.4.13</a> take the following form</p>
+<span class="eqno">(6.4.14)<a class="headerlink" href="#equation-eq-spin-1-vector-field-satisfies-klein-gordon" title="Link to this equation">#</a></span>\[(\square - m^2) v^{\mu} = 0\]</div>
+<p>General real solutions to <a class="reference internal" href="#equation-eq-spin-1-vector-field-is-divergence-free">Eq.6.4.13</a> and <a class="reference internal" href="#equation-eq-spin-1-vector-field-satisfies-klein-gordon">Eq.6.4.14</a> take the following form</p>
 <div class="math notranslate nohighlight">
 \[v^{\mu} = (2\pi)^{-3/2} \sum_{\sigma} \int \frac{d^3 p}{\sqrt{2p^0}} \left( e^{\mu}(\pbf, \sigma) a(\pbf, \sigma) e^{\ifrak p \cdot x} + {e^{\mu}}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma) e^{-\ifrak p \cdot x} \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(p^0 = \sqrt{\pbf^2 + m^2}\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> takes value in <span class="math notranslate nohighlight">\(\{-1, 0, 1\}\)</span> by convention so that <span class="math notranslate nohighlight">\(e(\pbf, \sigma)\)</span> correspond to the three <span class="math notranslate nohighlight">\(4\)</span>-vectors orthogonal to <span class="math notranslate nohighlight">\(p\)</span>, namely</p>
@@ -1136,7 +1136,7 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <div class="math notranslate nohighlight">
 \[\begin{split}\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] &amp;= \delta_{\sigma \sigma'} \delta(\pbf - \pbf') \\
 \left[ a(\pbf, \sigma), a(\pbf', \sigma') \right] &amp;= 0\end{split}\]</div>
-<p>This is a rather convincing evidence for the validity of the free field Hamiltonian <a class="reference internal" href="#equation-eq-spin-1-vector-field-interaction-picture-h0-and-vt">Eq.6.4.8</a>.</p>
+<p>This is a rather convincing evidence for the validity of the free field Hamiltonian <a class="reference internal" href="#equation-eq-spin-1-vector-field-interaction-picture-h0-and-vt">Eq.6.4.9</a>.</p>
 </section>
 <section id="dirac-field-with-spin-1-2">
 <h3><span class="section-number">6.4.3. </span>Dirac field with spin-<span class="math notranslate nohighlight">\(1/2\)</span><a class="headerlink" href="#dirac-field-with-spin-1-2" title="Link to this heading">#</a></h3>
@@ -1160,13 +1160,13 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <p>where the two summands in the last integrand give the usual splitting <span class="math notranslate nohighlight">\(H = H_0 + V\)</span>.</p>
 <p>Passing to the interaction picture, we can write</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-free-hamiltonian">
-<span class="eqno">(6.4.14)<a class="headerlink" href="#equation-eq-dirac-field-free-hamiltonian" title="Link to this equation">#</a></span>\[H_0 = \int d^3 x~\pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi\]</div>
+<span class="eqno">(6.4.15)<a class="headerlink" href="#equation-eq-dirac-field-free-hamiltonian" title="Link to this equation">#</a></span>\[H_0 = \int d^3 x~\pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi\]</div>
 <p>so that the field equation is simply</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-hamilton-equation">
-<span class="eqno">(6.4.15)<a class="headerlink" href="#equation-eq-dirac-field-hamilton-equation" title="Link to this equation">#</a></span>\[\dot{\psi} = \frac{\delta H_0}{\delta \pi} = \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
+<span class="eqno">(6.4.16)<a class="headerlink" href="#equation-eq-dirac-field-hamilton-equation" title="Link to this equation">#</a></span>\[\dot{\psi} = \frac{\delta H_0}{\delta \pi} = \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
         \iff (\gamma^{\mu} \p_{\mu} + m) \psi = 0\]</div>
 <p>which is recognized as the Dirac equation <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-equation-psi">Eq.4.4.37</a>. Indeed, the other Hamilton’s equation <span class="math notranslate nohighlight">\(\dot{\pi} = -\delta H_0 / \delta \psi\)</span> gives nothing but the adjoint of the Dirac equation, hence no new information.</p>
-<p>A general solution to <a class="reference internal" href="#equation-eq-dirac-field-hamilton-equation">Eq.6.4.15</a> can be written as</p>
+<p>A general solution to <a class="reference internal" href="#equation-eq-dirac-field-hamilton-equation">Eq.6.4.16</a> can be written as</p>
 <div class="math notranslate nohighlight">
 \[\psi(x) = (2\pi)^{-3/2} \int d^3 p \sum_{\sigma = \pm 1/2} \left( u(\pbf, \sigma) e^{\ifrak p \cdot x} a(\pbf, \sigma) + v(\pbf, \sigma) e^{-\ifrak p \cdot x} b^{\dagger}(\pbf, \sigma) \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(u(\pbf, \pm 1/2)\)</span> are the two independent solutions of</p>
@@ -1197,11 +1197,112 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <div class="math notranslate nohighlight">
 \[\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right]_+ = \left[ b(\pbf, \sigma), b^{\dagger}(\pbf', \sigma') \right]_+ = \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'}\]</div>
 <p>and all the other anti-commutators vanish.</p>
+</section>
+</section>
+<section id="constraints-and-dirac-brackets">
+<span id="sec-constraints-and-dirac-brackets"></span><h2><span class="section-number">6.5. </span>Constraints and Dirac Brackets<a class="headerlink" href="#constraints-and-dirac-brackets" title="Link to this heading">#</a></h2>
+<p>We’ve seen in the case of <a class="reference internal" href="#sec-vector-field-with-spin-1"><span class="std std-ref">spin-1 massive vector fields</span></a> that the main difficulty in deriving Hamiltonian from Lagrangian is the appearance of constraints. In this specific case, the constraints came from the vanishing of certain canonical variables</p>
+<div class="math notranslate nohighlight" id="equation-eq-spin-1-vector-field-primary-constraint">
+<span class="eqno">(6.5.1)<a class="headerlink" href="#equation-eq-spin-1-vector-field-primary-constraint" title="Link to this equation">#</a></span>\[\Pi^0 = 0\]</div>
+<p>according to <a class="reference internal" href="#equation-eq-spin-1-vector-field-lagrangian-density-v-dot-derivative">Eq.6.4.6</a>, as well as relations among canonical variables <a class="reference internal" href="#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.8</a> coming from the Euler-Lagrange equation <a class="reference internal" href="#equation-eq-general-vector-field-euler-lagrangian-equation">Eq.6.4.4</a>. In this case, we were lucky in the sense that the later constraint gives us an explicit solution of <span class="math notranslate nohighlight">\(V_0\)</span> which is exactly the conjugate canonical variable of <span class="math notranslate nohighlight">\(\Pi^0\)</span>, so we ended up in the comfortable situation again with only unconstrained canonical variables left.</p>
+<p>We will not always be so lucky and therefore we need a more systematic solution to the problem, which was offered by Dirac. According to him, constraints like <a class="reference internal" href="#equation-eq-spin-1-vector-field-primary-constraint">Eq.6.5.1</a> that come directly out of the structure of the Lagrangian, e.g., missing time derivatives of some fields, are called <em>primary</em> constraints. In addition, there may exist further constraints from the requirement of the equation of motion, e.g., the Euler-Lagrange equation, being consistent with the primary constraints. These are then called <em>secondary</em> constraints. In practice, it’s often the case that the primary and secondary constraints are considered together, and their distinction is not important.</p>
+<p>What is important about the constraints are the distinction between the so-called <em>first</em> and <em>second</em> class constraints which we now explain. The difficulty in defining conjugate canonical variables boils down to the incompatibility between canonical commutation relations <a class="reference internal" href="#equation-eq-canonical-commutation-relations">Eq.6.1.1</a> and the constraints, and the solution from Dirac is simply to (re)define the bracket, known as the <a class="reference external" href="https://en.wikipedia.org/wiki/Dirac_bracket">Dirac bracket</a>.</p>
+<p>The first step is to recall the Poisson bracket from classical mechanics. Let <span class="math notranslate nohighlight">\(L(\Psi, \dot{\Psi})\)</span> be any Lagrangian regarded as a function of fields <span class="math notranslate nohighlight">\(\Psi_a(t)\)</span> and their time derivatives <span class="math notranslate nohighlight">\(\dot{\Psi}_a(t)\)</span>. Here the (compound-)index <span class="math notranslate nohighlight">\(a\)</span> may contain continuous parameters such as the spatial coordinates. Define the canonical conjugates</p>
+<div class="math notranslate nohighlight">
+\[\Pi^a \coloneqq \frac{\p L}{\p \dot{\Psi}_a}\]</div>
+<p>for all <span class="math notranslate nohighlight">\(a\)</span>. Of course the <span class="math notranslate nohighlight">\(\Psi\)</span> and <span class="math notranslate nohighlight">\(\Pi\)</span> are not all independent variables, but rather are subject to primary and second constraint equations. Now the Poisson bracket between any two functions <span class="math notranslate nohighlight">\(A, B\)</span> of the canonical variables is defined as follows</p>
+<div class="math notranslate nohighlight">
+\[[A, B]_P \coloneqq \frac{\p A}{\p \Psi_a} \frac{\p B}{\p \Pi^a} - \frac{\p B}{\p \Psi_a} \frac{\p A}{\p \Pi^a}\]</div>
+<p>where the partial derivatives are calculated without taking the constraints into account. It holds therefore trivially that</p>
+<div class="math notranslate nohighlight" id="equation-eq-canonical-variables-poisson-bracket">
+<span class="eqno">(6.5.2)<a class="headerlink" href="#equation-eq-canonical-variables-poisson-bracket" title="Link to this equation">#</a></span>\[\left[ \Psi_a, \Pi^b \right]_P = \delta_a^b\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since we’re working within the framework of the canonical formalism, all commutators are taken at the same time. This rule is understood throughout this section, although it’s nowhere explicit in any formula.</p>
+</div>
+<p>Now if <span class="math notranslate nohighlight">\(\Psi\)</span> and <span class="math notranslate nohighlight">\(\Pi\)</span> are all independent variables, then <span class="math notranslate nohighlight">\(\left[ \Psi_a, \Pi^b \right] = \ifrak \left[ \Psi_a, \Pi^b \right]_P\)</span> would give the desired commutation relations. But the existence of constraints would require a modification to the Poisson bracket and eventually lead to the Dirac bracket.</p>
+<p>As a side note, it follows from <a class="reference internal" href="#equation-eq-canonical-variables-poisson-bracket">Eq.6.5.2</a> that the Hamilton’s equations <a class="reference internal" href="#equation-eq-free-field-hamilton-equation-q-and-p-dot">Eq.6.1.7</a> can be written in the following form</p>
+<div class="math notranslate nohighlight">
+\[\dot{A} = [A, H]_P\]</div>
+<p>Let’s write a generic constraint as <span class="math notranslate nohighlight">\(\chi_N = 0\)</span> where <span class="math notranslate nohighlight">\(\chi_N\)</span> is a function of the canonical variables <span class="math notranslate nohighlight">\(\Psi, \Pi\)</span> and <span class="math notranslate nohighlight">\(N\)</span> is indexing the constraints. Again, here <span class="math notranslate nohighlight">\(N\)</span> may contain continuous parameters such as spacetime coordinates. Since the constraints come out of the Lagrangian itself and the Euler-Lagrange equations, they are constant along the trajectory of motion, i.e., <span class="math notranslate nohighlight">\(\dot{\chi}_N = 0\)</span> whenever <span class="math notranslate nohighlight">\(\chi_N = 0\)</span>. It follows that</p>
+<div class="math notranslate nohighlight" id="equation-eq-constraint-poisson-commutes-hamiltonian">
+<span class="eqno">(6.5.3)<a class="headerlink" href="#equation-eq-constraint-poisson-commutes-hamiltonian" title="Link to this equation">#</a></span>\[\left[ \chi_N, H \right]_P = 0\]</div>
+<p>whenever <span class="math notranslate nohighlight">\(\chi_N = 0\)</span>. It turns out that one of the key features of the Dirac bracket is to upgrade <a class="reference internal" href="#equation-eq-constraint-poisson-commutes-hamiltonian">Eq.6.5.3</a> so that it holds for <em>any</em> function (of the canonical variables) in place of <span class="math notranslate nohighlight">\(H\)</span>.</p>
+<section id="first-class-constraints">
+<h3><span class="section-number">6.5.1. </span>First class constraints<a class="headerlink" href="#first-class-constraints" title="Link to this heading">#</a></h3>
+<p>A constraint is of first class if it Poisson commutes with all other constraints. Such constraints typically arise from Lagrangians that carry gauge symmetries. The presence of gauge symmetry makes the system apparently underdetermined in the sense that there are more fields or their components than field equations.</p>
+<p>Unfortunately, there appears to be no general recipe for handling first class constraints. However, it can typically be handled by “fixing the gauge”. A particularly important, and successful, example of such procedure, namely quantum electrodynamics, will be presented in the next chapter.</p>
+</section>
+<section id="second-class-constraints">
+<h3><span class="section-number">6.5.2. </span>Second class constraints<a class="headerlink" href="#second-class-constraints" title="Link to this heading">#</a></h3>
+<p>Assuming the first class constraints have been dealt with, the remaining constraints are called second class. On the space of second class constraints, we have a non-singular matrix <span class="math notranslate nohighlight">\(C\)</span> whose entries are defined by</p>
+<div class="math notranslate nohighlight">
+\[C_{NM} \coloneqq \left[ \chi_N, \chi_M \right]_P\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since an anti-symmetric matrix of odd dimension necessarily has vanishing determinant, the dimension of <span class="math notranslate nohighlight">\(C\)</span> must be even. Indeed, it’s often convenient to pair constraints in the form of <span class="math notranslate nohighlight">\(\chi_{1N}, \chi_{2N}\)</span> and so on.</p>
+</div>
+<p>Now define the Dirac bracket as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-defn-dirac-bracket">
+<span class="eqno">(6.5.4)<a class="headerlink" href="#equation-eq-defn-dirac-bracket" title="Link to this equation">#</a></span>\[[A, B]_D \coloneqq [A, B]_P - [A, \chi_N]_P (C^{-1})^{NM} [\chi_M, B]_P\]</div>
+<p>One checks easily that the Dirac bracket satisfies the same (Lie) algebraic properties as the Poisson bracket. Moreover, it satisfies</p>
+<div class="math notranslate nohighlight">
+\[[\chi_N, B]_D = 0\]</div>
+<p>for any <span class="math notranslate nohighlight">\(B\)</span>. It is this last property that guarantees the compatibility between commutator relations and constraints if the former is calculated as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-canonical-bracket-as-dirac-bracket">
+<span class="eqno">(6.5.5)<a class="headerlink" href="#equation-eq-canonical-bracket-as-dirac-bracket" title="Link to this equation">#</a></span>\[[A, B] = \ifrak [A, B]_D\]</div>
+</section>
+<section id="spin-1-vector-field-revisited">
+<h3><span class="section-number">6.5.3. </span>Spin-<span class="math notranslate nohighlight">\(1\)</span> vector field revisited<a class="headerlink" href="#spin-1-vector-field-revisited" title="Link to this heading">#</a></h3>
+<p>We’ll have to wait until the next chapter to illustrate how first class constraints may appear and how they may be handled, since it appears in the theory of massless helicity-<span class="math notranslate nohighlight">\(1\)</span> vector fields. But we’re ready to illustrate, in the absence of first class constraints, how second class constraints may be handled by Dirac bracket.</p>
+<p>Recall from <a class="reference internal" href="#equation-eq-spin-1-vector-field-lagrangian-density-v-dot-derivative">Eq.6.4.6</a> that since <span class="math notranslate nohighlight">\(\dot{V}_0\)</span> is missing from <span class="math notranslate nohighlight">\(\Lscr\)</span>, we get a primary constraint</p>
+<div class="math notranslate nohighlight">
+\[\chi_{1 \xbf} \coloneqq \Pi_0(\xbf) = 0\]</div>
+<p>and from the Euler-Lagrange equations <a class="reference internal" href="#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.8</a> a secondary constraint</p>
+<div class="math notranslate nohighlight">
+\[\chi_{2 \xbf} \coloneqq \nabla \cdot \bm{\Pi}(\xbf) - m^2 V^0(\xbf) + J^0(\xbf) = 0\]</div>
+<p>Here we remind ourselves again that the time-dependence has been left out since all commutators will be taken at equal time.</p>
+<p>The <span class="math notranslate nohighlight">\(C\)</span> matrix can now be calculated as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C = \begin{bmatrix*}
+        C_{1 \xbf, 1 \ybf} &amp; C_{1 \xbf, 2 \ybf} \\
+        C_{2 \xbf, 1 \ybf} &amp; C_{2 \xbf, 2 \ybf}
+\end{bmatrix*} = \begin{bmatrix*}
+        0 &amp; m^2 \delta^3(\xbf - \ybf) \\
+        -m^2 \delta^3(\xbf - \ybf) &amp; 0
+\end{bmatrix*}\end{split}\]</div>
+<p>Clearly <span class="math notranslate nohighlight">\(C\)</span> is non-singular. Hence no first class constraints exist, and Dirac’s method applies.</p>
+<p>In this case, the constrained canonical variables are <span class="math notranslate nohighlight">\(V_0\)</span> and <span class="math notranslate nohighlight">\(\Pi^0\)</span>. Instead of solving them in terms of the unconstrained canonical variables explicitly as before, simply calculate the commutators using Dirac bracket as follows. First note that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C^{-1} = \begin{bmatrix*}
+        0 &amp; -m^{-2} \delta^3(\xbf - \ybf) \\
+        m^{-2} \delta^3(\xbf - \ybf) &amp; 0
+\end{bmatrix*}\end{split}\]</div>
+<p>It follows from <a class="reference internal" href="#equation-eq-canonical-bracket-as-dirac-bracket">Eq.6.5.5</a> and <a class="reference internal" href="#equation-eq-defn-dirac-bracket">Eq.6.5.4</a> that</p>
+<div class="math notranslate nohighlight">
+\[[A, B] = \ifrak [A, B]_P + \ifrak m^{-2} \int d^3 \xbf \left( [A, \Pi_0(\xbf)]_P [\nabla \cdot \bm{\Pi}(\xbf) - m^2 V^0(\xbf) + J^0(\xbf), B]_P - A \leftrightarrow B \right)\]</div>
+<p>Together with the trivial Poisson bracket relations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ V^{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &amp;= \delta^{\mu}_{\nu} \delta^3(\xbf - \ybf) \\
+\left[ V^{\mu}(\xbf), V^{\nu}(\ybf) \right]_P = \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &amp;= 0\end{split}\]</div>
+<p>we can now calculate all the commutation relations as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ V^i(\xbf), \Pi_j(\ybf) \right] &amp;= \ifrak \delta^i_j \delta^3(\xbf - \ybf) \\
+\left[ V^i(\xbf), V^0(\ybf) \right] &amp;= -\ifrak m^{-2} \p_i \delta^3(\xbf - \ybf) \\
+\left[ V^i(\xbf), V^j(\ybf) \right] &amp;= \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right] \\
+        &amp;= \left[ V^0(\xbf), \Pi_{\mu}(\ybf) \right] \\
+        &amp;= \left[ V^{\mu}(\xbf), \Pi_0(\ybf) \right] = 0\end{split}\]</div>
+<p>This turns out to be the same as if we use the explicit <a class="reference internal" href="#equation-eq-spin-1-vector-field-primary-constraint">Eq.6.5.1</a> and <a class="reference internal" href="#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.8</a>, as well as the canonical commutation relations among the unconstrained canonical variables, to calculate the commutators.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>According to <a class="reference internal" href="../../bib.html#wei95" id="id5"><span>[Wei95]</span></a> page 330 footnote (**), it’s not known in full generality whether the Dirac bracket always produces the correct commutation relations, and more importantly, whether the standard relation <a class="reference internal" href="#equation-eq-legendre-transformation-hamiltonian-from-lagrangian">Eq.6.2.6</a> between Lagrangian and Hamiltonian holds even in the presence of constrained canonical variables. These issues are (partially) addressed in <a class="reference internal" href="../../bib.html#wei95" id="id6"><span>[Wei95]</span></a> page 329 – 330 through the work of <a class="reference internal" href="../../bib.html#mana76" id="id7"><span>[MaNa76]</span></a> and page 332 – 337 through the work of Weinberg himself.</p>
+<p>Instead of working out all the details, we’ll simply take for granted that Dirac’s method works. One of the blessings of physics (as opposed to mathematics, for example), which I learned from R. Feynman, is that all these knowledge points are highly inter-connected in the sense that one can nearly start anywhere in physics and deduce anything else. If we apply Dirac’s method to a theory, e.g., a quantum field theory, and it fails, we will know it from other principles, e.g., the free particle commutation relations calculated in <a class="reference internal" href="#sec-canonical-variables"><span class="std std-ref">Canonical Variables</span></a>, which come from the free fields derived in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#sec-quantum-fields-and-antiparticles"><span class="std std-ref">Quantum Fields and Antiparticles</span></a>, which, ultimately, come from the principle of Lorentz invariance and causality.</p>
+</div>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="k-convention" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
-<p>The definition <span class="math notranslate nohighlight">\(K_k \coloneqq J^{k0}\)</span> on page 317 in <a class="reference internal" href="../../bib.html#wei95" id="id5"><span>[Wei95]</span></a> differs from the very same definition on page 61 by a sign, which leads to, among others, inconsistency in the Poincaré algebra relations <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>. We will stick to our convention in <a class="reference internal" href="01-quantum-mechanics.html#sec-quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a>, which is consistent with Weinberg’s convention on page 61.</p>
+<p>The definition <span class="math notranslate nohighlight">\(K_k \coloneqq J^{k0}\)</span> on page 317 in <a class="reference internal" href="../../bib.html#wei95" id="id8"><span>[Wei95]</span></a> differs from the very same definition on page 61 by a sign, which leads to, among others, inconsistency in the Poincaré algebra relations <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-poincare-algebra">Eq.1.2.22</a>. We will stick to our convention in <a class="reference internal" href="01-quantum-mechanics.html#sec-quantum-lorentz-symmetry"><span class="std std-ref">Quantum Lorentz symmetry</span></a>, which is consistent with Weinberg’s convention on page 61.</p>
 </aside>
 </aside>
 </section>
@@ -1247,6 +1348,12 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-field-with-derivative-coupling">6.4.1. Scalar field with derivative coupling</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-field-with-spin-1">6.4.2. Vector field with spin-<span class="math notranslate nohighlight">\(1\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dirac-field-with-spin-1-2">6.4.3. Dirac field with spin-<span class="math notranslate nohighlight">\(1/2\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-and-dirac-brackets">6.5. Constraints and Dirac Brackets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-class-constraints">6.5.1. First class constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-class-constraints">6.5.2. Second class constraints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spin-1-vector-field-revisited">6.5.3. Spin-<span class="math notranslate nohighlight">\(1\)</span> vector field revisited</a></li>
 </ul>
 </li>
 </ul>

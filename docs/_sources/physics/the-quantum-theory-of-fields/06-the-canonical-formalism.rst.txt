@@ -5,6 +5,9 @@ The Canonical Formalism
 
 The quantum theory we've been developing so far has been based almost solely on the symmetry principles, especially Lorentz symmetries. This is a very satisfying approach since it's logically clean and relies only on the most fundamental principles, however, this is not the way quantum theory historically had been developed. Not surprisingly, the original development of quantum theory is much messier and requires substantial experience in "classical" physics. It's largely based on the so-called *Lagrangian formalism*, which is a readily well-established principle in classical physics and can be "quantized". The main goal of this chapter is to go through this formalism, not for historical sake, but because it offers a particularly convenient way to construct Hamiltonians that generate Lorentz-invariant S-matrices, which has been difficult for us as can be seen in :ref:`sec_feynman_rules_in_momentum_space`.
 
+
+.. _sec_canonical_variables:
+
 Canonical Variables
 -------------------
 
@@ -151,7 +154,7 @@ Here the infinitesimal fields :math:`\delta q_n` and :math:`\delta p_n` are assu
 
 
 Hamiltonian and Lagrangian for free fields
-++++++++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For free fields we have
 
@@ -261,7 +264,7 @@ It should be noted that expressing :math:`p` in terms of :math:`q` and :math:`\d
 .. _sec_hamiltonian_and_lagrangian_for_interacting_fields:
 
 Hamiltonian and Lagrangian for interacting fields
-+++++++++++++++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let :math:`H` be the full Hamiltonian. Then the Heisenberg picture canonical variables can be defined as follows
 
@@ -599,7 +602,7 @@ where we've taken advantage of the time-independency of :math:`F` to arrange the
 .. _sec_spacetime_translations:
 
 Spacetime translations
-++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^
 
 So far the symmetries have been rather abstract, to make it more explicit, and also to get warmed up for the general case, let's assume the Lagrangian is invariant under the (spacetime) translation transformation given as follows
 
@@ -679,7 +682,7 @@ Indeed, this calculation recovers :eq:`eq_spatial_translation_conserved_quantity
 
 
 Linear transformations
-++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^
 
 As another example, let's consider linear variations as follows
 
@@ -768,7 +771,7 @@ whose equal-time commutation relations with canonical variables :math:`P` and :m
 .. _sec_lorentz_invariance:
 
 Lorentz invariance
-++++++++++++++++++
+^^^^^^^^^^^^^^^^^^
 
 The goal of this section is to show that the Lorentz invariance of the Lagrangian density implies the Lorentz invariance of the S-matrix, which justifies our interest in the Lagrangian formalism in the first place.
 
@@ -977,7 +980,7 @@ Transition to Interaction Picture
 In this section, we will investigate, through examples, how to derive from the Lagrangian formalism an interaction picture, on which our entire approach to quantum field theory has been based. As a byproduct, we will also generalize the quantization procedure considered in :ref:`Quantization of Free Scalar Fields <dropdown_quantization_of_free_scalar_fields>`.
 
 Scalar field with derivative coupling
-+++++++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In light of the Lagrangian :eq:`eq_free_real_scalar_field_lagrangian` for free scalar field, let's consider the following Lagrangian density with derivative coupling and interaction
 
@@ -1035,8 +1038,10 @@ Finally, in order to get the interaction density in terms of fields as explained
 It's said in [Wei95]_ that the manifestly non-Lorentz-invariant summand :math:`\tfrac{1}{2} (J^0(t, \xbf))^2` corresponds exactly to the local term in :eq:`eq_vector_field_propagator_needs_local_term`, but I haven't been able to see how.
 
 
+.. _sec_vector_field_with_spin_1:
+
 Vector field with spin-:math:`1`
-++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We start with a very general Lagrangian density defined as follows
 
@@ -1079,6 +1084,7 @@ in analogous to :eq:`eq_massless_vector_field_curvature_tensor`, where we've tri
 To work out the canonical variables, we note that
 
 .. math:: \frac{\p \Lscr}{\p \dot{V}_{\mu}} = -F^{0\mu}
+	:label: eq_spin_1_vector_field_lagrangian_density_v_dot_derivative
 
 which is nonzero for :math:`\mu \neq 0`. It follows that for spatial indexes :math:`i`, we have the the canonical variables :math:`V_i` whose canonical dual is, according to :eq:`eq_general_lagrangian_conjugate_pi`, given by
 
@@ -1210,7 +1216,7 @@ This is a rather convincing evidence for the validity of the free field Hamilton
 
 
 Dirac field with spin-:math:`1/2`
-+++++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Recall from :eq:`eq_dirac_field_jscr_matrix` that the Dirac representation is *not* unitary, which eventually led to the definition of :math:`\bar{\psi}` in :eq:`eq_dirac_field_psi_field_bar` for constructing interaction densities for Dirac fields. Motivated by discussions in :ref:`sec_construction_of_the_interaction_density` and the desire to make Lagrangian real, let's consider the following
 
@@ -1303,6 +1309,157 @@ are satisfied if operators :math:`a, b` satisfy the following
 	\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right]_+ = \left[ b(\pbf, \sigma), b^{\dagger}(\pbf', \sigma') \right]_+ = \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'}
 
 and all the other anti-commutators vanish.
+
+
+.. _sec_constraints_and_dirac_brackets:
+
+Constraints and Dirac Brackets
+------------------------------
+
+We've seen in the case of :ref:`spin-1 massive vector fields <sec_vector_field_with_spin_1>` that the main difficulty in deriving Hamiltonian from Lagrangian is the appearance of constraints. In this specific case, the constraints came from the vanishing of certain canonical variables
+
+.. math:: \Pi^0 = 0
+	:label: eq_spin_1_vector_field_primary_constraint
+
+according to :eq:`eq_spin_1_vector_field_lagrangian_density_v_dot_derivative`, as well as relations among canonical variables :eq:`eq_spin_1_vector_field_heisenberg_v0` coming from the Euler-Lagrange equation :eq:`eq_general_vector_field_euler_lagrangian_equation`. In this case, we were lucky in the sense that the later constraint gives us an explicit solution of :math:`V_0` which is exactly the conjugate canonical variable of :math:`\Pi^0`, so we ended up in the comfortable situation again with only unconstrained canonical variables left.
+
+We will not always be so lucky and therefore we need a more systematic solution to the problem, which was offered by Dirac. According to him, constraints like :eq:`eq_spin_1_vector_field_primary_constraint` that come directly out of the structure of the Lagrangian, e.g., missing time derivatives of some fields, are called *primary* constraints. In addition, there may exist further constraints from the requirement of the equation of motion, e.g., the Euler-Lagrange equation, being consistent with the primary constraints. These are then called *secondary* constraints. In practice, it's often the case that the primary and secondary constraints are considered together, and their distinction is not important.
+
+What is important about the constraints are the distinction between the so-called *first* and *second* class constraints which we now explain. The difficulty in defining conjugate canonical variables boils down to the incompatibility between canonical commutation relations :eq:`eq_canonical_commutation_relations` and the constraints, and the solution from Dirac is simply to (re)define the bracket, known as the `Dirac bracket <https://en.wikipedia.org/wiki/Dirac_bracket>`__.
+
+The first step is to recall the Poisson bracket from classical mechanics. Let :math:`L(\Psi, \dot{\Psi})` be any Lagrangian regarded as a function of fields :math:`\Psi_a(t)` and their time derivatives :math:`\dot{\Psi}_a(t)`. Here the (compound-)index :math:`a` may contain continuous parameters such as the spatial coordinates. Define the canonical conjugates
+
+.. math:: \Pi^a \coloneqq \frac{\p L}{\p \dot{\Psi}_a}
+
+for all :math:`a`. Of course the :math:`\Psi` and :math:`\Pi` are not all independent variables, but rather are subject to primary and second constraint equations. Now the Poisson bracket between any two functions :math:`A, B` of the canonical variables is defined as follows
+
+.. math:: [A, B]_P \coloneqq \frac{\p A}{\p \Psi_a} \frac{\p B}{\p \Pi^a} - \frac{\p B}{\p \Psi_a} \frac{\p A}{\p \Pi^a}
+
+where the partial derivatives are calculated without taking the constraints into account. It holds therefore trivially that
+
+.. math:: \left[ \Psi_a, \Pi^b \right]_P = \delta_a^b
+	:label: eq_canonical_variables_poisson_bracket
+
+.. warning::
+
+	Since we're working within the framework of the canonical formalism, all commutators are taken at the same time. This rule is understood throughout this section, although it's nowhere explicit in any formula.
+
+Now if :math:`\Psi` and :math:`\Pi` are all independent variables, then :math:`\left[ \Psi_a, \Pi^b \right] = \ifrak \left[ \Psi_a, \Pi^b \right]_P` would give the desired commutation relations. But the existence of constraints would require a modification to the Poisson bracket and eventually lead to the Dirac bracket.
+
+As a side note, it follows from :eq:`eq_canonical_variables_poisson_bracket` that the Hamilton's equations :eq:`eq_free_field_hamilton_equation_q_and_p_dot` can be written in the following form
+
+.. math:: \dot{A} = [A, H]_P
+
+Let's write a generic constraint as :math:`\chi_N = 0` where :math:`\chi_N` is a function of the canonical variables :math:`\Psi, \Pi` and :math:`N` is indexing the constraints. Again, here :math:`N` may contain continuous parameters such as spacetime coordinates. Since the constraints come out of the Lagrangian itself and the Euler-Lagrange equations, they are constant along the trajectory of motion, i.e., :math:`\dot{\chi}_N = 0` whenever :math:`\chi_N = 0`. It follows that
+
+.. math:: \left[ \chi_N, H \right]_P = 0
+	:label: eq_constraint_poisson_commutes_hamiltonian
+
+whenever :math:`\chi_N = 0`. It turns out that one of the key features of the Dirac bracket is to upgrade :eq:`eq_constraint_poisson_commutes_hamiltonian` so that it holds for *any* function (of the canonical variables) in place of :math:`H`.
+
+
+First class constraints
+^^^^^^^^^^^^^^^^^^^^^^^
+
+A constraint is of first class if it Poisson commutes with all other constraints. Such constraints typically arise from Lagrangians that carry gauge symmetries. The presence of gauge symmetry makes the system apparently underdetermined in the sense that there are more fields or their components than field equations.
+
+Unfortunately, there appears to be no general recipe for handling first class constraints. However, it can typically be handled by "fixing the gauge". A particularly important, and successful, example of such procedure, namely quantum electrodynamics, will be presented in the next chapter.
+
+
+Second class constraints
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Assuming the first class constraints have been dealt with, the remaining constraints are called second class. On the space of second class constraints, we have a non-singular matrix :math:`C` whose entries are defined by
+
+.. math:: C_{NM} \coloneqq \left[ \chi_N, \chi_M \right]_P
+
+.. note::
+
+	Since an anti-symmetric matrix of odd dimension necessarily has vanishing determinant, the dimension of :math:`C` must be even. Indeed, it's often convenient to pair constraints in the form of :math:`\chi_{1N}, \chi_{2N}` and so on.
+
+Now define the Dirac bracket as follows
+
+.. math:: [A, B]_D \coloneqq [A, B]_P - [A, \chi_N]_P (C^{-1})^{NM} [\chi_M, B]_P
+	:label: eq_defn_dirac_bracket
+
+One checks easily that the Dirac bracket satisfies the same (Lie) algebraic properties as the Poisson bracket. Moreover, it satisfies
+
+.. math:: [\chi_N, B]_D = 0
+
+for any :math:`B`. It is this last property that guarantees the compatibility between commutator relations and constraints if the former is calculated as follows
+
+.. math:: [A, B] = \ifrak [A, B]_D
+	:label: eq_canonical_bracket_as_dirac_bracket
+
+
+Spin-:math:`1` vector field revisited
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We'll have to wait until the next chapter to illustrate how first class constraints may appear and how they may be handled, since it appears in the theory of massless helicity-:math:`1` vector fields. But we're ready to illustrate, in the absence of first class constraints, how second class constraints may be handled by Dirac bracket.
+
+Recall from :eq:`eq_spin_1_vector_field_lagrangian_density_v_dot_derivative` that since :math:`\dot{V}_0` is missing from :math:`\Lscr`, we get a primary constraint
+
+.. math:: \chi_{1 \xbf} \coloneqq \Pi_0(\xbf) = 0
+
+and from the Euler-Lagrange equations :eq:`eq_spin_1_vector_field_heisenberg_v0` a secondary constraint
+
+.. math:: \chi_{2 \xbf} \coloneqq \nabla \cdot \bm{\Pi}(\xbf) - m^2 V^0(\xbf) + J^0(\xbf) = 0
+
+Here we remind ourselves again that the time-dependence has been left out since all commutators will be taken at equal time.
+
+The :math:`C` matrix can now be calculated as follows
+
+.. math::
+
+	C = \begin{bmatrix*}
+		C_{1 \xbf, 1 \ybf} & C_{1 \xbf, 2 \ybf} \\
+		C_{2 \xbf, 1 \ybf} & C_{2 \xbf, 2 \ybf}
+	\end{bmatrix*} = \begin{bmatrix*}
+		0 & m^2 \delta^3(\xbf - \ybf) \\
+		-m^2 \delta^3(\xbf - \ybf) & 0
+	\end{bmatrix*}
+
+Clearly :math:`C` is non-singular. Hence no first class constraints exist, and Dirac's method applies.
+
+In this case, the constrained canonical variables are :math:`V_0` and :math:`\Pi^0`. Instead of solving them in terms of the unconstrained canonical variables explicitly as before, simply calculate the commutators using Dirac bracket as follows. First note that
+
+.. math::
+
+	C^{-1} = \begin{bmatrix*}
+		0 & -m^{-2} \delta^3(\xbf - \ybf) \\
+		m^{-2} \delta^3(\xbf - \ybf) & 0
+	\end{bmatrix*}
+
+It follows from :eq:`eq_canonical_bracket_as_dirac_bracket` and :eq:`eq_defn_dirac_bracket` that
+
+.. math::
+
+	[A, B] = \ifrak [A, B]_P + \ifrak m^{-2} \int d^3 \xbf \left( [A, \Pi_0(\xbf)]_P [\nabla \cdot \bm{\Pi}(\xbf) - m^2 V^0(\xbf) + J^0(\xbf), B]_P - A \leftrightarrow B \right)
+
+Together with the trivial Poisson bracket relations
+
+.. math::
+
+	\left[ V^{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &= \delta^{\mu}_{\nu} \delta^3(\xbf - \ybf) \\
+	\left[ V^{\mu}(\xbf), V^{\nu}(\ybf) \right]_P = \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &= 0
+
+we can now calculate all the commutation relations as follows
+
+.. math::
+
+	\left[ V^i(\xbf), \Pi_j(\ybf) \right] &= \ifrak \delta^i_j \delta^3(\xbf - \ybf) \\
+	\left[ V^i(\xbf), V^0(\ybf) \right] &= -\ifrak m^{-2} \p_i \delta^3(\xbf - \ybf) \\
+	\left[ V^i(\xbf), V^j(\ybf) \right] &= \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right] \\
+		&= \left[ V^0(\xbf), \Pi_{\mu}(\ybf) \right] \\
+		&= \left[ V^{\mu}(\xbf), \Pi_0(\ybf) \right] = 0
+
+This turns out to be the same as if we use the explicit :eq:`eq_spin_1_vector_field_primary_constraint` and :eq:`eq_spin_1_vector_field_heisenberg_v0`, as well as the canonical commutation relations among the unconstrained canonical variables, to calculate the commutators.
+
+.. note::
+
+	According to [Wei95]_ page 330 footnote (**), it's not known in full generality whether the Dirac bracket always produces the correct commutation relations, and more importantly, whether the standard relation :eq:`eq_legendre_transformation_hamiltonian_from_lagrangian` between Lagrangian and Hamiltonian holds even in the presence of constrained canonical variables. These issues are (partially) addressed in [Wei95]_ page 329 -- 330 through the work of [MaNa76]_ and page 332 -- 337 through the work of Weinberg himself.
+
+	Instead of working out all the details, we'll simply take for granted that Dirac's method works. One of the blessings of physics (as opposed to mathematics, for example), which I learned from R. Feynman, is that all these knowledge points are highly inter-connected in the sense that one can nearly start anywhere in physics and deduce anything else. If we apply Dirac's method to a theory, e.g., a quantum field theory, and it fails, we will know it from other principles, e.g., the free particle commutation relations calculated in :ref:`sec_canonical_variables`, which come from the free fields derived in :ref:`sec_quantum_fields_and_antiparticles`, which, ultimately, come from the principle of Lorentz invariance and causality.
 
 
 .. rubric:: Footnotes

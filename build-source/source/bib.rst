@@ -34,6 +34,8 @@ Bibliography
 
 .. rubric:: Physics
 
+.. [MaNa76] T\. Maskawa and H\. Nakajima\. *Singular Lagrangian and the Dirac-Faddeev Method: Existence Theorem of Constraints in 'Standard Form'*. `journal <https://academic.oup.com/ptp/article/56/4/1295/1898050>`__
+
 .. [Wei69] S\. Weinberg\. *Feynman Rules for Any Spin. III*. `doi <https://doi.org/10.1103/PhysRev.181.1893>`__
 
 .. [Wei95] S\. Weinberg\. *The Quantum Theory of Fields Volume 1: Foundations*. `doi <https://doi.org/10.1017/CBO9781139644167>`__
