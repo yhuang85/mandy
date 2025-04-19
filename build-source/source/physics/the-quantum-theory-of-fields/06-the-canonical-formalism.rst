@@ -1358,6 +1358,8 @@ Let's write a generic constraint as :math:`\chi_N = 0` where :math:`\chi_N` is a
 whenever :math:`\chi_N = 0`. It turns out that one of the key features of the Dirac bracket is to upgrade :eq:`eq_constraint_poisson_commutes_hamiltonian` so that it holds for *any* function (of the canonical variables) in place of :math:`H`.
 
 
+.. _sec_first_class_constraints:
+
 First class constraints
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1365,6 +1367,8 @@ A constraint is of first class if it Poisson commutes with all other constraints
 
 Unfortunately, there appears to be no general recipe for handling first class constraints. However, it can typically be handled by "fixing the gauge". A particularly important, and successful, example of such procedure, namely quantum electrodynamics, will be presented in the next chapter.
 
+
+.. _sec_second_class_constraints:
 
 Second class constraints
 ^^^^^^^^^^^^^^^^^^^^^^^^

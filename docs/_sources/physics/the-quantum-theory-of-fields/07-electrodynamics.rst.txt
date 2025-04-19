@@ -58,6 +58,7 @@ such that :math:`\Lscr_M` is invariant under :math:`\Psi_{\ell} \to \Psi_{\ell} 
 Let
 
 .. math:: Q \coloneqq \int d^3 x~J^0
+    :label: eq_qed_defn_charge_operator
 
 be the conserved charge operator. Then it follows from :eq:`eq_lagrangian_formalism_conserved_f_acts_as_symmetry_generator` (modulo an extremely confusing shuffle of notations)
 
@@ -133,6 +134,7 @@ It's very interesting that the above argument can be totally reverted, as is don
     It follows that the gauge symmetry can be restored if any dependence of the matter Lagrangian :math:`\Lscr_M` on :math:`\p_{\mu} \Psi_{\ell}` actually depends on the covariant derivative :eq:`eq_qed_defn_covariant_derivative`. In other words, we can write
 
     .. math:: \Lscr_M = \Lscr_M(\Psi, D_{\mu} \Psi)
+        :label: eq_qed_matter_lagrangian_in_covariant_derivative
 
     We can also verify :eq:`eq_qed_matter_lagrangian_variational_derivative_in_a_field` and :eq:`eq_qed_conserved_current_j` in this setup as follows
 
@@ -147,3 +149,108 @@ It's very interesting that the above argument can be totally reverted, as is don
     .. math::  -\frac{1}{2} m^2 A_{\mu} A^{\mu}
 
     is missing, or :math:`m=0`. Indeed, the appearance of such quadratic term would obviously violate the postulated gauge symmetry. This is really fantastic since we've deduced from just the existence of gauge symmetry that the particle represented by :math:`A_{\mu}`, which turns out to be photon, is massless. This is in fact one the two greatest predictions of QED that photons are massless -- the other one being that they travel at the speed of light, and has been tested against experiment up to great precision.
+
+
+Constraints and Gauge Conditions
+--------------------------------
+
+Recall from the previous section that the QED Lagrangian density splits up into the matter part and the light parts as follows
+
+.. math:: \Lscr = \Lscr_M + \Lscr_{\gamma}
+
+where
+
+.. math:: \Lscr_{\gamma} = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}
+    :label: eq_qed_light_lagrangian_density
+
+and :math:`\Lscr_M` involves both :math:`\Psi`-field and :math:`A`-field. Moreover, in light of :eq:`eq_qed_defn_covariant_derivative` and :eq:`eq_qed_matter_lagrangian_in_covariant_derivative`, there is no involvement of derivatives of :math:`A`-field in :math:`\Lscr_M`. It follows that if we define the field conjugate to :math:`A_{\mu}` as follows
+
+.. math:: \Pi^{\mu} \coloneqq \frac{\p \Lscr}{\p \dot{A}_{\mu}}
+    :label: eq_qed_defn_conjugate_field_pi
+
+then just as in the theory of (massive) spin-:math:`1` vector fields, we get the following primary constraint
+
+.. math:: \Pi^0 = \frac{\p \Lscr_{\gamma}}{\p \dot{A}_{\mu}} = \frac{\p \Lscr_{\gamma}}{\p F_{00}} = 0
+    :label: eq_qed_primary_constraint
+
+Moreover we use the Euler-Lagrange equation to find the secondary constraint as follows
+
+.. math:: \p_i \Pi^i = -\p_i \frac{\p \Lscr}{\p F_{i0}} = -\frac{\p \Lscr}{\p A_0} = -J^0
+    :label: eq_qed_secondary_constraint
+
+where the middle equality is one of the Euler-Lagrange equations :eq:`eq_euler_lagrange` with the time-derivative term dropped out due to the primary constraint, the equality on the left is the definition :eq:`eq_qed_defn_conjugate_field_pi`, and the equality on the right is due to the coupling term :math:`J^{\mu} A_{\mu}` in :math:`\Lscr`.
+
+Using :eq:`eq_qed_conserved_current_j` and letting :math:`Q \coloneqq \Psi` (not to be confused with the charge operator :eq:`eq_qed_defn_charge_operator` defined in the previous section) and :math:`P \coloneqq \delta \Lscr / \delta \dot{\Psi}` be the conjugate canonical variables, we can write the charge density :math:`J^0` as follows
+
+.. math:: J^0 = -\ifrak \sum_n \frac{\p \Lscr}{\p \dot{\Psi}_n} q_n \Psi_n = -\ifrak \sum_n P^n q_n Q_n
+    :label: eq_qed_charge_density_in_canonical_q_and_p
+
+Together with :eq:`eq_qed_primary_constraint` and :eq:`eq_qed_secondary_constraint`, we have obtained two constraints
+
+.. math::
+
+    \chi_1 &\coloneqq \Pi^0 = 0 \\
+    \chi_2 &\coloneqq \p_i \Pi^i - \ifrak \sum_n P^n q_n Q_n = 0
+
+Obviously the Poisson bracket :math:`[\chi_1, \chi_2]_P = 0`. Hence the constraints are of first class as discussed in :ref:`sec_first_class_constraints`. Moreover, one cannot hope to solve explicitly for :math:`A_0`, the conjugate of :math:`\Pi^0`, in terms of the other canonical variables, as we did in the massive case :eq:`eq_spin_1_vector_field_heisenberg_v0`, due to the presence of gauge symmetry :eq:`eq_qed_gauge_symmetry`.
+
+One way, which is unfortunately not Lorentz invariant, to solve this problem is to "fix the gauge" by imposing an artificial condition on the :math:`A`-field so that :math:`A_0` may be solved explicitly. [#brst_quantization]_ It turns out that there are many such conditions that find their use cases under various circumstances. Some of the most common `gauge-fixing conditions <https://en.wikipedia.org/wiki/Gauge_fixing>`__ are listed below
+
++-------------------------+-------------------------------+
+| Name                    | Condition                     |
++=========================+===============================+
+| Lorenz gauge [#lorenz]_ | :math:`\p_{\mu} A^{\mu} = 0`  |
++-------------------------+-------------------------------+
+| Coulomb gauge           | :math:`\nabla \cdot \Abf = 0` |
++-------------------------+-------------------------------+
+| Temporal gauge          | :math:`A^0 = 0`               |
++-------------------------+-------------------------------+
+| Axial gauge             | :math:`A^3 = 0`               |
++-------------------------+-------------------------------+
+
+.. important::
+
+    We will use the Coulomb gauge unless otherwise specified throughout this chapter. The reason, according to J. Schwinger, is that it is in this gauge that photons come out as helicity-:math:`1` particles.
+
+Two things remain to be settled. One is to argue that the :math:`A`-field can always be put into the Coulomb gauge, and the other is to solve for :math:`A^0` in terms of the other fields.
+
+To address the first point, it suffices, according to :eq:`eq_qed_gauge_symmetry`, to show that for any :math:`A = (A_0, \Abf)`, there exists a function :math:`\lambda(\xbf)` such that
+
+.. math:: \nabla \cdot (\Abf + \nabla \cdot \lambda) = 0 \iff \nabla^2 \lambda = -\nabla \cdot \Abf
+
+The equation on the right is known as `Poisson's equation <https://en.wikipedia.org/wiki/Poisson%27s_equation>`__ and can be solved using Green's function. In fact, the same equation shows up again when solving for :math:`A^0`, which we now explain.
+
+Combining the secondary constraint :eq:`eq_qed_secondary_constraint` (cf. :eq:`eq_qed_light_lagrangian_density`) with the Coulomb gauge condition, we have
+
+.. math::
+
+    J^0 = \p_i \frac{\delta \Lscr}{\p F_{i0}} = \p_i \frac{\delta \Lscr_{\gamma}}{\p F_{i0}} = -\p_i F^{i0} = -\nabla^2 A^0
+
+This equation can be solved explicitly [#solve_poisson_equation]_ by
+
+.. math:: A^0(t, \xbf) = \int d^3 y~\frac{J^0(t, \ybf)}{4\pi |\xbf - \ybf|}
+    :label: eq_qed_explicit_solution_of_a0
+
+where the charge density :math:`J^0` can be further written in the form of :eq:`eq_qed_charge_density_in_canonical_q_and_p`.
+
+Now :eq:`eq_qed_primary_constraint` and :eq:`eq_qed_explicit_solution_of_a0` allow us to get rid of the constrained canonical variables :math:`A_0` and :math:`\Pi^0`, which, as we will show in the next section, removes the first class constraints.
+
+
+Quantization in Coulomb Gauge
+-----------------------------
+
+In the previous section, we imposed a Coulomb gauge condition :math:`\nabla \cdot \Abf = 0` and used it to eliminate the constrained variables :math:`A_0` and :math:`\Pi^0`. Now we're facing a new pair (of families parametrized by spatial coordinates :math:`\xbf`) of constraints, listed as follows
+
+.. math::
+
+    \chi_{1 \xbf} &\coloneqq \p_i A^i(\xbf) = 0 \\
+    \chi_{2 \xbf} &\coloneqq \p_i \Pi^i(\xbf) + J^0(\xbf) = 0
+
+
+.. rubric:: Footnotes
+
+.. [#brst_quantization] The more modern way to quantize a field theory with gauge symmetry is via the so-called `BRST quantization <https://en.wikipedia.org/wiki/BRST_quantization>`__, which is Lorentz invariant. We will come back to it much later when we discuss non-Abelian gauge symmetries.
+
+.. [#lorenz] It's really unfortunate for L. Lorenz to work in the same field as H. Lorentz and be completely overshadowed. Apparently Weinberg thought this gauge condition was named after the more famous Nobel laureate.
+
+.. [#solve_poisson_equation] My favorite solution is given by Feynman in his `lecture on electric field <https://www.feynmanlectures.caltech.edu/II_06.html>`__.

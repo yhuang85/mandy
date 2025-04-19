@@ -420,15 +420,15 @@
 <div class="math notranslate nohighlight" id="equation-eq-qed-conserved-current-j">
 <span class="eqno">(7.1.5)<a class="headerlink" href="#equation-eq-qed-conserved-current-j" title="Link to this equation">#</a></span>\[J^{\mu}(x) = -\ifrak \sum_{\ell} \frac{\p \Lscr_M}{\p (\p_{\mu} \Psi_{\ell}(x))} q_{\ell} \Psi_{\ell}(x)\]</div>
 <p>Let</p>
-<div class="math notranslate nohighlight">
-\[Q \coloneqq \int d^3 x~J^0\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-qed-defn-charge-operator">
+<span class="eqno">(7.1.6)<a class="headerlink" href="#equation-eq-qed-defn-charge-operator" title="Link to this equation">#</a></span>\[Q \coloneqq \int d^3 x~J^0\]</div>
 <p>be the conserved charge operator. Then it follows from <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-lagrangian-formalism-conserved-f-acts-as-symmetry-generator">Eq.6.3.11</a> (modulo an extremely confusing shuffle of notations)</p>
 <div class="math notranslate nohighlight">
 \[\left[ Q, \Psi_{\ell}(x) \right] = -q_{\ell} \Psi_{\ell}(x)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Psi_{\ell}\)</span> is now officially one of the canonical variables.</p>
 <p>To summarize, we have concluded that the matter action <span class="math notranslate nohighlight">\(I_M\)</span> is invariant under the joint (local) transformation</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-gauge-symmetry">
-<span class="eqno">(7.1.6)<a class="headerlink" href="#equation-eq-qed-gauge-symmetry" title="Link to this equation">#</a></span>\[\begin{split}\delta A_{\mu}(x) &amp;= \p_{\mu} \epsilon(x) \\
+<span class="eqno">(7.1.7)<a class="headerlink" href="#equation-eq-qed-gauge-symmetry" title="Link to this equation">#</a></span>\[\begin{split}\delta A_{\mu}(x) &amp;= \p_{\mu} \epsilon(x) \\
 \delta \Psi_{\ell}(x) &amp;= \ifrak \epsilon(x) q_{\ell} \Psi_{\ell}(x)\end{split}\]</div>
 <p>on <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> and <span class="math notranslate nohighlight">\(\Psi_{\ell}(x)\)</span>. Symmetries like this are known as <em>gauge symmetries</em>.</p>
 <p>It turns out that in QED, besides the matter action, we also need a light action which takes the following form</p>
@@ -442,7 +442,7 @@
 <div class="math notranslate nohighlight">
 \[\p_{\mu} F_{\nu \kappa} + \p_{\nu} F_{\kappa \mu} + \p_{\kappa} F_{\mu \nu} = 0\]</div>
 <p>follows readily from the definition <a class="reference internal" href="#equation-eq-qed-defn-f-field">Eq.7.1.3</a>.</p>
-<p>To recap our (or rather, Weinberg’s) approach to QED, it starts with a partially successful construction of a massless helicity-<span class="math notranslate nohighlight">\(1\)</span> vector field <span class="math notranslate nohighlight">\(a_{\mu}(x)\)</span> from <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a">Eq.4.7.12</a>. Its transformation law <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a-conjugation-by-lorentz-transformation">Eq.4.7.18</a>, abstracted into <a class="reference internal" href="#equation-eq-qed-a-field-gauge-transformation">Eq.7.1.1</a>, necessitates a conserved coupling field <span class="math notranslate nohighlight">\(J^{\mu}\)</span>, which then comes out of a variational principle. In the end, we’ve <em>derived</em> the gauge symmetry <a class="reference internal" href="#equation-eq-qed-gauge-symmetry">Eq.7.1.6</a> as a consequence of the need of a Lorentz invariant Lagrangian density.</p>
+<p>To recap our (or rather, Weinberg’s) approach to QED, it starts with a partially successful construction of a massless helicity-<span class="math notranslate nohighlight">\(1\)</span> vector field <span class="math notranslate nohighlight">\(a_{\mu}(x)\)</span> from <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a">Eq.4.7.12</a>. Its transformation law <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-a-conjugation-by-lorentz-transformation">Eq.4.7.18</a>, abstracted into <a class="reference internal" href="#equation-eq-qed-a-field-gauge-transformation">Eq.7.1.1</a>, necessitates a conserved coupling field <span class="math notranslate nohighlight">\(J^{\mu}\)</span>, which then comes out of a variational principle. In the end, we’ve <em>derived</em> the gauge symmetry <a class="reference internal" href="#equation-eq-qed-gauge-symmetry">Eq.7.1.7</a> as a consequence of the need of a Lorentz invariant Lagrangian density.</p>
 <p>It’s very interesting that the above argument can be totally reverted, as is done in most textbooks. We outline this reversed argument in the dropdown below.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
 <summary class="sd-summary-title sd-card-header">
@@ -456,20 +456,20 @@
 <p class="sd-card-text">with function <span class="math notranslate nohighlight">\(\epsilon(x)\)</span>.</p>
 <p class="sd-card-text">Now if the Lagrangian involves any derivatives of the fields <span class="math notranslate nohighlight">\(\Psi_{\ell}(x)\)</span>, which is almost certainly the case in reality, then such promotion cannot be done for free because of the following simple rule of differentiation</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-variation-of-field-derivative">
-<span class="eqno">(7.1.7)<a class="headerlink" href="#equation-eq-qed-variation-of-field-derivative" title="Link to this equation">#</a></span>\[\delta \p_{\mu} \Psi_{\ell}(x) = \ifrak \epsilon(x) q_{\ell} \p_{\mu} \Psi_{\ell}(x) + \ifrak q_{\ell} \Psi_{\ell}(x) \p_{\mu} \epsilon(x)\]</div>
+<span class="eqno">(7.1.8)<a class="headerlink" href="#equation-eq-qed-variation-of-field-derivative" title="Link to this equation">#</a></span>\[\delta \p_{\mu} \Psi_{\ell}(x) = \ifrak \epsilon(x) q_{\ell} \p_{\mu} \Psi_{\ell}(x) + \ifrak q_{\ell} \Psi_{\ell}(x) \p_{\mu} \epsilon(x)\]</div>
 <p class="sd-card-text">The cure to this problem is to “invent” a vector field <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> with transformation rule</p>
 <div class="math notranslate nohighlight">
 \[\delta A_{\mu}(x) = \p_{\mu} \epsilon(x)\]</div>
 <p class="sd-card-text">and observe that if we introduce the following <a class="reference external" href="https://en.wikipedia.org/wiki/Covariant_derivative">covariant derivative</a></p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-defn-covariant-derivative">
-<span class="eqno">(7.1.8)<a class="headerlink" href="#equation-eq-qed-defn-covariant-derivative" title="Link to this equation">#</a></span>\[D_{\mu} \Psi_{\ell} \coloneqq \p_{\mu} \Psi_{\ell} - \ifrak q_{\ell} A_{\mu} \Psi_{\ell}\]</div>
-<p class="sd-card-text">then <a class="reference internal" href="#equation-eq-qed-variation-of-field-derivative">Eq.7.1.7</a> can be replaced by the following</p>
+<span class="eqno">(7.1.9)<a class="headerlink" href="#equation-eq-qed-defn-covariant-derivative" title="Link to this equation">#</a></span>\[D_{\mu} \Psi_{\ell} \coloneqq \p_{\mu} \Psi_{\ell} - \ifrak q_{\ell} A_{\mu} \Psi_{\ell}\]</div>
+<p class="sd-card-text">then <a class="reference internal" href="#equation-eq-qed-variation-of-field-derivative">Eq.7.1.8</a> can be replaced by the following</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\delta D_{\mu} \Psi_{\ell}(x) &amp;= \delta \p_{\mu} \Psi_{\ell}(x) - \ifrak q_{\ell} \left( A_{\mu}(x) \delta \Psi_{\ell}(x) + \Psi_{\ell}(x) \delta A_{\mu}(x) \right) \\
     &amp;= \ifrak \epsilon(x) q_{\ell} D_{\mu} \Psi_{\ell}(x)\end{split}\]</div>
-<p class="sd-card-text">It follows that the gauge symmetry can be restored if any dependence of the matter Lagrangian <span class="math notranslate nohighlight">\(\Lscr_M\)</span> on <span class="math notranslate nohighlight">\(\p_{\mu} \Psi_{\ell}\)</span> actually depends on the covariant derivative <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.8</a>. In other words, we can write</p>
-<div class="math notranslate nohighlight">
-\[\Lscr_M = \Lscr_M(\Psi, D_{\mu} \Psi)\]</div>
+<p class="sd-card-text">It follows that the gauge symmetry can be restored if any dependence of the matter Lagrangian <span class="math notranslate nohighlight">\(\Lscr_M\)</span> on <span class="math notranslate nohighlight">\(\p_{\mu} \Psi_{\ell}\)</span> actually depends on the covariant derivative <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.9</a>. In other words, we can write</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-matter-lagrangian-in-covariant-derivative">
+<span class="eqno">(7.1.10)<a class="headerlink" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative" title="Link to this equation">#</a></span>\[\Lscr_M = \Lscr_M(\Psi, D_{\mu} \Psi)\]</div>
 <p class="sd-card-text">We can also verify <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-variational-derivative-in-a-field">Eq.7.1.4</a> and <a class="reference internal" href="#equation-eq-qed-conserved-current-j">Eq.7.1.5</a> in this setup as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{\delta I_M}{\delta A_{\mu}(x)} &amp;= \int d^4 y~\frac{\p \Lscr_M(\Psi_{\ell}(y), D_{\mu} \Psi_{\ell}(y))}{\p A_{\mu}(x)} \\
@@ -481,6 +481,95 @@
 <p class="sd-card-text">is missing, or <span class="math notranslate nohighlight">\(m=0\)</span>. Indeed, the appearance of such quadratic term would obviously violate the postulated gauge symmetry. This is really fantastic since we’ve deduced from just the existence of gauge symmetry that the particle represented by <span class="math notranslate nohighlight">\(A_{\mu}\)</span>, which turns out to be photon, is massless. This is in fact one the two greatest predictions of QED that photons are massless – the other one being that they travel at the speed of light, and has been tested against experiment up to great precision.</p>
 </div>
 </details></section>
+<section id="constraints-and-gauge-conditions">
+<h2><span class="section-number">7.2. </span>Constraints and Gauge Conditions<a class="headerlink" href="#constraints-and-gauge-conditions" title="Link to this heading">#</a></h2>
+<p>Recall from the previous section that the QED Lagrangian density splits up into the matter part and the light parts as follows</p>
+<div class="math notranslate nohighlight">
+\[\Lscr = \Lscr_M + \Lscr_{\gamma}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-light-lagrangian-density">
+<span class="eqno">(7.2.1)<a class="headerlink" href="#equation-eq-qed-light-lagrangian-density" title="Link to this equation">#</a></span>\[\Lscr_{\gamma} = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\Lscr_M\)</span> involves both <span class="math notranslate nohighlight">\(\Psi\)</span>-field and <span class="math notranslate nohighlight">\(A\)</span>-field. Moreover, in light of <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.9</a> and <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative">Eq.7.1.10</a>, there is no involvement of derivatives of <span class="math notranslate nohighlight">\(A\)</span>-field in <span class="math notranslate nohighlight">\(\Lscr_M\)</span>. It follows that if we define the field conjugate to <span class="math notranslate nohighlight">\(A_{\mu}\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-defn-conjugate-field-pi">
+<span class="eqno">(7.2.2)<a class="headerlink" href="#equation-eq-qed-defn-conjugate-field-pi" title="Link to this equation">#</a></span>\[\Pi^{\mu} \coloneqq \frac{\p \Lscr}{\p \dot{A}_{\mu}}\]</div>
+<p>then just as in the theory of (massive) spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields, we get the following primary constraint</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-primary-constraint">
+<span class="eqno">(7.2.3)<a class="headerlink" href="#equation-eq-qed-primary-constraint" title="Link to this equation">#</a></span>\[\Pi^0 = \frac{\p \Lscr_{\gamma}}{\p \dot{A}_{\mu}} = \frac{\p \Lscr_{\gamma}}{\p F_{00}} = 0\]</div>
+<p>Moreover we use the Euler-Lagrange equation to find the secondary constraint as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-secondary-constraint">
+<span class="eqno">(7.2.4)<a class="headerlink" href="#equation-eq-qed-secondary-constraint" title="Link to this equation">#</a></span>\[\p_i \Pi^i = -\p_i \frac{\p \Lscr}{\p F_{i0}} = -\frac{\p \Lscr}{\p A_0} = -J^0\]</div>
+<p>where the middle equality is one of the Euler-Lagrange equations <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-euler-lagrange">Eq.6.2.5</a> with the time-derivative term dropped out due to the primary constraint, the equality on the left is the definition <a class="reference internal" href="#equation-eq-qed-defn-conjugate-field-pi">Eq.7.2.2</a>, and the equality on the right is due to the coupling term <span class="math notranslate nohighlight">\(J^{\mu} A_{\mu}\)</span> in <span class="math notranslate nohighlight">\(\Lscr\)</span>.</p>
+<p>Using <a class="reference internal" href="#equation-eq-qed-conserved-current-j">Eq.7.1.5</a> and letting <span class="math notranslate nohighlight">\(Q \coloneqq \Psi\)</span> (not to be confused with the charge operator <a class="reference internal" href="#equation-eq-qed-defn-charge-operator">Eq.7.1.6</a> defined in the previous section) and <span class="math notranslate nohighlight">\(P \coloneqq \delta \Lscr / \delta \dot{\Psi}\)</span> be the conjugate canonical variables, we can write the charge density <span class="math notranslate nohighlight">\(J^0\)</span> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-charge-density-in-canonical-q-and-p">
+<span class="eqno">(7.2.5)<a class="headerlink" href="#equation-eq-qed-charge-density-in-canonical-q-and-p" title="Link to this equation">#</a></span>\[J^0 = -\ifrak \sum_n \frac{\p \Lscr}{\p \dot{\Psi}_n} q_n \Psi_n = -\ifrak \sum_n P^n q_n Q_n\]</div>
+<p>Together with <a class="reference internal" href="#equation-eq-qed-primary-constraint">Eq.7.2.3</a> and <a class="reference internal" href="#equation-eq-qed-secondary-constraint">Eq.7.2.4</a>, we have obtained two constraints</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\chi_1 &amp;\coloneqq \Pi^0 = 0 \\
+\chi_2 &amp;\coloneqq \p_i \Pi^i - \ifrak \sum_n P^n q_n Q_n = 0\end{split}\]</div>
+<p>Obviously the Poisson bracket <span class="math notranslate nohighlight">\([\chi_1, \chi_2]_P = 0\)</span>. Hence the constraints are of first class as discussed in <a class="reference internal" href="06-the-canonical-formalism.html#sec-first-class-constraints"><span class="std std-ref">First class constraints</span></a>. Moreover, one cannot hope to solve explicitly for <span class="math notranslate nohighlight">\(A_0\)</span>, the conjugate of <span class="math notranslate nohighlight">\(\Pi^0\)</span>, in terms of the other canonical variables, as we did in the massive case <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.8</a>, due to the presence of gauge symmetry <a class="reference internal" href="#equation-eq-qed-gauge-symmetry">Eq.7.1.7</a>.</p>
+<p>One way, which is unfortunately not Lorentz invariant, to solve this problem is to “fix the gauge” by imposing an artificial condition on the <span class="math notranslate nohighlight">\(A\)</span>-field so that <span class="math notranslate nohighlight">\(A_0\)</span> may be solved explicitly. <a class="footnote-reference brackets" href="#brst-quantization" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> It turns out that there are many such conditions that find their use cases under various circumstances. Some of the most common <a class="reference external" href="https://en.wikipedia.org/wiki/Gauge_fixing">gauge-fixing conditions</a> are listed below</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Condition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lorenz gauge <a class="footnote-reference brackets" href="#lorenz" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></td>
+<td><p><span class="math notranslate nohighlight">\(\p_{\mu} A^{\mu} = 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Coulomb gauge</p></td>
+<td><p><span class="math notranslate nohighlight">\(\nabla \cdot \Abf = 0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Temporal gauge</p></td>
+<td><p><span class="math notranslate nohighlight">\(A^0 = 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Axial gauge</p></td>
+<td><p><span class="math notranslate nohighlight">\(A^3 = 0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We will use the Coulomb gauge unless otherwise specified throughout this chapter. The reason, according to J. Schwinger, is that it is in this gauge that photons come out as helicity-<span class="math notranslate nohighlight">\(1\)</span> particles.</p>
+</div>
+<p>Two things remain to be settled. One is to argue that the <span class="math notranslate nohighlight">\(A\)</span>-field can always be put into the Coulomb gauge, and the other is to solve for <span class="math notranslate nohighlight">\(A^0\)</span> in terms of the other fields.</p>
+<p>To address the first point, it suffices, according to <a class="reference internal" href="#equation-eq-qed-gauge-symmetry">Eq.7.1.7</a>, to show that for any <span class="math notranslate nohighlight">\(A = (A_0, \Abf)\)</span>, there exists a function <span class="math notranslate nohighlight">\(\lambda(\xbf)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\nabla \cdot (\Abf + \nabla \cdot \lambda) = 0 \iff \nabla^2 \lambda = -\nabla \cdot \Abf\]</div>
+<p>The equation on the right is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Poisson%27s_equation">Poisson’s equation</a> and can be solved using Green’s function. In fact, the same equation shows up again when solving for <span class="math notranslate nohighlight">\(A^0\)</span>, which we now explain.</p>
+<p>Combining the secondary constraint <a class="reference internal" href="#equation-eq-qed-secondary-constraint">Eq.7.2.4</a> (cf. <a class="reference internal" href="#equation-eq-qed-light-lagrangian-density">Eq.7.2.1</a>) with the Coulomb gauge condition, we have</p>
+<div class="math notranslate nohighlight">
+\[J^0 = \p_i \frac{\delta \Lscr}{\p F_{i0}} = \p_i \frac{\delta \Lscr_{\gamma}}{\p F_{i0}} = -\p_i F^{i0} = -\nabla^2 A^0\]</div>
+<p>This equation can be solved explicitly <a class="footnote-reference brackets" href="#solve-poisson-equation" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> by</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-explicit-solution-of-a0">
+<span class="eqno">(7.2.6)<a class="headerlink" href="#equation-eq-qed-explicit-solution-of-a0" title="Link to this equation">#</a></span>\[A^0(t, \xbf) = \int d^3 y~\frac{J^0(t, \ybf)}{4\pi |\xbf - \ybf|}\]</div>
+<p>where the charge density <span class="math notranslate nohighlight">\(J^0\)</span> can be further written in the form of <a class="reference internal" href="#equation-eq-qed-charge-density-in-canonical-q-and-p">Eq.7.2.5</a>.</p>
+<p>Now <a class="reference internal" href="#equation-eq-qed-primary-constraint">Eq.7.2.3</a> and <a class="reference internal" href="#equation-eq-qed-explicit-solution-of-a0">Eq.7.2.6</a> allow us to get rid of the constrained canonical variables <span class="math notranslate nohighlight">\(A_0\)</span> and <span class="math notranslate nohighlight">\(\Pi^0\)</span>, which, as we will show in the next section, removes the first class constraints.</p>
+</section>
+<section id="quantization-in-coulomb-gauge">
+<h2><span class="section-number">7.3. </span>Quantization in Coulomb Gauge<a class="headerlink" href="#quantization-in-coulomb-gauge" title="Link to this heading">#</a></h2>
+<p>In the previous section, we imposed a Coulomb gauge condition <span class="math notranslate nohighlight">\(\nabla \cdot \Abf = 0\)</span> and used it to eliminate the constrained variables <span class="math notranslate nohighlight">\(A_0\)</span> and <span class="math notranslate nohighlight">\(\Pi^0\)</span>. Now we’re facing a new pair (of families parametrized by spatial coordinates <span class="math notranslate nohighlight">\(\xbf\)</span>) of constraints, listed as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\chi_{1 \xbf} &amp;\coloneqq \p_i A^i(\xbf) = 0 \\
+\chi_{2 \xbf} &amp;\coloneqq \p_i \Pi^i(\xbf) + J^0(\xbf) = 0\end{split}\]</div>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="brst-quantization" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>The more modern way to quantize a field theory with gauge symmetry is via the so-called <a class="reference external" href="https://en.wikipedia.org/wiki/BRST_quantization">BRST quantization</a>, which is Lorentz invariant. We will come back to it much later when we discuss non-Abelian gauge symmetries.</p>
+</aside>
+<aside class="footnote brackets" id="lorenz" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>It’s really unfortunate for L. Lorenz to work in the same field as H. Lorentz and be completely overshadowed. Apparently Weinberg thought this gauge condition was named after the more famous Nobel laureate.</p>
+</aside>
+<aside class="footnote brackets" id="solve-poisson-equation" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>My favorite solution is given by Feynman in his <a class="reference external" href="https://www.feynmanlectures.caltech.edu/II_06.html">lecture on electric field</a>.</p>
+</aside>
+</aside>
+</section>
 </section>
 
 
@@ -507,6 +596,8 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-invariance-and-action">7.1. Gauge Invariance and Action</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-and-gauge-conditions">7.2. Constraints and Gauge Conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-in-coulomb-gauge">7.3. Quantization in Coulomb Gauge</a></li>
 </ul>
   </nav></div>
 
