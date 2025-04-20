@@ -222,9 +222,8 @@ The equation on the right is known as `Poisson's equation <https://en.wikipedia.
 
 Combining the secondary constraint :eq:`eq_qed_secondary_constraint` (cf. :eq:`eq_qed_light_lagrangian_density`) with the Coulomb gauge condition, we have
 
-.. math::
-
-    J^0 = \p_i \frac{\delta \Lscr}{\p F_{i0}} = \p_i \frac{\delta \Lscr_{\gamma}}{\p F_{i0}} = -\p_i F^{i0} = -\nabla^2 A^0
+.. math:: J^0 = \p_i \frac{\delta \Lscr}{\p F_{i0}} = \p_i \frac{\delta \Lscr_{\gamma}}{\p F_{i0}} = -\p_i F^{i0} = -\nabla^2 A^0
+    :label: eq_qed_poisson_equation_j_and_a
 
 This equation can be solved explicitly [#solve_poisson_equation]_ by
 
@@ -242,9 +241,82 @@ Quantization in Coulomb Gauge
 In the previous section, we imposed a Coulomb gauge condition :math:`\nabla \cdot \Abf = 0` and used it to eliminate the constrained variables :math:`A_0` and :math:`\Pi^0`. Now we're facing a new pair (of families parametrized by spatial coordinates :math:`\xbf`) of constraints, listed as follows
 
 .. math::
+    :label: eq_qed_constraints_in_coulomb_gauge
 
     \chi_{1 \xbf} &\coloneqq \p_i A^i(\xbf) = 0 \\
     \chi_{2 \xbf} &\coloneqq \p_i \Pi^i(\xbf) + J^0(\xbf) = 0
+
+where we also remember that :math:`J^0` can be further expressed in terms of canonical variables as in :eq:`eq_qed_charge_density_in_canonical_q_and_p`.
+
+The :math:`C` matrix as defined by :eq:`eq_constraints_c_matrix` is given in this case by
+
+.. math::
+    C = \begin{bmatrix*}
+        0 & -\nabla^2 \delta^3(\xbf - \ybf) \\
+        \nabla^2 \delta^3(\xbf - \ybf) & 0
+    \end{bmatrix*}
+
+where, for example, the upper-right entry :math:`C_{1\xbf, 2\ybf}` may be calculated as follows
+
+.. math::
+
+    C_{1\xbf, 2\ybf} &= [\chi_{1\xbf}, \chi_{2\ybf}]_P \\
+        &= \int d^3 \zbf \left( \frac{\p (\p_i A^i(\xbf))}{\p A^k(\zbf)} \frac{\p (\p_j \Pi^j(\ybf) + J^0(\ybf))}{\p \Pi_k(\zbf)} - \xbf \leftrightarrow \ybf \right) \\
+        &= \int d^3 \zbf~\p_i \left( \frac{\p A^i(\xbf)}{\p A^k(\zbf)} \right) \p_j \left( \frac{\p \Pi^j(\ybf)}{\p \Pi_k(\zbf)} \right) \\
+        &= \int d^3 \zbf~\delta^i_k \delta^{jk} \p_i \delta^3(\xbf - \zbf) \p_j \delta^3(\ybf - \zbf) \\
+        &= -\nabla^2 \delta^3(\xbf - \ybf)
+
+Clearly :math:`C` is non-singular, and therefore the constraints :eq:`eq_qed_constraints_in_coulomb_gauge` are of second class. To apply Dirac's method, we need the inverse matrix :math:`C^{-1}` given by
+
+.. math::
+
+    C^{-1} = \begin{bmatrix*}
+        0 & -\frac{1}{4\pi |\xbf - \ybf|} \\
+        \frac{1}{4\pi |\xbf - \ybf|} & 0
+    \end{bmatrix*}
+
+Indeed, one easily verifies that :math:`C C^{-1} = 1` by, for example, the following calculation
+
+.. math::
+
+    \int d^3 \zbf~C_{1\xbf, 2\zbf} (C^{-1})_{2\zbf, 1\ybf}
+        = -\int d^3 \zbf~\frac{\nabla^2 \delta^3(\xbf - \zbf)}{4\pi |\zbf - \ybf|}
+        = \delta^3(\xbf - \ybf)
+
+where the last equality follows again from the solution to Poisson's equation.
+
+Now we apply Dirac's recipe :eq:`eq_canonical_bracket_as_dirac_bracket` and :eq:`eq_defn_dirac_bracket` to compute the commutators as follows
+
+.. math::
+
+    [A_i(\xbf), \Pi_j(\ybf)] &= \ifrak [A_i(\xbf), \Pi_j(\ybf)]_P - \ifrak \int d^3 \zbf \int d^3 \wbf [A_i(\xbf), \chi_{2\zbf}] (C^{-1})_{2\zbf, 1\wbf} [\chi_{1\wbf}, \Pi_j(\ybf)] \\
+        &= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \int d^3 \zbf \int d^3 \wbf \left( \p_i \delta^3(\xbf - \zbf) \frac{1}{4\pi |\zbf - \wbf|} \p_j \delta^3(\wbf - \ybf) \right) \\
+        &= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \frac{\p^2}{\p x_i \p x_j} \left( \frac{1}{4\pi |\xbf - \ybf|} \right) \\
+    [A_i(\xbf), A_j(\ybf)] &= [\Pi_i(\xbf), \Pi_j(\ybf)] = 0
+
+It's straightforward to check that they are indeed compatible with the constraints :eq:`eq_qed_constraints_in_coulomb_gauge`.
+
+.. dropdown:: A formula for :math:`\Pi^i(\xbf)`
+    :animate: fade-in-slide-down
+    :icon: unlock
+
+    It's a real concern that the Coulomb gauge :math:`\nabla \cdot \Abf = 0` may have spoiled the very definition :eq:`eq_qed_defn_conjugate_field_pi` of :math:`\Pi^i`. To settle this, let's go back to the root of Lagrangian formalism and redefine :math:`\Pi^i` using :eq:`eq_general_lagrangian_conjugate_pi` as follows
+
+    .. math:: \Pi^i \coloneqq \frac{\delta L}{\delta \dot{A}_i}
+
+    Now if this were well-defined, then for any infinitesimal variation :math:`\delta \dot{\Abf}`, there should exists a unique :math:`\bm{\Pscr}` such that
+
+    .. math:: \delta L = \int d^3 \xbf~\bm{\Pscr} \cdot \delta \dot{\Abf}
+        :label: eq_qed_lagrangian_variation_by_a_dot
+
+    But this is not true since a substitution :math:`\bm{\Pscr} \to \bm{\Pscr} + \nabla f` will also satisfy :eq:`eq_qed_lagrangian_variation_by_a_dot` for any (scalar) function :math:`f(\xbf)` due to the Coulomb gauge condition.
+
+    Baring this difficulty in mind, let's just evaluate the potentially ill-defined :math:`\Pi^i` anyway
+
+    .. math:: \Pi^i = \frac{\delta L}{\delta \dot{A}_i} = \frac{\delta \Lscr_{\gamma}}{\delta \dot{A}_i} = \dot{A}^i(\xbf) + \frac{\p A^0(\xbf)}{\p x_i}
+        :label: eq_qed_pi_in_terms_of_a
+
+    The miracle is that this :math:`\Pi^i` satisfies exactly the second constraint in :eq:`eq_qed_constraints_in_coulomb_gauge` (cf. :eq:`eq_qed_poisson_equation_j_and_a`), and hence no ambiguity like :math:`\nabla f` can appear. In other words :eq:`eq_qed_pi_in_terms_of_a` is the correct formula for :math:`\Pi^i`.
 
 
 .. rubric:: Footnotes
@@ -253,4 +325,4 @@ In the previous section, we imposed a Coulomb gauge condition :math:`\nabla \cdo
 
 .. [#lorenz] It's really unfortunate for L. Lorenz to work in the same field as H. Lorentz and be completely overshadowed. Apparently Weinberg thought this gauge condition was named after the more famous Nobel laureate.
 
-.. [#solve_poisson_equation] My favorite solution is given by Feynman in his `lecture on electric field <https://www.feynmanlectures.caltech.edu/II_06.html>`__.
+.. [#solve_poisson_equation] My favorite solution to Poisson's equation is given by Feynman in his `lecture on electric field <https://www.feynmanlectures.caltech.edu/II_06.html>`__.
