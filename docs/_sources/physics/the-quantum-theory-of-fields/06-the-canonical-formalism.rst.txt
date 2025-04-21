@@ -1376,6 +1376,7 @@ Second class constraints
 Assuming the first class constraints have been dealt with, the remaining constraints are called second class. On the space of second class constraints, we have a non-singular matrix :math:`C` whose entries are defined by
 
 .. math:: C_{NM} \coloneqq \left[ \chi_N, \chi_M \right]_P
+	:label: eq_constraints_c_matrix
 
 .. note::
 
@@ -1445,7 +1446,7 @@ Together with the trivial Poisson bracket relations
 .. math::
 
 	\left[ V^{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &= \delta^{\mu}_{\nu} \delta^3(\xbf - \ybf) \\
-	\left[ V^{\mu}(\xbf), V^{\nu}(\ybf) \right]_P = \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &= 0
+	\left[ V^{\mu}(\xbf), V^{\nu}(\ybf) \right]_P &= \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P = 0
 
 we can now calculate all the commutation relations as follows
 

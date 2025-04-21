@@ -1236,21 +1236,21 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <section id="second-class-constraints">
 <span id="sec-second-class-constraints"></span><h3><span class="section-number">6.5.2. </span>Second class constraints<a class="headerlink" href="#second-class-constraints" title="Link to this heading">#</a></h3>
 <p>Assuming the first class constraints have been dealt with, the remaining constraints are called second class. On the space of second class constraints, we have a non-singular matrix <span class="math notranslate nohighlight">\(C\)</span> whose entries are defined by</p>
-<div class="math notranslate nohighlight">
-\[C_{NM} \coloneqq \left[ \chi_N, \chi_M \right]_P\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-constraints-c-matrix">
+<span class="eqno">(6.5.4)<a class="headerlink" href="#equation-eq-constraints-c-matrix" title="Link to this equation">#</a></span>\[C_{NM} \coloneqq \left[ \chi_N, \chi_M \right]_P\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since an anti-symmetric matrix of odd dimension necessarily has vanishing determinant, the dimension of <span class="math notranslate nohighlight">\(C\)</span> must be even. Indeed, it’s often convenient to pair constraints in the form of <span class="math notranslate nohighlight">\(\chi_{1N}, \chi_{2N}\)</span> and so on.</p>
 </div>
 <p>Now define the Dirac bracket as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-defn-dirac-bracket">
-<span class="eqno">(6.5.4)<a class="headerlink" href="#equation-eq-defn-dirac-bracket" title="Link to this equation">#</a></span>\[[A, B]_D \coloneqq [A, B]_P - [A, \chi_N]_P (C^{-1})^{NM} [\chi_M, B]_P\]</div>
+<span class="eqno">(6.5.5)<a class="headerlink" href="#equation-eq-defn-dirac-bracket" title="Link to this equation">#</a></span>\[[A, B]_D \coloneqq [A, B]_P - [A, \chi_N]_P (C^{-1})^{NM} [\chi_M, B]_P\]</div>
 <p>One checks easily that the Dirac bracket satisfies the same (Lie) algebraic properties as the Poisson bracket. Moreover, it satisfies</p>
 <div class="math notranslate nohighlight">
 \[[\chi_N, B]_D = 0\]</div>
 <p>for any <span class="math notranslate nohighlight">\(B\)</span>. It is this last property that guarantees the compatibility between commutator relations and constraints if the former is calculated as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-canonical-bracket-as-dirac-bracket">
-<span class="eqno">(6.5.5)<a class="headerlink" href="#equation-eq-canonical-bracket-as-dirac-bracket" title="Link to this equation">#</a></span>\[[A, B] = \ifrak [A, B]_D\]</div>
+<span class="eqno">(6.5.6)<a class="headerlink" href="#equation-eq-canonical-bracket-as-dirac-bracket" title="Link to this equation">#</a></span>\[[A, B] = \ifrak [A, B]_D\]</div>
 </section>
 <section id="spin-1-vector-field-revisited">
 <h3><span class="section-number">6.5.3. </span>Spin-<span class="math notranslate nohighlight">\(1\)</span> vector field revisited<a class="headerlink" href="#spin-1-vector-field-revisited" title="Link to this heading">#</a></h3>
@@ -1278,13 +1278,13 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
         0 &amp; -m^{-2} \delta^3(\xbf - \ybf) \\
         m^{-2} \delta^3(\xbf - \ybf) &amp; 0
 \end{bmatrix*}\end{split}\]</div>
-<p>It follows from <a class="reference internal" href="#equation-eq-canonical-bracket-as-dirac-bracket">Eq.6.5.5</a> and <a class="reference internal" href="#equation-eq-defn-dirac-bracket">Eq.6.5.4</a> that</p>
+<p>It follows from <a class="reference internal" href="#equation-eq-canonical-bracket-as-dirac-bracket">Eq.6.5.6</a> and <a class="reference internal" href="#equation-eq-defn-dirac-bracket">Eq.6.5.5</a> that</p>
 <div class="math notranslate nohighlight">
 \[[A, B] = \ifrak [A, B]_P + \ifrak m^{-2} \int d^3 \xbf \left( [A, \Pi_0(\xbf)]_P [\nabla \cdot \bm{\Pi}(\xbf) - m^2 V^0(\xbf) + J^0(\xbf), B]_P - A \leftrightarrow B \right)\]</div>
 <p>Together with the trivial Poisson bracket relations</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left[ V^{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &amp;= \delta^{\mu}_{\nu} \delta^3(\xbf - \ybf) \\
-\left[ V^{\mu}(\xbf), V^{\nu}(\ybf) \right]_P = \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P &amp;= 0\end{split}\]</div>
+\left[ V^{\mu}(\xbf), V^{\nu}(\ybf) \right]_P &amp;= \left[ \Pi_{\mu}(\xbf), \Pi_{\nu}(\ybf) \right]_P = 0\end{split}\]</div>
 <p>we can now calculate all the commutation relations as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left[ V^i(\xbf), \Pi_j(\ybf) \right] &amp;= \ifrak \delta^i_j \delta^3(\xbf - \ybf) \\

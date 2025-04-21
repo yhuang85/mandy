@@ -178,7 +178,7 @@ Moreover we use the Euler-Lagrange equation to find the secondary constraint as 
 .. math:: \p_i \Pi^i = -\p_i \frac{\p \Lscr}{\p F_{i0}} = -\frac{\p \Lscr}{\p A_0} = -J^0
     :label: eq_qed_secondary_constraint
 
-where the middle equality is one of the Euler-Lagrange equations :eq:`eq_euler_lagrange` with the time-derivative term dropped out due to the primary constraint, the equality on the left is the definition :eq:`eq_qed_defn_conjugate_field_pi`, and the equality on the right is due to the coupling term :math:`J^{\mu} A_{\mu}` in :math:`\Lscr`.
+where the middle equality is one of the Euler-Lagrange equations :eq:`eq_euler_lagrange` with the time-derivative term dropped out due to the primary constraint, the equality on the left is the definition :eq:`eq_qed_defn_conjugate_field_pi`, and the equality on the right follows from :eq:`eq_qed_matter_lagrangian_variational_derivative_in_a_field`.
 
 Using :eq:`eq_qed_conserved_current_j` and letting :math:`Q \coloneqq \Psi` (not to be confused with the charge operator :eq:`eq_qed_defn_charge_operator` defined in the previous section) and :math:`P \coloneqq \delta \Lscr / \delta \dot{\Psi}` be the conjugate canonical variables, we can write the charge density :math:`J^0` as follows
 
@@ -317,6 +317,82 @@ It's straightforward to check that they are indeed compatible with the constrain
         :label: eq_qed_pi_in_terms_of_a
 
     The miracle is that this :math:`\Pi^i` satisfies exactly the second constraint in :eq:`eq_qed_constraints_in_coulomb_gauge` (cf. :eq:`eq_qed_poisson_equation_j_and_a`), and hence no ambiguity like :math:`\nabla f` can appear. In other words :eq:`eq_qed_pi_in_terms_of_a` is the correct formula for :math:`\Pi^i`.
+
+Next let's bring in the matter fields introduced in :eq:`eq_qed_charge_density_in_canonical_q_and_p`. Due to the appearance of :math:`J^0` in the constraints :eq:`eq_qed_constraints_in_coulomb_gauge`, one can check that while :math:`\Abf` commutes with the matter fields, :math:`\bm{\Pi}` doesn't. Indeed, if :math:`F` is any function of the matter fields :math:`Q_n` and :math:`P^n`, then we can calculate the Dirac bracket as follows
+
+.. math::
+
+    [F, \bm{\Pi}(\zbf)]_D &= -\int d^3 \xbf \int d^3 \ybf~[F, \chi_{2\xbf}]_P \frac{1}{4\pi |\xbf - \ybf|} [\chi_{1\ybf}, \bm{\Pi}(\zbf)]_P \\
+        &= -\int d^3 \xbf \int d^3 \ybf~[F, J^0(\xbf)]_P \frac{1}{4\pi |\xbf - \ybf|} \nabla \delta^3(\ybf - \zbf) \\
+        &= -\int d^3 \ybf [F, A^0(\ybf)]_P \nabla \delta^3(\ybf - \zbf) \\
+        &= [F, \nabla A^0(\zbf)]_P = [F, \nabla A^0(\zbf)]_D
+
+where we've used :eq:`eq_qed_poisson_equation_j_and_a` in the third equality.
+
+This calculation motivates the following definition a new field
+
+.. math:: \bm{\Pi}_{\bot} \coloneqq \bm{\Pi} - \nabla A^0 = \dot{\Abf}
+    :label: eq_qed_defn_pi_bot
+
+where the last equality follows from :eq:`eq_qed_pi_in_terms_of_a`, such that
+
+.. math:: [F, \bm{\Pi}_{\bot}] = 0
+
+for any function :math:`F` of matter fields. Moreover, one can verify that :math:`\bm{\Pi}_{\bot}` satisfies exactly the same commutation relations with :math:`\Abf` just as :math:`\bm{\Pi}` which we repeat as follows
+
+.. math::
+
+    [A_i(\xbf), (\Pi_{\bot})_j(\ybf)] &= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \frac{\p^2}{\p x_i \p x_j} \left( \frac{1}{4\pi |\xbf - \ybf|} \right) \\
+    [A_i(\xbf), A_j(\ybf)] &= [(\Pi_{\bot})_i(\xbf), (\Pi_{\bot})_j(\ybf)] = 0
+
+Finally, note that the second constraint in :eq:`eq_qed_constraints_in_coulomb_gauge` can now be written as follows
+
+.. math:: \nabla \cdot \bm{\Pi}_{\bot} = 0
+    :label: eq_qed_pi_bot_is_divergence_free
+
+With all the preparations above, let's first write down the Hamiltonian in a rather general form
+
+.. math:: H = \int d^3 x \left( (\Pi_{\bot})_i \dot{A}^i + P_n \dot{Q}^n - \Lscr \right)
+    :label: eq_qed_hamiltonian_general_form
+
+despite the existence of constraints. For the rest of this chapter, we'll be considering Lagrangian density of the following form
+
+.. math:: \Lscr = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} + J^{\mu} A_{\mu} + \Lscr_{\text{matter}}
+    :label: eq_qed_semi_concrete_lagrangian_with_matter
+
+where :math:`J^{\mu}` is the charge density as before, but :math:`\Lscr_{\text{matter}}` is different from :math:`\Lscr_M` considered in :eq:`eq_qed_matter_lagrangian_in_covariant_derivative` since it contains only the terms that don't interact with :math:`A`, i.e., only the :math:`Q` and :math:`P` fields.
+
+.. note::
+
+    Both :math:`J^{\mu}` and :math:`\Lscr_{\text{matter}}` will be further specified later for a theory specific to spin-:math:`1/2` fermions, e.g., electrons. In fact, according to [Wei95]_ (page 349), the QED for spinless particles would require a more complicated Lagrangian density than :eq:`eq_qed_semi_concrete_lagrangian_with_matter`.
+
+Plugging :eq:`eq_qed_semi_concrete_lagrangian_with_matter` into :eq:`eq_qed_hamiltonian_general_form`, and making use of :eq:`eq_qed_defn_pi_bot` and :eq:`eq_qed_pi_in_terms_of_a`, we can write the Hamiltonian, again with a separation between matter and light, as follows
+
+.. math::
+    :label: eq_qed_hamiltonian_vector_form_raw
+
+    H = \int d^3 x \left( \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \frac{1}{2} (\bm{\Pi}_{\bot} + \nabla A^0)^2 - \Jbf \cdot \Abf + J^0 A^0 \right) + H_M
+
+where
+
+.. math:: H_M \coloneqq \int d^3 x \left( P_n \dot{Q}^n - \Lscr_{\text{matter}} \right)
+
+Expanding out :math:`(\bm{\Pi}_{\bot} + \nabla A^0)^2` in :eq:`eq_qed_hamiltonian_vector_form_raw` and using integration-by-parts together with :eq:`eq_qed_pi_bot_is_divergence_free` and :eq:`eq_qed_poisson_equation_j_and_a`, we can further rewrite :eq:`eq_qed_hamiltonian_vector_form_raw` as follows
+
+.. math::
+    :label: eq_qed_hamiltonian_vector_form
+
+    H = \int d^3 x \left( \frac{1}{2} \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \Jbf \cdot \Abf + \frac{1}{2} J^0 A^0 \right) + H_M
+
+.. note::
+
+    The term :math:`\tfrac{1}{2} J^0 A^0` in :eq:`eq_qed_hamiltonian_vector_form` gives nothing but the Coulomb energy as the following calculation (cf. :eq:`eq_qed_explicit_solution_of_a0`) shows
+
+    .. math::
+
+        V_{\text{Coul}} \coloneqq \frac{1}{2} \int d^3 x~J^0 A^0 = \frac{1}{2} \int d^3 x \int d^3 y~\frac{J^0(\xbf) J^0(\ybf)}{4\pi |\xbf - \ybf|}
+
+    where we've suppressed the :math:`t`-dependence as usual in the Lagrangian formalism.
 
 
 .. rubric:: Footnotes
