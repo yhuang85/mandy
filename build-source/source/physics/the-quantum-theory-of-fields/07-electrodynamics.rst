@@ -341,6 +341,7 @@ where the last equality follows from :eq:`eq_qed_pi_in_terms_of_a`, such that
 for any function :math:`F` of matter fields. Moreover, one can verify that :math:`\bm{\Pi}_{\bot}` satisfies exactly the same commutation relations with :math:`\Abf` just as :math:`\bm{\Pi}` which we repeat as follows
 
 .. math::
+    :label: eq_qed_a_pi_bot_commutation_relations
 
     [A_i(\xbf), (\Pi_{\bot})_j(\ybf)] &= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \frac{\p^2}{\p x_i \p x_j} \left( \frac{1}{4\pi |\xbf - \ybf|} \right) \\
     [A_i(\xbf), A_j(\ybf)] &= [(\Pi_{\bot})_i(\xbf), (\Pi_{\bot})_j(\ybf)] = 0
@@ -364,35 +365,151 @@ where :math:`J^{\mu}` is the charge density as before, but :math:`\Lscr_{\text{m
 
 .. note::
 
-    Both :math:`J^{\mu}` and :math:`\Lscr_{\text{matter}}` will be further specified later for a theory specific to spin-:math:`1/2` fermions, e.g., electrons. In fact, according to [Wei95]_ (page 349), the QED for spinless particles would require a more complicated Lagrangian density than :eq:`eq_qed_semi_concrete_lagrangian_with_matter`.
+    Both :math:`J^{\mu}` and :math:`\Lscr_{\text{matter}}` will be further specified later for a theory specific to spin-:math:`1/2` fermions, e.g., electrons. In fact, according to [Wei95]_ (page 349), the QED for spinless particles would require a more complicated Lagrangian density than :eq:`eq_qed_semi_concrete_lagrangian_with_matter`, but it wasn't mentioned in the book which physical particle(s) such theory would describe.
 
 Plugging :eq:`eq_qed_semi_concrete_lagrangian_with_matter` into :eq:`eq_qed_hamiltonian_general_form`, and making use of :eq:`eq_qed_defn_pi_bot` and :eq:`eq_qed_pi_in_terms_of_a`, we can write the Hamiltonian, again with a separation between matter and light, as follows
 
 .. math::
     :label: eq_qed_hamiltonian_vector_form_raw
 
-    H = \int d^3 x \left( \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \frac{1}{2} (\bm{\Pi}_{\bot} + \nabla A^0)^2 - \Jbf \cdot \Abf + J^0 A^0 \right) + H_M
+    H = \int d^3 x \left( \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \frac{1}{2} (\bm{\Pi}_{\bot} + \nabla A^0)^2 - \Jbf \cdot \Abf + J^0 A^0 \right) + H_{\text{matter}}
 
 where
 
-.. math:: H_M \coloneqq \int d^3 x \left( P_n \dot{Q}^n - \Lscr_{\text{matter}} \right)
+.. math:: H_{\text{matter}} \coloneqq \int d^3 x \left( P_n \dot{Q}^n - \Lscr_{\text{matter}} \right)
 
 Expanding out :math:`(\bm{\Pi}_{\bot} + \nabla A^0)^2` in :eq:`eq_qed_hamiltonian_vector_form_raw` and using integration-by-parts together with :eq:`eq_qed_pi_bot_is_divergence_free` and :eq:`eq_qed_poisson_equation_j_and_a`, we can further rewrite :eq:`eq_qed_hamiltonian_vector_form_raw` as follows
 
 .. math::
     :label: eq_qed_hamiltonian_vector_form
 
-    H = \int d^3 x \left( \frac{1}{2} \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \Jbf \cdot \Abf + \frac{1}{2} J^0 A^0 \right) + H_M
+    H = \int d^3 x \left( \frac{1}{2} \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \Jbf \cdot \Abf + \frac{1}{2} J^0 A^0 \right) + H_{\text{matter}}
 
 .. note::
 
     The term :math:`\tfrac{1}{2} J^0 A^0` in :eq:`eq_qed_hamiltonian_vector_form` gives nothing but the Coulomb energy as the following calculation (cf. :eq:`eq_qed_explicit_solution_of_a0`) shows
 
     .. math::
+        :label: eq_qed_defn_coulomb_energy
 
         V_{\text{Coul}} \coloneqq \frac{1}{2} \int d^3 x~J^0 A^0 = \frac{1}{2} \int d^3 x \int d^3 y~\frac{J^0(\xbf) J^0(\ybf)}{4\pi |\xbf - \ybf|}
 
     where we've suppressed the :math:`t`-dependence as usual in the Lagrangian formalism.
+
+
+Electrodynamics in the Interaction Picture
+------------------------------------------
+
+As before, let's split the Hamiltonian :eq:`eq_qed_hamiltonian_vector_form` into the free part and the interaction part as follows
+
+.. math::
+
+    H &= H_0 + V \\
+    H_0 &= \int d^3 x \left( \frac{1}{2} \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 \right) + H_{\text{matter}, 0} \\
+    V &= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}
+
+where :math:`V_{\text{Coul}}` is defined by :eq:`eq_qed_defn_coulomb_energy` and :math:`H_{\text{matter}} = H_{\text{matter}, 0} + V_{\text{matter}}` is the splitting of the matter Hamiltonian into the free and interaction parts.
+
+Before passing to the interaction picture, let's make one more (potentially confusing) change of notation:
+
+.. warning::
+
+    For the rest of this chapter, we'll simply write :math:`\bm{\Pi}` in place of :math:`\bm{\Pi}_{\bot}`, which is *not* the original :math:`\bm{\Pi}` as in :eq:`eq_qed_defn_pi_bot`. Since :math:`\bm{\Pi}` and :math:`\bm{\Pi}_{\bot}` satisfy the same commutation relations with the other fields such as :math:`\Abf` and the matter fields, the only thing we need to keep in mind is that we should use the constraint :eq:`eq_qed_pi_bot_is_divergence_free` rather than the second equation in :eq:`eq_qed_constraints_in_coulomb_gauge`.
+
+Finally we can introduce the interaction-picture fields :math:`\abf, \bm{\pi}, q, p` corresponding to the Heisenberg-picture fields :math:`\Abf, \bm{\Pi}, Q, P`, respectively. We'll focus in this section on the :math:`\abf` and :math:`\bm{\pi}` fields. In fact, the letters :math:`q, p` will soon be occupied by something completely different, namely, the momentum-space coordinates. It turns out in the theory for spin-:math:`1/2` particles, which will be completely specified in the next section, the matters fields will be named by another letter, so we'll not run into conflicts of notations.
+
+The interaction-picture free Hamiltonian :math:`H_0` takes the following form
+
+.. math:: H_0 = \int d^3 x \left( \frac{1}{2} \bm{\pi}^2 + \frac{1}{2} (\nabla \times \abf)^2 \right) + H_{\text{matter}, 0}(t)
+    :label: eq_qed_interaction_picture_free_hamiltonian
+
+The commutation relations between :math:`\abf` and :math:`\bm{\pi}` follow directly from :eq:`eq_qed_a_pi_bot_commutation_relations` and the definition of interaction-picture fields :eq:`eq_defn_interaction_perturbation_term`
+
+.. math::
+    :label: eq_qed_interaction_picture_a_pi_commutation_relations
+
+    [a_i(t, \xbf), \pi_j(t, \ybf)] &= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \frac{\p^2}{\p x_i \p x_j} \frac{1}{4\pi |\xbf - \ybf|} \\
+    [a_i(t, \xbf), a_j(t, \ybf)] &= [\pi_i(t, \xbf), \pi_j(t, \ybf)] = 0
+
+Moreover, they satisfy the following constraints
+
+.. math::
+    :label: eq_qed_a_and_pi_divergence_free
+
+    \nabla \cdot \abf &= 0 \\
+    \nabla \cdot \bm{\pi} &= 0
+
+due to the Coulomb gauge condition and :eq:`eq_qed_pi_bot_is_divergence_free`, respectively.
+
+
+To derive the field equations, we resort to Hamilton's equations :eq:`eq_free_field_hamilton_equation_q_and_p_dot` as follows
+
+.. math::
+
+    \dot{a}_i(t,\xbf) &= \ifrak [H_0, a_i(t, \xbf)] \\
+        &= \ifrak \int d^3 y~\left[ \pi_j(t, \ybf), a_i(t, \xbf) \right] \pi^j(t, \ybf) \\
+        &= \int d^3 y \left( \delta_{ij} \delta^3(\xbf - \ybf) + \frac{\p^2}{\p x_i \p x_j} \frac{1}{4\pi |\xbf - \ybf|} \right) \pi^j(t, \ybf) \\
+        &= \pi_i(t, \xbf) - \int d^3 x \left( \frac{\p^2}{\p x_i \p y_j} \frac{1}{4\pi |\xbf - \ybf|} \right) \pi^j(t, \ybf) \\
+        &= \pi_i(t, \xbf) \\\\
+    \dot{\pi}_i(t, \xbf) &= \ifrak [H_0, \pi_i(t, \xbf)] \\
+        &= \ifrak \int d^3 y~[a_j(t, \ybf), \pi_i(t, \xbf)] (\nabla \times \nabla \times \abf(t, \ybf))^j \\
+        &= -\int d^3 y \left( \delta_{ij} \delta^3(\xbf - \ybf) + \frac{\p^2}{\p x_i \p x_j} \frac{1}{4\pi |\xbf - \ybf|} \right)
+            \left( \nabla (\nabla \cdot \abf(t, \ybf)) - \nabla^2 \abf(t, \ybf) \right)^j \\
+        &= \nabla^2 a_i(t, \xbf)
+
+These two equations combined together give the familiar wave equation
+
+.. math:: \square \abf = 0
+    :label: eq_qed_a_3_vector_satisfies_wave_equation
+
+To upgrade :math:`\abf` to a :math:`4`-vector field, we must set
+
+.. math:: a_0 = 0
+    :label: eq_qed_a0_vanishes
+
+due to the assumption that :math:`a_0` shouldn't depend on the charge density, and it must vanish when charge density vanishes according to :eq:`eq_qed_explicit_solution_of_a0`.
+
+The general solutions to :eq:`eq_qed_a_3_vector_satisfies_wave_equation` and :eq:`eq_qed_a0_vanishes`, under the constraint :eq:`eq_qed_a_and_pi_divergence_free`, can be written as follows
+
+.. math::
+
+    a_{\mu}(x) = (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \left(
+        e^{\ifrak p \cdot x} e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} e_{\mu}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma)
+    \right)
+
+where :math:`p_0 = |\pbf|` and :math:`e_{\mu}(\pbf, \pm 1)` are two independent "polarization vectors" satisfying the following familiar conditions (cf. :eq:`eq_massless_vector_field_spinor_e_and_p_condition`)
+
+.. math::
+
+    e_0(\pbf, \pm 1) &= 0 \\
+    \pbf \cdot \ebf(\pbf, \pm 1) &= 0
+
+It follows that :math:`\ebf(\pbf, \sigma)` can be normalized as follows
+
+.. math:: \sum_{\sigma = \pm 1} e_i(\pbf, \sigma) e_j^{\ast}(\pbf, \sigma) = \delta_{ij} - \frac{p_i p_j}{|\pbf|^2}
+
+Without working out the calculations, we claim, following [Wei95]_ page 352 -- 253, that the commutation relations :eq:`eq_qed_interaction_picture_a_pi_commutation_relations` are satisfied if the operators :math:`a(\pbf, \sigma)` and :math:`a^{\dagger}(\pbf, \sigma)` satisfy
+
+.. math::
+
+    \left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] &= \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'} \\
+    \left[ a(\pbf, \sigma), a(\pbf', \sigma') \right] &= \left[ a^{\dagger}(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] = 0
+
+Moreover, the free-photon Hamiltonian, i.e., :eq:`eq_qed_interaction_picture_free_hamiltonian` without the matter term, can be written as follows
+
+.. math::
+
+    H_{\gamma, 0} &= \frac{1}{2} \int d^3 x \left( \bm{\pi}^2 + (\nabla \times \abf)^2 \right) \\
+        &= \frac{1}{2} \int d^3 p~p_0 \sum_{\sigma = \pm 1} \left[ a(\pbf, \sigma), a^{\dagger}(\pbf, \sigma) \right]_+ \\
+        &= \int d^3 p~p_0 \sum_{\sigma = \pm 1} \left( a^{\dagger}(\pbf, \sigma) a(\pbf, \sigma) + \frac{1}{2} \delta^3(0) \right)
+
+where the last expression contains one of the infinities in QED.
+
+
+The Photo Propagator
+--------------------
+
+As explained in :ref:`sec_the_feynman_rules`, to calculate the S-matrix using Feynman diagrams, one must calculate the propagators defined in :eq:`eq_feynman_rule_propagator`
 
 
 .. rubric:: Footnotes

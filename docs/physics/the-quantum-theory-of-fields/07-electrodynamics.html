@@ -616,39 +616,111 @@
 <div class="math notranslate nohighlight">
 \[[F, \bm{\Pi}_{\bot}] = 0\]</div>
 <p>for any function <span class="math notranslate nohighlight">\(F\)</span> of matter fields. Moreover, one can verify that <span class="math notranslate nohighlight">\(\bm{\Pi}_{\bot}\)</span> satisfies exactly the same commutation relations with <span class="math notranslate nohighlight">\(\Abf\)</span> just as <span class="math notranslate nohighlight">\(\bm{\Pi}\)</span> which we repeat as follows</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}[A_i(\xbf), (\Pi_{\bot})_j(\ybf)] &amp;= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \frac{\p^2}{\p x_i \p x_j} \left( \frac{1}{4\pi |\xbf - \ybf|} \right) \\
+<div class="math notranslate nohighlight" id="equation-eq-qed-a-pi-bot-commutation-relations">
+<span class="eqno">(7.3.5)<a class="headerlink" href="#equation-eq-qed-a-pi-bot-commutation-relations" title="Link to this equation">#</a></span>\[\begin{split}[A_i(\xbf), (\Pi_{\bot})_j(\ybf)] &amp;= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \frac{\p^2}{\p x_i \p x_j} \left( \frac{1}{4\pi |\xbf - \ybf|} \right) \\
 [A_i(\xbf), A_j(\ybf)] &amp;= [(\Pi_{\bot})_i(\xbf), (\Pi_{\bot})_j(\ybf)] = 0\end{split}\]</div>
 <p>Finally, note that the second constraint in <a class="reference internal" href="#equation-eq-qed-constraints-in-coulomb-gauge">Eq.7.3.1</a> can now be written as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-pi-bot-is-divergence-free">
-<span class="eqno">(7.3.5)<a class="headerlink" href="#equation-eq-qed-pi-bot-is-divergence-free" title="Link to this equation">#</a></span>\[\nabla \cdot \bm{\Pi}_{\bot} = 0\]</div>
+<span class="eqno">(7.3.6)<a class="headerlink" href="#equation-eq-qed-pi-bot-is-divergence-free" title="Link to this equation">#</a></span>\[\nabla \cdot \bm{\Pi}_{\bot} = 0\]</div>
 <p>With all the preparations above, let’s first write down the Hamiltonian in a rather general form</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-hamiltonian-general-form">
-<span class="eqno">(7.3.6)<a class="headerlink" href="#equation-eq-qed-hamiltonian-general-form" title="Link to this equation">#</a></span>\[H = \int d^3 x \left( (\Pi_{\bot})_i \dot{A}^i + P_n \dot{Q}^n - \Lscr \right)\]</div>
+<span class="eqno">(7.3.7)<a class="headerlink" href="#equation-eq-qed-hamiltonian-general-form" title="Link to this equation">#</a></span>\[H = \int d^3 x \left( (\Pi_{\bot})_i \dot{A}^i + P_n \dot{Q}^n - \Lscr \right)\]</div>
 <p>despite the existence of constraints. For the rest of this chapter, we’ll be considering Lagrangian density of the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-semi-concrete-lagrangian-with-matter">
-<span class="eqno">(7.3.7)<a class="headerlink" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter" title="Link to this equation">#</a></span>\[\Lscr = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} + J^{\mu} A_{\mu} + \Lscr_{\text{matter}}\]</div>
+<span class="eqno">(7.3.8)<a class="headerlink" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter" title="Link to this equation">#</a></span>\[\Lscr = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} + J^{\mu} A_{\mu} + \Lscr_{\text{matter}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(J^{\mu}\)</span> is the charge density as before, but <span class="math notranslate nohighlight">\(\Lscr_{\text{matter}}\)</span> is different from <span class="math notranslate nohighlight">\(\Lscr_M\)</span> considered in <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative">Eq.7.1.10</a> since it contains only the terms that don’t interact with <span class="math notranslate nohighlight">\(A\)</span>, i.e., only the <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(P\)</span> fields.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Both <span class="math notranslate nohighlight">\(J^{\mu}\)</span> and <span class="math notranslate nohighlight">\(\Lscr_{\text{matter}}\)</span> will be further specified later for a theory specific to spin-<span class="math notranslate nohighlight">\(1/2\)</span> fermions, e.g., electrons. In fact, according to <a class="reference internal" href="../../bib.html#wei95" id="id5"><span>[Wei95]</span></a> (page 349), the QED for spinless particles would require a more complicated Lagrangian density than <a class="reference internal" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter">Eq.7.3.7</a>.</p>
+<p>Both <span class="math notranslate nohighlight">\(J^{\mu}\)</span> and <span class="math notranslate nohighlight">\(\Lscr_{\text{matter}}\)</span> will be further specified later for a theory specific to spin-<span class="math notranslate nohighlight">\(1/2\)</span> fermions, e.g., electrons. In fact, according to <a class="reference internal" href="../../bib.html#wei95" id="id5"><span>[Wei95]</span></a> (page 349), the QED for spinless particles would require a more complicated Lagrangian density than <a class="reference internal" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter">Eq.7.3.8</a>, but it wasn’t mentioned in the book which physical particle(s) such theory would describe.</p>
 </div>
-<p>Plugging <a class="reference internal" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter">Eq.7.3.7</a> into <a class="reference internal" href="#equation-eq-qed-hamiltonian-general-form">Eq.7.3.6</a>, and making use of <a class="reference internal" href="#equation-eq-qed-defn-pi-bot">Eq.7.3.4</a> and <a class="reference internal" href="#equation-eq-qed-pi-in-terms-of-a">Eq.7.3.3</a>, we can write the Hamiltonian, again with a separation between matter and light, as follows</p>
+<p>Plugging <a class="reference internal" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter">Eq.7.3.8</a> into <a class="reference internal" href="#equation-eq-qed-hamiltonian-general-form">Eq.7.3.7</a>, and making use of <a class="reference internal" href="#equation-eq-qed-defn-pi-bot">Eq.7.3.4</a> and <a class="reference internal" href="#equation-eq-qed-pi-in-terms-of-a">Eq.7.3.3</a>, we can write the Hamiltonian, again with a separation between matter and light, as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-hamiltonian-vector-form-raw">
-<span class="eqno">(7.3.8)<a class="headerlink" href="#equation-eq-qed-hamiltonian-vector-form-raw" title="Link to this equation">#</a></span>\[H = \int d^3 x \left( \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \frac{1}{2} (\bm{\Pi}_{\bot} + \nabla A^0)^2 - \Jbf \cdot \Abf + J^0 A^0 \right) + H_M\]</div>
+<span class="eqno">(7.3.9)<a class="headerlink" href="#equation-eq-qed-hamiltonian-vector-form-raw" title="Link to this equation">#</a></span>\[H = \int d^3 x \left( \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \frac{1}{2} (\bm{\Pi}_{\bot} + \nabla A^0)^2 - \Jbf \cdot \Abf + J^0 A^0 \right) + H_{\text{matter}}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
-\[H_M \coloneqq \int d^3 x \left( P_n \dot{Q}^n - \Lscr_{\text{matter}} \right)\]</div>
-<p>Expanding out <span class="math notranslate nohighlight">\((\bm{\Pi}_{\bot} + \nabla A^0)^2\)</span> in <a class="reference internal" href="#equation-eq-qed-hamiltonian-vector-form-raw">Eq.7.3.8</a> and using integration-by-parts together with <a class="reference internal" href="#equation-eq-qed-pi-bot-is-divergence-free">Eq.7.3.5</a> and <a class="reference internal" href="#equation-eq-qed-poisson-equation-j-and-a">Eq.7.2.6</a>, we can further rewrite <a class="reference internal" href="#equation-eq-qed-hamiltonian-vector-form-raw">Eq.7.3.8</a> as follows</p>
+\[H_{\text{matter}} \coloneqq \int d^3 x \left( P_n \dot{Q}^n - \Lscr_{\text{matter}} \right)\]</div>
+<p>Expanding out <span class="math notranslate nohighlight">\((\bm{\Pi}_{\bot} + \nabla A^0)^2\)</span> in <a class="reference internal" href="#equation-eq-qed-hamiltonian-vector-form-raw">Eq.7.3.9</a> and using integration-by-parts together with <a class="reference internal" href="#equation-eq-qed-pi-bot-is-divergence-free">Eq.7.3.6</a> and <a class="reference internal" href="#equation-eq-qed-poisson-equation-j-and-a">Eq.7.2.6</a>, we can further rewrite <a class="reference internal" href="#equation-eq-qed-hamiltonian-vector-form-raw">Eq.7.3.9</a> as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-hamiltonian-vector-form">
-<span class="eqno">(7.3.9)<a class="headerlink" href="#equation-eq-qed-hamiltonian-vector-form" title="Link to this equation">#</a></span>\[H = \int d^3 x \left( \frac{1}{2} \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \Jbf \cdot \Abf + \frac{1}{2} J^0 A^0 \right) + H_M\]</div>
+<span class="eqno">(7.3.10)<a class="headerlink" href="#equation-eq-qed-hamiltonian-vector-form" title="Link to this equation">#</a></span>\[H = \int d^3 x \left( \frac{1}{2} \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 - \Jbf \cdot \Abf + \frac{1}{2} J^0 A^0 \right) + H_{\text{matter}}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The term <span class="math notranslate nohighlight">\(\tfrac{1}{2} J^0 A^0\)</span> in <a class="reference internal" href="#equation-eq-qed-hamiltonian-vector-form">Eq.7.3.9</a> gives nothing but the Coulomb energy as the following calculation (cf. <a class="reference internal" href="#equation-eq-qed-explicit-solution-of-a0">Eq.7.2.7</a>) shows</p>
-<div class="math notranslate nohighlight">
-\[V_{\text{Coul}} \coloneqq \frac{1}{2} \int d^3 x~J^0 A^0 = \frac{1}{2} \int d^3 x \int d^3 y~\frac{J^0(\xbf) J^0(\ybf)}{4\pi |\xbf - \ybf|}\]</div>
+<p>The term <span class="math notranslate nohighlight">\(\tfrac{1}{2} J^0 A^0\)</span> in <a class="reference internal" href="#equation-eq-qed-hamiltonian-vector-form">Eq.7.3.10</a> gives nothing but the Coulomb energy as the following calculation (cf. <a class="reference internal" href="#equation-eq-qed-explicit-solution-of-a0">Eq.7.2.7</a>) shows</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-defn-coulomb-energy">
+<span class="eqno">(7.3.11)<a class="headerlink" href="#equation-eq-qed-defn-coulomb-energy" title="Link to this equation">#</a></span>\[V_{\text{Coul}} \coloneqq \frac{1}{2} \int d^3 x~J^0 A^0 = \frac{1}{2} \int d^3 x \int d^3 y~\frac{J^0(\xbf) J^0(\ybf)}{4\pi |\xbf - \ybf|}\]</div>
 <p>where we’ve suppressed the <span class="math notranslate nohighlight">\(t\)</span>-dependence as usual in the Lagrangian formalism.</p>
 </div>
+</section>
+<section id="electrodynamics-in-the-interaction-picture">
+<h2><span class="section-number">7.4. </span>Electrodynamics in the Interaction Picture<a class="headerlink" href="#electrodynamics-in-the-interaction-picture" title="Link to this heading">#</a></h2>
+<p>As before, let’s split the Hamiltonian <a class="reference internal" href="#equation-eq-qed-hamiltonian-vector-form">Eq.7.3.10</a> into the free part and the interaction part as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H &amp;= H_0 + V \\
+H_0 &amp;= \int d^3 x \left( \frac{1}{2} \bm{\Pi}_{\bot}^2 + \frac{1}{2} (\nabla \times \Abf)^2 \right) + H_{\text{matter}, 0} \\
+V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_{\text{Coul}}\)</span> is defined by <a class="reference internal" href="#equation-eq-qed-defn-coulomb-energy">Eq.7.3.11</a> and <span class="math notranslate nohighlight">\(H_{\text{matter}} = H_{\text{matter}, 0} + V_{\text{matter}}\)</span> is the splitting of the matter Hamiltonian into the free and interaction parts.</p>
+<p>Before passing to the interaction picture, let’s make one more (potentially confusing) change of notation:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the rest of this chapter, we’ll simply write <span class="math notranslate nohighlight">\(\bm{\Pi}\)</span> in place of <span class="math notranslate nohighlight">\(\bm{\Pi}_{\bot}\)</span>, which is <em>not</em> the original <span class="math notranslate nohighlight">\(\bm{\Pi}\)</span> as in <a class="reference internal" href="#equation-eq-qed-defn-pi-bot">Eq.7.3.4</a>. Since <span class="math notranslate nohighlight">\(\bm{\Pi}\)</span> and <span class="math notranslate nohighlight">\(\bm{\Pi}_{\bot}\)</span> satisfy the same commutation relations with the other fields such as <span class="math notranslate nohighlight">\(\Abf\)</span> and the matter fields, the only thing we need to keep in mind is that we should use the constraint <a class="reference internal" href="#equation-eq-qed-pi-bot-is-divergence-free">Eq.7.3.6</a> rather than the second equation in <a class="reference internal" href="#equation-eq-qed-constraints-in-coulomb-gauge">Eq.7.3.1</a>.</p>
+</div>
+<p>Finally we can introduce the interaction-picture fields <span class="math notranslate nohighlight">\(\abf, \bm{\pi}, q, p\)</span> corresponding to the Heisenberg-picture fields <span class="math notranslate nohighlight">\(\Abf, \bm{\Pi}, Q, P\)</span>, respectively. We’ll focus in this section on the <span class="math notranslate nohighlight">\(\abf\)</span> and <span class="math notranslate nohighlight">\(\bm{\pi}\)</span> fields. In fact, the letters <span class="math notranslate nohighlight">\(q, p\)</span> will soon be occupied by something completely different, namely, the momentum-space coordinates. It turns out in the theory for spin-<span class="math notranslate nohighlight">\(1/2\)</span> particles, which will be completely specified in the next section, the matters fields will be named by another letter, so we’ll not run into conflicts of notations.</p>
+<p>The interaction-picture free Hamiltonian <span class="math notranslate nohighlight">\(H_0\)</span> takes the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-interaction-picture-free-hamiltonian">
+<span class="eqno">(7.4.1)<a class="headerlink" href="#equation-eq-qed-interaction-picture-free-hamiltonian" title="Link to this equation">#</a></span>\[H_0 = \int d^3 x \left( \frac{1}{2} \bm{\pi}^2 + \frac{1}{2} (\nabla \times \abf)^2 \right) + H_{\text{matter}, 0}(t)\]</div>
+<p>The commutation relations between <span class="math notranslate nohighlight">\(\abf\)</span> and <span class="math notranslate nohighlight">\(\bm{\pi}\)</span> follow directly from <a class="reference internal" href="#equation-eq-qed-a-pi-bot-commutation-relations">Eq.7.3.5</a> and the definition of interaction-picture fields <a class="reference internal" href="02-scattering-theory.html#equation-eq-defn-interaction-perturbation-term">Eq.2.5.7</a></p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-interaction-picture-a-pi-commutation-relations">
+<span class="eqno">(7.4.2)<a class="headerlink" href="#equation-eq-qed-interaction-picture-a-pi-commutation-relations" title="Link to this equation">#</a></span>\[\begin{split}[a_i(t, \xbf), \pi_j(t, \ybf)] &amp;= \ifrak \delta_{ij} \delta^3(\xbf - \ybf) + \ifrak \frac{\p^2}{\p x_i \p x_j} \frac{1}{4\pi |\xbf - \ybf|} \\
+[a_i(t, \xbf), a_j(t, \ybf)] &amp;= [\pi_i(t, \xbf), \pi_j(t, \ybf)] = 0\end{split}\]</div>
+<p>Moreover, they satisfy the following constraints</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-a-and-pi-divergence-free">
+<span class="eqno">(7.4.3)<a class="headerlink" href="#equation-eq-qed-a-and-pi-divergence-free" title="Link to this equation">#</a></span>\[\begin{split}\nabla \cdot \abf &amp;= 0 \\
+\nabla \cdot \bm{\pi} &amp;= 0\end{split}\]</div>
+<p>due to the Coulomb gauge condition and <a class="reference internal" href="#equation-eq-qed-pi-bot-is-divergence-free">Eq.7.3.6</a>, respectively.</p>
+<p>To derive the field equations, we resort to Hamilton’s equations <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-free-field-hamilton-equation-q-and-p-dot">Eq.6.1.7</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\dot{a}_i(t,\xbf) &amp;= \ifrak [H_0, a_i(t, \xbf)] \\
+    &amp;= \ifrak \int d^3 y~\left[ \pi_j(t, \ybf), a_i(t, \xbf) \right] \pi^j(t, \ybf) \\
+    &amp;= \int d^3 y \left( \delta_{ij} \delta^3(\xbf - \ybf) + \frac{\p^2}{\p x_i \p x_j} \frac{1}{4\pi |\xbf - \ybf|} \right) \pi^j(t, \ybf) \\
+    &amp;= \pi_i(t, \xbf) - \int d^3 x \left( \frac{\p^2}{\p x_i \p y_j} \frac{1}{4\pi |\xbf - \ybf|} \right) \pi^j(t, \ybf) \\
+    &amp;= \pi_i(t, \xbf) \\\\
+\dot{\pi}_i(t, \xbf) &amp;= \ifrak [H_0, \pi_i(t, \xbf)] \\
+    &amp;= \ifrak \int d^3 y~[a_j(t, \ybf), \pi_i(t, \xbf)] (\nabla \times \nabla \times \abf(t, \ybf))^j \\
+    &amp;= -\int d^3 y \left( \delta_{ij} \delta^3(\xbf - \ybf) + \frac{\p^2}{\p x_i \p x_j} \frac{1}{4\pi |\xbf - \ybf|} \right)
+        \left( \nabla (\nabla \cdot \abf(t, \ybf)) - \nabla^2 \abf(t, \ybf) \right)^j \\
+    &amp;= \nabla^2 a_i(t, \xbf)\end{split}\]</div>
+<p>These two equations combined together give the familiar wave equation</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-a-3-vector-satisfies-wave-equation">
+<span class="eqno">(7.4.4)<a class="headerlink" href="#equation-eq-qed-a-3-vector-satisfies-wave-equation" title="Link to this equation">#</a></span>\[\square \abf = 0\]</div>
+<p>To upgrade <span class="math notranslate nohighlight">\(\abf\)</span> to a <span class="math notranslate nohighlight">\(4\)</span>-vector field, we must set</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-a0-vanishes">
+<span class="eqno">(7.4.5)<a class="headerlink" href="#equation-eq-qed-a0-vanishes" title="Link to this equation">#</a></span>\[a_0 = 0\]</div>
+<p>due to the assumption that <span class="math notranslate nohighlight">\(a_0\)</span> shouldn’t depend on the charge density, and it must vanish when charge density vanishes according to <a class="reference internal" href="#equation-eq-qed-explicit-solution-of-a0">Eq.7.2.7</a>.</p>
+<p>The general solutions to <a class="reference internal" href="#equation-eq-qed-a-3-vector-satisfies-wave-equation">Eq.7.4.4</a> and <a class="reference internal" href="#equation-eq-qed-a0-vanishes">Eq.7.4.5</a>, under the constraint <a class="reference internal" href="#equation-eq-qed-a-and-pi-divergence-free">Eq.7.4.3</a>, can be written as follows</p>
+<div class="math notranslate nohighlight">
+\[a_{\mu}(x) = (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \left(
+    e^{\ifrak p \cdot x} e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} e_{\mu}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma)
+\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_0 = |\pbf|\)</span> and <span class="math notranslate nohighlight">\(e_{\mu}(\pbf, \pm 1)\)</span> are two independent “polarization vectors” satisfying the following familiar conditions (cf. <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-spinor-e-and-p-condition">Eq.4.7.14</a>)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}e_0(\pbf, \pm 1) &amp;= 0 \\
+\pbf \cdot \ebf(\pbf, \pm 1) &amp;= 0\end{split}\]</div>
+<p>It follows that <span class="math notranslate nohighlight">\(\ebf(\pbf, \sigma)\)</span> can be normalized as follows</p>
+<div class="math notranslate nohighlight">
+\[\sum_{\sigma = \pm 1} e_i(\pbf, \sigma) e_j^{\ast}(\pbf, \sigma) = \delta_{ij} - \frac{p_i p_j}{|\pbf|^2}\]</div>
+<p>Without working out the calculations, we claim, following <a class="reference internal" href="../../bib.html#wei95" id="id6"><span>[Wei95]</span></a> page 352 – 253, that the commutation relations <a class="reference internal" href="#equation-eq-qed-interaction-picture-a-pi-commutation-relations">Eq.7.4.2</a> are satisfied if the operators <span class="math notranslate nohighlight">\(a(\pbf, \sigma)\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}(\pbf, \sigma)\)</span> satisfy</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] &amp;= \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'} \\
+\left[ a(\pbf, \sigma), a(\pbf', \sigma') \right] &amp;= \left[ a^{\dagger}(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] = 0\end{split}\]</div>
+<p>Moreover, the free-photon Hamiltonian, i.e., <a class="reference internal" href="#equation-eq-qed-interaction-picture-free-hamiltonian">Eq.7.4.1</a> without the matter term, can be written as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}H_{\gamma, 0} &amp;= \frac{1}{2} \int d^3 x \left( \bm{\pi}^2 + (\nabla \times \abf)^2 \right) \\
+    &amp;= \frac{1}{2} \int d^3 p~p_0 \sum_{\sigma = \pm 1} \left[ a(\pbf, \sigma), a^{\dagger}(\pbf, \sigma) \right]_+ \\
+    &amp;= \int d^3 p~p_0 \sum_{\sigma = \pm 1} \left( a^{\dagger}(\pbf, \sigma) a(\pbf, \sigma) + \frac{1}{2} \delta^3(0) \right)\end{split}\]</div>
+<p>where the last expression contains one of the infinities in QED.</p>
+</section>
+<section id="the-photo-propagator">
+<h2><span class="section-number">7.5. </span>The Photo Propagator<a class="headerlink" href="#the-photo-propagator" title="Link to this heading">#</a></h2>
+<p>As explained in <a class="reference internal" href="05-the-feynman-rules.html#sec-the-feynman-rules"><span class="std std-ref">The Feynman Rules</span></a>, to calculate the S-matrix using Feynman diagrams, one must calculate the propagators defined in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-feynman-rule-propagator">Eq.5.1.9</a></p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="brst-quantization" role="doc-footnote">
@@ -693,6 +765,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gauge-invariance-and-action">7.1. Gauge Invariance and Action</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-and-gauge-conditions">7.2. Constraints and Gauge Conditions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-in-coulomb-gauge">7.3. Quantization in Coulomb Gauge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrodynamics-in-the-interaction-picture">7.4. Electrodynamics in the Interaction Picture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photo-propagator">7.5. The Photo Propagator</a></li>
 </ul>
   </nav></div>
 
