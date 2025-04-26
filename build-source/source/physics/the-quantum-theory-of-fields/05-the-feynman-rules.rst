@@ -100,7 +100,7 @@ Now the idea of the Feynman rules to calculate the S-matrix is same as what has 
 			&\coloneqq \theta(x_0 - y_0) \left[ \psi^+_{\ell}(x), \psi^{+ \dagger}_m(y) \right]_{\pm} \mp \theta(y_0 - x_0) \left[ \psi^{- \dagger}_m(y), \psi^-_{\ell}(x) \right]_{\pm} \\
 			&\eqqcolon -\ifrak \Delta_{\ell m}(x, y)
 
-   where :math:`\theta(\tau)` is the step function which equals :math:`1` for :math:`\tau > 0` and vanishes for :math:`\tau < 0`. Here we remind ourselves once again that the Feynman rule is all about moving annihilation operators, e.g. :math:`\psi^+_{\ell}(x)` and :math:`\psi^{- \dagger}_m(y)`, to the right of creation operators, e.g. :math:`\psi^-_{\ell}(x)` and :math:`\psi^{- \dagger}_m(y)`. The sign :math:`\mp` in the middle is due to the fact that when the top sign should to be used, the particles are fermions, and hence the interchange of the fields due to time ordering requires an extra minus sign.
+   where :math:`\theta(\tau)` is the step function which equals :math:`1` for :math:`\tau > 0` and vanishes for :math:`\tau < 0`. Here we remind ourselves once again that the Feynman rule is all about moving annihilation operators, e.g. :math:`\psi^+_{\ell}(x)` and :math:`\psi^{- \dagger}_m(y)`, to the right of creation operators, e.g. :math:`\psi^-_{\ell}(x)` and :math:`\psi^{+ \dagger}_m(y)`. The sign :math:`\mp` in the middle is due to the fact that when the top sign should to be used, the particles are fermions, and hence the interchange of the fields due to time ordering requires an extra minus sign.
 
    This quantity is known as a *propagator*, which will be evaluated in the next section.
 
@@ -401,6 +401,7 @@ where :math:`\Delta_+(x)` is defined by :eq:`eq_defn_Delta_plus`, and :math:`P_{
 Now we must remember that although :math:`P_{\ell m}(p)` for scalar, vector, and Dirac fields, look like a polynomial defined generally on the momentum space, they're really only defined on the mass shell, as shown in :eq:`eq_general_field_spin_sum_as_polynomial` for general fields. We'll first try the poor man's extension of :math:`P_{\ell m}(p)` to a genuine momentum space polynomial by the following definition
 
 .. math:: P_{\ell m}^{(L)}(p) \coloneqq P_{\ell m}^{(0)}(\pbf) + p_0 P_{\ell m}^{(1)}(\pbf)
+	:label: eq_spinor_sum_momentum_space_linear_extension
 
 where :math:`P_{\ell m}^{(0)}, P_{\ell m}^{(1)}` correspond to :math:`P_{ab, a'b'}, 2Q_{ab, a'b'}` in :eq:`eq_general_field_spin_sum_as_polynomial`, respectively. Clearly :math:`P^{(L)}(p) = P(p)` when :math:`p` is on the mass shell, or equivalently :math:`p_0 = \sqrt{\pbf^2 + M^2}`. Here the supscript :math:`L` stands for linear, since :math:`P^{(L)}(p)` is linear in :math:`p_0`. This linearity, as we'll now demonstrate, turns out to be the key feature of this rather naive extension.
 
@@ -413,8 +414,8 @@ we can rewrite :eq:`eq_propagator_as_delta_plus` as follows
 .. math::
 
 	-\ifrak \Delta_{\ell m}(x - y) &= P^{(L)}_{\ell m}(-\ifrak \p_x) \left( \theta(x_0-y_0) \Delta_+(x-y) + \theta(y_0-x_0) \Delta_+(y-x) \right) \\
-		&\qquad - \big( \ifrak \p_{x_0} \theta(x_0-y_0) \big) P^{(1)}_{\ell m}(-\ifrak \p_x) \Delta_+(x-y) \\
-		&\qquad - \big( \ifrak \p_{x_0} \theta(y_0-x_0) \big) P^{(1)}_{\ell m}(-\ifrak \p_x) \Delta_+(y-x) \\
+		&\qquad - \big( \ifrak \p_{x_0} \theta(x_0-y_0) \big) P^{(1)}_{\ell m}(-\ifrak \nabla) \Delta_+(x-y) \\
+		&\qquad - \big( \ifrak \p_{x_0} \theta(y_0-x_0) \big) P^{(1)}_{\ell m}(-\ifrak \nabla) \Delta_+(y-x) \\
 		&= P^{(L)}_{\ell m}(-\ifrak \p_x) \big( \theta(x_0-y_0) \Delta_+(x-y) + \theta(y_0-x_0) \Delta_+(y-x) \big) \\
 		&\qquad - \blue{\ifrak  \delta(x_0-y_0) P^{(1)}_{\ell m}(-\ifrak \nabla) \left( \Delta_+(x-y) - \Delta_+(y-x) \right)} \\
 		&= P^{(L)}_{\ell m}(-\ifrak \p_x) \big( \theta(x_0-y_0) \Delta_+(x-y) + \theta(y_0-x_0) \Delta_+(y-x) \big)

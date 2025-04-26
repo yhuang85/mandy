@@ -676,6 +676,12 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
 <span class="eqno">(7.4.3)<a class="headerlink" href="#equation-eq-qed-a-and-pi-divergence-free" title="Link to this equation">#</a></span>\[\begin{split}\nabla \cdot \abf &amp;= 0 \\
 \nabla \cdot \bm{\pi} &amp;= 0\end{split}\]</div>
 <p>due to the Coulomb gauge condition and <a class="reference internal" href="#equation-eq-qed-pi-bot-is-divergence-free">Eq.7.3.6</a>, respectively.</p>
+<p>For later reference, let’s note that the Coulomb interaction <span class="math notranslate nohighlight">\(V_{\text{Coul}}\)</span> defined by <a class="reference internal" href="#equation-eq-qed-defn-coulomb-energy">Eq.7.3.11</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-interaction-picture-coulomb-interaction">
+<span class="eqno">(7.4.4)<a class="headerlink" href="#equation-eq-qed-interaction-picture-coulomb-interaction" title="Link to this equation">#</a></span>\[V_{\text{Coul}}(t) = \frac{1}{2} \int d^3 x \int d^3 y~\frac{j^0(t, \xbf) j^0(t, \ybf)}{4\pi |\xbf - \ybf|}\]</div>
+<p>in the interaction picture, and the interaction part of the full Hamiltonian becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-interaction-picture-interaction-hamiltonian">
+<span class="eqno">(7.4.5)<a class="headerlink" href="#equation-eq-qed-interaction-picture-interaction-hamiltonian" title="Link to this equation">#</a></span>\[V(t) = -\int d^3 x~j^{\mu}(t, \xbf) a_{\mu}(t, \xbf) + V_{\text{Coul}}(t) + V_{\text{matter}}(t)\]</div>
 <p>To derive the field equations, we resort to Hamilton’s equations <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-free-field-hamilton-equation-q-and-p-dot">Eq.6.1.7</a> as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\dot{a}_i(t,\xbf) &amp;= \ifrak [H_0, a_i(t, \xbf)] \\
@@ -690,14 +696,14 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
     &amp;= \nabla^2 a_i(t, \xbf)\end{split}\]</div>
 <p>These two equations combined together give the familiar wave equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-a-3-vector-satisfies-wave-equation">
-<span class="eqno">(7.4.4)<a class="headerlink" href="#equation-eq-qed-a-3-vector-satisfies-wave-equation" title="Link to this equation">#</a></span>\[\square \abf = 0\]</div>
+<span class="eqno">(7.4.6)<a class="headerlink" href="#equation-eq-qed-a-3-vector-satisfies-wave-equation" title="Link to this equation">#</a></span>\[\square \abf = 0\]</div>
 <p>To upgrade <span class="math notranslate nohighlight">\(\abf\)</span> to a <span class="math notranslate nohighlight">\(4\)</span>-vector field, we must set</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-a0-vanishes">
-<span class="eqno">(7.4.5)<a class="headerlink" href="#equation-eq-qed-a0-vanishes" title="Link to this equation">#</a></span>\[a_0 = 0\]</div>
+<span class="eqno">(7.4.7)<a class="headerlink" href="#equation-eq-qed-a0-vanishes" title="Link to this equation">#</a></span>\[a_0 = 0\]</div>
 <p>due to the assumption that <span class="math notranslate nohighlight">\(a_0\)</span> shouldn’t depend on the charge density, and it must vanish when charge density vanishes according to <a class="reference internal" href="#equation-eq-qed-explicit-solution-of-a0">Eq.7.2.7</a>.</p>
-<p>The general solutions to <a class="reference internal" href="#equation-eq-qed-a-3-vector-satisfies-wave-equation">Eq.7.4.4</a> and <a class="reference internal" href="#equation-eq-qed-a0-vanishes">Eq.7.4.5</a>, under the constraint <a class="reference internal" href="#equation-eq-qed-a-and-pi-divergence-free">Eq.7.4.3</a>, can be written as follows</p>
-<div class="math notranslate nohighlight">
-\[a_{\mu}(x) = (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \left(
+<p>The general solutions to <a class="reference internal" href="#equation-eq-qed-a-3-vector-satisfies-wave-equation">Eq.7.4.6</a> and <a class="reference internal" href="#equation-eq-qed-a0-vanishes">Eq.7.4.7</a>, under the constraint <a class="reference internal" href="#equation-eq-qed-a-and-pi-divergence-free">Eq.7.4.3</a>, can be written as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-a-field-general-solution">
+<span class="eqno">(7.4.8)<a class="headerlink" href="#equation-eq-qed-a-field-general-solution" title="Link to this equation">#</a></span>\[a_{\mu}(x) = (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \left(
     e^{\ifrak p \cdot x} e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} e_{\mu}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma)
 \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(p_0 = |\pbf|\)</span> and <span class="math notranslate nohighlight">\(e_{\mu}(\pbf, \pm 1)\)</span> are two independent “polarization vectors” satisfying the following familiar conditions (cf. <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-massless-vector-field-spinor-e-and-p-condition">Eq.4.7.14</a>)</p>
@@ -707,9 +713,9 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
 <p>It follows that <span class="math notranslate nohighlight">\(\ebf(\pbf, \sigma)\)</span> can be normalized as follows</p>
 <div class="math notranslate nohighlight">
 \[\sum_{\sigma = \pm 1} e_i(\pbf, \sigma) e_j^{\ast}(\pbf, \sigma) = \delta_{ij} - \frac{p_i p_j}{|\pbf|^2}\]</div>
-<p>Without working out the calculations, we claim, following <a class="reference internal" href="../../bib.html#wei95" id="id6"><span>[Wei95]</span></a> page 352 – 253, that the commutation relations <a class="reference internal" href="#equation-eq-qed-interaction-picture-a-pi-commutation-relations">Eq.7.4.2</a> are satisfied if the operators <span class="math notranslate nohighlight">\(a(\pbf, \sigma)\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}(\pbf, \sigma)\)</span> satisfy</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] &amp;= \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'} \\
+<p>Without working out the calculations, we claim, following <a class="reference internal" href="../../bib.html#wei95" id="id6"><span>[Wei95]</span></a> page 352 –353, that the commutation relations <a class="reference internal" href="#equation-eq-qed-interaction-picture-a-pi-commutation-relations">Eq.7.4.2</a> are satisfied if the operators <span class="math notranslate nohighlight">\(a(\pbf, \sigma)\)</span> and <span class="math notranslate nohighlight">\(a^{\dagger}(\pbf, \sigma)\)</span> satisfy</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-a-operator-commutation-relations">
+<span class="eqno">(7.4.9)<a class="headerlink" href="#equation-eq-qed-a-operator-commutation-relations" title="Link to this equation">#</a></span>\[\begin{split}\left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] &amp;= \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'} \\
 \left[ a(\pbf, \sigma), a(\pbf', \sigma') \right] &amp;= \left[ a^{\dagger}(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] = 0\end{split}\]</div>
 <p>Moreover, the free-photon Hamiltonian, i.e., <a class="reference internal" href="#equation-eq-qed-interaction-picture-free-hamiltonian">Eq.7.4.1</a> without the matter term, can be written as follows</p>
 <div class="math notranslate nohighlight">
@@ -718,9 +724,69 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
     &amp;= \int d^3 p~p_0 \sum_{\sigma = \pm 1} \left( a^{\dagger}(\pbf, \sigma) a(\pbf, \sigma) + \frac{1}{2} \delta^3(0) \right)\end{split}\]</div>
 <p>where the last expression contains one of the infinities in QED.</p>
 </section>
-<section id="the-photo-propagator">
-<h2><span class="section-number">7.5. </span>The Photo Propagator<a class="headerlink" href="#the-photo-propagator" title="Link to this heading">#</a></h2>
-<p>As explained in <a class="reference internal" href="05-the-feynman-rules.html#sec-the-feynman-rules"><span class="std std-ref">The Feynman Rules</span></a>, to calculate the S-matrix using Feynman diagrams, one must calculate the propagators defined in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-feynman-rule-propagator">Eq.5.1.9</a></p>
+<section id="the-photon-propagator">
+<h2><span class="section-number">7.5. </span>The Photon Propagator<a class="headerlink" href="#the-photon-propagator" title="Link to this heading">#</a></h2>
+<p>As explained in <a class="reference internal" href="05-the-feynman-rules.html#sec-the-feynman-rules"><span class="std std-ref">The Feynman Rules</span></a>, to calculate the S-matrix using Feynman diagrams, one must calculate the propagators defined in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-feynman-rule-propagator">Eq.5.1.9</a>. Using <a class="reference internal" href="#equation-eq-qed-a-field-general-solution">Eq.7.4.8</a> and the commutation relations <a class="reference internal" href="#equation-eq-qed-a-operator-commutation-relations">Eq.7.4.9</a>, the photon propagator can be calculated as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\underbracket{a_{\mu}(x) a_{\nu}^{\dagger}(y)}
+    &amp;= \theta(x_0 - y_0) (2\pi)^{-3}
+        \int \frac{d^3 p~d^3 p'}{2\sqrt{p_0 p'_0}}
+        \sum_{\sigma, \sigma'} e^{\ifrak (p \cdot x - p' \cdot y)} e_{\mu} e_{\nu}^{\ast}
+        \left[ a, a^{\dagger} \right]
+        + x \leftrightarrow y \\
+    &amp;= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}
+        \left( \sum_{\sigma} e_{\mu}(\pbf, \sigma) e_{\nu}^{\ast}(\pbf, \sigma) \right)
+        \left( e^{\ifrak p \cdot (x-y)} \theta(x_0 - y_0) + e^{\ifrak p \cdot (y-x) \theta(y_0 - x_0)} \right) \\
+    &amp;\eqqcolon -\ifrak \Delta_{\mu \nu}(x - y)\end{split}\]</div>
+<p>Since the spinor sum</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-photon-spinor-sum">
+<span class="eqno">(7.5.1)<a class="headerlink" href="#equation-eq-qed-photon-spinor-sum" title="Link to this equation">#</a></span>\[\begin{split}P_{\mu \nu}(\pbf) \coloneqq \sum_{\sigma} e_{\mu}(\pbf, \sigma) e_{\nu}^{\ast}(\pbf, \sigma) = \begin{cases}
+    \delta_{\mu \nu} - p_{\mu} p_{\nu} / |\pbf|^2 &amp; \text{ if } \mu\nu \neq 0 \\
+    0 &amp; \text{ otherwise}
+\end{cases}\end{split}\]</div>
+<p>doesn’t depend on <span class="math notranslate nohighlight">\(p_0\)</span>, it follows from <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-spinor-sum-momentum-space-linear-extension">Eq.5.2.7</a> and <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-propagator-as-momentum-space-integral-linear">Eq.5.2.13</a> and the massless condition that</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-photon-propagator-non-covariant">
+<span class="eqno">(7.5.2)<a class="headerlink" href="#equation-eq-qed-photon-propagator-non-covariant" title="Link to this equation">#</a></span>\[\Delta_{\mu \nu}(x - y) = (2\pi)^{-4} \int d^4 q~\frac{P_{\mu \nu}(\qbf)}{q^2 - \ifrak \epsilon} e^{\ifrak q \cdot (x - y)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(q^2 = q_0^2 - |\qbf|^2\)</span> as usual but <span class="math notranslate nohighlight">\(q\)</span> is not constrained to the mass shell.</p>
+<p>Using the momentum-space Feynman rules derived in <a class="reference internal" href="05-the-feynman-rules.html#sec-feynman-rules-in-momentum-space"><span class="std std-ref">Feynman rules in momentum space</span></a>, one gets a contribution of</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-photon-line-contribution-non-covariant">
+<span class="eqno">(7.5.3)<a class="headerlink" href="#equation-eq-qed-photon-line-contribution-non-covariant" title="Link to this equation">#</a></span>\[\frac{-\ifrak}{(2\pi)^4} \frac{P_{\mu \nu}(\qbf)}{q^2 - \ifrak \epsilon}\]</div>
+<p>for each internal photon line in a Feynman diagram.</p>
+<p>Note that the photon line contribution given by <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-non-covariant">Eq.7.5.3</a> is not Lorentz covariant, which is ultimately a consequence of the <span class="math notranslate nohighlight">\(A\)</span>-field <span class="math notranslate nohighlight">\(a_{\mu}\)</span> (cf. <a class="reference internal" href="#equation-eq-qed-a-field-general-solution">Eq.7.4.8</a>) not being Lorentz covariant. It turns out, rather miraculously, that such Lorentz non-covariance can be countered by yet another Lorentz non-covariant term in the interaction Hamiltonian, namely, the Coulomb interaction <a class="reference internal" href="#equation-eq-qed-interaction-picture-coulomb-interaction">Eq.7.4.4</a></p>
+<p>The heuristic for such cancellation starts by rewriting the spinor sum <a class="reference internal" href="#equation-eq-qed-photon-spinor-sum">Eq.7.5.1</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[P_{\mu\nu}(\qbf) = \eta_{\mu\nu} - \frac{q^2 n_{\mu} n_{\nu} - q_0 q_{\mu} n_{\nu} - q_0 q_{\nu} n_{\mu} + q_{\mu} q_{\nu}}{|\qbf|^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n = (1, 0, 0, 0)\)</span>. Here <span class="math notranslate nohighlight">\(q_0\)</span> is completely arbitrary, but its value will be fixed in Feynman diagram evaluations, to be discussed in the next section, by momentum conservation at each vertex.</p>
+<p>The point is that the last three terms in the nominator are proportional to <span class="math notranslate nohighlight">\(q_{\mu}\)</span> or <span class="math notranslate nohighlight">\(q_{\nu}\)</span>, which means that they will not contribute to the S-matrix due to the coupling <span class="math notranslate nohighlight">\(j^{\mu} a_{\mu}\)</span> in the interaction <a class="reference internal" href="#equation-eq-qed-interaction-picture-interaction-hamiltonian">Eq.7.4.5</a> and the conservation law <span class="math notranslate nohighlight">\(\p_{\mu} j^{\mu} = 0\)</span>. The remaining <span class="math notranslate nohighlight">\(-q^2 n_{\mu} n_{\nu} / |\qbf|^2\)</span>, which is non-vanishing only if <span class="math notranslate nohighlight">\(\mu = \nu = 0\)</span>, can be plugged into <a class="reference internal" href="#equation-eq-qed-photon-propagator-non-covariant">Eq.7.5.2</a>, and then follow the Feynman rules to produce the following contribution to the S-matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; \frac{\ifrak}{2} \int d^4 x \int d^4 y
+        \left( -\ifrak j^0(x) \right)
+        \left( -\ifrak j^0(y) \right)
+        \frac{-\ifrak}{(2\pi)^4} \int \frac{d^4 q}{|\qbf|^2} e^{\ifrak q \cdot (x-y)} \\
+    &amp;\quad = -\frac{1}{2} \int d^4 x \int d^4 y~\frac{j^0(x) j^0(y)}{(2\pi)^3} \delta(x_0 - y_0) \int \frac{d^3 q}{|\qbf|^2} e^{\ifrak \qbf \cdot (\xbf - \ybf)} \\
+    &amp;\quad = -\frac{1}{2} \int d^3 x \int d^3 y~\frac{j^0(t, \xbf) j^0(t, \ybf)}{4\pi |\xbf - \ybf|}\end{split}\]</div>
+<p>which is countered by <span class="math notranslate nohighlight">\(V_{\text{Coul}}\)</span> (cf. <a class="reference internal" href="#equation-eq-qed-interaction-picture-coulomb-interaction">Eq.7.4.4</a>).</p>
+<p>It means that effectively, one can replace <span class="math notranslate nohighlight">\(\Delta_{\mu \nu}(x - y)\)</span> with the following</p>
+<div class="math notranslate nohighlight">
+\[\Delta_{\mu\nu}^{\text{eff}}(x - y) = (2\pi)^{-4} \int d^4 q~\frac{\eta_{\mu \nu}}{q^2 - \ifrak \epsilon} e^{\ifrak q \cdot (x - y)}\]</div>
+<p>as long as one forgets about the (instantaneous) Coulomb interaction term <span class="math notranslate nohighlight">\(V_{\text{Coul}}(t)\)</span> in <a class="reference internal" href="#equation-eq-qed-interaction-picture-interaction-hamiltonian">Eq.7.4.5</a>. The corresponding photon line contribution <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-non-covariant">Eq.7.5.3</a> then takes the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-photon-line-contribution-covariant">
+<span class="eqno">(7.5.4)<a class="headerlink" href="#equation-eq-qed-photon-line-contribution-covariant" title="Link to this equation">#</a></span>\[\frac{-\ifrak}{(2\pi)^4} \frac{\eta_{\mu\nu}}{q^2 - \ifrak \epsilon}\]</div>
+</section>
+<section id="feynman-rules-for-qed">
+<h2><span class="section-number">7.6. </span>Feynman Rules for QED<a class="headerlink" href="#feynman-rules-for-qed" title="Link to this heading">#</a></h2>
+<p>Having settle the photon field in the previous sections, we’re now ready to specify the matter field in the Lagrangian density <a class="reference internal" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter">Eq.7.3.8</a>. We’ll be considering the theory describing the interaction between a massive spin-<span class="math notranslate nohighlight">\(1/2\)</span> fermion with charge <span class="math notranslate nohighlight">\(q = -e\)</span>, <a class="footnote-reference brackets" href="#letter-e" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> e.g., an electron, and photon. In this case, the Lagrangian density takes the following form</p>
+<div class="math notranslate nohighlight">
+\[\Lscr = -\frac{1}{4} F^{\mu\nu} F_{\mu\nu} - \bar{\Psi} \left( \gamma^{\mu} (\p_{\mu} + \ifrak e A_{\mu}) + m \right) \Psi\]</div>
+<p>It follows from <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-variational-derivative-in-a-field">Eq.7.1.4</a> that the charge density <span class="math notranslate nohighlight">\(J^{\mu}\)</span> takes the following form</p>
+<div class="math notranslate nohighlight">
+\[J^{\mu} = \frac{\p \Lscr}{\p A_{\mu}} = -\ifrak e \bar{\Psi} \gamma^{\mu} \Psi\]</div>
+<p>The interaction <a class="reference internal" href="#equation-eq-qed-interaction-picture-interaction-hamiltonian">Eq.7.4.5</a> now takes the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-qed-concrete-interaction-massive-spin-half-fermion">
+<span class="eqno">(7.6.1)<a class="headerlink" href="#equation-eq-qed-concrete-interaction-massive-spin-half-fermion" title="Link to this equation">#</a></span>\[V(t) = \ifrak e \int d^3 x~\bar{\psi}(t, \xbf) \gamma^{\mu} \psi(t, \xbf) a_{\mu}(t, \xbf) + V_{\text{Coul}}(t)\]</div>
+<p>where we remember that <span class="math notranslate nohighlight">\(V_{\text{Coul}}\)</span> becomes irrelevant if we take the photon line contribution to the Feynman diagram to be <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-covariant">Eq.7.5.4</a>.</p>
+<p>Following the general recipe described in <a class="reference internal" href="05-the-feynman-rules.html#sec-feynman-rules-in-momentum-space"><span class="std std-ref">Feynman rules in momentum space</span></a>, let’s spell out the key points, while ignoring routines, in constructing and evaluating Feynman diagrams in QED as follows.</p>
+<p>First of all, a Feynman diagram consists of electron lines, photon lines, and <span class="math notranslate nohighlight">\(3\)</span>-valent vertices with one incoming electron line, one outgoing electron line, and one photon line attached. Electron lines that flow backward in time may also be called positron lines. To each internal line an off-mass-shell <span class="math notranslate nohighlight">\(4\)</span>-momentum is labeled. To each external line an on-mass-shell <span class="math notranslate nohighlight">\(4\)</span>-momentum as well as a spin <span class="math notranslate nohighlight">\(z\)</span>-component or helicity, depending on whether its an electron line or a photon line, are labeled.</p>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="brst-quantization" role="doc-footnote">
@@ -734,6 +800,10 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
 <aside class="footnote brackets" id="solve-poisson-equation" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
 <p>My favorite solution to Poisson’s equation is given by Feynman in his <a class="reference external" href="https://www.feynmanlectures.caltech.edu/II_06.html">lecture on electric field</a>.</p>
+</aside>
+<aside class="footnote brackets" id="letter-e" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">4</a><span class="fn-bracket">]</span></span>
+<p>If using the same letter <span class="math notranslate nohighlight">\(e\)</span> for the spinor and the mathematical constant was not confusing enough, it should be now by using it also for the electric charge.</p>
 </aside>
 </aside>
 </section>
@@ -766,7 +836,8 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints-and-gauge-conditions">7.2. Constraints and Gauge Conditions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantization-in-coulomb-gauge">7.3. Quantization in Coulomb Gauge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electrodynamics-in-the-interaction-picture">7.4. Electrodynamics in the Interaction Picture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photo-propagator">7.5. The Photo Propagator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-photon-propagator">7.5. The Photon Propagator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feynman-rules-for-qed">7.6. Feynman Rules for QED</a></li>
 </ul>
   </nav></div>
 

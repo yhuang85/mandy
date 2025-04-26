@@ -441,6 +441,15 @@ Moreover, they satisfy the following constraints
 
 due to the Coulomb gauge condition and :eq:`eq_qed_pi_bot_is_divergence_free`, respectively.
 
+For later reference, let's note that the Coulomb interaction :math:`V_{\text{Coul}}` defined by :eq:`eq_qed_defn_coulomb_energy` becomes
+
+.. math:: V_{\text{Coul}}(t) = \frac{1}{2} \int d^3 x \int d^3 y~\frac{j^0(t, \xbf) j^0(t, \ybf)}{4\pi |\xbf - \ybf|}
+    :label: eq_qed_interaction_picture_coulomb_interaction
+
+in the interaction picture, and the interaction part of the full Hamiltonian becomes
+
+.. math:: V(t) = -\int d^3 x~j^{\mu}(t, \xbf) a_{\mu}(t, \xbf) + V_{\text{Coul}}(t) + V_{\text{matter}}(t)
+    :label: eq_qed_interaction_picture_interaction_hamiltonian
 
 To derive the field equations, we resort to Hamilton's equations :eq:`eq_free_field_hamilton_equation_q_and_p_dot` as follows
 
@@ -472,6 +481,7 @@ due to the assumption that :math:`a_0` shouldn't depend on the charge density, a
 The general solutions to :eq:`eq_qed_a_3_vector_satisfies_wave_equation` and :eq:`eq_qed_a0_vanishes`, under the constraint :eq:`eq_qed_a_and_pi_divergence_free`, can be written as follows
 
 .. math::
+    :label: eq_qed_a_field_general_solution
 
     a_{\mu}(x) = (2\pi)^{-3/2} \int \frac{d^3 p}{\sqrt{2p_0}} \sum_{\sigma = \pm 1} \left(
         e^{\ifrak p \cdot x} e_{\mu}(\pbf, \sigma) a(\pbf, \sigma) + e^{-\ifrak p \cdot x} e_{\mu}^{\ast}(\pbf, \sigma) a^{\dagger}(\pbf, \sigma)
@@ -488,9 +498,10 @@ It follows that :math:`\ebf(\pbf, \sigma)` can be normalized as follows
 
 .. math:: \sum_{\sigma = \pm 1} e_i(\pbf, \sigma) e_j^{\ast}(\pbf, \sigma) = \delta_{ij} - \frac{p_i p_j}{|\pbf|^2}
 
-Without working out the calculations, we claim, following [Wei95]_ page 352 -- 253, that the commutation relations :eq:`eq_qed_interaction_picture_a_pi_commutation_relations` are satisfied if the operators :math:`a(\pbf, \sigma)` and :math:`a^{\dagger}(\pbf, \sigma)` satisfy
+Without working out the calculations, we claim, following [Wei95]_ page 352 --353, that the commutation relations :eq:`eq_qed_interaction_picture_a_pi_commutation_relations` are satisfied if the operators :math:`a(\pbf, \sigma)` and :math:`a^{\dagger}(\pbf, \sigma)` satisfy
 
 .. math::
+    :label: eq_qed_a_operator_commutation_relations
 
     \left[ a(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] &= \delta^3(\pbf - \pbf') \delta_{\sigma \sigma'} \\
     \left[ a(\pbf, \sigma), a(\pbf', \sigma') \right] &= \left[ a^{\dagger}(\pbf, \sigma), a^{\dagger}(\pbf', \sigma') \right] = 0
@@ -506,10 +517,100 @@ Moreover, the free-photon Hamiltonian, i.e., :eq:`eq_qed_interaction_picture_fre
 where the last expression contains one of the infinities in QED.
 
 
-The Photo Propagator
---------------------
+The Photon Propagator
+---------------------
 
-As explained in :ref:`sec_the_feynman_rules`, to calculate the S-matrix using Feynman diagrams, one must calculate the propagators defined in :eq:`eq_feynman_rule_propagator`
+As explained in :ref:`sec_the_feynman_rules`, to calculate the S-matrix using Feynman diagrams, one must calculate the propagators defined in :eq:`eq_feynman_rule_propagator`. Using :eq:`eq_qed_a_field_general_solution` and the commutation relations :eq:`eq_qed_a_operator_commutation_relations`, the photon propagator can be calculated as follows
+
+.. math::
+
+    \underbracket{a_{\mu}(x) a_{\nu}^{\dagger}(y)}
+        &= \theta(x_0 - y_0) (2\pi)^{-3}
+            \int \frac{d^3 p~d^3 p'}{2\sqrt{p_0 p'_0}}
+            \sum_{\sigma, \sigma'} e^{\ifrak (p \cdot x - p' \cdot y)} e_{\mu} e_{\nu}^{\ast}
+            \left[ a, a^{\dagger} \right]
+            + x \leftrightarrow y \\
+        &= (2\pi)^{-3} \int \frac{d^3 p}{2p_0}
+            \left( \sum_{\sigma} e_{\mu}(\pbf, \sigma) e_{\nu}^{\ast}(\pbf, \sigma) \right)
+            \left( e^{\ifrak p \cdot (x-y)} \theta(x_0 - y_0) + e^{\ifrak p \cdot (y-x) \theta(y_0 - x_0)} \right) \\
+        &\eqqcolon -\ifrak \Delta_{\mu \nu}(x - y)
+
+Since the spinor sum
+
+.. math::
+    :label: eq_qed_photon_spinor_sum
+
+    P_{\mu \nu}(\pbf) \coloneqq \sum_{\sigma} e_{\mu}(\pbf, \sigma) e_{\nu}^{\ast}(\pbf, \sigma) = \begin{cases}
+        \delta_{\mu \nu} - p_{\mu} p_{\nu} / |\pbf|^2 & \text{ if } \mu\nu \neq 0 \\
+        0 & \text{ otherwise}
+    \end{cases}
+
+doesn't depend on :math:`p_0`, it follows from :eq:`eq_spinor_sum_momentum_space_linear_extension` and :eq:`eq_propagator_as_momentum_space_integral_linear` and the massless condition that
+
+.. math:: \Delta_{\mu \nu}(x - y) = (2\pi)^{-4} \int d^4 q~\frac{P_{\mu \nu}(\qbf)}{q^2 - \ifrak \epsilon} e^{\ifrak q \cdot (x - y)}
+    :label: eq_qed_photon_propagator_non_covariant
+
+where :math:`q^2 = q_0^2 - |\qbf|^2` as usual but :math:`q` is not constrained to the mass shell.
+
+Using the momentum-space Feynman rules derived in :ref:`sec_feynman_rules_in_momentum_space`, one gets a contribution of
+
+.. math:: \frac{-\ifrak}{(2\pi)^4} \frac{P_{\mu \nu}(\qbf)}{q^2 - \ifrak \epsilon}
+    :label: eq_qed_photon_line_contribution_non_covariant
+
+for each internal photon line in a Feynman diagram.
+
+Note that the photon line contribution given by :eq:`eq_qed_photon_line_contribution_non_covariant` is not Lorentz covariant, which is ultimately a consequence of the :math:`A`-field :math:`a_{\mu}` (cf. :eq:`eq_qed_a_field_general_solution`) not being Lorentz covariant. It turns out, rather miraculously, that such Lorentz non-covariance can be countered by yet another Lorentz non-covariant term in the interaction Hamiltonian, namely, the Coulomb interaction :eq:`eq_qed_interaction_picture_coulomb_interaction`
+
+The heuristic for such cancellation starts by rewriting the spinor sum :eq:`eq_qed_photon_spinor_sum` as follows
+
+.. math:: P_{\mu\nu}(\qbf) = \eta_{\mu\nu} - \frac{q^2 n_{\mu} n_{\nu} - q_0 q_{\mu} n_{\nu} - q_0 q_{\nu} n_{\mu} + q_{\mu} q_{\nu}}{|\qbf|^2}
+
+where :math:`n = (1, 0, 0, 0)`. Here :math:`q_0` is completely arbitrary, but its value will be fixed in Feynman diagram evaluations, to be discussed in the next section, by momentum conservation at each vertex.
+
+The point is that the last three terms in the nominator are proportional to :math:`q_{\mu}` or :math:`q_{\nu}`, which means that they will not contribute to the S-matrix due to the coupling :math:`j^{\mu} a_{\mu}` in the interaction :eq:`eq_qed_interaction_picture_interaction_hamiltonian` and the conservation law :math:`\p_{\mu} j^{\mu} = 0`. The remaining :math:`-q^2 n_{\mu} n_{\nu} / |\qbf|^2`, which is non-vanishing only if :math:`\mu = \nu = 0`, can be plugged into :eq:`eq_qed_photon_propagator_non_covariant`, and then follow the Feynman rules to produce the following contribution to the S-matrix
+
+.. math::
+
+    & \frac{\ifrak}{2} \int d^4 x \int d^4 y
+            \left( -\ifrak j^0(x) \right)
+            \left( -\ifrak j^0(y) \right)
+            \frac{-\ifrak}{(2\pi)^4} \int \frac{d^4 q}{|\qbf|^2} e^{\ifrak q \cdot (x-y)} \\
+        &\quad = -\frac{1}{2} \int d^4 x \int d^4 y~\frac{j^0(x) j^0(y)}{(2\pi)^3} \delta(x_0 - y_0) \int \frac{d^3 q}{|\qbf|^2} e^{\ifrak \qbf \cdot (\xbf - \ybf)} \\
+        &\quad = -\frac{1}{2} \int d^3 x \int d^3 y~\frac{j^0(t, \xbf) j^0(t, \ybf)}{4\pi |\xbf - \ybf|}
+
+which is countered by :math:`V_{\text{Coul}}` (cf. :eq:`eq_qed_interaction_picture_coulomb_interaction`).
+
+It means that effectively, one can replace :math:`\Delta_{\mu \nu}(x - y)` with the following
+
+.. math:: \Delta_{\mu\nu}^{\text{eff}}(x - y) = (2\pi)^{-4} \int d^4 q~\frac{\eta_{\mu \nu}}{q^2 - \ifrak \epsilon} e^{\ifrak q \cdot (x - y)}
+
+as long as one forgets about the (instantaneous) Coulomb interaction term :math:`V_{\text{Coul}}(t)` in :eq:`eq_qed_interaction_picture_interaction_hamiltonian`. The corresponding photon line contribution :eq:`eq_qed_photon_line_contribution_non_covariant` then takes the following form
+
+.. math:: \frac{-\ifrak}{(2\pi)^4} \frac{\eta_{\mu\nu}}{q^2 - \ifrak \epsilon}
+    :label: eq_qed_photon_line_contribution_covariant
+
+
+Feynman Rules for QED
+---------------------
+
+Having settle the photon field in the previous sections, we're now ready to specify the matter field in the Lagrangian density :eq:`eq_qed_semi_concrete_lagrangian_with_matter`. We'll be considering the theory describing the interaction between a massive spin-:math:`1/2` fermion with charge :math:`q = -e`, [#letter_e]_ e.g., an electron, and photon. In this case, the Lagrangian density takes the following form
+
+.. math:: \Lscr = -\frac{1}{4} F^{\mu\nu} F_{\mu\nu} - \bar{\Psi} \left( \gamma^{\mu} (\p_{\mu} + \ifrak e A_{\mu}) + m \right) \Psi
+
+It follows from :eq:`eq_qed_matter_lagrangian_variational_derivative_in_a_field` that the charge density :math:`J^{\mu}` takes the following form
+
+.. math:: J^{\mu} = \frac{\p \Lscr}{\p A_{\mu}} = -\ifrak e \bar{\Psi} \gamma^{\mu} \Psi
+
+The interaction :eq:`eq_qed_interaction_picture_interaction_hamiltonian` now takes the following form
+
+.. math:: V(t) = \ifrak e \int d^3 x~\bar{\psi}(t, \xbf) \gamma^{\mu} \psi(t, \xbf) a_{\mu}(t, \xbf) + V_{\text{Coul}}(t)
+    :label: eq_qed_concrete_interaction_massive_spin_half_fermion
+
+where we remember that :math:`V_{\text{Coul}}` becomes irrelevant if we take the photon line contribution to the Feynman diagram to be :eq:`eq_qed_photon_line_contribution_covariant`.
+
+Following the general recipe described in :ref:`sec_feynman_rules_in_momentum_space`, let's spell out the key points, while ignoring routines, in constructing and evaluating Feynman diagrams in QED as follows.
+
+First of all, a Feynman diagram consists of electron lines, photon lines, and :math:`3`-valent vertices with one incoming electron line, one outgoing electron line, and one photon line attached. Electron lines that flow backward in time may also be called positron lines. To each internal line an off-mass-shell :math:`4`-momentum is labeled. To each external line an on-mass-shell :math:`4`-momentum as well as a spin :math:`z`-component or helicity, depending on whether its an electron line or a photon line, are labeled.
 
 
 .. rubric:: Footnotes
@@ -519,3 +620,5 @@ As explained in :ref:`sec_the_feynman_rules`, to calculate the S-matrix using Fe
 .. [#lorenz] It's really unfortunate for L. Lorenz to work in the same field as H. Lorentz and be completely overshadowed. Apparently Weinberg thought this gauge condition was named after the more famous Nobel laureate.
 
 .. [#solve_poisson_equation] My favorite solution to Poisson's equation is given by Feynman in his `lecture on electric field <https://www.feynmanlectures.caltech.edu/II_06.html>`__.
+
+.. [#letter_e] If using the same letter :math:`e` for the spinor and the mathematical constant was not confusing enough, it should be now by using it also for the electric charge.
