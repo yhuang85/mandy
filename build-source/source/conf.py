@@ -131,6 +131,7 @@ mathjax3_config = {
 			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},
 			**{f'{w}frak': f'{{\\mathfrak {w}}}' for w in string.ascii_letters},
 			**{f'{w}scr': f'{{\\mathscr {w}}}' for w in string.ascii_letters},
+            **{f'{w}slash': f'{{\\cancel{{{w}}}}}' for w in string.ascii_letters},
 		},
 		'packages': {
 			'[+]': [
@@ -139,6 +140,7 @@ mathjax3_config = {
 				'color',
 				'mathtools',
 				'unicode',
+                'cancel',
 			],
 		},
 		'tags': 'ams',
@@ -150,6 +152,7 @@ mathjax3_config = {
 			'[tex]/color',
 			'[tex]/mathtools',
 			'[tex]/unicode',
+            '[tex]/cancel',
 		],
 	}
 }

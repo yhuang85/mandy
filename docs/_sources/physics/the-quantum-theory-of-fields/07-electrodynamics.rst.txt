@@ -3,8 +3,7 @@ Quantum Electrodynamics
 
 We saw in :ref:`sec_the_canonical_formalism` how Lagrangian (densities) may be guessed, passed to the interaction picture, and verified against the free fields derived from Lorentz invariance and causality in :ref:`sec_quantum_fields_and_antiparticles`. There were, however, cases we couldn't handle back in :ref:`sec_massless_fields`, which include, in particular, massless vector fields. It is this difficulty we will try to handle in this section, which, as it turns out, leads to the most successful quantum field theory to date, namely, the quantum electrodynamics (QED).
 
-.. todo::
-    Write down the general plan which I don't yet know.
+The plan to quantize electrodynamics is the following. First, we'll show that the failed attempt to write down a free massless helicity-:math:`1` vector field as :eq:`eq_massless_vector_field_a` can be remedied by the introduction of a gauge symmetry. The introduction of gauge symmetry turns out to also introduce constraints on the canonical variables, which we'll try to fix using Dirac's method discussed in :ref:`sec_constraints_and_dirac_brackets`. Once the constraints have been dealt with, we pass to the interaction picture and write down the Hamiltonian as before. With the propagators calculated using the appropriate commutation relations, the machinery of Feynman diagrams may be applied to calculate S-matrix elements. This is done first theoretically by writing down a recipe, and then applied explicitly to one example -- the famous `Compton scattering <https://en.wikipedia.org/wiki/Compton_scattering>`__.
 
 
 Gauge Invariance and Action
@@ -610,7 +609,79 @@ where we remember that :math:`V_{\text{Coul}}` becomes irrelevant if we take the
 
 Following the general recipe described in :ref:`sec_feynman_rules_in_momentum_space`, let's spell out the key points, while ignoring routines, in constructing and evaluating Feynman diagrams in QED as follows.
 
-First of all, a Feynman diagram consists of electron lines, photon lines, and :math:`3`-valent vertices with one incoming electron line, one outgoing electron line, and one photon line attached. Electron lines that flow backward in time may also be called positron lines. To each internal line an off-mass-shell :math:`4`-momentum is labeled. To each external line an on-mass-shell :math:`4`-momentum as well as a spin :math:`z`-component or helicity, depending on whether its an electron line or a photon line, are labeled.
+First of all, a Feynman diagram consists of electron lines, photon lines, and :math:`3`-valent vertices, each of which has one incoming electron line, one outgoing electron line, and one photon line attached. Electron lines that flow backward in time may also be called positron lines. To each internal line an off-mass-shell :math:`4`-momentum is attached. To each external line an on-mass-shell :math:`4`-momentum as well as a spin :math:`z`-component or helicity, depending on whether it's an electron line or a photon line, are attached.
+
+Next, to evaluate a Feynman diagram, we associate factors to each vertex, external line, and internal line as follows.
+
+Vertices
+    To each vertex, we assign a :math:`\gamma`-matrix (cf. :eq:`eq_dirac_field_defn_gamma_matrices`) index :math:`\alpha` to the incoming electron line, and a similar index :math:`\beta` to the outgoing electron line, and a spacetime index :math:`\mu` to the photon line. Moreover, such a vertex contributes the following factor
+
+    .. math:: (2\pi)^4 e (\gamma^{\mu})_{\beta \alpha} \delta^4(k - k' \pm q)
+
+    where :math:`k, k'` are the :math:`4`-momentum of the incoming and outgoing electrons, respectively, and :math:`\pm q` is the :math:`4`-momentum of the incoming/outgoing photon.
+
+External lines
+    In what follows, we'll use :math:`\alpha` (for incoming) and :math:`\beta` (for outgoing) to index Dirac spinors as in :eq:`eq_dirac_field_psi_field`, and :math:`\mu` to index photon spinors as in :eq:`eq_qed_a_field_general_solution`.
+
+    * For each in-state electron line, include a factor :math:`(2\pi)^{-3/2} u_{\alpha}(\pbf, \sigma)`.
+    * For each in-state positron line, include a factor :math:`(2\pi)^{-3/2} \bar{v}_{\beta}(\pbf, \sigma)`.
+    * For each out-state electron line, include a factor :math:`(2\pi)^{-3/2} \bar{u}_{\beta}(\pbf, \sigma)`.
+    * For each out-state positron line, include a factor :math:`(2\pi)^{-3/2} v_{\alpha}(\pbf, \sigma)`.
+    * For each in-state photon line, include a factor :math:`(2\pi)^{-3/2} (2p_0)^{-1/2} e_{\mu}(\pbf, \sigma)`.
+    * For each out-state photon line, include a factor :math:`(2\pi)^{-3/2} (2p_0)^{-1/2} e_{\mu}^{\ast}(\pbf, \sigma)`.
+
+Internal lines
+    In what follows, the same indexing convention as for external lines is used. In fact, to index multiple photon spinors, we'll use :math:`\mu` and :math:`\nu`.
+
+    * For each internal electron line from :math:`\beta` to :math:`\alpha`, include a factor (cf. :eq:`eq_p_polynomial_dirac` and :eq:`eq_propagator_as_momentum_space_integral`)
+
+      .. math::
+
+            \frac{-\ifrak}{(2\pi)^4} \frac{\left( -\ifrak \kslash + m \right)_{\alpha \beta}}{k^2 + m^2 - \ifrak \epsilon}
+
+      where the :math:`\beta` matrix in :eq:`eq_p_polynomial_dirac` is dropped because of the use of :math:`\bar{\psi}`, rather than :math:`\psi^{\dagger}`, in :eq:`eq_qed_concrete_interaction_massive_spin_half_fermion`. Moreover, the `Feynman slash notation <https://en.wikipedia.org/wiki/Feynman_slash_notation>`__
+
+      .. math:: \kslash \coloneqq \gamma^{\mu} k_{\mu}
+
+      is adopted here.
+    * For each internal photon line between :math:`\mu` and :math:`\nu`, include a factor (cf. :eq:`eq_qed_photon_line_contribution_covariant`)
+
+      .. math::
+
+            \frac{-\ifrak}{(2\pi)^4} \frac{\eta_{\mu \nu}}{q^2 - \ifrak \epsilon}
+
+The rest of the calculation is the same as any general evaluation of scattering amplitudes using Feynman diagrams, and was discussed in :ref:`sec_spacetime_feynman_rules`.
+
+Although the full S-matrix calculation can be done in principle by summing up all Feynman diagrams, it quickly becomes computationally infeasible as the number of vertices in the diagram increases. Therefore the calculation is only practically possible if the contribution of a Feynman diagram also diminishes as the complexity grows. Fortunately, this is indeed the case as we now demonstrate.
+
+Consider a connected Feynman diagram [#connected_feynman_diagram]_ with :math:`V` vertices, :math:`I` internal lines, :math:`E` external lines, and :math:`L` (independent) loops. Then the following relations hold
+
+.. math::
+    :label: eq_qed_feynman_diagram_graph_identities
+
+    L &= I - V + 1 \\
+    2I + E &= 3V
+
+Now the goal is to calculate the constant coefficient involving :math:`e` (electric charge) and :math:`\pi` (mathematical constant) for any given diagram. According to the explicit Feynman rules described above
+
+* Each vertex contributes a factor :math:`(2\pi)^4 e`.
+* Each internal line contributes a factor :math:`(2\pi)^{-4}`.
+* Each loop contributes a momentum-space integral (cf. :eq:`eq_boson_boson_momentum_space_scattering`), which, in turn, contributes a factor :math:`\pi^2` (cf. `Volume of an n-ball <https://en.wikipedia.org/wiki/Volume_of_an_n-ball>`__).
+
+Note that we don't include contributions from external lines since they are fixed by the in- and out-states. Multiplying the contributions above all together (and eliminating :math:`I` and :math:`V` using :eq:`eq_qed_feynman_diagram_graph_identities`), the constant coefficient of a Feynman diagram is given as follows
+
+.. math::
+
+    (2\pi)^{4V} e^V (2\pi)^{-4I} \pi^{2L} &= (2\pi)^{-4(L-1)} e^{2L+E-2} \pi^{2L} \\
+        &= (2\pi)^4 e^{E-2} \left( \frac{e^2}{16\pi^2} \right)^L
+
+It follows that the Feynman diagrams may be organized by an increasing number of (independent) loops so that the higher order terms are suppressed by a power of
+
+.. math:: \frac{e^2}{16\pi^2} \approx 5.81 \times 10^{-4}
+
+
+Compton Scattering
+------------------
 
 
 .. rubric:: Footnotes
@@ -622,3 +693,5 @@ First of all, a Feynman diagram consists of electron lines, photon lines, and :m
 .. [#solve_poisson_equation] My favorite solution to Poisson's equation is given by Feynman in his `lecture on electric field <https://www.feynmanlectures.caltech.edu/II_06.html>`__.
 
 .. [#letter_e] If using the same letter :math:`e` for the spinor and the mathematical constant was not confusing enough, it should be now by using it also for the electric charge.
+
+.. [#connected_feynman_diagram] Recall from :ref:`sec_cluster_decomposable_hamiltonians` that only connected diagrams contribute to the S-matrix due to the cluster decomposition principle.

@@ -593,8 +593,10 @@ Before moving onto the discussion about the external edges, let's revisit the ex
 	We didn't actually calculate the (4th order) boson-boson scattering S-matrix :math:`S^C_{1'2',12}` in spacetime coordinates due to its complexity. But it becomes much simpler in momentum space coordinates, and can be calculated as follows. First, let's figure out the powers of :math:`\ifrak` and :math:`\pi`, respectively. Since there are :math:`4` vertices and :math:`4` internal edges, each of which contribute one :math:`-\ifrak`, we get a contribution of :math:`(-\ifrak)^8 = 1`. Moreover, since there are equal numbers of vertices and internal edges, each of which contribute :math:`(2\pi)^4` and :math:`(2\pi)^{-4}`, respectively, and :math:`4` external edges, each of which contribute :math:`(2\pi)^{-3/2}`, we get a total contribution of :math:`(2\pi)^{-6}`. Remembering an additional minus sign coming from the fermionic loop, we have the following
 
 	.. math::
+		:label: eq_boson_boson_momentum_space_scattering
 
-		S^C_{1'2',12} &= -(2\pi)^{-6} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{k_1, k_2, k'_1, k'_2} u^{\ast}_{k'_1}(1') u^{\ast}_{k'_2}(2') u_{k_1}(1) u_{k_2}(2) \\
+		& S^C_{1'2',12} \\
+			&\quad = -(2\pi)^{-6} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{k_1, k_2, k'_1, k'_2} u^{\ast}_{k'_1}(1') u^{\ast}_{k'_2}(2') u_{k_1}(1) u_{k_2}(2) \\
 			&\qquad \times \int d^4 p~\op{Tr} \bigg( \frac{P(p)}{p^2+M^2-\ifrak\epsilon} \Gamma_{k'_1} \frac{P(p-p'_1)}{(p-p'_1)^2+M^2-\ifrak\epsilon}
 				\Gamma_{k'_2} \\
 			&\qquad \times \frac{P(p-p'_1-p'_2)}{(p-p'_1-p'_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_2} \frac{P(p-p'_1-p'_2+p_2)}{(p-p'_1-p'_2+p_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_1} \bigg) + \cdots
