@@ -666,16 +666,14 @@ All together, we can now rewrite :eq:`eq_differential_form_of_s_matrix_probabili
 			\delta^3_V(\pbf_{\beta} - \pbf_{\alpha}) \delta_T(E_{\beta} - E_{\alpha}) \left| M_{\beta \alpha} \right|^2 d\beta \\
 		&= (2\pi)^{3N_{\alpha} - 2} V^{1 - N_{\alpha}} T \delta^4(p_{\beta} - p_{\alpha}) \left| M_{\beta \alpha} \right|^2 d\beta
 
-where we have restored :math:`\delta^4(p_{\beta} - p_{\alpha})` by taking the large :math:`V` and :math:`T` limits.
-
-If taking partial limits in :math:`V` and :math:`T` in the above derivation is not suspicious enough, then let's define the rate of transition by moving the :math:`T` factor from the right to the left as follows
+where we have restored :math:`\delta^4(p_{\beta} - p_{\alpha})` by taking the large :math:`V` and :math:`T` limits. Dividing by time :math:`T`, the differential rate of transition can be defined as follows
 
 .. math::
 	:label: eq_rate_of_reaction_master_formula
 
 	d\Gamma(\alpha \to \beta) \coloneqq dP(\alpha \to \beta) / T = (2\pi)^{3N_{\alpha}-2} V^{1-N_{\alpha}} \delta^4(p_{\beta} - p_{\alpha}) |M_{\beta \alpha}|^2 d\beta
 
-where :math:`M_{\beta \alpha}` is defined by :eq:`eq_generic_s_matrix_with_m` instead of :eq:`eq_generic_s_matrix_in_time_box` because we have restored :math:`\delta^4(p_{\beta} - p_{\alpha})`. This is totally wild because by taking rate one typically think of processes that happen within infinitesimal time periods, but we have at the same taken large time limit to recover the :math:`\delta^4(p_{\beta} - p_{\alpha})` factor. Despite the insane derivation, the end result seems reasonable and it will be the key formula that connects S-matrix to experimental measurement of probabilities.
+As will be explained in more detail in the example of the decay of one particle below, it should be kept in mind that :eq:`eq_rate_of_reaction_master_formula` is valid only when large :math:`T` limit can be justified. Nonetheless, such rates are closely related to what actual experiments report.
 
 Examples with few initial particles
 +++++++++++++++++++++++++++++++++++
@@ -742,6 +740,7 @@ Next, let's turn to the two-particles case. In this case :eq:`eq_cross_section_t
 where :math:`E_1, E_2` are the energies of the two particles in state :math:`\alpha`. As in the one-particle case, in order for the cross-section to be Lorentz invariant, we must define the relative velocity :math:`u_{\alpha}` such that the product :math:`u_{\alpha} E_1 E_2` is Lorentz invariant. Indeed, such a quantity is uniquely determined by the requirement that when one of the particles stays still, then :math:`u_{\alpha}` should be the velocity of the other particle, and it takes the following form
 
 .. math:: u_{\alpha} = \frac{\sqrt{(p_1 \cdot p_2)^2 - m_1^2 m_2^2}}{E_1 E_2}
+	:label: eq_scattering_two_particles_relative_velocity
 
 For later use, let's rewrite :math:`u_{\alpha}` in the center-of-mass frame as follows. In the center-of-mass frame, the total momentum vanishes, and therefore we can write :math:`p_1 = (E_1, \pbf)` and :math:`p_2 = (E_2, -\pbf)`. It follows that
 

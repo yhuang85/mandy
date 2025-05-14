@@ -141,6 +141,7 @@ mathjax3_config = {
 				'mathtools',
 				'unicode',
                 'cancel',
+                'physics',
 			],
 		},
 		'tags': 'ams',
@@ -153,6 +154,7 @@ mathjax3_config = {
 			'[tex]/mathtools',
 			'[tex]/unicode',
             '[tex]/cancel',
+            '[tex]/physics',
 		],
 	}
 }

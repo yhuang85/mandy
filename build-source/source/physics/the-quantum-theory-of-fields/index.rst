@@ -20,3 +20,4 @@ The order of the sections correspond roughly to the order of the chapters of the
 	05-the-feynman-rules
 	06-the-canonical-formalism
 	07-electrodynamics
+	08-path-integral-methods

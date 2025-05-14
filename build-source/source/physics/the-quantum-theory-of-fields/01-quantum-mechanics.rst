@@ -1157,6 +1157,9 @@ In order to use :eq:`eq_little_group_d_matrix_massless` for a general :math:`(\L
 
 Then apply a (pure) rotation that takes :math:`(0, 0, |\pbf|)` to :math:`\pbf`. However, in contrast to the massive case :eq:`eq_L_transformation_for_massive`, where :math:`L(p)` depends continuously on :math:`p`, there exists no continuous family of rotations that take :math:`(0, 0, |\pbf|)` to any other :math:`3`-vector (of the same length). Fortunately, any two choices of such rotations differ by (a pre-composition of) a rotation about the :math:`3`-axis, which, according to :eq:`eq_little_group_d_matrix_massless`, only produces a physically immaterial phase factor.
 
+
+.. _dropdown_polarization_of_photons:
+
 .. dropdown:: Polarization of photons
 	:icon: unlock
 	:animate: fade-in-slide-down

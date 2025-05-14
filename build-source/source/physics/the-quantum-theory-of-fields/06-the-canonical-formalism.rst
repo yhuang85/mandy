@@ -998,15 +998,15 @@ and the Hamiltonian is, according to :eq:`eq_general_quantum_hamiltonian` and :e
 .. math::
 
 	H &= \int d^3 x \left( \Pi \dot{\Phi} - \Lscr \right) \\
-		&= \int d^3 x \bigg(
+		&= \int d^3 x \left(
 			\Pi (\Pi + J^0)
 			- \frac{1}{2} (\Pi + J^0)^2
 			+ \frac{1}{2} (\nabla \Phi)^2
-			+ \frac{1}{2} m^2 \Phi^2 \\
-		&\qquad + J^0 (\Pi + J^0)
+			+ \frac{1}{2} m^2 \Phi^2 \right. \\
+		&\qquad \left. + J^0 (\Pi + J^0)
 			+ \Jbf \cdot \nabla \Phi
 			+ \Hscr(\Phi)
-		\bigg) \\
+		\right) \\
 		&= \int d^3 x \left(
 			\frac{1}{2} \Pi^2 + \frac{1}{2} (\nabla \Phi)^2 + \frac{1}{2} m^2 \Phi^2 + \Pi J^0 + \frac{1}{2} (J^0)^2 + \Jbf \cdot \nabla \Phi + \Hscr(\Phi)
 		\right)

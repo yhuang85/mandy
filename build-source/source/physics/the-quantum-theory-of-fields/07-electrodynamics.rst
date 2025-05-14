@@ -489,6 +489,7 @@ The general solutions to :eq:`eq_qed_a_3_vector_satisfies_wave_equation` and :eq
 where :math:`p_0 = |\pbf|` and :math:`e_{\mu}(\pbf, \pm 1)` are two independent "polarization vectors" satisfying the following familiar conditions (cf. :eq:`eq_massless_vector_field_spinor_e_and_p_condition`)
 
 .. math::
+    :label: eq_qed_coulomb_gauge_polarization_vector
 
     e_0(\pbf, \pm 1) &= 0 \\
     \pbf \cdot \ebf(\pbf, \pm 1) &= 0
@@ -679,9 +680,299 @@ It follows that the Feynman diagrams may be organized by an increasing number of
 
 .. math:: \frac{e^2}{16\pi^2} \approx 5.81 \times 10^{-4}
 
+Finally, note that the Feynman rules developed in this section apply readily to the case where the in and out photon states don't have definite helicity. More precisely, for photon states with definite helicity, the polarization vectors may be taken to be of the following form (cf. :eq:`eq_massless_vector_field_e_at_k`)
+
+.. math::
+
+    e(\pbf, \pm 1) = R(\hat{\pbf}) \begin{bmatrix*}
+        0 \\
+        1 / \sqrt{2} \\
+        \pm \ifrak / \sqrt{2} \\
+        0
+    \end{bmatrix*}
+
+where :math:`R(\hat{\pbf})` rotates :math:`(0, 0, 1)` to :math:`\hat{\pbf}`. Now a general polarization vector may be written as
+
+.. math:: e_{\mu}(\pbf) = \alpha_+ e_{\mu}(\pbf, +1) + \alpha_- e_{\mu}(\pbf, -1)
+    :label: eq_qed_general_photon_polarization
+
+where :math:`|\alpha_+|^2 + |\alpha_-|^2 = 1`. The polarization is called *circular* if :math:`\alpha_+ = 0` or :math:`\alpha_- = 0`, and *linear* if :math:`|\alpha_+| = |\alpha_=| = 1/\sqrt{2}`, just as in :ref:`Polarization of photons <dropdown_polarization_of_photons>`. Note, in particular, that
+
+.. math:: e_{\mu} {e^{\mu}}^{\ast} = 1
+    :label: eq_qed_polarization_vector_has_unit_norm
+
 
 Compton Scattering
 ------------------
+
+In this section, we'll go through some really exciting calculations, utilizing many tools we've learned so far, on the scattering amplitudes between a photon and an electron, culminating in the famous estimation of the electron radius.
+
+The in-state consists of a on-mass-shell electron labeled by :math:`4`-momentum :math:`p_{\mu}` and spin :math:`z`-component :math:`\sigma` and a on-mass-shell photon labeled by :math:`4`-momentum :math:`k_{\mu}` and polarization vector :math:`e_{\mu}`. The out-state consists similarly of a on-mass-shell electron labeled by :math:`p'_{\mu}` and :math:`\sigma'` and a on-mass-shell photon labeled by :math:`k'_{\mu}` and :math:`e'_{\mu}`. In the lowest order of the electric charge :math:`e`, there are just two Feynman diagrams, shown as follows
+
+.. figure:: ./static/compton-scattering.svg
+    :align: center
+
+    The two lowest-order Feynman diagrams for the electron-photon scattering. The solid lines are electron lines, and the wavy lines are photon lines.
+
+The corresponding S-matrix element is given as follows
+
+.. math::
+
+    S(\pbf', \sigma'; \kbf', e',~\pbf, \sigma; \kbf, e)
+        &= \sum_{\alpha, \beta, \alpha', \beta'} \frac{u_{\alpha}(\pbf, \sigma)}{(2\pi)^{3/2}}
+            \frac{e_{\mu}(\kbf)}{(2\pi)^{3/2} \sqrt{2k_0}}
+            \frac{\bar{u}_{\beta'}(\pbf', \sigma')}{(2\pi)^{3/2}}
+            \frac{{e'_{\nu}}^{\ast}(\kbf')}{(2\pi)^{3/2} \sqrt{2k'_0}} \\
+        &\quad \times \int d^4 q~\frac{-\ifrak}{(2\pi)^4} \frac{\left(-\ifrak \qslash + m\right)_{\alpha' \beta}}{q^2 + m^2 - \ifrak \epsilon} \\
+            &\qquad \times \Big( (2\pi)^4 e (\gamma^{\mu})_{\beta \alpha} \delta^4(q-p-k) (2\pi)^4 e (\gamma^{\nu})_{\beta' \alpha'} \delta^4(p'+k'-q) \\
+            &\qquad + (2\pi)^4 e (\gamma^{\mu})_{\beta' \alpha'} \delta^4(p'-q-k) (2\pi)^4 e (\gamma^{\nu})_{\beta \alpha} \delta^4(q-p-k') \Big)
+
+Evaluating the (trivial) integral, using obvious shorthand notations, and with matrix multiplication rules understood, the amplitude :math:`S = S(\pbf', \sigma'; \kbf', e',~\pbf, \sigma; \kbf, e)` may be written as follows
+
+.. math::
+
+    S &= \frac{-\ifrak e^2 \delta^4(p+k-p'-k')}{(2\pi)^2 2\sqrt{k_0 k'_0}} \\
+            &\quad \times \bar{u}(\pbf', \sigma') \left(
+                \cancel{{e'}^{\ast}} \frac{-\ifrak \left(\pslash + \kslash \right) + m}{(p+k)^2 + m^2} \eslash +
+                \eslash \frac{-\ifrak \left( \pslash - \cancel{k'} \right) + m}{(p - k')^2 + m^2} \cancel{{e'}^{\ast}}
+            \right) u(\pbf, \sigma) \\
+
+Using the mass-shell conditions :math:`p^2 = m^2` and :math:`k^2 = 0`, the denominators in the big parenthesis may be simplified as follows
+
+.. math::
+
+    (p + k)^2 + m^2 &= 2p \cdot k \\
+    (p - k')^2 + m^2 &= -2p \cdot k'
+
+Under the assumption that the out-state is different from the in-state, we can split the amplitude :math:`S` according to :eq:`eq_generic_s_matrix_with_m` as follows
+
+.. math:: S = -2\pi\ifrak \delta^4(p'+k'-p-k) M
+
+where
+
+.. math::
+    :label: eq_compton_scattering_defn_m
+
+    M &= \frac{e^2}{(2\pi)^3 4\sqrt{k_0 k'_0}} \bar{u}(\pbf', \sigma') \left(
+            \cancel{{e'}^{\ast}} \frac{-\ifrak \left( \pslash + \kslash \right) + m}{p \cdot k} \eslash \right. \\
+        &\qquad \left. + \eslash \frac{\ifrak \left( \pslash - \cancel{k'} \right) - m}{p \cdot k'} \cancel{{e'}^{\ast}}
+        \right) u(\pbf, \sigma)
+
+Now the differential cross-section :math:`d\sigma` (not to be confused with spin :math:`z`-component :math:`\sigma`) according to :eq:`eq_cross_section_two_particles` is
+
+.. math:: d\sigma = (2\pi)^4 u^{-1} \delta^4(p'+k'-p-k) |M|^2 d^3 p' d^3 k'
+    :label: eq_compton_scattering_differential_cross_section
+
+where :math:`u` denotes the relative velocity between the in-state electron and photon which, according to :eq:`eq_scattering_two_particles_relative_velocity`, is given by
+
+.. math:: u = \frac{|p \cdot k|}{p_0 k_0}
+    :label: eq_qed_relative_velocity_general
+
+Here remember that :math:`u` is *not* physical, albeit being called velocity, as it may exceed :math:`1`. It turns out to be convenient to work in the so-called "laboratory frame" where the initial electron is at rest, i.e.,
+
+.. math:: p_0 = m, \quad \pbf = 0
+    :label: eq_compton_scattering_lab_frame
+
+In this frame :eq:`eq_qed_relative_velocity_general` becomes simply
+
+.. math:: u = 1
+
+Next, to handle :math:`\delta^4(p'+k'-p-k)`, it'll be convenient to introduce the following variables that represent photon energies
+
+.. math::
+    :label: eq_compton_scattering_defn_photon_energy_variable
+
+    \omega &\coloneqq k_0 = |\kbf| = -p \cdot k / m \\
+    \omega' &\coloneqq k'_0 = |\kbf'| = -p \cdot k' / m
+
+Splitting the energy-momentum delta function into the energy part and the momentum part
+
+.. math::
+
+    \delta^4(p'+k'-p-k) = \delta(p'_0 + k'_0 - p_0 - k_0) \delta^3(\pbf' + \kbf' - \pbf - \kbf)
+
+and using the laboratory frame :eq:`eq_compton_scattering_lab_frame`, we see that the momentum delta function
+
+.. math:: \delta^3(\pbf' + \kbf' - \pbf - \kbf) d^3 p' = \delta^3(\pbf' + \kbf' - \kbf) d^3 p'
+
+serves the purpose of equating :math:`\pbf' = \kbf - \kbf'` and eliminating :math:`d^3 p'` from :math:`d\sigma` in :eq:`eq_compton_scattering_differential_cross_section`. It follows that we can write
+
+.. math::
+
+    p'_0 &= \sqrt{{\pbf'}^2 + m^2} \\
+        &= \sqrt{(\kbf - \kbf')^2 + m^2} \\
+        &= \sqrt{\omega^2 + {\omega'}^2 - 2\omega\omega' \cos\theta + m^2}
+
+where :math:`\theta` denotes the angle between :math:`\kbf` and :math:`\kbf'`, and the energy delta function
+
+.. math::
+
+    \delta(p'_0 + k'_0 - p_0 - k_0) d^3 k'
+        &= \delta\left( \sqrt{\omega^2 + {\omega'}^2 - 2\omega\omega' \cos\theta + m^2} + \omega' - m - \omega \right) {\omega'}^2 d\omega' d\Omega \\
+        &= \frac{\delta(\omega' - \omega_c(\theta))}{\p_{\omega'} \left( \sqrt{\omega^2 + {\omega'}^2 - 2\omega\omega' \cos\theta + m^2} + \omega' \right)}
+            {\omega'}^2 d\omega' d\Omega \\
+        &= \frac{\delta(\omega' - \omega_c(\theta))}{1 + (\omega' - \omega \cos\theta) / p'_0} {\omega'}^2 d\omega' d\Omega \\
+        &= \delta(\omega' - \omega_c(\theta)) \frac{p'_0 {\omega'}^3}{m\omega} d\omega' d\Omega
+
+where :math:`\Omega` is the solid angle into which the out-state photon is scattered and the solution to
+
+.. math:: \sqrt{\omega^2 + {\omega'}^2 - 2\omega\omega' \cos\theta + m^2} + \omega' - m - \omega = 0
+
+is given by
+
+.. math:: \omega' = \frac{m\omega}{m + \omega(1 - \cos\theta)} \eqqcolon \omega_c(\theta)
+    :label: eq_compton_scattering_defn_wc
+
+Plugging our evaluation of :math:`\delta^4(p'+k'-p-k)` into :eq:`eq_compton_scattering_differential_cross_section`, we get
+
+.. math:: d\sigma = (2\pi)^4 |M|^2 \frac{p'_0 {\omega'}^3}{m \omega} d\Omega
+    :label: eq_compton_scattering_differential_cross_section_with_m
+
+where :math:`p'_0 = m + \omega - \omega'` and :math:`\omega'` given by the right-hand-side of :eq:`eq_compton_scattering_defn_wc`.
+
+Now let's evaluate :math:`|M|^2` where :math:`M` is given by :eq:`eq_compton_scattering_defn_m`. In fact, we'll sum over the spin :math:`z`-component as in the spin sum evaluations. Besides the fact that such summation makes the calculation easier, it can be justified by noting that spin :math:`z`-component is usually not measured in experiments. Instead of working with the specific :math:`M` in :eq:`eq_compton_scattering_defn_m`, let's first compute more generally with an arbitrary matrix :math:`A`, using the Dirac field spin sum formula :eq:`eq_dirac_field_spin_sum_finite_momentum`, the following quantity
+
+.. math::
+
+    \sum_{\sigma, \sigma'} \left| \bar{u}(\pbf', \sigma') A u(\pbf, \sigma) \right|^2
+        &= \sum_{\sigma, \sigma'} \left( \bar{u}(\pbf', \sigma') A u(\pbf, \sigma) \right) \left( u^{\dagger}(\pbf, \sigma) A^{\dagger} \bar{u}^{\dagger}(\pbf', \sigma') \right) \\
+        &= \sum_{\sigma, \sigma'} \left( \bar{u}(\pbf', \sigma') A u(\pbf, \sigma) \right) \left( \bar{u}(\pbf, \sigma) \beta A^{\dagger} \beta u(\pbf', \sigma') \right) \\
+        &= \sum_{\sigma, \sigma', \alpha, \beta, \gamma, \delta} A_{\beta \alpha} u_{\alpha}(\pbf, \sigma) \bar{u}_{\gamma}(\pbf, \sigma) \left( \beta A^{\dagger} \beta \right)_{\gamma \delta} u_{\delta}(\pbf', \sigma') \bar{u}_{\alpha}(\pbf', \sigma') \\
+        &= \Tr\left( A \frac{-\ifrak \pslash + m}{2p_0} \beta A^{\dagger} \beta \frac{-\ifrak \cancel{p'} + m}{2p'_0} \right)
+
+Applying this calculation to :eq:`eq_compton_scattering_defn_m`, and using :eq:`eq_compton_scattering_defn_photon_energy_variable` and :eq:`eq_dirac_field_beta_conjugate_gamma_dagger`, we get
+
+.. math::
+
+    \sum_{\sigma, \sigma'} |M|^2
+        &= \frac{e^4}{64 (2\pi)^6 \omega \omega' p_0 p'_0} \\
+        &\quad \times \Tr\left(
+            \left(
+                \cancel{{e'}^{\ast}} \frac{-\ifrak \left( \pslash + \kslash \right) + m}{p \cdot k} \eslash + \eslash \frac{\ifrak \left( \cancel{p'} - \cancel{k'} \right) - m}{p \cdot k'} \cancel{{e'}^{\ast}}
+            \right) (-\ifrak \pslash + m)
+        \right. \\
+        &\qquad \left. \times
+            \left(
+                \cancel{e^{\ast}} \frac{-\ifrak \left( \pslash + \kslash \right) + m}{p \cdot k} \cancel{e'} + \cancel{e'} \frac{\ifrak \left( \cancel{p'} - \cancel{k'} \right)- m}{p \cdot k'} \cancel{e^{\ast}}
+            \right) (-\ifrak \cancel{p'} + m)
+        \right)
+
+A few tricks can be applied to simplify such a complicated expression. First, recall that the Coulomb gauge condition :eq:`eq_qed_coulomb_gauge_polarization_vector` implies :math:`e_0 = 0`, and the laboratory frame condition :eq:`eq_compton_scattering_lab_frame` implies :math:`\pbf = 0`. It follows that
+
+.. math:: e \cdot p = e^{\ast} \cdot p = e' \cdot p = {e'}^{\ast} \cdot p = 0
+    :label: eq_compton_scattering_coulomb_and_lab_frame_e_and_p_condition
+
+This, together with the Clifford algebra relation :eq:`eq_dirac_field_clifford_algebra`, in turn, implies the following
+
+.. math::
+
+    \left( -\ifrak \pslash + m \right) \eslash \left( -\ifrak \pslash + m \right)
+        &= \eslash \left( \ifrak \pslash + m \right) \left( -\ifrak \pslash + m \right) \\
+        &= \eslash \left( \pslash^2 + m^2 \right) \\
+        &= \eslash \left( p^2 + m^2 \right) = 0
+
+and likewise for :math:`\cancel{e^{\ast}}, \cancel{e'},` and :math:`\cancel{{e'}^{\ast}}`. This allows the following simplification
+
+.. math::
+
+    \sum_{\sigma, \sigma'} |M|^2
+        &= \frac{-e^4}{64 (2\pi)^6 \omega \omega' p_0 p'_0} \Tr\left(
+            \left( \frac{\cancel{{e'}^{\ast}} \kslash \eslash}{p \cdot k} + \frac{\eslash \cancel{k'} \cancel{{e'}^{\ast}}}{p \cdot k'} \right)
+            \left( -\ifrak \pslash + m \right) \right. \\
+        &\quad \left. \times \left( \frac{\cancel{e^{\ast}} \kslash \cancel{e'}}{p \cdot k} + \frac{\cancel{e'} \cancel{k'} \cancel{e^{\ast}}}{p \cdot k'} \right)
+            \left( -\ifrak \cancel{p'} + m \right)
+    \right) \\
+        &= \frac{e^4}{64 (2\pi)^6 \omega \omega' p_0 p'_0} \left(
+            \frac{\Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \pslash \cancel{e^{\ast}} \kslash \cancel{e'} \cancel{p'} \right)}{(p \cdot k)^2} \right. \\
+            &\quad + \frac{\Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \pslash \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \cancel{p'} \right)}{(p \cdot k)(p \cdot k')}
+            + \frac{\Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \pslash \cancel{e^{\ast}} \kslash \cancel{e'} \cancel{p'} \right)}{(p \cdot k')(p \cdot k)} \\
+            &\quad + \frac{\Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \pslash \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \cancel{p'} \right)}{(p \cdot k')^2}
+            - \frac{m^2 \Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \cancel{e^{\ast}} \kslash \cancel{e'} \right)}{(p \cdot k)^2} \\
+            &\quad - \frac{m^2 \Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \right)}{(p \cdot k)(p \cdot k')}
+            - \frac{m^2 \Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \cancel{e^{\ast}} \kslash \cancel{e'} \right)}{(p \cdot k')(p \cdot k)} \\
+            &\quad - \left. \frac{m^2 \Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \right)}{(p \cdot k')^2}
+        \right)
+
+where the last equality uses the fact that the trace of a product of odd number of gamma matrices vanishes.
+
+Further simplifications can be achieved by assuming, on top of previous assumptions including :eq:`eq_compton_scattering_coulomb_and_lab_frame_e_and_p_condition` and :eq:`eq_qed_polarization_vector_has_unit_norm`, that incoming and outgoing photons are linearly polarized, i.e.,
+
+.. math:: e_{\mu} = e_{\mu}^{\ast} \quad \text{and} \quad e'_{\mu} = {e'_{\mu}}^{\ast}
+
+in which case one can, modulo several rather tedious calculations, arrive at the following simple form
+
+.. math::
+    :label: eq_compton_scattering_linearly_polarized_m_squared_sum
+
+    \sum_{\sigma, \sigma'} |M|^2 = \frac{e^4}{64 (2\pi)^6 \omega \omega' p_0 p'_0} \left(
+        \frac{8(k \cdot k')^2}{(k \cdot p)(k' \cdot p)} + 32(e \cdot e')^2
+    \right)
+
+Using :eq:`eq_compton_scattering_defn_photon_energy_variable`, :eq:`eq_compton_scattering_defn_wc`, and the fact that :math:`\theta` is the angle between :math:`\kbf` and :math:`\kbf'`, one have the following identities
+
+.. math::
+
+    k \cdot p &= -m \omega \\
+    k' \cdot p &= -m \omega' \\
+    k \cdot k' &= \omega \omega' (\cos\theta - 1) = m(\omega' - \omega)
+
+which can then be plugged into :eq:`eq_compton_scattering_linearly_polarized_m_squared_sum` and be combined with :eq:`eq_compton_scattering_differential_cross_section_with_m` to obtain the following averaged differential cross-section for linearly polarized photons
+
+.. math::
+    :label: eq_compton_scattering_differential_cross_section_linearly_polarized
+
+    \frac{1}{2} \sum_{\sigma, \sigma'} d\sigma(\pbf, \sigma; \kbf, e \to \pbf', \sigma'; \kbf', e')
+        &= \frac{e^4 {\omega'}^2}{128 (2\pi)^2 m^2 \omega^2} \left( \frac{8(\omega - \omega')^2}{\omega \omega'} + 32(e \cdot e')^2 \right) d\Omega \\
+        &= \frac{e^4 {\omega'}^2}{64 \pi^2 m^2 \omega^2} \left( \frac{\omega}{\omega'} + \frac{\omega'}{\omega} - 2 + 4(e \cdot e')^2 \right) d\Omega
+
+This formula is known as the `Klein-Nishina formula <https://en.wikipedia.org/wiki/Klein%E2%80%93Nishina_formula>`__ for linearly polarized photons.
+
+Now if the incoming photon is prepared without any particular polarization (which usually is the case in experiments/observations), then one should further average over the two independent polarization vectors to get the following
+
+.. math::
+    :label: eq_compton_scattering_differential_cross_section_avg_over_incoming_photon
+
+    \frac{1}{4} \sum_{\sigma, \sigma', e} d\sigma(\pbf, \sigma; \kbf, e \to \pbf', \sigma'; \kbf', e')
+        = \frac{e^4 {\omega'}^2}{64 \pi^2 m^2 \omega^2} \left( \frac{\omega}{\omega'} + \frac{\omega'}{\omega} - 2\left(\hat{\kbf} \cdot e'\right)^2 \right) d\Omega
+
+Indeed, if we write :math:`e_1, e_2` for the two orthogonal, linearly polarized, polarization vectors of the incoming photon, then using :eq:`eq_qed_photon_spinor_sum` we have
+
+.. math::
+
+    \sum_e (e \cdot e')^2 &= \left( \sum_{i=1}^3 {e_1}_i e'_i \right)^2 + \left( \sum_{i=1}^3 {e_2}_i e'_i \right)^2 \\
+        &= \sum_{i=1}^3 \left( {e^2_1}_i + {e^2_2}_i \right) {e'_i}^2 + 2 \sum_{i \neq j} \left( {e_1}_i {e_1}_j + {e_2}_i {e_2}_j \right) e'_i e'_j \\
+        &= \sum_{i=1}^3 \left( 1 - \hat{\kbf}^2_i \right) {e'_i}^2 - 2 \sum_{i \neq j} \hat{\kbf}_i \hat{\kbf}_j e'_i e'_j \\
+        &= 1 - \left( \hat{\kbf} \cdot e' \right)^2
+
+.. note::
+
+    It follows from :eq:`eq_compton_scattering_differential_cross_section_avg_over_incoming_photon` that for randomly polarized incoming photon, the scattered photon is preferably polarized in the direction perpendicular to :math:`\hat{\kbf}` -- the direction of the incoming photon. Since the polarization of the scattered photon is also perpendicular to the direction of the outgoing photon, it must be in the direction perpendicular to the plane of scattering. According to [Wei95]_ page 368, such phenomenon is indeed observed from eclipsing binary stars. See `Chandrasekhar polarization <https://en.wikipedia.org/wiki/Chandrasekhar_polarization>`__.
+
+Finally let's average also over the polarizations of the outgoing photon using the following identity
+
+.. math:: \sum_{e, e'} (e \cdot e')^2 = 1 + \cos^2 \theta
+
+where we recall that :math:`\theta` is the angle between :math:`\kbf` and :math:`\kbf'`. Plugging this into :eq:`eq_compton_scattering_differential_cross_section_linearly_polarized`, we get
+
+.. math::
+
+    \frac{1}{8} \sum_{\sigma, \sigma', e, e'} d\sigma(\pbf, \sigma; \kbf, e \to \pbf', \sigma'; \kbf', e')
+        = \frac{e^4 {\omega'}^2}{64 \pi^2 m^2 \omega^2} \left( \frac{\omega}{\omega'} + \frac{\omega'}{\omega} - 1 + \cos^2 \theta \right) d\Omega
+
+Note that it's customary to multiply both sides of the above equality by :math:`2` since the polarizations :math:`e` and :math:`e'` are correlated, as observed above.
+
+In the low-energy limit :math:`\omega \ll m`, we have :math:`\omega \approx \omega'` by :eq:`eq_compton_scattering_defn_wc`. It follows that
+
+.. math:: \frac{1}{4} \sum_{\sigma, \sigma', e, e'} d\sigma(\pbf, \sigma; \kbf, e \to \pbf', \sigma'; \kbf', e') = \frac{e^4}{32 \pi^2 m^2} \left( 1 + \cos^2\theta \right) d\Omega
+
+Integrating over the solid angle :math:`d\Omega`, we get the so-called Thomson cross-section
+
+.. math::
+
+    \sigma_T &\coloneqq \frac{1}{4} \int \sum_{\sigma, \sigma', e, e'} d\sigma \\
+        &= \frac{e^4}{32 \pi^2 m^2} \int \left( 1 + \cos^2\theta \right) d\Omega \\
+        &= \frac{e^4}{32 \pi^2 m^2} \int_0^{2\pi} d\phi \int_0^{\pi} d\theta \left( 1 + \cos^2\theta \right) \sin\theta \\
+        &= \frac{e^4}{6\pi m^2}
 
 
 .. rubric:: Footnotes

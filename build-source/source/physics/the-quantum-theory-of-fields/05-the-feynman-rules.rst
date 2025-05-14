@@ -563,8 +563,8 @@ Before moving onto the discussion about the external edges, let's revisit the ex
 				&= \ifrak (2\pi)^{-2} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{\ell m k, \ell' m' k'} g_{\ell m k} g_{\ell' m' k'} u_{m'}(1) u^{\ast}_{\ell}(1') \\
 				&\qquad \times \left( \frac{P_{m \ell'}(p_1+p_2)}{(p_1+p_2)^2+M^2-\ifrak \epsilon} u_{k'}(2) u^{\ast}_k(2') + \frac{P_{m \ell'}(p_1-p'_2)}{(p_1-p'_2)^2+M^2-\ifrak \epsilon} u_k(2) u^{\ast}_{k'}(2') \right) \\
 				&= \ifrak (2\pi)^{-2} \delta^4(p'_1+p'_2-p_1-p_2) \\
-				&\qquad \times \sum_{k, k'} \Bigg( \left( \blue{u^{\dagger}(1') \Gamma_k \frac{P(p_1+p_2)}{(p_1+p_2)^2+M^2-\ifrak \epsilon} \Gamma_{k'} u(1)} \right) u_{k'}(2) u^{\ast}_k(2') \\
-				&\qquad\qquad + \left( \blue{u^{\dagger}(1') \Gamma_k \frac{P(p_1-p'_2)}{(p_1-p'_2)^2+M^2-\ifrak \epsilon} \Gamma_{k'} u(1)} \right) u_k(2) u^{\ast}_{k'}(2') \Bigg)
+				&\qquad \times \sum_{k, k'} \left( \left( \blue{u^{\dagger}(1') \Gamma_k \frac{P(p_1+p_2)}{(p_1+p_2)^2+M^2-\ifrak \epsilon} \Gamma_{k'} u(1)} \right) u_{k'}(2) u^{\ast}_k(2') \right. \\
+				&\qquad\qquad \left. + \left( \blue{u^{\dagger}(1') \Gamma_k \frac{P(p_1-p'_2)}{(p_1-p'_2)^2+M^2-\ifrak \epsilon} \Gamma_{k'} u(1)} \right) u_k(2) u^{\ast}_{k'}(2') \right)
 
 	where the blue terms are supposed to be understood as matrix multiplications with
 
@@ -586,8 +586,8 @@ Before moving onto the discussion about the external edges, let's revisit the ex
 	.. math::
 
 		S^C_{1'2',12} &= \ifrak (2\pi)^{-2} \delta^4(p'_1+p'_2-p_1-p_2) \\
-			&\qquad \times \sum_{k, k'} \bigg( \frac{P_{k k'}(p'_1 - p_1)}{(p'_1-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(1') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(2') \right) \\
-			&\qquad\qquad - \frac{P_{k k'}(p'_2-p_1)}{(p'_2-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(2') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(1') \right) \bigg)
+			&\qquad \times \sum_{k, k'} \left( \frac{P_{k k'}(p'_1 - p_1)}{(p'_1-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(1') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(2') \right) \right. \\
+			&\qquad\qquad \left. - \frac{P_{k k'}(p'_2-p_1)}{(p'_2-p_1)^2 + M^2 - \ifrak\epsilon} \left( u^{\dagger}(1) \Gamma_k u(2') \right) \left( u^{\dagger}(2) \Gamma_{k'} u(1') \right) \right)
 
 :ref:`Boson-boson scattering <listing_boson_boson_scattering>` in momentum space
 	We didn't actually calculate the (4th order) boson-boson scattering S-matrix :math:`S^C_{1'2',12}` in spacetime coordinates due to its complexity. But it becomes much simpler in momentum space coordinates, and can be calculated as follows. First, let's figure out the powers of :math:`\ifrak` and :math:`\pi`, respectively. Since there are :math:`4` vertices and :math:`4` internal edges, each of which contribute one :math:`-\ifrak`, we get a contribution of :math:`(-\ifrak)^8 = 1`. Moreover, since there are equal numbers of vertices and internal edges, each of which contribute :math:`(2\pi)^4` and :math:`(2\pi)^{-4}`, respectively, and :math:`4` external edges, each of which contribute :math:`(2\pi)^{-3/2}`, we get a total contribution of :math:`(2\pi)^{-6}`. Remembering an additional minus sign coming from the fermionic loop, we have the following
@@ -597,9 +597,8 @@ Before moving onto the discussion about the external edges, let's revisit the ex
 
 		& S^C_{1'2',12} \\
 			&\quad = -(2\pi)^{-6} \delta^4(p'_1+p'_2-p_1-p_2) \sum_{k_1, k_2, k'_1, k'_2} u^{\ast}_{k'_1}(1') u^{\ast}_{k'_2}(2') u_{k_1}(1) u_{k_2}(2) \\
-			&\qquad \times \int d^4 p~\op{Tr} \bigg( \frac{P(p)}{p^2+M^2-\ifrak\epsilon} \Gamma_{k'_1} \frac{P(p-p'_1)}{(p-p'_1)^2+M^2-\ifrak\epsilon}
-				\Gamma_{k'_2} \\
-			&\qquad \times \frac{P(p-p'_1-p'_2)}{(p-p'_1-p'_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_2} \frac{P(p-p'_1-p'_2+p_2)}{(p-p'_1-p'_2+p_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_1} \bigg) + \cdots
+			&\qquad \times \int d^4 p~\op{Tr} \left( \frac{P(p)}{p^2+M^2-\ifrak\epsilon} \Gamma_{k'_1} \frac{P(p-p'_1)}{(p-p'_1)^2+M^2-\ifrak\epsilon} \Gamma_{k'_2} \right. \\
+			&\qquad \left. \times \frac{P(p-p'_1-p'_2)}{(p-p'_1-p'_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_2} \frac{P(p-p'_1-p'_2+p_2)}{(p-p'_1-p'_2+p_2)^2+M^2-\ifrak\epsilon} \Gamma_{k_1} \right) + \cdots
 
 	where :math:`\cdots` denotes valuations of other (4th order) Feynman diagrams.
 
