@@ -13,7 +13,6 @@ Quantum theory postulates that *any* physical state (of the world) can be repres
 where :math:`\Psi` is a nonzero vector in the Hilbert space. It is, however, rather inconvenient to have to deal with :math:`[\Psi]` all the time. So instead, we will almost always pick a representative :math:`\Psi`, often out of a natural choice, and call it a *state vector*, and keep in mind that anything physically meaningful must not be sensitive to a scalar multiplication.
 
 .. admonition:: Assumption
-	:class: Important
 
 	Throughout this post we always assume that state vectors are normalized so that :math:`||\Psi|| = 1`.
 
@@ -132,7 +131,6 @@ which, in mathematical terms, says that :math:`U` furnishes a *projective repres
 .. _assump_genuine_repr:
 
 .. admonition:: Assumption
-	:class: Important
 
 	We will assume that :math:`U` furnishes a genuine representation of :math:`T` unless otherwise stated, because it's simpler and will be suffice for most scenarios of interest.
 

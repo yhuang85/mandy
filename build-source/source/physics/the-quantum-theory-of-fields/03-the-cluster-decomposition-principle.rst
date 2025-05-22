@@ -246,7 +246,6 @@ Let's work out the recursive definitions of :math:`S^C_{\beta \alpha}` from bott
 .. _assump_on_particle_stability:
 
 .. admonition:: Assumption on particle stability
-	:class: Important
 
 	The single-particle states are stable, i.e., it's not possible for a single-particle state to transit into any other state, including the vacuum state.
 

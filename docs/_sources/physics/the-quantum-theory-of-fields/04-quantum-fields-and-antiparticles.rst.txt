@@ -2023,7 +2023,6 @@ We'll skip over the special case of scalar, vector, and Dirac fields, and jump d
 Hence if we assume the following condition on the inversion parities
 
 .. admonition:: Assumption on the inversion parities
-	:class: Important
 
 	.. math:: \zeta~\eta~\xi = 1
 		:label: eq_cpt_parities_product_assumption

@@ -289,7 +289,6 @@ Step 1.
 	Now comes the crucial part, which is to make assumptions about :math:`H` so that :eq:`eq_s_commutes_with_hpjk` are satisfied. Recall from :eq:`eq_h_as_h0_plus_v` that :math:`H = H_0 + V` where :math:`V` describes the interactions. The first assumption we'll make is the following
 
 	.. admonition:: Assumption on :math:`H` for Lorentz invariance of S-matrix #1
-		:class: Important
 
 		The interaction :math:`V` affects neither the momentum :math:`\Pbf` nor the angular momentum :math:`\Jbf`. In other words, we assume that
 
@@ -343,7 +342,6 @@ Step 2.
 	We see that :eq:`eq_k30_u_commutation` would vanish as :math:`\tau \to \pm\infty` if :math:`W(\tau) \to 0`. The latter, in turn, would follow from the following assumption
 
 	.. admonition:: Assumption on :math:`H` for Lorentz invariance of S-matrix #2
-		:class: Important
 
 		The matrix elements of :math:`W` with respect to the eigenstates :math:`\Phi_{\alpha}` of :math:`H_0` is smooth, so that :math:`W(\tau)` vanishes on any local packet of :math:`\Phi_{\alpha}` as in :eq:`eq_psi_packet` as :math:`\tau \to \pm\infty`.
 
