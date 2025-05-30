@@ -419,12 +419,14 @@
 <p>in agreement with <a class="reference internal" href="#equation-eq-pib-canonical-commutation-relations">Eq.8.1.1</a>. Next, using the completeness condition, one can write</p>
 <div class="math notranslate nohighlight">
 \[\ket{p} = \int \prod_a dq_a \braket{q | p} \ket{q}\]</div>
-<p>It follows then from <a class="reference internal" href="#equation-eq-pim-p-acts-as-dq">Eq.8.1.3</a> that</p>
+<p>It follows then from <a class="reference internal" href="#equation-eq-pim-p-acts-as-dq">Eq.8.1.3</a> and the fact that the <span class="math notranslate nohighlight">\(\ket{q}\)</span>s form a basis that</p>
 <div class="math notranslate nohighlight">
-\[\int \prod_a dq_a~p_b \braket{q | p} \ket{q} = p_b \ket{p} = P_b \ket{p} = -\ifrak \int \prod_a dq_a \frac{\p \braket{q | p}}{\p q_b} \ket{q}\]</div>
-<p>for any <span class="math notranslate nohighlight">\(b\)</span>. Using the fact that the <span class="math notranslate nohighlight">\(\ket{q}\)</span>s form a basis, we conclude that <a class="footnote-reference brackets" href="#qp-product-2pi-factor" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+\[\begin{split}&amp;\int \prod_a dq_a~p_b \braket{q | p} \ket{q} = p_b \ket{p} = P_b \ket{p} = -\ifrak \int \prod_a dq_a \frac{\p \braket{q | p}}{\p q_b} \ket{q} \\
+\implies &amp; \frac{\p \braket{q | p}}{\p q_b} = \ifrak p_b \braket{q | p}\end{split}\]</div>
+<p>for any <span class="math notranslate nohighlight">\(b\)</span>. It follows that</p>
 <div class="math notranslate nohighlight" id="equation-eq-pib-schrodinger-picture-qp-formula">
-<span class="eqno">(8.1.4)<a class="headerlink" href="#equation-eq-pib-schrodinger-picture-qp-formula" title="Link to this equation">#</a></span>\[\braket{q | p} = \prod_a e^{\ifrak q_a p_a}\]</div>
+<span class="eqno">(8.1.4)<a class="headerlink" href="#equation-eq-pib-schrodinger-picture-qp-formula" title="Link to this equation">#</a></span>\[\braket{q | p} = \prod_a \frac{1}{\sqrt{2\pi}} e^{\ifrak q_a p_a}\]</div>
+<p>where the factor <span class="math notranslate nohighlight">\((2\pi)^{-1/2}\)</span> is determined by the normalizing condition <span class="math notranslate nohighlight">\(\braket{p' | p} = \delta(p' - p)\)</span>.</p>
 <section id="the-general-path-integral-formula">
 <h3><span class="section-number">8.1.1. </span>The general path integral formula<a class="headerlink" href="#the-general-path-integral-formula" title="Link to this heading">#</a></h3>
 <p>To derive the general path integral formula, we need to pass to the Heisenberg picture as follows</p>
@@ -451,7 +453,7 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 1 &amp;= \int \prod_a dp_a \ketbra{p, t}{p, t}\end{split}\]</div>
 <p>Moreover <a class="reference internal" href="#equation-eq-pib-schrodinger-picture-qp-formula">Eq.8.1.4</a> also carries over</p>
 <div class="math notranslate nohighlight" id="equation-eq-pif-heisenberg-picture-qp-formula">
-<span class="eqno">(8.1.8)<a class="headerlink" href="#equation-eq-pif-heisenberg-picture-qp-formula" title="Link to this equation">#</a></span>\[\braket{q, t | p, t} = \prod_a e^{\ifrak q_a p_a}\]</div>
+<span class="eqno">(8.1.8)<a class="headerlink" href="#equation-eq-pif-heisenberg-picture-qp-formula" title="Link to this equation">#</a></span>\[\braket{q, t | p, t} = \prod_a \frac{1}{\sqrt{2\pi}} e^{\ifrak q_a p_a}\]</div>
 <p>Now the key idea in deriving the path integral formula is to evaluate how the eigenstates evolve in infinitesimal time steps <span class="math notranslate nohighlight">\(\tau \to \tau + d\tau\)</span> as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-pif-infinitesimal-q-progression">
 <span class="eqno">(8.1.9)<a class="headerlink" href="#equation-eq-pif-infinitesimal-q-progression" title="Link to this equation">#</a></span>\[\braket{q', \tau + d\tau | q, \tau} = \braket{q', \tau | e^{-\ifrak H d\tau} | q, \tau}\]</div>
@@ -468,7 +470,7 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 <span class="eqno">(8.1.11)<a class="headerlink" href="#equation-eq-pif-infinitesimal-q-progression-expanded" title="Link to this equation">#</a></span>\[\begin{split}\braket{q', \tau + d\tau | q, \tau} &amp;= \braket{q', \tau | \exp\left( -\ifrak H(Q(\tau), P(\tau)) d\tau \right) | q, \tau} \\
     &amp;= \int \prod_a dp_a \braket{q', \tau | \exp(-\ifrak H(Q(\tau), P(\tau)) d\tau) | p, \tau} \braket{p, \tau | q, \tau} \\
     &amp;= \int \prod_a dp_a \exp(-\ifrak H(q', p) d\tau) \braket{q', \tau | p, \tau} \braket{p, \tau | q, \tau} \\
-    &amp;= \int \prod_a dp_a \exp\left( -\ifrak H(q', p) d\tau + \ifrak \sum_a (q'_a - q_a) p_a \right)\end{split}\]</div>
+    &amp;= \int \prod_a \frac{dp_a}{2\pi} \exp\left( -\ifrak H(q', p) d\tau + \ifrak \sum_a (q'_a - q_a) p_a \right)\end{split}\]</div>
 <p>Note that the third equality holds only for infinitesimal <span class="math notranslate nohighlight">\(d\tau\)</span>, which allows us to pretend that <span class="math notranslate nohighlight">\(e^{-\ifrak H d\tau}\)</span> is linear in <span class="math notranslate nohighlight">\(H\)</span>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -482,12 +484,12 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 \[\tau_i = \frac{t' - t}{N + 1}\]</div>
 <p>As <span class="math notranslate nohighlight">\(N \to \infty\)</span>, one can apply <a class="reference internal" href="#equation-eq-pif-infinitesimal-q-progression-expanded">Eq.8.1.11</a> to each sub-interval to calculate the transition amplitude</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\braket{q', t' | q, t} &amp;= \int \prod_{k=1}^N dq_k \braket{q', t' | q_N, t_N} \braket{q_{N-1}, t_{N-1} | q_{N-2}, t_{N-2}} \cdots \braket{q_1, t_1 | q, t} \\
-    &amp;= \int \left( \prod_{k=1}^N \prod_a dq_{k, a} \right) \left( \prod_{k=0}^N \prod_a dp_{k, a} \right) \\
-    &amp;\quad \times \exp\left(
+\[\begin{split}&amp;\braket{q', t' | q, t} \\
+    &amp;= \int \prod_{k=1}^N dq_k \braket{q', t' | q_N, t_N} \braket{q_{N-1}, t_{N-1} | q_{N-2}, t_{N-2}} \cdots \braket{q_1, t_1 | q, t} \\
+    &amp;= \int \left( \prod_{k=1}^N \prod_a dq_{k, a} \right) \left( \prod_{k=0}^N \prod_a \frac{dp_{k, a}}{2\pi} \right) \exp\left(
         \ifrak \sum_{k=0}^N \left( -H(q_{k+1}, p_k) d\tau + \sum_a (q_{k+1, a} - q_{k, a}) p_{k, a} \right)
     \right) \\
-    &amp;= \int_{\substack{q_a(t) = q_a \\ q_a(t') = q'_a }} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} dp_a(\tau) \exp\left(
+    &amp;= \int_{\substack{q_a(t) = q_a \\ q_a(t') = q'_a }} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} \frac{dp_a(\tau)}{2\pi} \exp\left(
         \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right)
     \right)\end{split}\]</div>
 <p>with the understanding that <span class="math notranslate nohighlight">\(q_0 = q\)</span> and <span class="math notranslate nohighlight">\(q_{N+1} = q'\)</span>. It’s in the last equality where the limit <span class="math notranslate nohighlight">\(N \to \infty\)</span>, or equivalently <span class="math notranslate nohighlight">\(d\tau \to 0\)</span>, is taken. The integral is taken over all paths from state <span class="math notranslate nohighlight">\(\ket{q}\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> to state <span class="math notranslate nohighlight">\(\ket{q'}\)</span> at time <span class="math notranslate nohighlight">\(t'\)</span>, and hence the name – path integral.</p>
@@ -501,20 +503,20 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 \[\begin{split}\braket{q', \tau + d\tau | \Oscr(P(\tau), Q(\tau)) | q, \tau}
     &amp;= \int \prod_a dp_a \braket{q', \tau | \exp(-\ifrak H d\tau) | p, \tau} \braket{p, \tau | \Oscr | q, \tau} \\
     &amp;= \int \prod_a dp_a \exp\left( -\ifrak H(q', p) d\tau \right) \Oscr(p, q) \braket{q', \tau | p, \tau} \braket{p, \tau | q, \tau} \\
-    &amp;= \int \prod_a dp_a \exp\left( -\ifrak H(q', p) d\tau + \ifrak \sum_a (q'_a - q_a) p_a \right) \Oscr(p, q)\end{split}\]</div>
+    &amp;= \int \prod_a \frac{dp_a}{2\pi} \exp\left( -\ifrak H(q', p) d\tau + \ifrak \sum_a (q'_a - q_a) p_a \right) \Oscr(p, q)\end{split}\]</div>
 <p>Consider a time-ordered sequence of operators</p>
 <div class="math notranslate nohighlight">
 \[\Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots\]</div>
 <p>such that <span class="math notranslate nohighlight">\(t_A &gt; t_B &gt; \cdots\)</span>. We can calculate the matrix element of the product of the operators at a finite time difference by dividing the time-interval in the same way as in <a class="reference internal" href="#equation-eq-pif-time-intervals">Eq.8.1.12</a> and pay attention to the sub-intervals that contains <span class="math notranslate nohighlight">\(t_A, t_B, \cdots\)</span>, as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp;\braket{q', t' | \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots | q, t} \\
-&amp;\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} dp_a(\tau)
+&amp;\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} \frac{dp_a(\tau)}{2\pi}
     \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
 &amp;\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right) \right)\end{split}\]</div>
 <p>Since the right-hand-side doesn’t rely on the time-ordering, we may replace the product of operators on the left-hand-side with the timed-ordered product as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-pif-time-ordered-product-matrix-element">
 <span class="eqno">(8.1.13)<a class="headerlink" href="#equation-eq-pif-time-ordered-product-matrix-element" title="Link to this equation">#</a></span>\[\begin{split}&amp;\braket{q', t' | T\left\{ \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \right\} | q, t} \\
-&amp;\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} dp_a(\tau)
+&amp;\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} \frac{dp_a(\tau)}{2\pi}
     \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
 &amp;\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right) \right)\end{split}\]</div>
 <p>as long as <span class="math notranslate nohighlight">\(t_A, t_B, \cdots\)</span> are all distinct.</p>
@@ -524,12 +526,12 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 <p>From now on, we will restrict the discussion to quantum field theories where the index <span class="math notranslate nohighlight">\(a\)</span> from the previous section becomes <span class="math notranslate nohighlight">\((\xbf, m)\)</span>, where <span class="math notranslate nohighlight">\(\xbf\)</span> is the spatial coordinates and <span class="math notranslate nohighlight">\(m\)</span> denotes other quantum labels such as spin. In this case we rewrite <a class="reference internal" href="#equation-eq-pif-time-ordered-product-matrix-element">Eq.8.1.13</a> as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp;\braket{q', t' | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | q, t} \\
-&amp;\quad = \int_{\substack{q_m(t, \xbf)=q_m(\xbf) \\ q_m(t', \xbf')=q_m(\xbf')}} \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf) \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+&amp;\quad = \int_{\substack{q_m(t, \xbf)=q_m(\xbf) \\ q_m(t', \xbf')=q_m(\xbf')}} \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
 &amp;\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3 x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) \right) \right)\end{split}\]</div>
 <p>Recall that the S-matrix involves matrix elements between in- and out-states, which are states are time <span class="math notranslate nohighlight">\(t = \mp\infty\)</span>, respectively. Hence if we write <span class="math notranslate nohighlight">\(\ket{\alpha, \op{in}}\)</span> for the in-state and <span class="math notranslate nohighlight">\(\ket{\beta, \op{out}}\)</span> for the out-state, then the S-matrix element can be written as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-pi-to-s-matrix-timed-ordered-matrix-element">
 <span class="eqno">(8.1.14)<a class="headerlink" href="#equation-eq-pi-to-s-matrix-timed-ordered-matrix-element" title="Link to this equation">#</a></span>\[\begin{split}&amp;\braket{\beta, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | \alpha, \op{in}} \\
-&amp;\quad = \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf) \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+&amp;\quad = \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
 &amp;\qquad \times \exp\left( \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3 x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) \right) \right) \\
 &amp;\qquad \times \braket{\beta, \op{out} | q(\infty), \infty} \braket{q(-\infty), -\infty | \alpha, \op{in}}\end{split}\]</div>
 <p>where the path integral now has essentially no boundary conditions.</p>
@@ -577,29 +579,71 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 <p>and therefore</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp; \braket{\VAC, \op{out} | T\left\{ \Oscr_A(\Pi(t_A), \Phi(t_A)), \Oscr(\Pi(t_B), \Phi(t_B)), \cdots \right\} | \VAC, \op{in}} \\
-&amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf} d\phi(\tau, \xbf) \prod_{\tau, \xbf} d\pi(\tau, \xbf)~\Oscr_A(\Pi(t_A), \Phi(t_A)) \Oscr_B(\Pi(t_B), \Phi(t_B)) \cdots \\
+&amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf} d\phi(\tau, \xbf) \prod_{\tau, \xbf} \frac{d\pi(\tau, \xbf)}{2\pi} \Oscr_A(\Pi(t_A), \Phi(t_A)) \Oscr_B(\Pi(t_B), \Phi(t_B)) \cdots \\
 &amp;\qquad \times \exp\left(
     \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(\phi(\tau), \pi(\tau)) + \int d^3x~\dot{\phi}(\tau, \xbf) \pi(\tau, \xbf) \right.\right. \\
     &amp;\qquad \left.\left. + \frac{\ifrak\epsilon}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \phi(\tau, \xbf) \phi(\tau, \ybf) e^{-\epsilon |\tau|} \right)
 \right)\end{split}\]</div>
 <p>Without working out the details, we claim that the only difference in the calculation for general fields is the term after <span class="math notranslate nohighlight">\(\ifrak\epsilon/2\)</span>, whose exact form turns out to be insignificant. For later references, the final result is recorded as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">
-<span class="eqno">(8.1.18)<a class="headerlink" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element" title="Link to this equation">#</a></span>\[\begin{split}&amp; \braket{\VAC, \op{out} | T\left\{ \Oscr_A(\Pi(t_A), \Phi(t_A)), \Oscr(\Pi(t_B), \Phi(t_B)), \cdots \right\} | \VAC, \op{in}} \\
-&amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf} dp_m(\tau, \xbf)~\Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \\
+<span class="eqno">(8.1.18)<a class="headerlink" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element" title="Link to this equation">#</a></span>\[\begin{split}&amp; \braket{\VAC, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr(P(t_B), Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+&amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \\
 &amp;\qquad \times \exp\left(
     \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) + \ifrak\epsilon \text{ terms} \right)
 \right)\end{split}\]</div>
+<p>where the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms depend only on <span class="math notranslate nohighlight">\(q\)</span>s.</p>
 </section>
 <section id="lagrangian-version-of-the-path-integral">
 <h3><span class="section-number">8.1.3. </span>Lagrangian version of the path integral<a class="headerlink" href="#lagrangian-version-of-the-path-integral" title="Link to this heading">#</a></h3>
 <p>So far the path integral formalism has been developed using the Hamiltonian. Now we’ll develop a version based on the Lagrangian. In fact, the integrand in the exponential power in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a>, leaving alone the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms, looks just like the corresponding Lagrangian (cf. <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-legendre-transformation-lagrangian-from-hamiltonian">Eq.6.1.11</a>). However, there is an important difference, namely, the <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(p\)</span> variables in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> are independent variables, while in the Lagrangian formalism, they are related by <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-hamilton-equation-in-heisenberg-picture">Eq.6.1.14</a>. As we’ll see, it turns out that when the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> is quadratic in <span class="math notranslate nohighlight">\(p\)</span> and the (timed-ordered) operators <span class="math notranslate nohighlight">\(\Oscr_A, \Oscr_B, \cdots\)</span>, are independent of the <span class="math notranslate nohighlight">\(P\)</span>s, one can explicitly evaluate the integral in <span class="math notranslate nohighlight">\(p\)</span> in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a>, which will then produce the Lagrangian version of the path integral.</p>
-<p class="rubric">Footnotes</p>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="qp-product-2pi-factor" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>It’s unclear to me why a factor of <span class="math notranslate nohighlight">\(1/\sqrt{2\pi}\)</span>, which clearly diminishes the (infinite) product, is inserted in <a class="reference internal" href="../../bib.html#wei95" id="id2"><span>[Wei95]</span></a> page 379 eq. (9.1.12). It might simply be a mistake considering its fermionic counterpart eq. (9.5.27) in page 403.</p>
-</aside>
-</aside>
+<p>To spell out the details, let’s write down the (Heisenberg-picture) Hamiltonian in the most general form as follows</p>
+<div class="math notranslate nohighlight">
+\[H(Q, P) = \frac{1}{2} \sum_{n, m} \int d^3x~d^3y~A_{\xbf n, \ybf m}(Q) P_n(\xbf) P_m(\ybf) + \sum_n \int d^3x~B_{\xbf n}(Q) P_n(\xbf) + C(Q)\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is a real, symmetric, positive matrix. Moreover <span class="math notranslate nohighlight">\(H\)</span> is written in the way that all the <span class="math notranslate nohighlight">\(Q\)</span> operators lie to the left of the <span class="math notranslate nohighlight">\(P\)</span> operators.</p>
+<p>Now we can write the power in the exponential in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> without the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-exp-power-quadratic">
+<span class="eqno">(8.1.19)<a class="headerlink" href="#equation-eq-path-integral-exp-power-quadratic" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_n \dot{q}_n(\tau, \xbf) p_n(\tau, \xbf) \right) \\
+&amp;\quad = -\frac{1}{2} \sum_{n, m} \int d\tau~d\tau'~d^3x~d^3y~A_{\xbf n, \ybf m}(q(\tau)) \delta(\tau - \tau') p_n(\tau, \xbf) p_m(\tau', \ybf) \\
+&amp;\qquad - \sum_n \int d\tau~d^3x \left( B_{\xbf n}(q(\tau)) - \dot{q}_n(\tau, \xbf) \right) p_n(\tau, \xbf) - \int d\tau~C(q(\tau))\end{split}\]</div>
+<p>where it’s organized so that the first summand on the right-hand-side is quadratic in <span class="math notranslate nohighlight">\(p\)</span>, the second is linear, and the third is independent of <span class="math notranslate nohighlight">\(p\)</span>. The reason to arrange the power in this form is because of the following (finite-dimensional) Gaussian integral formula.</p>
+<blockquote>
+<div><p><strong>Gaussian Integral Formula</strong></p>
+<div class="math notranslate nohighlight" id="equation-eq-gaussian-integral-formula">
+<span class="eqno">(8.1.20)<a class="headerlink" href="#equation-eq-gaussian-integral-formula" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int_{-\infty}^{\infty} \prod_s d\xi_s \exp\left( -\ifrak \left( \frac{1}{2} \sum_{s, r} \Ascr_{sr} \xi_s \xi_r + \sum_s \Bscr_s \xi_s + \Cscr_s \right) \right) \\
+&amp;\quad = \left( \det(\ifrak \Ascr / 2\pi) \right)^{-1/2} \exp\left( -\ifrak \left( \sum_{s, r} \Ascr_{sr} \bar{\xi}_s \bar{\xi}_r + \sum_s \Bscr_s \bar{\xi}_s + \Cscr_s \right) \right)\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{\xi}\)</span> is the (unique) stationary point of the quadratic power given explicitly by</p>
+<div class="math notranslate nohighlight">
+\[\bar{\xi}_s = -\sum_r (\Ascr^{-1})_{sr} \Bscr_r\]</div>
+</div></blockquote>
+<p>To figure out the stationary point of the power in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> with respect to <span class="math notranslate nohighlight">\(p\)</span>, let’s calculate the following variational derivative assuming the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms are independent of the <span class="math notranslate nohighlight">\(p\)</span>s</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\frac{\delta}{\delta p_n(t, \xbf)} \int_{-\infty}^{\infty} d\tau \left(
+    -H(q(\tau), p(\tau)) + \int d^3y \sum_m \dot{q}_m(\tau, \ybf) p_m(\tau, \ybf) + \ifrak\epsilon \text{ terms}
+\right) \\
+&amp;\quad = - \frac{\delta H}{\delta p_n(t, \xbf)} + \dot{q}_n(t, \xbf)\end{split}\]</div>
+<p>It follows that <span class="math notranslate nohighlight">\(\bar{p}\)</span> is stationary if it satisfies Hamilton’s equation</p>
+<div class="math notranslate nohighlight">
+\[\dot{q}_n(t, \xbf) = \left. \frac{\delta H}{\delta p_n(t, \xbf)} \right|_{p=\bar{p}}\]</div>
+<p>Assuming, in addition, that the (timed-ordered) operators <span class="math notranslate nohighlight">\(\Oscr_A, \Oscr_B, \cdots\)</span>, are independent of the <span class="math notranslate nohighlight">\(P\)</span>s, we can evaluate the <span class="math notranslate nohighlight">\(p\)</span>-integral in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> using the (infinite-dimensional) Gaussian integral formula <a class="reference internal" href="#equation-eq-gaussian-integral-formula">Eq.8.1.20</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\int \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \exp\left(
+    \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) + \ifrak\epsilon \text{ terms} \right)
+\right) \\
+&amp;\quad = \left( \det(2\pi\ifrak\Ascr(q)) \right)^{-1/2} \exp\left(
+    \ifrak \int_{-\infty}^{\infty} d\tau \left( L(q(\tau), \dot{q}(\tau)) + \ifrak\epsilon \text{ terms} \right)
+\right)\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the Lagrangian and</p>
+<div class="math notranslate nohighlight">
+\[\Ascr_{\tau \xbf n, \tau' \ybf m}(q) \coloneqq A_{\xbf n, \ybf m}(q(\tau)) \delta(\tau-\tau')\]</div>
+<p>is given by <a class="reference internal" href="#equation-eq-path-integral-exp-power-quadratic">Eq.8.1.19</a>.</p>
+<p>Finally, we can write down the Lagrangian version of <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\braket{\VAC, \op{out} | T\left\{ \Oscr_A(Q(t_A)), \Oscr_B(Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+    &amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \Oscr_A(Q(t_A)) \Oscr_B(Q(t_B)) \cdots \\
+    &amp;\qquad \times \left( \det(2\pi\ifrak\Ascr(q)) \right)^{-1/2} \exp\left(
+        \ifrak \int_{-\infty}^{\infty} d\tau \left( L(q(\tau), \dot{q}(\tau)) + \ifrak\epsilon \text{ terms} \right)
+    \right)\end{split}\]</div>
+<p>The rest of this section is devoted to the determination of <span class="math notranslate nohighlight">\(\Ascr(q)\)</span> in various examples.</p>
 </section>
 </section>
 </section>
