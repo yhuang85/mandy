@@ -602,6 +602,7 @@ Before moving onto the discussion about the external edges, let's revisit the ex
 
 	where :math:`\cdots` denotes valuations of other (4th order) Feynman diagrams.
 
+.. _sec_external_edges_off_the_mass_shell:
 
 External edges off the mass shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -147,6 +147,7 @@ Note that the third equality holds only for infinitesimal :math:`d\tau`, which a
 Now given two time :math:`t < t'` with a finite separation, one can divide the time-interval into :math:`N` steps
 
 .. math:: t < \tau_1 < \tau_2 < \cdots < \tau_N < t'
+    :label: eq_pif_time_intervals
 
 where
 
@@ -162,7 +163,7 @@ As :math:`N \to \infty`, one can apply :eq:`eq_pif_infinitesimal_q_progression_e
             \ifrak \sum_{k=0}^N \left( -H(q_{k+1}, p_k) d\tau + \sum_a (q_{k+1, a} - q_{k, a}) p_{k, a} \right)
         \right) \\
         &= \int_{\substack{q_a(t) = q_a \\ q_a(t') = q'_a }} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} dp_a(\tau) \exp\left(
-            \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right)
+            \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right)
         \right)
 
 with the understanding that :math:`q_0 = q` and :math:`q_{N+1} = q'`. It's in the last equality where the limit :math:`N \to \infty`, or equivalently :math:`d\tau \to 0`, is taken. The integral is taken over all paths from state :math:`\ket{q}` at time :math:`t` to state :math:`\ket{q'}` at time :math:`t'`, and hence the name -- path integral.
@@ -181,6 +182,151 @@ As before, let's first calculate the infinitesimal matrix element as follows
         &= \int \prod_a dp_a \braket{q', \tau | \exp(-\ifrak H d\tau) | p, \tau} \braket{p, \tau | \Oscr | q, \tau} \\
         &= \int \prod_a dp_a \exp\left( -\ifrak H(q', p) d\tau \right) \Oscr(p, q) \braket{q', \tau | p, \tau} \braket{p, \tau | q, \tau} \\
         &= \int \prod_a dp_a \exp\left( -\ifrak H(q', p) d\tau + \ifrak \sum_a (q'_a - q_a) p_a \right) \Oscr(p, q)
+
+Consider a time-ordered sequence of operators
+
+.. math:: \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots
+
+such that :math:`t_A > t_B > \cdots`. We can calculate the matrix element of the product of the operators at a finite time difference by dividing the time-interval in the same way as in :eq:`eq_pif_time_intervals` and pay attention to the sub-intervals that contains :math:`t_A, t_B, \cdots`, as follows
+
+.. math::
+
+    &\braket{q', t' | \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots | q, t} \\
+    &\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} dp_a(\tau)
+        \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right) \right)
+
+Since the right-hand-side doesn't rely on the time-ordering, we may replace the product of operators on the left-hand-side with the timed-ordered product as follows
+
+.. math::
+    :label: eq_pif_time_ordered_product_matrix_element
+
+    &\braket{q', t' | T\left\{ \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \right\} | q, t} \\
+    &\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} dp_a(\tau)
+        \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right) \right)
+
+as long as :math:`t_A, t_B, \cdots` are all distinct.
+
+
+Transition to the S-matrix
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+From now on, we will restrict the discussion to quantum field theories where the index :math:`a` from the previous section becomes :math:`(\xbf, m)`, where :math:`\xbf` is the spatial coordinates and :math:`m` denotes other quantum labels such as spin. In this case we rewrite :eq:`eq_pif_time_ordered_product_matrix_element` as follows
+
+.. math::
+
+    &\braket{q', t' | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | q, t} \\
+    &\quad = \int_{\substack{q_m(t, \xbf)=q_m(\xbf) \\ q_m(t', \xbf')=q_m(\xbf')}} \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf) \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3 x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) \right) \right)
+
+Recall that the S-matrix involves matrix elements between in- and out-states, which are states are time :math:`t = \mp\infty`, respectively. Hence if we write :math:`\ket{\alpha, \op{in}}` for the in-state and :math:`\ket{\beta, \op{out}}` for the out-state, then the S-matrix element can be written as follows
+
+.. math::
+    :label: eq_pi_to_s_matrix_timed_ordered_matrix_element
+
+    &\braket{\beta, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | \alpha, \op{in}} \\
+    &\quad = \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf) \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\qquad \times \exp\left( \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3 x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) \right) \right) \\
+    &\qquad \times \braket{\beta, \op{out} | q(\infty), \infty} \braket{q(-\infty), -\infty | \alpha, \op{in}}
+
+where the path integral now has essentially no boundary conditions.
+
+The goal now is to calculate the wave functions :math:`\braket{\beta, \op{out} | q(\infty), \infty}` and :math:`\braket{q(-\infty), -\infty | \alpha, \op{in}}`, if we choose a specific basis for the in- and out-states. It turns out, following discussions in :ref:`sec_external_edges_off_the_mass_shell`, that it suffices to consider the vacuum state :math:`\ket{\VAC}`. Moreover we'll not distinguish between :math:`\ket{\VAC, \op{in}}` and :math:`\ket{\VAC, \op{out}}` since the calculations will mostly be the same.
+
+The vacuum state, being a state with no particles, can be characterized by
+
+.. math:: a(\pbf, \sigma, n) \ket{\VAC} = 0
+    :label: eq_pi_to_s_matrix_a_annihilates_vacuum
+
+where :math:`a(\pbf, \sigma, n)` is the operator that annihilates a particle with momentum :math:`\pbf`, spin :math:`z`-component :math:`\sigma`, and other quantum numbers :math:`n`.
+
+For simplicity, we'll focus on the real scalar field given by :eq:`eq_scalar_field_psi_by_creation_and_annihilation_operators` and turned into canonical variables following :eq:`eq_defn_q_and_p_scalar_field_self_dual` as follows
+
+.. math::
+
+    \Phi(t, \xbf) &= (2\pi)^{-3/2} (2E)^{-1/2} \int d^3 p \left( e^{\ifrak p \cdot x} a(\pbf) + e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \right) \\
+    \Pi(t, \xbf) &= \dot{\Phi}(t, \xbf) = -\ifrak (2\pi)^{-3/2} (E/2)^{1/2} \int d^3 p \left( e^{\ifrak p \cdot x} a(\pbf) - e^{-\ifrak p \cdot x} a^{\dagger}(\pbf) \right)
+
+where :math:`E = p_0 = \sqrt{\pbf^2 + m^2}` on the on-mass-shell energy. From these one can solve for :math:`a(\pbf)` as follows
+
+.. math::
+
+    a(\pbf) &= (2\pi)^{-3/2} \int d^3 x~e^{-\ifrak p \cdot x} \left( (E/2)^{1/2} \Phi(t, \xbf) + \ifrak (2E)^{-1/2} \Pi(t, \xbf) \right) \\
+        &= (2\pi)^{-3/2} e^{\ifrak Et} \int d^3 x~e^{\ifrak \pbf \cdot \xbf} \left( (E/2)^{1/2} \Phi(t, \xbf) + \ifrak (2E)^{-1/2} \Pi(t, \xbf) \right)
+
+where we've pulled out the time-dependency since in order to apply it to in- and out-state, we need to take the limits :math:`t \to \mp\infty`, respectively. More explicitly, one can write
+
+.. math:: a_{\op{in}}(\pbf) = \lim_{t \to -\infty} a(\pbf), \quad a_{\op{out}}(\pbf) = \lim_{t \to \infty} a(\pbf)
+
+It turns out that the time limits are not really relevant in calculating the wave functions since :math:`e^{\ifrak Et}` is never zero. Hence we'll continue to just use :math:`a(\pbf)` in calculations. In the same vein, define Schrödinger-picture operators
+
+.. math:: \phi(\mp\infty, \xbf) = \lim_{t \to \mp\infty} \Phi(t, \xbf), \quad \pi(\mp\infty, \xbf) = \lim_{t \to \mp\infty} \Pi(t, \xbf)
+
+In places where specifying :math:`t = \mp\infty` doesn't matter, we'll also simply write :math:`\phi(\xbf)` and :math:`\pi(\xbf)`.
+
+Using :eq:`eq_pi_to_s_matrix_a_annihilates_vacuum`, one finds a differential equation that the wave functions :math:`\braket{\phi(\mp\infty, \xbf), \mp\infty | \VAC}` must satisfy as follows
+
+.. math::
+    :label: eq_pi_to_s_matrix_differential_equation_for_wave_function
+
+    & \braket{\phi(\mp\infty), \mp\infty | a(\pbf) | \VAC} = 0 \\
+    \implies & \int d^3 x~e^{\ifrak \pbf \cdot \xbf} \left( \frac{\delta}{\delta \phi(\xbf)} + E(\pbf)\phi(\xbf) \right) \braket{\phi(\mp\infty, \xbf), \mp\infty | \VAC} = 0
+
+where we have also used the interpretation of :math:`\pi(\xbf)` as variational derivative :math:`-\ifrak \delta/\delta \phi(\xbf)` (cf. :eq:`eq_pim_p_acts_as_dq`). Based on the experience of solving an analogous ODE by exponential function, it's quite natural to postulate a Gaussian solution
+
+.. math:: \braket{\phi(\mp\infty, \xbf), \mp\infty | \VAC} = \Nscr \exp\left( -\frac{1}{2} \int d^3 x~d^3 y~\Escr(\xbf, \ybf) \phi(\xbf) \phi(\ybf) \right)
+    :label: eq_pi_to_s_matrix_wave_functions
+
+where :math:`\Nscr` is a constant. Indeed :eq:`eq_pi_to_s_matrix_differential_equation_for_wave_function` becomes equivalent to
+
+.. math::
+
+    0 &= \int d^3 x~e^{\ifrak \pbf \cdot \xbf} \left( \int d^3 y~\Escr(\xbf, \ybf) \phi(\ybf) - E(\pbf) \phi(\xbf) \right) \\
+        &= \int d^3 x~d^3 y~e^{\ifrak \pbf \cdot \xbf} \Escr(\xbf, \ybf) \phi(\ybf) - \int d^3 y~e^{\ifrak \pbf \cdot \ybf} E(\pbf) \phi(\ybf) \\
+        &= \int d^3 y~\phi(\ybf) \left( \int d^3 x~e^{\ifrak \pbf \cdot \xbf} \Escr(\xbf, \ybf) - e^{\ifrak \pbf \cdot \ybf} E(\pbf) \right)
+
+For the right-hand-side to vanish for any :math:`\phi`, the quantity in the parenthesis must vanish. An inverse Fourier transform then gives
+
+.. math:: \Escr(\xbf, \ybf) =  (2\pi)^{-3} \int d^3 p~e^{\ifrak \pbf \cdot (\xbf - \ybf)} E(\pbf)
+
+where we recall once again that :math:`E(\pbf) = \sqrt{\pbf^2 + m^2}`. This solves :eq:`eq_pi_to_s_matrix_wave_functions` up to an unknown field-independent constant :math:`\Nscr`, which turns out to be insignificant. Indeed, the same constant :math:`\Nscr` also appears in :math:`\braket{\VAC, \op{out} | \VAC, \op{in}}` and hence can be eliminated by normalization.
+
+We can continue the calculation :eq:`eq_pi_to_s_matrix_timed_ordered_matrix_element` in the case of vacuum expectation values for real scalar fields as follows
+
+.. math::
+
+    & \braket{\VAC, \op{out} | \phi(\infty), \infty} \braket{\phi(-\infty), -\infty | \VAC, \op{in}} \\
+    &\quad = |\Nscr|^2 \exp\left( -\frac{1}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \left( \phi(\infty, \xbf) \phi(\infty, \ybf) + \phi(-\infty, \xbf) \phi(-\infty, \ybf) \right) \right) \\
+    &\quad = |\Nscr|^2 \lim_{\epsilon \to 0+} \exp\left( -\frac{\epsilon}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \int_{-\infty}^{\infty} d\tau~\phi(\tau, \xbf) \phi(\tau, \ybf) e^{-\epsilon |\tau|} \right)
+
+and therefore
+
+.. math::
+
+    & \braket{\VAC, \op{out} | T\left\{ \Oscr_A(\Pi(t_A), \Phi(t_A)), \Oscr(\Pi(t_B), \Phi(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+    &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf} d\phi(\tau, \xbf) \prod_{\tau, \xbf} d\pi(\tau, \xbf)~\Oscr_A(\Pi(t_A), \Phi(t_A)) \Oscr_B(\Pi(t_B), \Phi(t_B)) \cdots \\
+    &\qquad \times \exp\left(
+        \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(\phi(\tau), \pi(\tau)) + \int d^3x~\dot{\phi}(\tau, \xbf) \pi(\tau, \xbf) \right.\right. \\
+        &\qquad \left.\left. + \frac{\ifrak\epsilon}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \phi(\tau, \xbf) \phi(\tau, \ybf) e^{-\epsilon |\tau|} \right)
+    \right)
+
+Without working out the details, we claim that the only difference in the calculation for general fields is the term after :math:`\ifrak\epsilon/2`, whose exact form turns out to be insignificant. For later references, the final result is recorded as follows
+
+.. math::
+    :label: eq_pi_to_s_matrix_general_vacuum_matrix_element
+
+    & \braket{\VAC, \op{out} | T\left\{ \Oscr_A(\Pi(t_A), \Phi(t_A)), \Oscr(\Pi(t_B), \Phi(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+    &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf} dp_m(\tau, \xbf)~\Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \\
+    &\qquad \times \exp\left(
+        \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) + \ifrak\epsilon \text{ terms} \right)
+    \right)
+
+
+Lagrangian version of the path integral
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+So far the path integral formalism has been developed using the Hamiltonian. Now we'll develop a version based on the Lagrangian. In fact, the integrand in the exponential power in :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element`, leaving alone the :math:`\ifrak\epsilon` terms, looks just like the corresponding Lagrangian (cf. :eq:`eq_legendre_transformation_lagrangian_from_hamiltonian`). However, there is an important difference, namely, the :math:`q` and :math:`p` variables in :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element` are independent variables, while in the Lagrangian formalism, they are related by :eq:`eq_hamilton_equation_in_heisenberg_picture`. As we'll see, it turns out that when the Hamiltonian :math:`H` is quadratic in :math:`p` and the (timed-ordered) operators :math:`\Oscr_A, \Oscr_B, \cdots`, are independent of the :math:`P`\s, one can explicitly evaluate the integral in :math:`p` in :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element`, which will then produce the Lagrangian version of the path integral.
 
 
 .. rubric:: Footnotes

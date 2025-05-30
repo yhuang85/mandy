@@ -285,6 +285,7 @@ Then obviously these canonical variables also satisfy the canonical (anti-)commu
 Moreover, the analog of :eq:`eq_free_field_hamilton_equation_q_and_p_dot` holds as follows
 
 .. math::
+	:label: eq_hamilton_equation_in_heisenberg_picture
 
 	\begin{alignat*}{2}
 		\dot{Q}_n(t, \xbf) &= \ifrak \left[ H, Q_n(t, \xbf) \right] &&= \frac{\delta H}{\delta P_n(t, \xbf)} \\

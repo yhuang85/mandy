@@ -227,6 +227,9 @@ The parity, time, and charge symmetry on the creation and annihilation operators
 
 where :math:`\Ccal` replaces a particle of species :math:`n` with its antiparticle, a notion we haven't really explained yet, :math:`n^c`. The corresponding transformation laws for :math:`a(\pbf, \sigma, n)` can be derived from the above identities by taking the adjoint, and are omitted here.
 
+
+.. _sec_cluster_decomposition_of_s_matrix:
+
 Cluster Decomposition of S-matrix
 ---------------------------------
 
