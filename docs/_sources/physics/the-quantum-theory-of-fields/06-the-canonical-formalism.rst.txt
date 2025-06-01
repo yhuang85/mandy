@@ -986,6 +986,7 @@ Scalar field with derivative coupling
 In light of the Lagrangian :eq:`eq_free_real_scalar_field_lagrangian` for free scalar field, let's consider the following Lagrangian density with derivative coupling and interaction
 
 .. math:: \Lscr = -\frac{1}{2} \p_{\mu} \Phi \p^{\mu} \Phi - \frac{1}{2} m^2 \Phi^2 - J^{\mu} \p_{\mu} \Phi - \Hscr(\Phi)
+	:label: eq_canonical_to_interaction_scalar_field_with_derivative_coupling_lagrangian
 
 where coupling :math:`J^{\mu}` may be either a scalar current or a functional of other fields, and should not be confused with the conserved quantity defined in :eq:`eq_j_by_belinfante_tensor`.
 
@@ -1113,6 +1114,7 @@ and second, we can expand
 Putting these all together, we can finally write down the Hamiltonian as follows
 
 .. math::
+	:label: eq_spin_1_vector_field_hamiltonian
 
 	H &= \int d^3 x \left( \bm{\Pi} \cdot \dot{\Vbf} - \Lscr \right) \\
 		&= \int d^3 x \left( \bm{\Pi} \cdot \dot{\Vbf} + \frac{1}{4} F_{\mu \nu} F^{\mu \nu} + \frac{1}{2} m^2 V_{\mu} V^{\mu} - J^{\mu} V_{\mu} \right) \\

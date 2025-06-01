@@ -125,7 +125,7 @@ mathjax3_config = {
 			'blue': ['{\\color{blue} {#1}}', 1],
 			'bm': ['{{\\boldsymbol{#1}}}', 1],
 			'orange': ['{\\color{orange} {#1}}', 1],
-			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std', 'VAC']},
+			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std', 'Tr', 'VAC']},
 			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
 			**{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
 			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},

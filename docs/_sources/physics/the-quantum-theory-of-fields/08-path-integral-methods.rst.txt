@@ -291,7 +291,7 @@ For the right-hand-side to vanish for any :math:`\phi`, the quantity in the pare
 
 .. math:: \Escr(\xbf, \ybf) =  (2\pi)^{-3} \int d^3 p~e^{\ifrak \pbf \cdot (\xbf - \ybf)} E(\pbf)
 
-where we recall once again that :math:`E(\pbf) = \sqrt{\pbf^2 + m^2}`. This solves :eq:`eq_pi_to_s_matrix_wave_functions` up to an unknown field-independent constant :math:`\Nscr`, which turns out to be insignificant. Indeed, the same constant :math:`\Nscr` also appears in :math:`\braket{\VAC, \op{out} | \VAC, \op{in}}` and hence can be eliminated by normalization.
+where we recall once again that :math:`E(\pbf) = \sqrt{\pbf^2 + m^2}`. This solves :eq:`eq_pi_to_s_matrix_wave_functions` up to an unknown field-independent constant :math:`\Nscr`, which turns out to be insignificant. Indeed, the same constant :math:`\Nscr` also appears in :math:`\braket{\VAC, \op{out} | \VAC, \op{in}}` and hence can be eliminated by normalization. More details about this will be discussed in the next section.
 
 We can continue the calculation :eq:`eq_pi_to_s_matrix_timed_ordered_matrix_element` in the case of vacuum expectation values for real scalar fields as follows
 
@@ -334,8 +334,10 @@ So far the path integral formalism has been developed using the Hamiltonian. Now
 To spell out the details, let's write down the (Heisenberg-picture) Hamiltonian in the most general form as follows
 
 .. math::
+    :label: eq_hamiltonian_quadratic_in_p
 
-    H(Q, P) = \frac{1}{2} \sum_{n, m} \int d^3x~d^3y~A_{\xbf n, \ybf m}(Q) P_n(\xbf) P_m(\ybf) + \sum_n \int d^3x~B_{\xbf n}(Q) P_n(\xbf) + C(Q)
+    H(Q, P) &= \frac{1}{2} \sum_{n, m} \int d^3x~d^3y~A_{\xbf n, \ybf m}(Q) P_n(\xbf) P_m(\ybf) \\
+        &\quad + \sum_n \int d^3x~B_{\xbf n}(Q) P_n(\xbf) + C(Q)
 
 where :math:`A` is a real, symmetric, positive matrix. Moreover :math:`H` is written in the way that all the :math:`Q` operators lie to the left of the :math:`P` operators.
 
@@ -374,6 +376,7 @@ To figure out the stationary point of the power in :eq:`eq_pi_to_s_matrix_genera
 It follows that :math:`\bar{p}` is stationary if it satisfies Hamilton's equation
 
 .. math:: \dot{q}_n(t, \xbf) = \left. \frac{\delta H}{\delta p_n(t, \xbf)} \right|_{p=\bar{p}}
+    :label: eq_path_integral_stationary_p_bar
 
 Assuming, in addition, that the (timed-ordered) operators :math:`\Oscr_A, \Oscr_B, \cdots`, are independent of the :math:`P`\s, we can evaluate the :math:`p`-integral in :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element` using the (infinite-dimensional) Gaussian integral formula :eq:`eq_gaussian_integral_formula` as follows
 
@@ -386,15 +389,22 @@ Assuming, in addition, that the (timed-ordered) operators :math:`\Oscr_A, \Oscr_
         \ifrak \int_{-\infty}^{\infty} d\tau \left( L(q(\tau), \dot{q}(\tau)) + \ifrak\epsilon \text{ terms} \right)
     \right)
 
-where :math:`L` is the Lagrangian and
+where :math:`L` is the Lagrangian defined by
+
+.. math:: L(q(\tau), \dot{q}(\tau)) \coloneqq -H(q(\tau), \bar{p}(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) \bar{p}_m(\tau, \xbf)
+    :label: eq_path_integral_defn_lagrangian
+
+with :math:`\bar{p}` satisfying :eq:`eq_path_integral_stationary_p_bar` and
 
 .. math:: \Ascr_{\tau \xbf n, \tau' \ybf m}(q) \coloneqq A_{\xbf n, \ybf m}(q(\tau)) \delta(\tau-\tau')
+    :label: eq_path_integral_a_matrix
 
 is given by :eq:`eq_path_integral_exp_power_quadratic`.
 
 Finally, we can write down the Lagrangian version of :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element` as follows
 
 .. math::
+    :label: eq_path_integral_operator_vacuum_matrix_element_lagrangian
 
     &\braket{\VAC, \op{out} | T\left\{ \Oscr_A(Q(t_A)), \Oscr_B(Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
         &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \Oscr_A(Q(t_A)) \Oscr_B(Q(t_B)) \cdots \\
@@ -403,3 +413,146 @@ Finally, we can write down the Lagrangian version of :eq:`eq_pi_to_s_matrix_gene
         \right)
 
 The rest of this section is devoted to the determination of :math:`\Ascr(q)` in various examples.
+
+Scalar fields with non-derivative coupling
+    Following :eq:`eq_canonical_to_interaction_scalar_field_with_derivative_coupling_lagrangian`, consider the following Lagrangian density of a set of (massless) scalar fields :math:`\Phi_n` that have only non-derivative interaction :math:`V` and are coupled to external currents :math:`J_n`
+
+    .. math:: \Lscr = -\sum_n \left( \frac{1}{2} \p_{\mu} \Phi_n \p^{\mu} \Phi_n + J_n^{\mu} \p_{\mu} \Phi_n \right) - V(\Phi)
+
+    The canonical adjoint :math:`\Pi_n` is, according to :eq:`eq_general_lagrangian_conjugate_pi`, given by
+
+    .. math:: \Pi_n = \frac{\delta \Lscr}{\delta \dot{\Phi}_n} = \dot{\Phi}_n - J_n^0
+
+    and hence the Hamiltonian is, according to :eq:`eq_legendre_transformation_hamiltonian_from_lagrangian`, given by
+
+    .. math::
+
+        H &= \int d^3x \left( \sum_n \Pi_n \dot{\Phi}_n - \Lscr \right) \\
+            &= \int d^3x \sum_n \left( \Pi_n (\Pi_n + J_n^0) - \frac{1}{2} (\Pi_n + J_n^0)^2 + \frac{1}{2} (\nabla \Phi_n)^2 + J_n^0 (\Pi_n + J_n^0) + \Jbf_n \cdot \nabla \Phi_n \right) \\
+            &\quad + \int d^3x~V(\Phi) \\
+            &= \int d^3x \sum_n \left( \frac{1}{2} (\Pi_n + J^0_n)^2 + \frac{1}{2} (\nabla \Phi_n)^2 + \Jbf_n \cdot \nabla \Phi_n \right) + \int d^3x~V(\Phi)
+
+    Comparing with :eq:`eq_hamiltonian_quadratic_in_p` and following :eq:`eq_path_integral_a_matrix`, we see that
+
+    .. math:: \Ascr_{x n, x' n'} = \delta^4(x-x') \delta_{nn'}
+
+    which is field independent, and therefore can be eliminated in the same way that :math:`\Nscr` can be eliminated (cf. :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian`).
+
+Nonlinear :math:`\sigma`-model
+    The so-called nonlinear :math:`\sigma`-model is described by the following Lagrangian density
+
+    .. math:: \Lscr = -\frac{1}{2} \sum_{n, m} \p_{\mu} \Phi_n \p^{\mu} \Phi_m (\delta_{nm} + U_{nm}(\Phi)) - V(\Phi)
+
+    where the nonlinearity is carried by :math:`U_{nm}(\Phi)`.
+
+    In this case the canonical adjoint :math:`\Pi_n` is given by
+
+    .. math:: \Pi_n = \frac{\delta \Lscr}{\delta \dot{\Phi}_n} = \sum_m \dot{\Phi}_m (\delta_{nm} + U_{nm}(\Phi))
+
+    and can be solved in matrix notation as follows
+
+    .. math:: \dot{\Phi}_n = \sum_m (1+U(\Phi))^{-1}_{nm} \Pi_m
+
+    hence the Hamiltonian
+
+    .. math::
+
+        H &= \int d^3x \left( \sum_n \Pi_n \dot{\Phi}_n - \Lscr \right) \\
+            &= \int d^3x \sum_{n, m} \left(
+                \frac{1}{2} \Pi_n (1+U(\Phi))^{-1}_{nm} \Pi_m
+                + \frac{1}{2} \nabla \Phi_n \cdot \nabla \Phi_m (1+U(\Phi))^{-1}_{nm}
+            \right) + \int d^3x~V(\Phi)
+
+    In follows that
+
+    .. math:: \Ascr_{xn, x'n'} = (1+U(\Phi))^{-1}_{nn'} \delta^4(x-x')
+        :label: eq_path_integral_nonlinear_sigma_model_a_matrix
+
+    which obviously depend on :math:`\Phi`, and therefore cannot be eliminated by the division by the vacuum expectation value. The idea then is to absorb it into the Lagrangian (density) which we now explain.
+
+    Looking at :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian`, we note the following general identity
+
+    .. math:: \det\Ascr = \exp \Tr \ln \Ascr
+
+    for any real symmetric positive :math:`\Ascr`. To evaluate the logarithm, it's convenient to discretize the Dirac delta function in :eq:`eq_path_integral_nonlinear_sigma_model_a_matrix` as follows
+
+    .. math:: \delta^4(x-x') = \Omega^{-1} \delta_{xx'}
+
+    where :math:`\Omega` denotes an infinitesimal volume in spacetime. It follows that
+
+    .. math:: (\ln \Ascr)_{xn, x'n'} = \delta_{xx'} \left( -\ln(1+U(\Phi)) - \ln\Omega \right)_{nn'}
+        :label: eq_path_integral_ln_a
+
+    where :math:`\ln\Omega` is understood as a constant multiple as the identity matrix. Next note that the trace of :math:`\delta_{xx'}` can be evaluated by
+
+    .. math:: \Tr~\delta_{xx'} \cdots = \Omega^{-1} \int d^4x \cdots
+
+    It follows that
+
+    .. math:: \det\Ascr \propto \exp\left( -\Omega^{-1} \int d^4x~\Tr\ln(1+U(\Phi)) \right)
+
+    where the proportionality constant, coming from the constant :math:`-\ln\Omega` in :eq:`eq_path_integral_ln_a`, is field-independent. Plugging into :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian`, we see that Lagrangian density receives a correction term
+
+    .. math:: \Delta\Lscr = -\frac{\ifrak}{2} \Omega^{-1} \Tr\ln(1+U(\Phi))
+
+    which unfortunately contains a diverging term :math:`\Omega^{-1}`. This is known as an ultraviolet divergence since it comes from the infinitesimal spacetime volume. We'll not address how it may be handled here.
+
+Vector fields
+    The two examples considered so far admit a Lagrangian without auxiliary fields (cf. :eq:`eq_general_quantum_lagrangian`). To cover this case, consider the following Lagrangian for a set of non-interacting vector fields (cf. :eq:`eq_spin_1_vector_field_lagrangian_density`)
+
+    .. math::
+        :label: eq_path_integral_many_vector_fields_lagrangian
+
+        \Lscr = -\sum_n \left(
+            \frac{1}{4} F_{n \mu\nu} F_n^{\mu\nu} + \frac{1}{2} M^2 A_{n \mu} A_n^{\mu} + J_n^{\mu} A_{n\mu}
+        \right)
+
+    According to :eq:`eq_spin_1_vector_field_hamiltonian`, the corresponding Hamiltonian is given by
+
+    .. math::
+        :label: eq_many_vector_fields_hamiltonian
+
+        H &= \int d^3x \sum_n \left(
+            \frac{1}{2} \bm{\Pi}_n^2 + \frac{1}{2M_n^2} (\nabla \cdot \bm{\Pi}_n)^2 + \frac{1}{M_n^2} J_n^0 \nabla \cdot \bm{\Pi}_n \right. \\
+            &\qquad \left. + \frac{1}{2} (\nabla \times \Abf_n)^2 + \frac{1}{2} M_n^2 \Abf_n^2 + \frac{1}{2M_n^2} (J_n^0)^2 - \Jbf_n \cdot \Abf_n
+        \right)
+
+    where the terms are ordered in descending power of :math:`\bm{\Pi}`. Using the following calculation
+
+    .. math::
+
+        \int d^3x~d^3y~\nabla_i \nabla_j \delta^3(\xbf-\ybf) \bm{\Pi}_n^i(x) \bm{\Pi}_n^j(y)
+            &= -\int d^3x~d^3y~\nabla_j \delta^3(\xbf-\ybf) \p_i \bm{\Pi}_n^i(x) \bm{\Pi}_n^j(y) \\
+            &= -\int d^3x~d^3y~\delta^3(\xbf-\ybf) \p_i \bm{\Pi}_n^i(x) \p_j \bm{\Pi}_n^j(y) \\
+            &= -\int d^3x~\left( \nabla \cdot \bm{\Pi}_n \right)^2
+
+    we conclude that
+
+    .. math:: \Ascr_{x i n, y j m} = \delta_{nm} \left( \delta_{ij}\delta^4(x-y) - \frac{1}{M_n^2} \nabla_i\nabla_j\delta^4(x-y) \right)
+
+    which is field-independent. As before, it means that the term :math:`\det(2\pi\ifrak \Ascr(q))^{-1/2}` in :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian` plays no role. Nonetheless, the Lagrangian defined by :eq:`eq_path_integral_defn_lagrangian` cannot be the same the original :eq:`eq_path_integral_many_vector_fields_lagrangian` since the former doesn't involve the time-component :math:`A_0`. As a consequence, the Lorentz invariance of :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian` is far from obvious.
+
+    To restore the manifest Lorentz invariance, let's introduce, according to :eq:`eq_spin_1_vector_field_heisenberg_v0`, a correction term to the Hamiltonian :math:`H \to H + \Delta H` where
+
+    .. math:: \Delta H = -\frac{1}{2} \sum_n M_n^2 \int d^3x \left( A_n^0 - M_n^{-2} \nabla \cdot \bm{\Pi}_n - M_n^{-2} J_n^0 \right)^2
+        :label: eq_many_vector_fields_hamiltonian_correction
+
+    Moreover, in addition to the integration of :math:`\Abf_n` and :math:`\bm{\Pi}_n` in :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element`, we also integrate over :math:`A_n^0`. This addition doesn't really make a difference to the physics since the integrant in :math:`\Delta H` being a perfect square means that the integration over :math:`A_n^0` will only introduce an insignificant field-independent factor to the matrix element.
+
+    Combining :eq:`eq_many_vector_fields_hamiltonian` and :eq:`eq_many_vector_fields_hamiltonian_correction` together, we have
+
+    .. math::
+
+        H + \Delta H = \int d^3x \sum_n \left(
+            \frac{1}{2} \bm{\Pi}_n^2 + A_n^0 \nabla \cdot \bm{\Pi}_n + \frac{1}{2} (\nabla \times \Abf_n)^2 + \frac{1}{2} M_n^2 A_n^2 - J_n \cdot A_n
+        \right)
+
+    We see that the integrand is still quadratic in :math:`\bm{\Pi}`, whose integration, according to the Gaussian integral formula, can be done by replacing :math:`\bm{\Pi}_n` with the solution to :eq:`eq_path_integral_stationary_p_bar`, which reads
+
+    .. math:: \dot{\Abf}_n = \bm{\Pi}_n - \nabla A_n^0 \iff \bm{\Pi}_n = \dot{\Abf}_n + \nabla A_n^0
+
+    One can then verify that the Legendre transformed quantity
+
+    .. math:: -H - \Delta H + \sum_n \int d^3x~\dot{\Abf}_n \cdot \bm{\Pi}_n
+
+    indeed recovers the original Lagrangian density :eq:`eq_path_integral_many_vector_fields_lagrangian`.
