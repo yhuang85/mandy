@@ -290,6 +290,7 @@ where :math:`\Nscr` is a constant. Indeed :eq:`eq_pi_to_s_matrix_differential_eq
 For the right-hand-side to vanish for any :math:`\phi`, the quantity in the parenthesis must vanish. An inverse Fourier transform then gives
 
 .. math:: \Escr(\xbf, \ybf) =  (2\pi)^{-3} \int d^3 p~e^{\ifrak \pbf \cdot (\xbf - \ybf)} E(\pbf)
+    :label: eq_path_integral_scalar_field_curly_e
 
 where we recall once again that :math:`E(\pbf) = \sqrt{\pbf^2 + m^2}`. This solves :eq:`eq_pi_to_s_matrix_wave_functions` up to an unknown field-independent constant :math:`\Nscr`, which turns out to be insignificant. Indeed, the same constant :math:`\Nscr` also appears in :math:`\braket{\VAC, \op{out} | \VAC, \op{in}}` and hence can be eliminated by normalization. More details about this will be discussed in the next section.
 
@@ -304,6 +305,7 @@ We can continue the calculation :eq:`eq_pi_to_s_matrix_timed_ordered_matrix_elem
 and therefore
 
 .. math::
+    :label: eq_path_integral_vacuum_expectation_value_scalar_field
 
     & \braket{\VAC, \op{out} | T\left\{ \Oscr_A(\Pi(t_A), \Phi(t_A)), \Oscr(\Pi(t_B), \Phi(t_B)), \cdots \right\} | \VAC, \op{in}} \\
     &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf} d\phi(\tau, \xbf) \prod_{\tau, \xbf} \frac{d\pi(\tau, \xbf)}{2\pi} \Oscr_A(\Pi(t_A), \Phi(t_A)) \Oscr_B(\Pi(t_B), \Phi(t_B)) \cdots \\
@@ -325,6 +327,7 @@ Without working out the details, we claim that the only difference in the calcul
 
 where the :math:`\ifrak\epsilon` terms depend only on :math:`q`\s.
 
+.. _sec_lagrangian_version_of_the_path_integral:
 
 Lagrangian version of the path integral
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -556,3 +559,155 @@ Vector fields
     .. math:: -H - \Delta H + \sum_n \int d^3x~\dot{\Abf}_n \cdot \bm{\Pi}_n
 
     indeed recovers the original Lagrangian density :eq:`eq_path_integral_many_vector_fields_lagrangian`.
+
+We see from the above examples that it's far from obvious to choose the correct Lagrangian in :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian`. Moreover, the choice of canonical fields may not be the initial :math:`q`\s. Examples of this kind include the vector fields discussed above as well as QED which will be discussed later. Under these considerations, let's rewrite :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian` as follows
+
+.. math::
+    :label: eq_path_integral_operator_vacuum_matrix_element_lagrangian_final_form
+
+    &\braket{\VAC, \op{out} | T\{\Oscr_A(\Psi_A(t_A)), \Oscr_B(\Psi_B(t_B)), \cdots\} | \VAC, \op{in}} \\
+        &\quad \propto \int \prod_{\tau, \xbf, n} d\psi_n(\tau, \xbf)~\Oscr_A(\psi(t_A)) \Oscr_B(\psi(t_B)) \cdots \\
+        &\qquad \times \exp\left(
+            \ifrak \int_{-\infty}^{\infty} d\tau \left( L(\psi(\tau), \dot{\psi}(\tau)) + \ifrak\epsilon\text{ terms} \right)
+        \right)
+
+where the field-independent constants :math:`|\Nscr|^2` and the part of :math:`\det(2\pi\ifrak\Ascr)^{-1/2}` are suppressed into the proportionality, and the field-dependent part of :math:`\det(2\pi\ifrak\Ascr)^{-1/2}` is absorbed into the Lagrangian. In addition, the dependence of the :math:`\psi`-fields on the right-hand-side on :math:`A, B, \cdots`, is suppressed into the index :math:`n` in the product measure.
+
+
+Path integral derivation of Feynman rules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The vacuum expectation value of a time-ordered product of operators given by :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian_final_form` can be evaluated by Feynman diagrams, assuming the propagators have been worked out. However these diagrams may not all be connected. In particular, there is a set of :math:`2`-component diagrams: one of them consists of vertices from only the timed-ordered operators, and the other consists of vertices from the interaction density. Such diagrams can be gotten rid of by considering the following normalized vacuum expectation value
+
+.. math::
+    :label: eq_path_integral_defn_m_general
+
+    M_{\ell_A, \ell_B, \cdots}(x_A, x_B, \cdots) \coloneqq \frac{
+        \braket{\VAC, \op{out} | T\{\Psi_{\ell_A}(x_A), \Psi_{\ell_B}(x_B), \cdots\} | \VAC, \op{in}}
+    }{
+        \braket{\VAC, \op{out} | \VAC, \op{in}}
+    }
+
+Here a few notations have changed from the previous sections. Firstly, we've used :math:`\ell_A, \ell_B, \cdots`, instead of :math:`A, B, \cdots`, to label the time-ordered operators, which will allow us to unify the labels by :math:`\ell`. Secondly, the argument of the fields has changed from time such as :math:`t_A` to spacetime coordinates :math:`x_A`, which of courses contain :math:`t_A` as its time-component.
+
+Now if the Hamiltonian is quadratic in the :math:`P`-operators as discussed in :ref:`sec_lagrangian_version_of_the_path_integral`, then :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian_final_form` implies that :eq:`eq_path_integral_defn_m_general` can be rewritten as
+
+.. math::
+    :label: eq_path_integral_defn_m_quadratic
+
+    M_{\ell_A, \ell_B, \cdots}(x_A, x_B, \cdots) = \frac{
+        \int \prod_{x, \ell} d\psi_{\ell}(x)~\psi_{\ell_A}(x_A) \psi_{\ell_B}(t_B) \cdots e^{\ifrak I[\psi]}
+    }{
+        \int \prod_{x, \ell} d\psi_{\ell}(x)~e^{\ifrak I[\psi]}
+    }
+
+where
+
+.. math:: I[\psi] = \int_{-\infty}^{\infty} d\tau \left( L(\psi(\tau), \dot{\psi}(\tau)) + \ifrak\epsilon \text{ terms} \right)
+
+is the action.
+
+Suppose, in the same vein as discussed in :ref:`sec_perturbation_theory_of_s_matrix` and specifically :eq:`eq_defn_v_by_density`, the Lagrangian is given by a density :math:`\Lscr`. Then following the philosophy of perturbation theory, let's write it as the sum of a free part :math:`\Lscr_0` and an interacting part :math:`\Lscr_1`. In other words
+
+.. math:: L(\psi(\tau), \dot{\psi}(\tau)) = \int d^3x \left(
+        \Lscr_0(\psi(\tau, \xbf), \p_{\mu} \psi(\tau, \xbf)) + \Lscr_1(\psi(\tau, \xbf), \p_{\mu} \psi(\tau, \xbf))
+    \right)
+
+which, in turn, implies that
+
+.. math::
+    :label: eq_path_integral_defn_free_and_interacting_actions
+
+    I[\psi] &= I_0[\psi] + I_1[\psi] \\
+    I_0[\psi] &= \int d^4x \left( \Lscr_0(\psi, \p_{\mu} \psi) + \ifrak\epsilon\text{ terms} \right) \\
+    I_1[\psi] &= \int d^4x~\Lscr_1(\psi, \p_{\mu} \psi)
+
+Such decomposition then allows us to write the exponential term in :eq:`eq_path_integral_defn_m_quadratic` in the following form
+
+.. math::
+    :label: eq_path_integral_expand_interaction_action
+
+    \exp(\ifrak I[\psi]) &= \exp(\ifrak I_0[\psi]) \exp(\ifrak I_1[\psi]) \\
+        &= \exp(\ifrak I_0[\psi]) \sum_{N=0}^{\infty} \frac{\ifrak^N}{N!} (I_1[\psi])^N
+
+where we've also expanded the second exponential of the interaction action. The reason to do so, or rather, to keep the first exponential of the free action, is that :math:`I_0[\psi]` is typically, and will be assumed to be, quadratic. Indeed, an explicit example was worked out for scalar field in :eq:`eq_path_integral_vacuum_expectation_value_scalar_field`, as long as we ignore the term :math:`e^{-\epsilon |\tau|}` which spoils the quadraticity only in higher orders of :math:`\epsilon`.
+
+If we write
+
+.. math:: I_0[\psi] = -\frac{1}{2} \int d^4x~d^4x' \sum_{\ell, \ell'} \Dscr_{x \ell, x' \ell'} \psi_{\ell}(x) \psi_{\ell'}(x')
+    :label: eq_path_integral_quadratic_free_action
+
+then according to :eq:`eq_path_integral_expand_interaction_action`, both the denominator and the numerator of :eq:`eq_path_integral_defn_m_quadratic` are sums of integrals of the following form
+
+.. math:: \Iscr_{\ell_1, \ell_2, \cdots}(x_1, x_2, \cdots) \coloneqq \int \prod_{x, \ell} d\psi_{\ell}(x)~e^{\ifrak I_0[\psi]} \psi_{\ell_1}(x_1) \psi_{\ell_2}(x_2) \cdots
+    :label: eq_path_integral_feynman_rules_generic_integral
+
+where :math:`I_0[\psi]` is quadratic. In the case of finite-dimensional integrals, this is a well-known extension of the Gaussian Integral Formula discussed above by integration-by-parts. More formally, this is known as `Wick's theorem <https://en.wikipedia.org/wiki/Isserlis%27s_theorem>`__ which we recall as follows
+
+    **Wick's theorem**
+
+    .. math::
+
+        &\int \prod_r d\xi_s~\xi_{s_1} \xi_{s_2} \cdots \xi_{s_{2N}} \exp\left( -\frac{\ifrak}{2} \sum_{s, r} \Dscr_{sr} \xi_s \xi_r \right) \\
+            &\quad = \left( \det(\ifrak\Dscr / 2\pi) \right)^{-1/2} \sum_{\substack{\text{pairings} \\ \text{of } s_1, \cdots, s_{2N}}}
+                \prod_{\text{pairs}} \left(-\ifrak\Dscr^{-1}\right)_{\text{paired indices}}
+
+    where :math:`\Dscr` is a real, symmetric, positive matrix.
+
+Applying Wick's theorem to :eq:`eq_path_integral_feynman_rules_generic_integral` we get
+
+.. math::
+
+    \Iscr_{\ell_1, \ell_2, \cdots}(x_1, x_2, \cdots) = (\det(\ifrak\Dscr / 2\pi))^{-1/2} \sum_{\substack{\text{pairings} \\ \text{of fields}}}
+        ~\prod_{\text{pairs}} \left( -\ifrak\Dscr^{-1} \right)_{\text{paired fields}}
+
+where :math:`\Dscr` is given by :eq:`eq_path_integral_quadratic_free_action`. Observe that this evaluation, besides the unimportant field-independent factor :math:`(\det(\ifrak\Dscr / 2\pi))^{-1/2}`, can be thought of as a sum over Feynman diagrams where the edges are paired fields that come from either the expansion of :math:`e^{\ifrak I_1[\psi]}` or the timed-ordered operators in the denominator of :eq:`eq_path_integral_defn_m_quadratic`. Moreover, the "propagator" :math:`-\ifrak\Delta` can be defined as follows
+
+.. math:: \Delta_{\ell_1, \ell_2}(x_1, x_2) \coloneqq \Dscr^{-1}_{x_1 \ell_1, x_2 \ell_2}
+    :label: eq_path_integral_defn_propagator
+
+To invert :math:`\Dscr` in spacetime coordinates, let's rewrite :eq:`eq_path_integral_defn_propagator` as an integral equation as follows
+
+.. math:: \int d^4 x_2 \sum_{\ell_2} \Dscr_{x_1 \ell_1, x_2 \ell_2} \Delta_{\ell_2, \ell_3}(x_2, x_3) = \delta^4(x_1-x_3) \delta_{\ell_1 \ell_3}
+
+Assuming translation-invariance of the theory, it follows that :math:`\Dscr` can be written as a Fourier transform as follows
+
+.. math:: \Dscr_{x_1 \ell_1, x_2 \ell_2} \eqqcolon (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x_1-x_2)} \Dscr_{\ell_1 \ell_2}(p)
+    :label: eq_path_integral_d_matrix_translation_invariance
+
+which, in turn, implies
+
+.. math:: \Delta_{\ell_1 \ell_2}(x_1, x_2) = (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x_1-x_2)} \Dscr^{-1}_{\ell_1 \ell_2}(p)
+    :label: eq_path_integral_propagator_as_d_inverse
+
+To make it more concrete, let's consider a few examples.
+
+Scalar field
+    Recall from :eq:`eq_free_real_scalar_field_lagrangian` that the free Lagrangian density takes the following form
+
+    .. math:: \Lscr_0 = -\frac{1}{2} \p_{\mu} \phi \p^{\mu} \phi - \frac{1}{2} m^2 \phi^2
+
+    It follows then from :eq:`eq_path_integral_vacuum_expectation_value_scalar_field` and :eq:`eq_path_integral_defn_free_and_interacting_actions` that the free action :math:`I_0[\phi]`, up to the first order of :math:`\epsilon`, takes the following form
+
+    .. math::
+
+        &I_0[\phi] \\
+            &= -\frac{1}{2} \int d^4x \left( \p_{\mu} \phi \p^{\mu} \phi + m^2 \phi^2 \right)
+            + \frac{1}{2} \ifrak\epsilon \int dt \int d^3x~d^3x'~\Escr(\xbf, \xbf') \phi(t, \xbf) \phi(t, \xbf') \\
+            &= -\frac{1}{2} \int d^4x~d^4x' \left(
+                    \delta^4(x-x') (\p_{\mu} \phi \p^{\mu} \phi + m^2 \phi^2) - \ifrak\epsilon \delta(t-t') \Escr(\xbf, \xbf') \phi(x) \phi(x')
+                \right) \\
+            &= -\frac{1}{2} \int d^4x~d^4x' \left( \frac{\p^2}{\p x^{\mu} \p x'_{\mu}} \delta^4(x-x') + m^2 \delta^4(x-x') -\ifrak\epsilon \delta(t-t') \Escr(\xbf, \xbf') \right) \phi(x) \phi(x') \\
+            &= -\frac{1}{2} \int d^4x~d^4x' \left( (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x-x')} \left( p^2 + m^2 - \ifrak\epsilon E(\pbf) \right) \right) \phi(x) \phi(x')
+
+    where in the last equality we've also used :eq:`eq_path_integral_scalar_field_curly_e`.
+
+    Comparing with :eq:`eq_path_integral_quadratic_free_action` and :eq:`eq_path_integral_d_matrix_translation_invariance`, we find
+
+    .. math:: \Dscr(p) = p^2 + m^2 - \ifrak \epsilon E(\pbf)
+
+    and therefore the propagator
+
+    .. math:: \Delta(x, y) = (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x-y)} \left( p^2 + m^2 - \ifrak\epsilon E(\pbf) \right)^{-1}
+
+    according to :eq:`eq_path_integral_propagator_as_d_inverse`. This recovers the Feynman propagator defined by :eq:`eq_defn_feynman_propagator` and evaluated in :eq:`eq_feynman_propagator_as_momentum_space_integral`.

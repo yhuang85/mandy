@@ -954,6 +954,8 @@ Its rate of change can be estimated as follows
 where the fourth inequality follows from the general inequality :math:`\ln(x) \geq 1 - 1 / x` for any :math:`x > 0`, and the last follows from :eq:`eq_s_matrix_unitarity_induced_symmetry_on_reaction_rates`. This is nothing but the famous slogan: entropy never decreases! And we see that as a consequence of the unitarity of the S-matrix.
 
 
+.. _sec_perturbation_theory_of_s_matrix:
+
 Perturbation Theory of S-matrix
 -------------------------------
 

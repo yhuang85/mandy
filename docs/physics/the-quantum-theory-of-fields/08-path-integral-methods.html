@@ -568,8 +568,8 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
     &amp;= \int d^3 x~d^3 y~e^{\ifrak \pbf \cdot \xbf} \Escr(\xbf, \ybf) \phi(\ybf) - \int d^3 y~e^{\ifrak \pbf \cdot \ybf} E(\pbf) \phi(\ybf) \\
     &amp;= \int d^3 y~\phi(\ybf) \left( \int d^3 x~e^{\ifrak \pbf \cdot \xbf} \Escr(\xbf, \ybf) - e^{\ifrak \pbf \cdot \ybf} E(\pbf) \right)\end{split}\]</div>
 <p>For the right-hand-side to vanish for any <span class="math notranslate nohighlight">\(\phi\)</span>, the quantity in the parenthesis must vanish. An inverse Fourier transform then gives</p>
-<div class="math notranslate nohighlight">
-\[\Escr(\xbf, \ybf) =  (2\pi)^{-3} \int d^3 p~e^{\ifrak \pbf \cdot (\xbf - \ybf)} E(\pbf)\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-scalar-field-curly-e">
+<span class="eqno">(8.1.18)<a class="headerlink" href="#equation-eq-path-integral-scalar-field-curly-e" title="Link to this equation">#</a></span>\[\Escr(\xbf, \ybf) =  (2\pi)^{-3} \int d^3 p~e^{\ifrak \pbf \cdot (\xbf - \ybf)} E(\pbf)\]</div>
 <p>where we recall once again that <span class="math notranslate nohighlight">\(E(\pbf) = \sqrt{\pbf^2 + m^2}\)</span>. This solves <a class="reference internal" href="#equation-eq-pi-to-s-matrix-wave-functions">Eq.8.1.17</a> up to an unknown field-independent constant <span class="math notranslate nohighlight">\(\Nscr\)</span>, which turns out to be insignificant. Indeed, the same constant <span class="math notranslate nohighlight">\(\Nscr\)</span> also appears in <span class="math notranslate nohighlight">\(\braket{\VAC, \op{out} | \VAC, \op{in}}\)</span> and hence can be eliminated by normalization. More details about this will be discussed in the next section.</p>
 <p>We can continue the calculation <a class="reference internal" href="#equation-eq-pi-to-s-matrix-timed-ordered-matrix-element">Eq.8.1.14</a> in the case of vacuum expectation values for real scalar fields as follows</p>
 <div class="math notranslate nohighlight">
@@ -577,8 +577,8 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 &amp;\quad = |\Nscr|^2 \exp\left( -\frac{1}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \left( \phi(\infty, \xbf) \phi(\infty, \ybf) + \phi(-\infty, \xbf) \phi(-\infty, \ybf) \right) \right) \\
 &amp;\quad = |\Nscr|^2 \lim_{\epsilon \to 0+} \exp\left( -\frac{\epsilon}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \int_{-\infty}^{\infty} d\tau~\phi(\tau, \xbf) \phi(\tau, \ybf) e^{-\epsilon |\tau|} \right)\end{split}\]</div>
 <p>and therefore</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}&amp; \braket{\VAC, \op{out} | T\left\{ \Oscr_A(\Pi(t_A), \Phi(t_A)), \Oscr(\Pi(t_B), \Phi(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-vacuum-expectation-value-scalar-field">
+<span class="eqno">(8.1.19)<a class="headerlink" href="#equation-eq-path-integral-vacuum-expectation-value-scalar-field" title="Link to this equation">#</a></span>\[\begin{split}&amp; \braket{\VAC, \op{out} | T\left\{ \Oscr_A(\Pi(t_A), \Phi(t_A)), \Oscr(\Pi(t_B), \Phi(t_B)), \cdots \right\} | \VAC, \op{in}} \\
 &amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf} d\phi(\tau, \xbf) \prod_{\tau, \xbf} \frac{d\pi(\tau, \xbf)}{2\pi} \Oscr_A(\Pi(t_A), \Phi(t_A)) \Oscr_B(\Pi(t_B), \Phi(t_B)) \cdots \\
 &amp;\qquad \times \exp\left(
     \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(\phi(\tau), \pi(\tau)) + \int d^3x~\dot{\phi}(\tau, \xbf) \pi(\tau, \xbf) \right.\right. \\
@@ -586,7 +586,7 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 \right)\end{split}\]</div>
 <p>Without working out the details, we claim that the only difference in the calculation for general fields is the term after <span class="math notranslate nohighlight">\(\ifrak\epsilon/2\)</span>, whose exact form turns out to be insignificant. For later references, the final result is recorded as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">
-<span class="eqno">(8.1.18)<a class="headerlink" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element" title="Link to this equation">#</a></span>\[\begin{split}&amp; \braket{\VAC, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr(P(t_B), Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+<span class="eqno">(8.1.20)<a class="headerlink" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element" title="Link to this equation">#</a></span>\[\begin{split}&amp; \braket{\VAC, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr(P(t_B), Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
 &amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \\
 &amp;\qquad \times \exp\left(
     \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) + \ifrak\epsilon \text{ terms} \right)
@@ -594,29 +594,29 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 <p>where the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms depend only on <span class="math notranslate nohighlight">\(q\)</span>s.</p>
 </section>
 <section id="lagrangian-version-of-the-path-integral">
-<h3><span class="section-number">8.1.3. </span>Lagrangian version of the path integral<a class="headerlink" href="#lagrangian-version-of-the-path-integral" title="Link to this heading">#</a></h3>
-<p>So far the path integral formalism has been developed using the Hamiltonian. Now we’ll develop a version based on the Lagrangian. In fact, the integrand in the exponential power in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a>, leaving alone the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms, looks just like the corresponding Lagrangian (cf. <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-legendre-transformation-lagrangian-from-hamiltonian">Eq.6.1.11</a>). However, there is an important difference, namely, the <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(p\)</span> variables in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> are independent variables, while in the Lagrangian formalism, they are related by <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-hamilton-equation-in-heisenberg-picture">Eq.6.1.14</a>. As we’ll see, it turns out that when the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> is quadratic in <span class="math notranslate nohighlight">\(p\)</span> and the (timed-ordered) operators <span class="math notranslate nohighlight">\(\Oscr_A, \Oscr_B, \cdots\)</span>, are independent of the <span class="math notranslate nohighlight">\(P\)</span>s, one can explicitly evaluate the integral in <span class="math notranslate nohighlight">\(p\)</span> in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a>, which will then produce the Lagrangian version of the path integral.</p>
+<span id="sec-lagrangian-version-of-the-path-integral"></span><h3><span class="section-number">8.1.3. </span>Lagrangian version of the path integral<a class="headerlink" href="#lagrangian-version-of-the-path-integral" title="Link to this heading">#</a></h3>
+<p>So far the path integral formalism has been developed using the Hamiltonian. Now we’ll develop a version based on the Lagrangian. In fact, the integrand in the exponential power in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a>, leaving alone the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms, looks just like the corresponding Lagrangian (cf. <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-legendre-transformation-lagrangian-from-hamiltonian">Eq.6.1.11</a>). However, there is an important difference, namely, the <span class="math notranslate nohighlight">\(q\)</span> and <span class="math notranslate nohighlight">\(p\)</span> variables in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a> are independent variables, while in the Lagrangian formalism, they are related by <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-hamilton-equation-in-heisenberg-picture">Eq.6.1.14</a>. As we’ll see, it turns out that when the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span> is quadratic in <span class="math notranslate nohighlight">\(p\)</span> and the (timed-ordered) operators <span class="math notranslate nohighlight">\(\Oscr_A, \Oscr_B, \cdots\)</span>, are independent of the <span class="math notranslate nohighlight">\(P\)</span>s, one can explicitly evaluate the integral in <span class="math notranslate nohighlight">\(p\)</span> in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a>, which will then produce the Lagrangian version of the path integral.</p>
 <p>To spell out the details, let’s write down the (Heisenberg-picture) Hamiltonian in the most general form as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-hamiltonian-quadratic-in-p">
-<span class="eqno">(8.1.19)<a class="headerlink" href="#equation-eq-hamiltonian-quadratic-in-p" title="Link to this equation">#</a></span>\[\begin{split}H(Q, P) &amp;= \frac{1}{2} \sum_{n, m} \int d^3x~d^3y~A_{\xbf n, \ybf m}(Q) P_n(\xbf) P_m(\ybf) \\
+<span class="eqno">(8.1.21)<a class="headerlink" href="#equation-eq-hamiltonian-quadratic-in-p" title="Link to this equation">#</a></span>\[\begin{split}H(Q, P) &amp;= \frac{1}{2} \sum_{n, m} \int d^3x~d^3y~A_{\xbf n, \ybf m}(Q) P_n(\xbf) P_m(\ybf) \\
     &amp;\quad + \sum_n \int d^3x~B_{\xbf n}(Q) P_n(\xbf) + C(Q)\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is a real, symmetric, positive matrix. Moreover <span class="math notranslate nohighlight">\(H\)</span> is written in the way that all the <span class="math notranslate nohighlight">\(Q\)</span> operators lie to the left of the <span class="math notranslate nohighlight">\(P\)</span> operators.</p>
-<p>Now we can write the power in the exponential in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> without the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms as follows</p>
+<p>Now we can write the power in the exponential in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a> without the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-exp-power-quadratic">
-<span class="eqno">(8.1.20)<a class="headerlink" href="#equation-eq-path-integral-exp-power-quadratic" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_n \dot{q}_n(\tau, \xbf) p_n(\tau, \xbf) \right) \\
+<span class="eqno">(8.1.22)<a class="headerlink" href="#equation-eq-path-integral-exp-power-quadratic" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_n \dot{q}_n(\tau, \xbf) p_n(\tau, \xbf) \right) \\
 &amp;\quad = -\frac{1}{2} \sum_{n, m} \int d\tau~d\tau'~d^3x~d^3y~A_{\xbf n, \ybf m}(q(\tau)) \delta(\tau - \tau') p_n(\tau, \xbf) p_m(\tau', \ybf) \\
 &amp;\qquad - \sum_n \int d\tau~d^3x \left( B_{\xbf n}(q(\tau)) - \dot{q}_n(\tau, \xbf) \right) p_n(\tau, \xbf) - \int d\tau~C(q(\tau))\end{split}\]</div>
 <p>where it’s organized so that the first summand on the right-hand-side is quadratic in <span class="math notranslate nohighlight">\(p\)</span>, the second is linear, and the third is independent of <span class="math notranslate nohighlight">\(p\)</span>. The reason to arrange the power in this form is because of the following (finite-dimensional) Gaussian integral formula.</p>
 <blockquote>
 <div><p><strong>Gaussian Integral Formula</strong></p>
 <div class="math notranslate nohighlight" id="equation-eq-gaussian-integral-formula">
-<span class="eqno">(8.1.21)<a class="headerlink" href="#equation-eq-gaussian-integral-formula" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int_{-\infty}^{\infty} \prod_s d\xi_s \exp\left( -\ifrak \left( \frac{1}{2} \sum_{s, r} \Ascr_{sr} \xi_s \xi_r + \sum_s \Bscr_s \xi_s + \Cscr_s \right) \right) \\
+<span class="eqno">(8.1.23)<a class="headerlink" href="#equation-eq-gaussian-integral-formula" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int_{-\infty}^{\infty} \prod_s d\xi_s \exp\left( -\ifrak \left( \frac{1}{2} \sum_{s, r} \Ascr_{sr} \xi_s \xi_r + \sum_s \Bscr_s \xi_s + \Cscr_s \right) \right) \\
 &amp;\quad = \left( \det(\ifrak \Ascr / 2\pi) \right)^{-1/2} \exp\left( -\ifrak \left( \sum_{s, r} \Ascr_{sr} \bar{\xi}_s \bar{\xi}_r + \sum_s \Bscr_s \bar{\xi}_s + \Cscr_s \right) \right)\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{\xi}\)</span> is the (unique) stationary point of the quadratic power given explicitly by</p>
 <div class="math notranslate nohighlight">
 \[\bar{\xi}_s = -\sum_r (\Ascr^{-1})_{sr} \Bscr_r\]</div>
 </div></blockquote>
-<p>To figure out the stationary point of the power in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> with respect to <span class="math notranslate nohighlight">\(p\)</span>, let’s calculate the following variational derivative assuming the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms are independent of the <span class="math notranslate nohighlight">\(p\)</span>s</p>
+<p>To figure out the stationary point of the power in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a> with respect to <span class="math notranslate nohighlight">\(p\)</span>, let’s calculate the following variational derivative assuming the <span class="math notranslate nohighlight">\(\ifrak\epsilon\)</span> terms are independent of the <span class="math notranslate nohighlight">\(p\)</span>s</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp;\frac{\delta}{\delta p_n(t, \xbf)} \int_{-\infty}^{\infty} d\tau \left(
     -H(q(\tau), p(\tau)) + \int d^3y \sum_m \dot{q}_m(\tau, \ybf) p_m(\tau, \ybf) + \ifrak\epsilon \text{ terms}
@@ -624,8 +624,8 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 &amp;\quad = - \frac{\delta H}{\delta p_n(t, \xbf)} + \dot{q}_n(t, \xbf)\end{split}\]</div>
 <p>It follows that <span class="math notranslate nohighlight">\(\bar{p}\)</span> is stationary if it satisfies Hamilton’s equation</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-stationary-p-bar">
-<span class="eqno">(8.1.22)<a class="headerlink" href="#equation-eq-path-integral-stationary-p-bar" title="Link to this equation">#</a></span>\[\dot{q}_n(t, \xbf) = \left. \frac{\delta H}{\delta p_n(t, \xbf)} \right|_{p=\bar{p}}\]</div>
-<p>Assuming, in addition, that the (timed-ordered) operators <span class="math notranslate nohighlight">\(\Oscr_A, \Oscr_B, \cdots\)</span>, are independent of the <span class="math notranslate nohighlight">\(P\)</span>s, we can evaluate the <span class="math notranslate nohighlight">\(p\)</span>-integral in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> using the (infinite-dimensional) Gaussian integral formula <a class="reference internal" href="#equation-eq-gaussian-integral-formula">Eq.8.1.21</a> as follows</p>
+<span class="eqno">(8.1.24)<a class="headerlink" href="#equation-eq-path-integral-stationary-p-bar" title="Link to this equation">#</a></span>\[\dot{q}_n(t, \xbf) = \left. \frac{\delta H}{\delta p_n(t, \xbf)} \right|_{p=\bar{p}}\]</div>
+<p>Assuming, in addition, that the (timed-ordered) operators <span class="math notranslate nohighlight">\(\Oscr_A, \Oscr_B, \cdots\)</span>, are independent of the <span class="math notranslate nohighlight">\(P\)</span>s, we can evaluate the <span class="math notranslate nohighlight">\(p\)</span>-integral in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a> using the (infinite-dimensional) Gaussian integral formula <a class="reference internal" href="#equation-eq-gaussian-integral-formula">Eq.8.1.23</a> as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp;\int \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \exp\left(
     \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) + \ifrak\epsilon \text{ terms} \right)
@@ -635,14 +635,14 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 \right)\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(L\)</span> is the Lagrangian defined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-defn-lagrangian">
-<span class="eqno">(8.1.23)<a class="headerlink" href="#equation-eq-path-integral-defn-lagrangian" title="Link to this equation">#</a></span>\[L(q(\tau), \dot{q}(\tau)) \coloneqq -H(q(\tau), \bar{p}(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) \bar{p}_m(\tau, \xbf)\]</div>
-<p>with <span class="math notranslate nohighlight">\(\bar{p}\)</span> satisfying <a class="reference internal" href="#equation-eq-path-integral-stationary-p-bar">Eq.8.1.22</a> and</p>
+<span class="eqno">(8.1.25)<a class="headerlink" href="#equation-eq-path-integral-defn-lagrangian" title="Link to this equation">#</a></span>\[L(q(\tau), \dot{q}(\tau)) \coloneqq -H(q(\tau), \bar{p}(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) \bar{p}_m(\tau, \xbf)\]</div>
+<p>with <span class="math notranslate nohighlight">\(\bar{p}\)</span> satisfying <a class="reference internal" href="#equation-eq-path-integral-stationary-p-bar">Eq.8.1.24</a> and</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-a-matrix">
-<span class="eqno">(8.1.24)<a class="headerlink" href="#equation-eq-path-integral-a-matrix" title="Link to this equation">#</a></span>\[\Ascr_{\tau \xbf n, \tau' \ybf m}(q) \coloneqq A_{\xbf n, \ybf m}(q(\tau)) \delta(\tau-\tau')\]</div>
-<p>is given by <a class="reference internal" href="#equation-eq-path-integral-exp-power-quadratic">Eq.8.1.20</a>.</p>
-<p>Finally, we can write down the Lagrangian version of <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a> as follows</p>
+<span class="eqno">(8.1.26)<a class="headerlink" href="#equation-eq-path-integral-a-matrix" title="Link to this equation">#</a></span>\[\Ascr_{\tau \xbf n, \tau' \ybf m}(q) \coloneqq A_{\xbf n, \ybf m}(q(\tau)) \delta(\tau-\tau')\]</div>
+<p>is given by <a class="reference internal" href="#equation-eq-path-integral-exp-power-quadratic">Eq.8.1.22</a>.</p>
+<p>Finally, we can write down the Lagrangian version of <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a> as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">
-<span class="eqno">(8.1.25)<a class="headerlink" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian" title="Link to this equation">#</a></span>\[\begin{split}&amp;\braket{\VAC, \op{out} | T\left\{ \Oscr_A(Q(t_A)), \Oscr_B(Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+<span class="eqno">(8.1.27)<a class="headerlink" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian" title="Link to this equation">#</a></span>\[\begin{split}&amp;\braket{\VAC, \op{out} | T\left\{ \Oscr_A(Q(t_A)), \Oscr_B(Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
     &amp;\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \Oscr_A(Q(t_A)) \Oscr_B(Q(t_B)) \cdots \\
     &amp;\qquad \times \left( \det(2\pi\ifrak\Ascr(q)) \right)^{-1/2} \exp\left(
         \ifrak \int_{-\infty}^{\infty} d\tau \left( L(q(\tau), \dot{q}(\tau)) + \ifrak\epsilon \text{ terms} \right)
@@ -661,10 +661,10 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
     &amp;= \int d^3x \sum_n \left( \Pi_n (\Pi_n + J_n^0) - \frac{1}{2} (\Pi_n + J_n^0)^2 + \frac{1}{2} (\nabla \Phi_n)^2 + J_n^0 (\Pi_n + J_n^0) + \Jbf_n \cdot \nabla \Phi_n \right) \\
     &amp;\quad + \int d^3x~V(\Phi) \\
     &amp;= \int d^3x \sum_n \left( \frac{1}{2} (\Pi_n + J^0_n)^2 + \frac{1}{2} (\nabla \Phi_n)^2 + \Jbf_n \cdot \nabla \Phi_n \right) + \int d^3x~V(\Phi)\end{split}\]</div>
-<p>Comparing with <a class="reference internal" href="#equation-eq-hamiltonian-quadratic-in-p">Eq.8.1.19</a> and following <a class="reference internal" href="#equation-eq-path-integral-a-matrix">Eq.8.1.24</a>, we see that</p>
+<p>Comparing with <a class="reference internal" href="#equation-eq-hamiltonian-quadratic-in-p">Eq.8.1.21</a> and following <a class="reference internal" href="#equation-eq-path-integral-a-matrix">Eq.8.1.26</a>, we see that</p>
 <div class="math notranslate nohighlight">
 \[\Ascr_{x n, x' n'} = \delta^4(x-x') \delta_{nn'}\]</div>
-<p>which is field independent, and therefore can be eliminated in the same way that <span class="math notranslate nohighlight">\(\Nscr\)</span> can be eliminated (cf. <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.25</a>).</p>
+<p>which is field independent, and therefore can be eliminated in the same way that <span class="math notranslate nohighlight">\(\Nscr\)</span> can be eliminated (cf. <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.27</a>).</p>
 </dd>
 <dt>Nonlinear <span class="math notranslate nohighlight">\(\sigma\)</span>-model</dt><dd><p>The so-called nonlinear <span class="math notranslate nohighlight">\(\sigma\)</span>-model is described by the following Lagrangian density</p>
 <div class="math notranslate nohighlight">
@@ -685,36 +685,36 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
     \right) + \int d^3x~V(\Phi)\end{split}\]</div>
 <p>In follows that</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-nonlinear-sigma-model-a-matrix">
-<span class="eqno">(8.1.26)<a class="headerlink" href="#equation-eq-path-integral-nonlinear-sigma-model-a-matrix" title="Link to this equation">#</a></span>\[\Ascr_{xn, x'n'} = (1+U(\Phi))^{-1}_{nn'} \delta^4(x-x')\]</div>
+<span class="eqno">(8.1.28)<a class="headerlink" href="#equation-eq-path-integral-nonlinear-sigma-model-a-matrix" title="Link to this equation">#</a></span>\[\Ascr_{xn, x'n'} = (1+U(\Phi))^{-1}_{nn'} \delta^4(x-x')\]</div>
 <p>which obviously depend on <span class="math notranslate nohighlight">\(\Phi\)</span>, and therefore cannot be eliminated by the division by the vacuum expectation value. The idea then is to absorb it into the Lagrangian (density) which we now explain.</p>
-<p>Looking at <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.25</a>, we note the following general identity</p>
+<p>Looking at <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.27</a>, we note the following general identity</p>
 <div class="math notranslate nohighlight">
 \[\det\Ascr = \exp \Tr \ln \Ascr\]</div>
-<p>for any real symmetric positive <span class="math notranslate nohighlight">\(\Ascr\)</span>. To evaluate the logarithm, it’s convenient to discretize the Dirac delta function in <a class="reference internal" href="#equation-eq-path-integral-nonlinear-sigma-model-a-matrix">Eq.8.1.26</a> as follows</p>
+<p>for any real symmetric positive <span class="math notranslate nohighlight">\(\Ascr\)</span>. To evaluate the logarithm, it’s convenient to discretize the Dirac delta function in <a class="reference internal" href="#equation-eq-path-integral-nonlinear-sigma-model-a-matrix">Eq.8.1.28</a> as follows</p>
 <div class="math notranslate nohighlight">
 \[\delta^4(x-x') = \Omega^{-1} \delta_{xx'}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Omega\)</span> denotes an infinitesimal volume in spacetime. It follows that</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-ln-a">
-<span class="eqno">(8.1.27)<a class="headerlink" href="#equation-eq-path-integral-ln-a" title="Link to this equation">#</a></span>\[(\ln \Ascr)_{xn, x'n'} = \delta_{xx'} \left( -\ln(1+U(\Phi)) - \ln\Omega \right)_{nn'}\]</div>
+<span class="eqno">(8.1.29)<a class="headerlink" href="#equation-eq-path-integral-ln-a" title="Link to this equation">#</a></span>\[(\ln \Ascr)_{xn, x'n'} = \delta_{xx'} \left( -\ln(1+U(\Phi)) - \ln\Omega \right)_{nn'}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\ln\Omega\)</span> is understood as a constant multiple as the identity matrix. Next note that the trace of <span class="math notranslate nohighlight">\(\delta_{xx'}\)</span> can be evaluated by</p>
 <div class="math notranslate nohighlight">
 \[\Tr~\delta_{xx'} \cdots = \Omega^{-1} \int d^4x \cdots\]</div>
 <p>It follows that</p>
 <div class="math notranslate nohighlight">
 \[\det\Ascr \propto \exp\left( -\Omega^{-1} \int d^4x~\Tr\ln(1+U(\Phi)) \right)\]</div>
-<p>where the proportionality constant, coming from the constant <span class="math notranslate nohighlight">\(-\ln\Omega\)</span> in <a class="reference internal" href="#equation-eq-path-integral-ln-a">Eq.8.1.27</a>, is field-independent. Plugging into <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.25</a>, we see that Lagrangian density receives a correction term</p>
+<p>where the proportionality constant, coming from the constant <span class="math notranslate nohighlight">\(-\ln\Omega\)</span> in <a class="reference internal" href="#equation-eq-path-integral-ln-a">Eq.8.1.29</a>, is field-independent. Plugging into <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.27</a>, we see that Lagrangian density receives a correction term</p>
 <div class="math notranslate nohighlight">
 \[\Delta\Lscr = -\frac{\ifrak}{2} \Omega^{-1} \Tr\ln(1+U(\Phi))\]</div>
 <p>which unfortunately contains a diverging term <span class="math notranslate nohighlight">\(\Omega^{-1}\)</span>. This is known as an ultraviolet divergence since it comes from the infinitesimal spacetime volume. We’ll not address how it may be handled here.</p>
 </dd>
 <dt>Vector fields</dt><dd><p>The two examples considered so far admit a Lagrangian without auxiliary fields (cf. <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-general-quantum-lagrangian">Eq.6.2.8</a>). To cover this case, consider the following Lagrangian for a set of non-interacting vector fields (cf. <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-lagrangian-density">Eq.6.4.6</a>)</p>
 <div class="math notranslate nohighlight" id="equation-eq-path-integral-many-vector-fields-lagrangian">
-<span class="eqno">(8.1.28)<a class="headerlink" href="#equation-eq-path-integral-many-vector-fields-lagrangian" title="Link to this equation">#</a></span>\[\Lscr = -\sum_n \left(
+<span class="eqno">(8.1.30)<a class="headerlink" href="#equation-eq-path-integral-many-vector-fields-lagrangian" title="Link to this equation">#</a></span>\[\Lscr = -\sum_n \left(
     \frac{1}{4} F_{n \mu\nu} F_n^{\mu\nu} + \frac{1}{2} M^2 A_{n \mu} A_n^{\mu} + J_n^{\mu} A_{n\mu}
 \right)\]</div>
 <p>According to <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-hamiltonian">Eq.6.4.10</a>, the corresponding Hamiltonian is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-many-vector-fields-hamiltonian">
-<span class="eqno">(8.1.29)<a class="headerlink" href="#equation-eq-many-vector-fields-hamiltonian" title="Link to this equation">#</a></span>\[\begin{split}H &amp;= \int d^3x \sum_n \left(
+<span class="eqno">(8.1.31)<a class="headerlink" href="#equation-eq-many-vector-fields-hamiltonian" title="Link to this equation">#</a></span>\[\begin{split}H &amp;= \int d^3x \sum_n \left(
     \frac{1}{2} \bm{\Pi}_n^2 + \frac{1}{2M_n^2} (\nabla \cdot \bm{\Pi}_n)^2 + \frac{1}{M_n^2} J_n^0 \nabla \cdot \bm{\Pi}_n \right. \\
     &amp;\qquad \left. + \frac{1}{2} (\nabla \times \Abf_n)^2 + \frac{1}{2} M_n^2 \Abf_n^2 + \frac{1}{2M_n^2} (J_n^0)^2 - \Jbf_n \cdot \Abf_n
 \right)\end{split}\]</div>
@@ -727,23 +727,124 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 <p>we conclude that</p>
 <div class="math notranslate nohighlight">
 \[\Ascr_{x i n, y j m} = \delta_{nm} \left( \delta_{ij}\delta^4(x-y) - \frac{1}{M_n^2} \nabla_i\nabla_j\delta^4(x-y) \right)\]</div>
-<p>which is field-independent. As before, it means that the term <span class="math notranslate nohighlight">\(\det(2\pi\ifrak \Ascr(q))^{-1/2}\)</span> in <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.25</a> plays no role. Nonetheless, the Lagrangian defined by <a class="reference internal" href="#equation-eq-path-integral-defn-lagrangian">Eq.8.1.23</a> cannot be the same the original <a class="reference internal" href="#equation-eq-path-integral-many-vector-fields-lagrangian">Eq.8.1.28</a> since the former doesn’t involve the time-component <span class="math notranslate nohighlight">\(A_0\)</span>. As a consequence, the Lorentz invariance of <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.25</a> is far from obvious.</p>
+<p>which is field-independent. As before, it means that the term <span class="math notranslate nohighlight">\(\det(2\pi\ifrak \Ascr(q))^{-1/2}\)</span> in <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.27</a> plays no role. Nonetheless, the Lagrangian defined by <a class="reference internal" href="#equation-eq-path-integral-defn-lagrangian">Eq.8.1.25</a> cannot be the same the original <a class="reference internal" href="#equation-eq-path-integral-many-vector-fields-lagrangian">Eq.8.1.30</a> since the former doesn’t involve the time-component <span class="math notranslate nohighlight">\(A_0\)</span>. As a consequence, the Lorentz invariance of <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.27</a> is far from obvious.</p>
 <p>To restore the manifest Lorentz invariance, let’s introduce, according to <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-heisenberg-v0">Eq.6.4.9</a>, a correction term to the Hamiltonian <span class="math notranslate nohighlight">\(H \to H + \Delta H\)</span> where</p>
 <div class="math notranslate nohighlight" id="equation-eq-many-vector-fields-hamiltonian-correction">
-<span class="eqno">(8.1.30)<a class="headerlink" href="#equation-eq-many-vector-fields-hamiltonian-correction" title="Link to this equation">#</a></span>\[\Delta H = -\frac{1}{2} \sum_n M_n^2 \int d^3x \left( A_n^0 - M_n^{-2} \nabla \cdot \bm{\Pi}_n - M_n^{-2} J_n^0 \right)^2\]</div>
-<p>Moreover, in addition to the integration of <span class="math notranslate nohighlight">\(\Abf_n\)</span> and <span class="math notranslate nohighlight">\(\bm{\Pi}_n\)</span> in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.18</a>, we also integrate over <span class="math notranslate nohighlight">\(A_n^0\)</span>. This addition doesn’t really make a difference to the physics since the integrant in <span class="math notranslate nohighlight">\(\Delta H\)</span> being a perfect square means that the integration over <span class="math notranslate nohighlight">\(A_n^0\)</span> will only introduce an insignificant field-independent factor to the matrix element.</p>
-<p>Combining <a class="reference internal" href="#equation-eq-many-vector-fields-hamiltonian">Eq.8.1.29</a> and <a class="reference internal" href="#equation-eq-many-vector-fields-hamiltonian-correction">Eq.8.1.30</a> together, we have</p>
+<span class="eqno">(8.1.32)<a class="headerlink" href="#equation-eq-many-vector-fields-hamiltonian-correction" title="Link to this equation">#</a></span>\[\Delta H = -\frac{1}{2} \sum_n M_n^2 \int d^3x \left( A_n^0 - M_n^{-2} \nabla \cdot \bm{\Pi}_n - M_n^{-2} J_n^0 \right)^2\]</div>
+<p>Moreover, in addition to the integration of <span class="math notranslate nohighlight">\(\Abf_n\)</span> and <span class="math notranslate nohighlight">\(\bm{\Pi}_n\)</span> in <a class="reference internal" href="#equation-eq-pi-to-s-matrix-general-vacuum-matrix-element">Eq.8.1.20</a>, we also integrate over <span class="math notranslate nohighlight">\(A_n^0\)</span>. This addition doesn’t really make a difference to the physics since the integrant in <span class="math notranslate nohighlight">\(\Delta H\)</span> being a perfect square means that the integration over <span class="math notranslate nohighlight">\(A_n^0\)</span> will only introduce an insignificant field-independent factor to the matrix element.</p>
+<p>Combining <a class="reference internal" href="#equation-eq-many-vector-fields-hamiltonian">Eq.8.1.31</a> and <a class="reference internal" href="#equation-eq-many-vector-fields-hamiltonian-correction">Eq.8.1.32</a> together, we have</p>
 <div class="math notranslate nohighlight">
 \[H + \Delta H = \int d^3x \sum_n \left(
     \frac{1}{2} \bm{\Pi}_n^2 + A_n^0 \nabla \cdot \bm{\Pi}_n + \frac{1}{2} (\nabla \times \Abf_n)^2 + \frac{1}{2} M_n^2 A_n^2 - J_n \cdot A_n
 \right)\]</div>
-<p>We see that the integrand is still quadratic in <span class="math notranslate nohighlight">\(\bm{\Pi}\)</span>, whose integration, according to the Gaussian integral formula, can be done by replacing <span class="math notranslate nohighlight">\(\bm{\Pi}_n\)</span> with the solution to <a class="reference internal" href="#equation-eq-path-integral-stationary-p-bar">Eq.8.1.22</a>, which reads</p>
+<p>We see that the integrand is still quadratic in <span class="math notranslate nohighlight">\(\bm{\Pi}\)</span>, whose integration, according to the Gaussian integral formula, can be done by replacing <span class="math notranslate nohighlight">\(\bm{\Pi}_n\)</span> with the solution to <a class="reference internal" href="#equation-eq-path-integral-stationary-p-bar">Eq.8.1.24</a>, which reads</p>
 <div class="math notranslate nohighlight">
 \[\dot{\Abf}_n = \bm{\Pi}_n - \nabla A_n^0 \iff \bm{\Pi}_n = \dot{\Abf}_n + \nabla A_n^0\]</div>
 <p>One can then verify that the Legendre transformed quantity</p>
 <div class="math notranslate nohighlight">
 \[-H - \Delta H + \sum_n \int d^3x~\dot{\Abf}_n \cdot \bm{\Pi}_n\]</div>
-<p>indeed recovers the original Lagrangian density <a class="reference internal" href="#equation-eq-path-integral-many-vector-fields-lagrangian">Eq.8.1.28</a>.</p>
+<p>indeed recovers the original Lagrangian density <a class="reference internal" href="#equation-eq-path-integral-many-vector-fields-lagrangian">Eq.8.1.30</a>.</p>
+</dd>
+</dl>
+<p>We see from the above examples that it’s far from obvious to choose the correct Lagrangian in <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.27</a>. Moreover, the choice of canonical fields may not be the initial <span class="math notranslate nohighlight">\(q\)</span>s. Examples of this kind include the vector fields discussed above as well as QED which will be discussed later. Under these considerations, let’s rewrite <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian">Eq.8.1.27</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian-final-form">
+<span class="eqno">(8.1.33)<a class="headerlink" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian-final-form" title="Link to this equation">#</a></span>\[\begin{split}&amp;\braket{\VAC, \op{out} | T\{\Oscr_A(\Psi_A(t_A)), \Oscr_B(\Psi_B(t_B)), \cdots\} | \VAC, \op{in}} \\
+    &amp;\quad \propto \int \prod_{\tau, \xbf, n} d\psi_n(\tau, \xbf)~\Oscr_A(\psi(t_A)) \Oscr_B(\psi(t_B)) \cdots \\
+    &amp;\qquad \times \exp\left(
+        \ifrak \int_{-\infty}^{\infty} d\tau \left( L(\psi(\tau), \dot{\psi}(\tau)) + \ifrak\epsilon\text{ terms} \right)
+    \right)\end{split}\]</div>
+<p>where the field-independent constants <span class="math notranslate nohighlight">\(|\Nscr|^2\)</span> and the part of <span class="math notranslate nohighlight">\(\det(2\pi\ifrak\Ascr)^{-1/2}\)</span> are suppressed into the proportionality, and the field-dependent part of <span class="math notranslate nohighlight">\(\det(2\pi\ifrak\Ascr)^{-1/2}\)</span> is absorbed into the Lagrangian. In addition, the dependence of the <span class="math notranslate nohighlight">\(\psi\)</span>-fields on the right-hand-side on <span class="math notranslate nohighlight">\(A, B, \cdots\)</span>, is suppressed into the index <span class="math notranslate nohighlight">\(n\)</span> in the product measure.</p>
+</section>
+<section id="path-integral-derivation-of-feynman-rules">
+<h3><span class="section-number">8.1.4. </span>Path integral derivation of Feynman rules<a class="headerlink" href="#path-integral-derivation-of-feynman-rules" title="Link to this heading">#</a></h3>
+<p>The vacuum expectation value of a time-ordered product of operators given by <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian-final-form">Eq.8.1.33</a> can be evaluated by Feynman diagrams, assuming the propagators have been worked out. However these diagrams may not all be connected. In particular, there is a set of <span class="math notranslate nohighlight">\(2\)</span>-component diagrams: one of them consists of vertices from only the timed-ordered operators, and the other consists of vertices from the interaction density. Such diagrams can be gotten rid of by considering the following normalized vacuum expectation value</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-defn-m-general">
+<span class="eqno">(8.1.34)<a class="headerlink" href="#equation-eq-path-integral-defn-m-general" title="Link to this equation">#</a></span>\[M_{\ell_A, \ell_B, \cdots}(x_A, x_B, \cdots) \coloneqq \frac{
+    \braket{\VAC, \op{out} | T\{\Psi_{\ell_A}(x_A), \Psi_{\ell_B}(x_B), \cdots\} | \VAC, \op{in}}
+}{
+    \braket{\VAC, \op{out} | \VAC, \op{in}}
+}\]</div>
+<p>Here a few notations have changed from the previous sections. Firstly, we’ve used <span class="math notranslate nohighlight">\(\ell_A, \ell_B, \cdots\)</span>, instead of <span class="math notranslate nohighlight">\(A, B, \cdots\)</span>, to label the time-ordered operators, which will allow us to unify the labels by <span class="math notranslate nohighlight">\(\ell\)</span>. Secondly, the argument of the fields has changed from time such as <span class="math notranslate nohighlight">\(t_A\)</span> to spacetime coordinates <span class="math notranslate nohighlight">\(x_A\)</span>, which of courses contain <span class="math notranslate nohighlight">\(t_A\)</span> as its time-component.</p>
+<p>Now if the Hamiltonian is quadratic in the <span class="math notranslate nohighlight">\(P\)</span>-operators as discussed in <a class="reference internal" href="#sec-lagrangian-version-of-the-path-integral"><span class="std std-ref">Lagrangian version of the path integral</span></a>, then <a class="reference internal" href="#equation-eq-path-integral-operator-vacuum-matrix-element-lagrangian-final-form">Eq.8.1.33</a> implies that <a class="reference internal" href="#equation-eq-path-integral-defn-m-general">Eq.8.1.34</a> can be rewritten as</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-defn-m-quadratic">
+<span class="eqno">(8.1.35)<a class="headerlink" href="#equation-eq-path-integral-defn-m-quadratic" title="Link to this equation">#</a></span>\[M_{\ell_A, \ell_B, \cdots}(x_A, x_B, \cdots) = \frac{
+    \int \prod_{x, \ell} d\psi_{\ell}(x)~\psi_{\ell_A}(x_A) \psi_{\ell_B}(t_B) \cdots e^{\ifrak I[\psi]}
+}{
+    \int \prod_{x, \ell} d\psi_{\ell}(x)~e^{\ifrak I[\psi]}
+}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[I[\psi] = \int_{-\infty}^{\infty} d\tau \left( L(\psi(\tau), \dot{\psi}(\tau)) + \ifrak\epsilon \text{ terms} \right)\]</div>
+<p>is the action.</p>
+<p>Suppose, in the same vein as discussed in <a class="reference internal" href="02-scattering-theory.html#sec-perturbation-theory-of-s-matrix"><span class="std std-ref">Perturbation Theory of S-matrix</span></a> and specifically <a class="reference internal" href="02-scattering-theory.html#equation-eq-defn-v-by-density">Eq.2.5.11</a>, the Lagrangian is given by a density <span class="math notranslate nohighlight">\(\Lscr\)</span>. Then following the philosophy of perturbation theory, let’s write it as the sum of a free part <span class="math notranslate nohighlight">\(\Lscr_0\)</span> and an interacting part <span class="math notranslate nohighlight">\(\Lscr_1\)</span>. In other words</p>
+<div class="math notranslate nohighlight">
+\[L(\psi(\tau), \dot{\psi}(\tau)) = \int d^3x \left(
+    \Lscr_0(\psi(\tau, \xbf), \p_{\mu} \psi(\tau, \xbf)) + \Lscr_1(\psi(\tau, \xbf), \p_{\mu} \psi(\tau, \xbf))
+\right)\]</div>
+<p>which, in turn, implies that</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-defn-free-and-interacting-actions">
+<span class="eqno">(8.1.36)<a class="headerlink" href="#equation-eq-path-integral-defn-free-and-interacting-actions" title="Link to this equation">#</a></span>\[\begin{split}I[\psi] &amp;= I_0[\psi] + I_1[\psi] \\
+I_0[\psi] &amp;= \int d^4x \left( \Lscr_0(\psi, \p_{\mu} \psi) + \ifrak\epsilon\text{ terms} \right) \\
+I_1[\psi] &amp;= \int d^4x~\Lscr_1(\psi, \p_{\mu} \psi)\end{split}\]</div>
+<p>Such decomposition then allows us to write the exponential term in <a class="reference internal" href="#equation-eq-path-integral-defn-m-quadratic">Eq.8.1.35</a> in the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-expand-interaction-action">
+<span class="eqno">(8.1.37)<a class="headerlink" href="#equation-eq-path-integral-expand-interaction-action" title="Link to this equation">#</a></span>\[\begin{split}\exp(\ifrak I[\psi]) &amp;= \exp(\ifrak I_0[\psi]) \exp(\ifrak I_1[\psi]) \\
+    &amp;= \exp(\ifrak I_0[\psi]) \sum_{N=0}^{\infty} \frac{\ifrak^N}{N!} (I_1[\psi])^N\end{split}\]</div>
+<p>where we’ve also expanded the second exponential of the interaction action. The reason to do so, or rather, to keep the first exponential of the free action, is that <span class="math notranslate nohighlight">\(I_0[\psi]\)</span> is typically, and will be assumed to be, quadratic. Indeed, an explicit example was worked out for scalar field in <a class="reference internal" href="#equation-eq-path-integral-vacuum-expectation-value-scalar-field">Eq.8.1.19</a>, as long as we ignore the term <span class="math notranslate nohighlight">\(e^{-\epsilon |\tau|}\)</span> which spoils the quadraticity only in higher orders of <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>If we write</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-quadratic-free-action">
+<span class="eqno">(8.1.38)<a class="headerlink" href="#equation-eq-path-integral-quadratic-free-action" title="Link to this equation">#</a></span>\[I_0[\psi] = -\frac{1}{2} \int d^4x~d^4x' \sum_{\ell, \ell'} \Dscr_{x \ell, x' \ell'} \psi_{\ell}(x) \psi_{\ell'}(x')\]</div>
+<p>then according to <a class="reference internal" href="#equation-eq-path-integral-expand-interaction-action">Eq.8.1.37</a>, both the denominator and the numerator of <a class="reference internal" href="#equation-eq-path-integral-defn-m-quadratic">Eq.8.1.35</a> are sums of integrals of the following form</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-feynman-rules-generic-integral">
+<span class="eqno">(8.1.39)<a class="headerlink" href="#equation-eq-path-integral-feynman-rules-generic-integral" title="Link to this equation">#</a></span>\[\Iscr_{\ell_1, \ell_2, \cdots}(x_1, x_2, \cdots) \coloneqq \int \prod_{x, \ell} d\psi_{\ell}(x)~e^{\ifrak I_0[\psi]} \psi_{\ell_1}(x_1) \psi_{\ell_2}(x_2) \cdots\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0[\psi]\)</span> is quadratic. In the case of finite-dimensional integrals, this is a well-known extension of the Gaussian Integral Formula discussed above by integration-by-parts. More formally, this is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Isserlis%27s_theorem">Wick’s theorem</a> which we recall as follows</p>
+<blockquote>
+<div><p><strong>Wick’s theorem</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\int \prod_r d\xi_s~\xi_{s_1} \xi_{s_2} \cdots \xi_{s_{2N}} \exp\left( -\frac{\ifrak}{2} \sum_{s, r} \Dscr_{sr} \xi_s \xi_r \right) \\
+    &amp;\quad = \left( \det(\ifrak\Dscr / 2\pi) \right)^{-1/2} \sum_{\substack{\text{pairings} \\ \text{of } s_1, \cdots, s_{2N}}}
+        \prod_{\text{pairs}} \left(-\ifrak\Dscr^{-1}\right)_{\text{paired indices}}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Dscr\)</span> is a real, symmetric, positive matrix.</p>
+</div></blockquote>
+<p>Applying Wick’s theorem to <a class="reference internal" href="#equation-eq-path-integral-feynman-rules-generic-integral">Eq.8.1.39</a> we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Iscr_{\ell_1, \ell_2, \cdots}(x_1, x_2, \cdots) = (\det(\ifrak\Dscr / 2\pi))^{-1/2} \sum_{\substack{\text{pairings} \\ \text{of fields}}}
+    ~\prod_{\text{pairs}} \left( -\ifrak\Dscr^{-1} \right)_{\text{paired fields}}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Dscr\)</span> is given by <a class="reference internal" href="#equation-eq-path-integral-quadratic-free-action">Eq.8.1.38</a>. Observe that this evaluation, besides the unimportant field-independent factor <span class="math notranslate nohighlight">\((\det(\ifrak\Dscr / 2\pi))^{-1/2}\)</span>, can be thought of as a sum over Feynman diagrams where the edges are paired fields that come from either the expansion of <span class="math notranslate nohighlight">\(e^{\ifrak I_1[\psi]}\)</span> or the timed-ordered operators in the denominator of <a class="reference internal" href="#equation-eq-path-integral-defn-m-quadratic">Eq.8.1.35</a>. Moreover, the “propagator” <span class="math notranslate nohighlight">\(-\ifrak\Delta\)</span> can be defined as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-defn-propagator">
+<span class="eqno">(8.1.40)<a class="headerlink" href="#equation-eq-path-integral-defn-propagator" title="Link to this equation">#</a></span>\[\Delta_{\ell_1, \ell_2}(x_1, x_2) \coloneqq \Dscr^{-1}_{x_1 \ell_1, x_2 \ell_2}\]</div>
+<p>To invert <span class="math notranslate nohighlight">\(\Dscr\)</span> in spacetime coordinates, let’s rewrite <a class="reference internal" href="#equation-eq-path-integral-defn-propagator">Eq.8.1.40</a> as an integral equation as follows</p>
+<div class="math notranslate nohighlight">
+\[\int d^4 x_2 \sum_{\ell_2} \Dscr_{x_1 \ell_1, x_2 \ell_2} \Delta_{\ell_2, \ell_3}(x_2, x_3) = \delta^4(x_1-x_3) \delta_{\ell_1 \ell_3}\]</div>
+<p>Assuming translation-invariance of the theory, it follows that <span class="math notranslate nohighlight">\(\Dscr\)</span> can be written as a Fourier transform as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-d-matrix-translation-invariance">
+<span class="eqno">(8.1.41)<a class="headerlink" href="#equation-eq-path-integral-d-matrix-translation-invariance" title="Link to this equation">#</a></span>\[\Dscr_{x_1 \ell_1, x_2 \ell_2} \eqqcolon (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x_1-x_2)} \Dscr_{\ell_1 \ell_2}(p)\]</div>
+<p>which, in turn, implies</p>
+<div class="math notranslate nohighlight" id="equation-eq-path-integral-propagator-as-d-inverse">
+<span class="eqno">(8.1.42)<a class="headerlink" href="#equation-eq-path-integral-propagator-as-d-inverse" title="Link to this equation">#</a></span>\[\Delta_{\ell_1 \ell_2}(x_1, x_2) = (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x_1-x_2)} \Dscr^{-1}_{\ell_1 \ell_2}(p)\]</div>
+<p>To make it more concrete, let’s consider a few examples.</p>
+<dl>
+<dt>Scalar field</dt><dd><p>Recall from <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-free-real-scalar-field-lagrangian">Eq.6.1.12</a> that the free Lagrangian density takes the following form</p>
+<div class="math notranslate nohighlight">
+\[\Lscr_0 = -\frac{1}{2} \p_{\mu} \phi \p^{\mu} \phi - \frac{1}{2} m^2 \phi^2\]</div>
+<p>It follows then from <a class="reference internal" href="#equation-eq-path-integral-vacuum-expectation-value-scalar-field">Eq.8.1.19</a> and <a class="reference internal" href="#equation-eq-path-integral-defn-free-and-interacting-actions">Eq.8.1.36</a> that the free action <span class="math notranslate nohighlight">\(I_0[\phi]\)</span>, up to the first order of <span class="math notranslate nohighlight">\(\epsilon\)</span>, takes the following form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;I_0[\phi] \\
+    &amp;= -\frac{1}{2} \int d^4x \left( \p_{\mu} \phi \p^{\mu} \phi + m^2 \phi^2 \right)
+    + \frac{1}{2} \ifrak\epsilon \int dt \int d^3x~d^3x'~\Escr(\xbf, \xbf') \phi(t, \xbf) \phi(t, \xbf') \\
+    &amp;= -\frac{1}{2} \int d^4x~d^4x' \left(
+            \delta^4(x-x') (\p_{\mu} \phi \p^{\mu} \phi + m^2 \phi^2) - \ifrak\epsilon \delta(t-t') \Escr(\xbf, \xbf') \phi(x) \phi(x')
+        \right) \\
+    &amp;= -\frac{1}{2} \int d^4x~d^4x' \left( \frac{\p^2}{\p x^{\mu} \p x'_{\mu}} \delta^4(x-x') + m^2 \delta^4(x-x') -\ifrak\epsilon \delta(t-t') \Escr(\xbf, \xbf') \right) \phi(x) \phi(x') \\
+    &amp;= -\frac{1}{2} \int d^4x~d^4x' \left( (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x-x')} \left( p^2 + m^2 - \ifrak\epsilon E(\pbf) \right) \right) \phi(x) \phi(x')\end{split}\]</div>
+<p>where in the last equality we’ve also used <a class="reference internal" href="#equation-eq-path-integral-scalar-field-curly-e">Eq.8.1.18</a>.</p>
+<p>Comparing with <a class="reference internal" href="#equation-eq-path-integral-quadratic-free-action">Eq.8.1.38</a> and <a class="reference internal" href="#equation-eq-path-integral-d-matrix-translation-invariance">Eq.8.1.41</a>, we find</p>
+<div class="math notranslate nohighlight">
+\[\Dscr(p) = p^2 + m^2 - \ifrak \epsilon E(\pbf)\]</div>
+<p>and therefore the propagator</p>
+<div class="math notranslate nohighlight">
+\[\Delta(x, y) = (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x-y)} \left( p^2 + m^2 - \ifrak\epsilon E(\pbf) \right)^{-1}\]</div>
+<p>according to <a class="reference internal" href="#equation-eq-path-integral-propagator-as-d-inverse">Eq.8.1.42</a>. This recovers the Feynman propagator defined by <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-defn-feynman-propagator">Eq.5.2.8</a> and evaluated in <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-feynman-propagator-as-momentum-space-integral">Eq.5.2.11</a>.</p>
 </dd>
 </dl>
 </section>
@@ -777,6 +878,7 @@ P_a(t) \ket{p, t} &amp;= p_a \ket{p, t}\end{split}\]</div>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-path-integral-formula">8.1.1. The general path integral formula</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-to-the-s-matrix">8.1.2. Transition to the S-matrix</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-version-of-the-path-integral">8.1.3. Lagrangian version of the path integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-integral-derivation-of-feynman-rules">8.1.4. Path integral derivation of Feynman rules</a></li>
 </ul>
 </li>
 </ul>
