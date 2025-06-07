@@ -1237,6 +1237,7 @@ where :math:`\Hscr` is a real function. Such :math:`\Lscr` is nonetheless not re
 However, the same calculation shows that the action, i.e., the spacetime integral of the Lagrangian, is real. It follows that one needs not to treat :math:`\Psi` and :math:`\bar{\Psi}` as independent variables since the field equations, given as the stationary point of the action functional, for :math:`\Psi` is adjoint to that for :math:`\bar{\Psi}`. Therefore we can simply define the canonical conjugate
 
 .. math:: \Pi \coloneqq \frac{\p \Lscr}{\p \dot{\Psi}} = -\bar{\Psi} \gamma^0
+	:label: eq_dirac_field_defn_conjugate_pi
 
 and write the Hamiltonian
 

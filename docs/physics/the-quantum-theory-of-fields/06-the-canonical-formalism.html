@@ -1151,8 +1151,8 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
         &amp;= \bar{\Psi} \gamma^{\mu} \p_{\mu}\Psi + \left( \p_{\mu} \bar{\Psi} \right) \gamma^{\mu} \Psi \\
         &amp;= \p_{\mu} \left( \bar{\Psi} \gamma^{\mu} \Psi \right)\end{split}\]</div>
 <p>However, the same calculation shows that the action, i.e., the spacetime integral of the Lagrangian, is real. It follows that one needs not to treat <span class="math notranslate nohighlight">\(\Psi\)</span> and <span class="math notranslate nohighlight">\(\bar{\Psi}\)</span> as independent variables since the field equations, given as the stationary point of the action functional, for <span class="math notranslate nohighlight">\(\Psi\)</span> is adjoint to that for <span class="math notranslate nohighlight">\(\bar{\Psi}\)</span>. Therefore we can simply define the canonical conjugate</p>
-<div class="math notranslate nohighlight">
-\[\Pi \coloneqq \frac{\p \Lscr}{\p \dot{\Psi}} = -\bar{\Psi} \gamma^0\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-dirac-field-defn-conjugate-pi">
+<span class="eqno">(6.4.17)<a class="headerlink" href="#equation-eq-dirac-field-defn-conjugate-pi" title="Link to this equation">#</a></span>\[\Pi \coloneqq \frac{\p \Lscr}{\p \dot{\Psi}} = -\bar{\Psi} \gamma^0\]</div>
 <p>and write the Hamiltonian</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}H &amp;= \int d^3 x \left( \Pi \dot{\Psi} - \Lscr \right) \\
@@ -1161,13 +1161,13 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <p>where the two summands in the last integrand give the usual splitting <span class="math notranslate nohighlight">\(H = H_0 + V\)</span>.</p>
 <p>Passing to the interaction picture, we can write</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-free-hamiltonian">
-<span class="eqno">(6.4.17)<a class="headerlink" href="#equation-eq-dirac-field-free-hamiltonian" title="Link to this equation">#</a></span>\[H_0 = \int d^3 x~\pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi\]</div>
+<span class="eqno">(6.4.18)<a class="headerlink" href="#equation-eq-dirac-field-free-hamiltonian" title="Link to this equation">#</a></span>\[H_0 = \int d^3 x~\pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi\]</div>
 <p>so that the field equation is simply</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-hamilton-equation">
-<span class="eqno">(6.4.18)<a class="headerlink" href="#equation-eq-dirac-field-hamilton-equation" title="Link to this equation">#</a></span>\[\dot{\psi} = \frac{\delta H_0}{\delta \pi} = \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
+<span class="eqno">(6.4.19)<a class="headerlink" href="#equation-eq-dirac-field-hamilton-equation" title="Link to this equation">#</a></span>\[\dot{\psi} = \frac{\delta H_0}{\delta \pi} = \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
         \iff (\gamma^{\mu} \p_{\mu} + m) \psi = 0\]</div>
 <p>which is recognized as the Dirac equation <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-equation-psi">Eq.4.4.37</a>. Indeed, the other Hamilton’s equation <span class="math notranslate nohighlight">\(\dot{\pi} = -\delta H_0 / \delta \psi\)</span> gives nothing but the adjoint of the Dirac equation, hence no new information.</p>
-<p>A general solution to <a class="reference internal" href="#equation-eq-dirac-field-hamilton-equation">Eq.6.4.18</a> can be written as</p>
+<p>A general solution to <a class="reference internal" href="#equation-eq-dirac-field-hamilton-equation">Eq.6.4.19</a> can be written as</p>
 <div class="math notranslate nohighlight">
 \[\psi(x) = (2\pi)^{-3/2} \int d^3 p \sum_{\sigma = \pm 1/2} \left( u(\pbf, \sigma) e^{\ifrak p \cdot x} a(\pbf, \sigma) + v(\pbf, \sigma) e^{-\ifrak p \cdot x} b^{\dagger}(\pbf, \sigma) \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(u(\pbf, \pm 1/2)\)</span> are the two independent solutions of</p>

@@ -23,6 +23,7 @@ We'll think of :math:`Q_a` as (spacetime) coordinates and :math:`P_a` as momenta
 Since all :math:`Q_a`\s commute each other, they can be simultaneously diagonalized so that there exist eigenstates :math:`\ket{q}` satisfying
 
 .. math:: Q_a \ket{q} = q_a \ket{q}
+    :label: eq_path_integral_bosonic_simultaneous_q_eigenstate
 
 Moreover, the eigenstates satisfy the following orthogonality condition
 
@@ -367,6 +368,10 @@ where it's organized so that the first summand on the right-hand-side is quadrat
 
     .. math:: \bar{\xi}_s = -\sum_r (\Ascr^{-1})_{sr} \Bscr_r
 
+.. note::
+
+    In more general cases where :math:`H` is not quadratic in :math:`P`, approximation techniques such as the `stationary phase approximation <https://en.wikipedia.org/wiki/Stationary_phase_approximation>`__ may be applied.
+
 To figure out the stationary point of the power in :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element` with respect to :math:`p`, let's calculate the following variational derivative assuming the :math:`\ifrak\epsilon` terms are independent of the :math:`p`\s
 
 .. math::
@@ -680,7 +685,7 @@ which, in turn, implies
 .. math:: \Delta_{\ell_1 \ell_2}(x_1, x_2) = (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x_1-x_2)} \Dscr^{-1}_{\ell_1 \ell_2}(p)
     :label: eq_path_integral_propagator_as_d_inverse
 
-To make it more concrete, let's consider a few examples.
+We conclude the discussion with an example.
 
 Scalar field
     Recall from :eq:`eq_free_real_scalar_field_lagrangian` that the free Lagrangian density takes the following form
@@ -711,3 +716,148 @@ Scalar field
     .. math:: \Delta(x, y) = (2\pi)^{-4} \int d^4p~e^{\ifrak p \cdot (x-y)} \left( p^2 + m^2 - \ifrak\epsilon E(\pbf) \right)^{-1}
 
     according to :eq:`eq_path_integral_propagator_as_d_inverse`. This recovers the Feynman propagator defined by :eq:`eq_defn_feynman_propagator` and evaluated in :eq:`eq_feynman_propagator_as_momentum_space_integral`.
+
+
+Path Integrals for Fermions
+---------------------------
+
+We'll develop the path integral formalism for fermions in parallel to the theory for bosons. The starting point is the commutation relations between Schrödinger-picture canonical variables
+
+.. math::
+    :label: eq_path_integral_fermionic_commutation_relation
+
+    \{ Q_a, P_b \} &= \ifrak \delta_{ab} \\
+    \{ Q_a, Q_b \} &= \{ P_a, P_b \} = 0
+
+where the curly bracket denotes the anti-commutator. This is to be compared with the bosonic commutation relations :eq:`eq_pib_canonical_commutation_relations`. As in the bosonic case, the indices :math:`a, b` will be replaced by spacetime coordinates as we transit specifically to quantum field theory.
+
+The zero states
+^^^^^^^^^^^^^^^
+
+It follows from :eq:`eq_path_integral_fermionic_commutation_relation` that
+
+.. math:: Q_a^2 = P_a^2 = 0
+
+Hence there must exist a ket-state :math:`\ket{0}` and a bra-state :math:`\bra{0}` such that
+
+.. math:: Q_a \ket{0} = \bra{0} P_a = 0
+    :label: eq_path_integral_fermion_zero_states_annihilated_by_q_and_p
+
+Indeed they can be explicitly constructed as follows
+
+.. math::
+
+    \ket{0} &\propto \left( \prod_a Q_a \right) \ket{f} \\
+    \bra{0} &\propto \bra{g} \left( \prod_a P_a \right)
+
+where :math:`\ket{f}` and :math:`\bra{g}` can be any states that makes the right-hand-sides nonzero. In particular the zero states are not in general unique. It turns out that in the absence of bosonic degrees of freedom, the zero states are unique up to a scalar, which can be chosen to satisfy the following normalization property
+
+.. math:: \braket{0 | 0} = 1
+    :label: eq_path_integral_zero_state_normalization
+
+.. note::
+
+    The condition :eq:`eq_path_integral_fermion_zero_states_annihilated_by_q_and_p` may seem a bit strange given that the fermionic :math:`Q` and :math:`P` operators are completely interchangeable in light of :eq:`eq_path_integral_fermionic_commutation_relation`. However, it cannot be the case that :math:`Q_a \ket{0} = \bra{0} Q_a = 0` since it would imply :math:`\braket{0 | \{Q_a, P_b\} | 0} = 0` in contradiction with :eq:`eq_path_integral_zero_state_normalization`.
+
+    Indeed, the relationship between :math:`Q` and :math:`P` operators may vary. In Dirac's theory of spin-:math:`1/2` particles, we have :math:`Q_a^{\dagger} = -\ifrak P_a` in light of :eq:`eq_dirac_field_defn_conjugate_pi` and :eq:`eq_dirac_field_psi_field_bar` (cf. :eq:`eq_dirac_field_defn_gamma_matrices` and :eq:`eq_dirac_field_beta_matrix`). In the theory of `ghost field <https://en.wikipedia.org/wiki/Ghost_(physics)>`__,  on the other hand, the :math:`Q` and :math:`P` operators are not related at all.
+
+Fermionic states and calculus
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In light of :eq:`eq_path_integral_fermion_zero_states_annihilated_by_q_and_p`, we can think :math:`P` as the creation operators and :math:`Q` as the annihilation operators. A complete basis of the states can then be obtained from :math:`\ket{0}` by applying an arbitrary number of :math:`P` operators as follows
+
+.. math:: \ket{a_1, a_2, \cdots, a_N} \coloneqq P_{a_1} P_{a_2} \cdots P_{a_N} \ket{0}
+    :label: eq_path_integral_defn_fermionic_ket_state
+
+Note that the basis state is anti-symmetric in the following sense
+
+.. math:: \ket{a_1, \cdots, a_i, a_{i+1}, \cdots, a_N} = -\ket{a_1, \cdots, a_{i+1}, a_i, \cdots, a_N}
+    :label: eq_path_integral_fermion_state_is_antisymmetric
+
+It follows from :eq:`eq_path_integral_fermion_zero_states_annihilated_by_q_and_p` that
+
+.. math::
+
+    Q_a \ket{a_1, a_2, \cdots, a_N} = \begin{cases}
+        (-1)^{k+1} \ifrak~\ket{a_1, a_2, \cdots, \hat{a}_k, \cdots, a_N} & \text{ if } a = a_k \\
+        0 & \text{ if } a \notin \{a_1, a_2, \cdots, a_N\}
+    \end{cases}
+
+where :math:`\hat{a}_k` means that it's removed from the sequence.
+
+Similarly, the dual basis can be obtained from :math:`\bra{0}` as follows
+
+.. math:: \bra{a_1, a_2, \cdots, a_N} \coloneqq \bra{0} (-\ifrak Q_{a_N}) \cdots (-\ifrak Q_{a_2}) (-\ifrak Q_{a_1})
+    :label: eq_path_integral_defn_fermionic_bra_state
+
+The reason to define the dual vector this way is to realize the following normalization condition
+
+.. math::
+
+    \braket{b_1, b_2, \cdots, b_M | a_1, a_2, \cdots, a_N} &= \braket{0 | (-\ifrak Q_{b_M}) \cdots (-\ifrak Q_{b_1}) P_{a_1} \cdots P_{a_N} | 0} \\
+        &= \begin{cases}
+            0 & \text{ if } \{ b_1, b_2, \cdots, b_M \} \neq \{ a_1, a_2, \cdots, a_N \} \text{ as sets} \\
+            1 & \text{ if } M=N \text{ and } b_1 = a_1, b_2 = a_2, \cdots, b_M = a_N
+        \end{cases}
+
+The cases when :math:`\{ b_1, b_2, \cdots, b_M \}` is a permutation of :math:`\{ a_1, a_2, \cdots, a_N \}` can be covered using :eq:`eq_path_integral_fermion_state_is_antisymmetric`.
+
+The issue with the ket and bra-states defined by :eq:`eq_path_integral_defn_fermionic_ket_state` and :eq:`eq_path_integral_defn_fermionic_bra_state`, respectively, is that they are not eigenstates of :math:`Q` or :math:`P`. In fact, in sharp contrast to the bosonic case (cf. :eq:`eq_path_integral_bosonic_simultaneous_q_eigenstate`), there cannot be *any* eigenstate of, say, all :math:`Q` operators with nonzero (numeric) eigenvalues in the following sense
+
+.. math:: Q_a \ket{q} = q_a \ket{q}
+    :label: eq_path_integral_fermionic_q_eigenstate
+
+Indeed, the fermionic commutation relation :eq:`eq_path_integral_fermionic_commutation_relation` would demand
+
+.. math:: q_a q_b + q_b q_a = 0
+
+which cannot be satisfied if :math:`q_a, q_b` are nonzero complex numbers. It turns out that the solution to this difficulty, which may seem to be artificial, is to introduce a new set of "numbers" :math:`q_a`, known as `Grassmann numbers <https://en.wikipedia.org/wiki/Grassmann_number>`__ which satisfy the following anti-commutation relations
+
+.. math:: \{ q_a, q_b \} = \{ q_a, Q_b \} = \{ q_a, P_b \} = 0
+
+Now the fermionic eigenstate equation :eq:`eq_path_integral_fermionic_q_eigenstate` as well as its dual can be solved by the following
+
+.. math::
+    :label: eq_path_integral_defn_fermionic_eigenstate
+
+    \ket{q} &\coloneqq \exp\left( -\ifrak \sum_a P_a q_a \right) \ket{0} \\
+    \bra{q} &\coloneqq \bra{0} \left( \prod_a Q_a \right) \exp\left( \ifrak \sum_a P_a q_a \right)
+
+where the exponential is defined using its Taylor expansion.
+
+.. warning::
+
+   1. In the definition of :math:`\bra{q}` there is a sign ambiguity depending on the ordering of the product of the :math:`Q` operators.
+   2. The ket-state :math:`\ket{q}`, for example :math:`\ket{0}`, is not necessarily the adjoint of the corresponding bra-state :math:`\bra{q}`, for example :math:`\bra{0}`.
+
+.. dropdown:: Verification of the fermionic eigenstate and its dual
+    :animate: fade-in-slide-down
+    :icon: unlock
+
+    Let's first verify :math:`\ket{q}` given by :eq:`eq_path_integral_defn_fermionic_eigenstate` indeed satisfies :eq:`eq_path_integral_fermionic_q_eigenstate` as follows
+
+    .. math::
+
+        (Q_a - q_a) \ket{q} &= (Q_a - q_a) \exp(-\ifrak P_a q_a) \exp\left( -\ifrak \sum_{b \neq a} P_b q_b \right) \ket{0} \\
+            &= (Q_a - q_a) (1 - \ifrak P_a q_a) \exp\left( -\ifrak \sum_{b \neq a} P_b q_b \right) \ket{0} \\
+            &= - \ifrak (Q_a P_a - \ifrak) q_a \exp\left( -\ifrak \sum_{b \neq a} P_b q_b \right) \ket{0} \\
+            &= \ifrak P_a Q_a q_a \exp\left( -\ifrak \sum_{b \neq a} P_b q_b \right) \ket{0} = 0
+
+    The dual eigenstate :math:`\bra{q}` can be verified as follows
+
+    .. math::
+
+        \bra{q} (Q_a - q_a) &= \bra{0} \left( \prod_a Q_a \right) \exp\left( \ifrak\sum_{b \neq a} P_b q_b \right) \exp(\ifrak P_a q_a)(Q_a - q_a) \\
+            &= \bra{0} \left( \prod_a Q_a \right) \exp\left( \ifrak\sum_{b \neq a} P_b q_b \right) (1 + \ifrak P_a q_a)(Q_a - q_a) \\
+            &= \bra{0} \left( \prod_a Q_a \right) \exp\left( \ifrak\sum_{b \neq a} P_b q_b \right) (-\ifrak P_a Q_a q_a - q_a) \\
+            &= \bra{0} \left( \prod_a Q_a \right) \exp\left( \ifrak\sum_{b \neq a} P_b q_b \right) \ifrak Q_a P_a q_a = 0
+
+Moreover the scalar product of the ket and bra :math:`Q`-eigenstates can be evaluated as follow
+
+.. math::
+
+    \braket{q' | q} &= \braket{0 | \left( \prod_a Q_a \right) \exp\left( \ifrak \sum_b P_b \left( q'_b - q_b \right) \right) | 0} \\
+        &= \braket{0 | \left( \prod_a Q_a \right) \prod_b \left( 1 + \ifrak P_b (q'_b - q_b) \right) | 0} \\
+        &= \prod_a \left( q_a - q'_a \right)
+
+where in the last step, we've used :eq:`eq_path_integral_fermionic_commutation_relation` to move the :math:`Q` operators to the right of the :math:`P` operators.
