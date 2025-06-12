@@ -10,7 +10,7 @@ In this chapter we'll learn about a new way to build quantum field theory that c
 Path Integrals for Bosons
 -------------------------
 
-Similar to the canonical formalism :eq:`eq_canonical_commutation_relations`, let's consider (Hermitian) operators :math:`Q_a` and their conjugates :math:`P_a` satisfying the following canonical commutation relations
+Similar to the canonical formalism :eq:`eq_canonical_commutation_relations`, let's consider Hermitian operators :math:`Q_a` and their conjugates :math:`P_a` satisfying the following canonical commutation relations
 
 .. math::
     :label: eq_pib_canonical_commutation_relations
@@ -28,11 +28,12 @@ Since all :math:`Q_a`\s commute each other, they can be simultaneously diagonali
 Moreover, the eigenstates satisfy the following orthogonality condition
 
 .. math:: \braket{q' | q} = \prod_{a} \delta(q'_a - q_a) \eqqcolon \delta(q' - q)
-    :label: eq_pif_q_basis_completeness
+    :label: eq_path_integral_bosonic_q_basis_orthogonality
 
 and the completeness condition
 
 .. math:: 1 = \int \prod_a dq_a \ketbra{q}{q}
+    :label: eq_path_integral_bosonic_q_basis_completeness
 
 Similar eigenstates exist for :math:`P_a`\s as well.
 
@@ -85,38 +86,39 @@ where the Hamiltonian :math:`H` is given as a function of :math:`P` and :math:`Q
 .. math::
     :label: eq_pif_defn_heisenberg_q_and_p_eigenstates
 
-    Q_a(t) \ket{q, t} &= q_a \ket{q, t} \\
-    P_a(t) \ket{p, t} &= p_a \ket{p, t}
+    Q_a(t) \ket{t, q} &= q_a \ket{t, q} \\
+    P_a(t) \ket{t, p} &= p_a \ket{t, p}
 
 are obviously given by
 
 .. math::
     :label: eq_pif_time_dependent_p_and_q
 
-    \ket{q, t} &= e^{\ifrak Ht} \ket{q} \\
-    \ket{p, t} &= e^{\ifrak Ht} \ket{p}
+    \ket{t, q} &= e^{\ifrak Ht} \ket{q} \\
+    \ket{t, p} &= e^{\ifrak Ht} \ket{p}
 
 .. warning::
 
-    The eigenstates :math:`\ket{q, t}` and :math:`\ket{p, t}` given by :eq:`eq_pif_time_dependent_p_and_q` are *not* time-:math:`t` evolutions of :math:`\ket{q}` and :math:`\ket{p}` which, according to Schrödinger's equation, would be :math:`e^{-\ifrak Ht} \ket{q}` and :math:`e^{-\ifrak Ht} \ket{p}`, respectively.
+    The eigenstates :math:`\ket{t, q}` and :math:`\ket{t, p}` given by :eq:`eq_pif_time_dependent_p_and_q` are *not* time-:math:`t` evolutions of :math:`\ket{q}` and :math:`\ket{p}` which, according to Schrödinger's equation, would be :math:`e^{-\ifrak Ht} \ket{q}` and :math:`e^{-\ifrak Ht} \ket{p}`, respectively.
 
 The time-independent eigenstates satisfy similar orthogonality and completeness conditions as follows
 
 .. math::
+    :label: eq_path_integral_bosonic_time_dependent_q_and_p_orthogonality_and_completeness
 
-    \braket{q', t | q, t} &= \delta(q' - q) \\
-    \braket{p', t | p, t} &= \delta(p' - p) \\
-    1 &= \int \prod_a dq_a \ketbra{q, t}{q, t} \\
-    1 &= \int \prod_a dp_a \ketbra{p, t}{p, t}
+    \braket{t, q' | t, q} &= \delta(q' - q) \\
+    \braket{t, p' | t, p} &= \delta(p' - p) \\
+    1 &= \int \prod_a dq_a \ketbra{t, q}{t, q} \\
+    1 &= \int \prod_a dp_a \ketbra{t, p}{t, p}
 
 Moreover :eq:`eq_pib_schrodinger_picture_qp_formula` also carries over
 
-.. math:: \braket{q, t | p, t} = \prod_a \frac{1}{\sqrt{2\pi}} e^{\ifrak q_a p_a}
+.. math:: \braket{t, q | t, p} = \prod_a \frac{1}{\sqrt{2\pi}} e^{\ifrak q_a p_a}
     :label: eq_pif_heisenberg_picture_qp_formula
 
 Now the key idea in deriving the path integral formula is to evaluate how the eigenstates evolve in infinitesimal time steps :math:`\tau \to \tau + d\tau` as follows
 
-.. math:: \braket{q', \tau + d\tau | q, \tau} = \braket{q', \tau | e^{-\ifrak H d\tau} | q, \tau}
+.. math:: \braket{\tau + d\tau, q' | \tau, q} = \braket{\tau, q' | e^{-\ifrak H d\tau} | \tau, q}
     :label: eq_pif_infinitesimal_q_progression
 
 In light of :eq:`eq_pif_defn_heisenberg_q_and_p_eigenstates`, it'll be convenient to rewrite :math:`H = H(Q, P)` in terms of :math:`Q(t)` and :math:`P(t)` defined by :eq:`eq_pif_defn_heisenberg_q_and_p`. This is done by the following calculation
@@ -135,9 +137,9 @@ Under this assumption, one can expand :eq:`eq_pif_infinitesimal_q_progression` f
 .. math::
     :label: eq_pif_infinitesimal_q_progression_expanded
 
-    \braket{q', \tau + d\tau | q, \tau} &= \braket{q', \tau | \exp\left( -\ifrak H(Q(\tau), P(\tau)) d\tau \right) | q, \tau} \\
-        &= \int \prod_a dp_a \braket{q', \tau | \exp(-\ifrak H(Q(\tau), P(\tau)) d\tau) | p, \tau} \braket{p, \tau | q, \tau} \\
-        &= \int \prod_a dp_a \exp(-\ifrak H(q', p) d\tau) \braket{q', \tau | p, \tau} \braket{p, \tau | q, \tau} \\
+    \braket{\tau + d\tau, q' | \tau, q} &= \braket{\tau, q' | \exp\left( -\ifrak H(Q(\tau), P(\tau)) d\tau \right) | \tau, q} \\
+        &= \int \prod_a dp_a \braket{\tau, q' | \exp(-\ifrak H(Q(\tau), P(\tau)) d\tau) | \tau, p} \braket{\tau, p | \tau, q} \\
+        &= \int \prod_a dp_a \exp(-\ifrak H(q', p) d\tau) \braket{\tau, q' | \tau, p} \braket{\tau, p | \tau, q} \\
         &= \int \prod_a \frac{dp_a}{2\pi} \exp\left( -\ifrak H(q', p) d\tau + \ifrak \sum_a (q'_a - q_a) p_a \right)
 
 Note that the third equality holds only for infinitesimal :math:`d\tau`, which allows us to pretend that :math:`e^{-\ifrak H d\tau}` is linear in :math:`H`.
@@ -159,8 +161,8 @@ As :math:`N \to \infty`, one can apply :eq:`eq_pif_infinitesimal_q_progression_e
 
 .. math::
 
-    &\braket{q', t' | q, t} \\
-        &= \int \prod_{k=1}^N dq_k \braket{q', t' | q_N, t_N} \braket{q_{N-1}, t_{N-1} | q_{N-2}, t_{N-2}} \cdots \braket{q_1, t_1 | q, t} \\
+    &\braket{t', q' | t, q} \\
+        &= \int \prod_{k=1}^N dq_k \braket{t', q' | t_N, q_N} \braket{t_{N-1}, q_{N-1} | t_{N-2}, q_{N-2}} \cdots \braket{t_1, q_1 | t, q} \\
         &= \int \left( \prod_{k=1}^N \prod_a dq_{k, a} \right) \left( \prod_{k=0}^N \prod_a \frac{dp_{k, a}}{2\pi} \right) \exp\left(
             \ifrak \sum_{k=0}^N \left( -H(q_{k+1}, p_k) d\tau + \sum_a (q_{k+1, a} - q_{k, a}) p_{k, a} \right)
         \right) \\
@@ -180,9 +182,9 @@ As before, let's first calculate the infinitesimal matrix element as follows
 
 .. math::
 
-    \braket{q', \tau + d\tau | \Oscr(P(\tau), Q(\tau)) | q, \tau}
-        &= \int \prod_a dp_a \braket{q', \tau | \exp(-\ifrak H d\tau) | p, \tau} \braket{p, \tau | \Oscr | q, \tau} \\
-        &= \int \prod_a dp_a \exp\left( -\ifrak H(q', p) d\tau \right) \Oscr(p, q) \braket{q', \tau | p, \tau} \braket{p, \tau | q, \tau} \\
+    \braket{\tau + d\tau, q' | \Oscr(P(\tau), Q(\tau)) | \tau, q}
+        &= \int \prod_a dp_a \braket{\tau, q' | \exp(-\ifrak H d\tau) | \tau, p} \braket{\tau, p | \Oscr | \tau, q} \\
+        &= \int \prod_a dp_a \exp\left( -\ifrak H(q', p) d\tau \right) \Oscr(p, q) \braket{\tau, q' | \tau, p} \braket{\tau, p | \tau, q} \\
         &= \int \prod_a \frac{dp_a}{2\pi} \exp\left( -\ifrak H(q', p) d\tau + \ifrak \sum_a (q'_a - q_a) p_a \right) \Oscr(p, q)
 
 Consider a time-ordered sequence of operators
@@ -193,7 +195,7 @@ such that :math:`t_A > t_B > \cdots`. We can calculate the matrix element of the
 
 .. math::
 
-    &\braket{q', t' | \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots | q, t} \\
+    &\braket{t', q' | \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots | t, q} \\
     &\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} \frac{dp_a(\tau)}{2\pi}
         \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
     &\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right) \right)
@@ -203,7 +205,7 @@ Since the right-hand-side doesn't rely on the time-ordering, we may replace the 
 .. math::
     :label: eq_pif_time_ordered_product_matrix_element
 
-    &\braket{q', t' | T\left\{ \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \right\} | q, t} \\
+    &\braket{t', q' | T\left\{ \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \right\} | t, q} \\
     &\quad = \int_{\substack{q_a(t)=q_a \\ q_a(t')=q'_a}} \prod_{\tau, a} dq_a(\tau) \prod_{\tau, a} \frac{dp_a(\tau)}{2\pi}
         \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
     &\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \sum_a \dot{q}_a(\tau) p_a(\tau) \right) \right)
@@ -218,7 +220,7 @@ From now on, we will restrict the discussion to quantum field theories where the
 
 .. math::
 
-    &\braket{q', t' | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | q, t} \\
+    &\braket{t', q' | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | t, q} \\
     &\quad = \int_{\substack{q_m(t, \xbf)=q_m(\xbf) \\ q_m(t', \xbf')=q_m(\xbf')}} \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
     &\qquad \times \exp\left( \ifrak \int_t^{t'} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3 x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) \right) \right)
 
@@ -267,17 +269,17 @@ It turns out that the time limits are not really relevant in calculating the wav
 
 In places where specifying :math:`t = \mp\infty` doesn't matter, we'll also simply write :math:`\phi(\xbf)` and :math:`\pi(\xbf)`.
 
-Using :eq:`eq_pi_to_s_matrix_a_annihilates_vacuum`, one finds a differential equation that the wave functions :math:`\braket{\phi(\mp\infty, \xbf), \mp\infty | \VAC}` must satisfy as follows
+Using :eq:`eq_pi_to_s_matrix_a_annihilates_vacuum`, one finds a differential equation that the wave functions :math:`\braket{\mp\infty, \phi(\mp\infty, \xbf) | \VAC}` must satisfy as follows
 
 .. math::
     :label: eq_pi_to_s_matrix_differential_equation_for_wave_function
 
-    & \braket{\phi(\mp\infty), \mp\infty | a(\pbf) | \VAC} = 0 \\
-    \implies & \int d^3 x~e^{\ifrak \pbf \cdot \xbf} \left( \frac{\delta}{\delta \phi(\xbf)} + E(\pbf)\phi(\xbf) \right) \braket{\phi(\mp\infty, \xbf), \mp\infty | \VAC} = 0
+    & \braket{\mp\infty, \phi(\mp\infty) | a(\pbf) | \VAC} = 0 \\
+    \implies & \int d^3 x~e^{\ifrak \pbf \cdot \xbf} \left( \frac{\delta}{\delta \phi(\xbf)} + E(\pbf)\phi(\xbf) \right) \braket{\mp\infty, \phi(\mp\infty, \xbf) | \VAC} = 0
 
 where we have also used the interpretation of :math:`\pi(\xbf)` as variational derivative :math:`-\ifrak \delta/\delta \phi(\xbf)` (cf. :eq:`eq_pim_p_acts_as_dq`). Based on the experience of solving an analogous ODE by exponential function, it's quite natural to postulate a Gaussian solution
 
-.. math:: \braket{\phi(\mp\infty, \xbf), \mp\infty | \VAC} = \Nscr \exp\left( -\frac{1}{2} \int d^3 x~d^3 y~\Escr(\xbf, \ybf) \phi(\xbf) \phi(\ybf) \right)
+.. math:: \braket{\mp\infty, \phi(\mp\infty, \xbf) | \VAC} = \Nscr \exp\left( -\frac{1}{2} \int d^3 x~d^3 y~\Escr(\xbf, \ybf) \phi(\xbf) \phi(\ybf) \right)
     :label: eq_pi_to_s_matrix_wave_functions
 
 where :math:`\Nscr` is a constant. Indeed :eq:`eq_pi_to_s_matrix_differential_equation_for_wave_function` becomes equivalent to
@@ -299,7 +301,7 @@ We can continue the calculation :eq:`eq_pi_to_s_matrix_timed_ordered_matrix_elem
 
 .. math::
 
-    & \braket{\VAC, \op{out} | \phi(\infty), \infty} \braket{\phi(-\infty), -\infty | \VAC, \op{in}} \\
+    & \braket{\VAC, \op{out} | \infty, \phi(\infty)} \braket{-\infty, \phi(-\infty) | \VAC, \op{in}} \\
     &\quad = |\Nscr|^2 \exp\left( -\frac{1}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \left( \phi(\infty, \xbf) \phi(\infty, \ybf) + \phi(-\infty, \xbf) \phi(-\infty, \ybf) \right) \right) \\
     &\quad = |\Nscr|^2 \lim_{\epsilon \to 0+} \exp\left( -\frac{\epsilon}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \int_{-\infty}^{\infty} d\tau~\phi(\tau, \xbf) \phi(\tau, \ybf) e^{-\epsilon |\tau|} \right)
 
@@ -321,7 +323,7 @@ Without working out the details, we claim that the only difference in the calcul
     :label: eq_pi_to_s_matrix_general_vacuum_matrix_element
 
     & \braket{\VAC, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr(P(t_B), Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
-    &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(P(t_A), Q(t_A)) \Oscr_B(P(t_B), Q(t_B)) \cdots \\
+    &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf, m) \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
     &\qquad \times \exp\left(
         \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) + \ifrak\epsilon \text{ terms} \right)
     \right)
@@ -729,10 +731,12 @@ We'll develop the path integral formalism for fermions in parallel to the theory
     \{ Q_a, P_b \} &= \ifrak \delta_{ab} \\
     \{ Q_a, Q_b \} &= \{ P_a, P_b \} = 0
 
-where the curly bracket denotes the anti-commutator. This is to be compared with the bosonic commutation relations :eq:`eq_pib_canonical_commutation_relations`. As in the bosonic case, the indices :math:`a, b` will be replaced by spacetime coordinates as we transit specifically to quantum field theory.
+where the curly bracket denotes the anti-commutator. This is to be compared with the bosonic commutation relations :eq:`eq_pib_canonical_commutation_relations`. As in the bosonic case, the indices :math:`a, b` will be replaced by spacetime coordinates as we transit specifically to quantum field theory. A key difference, which will be discussed in more detail in :ref:`sec_fermionic_zero_states`, is that, unlike the bosonic canonical variables, the fermionic :math:`Q` and :math:`P` operators are *not* Hermitian.
 
-The zero states
-^^^^^^^^^^^^^^^
+.. _sec_fermionic_zero_states:
+
+Fermionic zero states
+^^^^^^^^^^^^^^^^^^^^^
 
 It follows from :eq:`eq_path_integral_fermionic_commutation_relation` that
 
@@ -761,8 +765,8 @@ where :math:`\ket{f}` and :math:`\bra{g}` can be any states that makes the right
 
     Indeed, the relationship between :math:`Q` and :math:`P` operators may vary. In Dirac's theory of spin-:math:`1/2` particles, we have :math:`Q_a^{\dagger} = -\ifrak P_a` in light of :eq:`eq_dirac_field_defn_conjugate_pi` and :eq:`eq_dirac_field_psi_field_bar` (cf. :eq:`eq_dirac_field_defn_gamma_matrices` and :eq:`eq_dirac_field_beta_matrix`). In the theory of `ghost field <https://en.wikipedia.org/wiki/Ghost_(physics)>`__,  on the other hand, the :math:`Q` and :math:`P` operators are not related at all.
 
-Fermionic states and calculus
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Fermionic eigenstates
+^^^^^^^^^^^^^^^^^^^^^
 
 In light of :eq:`eq_path_integral_fermion_zero_states_annihilated_by_q_and_p`, we can think :math:`P` as the creation operators and :math:`Q` as the annihilation operators. A complete basis of the states can then be obtained from :math:`\ket{0}` by applying an arbitrary number of :math:`P` operators as follows
 
@@ -793,6 +797,7 @@ Similarly, the dual basis can be obtained from :math:`\bra{0}` as follows
 The reason to define the dual vector this way is to realize the following normalization condition
 
 .. math::
+    :label: eq_path_integral_fermionic_states_normalization
 
     \braket{b_1, b_2, \cdots, b_M | a_1, a_2, \cdots, a_N} &= \braket{0 | (-\ifrak Q_{b_M}) \cdots (-\ifrak Q_{b_1}) P_{a_1} \cdots P_{a_N} | 0} \\
         &= \begin{cases}
@@ -804,8 +809,11 @@ The cases when :math:`\{ b_1, b_2, \cdots, b_M \}` is a permutation of :math:`\{
 
 The issue with the ket and bra-states defined by :eq:`eq_path_integral_defn_fermionic_ket_state` and :eq:`eq_path_integral_defn_fermionic_bra_state`, respectively, is that they are not eigenstates of :math:`Q` or :math:`P`. In fact, in sharp contrast to the bosonic case (cf. :eq:`eq_path_integral_bosonic_simultaneous_q_eigenstate`), there cannot be *any* eigenstate of, say, all :math:`Q` operators with nonzero (numeric) eigenvalues in the following sense
 
-.. math:: Q_a \ket{q} = q_a \ket{q}
+.. math::
     :label: eq_path_integral_fermionic_q_eigenstate
+
+    Q_a \ket{q} &= q_a \ket{q} \\
+    \bra{q} Q_a &= \bra{q} q_a
 
 Indeed, the fermionic commutation relation :eq:`eq_path_integral_fermionic_commutation_relation` would demand
 
@@ -818,7 +826,7 @@ which cannot be satisfied if :math:`q_a, q_b` are nonzero complex numbers. It tu
 Now the fermionic eigenstate equation :eq:`eq_path_integral_fermionic_q_eigenstate` as well as its dual can be solved by the following
 
 .. math::
-    :label: eq_path_integral_defn_fermionic_eigenstate
+    :label: eq_path_integral_defn_fermionic_q_eigenstate
 
     \ket{q} &\coloneqq \exp\left( -\ifrak \sum_a P_a q_a \right) \ket{0} \\
     \bra{q} &\coloneqq \bra{0} \left( \prod_a Q_a \right) \exp\left( \ifrak \sum_a P_a q_a \right)
@@ -828,13 +836,13 @@ where the exponential is defined using its Taylor expansion.
 .. warning::
 
    1. In the definition of :math:`\bra{q}` there is a sign ambiguity depending on the ordering of the product of the :math:`Q` operators.
-   2. The ket-state :math:`\ket{q}`, for example :math:`\ket{0}`, is not necessarily the adjoint of the corresponding bra-state :math:`\bra{q}`, for example :math:`\bra{0}`.
+   2. The ket-state :math:`\ket{q}` (e.g. :math:`\ket{0}`) is not necessarily the adjoint of the corresponding bra-state :math:`\bra{q}` (e.g. :math:`\bra{0}`) since :math:`Q` is not Hermitian.
 
 .. dropdown:: Verification of the fermionic eigenstate and its dual
     :animate: fade-in-slide-down
     :icon: unlock
 
-    Let's first verify :math:`\ket{q}` given by :eq:`eq_path_integral_defn_fermionic_eigenstate` indeed satisfies :eq:`eq_path_integral_fermionic_q_eigenstate` as follows
+    Let's first verify :math:`\ket{q}` given by :eq:`eq_path_integral_defn_fermionic_q_eigenstate` indeed satisfies :eq:`eq_path_integral_fermionic_q_eigenstate` as follows
 
     .. math::
 
@@ -855,9 +863,202 @@ where the exponential is defined using its Taylor expansion.
 Moreover the scalar product of the ket and bra :math:`Q`-eigenstates can be evaluated as follow
 
 .. math::
+    :label: eq_path_integral_q_scalar_product
 
     \braket{q' | q} &= \braket{0 | \left( \prod_a Q_a \right) \exp\left( \ifrak \sum_b P_b \left( q'_b - q_b \right) \right) | 0} \\
         &= \braket{0 | \left( \prod_a Q_a \right) \prod_b \left( 1 + \ifrak P_b (q'_b - q_b) \right) | 0} \\
         &= \prod_a \left( q_a - q'_a \right)
 
-where in the last step, we've used :eq:`eq_path_integral_fermionic_commutation_relation` to move the :math:`Q` operators to the right of the :math:`P` operators.
+where in the last step, we've used :eq:`eq_path_integral_fermionic_commutation_relation` to move the :math:`Q` operators to the right of the :math:`P` operators. Though not obvious at the moment, the right-hand-side will work as a delta function in fermionic integrals (cf. the bosonic case :eq:`eq_path_integral_bosonic_q_basis_orthogonality`).
+
+The eigenstate of the :math:`P` operators satisfying
+
+.. math::
+
+    P_a \ket{p} &= p_a \ket{p} \\
+    \bra{p} P_a &= \bra{p} p_a
+
+can be constructed in a way similar to :eq:`eq_path_integral_defn_fermionic_q_eigenstate` as follows
+
+.. math::
+    :label: eq_path_integral_defn_fermionic_p_eigenstate
+
+    \ket{p} &= \exp\left( -\ifrak\sum_a Q_a p_a \right)\left( \prod_a P_a \right) \ket{0} \\
+    \bra{p} &= \bra{0} \exp\left( \ifrak\sum_a Q_a p_a \right)
+
+where the order of the product :math:`\prod_a P_a` is, by convention, the same as the one in :eq:`eq_path_integral_defn_fermionic_q_eigenstate`.
+
+The scalar product between the :math:`P`-eigenstates can be similarly evaluated to the following
+
+.. math:: \braket{p' | p} = \prod_a \left( p'_a - p_a \right)
+    :label: eq_path_integral_p_scalar_product
+
+In analogy to :eq:`eq_pib_schrodinger_picture_qp_formula`, let's calculate the scalar products between :math:`Q` and :math:`P`-eigenstates as follows
+
+.. math::
+    :label: eq_path_integral_fermionic_qp_scalar_product
+
+    \braket{q | p} &= \braket{q | \exp\left( -\ifrak \sum_a Q_a p_a \right) \left( \prod_a P_a \right) | 0} \\
+        &= \exp\left( -\ifrak \sum_a q_a p_a \right) \braket{q | \prod_a P_a | 0} \\
+        &= \exp\left( -\ifrak \sum_a q_a p_a \right) \braket{0 | \left( \prod_a Q_a \right) \exp\left( \ifrak \sum_a P_a q_a \right) \left( \prod_a P_a \right) | 0} \\
+        &= \exp\left( -\ifrak \sum_a q_a p_a \right) \braket{0 | \left( \prod_a Q_a \right) \left( \prod_a P_a \right) | 0} \\
+        &= \ifrak^N (-1)^{N(N+1)/2} \exp\left( -\ifrak \sum_a q_a p_a \right)
+
+where :eq:`eq_path_integral_defn_fermionic_bra_state`, :eq:`eq_path_integral_fermionic_states_normalization`, and :eq:`eq_path_integral_zero_state_normalization` are used in the last equality. Here :math:`N` is the number of :math:`Q_a`\s, which is the same as the number of :math:`P_a`\s. Similarly, but more simply, we have
+
+.. math::
+    :label: eq_path_integral_fermionic_pq_scalar_product
+
+    \braket{p | q} &= \braket{p | \exp\left( -\ifrak\sum_a P_a q_a \right) | 0} \\
+        &= \exp\left( -\ifrak\sum_a p_a q_a \right) \braket{p | 0} \\
+        &= \exp\left( -\ifrak\sum_a p_a q_a \right) \braket{0 | \exp\left( \ifrak\sum_a Q_a p_a \right) | 0} \\
+        &= \exp\left( -\ifrak\sum_a p_a q_a \right)
+
+We end this section with the note that the states :math:`\ket{q}` are complete in the following sense. If we expand :math:`\ket{q}` in :eq:`eq_path_integral_defn_fermionic_q_eigenstate` as a power series in products of the :math:`q_a`\s, then the coefficients span the whole space of states defined by :eq:`eq_path_integral_defn_fermionic_ket_state`.
+
+Fermionic calculus
+^^^^^^^^^^^^^^^^^^
+
+Since the eigenvalues of fermionic eigenstates are Grassmann numbers rather than ordinary (complex) numbers, we need a framework to do calculus, in particular integration, for functions of Grassmann variables. It turns out that the fermionic integration can be formalized as the so-called `Berezin integration <https://en.wikipedia.org/wiki/Berezin_integral>`__, which can be determined by just two rules. Writing :math:`\xi` for generic Grassmann variables, the first rule consists of the evaluation of the integral on a single monomial
+
+.. math:: \int \left( d\xi_N \cdots d\xi_2 d\xi_1 \right) \xi_1 \xi_2 \cdots \xi_N \xi_{N+1} \cdots \xi_M = \xi_{N+1} \cdots \xi_M
+    :label: eq_path_integral_berezin_integral_monomial
+
+and the second rule states that the integral is linear in both summation and multiplication by ordinary numbers. Here the ordering of the "differentials" :math:`d\xi_i` in :eq:`eq_path_integral_berezin_integral_monomial` is made so that the integral can be evaluated in steps as follows
+
+.. math:: \int d\xi_N \cdots d\xi_2 d\xi_1~f(\xi) = \int d\xi_N \cdots \int d\xi_2 \int d\xi_1~f(\xi)
+
+It turns out to be very convenient to introduce yet another anti-commutativity relation as follows
+
+.. math:: \{\xi_i, d\xi_j\} = 0
+    :label: eq_path_integral_xi_dxi_anti_commute
+
+so we can move the integrand to the left of the "volume element" :math:`\prod_n d\xi_n` at the cost of a sign. Under this convention, it's straightforward to show that given an arbitrary function :math:`g(\xi')` of Grassmann variables that are *not* integrated, the following two formulae hold
+
+.. math::
+
+    \int \left( \prod_n d\xi_n \right) \left( f(\xi) g(\xi') \right) &= \left( \int \left( \prod_n d\xi_n \right) f(\xi) \right) g(\xi') \\
+    \int g(\xi') \left( \prod_{n=1}^N d\xi_n \right) f(\xi) &= \int \left( \prod_{n=1}^N d\xi_n \right) \left( g((-1)^N \xi') f(\xi) \right) \\
+        &= g(\xi') \int \left( \prod_{n=1}^N d\xi_n \right) f(\xi)
+
+Another important formula in Berezin integration is to describe how the integral transforms under a (linear) change of variables. Consider the following transformation
+
+.. math:: \xi_n \to \xi'_n = \sum_m \Sscr_{nm} \xi_m
+
+where :math:`\Sscr = \left( \Sscr_{nm} \right)` is a non-singular matrix of ordinary numbers. It follows that
+
+.. math:: \prod_n \xi'_n = \left( \det\Sscr \right) \prod_n \xi_n
+
+and henceforth
+
+.. math:: \int \left( \prod_n d\xi'_n \right) f = \left( \det\Sscr \right)^{-1} \int \left( \prod_n d\xi_n \right) f
+
+As an application of this formalism, we'll establish a fermionic analog of the completeness condition :eq:`eq_path_integral_bosonic_q_basis_completeness`. First, note that any state :math:`\ket{f}` can be written as an integral
+
+.. math:: \ket{f} = \int \left( \prod_a dq_a \right) \ket{q} f(q)
+    :label: eq_path_integral_f_state_as_integral
+
+where :math:`f(q)` is a polynomial in the Grassmann variables :math:`q`.
+
+.. dropdown:: Verification of :eq:`eq_path_integral_f_state_as_integral`
+    :animate: fade-in-slide-down
+    :icon: lock
+
+    Rewrite :eq:`eq_path_integral_fermionic_q_eigenstate` as follows
+
+    .. math::
+
+        \ket{q} = \exp\left( -\ifrak\sum_a P_a q_a \right) \ket{0}
+            = \left( \prod_a e^{-\ifrak P_a q_a} \right) \ket{0}
+            = \left( \prod_a \left( 1 - \ifrak P_a q_a \right) \right) \ket{0}
+
+    so that the right-hand-side is a linear combination of basis states
+
+    .. math:: \ket{a_1, a_2, \cdots, a_k} = P_{a_1} P_{a_2} \cdots P_{a_k} \ket{0}
+
+    whose coefficient is :math:`q_{a_1} q_{a_2} \cdots q_{a_k}` up to a phase.
+
+    Now if we write
+
+    .. math:: \ket{f} = \sum f_{a_1 a_2 \cdots a_k} \ket{a_1, a_2, \cdots, a_k}
+
+    then each summand proportional to :math:`\ket{a_1, a_2, \cdots, a_k}` can be picked up in the right-hand-side of :eq:`eq_path_integral_f_state_as_integral` by a summand in :math:`f(q)` proportional to
+
+    .. math:: \prod_{a \notin \{a_1, a_2, \cdots, a_k\}} q_a
+
+It follows from :eq:`eq_path_integral_q_scalar_product` and :eq:`eq_path_integral_xi_dxi_anti_commute` that
+
+.. math::
+    :label: eq_path_integral_scalar_product_f_and_q
+
+    \braket{q' | f} &= \int \braket{q' | q} \left( \prod_{n=1}^N dq_n \right) f(q) \\
+        &= \int \left( \prod_{n=1}^N \left( q_n - q'_n \right) \right) \left( \prod_{n=1}^N dq_n \right) f(q) \\
+        &= (-1)^N \int \left( \prod_{n=1}^N dq_n \right) \left( \prod_{n=1}^N \left( q_n - q'_n \right) \right) f(q) \\
+        &= (-1)^N \int \left( \prod_{n=1}^N dq_n \right) \left( \prod_{n=1}^N \left( q_n - q'_n \right) \right) f(q') \\
+        &= (-1)^N f(q')
+
+where the easiest way to justify the second-to-last equality is to write :math:`f(q) = f(q' + (q - q'))` and expand it in powers of :math:`q-q'`, so that only the zeroth order term survive due to the product :math:`\prod_n \left( q_n - q'_n \right)` to the left.
+
+Plugging :eq:`eq_path_integral_scalar_product_f_and_q` into :eq:`eq_path_integral_f_state_as_integral` we have
+
+.. math::
+    :label: eq_path_integral_fermionic_q_orthogonality
+
+    \ket{f} = (-1)^N \int \left( \prod_{n=1}^N dq_n \right) \ket{q} \braket{q | f}
+        \implies 1 = \int \left( \prod_a -dq_a \right) \ketbra{q}{q}
+
+which is the fermionic version of :eq:`eq_path_integral_bosonic_q_basis_completeness`. The same calculation can be done to the :math:`P`-eigenstates to get the following
+
+.. math:: 1 = \int \left( \prod_a dp_a \right) \ketbra{p}{p}
+    :label: eq_path_integral_fermionic_p_orthogonality
+
+
+The general path integral formula and transition to S-matrix
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let :math:`H` be the (full) Hamiltonian. Then just as in the bosonic case (cf. :eq:`eq_pif_defn_heisenberg_q_and_p`), we define Heisenberg-picture operators
+
+.. math::
+
+    Q_a(t) &= e^{\ifrak Ht} Q_a e^{-\ifrak Ht} \\
+    P_a(t) &= e^{\ifrak Ht} P_a e^{-\ifrak Ht}
+
+with right and left-eigenstates defined as follows
+
+.. math::
+
+    \begin{alignat*}{3}
+        \ket{t, q} &\coloneqq e^{\ifrak Ht} \ket{q}, \qquad &&\ket{t, p} &&\coloneqq e^{\ifrak Ht} \ket{p} \\
+        \bra{t, q} &\coloneqq \bra{q} e^{-\ifrak Ht}, \qquad &&\bra{t, p} &&\coloneqq \bra{p} e^{-\ifrak Ht}
+    \end{alignat*}
+
+Here we recall that :math:`H` must contain an even number of fermionic fields and therefore commute with any Grassmann numbers. Just as in the bosonic case :eq:`eq_path_integral_bosonic_time_dependent_q_and_p_orthogonality_and_completeness`, the time-dependent eigenstates satisfy the obviously analogous time-independent scalar product formulae :eq:`eq_path_integral_q_scalar_product`, :eq:`eq_path_integral_p_scalar_product`, :eq:`eq_path_integral_fermionic_qp_scalar_product`, :eq:`eq_path_integral_fermionic_pq_scalar_product` and orthogonality conditions :eq:`eq_path_integral_fermionic_q_orthogonality`, :eq:`eq_path_integral_fermionic_p_orthogonality`.
+
+Assuming :math:`H = H(P, Q)` is arranged so that all the :math:`P` operators lie to the left of the :math:`Q` operators, we can calculate the infinitesimal transition amplitude in parallel to the bosonic case :eq:`eq_pif_infinitesimal_q_progression_expanded` (except for the ordering :math:`Q` and :math:`P` which is merely a matter of convenience) as follows
+
+.. math::
+
+    \braket{\tau+d\tau, q' | \tau, q} &= \braket{\tau, q' | \exp(-\ifrak H(P, Q)) d\tau | \tau, q} \\
+        &= \int \prod_a dp_a \braket{\tau, q' | \tau, p} \braket{\tau, p | \exp(-\ifrak H(P, Q)) d\tau | \tau, q} \\
+        &= \int \prod_a dp_a \braket{\tau, q' | \tau, p} \braket{\tau, p | \tau, q} \exp(-\ifrak H(p, q) d\tau) \\
+        &\propto \int \prod_a dp_a \exp\left( \ifrak\sum_a p_a(q'_a - q_a) - \ifrak H(p, q) d\tau \right)
+
+where in the last quantity we've thrown away an insignificant field-independent phase factor (coming from :eq:`eq_path_integral_fermionic_qp_scalar_product`), and hence the proportionality is used instead of equality.
+
+Now given a sequence of time-ordered operators, the matrix element analogous to the bosonic :eq:`eq_pif_time_ordered_product_matrix_element` is given by
+
+.. math::
+
+    &\braket{t', q' | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | t, q} \\
+    &\quad \propto \int_{\substack{q_a(t)=q_a} \\ q_a(t')=q'_a} \prod_{\tau, a} dq_a(\tau) dp_a(\tau)~\Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\qquad \times \exp\left( \ifrak\int_t^{t'} d\tau \left( -H(p(\tau), q(\tau)) + \sum_a p_a(\tau) \dot{q}_a(\tau) \right) \right)
+
+Note that, unlike the bosonic case, an extra sign is added to each permutation of the fermionic operators demanded by the time-ordering operator :math:`T`.
+
+Transitioning to quantum field theory, we get the fermionic analog of :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element` as follows
+
+.. math::
+
+    &\braket{\VAC, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_B)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
+    &\quad \propto \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf, m)~\Oscr_A(p(t_A), q(t_B)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\qquad \times \exp\left( \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(p(\tau), q(\tau)) + \int d^3x \sum_m p_m(\tau, \xbf) \dot{q}_m(\tau, \xbf) \right) \right)
