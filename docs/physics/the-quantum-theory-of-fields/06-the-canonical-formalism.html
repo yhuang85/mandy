@@ -1142,8 +1142,8 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <section id="dirac-field-with-spin-1-2">
 <h3><span class="section-number">6.4.3. </span>Dirac field with spin-<span class="math notranslate nohighlight">\(1/2\)</span><a class="headerlink" href="#dirac-field-with-spin-1-2" title="Link to this heading">#</a></h3>
 <p>Recall from <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-field-jscr-matrix">Eq.4.4.9</a> that the Dirac representation is <em>not</em> unitary, which eventually led to the definition of <span class="math notranslate nohighlight">\(\bar{\psi}\)</span> in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-field-psi-field-bar">Eq.4.4.45</a> for constructing interaction densities for Dirac fields. Motivated by discussions in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#sec-construction-of-the-interaction-density"><span class="std std-ref">Construction of the interaction density</span></a> and the desire to make Lagrangian real, let’s consider the following</p>
-<div class="math notranslate nohighlight">
-\[\Lscr = -\bar{\Psi} \left( \gamma^{\mu} \p_{\mu} + m \right) \Psi - \Hscr(\Psi, \bar{\Psi})\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-canonical-formalism-dirac-field-lagrangian-density">
+<span class="eqno">(6.4.17)<a class="headerlink" href="#equation-eq-canonical-formalism-dirac-field-lagrangian-density" title="Link to this equation">#</a></span>\[\Lscr = -\bar{\Psi} \left( \gamma^{\mu} \p_{\mu} + m \right) \Psi - \Hscr(\Psi, \bar{\Psi})\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Hscr\)</span> is a real function. Such <span class="math notranslate nohighlight">\(\Lscr\)</span> is nonetheless not real, which can be seen by the following calculation using <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-field-beta-matrix">Eq.4.4.10</a>, <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-field-beta-conjugate-gamma-dagger">Eq.4.4.12</a>, and <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-field-psi-field-bar">Eq.4.4.45</a></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\bar{\Psi} \gamma^{\mu} \p_{\mu}\Psi - \left( \bar{\Psi} \gamma^{\mu} \p_{\mu}\Psi \right)^{\dagger}
@@ -1152,7 +1152,7 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
         &amp;= \p_{\mu} \left( \bar{\Psi} \gamma^{\mu} \Psi \right)\end{split}\]</div>
 <p>However, the same calculation shows that the action, i.e., the spacetime integral of the Lagrangian, is real. It follows that one needs not to treat <span class="math notranslate nohighlight">\(\Psi\)</span> and <span class="math notranslate nohighlight">\(\bar{\Psi}\)</span> as independent variables since the field equations, given as the stationary point of the action functional, for <span class="math notranslate nohighlight">\(\Psi\)</span> is adjoint to that for <span class="math notranslate nohighlight">\(\bar{\Psi}\)</span>. Therefore we can simply define the canonical conjugate</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-defn-conjugate-pi">
-<span class="eqno">(6.4.17)<a class="headerlink" href="#equation-eq-dirac-field-defn-conjugate-pi" title="Link to this equation">#</a></span>\[\Pi \coloneqq \frac{\p \Lscr}{\p \dot{\Psi}} = -\bar{\Psi} \gamma^0\]</div>
+<span class="eqno">(6.4.18)<a class="headerlink" href="#equation-eq-dirac-field-defn-conjugate-pi" title="Link to this equation">#</a></span>\[\Pi \coloneqq \frac{\p \Lscr}{\p \dot{\Psi}} = -\bar{\Psi} \gamma^0\]</div>
 <p>and write the Hamiltonian</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}H &amp;= \int d^3 x \left( \Pi \dot{\Psi} - \Lscr \right) \\
@@ -1161,13 +1161,13 @@ V(t) &amp;= \int d^3 x \left( \frac{1}{m^2} J^0 \nabla \cdot \bm{\pi} + \frac{1}
 <p>where the two summands in the last integrand give the usual splitting <span class="math notranslate nohighlight">\(H = H_0 + V\)</span>.</p>
 <p>Passing to the interaction picture, we can write</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-free-hamiltonian">
-<span class="eqno">(6.4.18)<a class="headerlink" href="#equation-eq-dirac-field-free-hamiltonian" title="Link to this equation">#</a></span>\[H_0 = \int d^3 x~\pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi\]</div>
+<span class="eqno">(6.4.19)<a class="headerlink" href="#equation-eq-dirac-field-free-hamiltonian" title="Link to this equation">#</a></span>\[H_0 = \int d^3 x~\pi \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi\]</div>
 <p>so that the field equation is simply</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-hamilton-equation">
-<span class="eqno">(6.4.19)<a class="headerlink" href="#equation-eq-dirac-field-hamilton-equation" title="Link to this equation">#</a></span>\[\dot{\psi} = \frac{\delta H_0}{\delta \pi} = \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
+<span class="eqno">(6.4.20)<a class="headerlink" href="#equation-eq-dirac-field-hamilton-equation" title="Link to this equation">#</a></span>\[\dot{\psi} = \frac{\delta H_0}{\delta \pi} = \gamma^0 (\bm{\gamma} \cdot \nabla + m) \psi
         \iff (\gamma^{\mu} \p_{\mu} + m) \psi = 0\]</div>
 <p>which is recognized as the Dirac equation <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-dirac-equation-psi">Eq.4.4.37</a>. Indeed, the other Hamilton’s equation <span class="math notranslate nohighlight">\(\dot{\pi} = -\delta H_0 / \delta \psi\)</span> gives nothing but the adjoint of the Dirac equation, hence no new information.</p>
-<p>A general solution to <a class="reference internal" href="#equation-eq-dirac-field-hamilton-equation">Eq.6.4.19</a> can be written as</p>
+<p>A general solution to <a class="reference internal" href="#equation-eq-dirac-field-hamilton-equation">Eq.6.4.20</a> can be written as</p>
 <div class="math notranslate nohighlight">
 \[\psi(x) = (2\pi)^{-3/2} \int d^3 p \sum_{\sigma = \pm 1/2} \left( u(\pbf, \sigma) e^{\ifrak p \cdot x} a(\pbf, \sigma) + v(\pbf, \sigma) e^{-\ifrak p \cdot x} b^{\dagger}(\pbf, \sigma) \right)\]</div>
 <p>where <span class="math notranslate nohighlight">\(u(\pbf, \pm 1/2)\)</span> are the two independent solutions of</p>

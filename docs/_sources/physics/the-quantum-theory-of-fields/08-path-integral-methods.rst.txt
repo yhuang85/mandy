@@ -300,6 +300,7 @@ where we recall once again that :math:`E(\pbf) = \sqrt{\pbf^2 + m^2}`. This solv
 We can continue the calculation :eq:`eq_pi_to_s_matrix_timed_ordered_matrix_element` in the case of vacuum expectation values for real scalar fields as follows
 
 .. math::
+    :label: eq_path_integral_scalar_field_vacuum_wave_function
 
     & \braket{\VAC, \op{out} | \infty, \phi(\infty)} \braket{-\infty, \phi(-\infty) | \VAC, \op{in}} \\
     &\quad = |\Nscr|^2 \exp\left( -\frac{1}{2} \int d^3x~d^3y~\Escr(\xbf, \ybf) \left( \phi(\infty, \xbf) \phi(\infty, \ybf) + \phi(-\infty, \xbf) \phi(-\infty, \ybf) \right) \right) \\
@@ -323,7 +324,7 @@ Without working out the details, we claim that the only difference in the calcul
     :label: eq_pi_to_s_matrix_general_vacuum_matrix_element
 
     & \braket{\VAC, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_A)), \Oscr(P(t_B), Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
-    &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf, m) \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\quad = |\Nscr|^2 \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf} \frac{dp_m(\tau, \xbf)}{2\pi} \Oscr_A(p(t_A), q(t_A)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
     &\qquad \times \exp\left(
         \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(q(\tau), p(\tau)) + \int d^3x \sum_m \dot{q}_m(\tau, \xbf) p_m(\tau, \xbf) + \ifrak\epsilon \text{ terms} \right)
     \right)
@@ -483,6 +484,7 @@ Nonlinear :math:`\sigma`-model
     Looking at :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian`, we note the following general identity
 
     .. math:: \det\Ascr = \exp \Tr \ln \Ascr
+        :label: eq_det_eq_exp_tr_ln
 
     for any real symmetric positive :math:`\Ascr`. To evaluate the logarithm, it's convenient to discretize the Dirac delta function in :eq:`eq_path_integral_nonlinear_sigma_model_a_matrix` as follows
 
@@ -952,6 +954,7 @@ where :math:`\Sscr = \left( \Sscr_{nm} \right)` is a non-singular matrix of ordi
 and henceforth
 
 .. math:: \int \left( \prod_n d\xi'_n \right) f = \left( \det\Sscr \right)^{-1} \int \left( \prod_n d\xi_n \right) f
+    :label: eq_path_integral_fermionic_change_of_variable_formula
 
 As an application of this formalism, we'll establish a fermionic analog of the completeness condition :eq:`eq_path_integral_bosonic_q_basis_completeness`. First, note that any state :math:`\ket{f}` can be written as an integral
 
@@ -1058,7 +1061,213 @@ Note that, unlike the bosonic case, an extra sign is added to each permutation o
 Transitioning to quantum field theory, we get the fermionic analog of :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element` as follows
 
 .. math::
+    :label: eq_path_integral_fermionic_timed_ordered_operators_vacuum_expectation
 
     &\braket{\VAC, \op{out} | T\left\{ \Oscr_A(P(t_A), Q(t_B)), \Oscr_B(P(t_B), Q(t_B)), \cdots \right\} | \VAC, \op{in}} \\
-    &\quad \propto \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf, m)~\Oscr_A(p(t_A), q(t_B)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
-    &\qquad \times \exp\left( \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(p(\tau), q(\tau)) + \int d^3x \sum_m p_m(\tau, \xbf) \dot{q}_m(\tau, \xbf) \right) \right)
+    &\quad \propto \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf)~\Oscr_A(p(t_A), q(t_B)) \Oscr_B(p(t_B), q(t_B)) \cdots \\
+    &\qquad \times \exp\left( \ifrak \int_{-\infty}^{\infty} d\tau \left( -H(p(\tau), q(\tau)) + \int d^3x \sum_m p_m(\tau, \xbf) \dot{q}_m(\tau, \xbf) + \ifrak \epsilon \text{ terms} \right) \right)
+
+where we've, once again, omitted the details of the :math:`\ifrak\epsilon` terms. As in the bosonic case, they come from the vacuum wave functions (cf. :eq:`eq_path_integral_vacuum_expectation_value_scalar_field`).
+
+The next step in the bosonic case, as discussed in :ref:`sec_lagrangian_version_of_the_path_integral`, is to assume that the Hamiltonian :math:`H(p, q)` is quadratic in :math:`p` and hence the integral in :math:`p`-fields can be evaluated using the Gaussian integral formula (cf. :eq:`eq_path_integral_operator_vacuum_matrix_element_lagrangian`). This is *not* the case for fermions. Unlike the bosonic case (cf. :eq:`eq_path_integral_stationary_p_bar`), the canonical conjugate :math:`p` is  unrelated to :math:`\dot{q}`. In fact, for each fermion that carries a nonzero quantum number, there are equal number of :math:`p`\s and :math:`q`\s. In particular, the free Hamiltonian :math:`H_0` is bilinear in :math:`p` and :math:`q` so that
+
+.. math::
+    :label: eq_path_integral_fermionic_defn_d_matrix
+
+    &\int_{-\infty}^{\infty} d\tau \left(
+        -H_0(p(\tau), q(\tau)) + \int d^3x \sum_m p_m(\tau, \xbf) \dot{q}_m(\tau, \xbf) + \ifrak\epsilon\text{ terms}
+    \right) \\
+    &\quad = -\sum_{m, n} \int d^4x~d^4y~\Dscr_{x m, y n} p_m(x) q_n(y)
+
+where :math:`\Dscr` is a matrix in ordinary numbers.
+
+Expanding both the time-ordered operators and the interaction Hamiltonian :math:`V = H - H_0` in a power series in :math:`p`\s and :math:`q`\s, the right-hand-side of :eq:`eq_path_integral_fermionic_timed_ordered_operators_vacuum_expectation` becomes a sum of Gaussian-like integrals and can be evaluated as follows
+
+.. math::
+    :label: eq_path_integral_fermionic_gaussian_like_integral_evaluation
+
+    &\Iscr_{m_1 n_1 m_2 n_2 \cdots m_N n_N}(x_1, y_1, x_2, y_2, \cdots, x_N, y_N) \\
+    &\quad = \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf) p_{m_1}(x_1) q_{n_1}(y_1) \cdots p_{m_N}(x_N) q_{n_N}(y_N) \\
+    &\qquad \times \exp\left( -\ifrak \sum_{m, n} \int d^4x~d^4y~\Dscr_{xm, yn} p_m(x) q_n(y) \right) \\
+    &\quad \propto \sum_{\sigma \in \op{Perm}_N} (-1)^{\op{sign}(\sigma)} \prod_{k=1}^N \left( -\ifrak \Dscr^{-1} \right)_{x_k m_k,~y_{\sigma(k)} m_{\sigma(k)}}
+
+where :math:`\op{Perm}_N` denotes the permutation group of :math:`N` symbols. This reproduces the Feynman rules if we regard :math:`\left(\Dscr^{-1}\right)_{xm, yn}` as the propagator between :math:`p_m(x)` and :math:`q_n(y)`.
+
+.. dropdown:: Derivation of the integral evaluation in :eq:`eq_path_integral_fermionic_gaussian_like_integral_evaluation`
+    :animate: fade-in-slide-down
+    :icon: lock
+
+    Consider a generating function defined as follows
+
+    .. math::
+        :label: eq_path_integral_fermionic_generating_function
+
+        \Iscr(f, g) &\coloneqq \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf) \\
+            &\quad \times \exp\left( -\ifrak\sum_{m, n} \int d^4x~d^4y~\Dscr_{xm, yn} p_m(x) q_n(y) \right. \\
+            &\qquad \left. -\ifrak\sum_m \int d^4x~p_m(x) f_m(x) - \ifrak\sum_n \int d^4y~g_n(y) q_n(y) \right)
+
+    where :math:`f, g` are generic Grassmann numbers. Next, consider the following (translational) change of variables
+
+    .. math::
+
+        p'_m(x) &= p_m(x) - \sum_n \int d^4y~g_n(y) \left( \Dscr^{-1} \right)_{yn, xm} \\
+        q'_n(y) &= q_n(y) - \sum_m \int d^4x \left( \Dscr^{-1} \right)_{yn, xm} f_m(x)
+
+    Obviously the integral doesn't change by this change of variables. Let's calculate the change of exponential power in :eq:`eq_path_integral_fermionic_generating_function` (without the common factor :math:`-\ifrak`) as follows
+
+    .. math::
+
+        &\sum_{m,n} \int d^4x~d^4y~\Dscr_{xm,yn} p'_m(x) q'_n(y) + \sum_m \int d^4x~p'_m(x) f_m(x) + \sum_n \int d^4y~g_n(y) q'_n(y) \\
+        &= \sum_{m,n} \int d^4x~d^4y~\Dscr_{xm,yn} p_m(x) q_n(y) - \sum_{m,n,k} \int d^4x~d^4y~d^4w~\Dscr_{xm,yn} p_m(x) \left(\Dscr^{-1}\right)_{yn,wk} f_k(w) \\
+        &\quad - \sum_{m,n,k} \int d^4x~d^4y~d^4w~\Dscr_{xm,yn} g_k(w) \left(\Dscr^{-1}\right)_{wk,xm} q_n(y) \\
+        &\quad + \sum_{m,n,k,r} \int d^4x~d^4y~d^4w~d^4v~\Dscr_{xm,yn} g_k(w) \left(\Dscr^{-1}\right)_{wk,xm} \left(\Dscr^{-1}\right)_{yn,vr} f_r(v) \\
+        &\quad + \sum_m \int d^4x~p_m(x) f_m(x) - \sum_{m,n} \int d^4x~d^4y~g_n(y) \left(\Dscr^{-1}\right)_{yn,xm} f_m(x) \\
+        &\quad + \sum_n \int d^4y~g_n(y) q_n(y) - \sum_{m,n} \int d^4x~d^4y~g_n(y) \left(\Dscr^{-1}\right)_{yn,xm} f_m(x) \\
+        &= \sum_{m,n} \int d^4x~d^4y~\Dscr_{xm,yn} p_m(x) q_n(y) - \sum_{m,n} \int d^4x~d^4y~\left(\Dscr^{-1}\right)_{yn,xm} g_n(y) f_m(x)
+
+    It follows that :eq:`eq_path_integral_fermionic_generating_function` can be rewritten as follows
+
+    .. math::
+        :label: eq_path_integral_fermionic_generating_function_reevaluated
+
+        \Iscr(f, g) &= \exp\left( \ifrak \sum_{m,n} \int d^4x~d^4y \left(\Dscr^{-1}\right)_{yn,xm} g_n(y) f_m(x) \right) \\
+            &\times \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf) \\
+            &\times \exp\left( -\ifrak \sum_{m,n} \int d^4x~d^4y~\Dscr_{xm,yn} p_m(x) q_n(y) \right)
+
+    Now the integral :eq:`eq_path_integral_fermionic_generating_function` is called a generating function since if the exponential is expanded as a power series in :math:`f` and :math:`g`, then the coefficient of
+
+    .. math:: f_{m_1} g_{n_1} f_{m_2} g_{n_2} \cdots f_{m_N} g_{n_N}
+        :label: eq_path_integral_fermionic_fg_monomial
+
+    is, up to a constant factor independent of :math:`x,y,m,n`, precisely the integral :eq:`eq_path_integral_fermionic_gaussian_like_integral_evaluation`. Expanding :eq:`eq_path_integral_fermionic_generating_function_reevaluated` also in a power series of :math:`f` and :math:`g`, the coefficient of :eq:`eq_path_integral_fermionic_fg_monomial` then gives the final result in :eq:`eq_path_integral_fermionic_gaussian_like_integral_evaluation`.
+
+As an example, consider the free-particle action of spin-:math:`1/2` particles as follows (cf. :eq:`eq_canonical_formalism_dirac_field_lagrangian_density` and :eq:`eq_dirac_field_free_hamiltonian`)
+
+.. math::
+
+    &\int_{-\infty}^{\infty} d\tau \left( -H_0(p(\tau), q(\tau)) + \int d^3x \sum_m p_m(\tau, \xbf) \dot{q}_m(\tau, \xbf) \right) \\
+        &\quad = -\int d^4x~\bar{\psi}(x) \left( \gamma^{\mu} \p_{\mu} + M \right) \psi(x)
+
+The canonical variables are given by (cf. :eq:`eq_dirac_field_defn_conjugate_pi`)
+
+.. math::
+
+    q_m(x) &= \psi_m(x) \\
+    p_m(x) &= -\left( \bar{\psi}(x) \gamma^0 \right)_m
+
+Comparing with :eq:`eq_path_integral_fermionic_defn_d_matrix` we have
+
+.. math::
+
+    \Dscr_{xm, yn} &= \left( \gamma^0 \left( \gamma^{\mu} \p_{x_{\mu}} + M - \ifrak\epsilon \right) \right)_{mn} \delta^4(x-y) \\
+        &= \int \frac{d^4 k}{(2\pi)^4} \left( \gamma^0 \left( \ifrak \gamma^{\mu} k_{\mu} + M -\ifrak\epsilon \right) \right)_{mn} e^{\ifrak k \cdot (x-y)}
+
+where we've omitted the details about the :math:`\ifrak\epsilon` term since it's not important here and can be worked out as the vacuum wave function in the same way as for (bosonic) scalar field (cf. :eq:`eq_path_integral_scalar_field_vacuum_wave_function`). It follows that the propagator can be written as follows
+
+.. math::
+
+    \left(\Dscr^{-1}\right)_{xm, yn} &= \int \frac{d^4k}{(2\pi)^4} \left( \left( \ifrak\gamma^{\mu} k_{\mu} + M -\ifrak\epsilon \right)^{-1} (-\gamma^0) \right)_{mn} e^{\ifrak k \cdot (x-y)} \\
+        &= \int \frac{d^4k}{(2\pi)^4} \frac{\left( \left( -\gamma^{\mu} k_{\mu} + M \right) (-\gamma^0) \right)_{mn}}{k^2 + M^2 - \ifrak\epsilon} e^{\ifrak k \cdot (x-y)}
+
+which recovers :eq:`eq_propagator_as_momentum_space_integral_linear` and :eq:`eq_p_polynomial_dirac`, except for that we've calculated here the propagator between :math:`\psi` and :math:`-\bar{\psi} \gamma^0`, rather than :math:`\psi^{\dagger}`.
+
+To illustrate how path-integral method works in this case, let's consider the following interacting Lagrangian density
+
+.. math:: \Lscr = -\bar{\psi} \left( \gamma^{\mu} \p_{\mu} + M + \Gamma \right) \psi
+
+where :math:`\Gamma(x)` represents the interaction of the fermion with an external field. Applying :eq:`eq_path_integral_fermionic_timed_ordered_operators_vacuum_expectation`, we can calculate the vacuum persistence amplitude (in matrix notation) as follows
+
+.. math::
+    :label: eq_path_integral_interacting_fermion_vacuum_expectation
+
+    \braket{\VAC, \op{out} | \VAC, \op{in}}_{\Gamma} &\propto \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf, m) \\
+        &\quad \times \exp\left( -\ifrak \int d^4x~p^T \gamma^0 (\gamma^{\mu} \p_{\mu} + M + \Gamma - \ifrak\epsilon) q \right) \\
+        &= \int \prod_{\tau, \xbf, m} dq_m(\tau, \xbf) \prod_{\tau, \xbf, m} dp_m(\tau, \xbf, m) \\
+        &\quad \times \exp\left( -\ifrak \sum_{m, n} \int d^4x~d^4y~p_m(x) q_n(y) \Kscr(\Gamma)_{xm, yn} \right)
+
+where
+
+.. math:: \Kscr(\Gamma)_{xm, yn} \coloneqq \left( \gamma^0 \left( \gamma^{\mu} \p_{x_{\mu}} + M + \Gamma(x) - \ifrak\epsilon \right) \right)_{mn} \delta^4(x-y)
+    :label: eq_path_integral_fermionic_interacting_k_matrix
+
+Observe that the following change of variables
+
+.. math:: q'_m(x) \coloneqq \sum_n \int d^4y~\Kscr(\Gamma)_{xm, yn} q_n(y)
+
+will make the integral in :eq:`eq_path_integral_interacting_fermion_vacuum_expectation` independent of :math:`\Gamma`. Hence it follows from :eq:`eq_path_integral_fermionic_change_of_variable_formula` that
+
+.. math:: \braket{\VAC, \op{out} | \VAC, \op{in}}_{\Gamma} \propto \det\Kscr(\Gamma)
+    :label: eq_path_integral_fermionic_vacuum_expectation_for_interacting_dirac_fields
+
+To see that this calculation is consistent with the Feynman rules derived in :ref:`sec_momentum_space_feynman_rules`, rewrite :eq:`eq_path_integral_fermionic_interacting_k_matrix` as follows
+
+.. math:: \Kscr(\Gamma) = \Dscr + \Gscr(\Gamma)
+
+where
+
+.. math:: \Gscr(\Gamma)_{xm, yn} \coloneqq \left( \gamma^0 \Gamma(x) \right)_{mn} \delta^4(x-y)
+
+It follows then (cf. :eq:`eq_det_eq_exp_tr_ln`)
+
+.. math::
+
+    \braket{\VAC, \op{out} | \VAC, \op{in}}_{\Gamma} &\propto \det\left( \Dscr \left( 1 + \Dscr^{-1} \Gscr(\Gamma) \right) \right) \\
+        &= \left(\det\Dscr\right) \exp\left( \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} \Tr\left( \Dscr^{-1} \Gscr(\Gamma) \right) \right)
+
+which is exactly what one would expect from a Feynman diagram calculation. Indeed, the Feynman rules demand that each vertex contributes a factor :math:`-\ifrak\Gscr(\Gamma)` and each (internal) edge contributes a factor :math:`-\ifrak\Dscr`. In this example all connected Feynman diagram are simply loops. A loop with :math:`n` vertices then contributes a factor :math:`1/n` accounting for the cyclic symmetry. Finally the extra sign in :math:`(-1)^{n+1}` accounts for the fermionic loop.
+
+It turns out that path integral calculations like :eq:`eq_path_integral_fermionic_vacuum_expectation_for_interacting_dirac_fields` do much more than just recovering perturbative calculations. But we'll only come back to this much later.
+
+
+Path-integral formulation of QED
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In :ref:`sec_quantum_electrodynamics`, we derived the photon propagator :eq:`eq_qed_photon_line_contribution_covariant` in a rather cumbersome way by working with non-Lorentz-invariant :math:`A`-fields (cf. :eq:`eq_qed_a0_vanishes` and :eq:`eq_qed_a_field_general_solution`). In this section, we will re-derive :eq:`eq_qed_photon_line_contribution_covariant` in a cleaner manner using path integrals.
+
+Recall from :eq:`eq_qed_hamiltonian_vector_form` that the QED Hamiltonian can be written as follows
+
+.. math::
+
+    H = \int d^3x \left( \frac{1}{2} \bm{\Pi}^2_{\bot} + \frac{1}{2} (\nabla \times \Abf)^2 - \Jbf \cdot \Abf \right)
+        + V_{\op{Coul}} + H_{\op{matter}}
+
+where the Coulomb potential :math:`V_{\op{Coul}}` is given by :eq:`eq_qed_defn_coulomb_energy`, under the Coulomb gauge condition
+
+.. math:: \nabla \cdot \Abf = 0
+    :label: eq_path_integral_qed_a_constraint
+
+and the constraint (cf. :eq:`eq_qed_pi_bot_is_divergence_free`)
+
+.. math:: \nabla \cdot \bm{\Pi}_{\bot} = 0
+    :label: eq_path_integral_qed_pi_constraint
+
+The general path integral calculation of the vacuum expectation value of a timed-ordered product of operators, whether the bosonic :eq:`eq_pi_to_s_matrix_general_vacuum_matrix_element` or the fermionic :eq:`eq_path_integral_fermionic_timed_ordered_operators_vacuum_expectation` can be applied to the QED Hamiltonian to give the following
+
+.. math::
+    :label: eq_path_integral_qed_operator_vacuum_expectation
+
+    &\braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} = \int \prod_{x, i} da_i(x) \prod_{x, i} d\pi_i(x) \prod_{x, \ell} d\psi_{\ell}(x)~\Oscr_A \Oscr_B \cdots \\
+        &\qquad \times \exp\left( \ifrak \int d^4x \left( \bm{\pi} \cdot \dot{\abf} - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2}(\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M \right) - \ifrak \int dt~V_{\op{Coul}}(t) \right) \\
+        &\qquad \times \left( \prod_x \delta(\nabla \cdot \abf(x)) \right) \left( \prod_x \delta(\nabla \cdot \bm{\pi}(x)) \right)
+
+where the lowercase fields represent simply variables of integration, rather than interaction-picture fields as in :ref:`sec_quantum_electrodynamics`, the index :math:`i` runs through the spatial :math:`1,2,3` as usual, the matter field variables are represented by :math:`\psi_{\ell}`, and the last two delta functions are introduced to enforce the constraints :eq:`eq_path_integral_qed_a_constraint` and :eq:`eq_path_integral_qed_pi_constraint`.
+
+First thing to observe is that since :math:`\Lscr_M` doesn't involve :math:`\bm{\pi}` (cf. :eq:`eq_qed_lagrangian_density` and :eq:`eq_canonical_formalism_dirac_field_lagrangian_density`) and the power of the exponential is quadratic in :math:`\bm{\pi}`, it can be integrated out by the Gaussian integral formula :eq:`eq_gaussian_integral_formula`. More explicitly, it amounts to substitute :math:`\bm{\pi}` with the solution to the stationary point of the quadratic power, which is :math:`\bm{\pi} = \dot{\abf}`, so we can rewrite :eq:`eq_path_integral_qed_operator_vacuum_expectation` as follows
+
+.. math::
+
+    &\braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} = \int \prod_{x, i} da_i(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \\
+        &\qquad \times \exp\left( \ifrak \int d^4x \left( \frac{1}{2} \dot{\abf}^2 - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2} (\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M \right) - \ifrak \int dt~V_{\op{Coul}}(t) \right) \\
+        &\qquad \times \left( \prod_x \delta(\nabla \cdot \abf(x)) \right)
+
+Next we'd like to restore manifest Lorentz invariance by integrating also over :math:`a_0`. The trick is to consider the following quantity
+
+.. math:: \int d^4x \left( -a_0(x) j_0(x) + \frac{1}{2} \left(\nabla a_0(x)\right)^2 \right)
+
+whose exponential's (path) integral over :math:`a_0(x)` can be done by setting :math:`a_0(x)` to the stationary point. In other words :math:`a_0(x)` should solve the following differential equation
+
+.. math:: j_0(x) + \nabla^2 a_0(x) = 0
+
+This is a rather familiar equation (cf. :eq:`eq_qed_poisson_equation_j_and_a`), whose solution, given by :eq:`eq_qed_explicit_solution_of_a0`, is reproduced as follows
+
+.. math:: a_0(t, \xbf) = \int d^3y \frac{j_0(t, \ybf)}{4\pi|\xbf-\ybf|}

@@ -1,3 +1,5 @@
+.. _sec_quantum_electrodynamics:
+
 Quantum Electrodynamics
 =======================
 
@@ -593,9 +595,10 @@ as long as one forgets about the (instantaneous) Coulomb interaction term :math:
 Feynman Rules for QED
 ---------------------
 
-Having settle the photon field in the previous sections, we're now ready to specify the matter field in the Lagrangian density :eq:`eq_qed_semi_concrete_lagrangian_with_matter`. We'll be considering the theory describing the interaction between a massive spin-:math:`1/2` fermion with charge :math:`q = -e`, [#letter_e]_ e.g., an electron, and photon. In this case, the Lagrangian density takes the following form
+Having settled the photon field in the previous section, we're now ready to specify the matter field in the Lagrangian density :eq:`eq_qed_semi_concrete_lagrangian_with_matter`. We'll be considering the theory describing the interaction between a massive spin-:math:`1/2` fermion with charge :math:`q = -e`, [#letter_e]_ e.g., an electron, and photon. In this case, the Lagrangian density takes the following form
 
 .. math:: \Lscr = -\frac{1}{4} F^{\mu\nu} F_{\mu\nu} - \bar{\Psi} \left( \gamma^{\mu} (\p_{\mu} + \ifrak e A_{\mu}) + m \right) \Psi
+    :label: eq_qed_lagrangian_density
 
 It follows from :eq:`eq_qed_matter_lagrangian_variational_derivative_in_a_field` that the charge density :math:`J^{\mu}` takes the following form
 

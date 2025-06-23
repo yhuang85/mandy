@@ -1224,6 +1224,7 @@ Dirac field with spin-:math:`1/2`
 Recall from :eq:`eq_dirac_field_jscr_matrix` that the Dirac representation is *not* unitary, which eventually led to the definition of :math:`\bar{\psi}` in :eq:`eq_dirac_field_psi_field_bar` for constructing interaction densities for Dirac fields. Motivated by discussions in :ref:`sec_construction_of_the_interaction_density` and the desire to make Lagrangian real, let's consider the following
 
 .. math:: \Lscr = -\bar{\Psi} \left( \gamma^{\mu} \p_{\mu} + m \right) \Psi - \Hscr(\Psi, \bar{\Psi})
+	:label: eq_canonical_formalism_dirac_field_lagrangian_density
 
 where :math:`\Hscr` is a real function. Such :math:`\Lscr` is nonetheless not real, which can be seen by the following calculation using :eq:`eq_dirac_field_beta_matrix`, :eq:`eq_dirac_field_beta_conjugate_gamma_dagger`, and :eq:`eq_dirac_field_psi_field_bar`
 

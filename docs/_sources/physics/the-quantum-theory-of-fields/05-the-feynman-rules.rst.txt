@@ -338,6 +338,8 @@ In this case, the S-matrix can be simplified as follows
 where :math:`\Delta_F` is the so-called `Feynman propagator <https://en.wikipedia.org/wiki/Propagator#Feynman_propagator>`__ and will be discussed in detail in the next section.
 
 
+.. _sec_momentum_space_feynman_rules:
+
 Momentum Space Feynman Rules
 ----------------------------
 
