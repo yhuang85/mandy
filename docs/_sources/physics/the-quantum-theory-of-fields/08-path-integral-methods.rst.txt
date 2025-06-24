@@ -1255,6 +1255,7 @@ where the lowercase fields represent simply variables of integration, rather tha
 First thing to observe is that since :math:`\Lscr_M` doesn't involve :math:`\bm{\pi}` (cf. :eq:`eq_qed_lagrangian_density` and :eq:`eq_canonical_formalism_dirac_field_lagrangian_density`) and the power of the exponential is quadratic in :math:`\bm{\pi}`, it can be integrated out by the Gaussian integral formula :eq:`eq_gaussian_integral_formula`. More explicitly, it amounts to substitute :math:`\bm{\pi}` with the solution to the stationary point of the quadratic power, which is :math:`\bm{\pi} = \dot{\abf}`, so we can rewrite :eq:`eq_path_integral_qed_operator_vacuum_expectation` as follows
 
 .. math::
+    :label: eq_path_integral_qed_reduced_operator_vacuum_expectation
 
     &\braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} = \int \prod_{x, i} da_i(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \\
         &\qquad \times \exp\left( \ifrak \int d^4x \left( \frac{1}{2} \dot{\abf}^2 - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2} (\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M \right) - \ifrak \int dt~V_{\op{Coul}}(t) \right) \\
@@ -1263,11 +1264,18 @@ First thing to observe is that since :math:`\Lscr_M` doesn't involve :math:`\bm{
 Next we'd like to restore manifest Lorentz invariance by integrating also over :math:`a_0`. The trick is to consider the following quantity
 
 .. math:: \int d^4x \left( -a_0(x) j_0(x) + \frac{1}{2} \left(\nabla a_0(x)\right)^2 \right)
+    :label: eq_path_integral_qed_a0_integral
 
 whose exponential's (path) integral over :math:`a_0(x)` can be done by setting :math:`a_0(x)` to the stationary point. In other words :math:`a_0(x)` should solve the following differential equation
 
 .. math:: j_0(x) + \nabla^2 a_0(x) = 0
 
-This is a rather familiar equation (cf. :eq:`eq_qed_poisson_equation_j_and_a`), whose solution, given by :eq:`eq_qed_explicit_solution_of_a0`, is reproduced as follows
+This is a rather familiar equation (cf. :eq:`eq_qed_poisson_equation_j_and_a`), whose solution, given by :eq:`eq_qed_explicit_solution_of_a0`, is reproduced here
 
 .. math:: a_0(t, \xbf) = \int d^3y \frac{j_0(t, \ybf)}{4\pi|\xbf-\ybf|}
+
+Plugging it back to :eq:`eq_path_integral_qed_a0_integral`, we get nothing but the Coulomb action. It follows that the integral in the exponential in :eq:`eq_path_integral_qed_reduced_operator_vacuum_expectation` can be rewritten as follows (cf. :eq:`eq_qed_pi_in_terms_of_a`)
+
+.. math::
+
+    \int d^4x \left( \frac{1}{2} \dot{\abf}^2 - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2} (\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M - a_0 j_0 + \frac{1}{2} \left(\nabla a_0\right)^2 \right)
