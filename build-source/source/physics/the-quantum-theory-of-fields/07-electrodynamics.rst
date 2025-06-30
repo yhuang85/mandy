@@ -80,6 +80,7 @@ on :math:`A_{\mu}(x)` and :math:`\Psi_{\ell}(x)`. Symmetries like this are known
 It turns out that in QED, besides the matter action, we also need a light action which takes the following form
 
 .. math:: I_{\gamma} = -\frac{1}{4} \int d^4 x~F_{\mu \nu} F^{\mu \nu}
+    :label: eq_qed_light_action
 
 It's hard to argue logically for why such a term is needed, but it turns out to work, and it appears also in the Lagrangian density :eq:`eq_spin_1_vector_field_lagrangian_density` of massive spin-:math:`1` vector fields.
 
@@ -585,6 +586,7 @@ which is countered by :math:`V_{\text{Coul}}` (cf. :eq:`eq_qed_interaction_pictu
 It means that effectively, one can replace :math:`\Delta_{\mu \nu}(x - y)` with the following
 
 .. math:: \Delta_{\mu\nu}^{\text{eff}}(x - y) = (2\pi)^{-4} \int d^4 q~\frac{\eta_{\mu \nu}}{q^2 - \ifrak \epsilon} e^{\ifrak q \cdot (x - y)}
+    :label: eq_qed_effective_photon_propagator
 
 as long as one forgets about the (instantaneous) Coulomb interaction term :math:`V_{\text{Coul}}(t)` in :eq:`eq_qed_interaction_picture_interaction_hamiltonian`. The corresponding photon line contribution :eq:`eq_qed_photon_line_contribution_non_covariant` then takes the following form
 

@@ -430,8 +430,8 @@
 \delta \Psi_{\ell}(x) &amp;= \ifrak \epsilon(x) q_{\ell} \Psi_{\ell}(x)\end{split}\]</div>
 <p>on <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> and <span class="math notranslate nohighlight">\(\Psi_{\ell}(x)\)</span>. Symmetries like this are known as <em>gauge symmetries</em>.</p>
 <p>It turns out that in QED, besides the matter action, we also need a light action which takes the following form</p>
-<div class="math notranslate nohighlight">
-\[I_{\gamma} = -\frac{1}{4} \int d^4 x~F_{\mu \nu} F^{\mu \nu}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-qed-light-action">
+<span class="eqno">(7.1.8)<a class="headerlink" href="#equation-eq-qed-light-action" title="Link to this equation">#</a></span>\[I_{\gamma} = -\frac{1}{4} \int d^4 x~F_{\mu \nu} F^{\mu \nu}\]</div>
 <p>It’s hard to argue logically for why such a term is needed, but it turns out to work, and it appears also in the Lagrangian density <a class="reference internal" href="06-the-canonical-formalism.html#equation-eq-spin-1-vector-field-lagrangian-density">Eq.6.4.6</a> of massive spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields.</p>
 <p>Combining the mass and light actions together, we see that the field equation is given by the variational principle as follows</p>
 <div class="math notranslate nohighlight">
@@ -454,20 +454,20 @@
 <p class="sd-card-text">with function <span class="math notranslate nohighlight">\(\epsilon(x)\)</span>.</p>
 <p class="sd-card-text">Now if the Lagrangian involves any derivatives of the fields <span class="math notranslate nohighlight">\(\Psi_{\ell}(x)\)</span>, which is almost certainly the case in reality, then such promotion cannot be done for free because of the following simple rule of differentiation</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-variation-of-field-derivative">
-<span class="eqno">(7.1.8)<a class="headerlink" href="#equation-eq-qed-variation-of-field-derivative" title="Link to this equation">#</a></span>\[\delta \p_{\mu} \Psi_{\ell}(x) = \ifrak \epsilon(x) q_{\ell} \p_{\mu} \Psi_{\ell}(x) + \ifrak q_{\ell} \Psi_{\ell}(x) \p_{\mu} \epsilon(x)\]</div>
+<span class="eqno">(7.1.9)<a class="headerlink" href="#equation-eq-qed-variation-of-field-derivative" title="Link to this equation">#</a></span>\[\delta \p_{\mu} \Psi_{\ell}(x) = \ifrak \epsilon(x) q_{\ell} \p_{\mu} \Psi_{\ell}(x) + \ifrak q_{\ell} \Psi_{\ell}(x) \p_{\mu} \epsilon(x)\]</div>
 <p class="sd-card-text">The cure to this problem is to “invent” a vector field <span class="math notranslate nohighlight">\(A_{\mu}(x)\)</span> with transformation rule</p>
 <div class="math notranslate nohighlight">
 \[\delta A_{\mu}(x) = \p_{\mu} \epsilon(x)\]</div>
 <p class="sd-card-text">and observe that if we introduce the following <a class="reference external" href="https://en.wikipedia.org/wiki/Covariant_derivative">covariant derivative</a></p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-defn-covariant-derivative">
-<span class="eqno">(7.1.9)<a class="headerlink" href="#equation-eq-qed-defn-covariant-derivative" title="Link to this equation">#</a></span>\[D_{\mu} \Psi_{\ell} \coloneqq \p_{\mu} \Psi_{\ell} - \ifrak q_{\ell} A_{\mu} \Psi_{\ell}\]</div>
-<p class="sd-card-text">then <a class="reference internal" href="#equation-eq-qed-variation-of-field-derivative">Eq.7.1.8</a> can be replaced by the following</p>
+<span class="eqno">(7.1.10)<a class="headerlink" href="#equation-eq-qed-defn-covariant-derivative" title="Link to this equation">#</a></span>\[D_{\mu} \Psi_{\ell} \coloneqq \p_{\mu} \Psi_{\ell} - \ifrak q_{\ell} A_{\mu} \Psi_{\ell}\]</div>
+<p class="sd-card-text">then <a class="reference internal" href="#equation-eq-qed-variation-of-field-derivative">Eq.7.1.9</a> can be replaced by the following</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\delta D_{\mu} \Psi_{\ell}(x) &amp;= \delta \p_{\mu} \Psi_{\ell}(x) - \ifrak q_{\ell} \left( A_{\mu}(x) \delta \Psi_{\ell}(x) + \Psi_{\ell}(x) \delta A_{\mu}(x) \right) \\
     &amp;= \ifrak \epsilon(x) q_{\ell} D_{\mu} \Psi_{\ell}(x)\end{split}\]</div>
-<p class="sd-card-text">It follows that the gauge symmetry can be restored if any dependence of the matter Lagrangian <span class="math notranslate nohighlight">\(\Lscr_M\)</span> on <span class="math notranslate nohighlight">\(\p_{\mu} \Psi_{\ell}\)</span> actually depends on the covariant derivative <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.9</a>. In other words, we can write</p>
+<p class="sd-card-text">It follows that the gauge symmetry can be restored if any dependence of the matter Lagrangian <span class="math notranslate nohighlight">\(\Lscr_M\)</span> on <span class="math notranslate nohighlight">\(\p_{\mu} \Psi_{\ell}\)</span> actually depends on the covariant derivative <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.10</a>. In other words, we can write</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-matter-lagrangian-in-covariant-derivative">
-<span class="eqno">(7.1.10)<a class="headerlink" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative" title="Link to this equation">#</a></span>\[\Lscr_M = \Lscr_M(\Psi, D_{\mu} \Psi)\]</div>
+<span class="eqno">(7.1.11)<a class="headerlink" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative" title="Link to this equation">#</a></span>\[\Lscr_M = \Lscr_M(\Psi, D_{\mu} \Psi)\]</div>
 <p class="sd-card-text">We can also verify <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-variational-derivative-in-a-field">Eq.7.1.4</a> and <a class="reference internal" href="#equation-eq-qed-conserved-current-j">Eq.7.1.5</a> in this setup as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{\delta I_M}{\delta A_{\mu}(x)} &amp;= \int d^4 y~\frac{\p \Lscr_M(\Psi_{\ell}(y), D_{\mu} \Psi_{\ell}(y))}{\p A_{\mu}(x)} \\
@@ -487,7 +487,7 @@
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-light-lagrangian-density">
 <span class="eqno">(7.2.1)<a class="headerlink" href="#equation-eq-qed-light-lagrangian-density" title="Link to this equation">#</a></span>\[\Lscr_{\gamma} = -\frac{1}{4} F_{\mu \nu} F^{\mu \nu}\]</div>
-<p>and <span class="math notranslate nohighlight">\(\Lscr_M\)</span> involves both <span class="math notranslate nohighlight">\(\Psi\)</span>-field and <span class="math notranslate nohighlight">\(A\)</span>-field. Moreover, in light of <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.9</a> and <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative">Eq.7.1.10</a>, there is no involvement of derivatives of <span class="math notranslate nohighlight">\(A\)</span>-field in <span class="math notranslate nohighlight">\(\Lscr_M\)</span>. It follows that if we define the field conjugate to <span class="math notranslate nohighlight">\(A_{\mu}\)</span> as follows</p>
+<p>and <span class="math notranslate nohighlight">\(\Lscr_M\)</span> involves both <span class="math notranslate nohighlight">\(\Psi\)</span>-field and <span class="math notranslate nohighlight">\(A\)</span>-field. Moreover, in light of <a class="reference internal" href="#equation-eq-qed-defn-covariant-derivative">Eq.7.1.10</a> and <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative">Eq.7.1.11</a>, there is no involvement of derivatives of <span class="math notranslate nohighlight">\(A\)</span>-field in <span class="math notranslate nohighlight">\(\Lscr_M\)</span>. It follows that if we define the field conjugate to <span class="math notranslate nohighlight">\(A_{\mu}\)</span> as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-defn-conjugate-field-pi">
 <span class="eqno">(7.2.2)<a class="headerlink" href="#equation-eq-qed-defn-conjugate-field-pi" title="Link to this equation">#</a></span>\[\Pi^{\mu} \coloneqq \frac{\p \Lscr}{\p \dot{A}_{\mu}}\]</div>
 <p>then just as in the theory of (massive) spin-<span class="math notranslate nohighlight">\(1\)</span> vector fields, we get the following primary constraint</p>
@@ -626,7 +626,7 @@
 <p>despite the existence of constraints. For the rest of this chapter, we’ll be considering Lagrangian density of the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-semi-concrete-lagrangian-with-matter">
 <span class="eqno">(7.3.8)<a class="headerlink" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter" title="Link to this equation">#</a></span>\[\Lscr = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} + J^{\mu} A_{\mu} + \Lscr_{\text{matter}}\]</div>
-<p>where <span class="math notranslate nohighlight">\(J^{\mu}\)</span> is the charge density as before, but <span class="math notranslate nohighlight">\(\Lscr_{\text{matter}}\)</span> is different from <span class="math notranslate nohighlight">\(\Lscr_M\)</span> considered in <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative">Eq.7.1.10</a> since it contains only the terms that don’t interact with <span class="math notranslate nohighlight">\(A\)</span>, i.e., only the <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(P\)</span> fields.</p>
+<p>where <span class="math notranslate nohighlight">\(J^{\mu}\)</span> is the charge density as before, but <span class="math notranslate nohighlight">\(\Lscr_{\text{matter}}\)</span> is different from <span class="math notranslate nohighlight">\(\Lscr_M\)</span> considered in <a class="reference internal" href="#equation-eq-qed-matter-lagrangian-in-covariant-derivative">Eq.7.1.11</a> since it contains only the terms that don’t interact with <span class="math notranslate nohighlight">\(A\)</span>, i.e., only the <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(P\)</span> fields.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Both <span class="math notranslate nohighlight">\(J^{\mu}\)</span> and <span class="math notranslate nohighlight">\(\Lscr_{\text{matter}}\)</span> will be further specified later for a theory specific to spin-<span class="math notranslate nohighlight">\(1/2\)</span> fermions, e.g., electrons. In fact, according to <a class="reference internal" href="../../bib.html#wei95" id="id4"><span>[Wei95]</span></a> (page 349), the QED for spinless particles would require a more complicated Lagrangian density than <a class="reference internal" href="#equation-eq-qed-semi-concrete-lagrangian-with-matter">Eq.7.3.8</a>, but it wasn’t mentioned in the book which physical particle(s) such theory would describe.</p>
@@ -765,11 +765,11 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
     &amp;\quad = -\frac{1}{2} \int d^3 x \int d^3 y~\frac{j^0(t, \xbf) j^0(t, \ybf)}{4\pi |\xbf - \ybf|}\end{split}\]</div>
 <p>which is countered by <span class="math notranslate nohighlight">\(V_{\text{Coul}}\)</span> (cf. <a class="reference internal" href="#equation-eq-qed-interaction-picture-coulomb-interaction">Eq.7.4.4</a>).</p>
 <p>It means that effectively, one can replace <span class="math notranslate nohighlight">\(\Delta_{\mu \nu}(x - y)\)</span> with the following</p>
-<div class="math notranslate nohighlight">
-\[\Delta_{\mu\nu}^{\text{eff}}(x - y) = (2\pi)^{-4} \int d^4 q~\frac{\eta_{\mu \nu}}{q^2 - \ifrak \epsilon} e^{\ifrak q \cdot (x - y)}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-qed-effective-photon-propagator">
+<span class="eqno">(7.5.4)<a class="headerlink" href="#equation-eq-qed-effective-photon-propagator" title="Link to this equation">#</a></span>\[\Delta_{\mu\nu}^{\text{eff}}(x - y) = (2\pi)^{-4} \int d^4 q~\frac{\eta_{\mu \nu}}{q^2 - \ifrak \epsilon} e^{\ifrak q \cdot (x - y)}\]</div>
 <p>as long as one forgets about the (instantaneous) Coulomb interaction term <span class="math notranslate nohighlight">\(V_{\text{Coul}}(t)\)</span> in <a class="reference internal" href="#equation-eq-qed-interaction-picture-interaction-hamiltonian">Eq.7.4.5</a>. The corresponding photon line contribution <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-non-covariant">Eq.7.5.3</a> then takes the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-photon-line-contribution-covariant">
-<span class="eqno">(7.5.4)<a class="headerlink" href="#equation-eq-qed-photon-line-contribution-covariant" title="Link to this equation">#</a></span>\[\frac{-\ifrak}{(2\pi)^4} \frac{\eta_{\mu\nu}}{q^2 - \ifrak \epsilon}\]</div>
+<span class="eqno">(7.5.5)<a class="headerlink" href="#equation-eq-qed-photon-line-contribution-covariant" title="Link to this equation">#</a></span>\[\frac{-\ifrak}{(2\pi)^4} \frac{\eta_{\mu\nu}}{q^2 - \ifrak \epsilon}\]</div>
 </section>
 <section id="feynman-rules-for-qed">
 <h2><span class="section-number">7.6. </span>Feynman Rules for QED<a class="headerlink" href="#feynman-rules-for-qed" title="Link to this heading">#</a></h2>
@@ -782,7 +782,7 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
 <p>The interaction <a class="reference internal" href="#equation-eq-qed-interaction-picture-interaction-hamiltonian">Eq.7.4.5</a> now takes the following form</p>
 <div class="math notranslate nohighlight" id="equation-eq-qed-concrete-interaction-massive-spin-half-fermion">
 <span class="eqno">(7.6.2)<a class="headerlink" href="#equation-eq-qed-concrete-interaction-massive-spin-half-fermion" title="Link to this equation">#</a></span>\[V(t) = \ifrak e \int d^3 x~\bar{\psi}(t, \xbf) \gamma^{\mu} \psi(t, \xbf) a_{\mu}(t, \xbf) + V_{\text{Coul}}(t)\]</div>
-<p>where we remember that <span class="math notranslate nohighlight">\(V_{\text{Coul}}\)</span> becomes irrelevant if we take the photon line contribution to the Feynman diagram to be <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-covariant">Eq.7.5.4</a>.</p>
+<p>where we remember that <span class="math notranslate nohighlight">\(V_{\text{Coul}}\)</span> becomes irrelevant if we take the photon line contribution to the Feynman diagram to be <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-covariant">Eq.7.5.5</a>.</p>
 <p>Following the general recipe described in <a class="reference internal" href="05-the-feynman-rules.html#sec-feynman-rules-in-momentum-space"><span class="std std-ref">Feynman rules in momentum space</span></a>, let’s spell out the key points, while ignoring routines, in constructing and evaluating Feynman diagrams in QED as follows.</p>
 <p>First of all, a Feynman diagram consists of electron lines, photon lines, and <span class="math notranslate nohighlight">\(3\)</span>-valent vertices, each of which has one incoming electron line, one outgoing electron line, and one photon line attached. Electron lines that flow backward in time may also be called positron lines. To each internal line an off-mass-shell <span class="math notranslate nohighlight">\(4\)</span>-momentum is attached. To each external line an on-mass-shell <span class="math notranslate nohighlight">\(4\)</span>-momentum as well as a spin <span class="math notranslate nohighlight">\(z\)</span>-component or helicity, depending on whether it’s an electron line or a photon line, are attached.</p>
 <p>Next, to evaluate a Feynman diagram, we associate factors to each vertex, external line, and internal line as follows.</p>
@@ -812,7 +812,7 @@ V &amp;= -\int d^3 x~\Jbf \cdot \Abf + V_{\text{Coul}} + V_{\text{matter}}\end{s
 \[\kslash \coloneqq \gamma^{\mu} k_{\mu}\]</div>
 <p>is adopted here.</p>
 </li>
-<li><p>For each internal photon line between <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span>, include a factor (cf. <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-covariant">Eq.7.5.4</a>)</p>
+<li><p>For each internal photon line between <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span>, include a factor (cf. <a class="reference internal" href="#equation-eq-qed-photon-line-contribution-covariant">Eq.7.5.5</a>)</p>
 <div class="math notranslate nohighlight">
 \[\frac{-\ifrak}{(2\pi)^4} \frac{\eta_{\mu \nu}}{q^2 - \ifrak \epsilon}\]</div>
 </li>

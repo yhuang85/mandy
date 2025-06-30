@@ -1247,8 +1247,8 @@ The general path integral calculation of the vacuum expectation value of a timed
     :label: eq_path_integral_qed_operator_vacuum_expectation
 
     &\braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} = \int \prod_{x, i} da_i(x) \prod_{x, i} d\pi_i(x) \prod_{x, \ell} d\psi_{\ell}(x)~\Oscr_A \Oscr_B \cdots \\
-        &\qquad \times \exp\left( \ifrak \int d^4x \left( \bm{\pi} \cdot \dot{\abf} - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2}(\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M \right) - \ifrak \int dt~V_{\op{Coul}}(t) \right) \\
-        &\qquad \times \left( \prod_x \delta(\nabla \cdot \abf(x)) \right) \left( \prod_x \delta(\nabla \cdot \bm{\pi}(x)) \right)
+        &\qquad \times \exp\left( \ifrak \int d^4x \left( \bm{\pi} \cdot \dot{\abf} - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2}(\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M \right) \right. \\
+        &\qquad\quad \left. - \ifrak \int dt~V_{\op{Coul}}(t) + \ifrak\epsilon\text{ terms} \right) \left( \prod_x \delta(\nabla \cdot \abf(x)) \right) \left( \prod_x \delta(\nabla \cdot \bm{\pi}(x)) \right)
 
 where the lowercase fields represent simply variables of integration, rather than interaction-picture fields as in :ref:`sec_quantum_electrodynamics`, the index :math:`i` runs through the spatial :math:`1,2,3` as usual, the matter field variables are represented by :math:`\psi_{\ell}`, and the last two delta functions are introduced to enforce the constraints :eq:`eq_path_integral_qed_a_constraint` and :eq:`eq_path_integral_qed_pi_constraint`.
 
@@ -1258,8 +1258,8 @@ First thing to observe is that since :math:`\Lscr_M` doesn't involve :math:`\bm{
     :label: eq_path_integral_qed_reduced_operator_vacuum_expectation
 
     &\braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} = \int \prod_{x, i} da_i(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \\
-        &\qquad \times \exp\left( \ifrak \int d^4x \left( \frac{1}{2} \dot{\abf}^2 - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2} (\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M \right) - \ifrak \int dt~V_{\op{Coul}}(t) \right) \\
-        &\qquad \times \left( \prod_x \delta(\nabla \cdot \abf(x)) \right)
+        &\qquad \times \exp\left( \ifrak \int d^4x \left( \frac{1}{2} \dot{\abf}^2 - \frac{1}{2} (\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M \right) \right. \\
+        &\qquad\quad \left. - \ifrak \int dt~V_{\op{Coul}}(t) + \ifrak\epsilon\text{ terms} \right) \left( \prod_x \delta(\nabla \cdot \abf(x)) \right)
 
 Next we'd like to restore manifest Lorentz invariance by integrating also over :math:`a_0`. The trick is to consider the following quantity
 
@@ -1274,8 +1274,89 @@ This is a rather familiar equation (cf. :eq:`eq_qed_poisson_equation_j_and_a`), 
 
 .. math:: a_0(t, \xbf) = \int d^3y \frac{j_0(t, \ybf)}{4\pi|\xbf-\ybf|}
 
-Plugging it back to :eq:`eq_path_integral_qed_a0_integral`, we get nothing but the Coulomb action. It follows that the integral in the exponential in :eq:`eq_path_integral_qed_reduced_operator_vacuum_expectation` can be rewritten as follows (cf. :eq:`eq_qed_pi_in_terms_of_a`)
+Plugging it back to :eq:`eq_path_integral_qed_a0_integral`, we get nothing but the Coulomb action. It follows that the integral in the exponential in :eq:`eq_path_integral_qed_reduced_operator_vacuum_expectation` can be rewritten as follows
 
 .. math::
 
-    \int d^4x \left( \frac{1}{2} \dot{\abf}^2 - \frac{1}{2} \bm{\pi}^2 - \frac{1}{2} (\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M - a_0 j_0 + \frac{1}{2} \left(\nabla a_0\right)^2 \right)
+    &\int d^4x \left( \frac{1}{2} \dot{\abf}^2 - \frac{1}{2} (\nabla \times \abf)^2 + \jbf \cdot \abf + \Lscr_M - a_0 j_0 + \frac{1}{2} \left(\nabla a_0\right)^2 \right) \\
+    &\quad = \int d^4x \left( -\frac{1}{4} f_{\mu\nu}f^{\mu\nu} + j^{\mu}a_{\mu} + \Lscr_M + \dot{\abf} \cdot \nabla a_0 \right) \\
+    &\quad = \int d^4x \left( -\frac{1}{4} f_{\mu\nu}f^{\mu\nu} + j^{\mu}a_{\mu} + \Lscr_M \right)
+
+where in the last equality we've used integration-by-parts and :eq:`eq_path_integral_qed_a_constraint`. The operator vacuum expectation :eq:`eq_path_integral_qed_reduced_operator_vacuum_expectation` can now be rewritten in a more Lorentz-invariant manner as follows
+
+.. math::
+    :label: eq_path_integral_qed_operator_vacuum_expectation_almost_lorentz_invariant
+
+    \braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} &= \int \prod_{x, \mu} da_{\mu}(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \\
+        &\qquad \times \exp\left(\ifrak I(a, \psi)\right) \prod_x \delta\left(\nabla \cdot \abf(x)\right)
+
+where the action :math:`I` is defined by
+
+.. math::
+
+    I(a, \psi) = \int d^4x \left( -\frac{1}{4}f_{\mu\nu}f^{\mu\nu} + j^{\mu}a_{\mu} + \Lscr_M + \ifrak\epsilon\text{ terms} \right)
+
+Now the only non-Lorentz-invariant term left is the delta function that enforces :eq:`eq_path_integral_qed_a_constraint`. The trick to handle this difficulty is to bring in the gauge invariance introduced in :ref:`sec_quantum_electrodynamics`. More precisely, recall from :eq:`eq_qed_gauge_symmetry` that the gauge transformation is given by
+
+.. math::
+    :label: eq_path_integral_qed_gauge_transformation
+
+    a'_{\mu}(x) &= a_{\mu}(x) + \p_{\mu} \epsilon(x) \\
+    \psi'_{\ell}(x) &= \exp\left(\ifrak\epsilon(x) q_{\ell}\right) \psi_{\ell}(x)
+
+Assuming that the operators :math:`\Oscr_A, \Oscr_B, \cdots`, and the action :math:`I(a, \psi)` are all gauge invariant, then :eq:`eq_path_integral_qed_operator_vacuum_expectation_almost_lorentz_invariant` can be rewritten as follows
+
+.. math::
+    :label: eq_path_integral_qed_operator_vacuum_expectation_gauge_transformed
+
+    \braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} &\propto \int \prod_{x, \mu} da_{\mu}(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \\
+        &\qquad \times \exp\left(\ifrak I(a, \psi)\right) \prod_{x} \delta\left(\nabla \cdot \abf(x) + \nabla^2 \epsilon(x)\right)
+
+where the proportionality hides the determinant of the gauge transformation :eq:`eq_path_integral_qed_gauge_transformation` away since it's field-independent and therefore physically insignificant. Now since the operator vacuum expectation is independent of :math:`\epsilon(x)`, we can introduce another path integral over :math:`\epsilon(x)` to :eq:`eq_path_integral_qed_operator_vacuum_expectation_gauge_transformed` as follows
+
+.. math::
+
+    \braket{T\{\Oscr_A \Oscr_B \cdots\}}_{\VAC} &\propto \int \prod_x \epsilon(x) \int \prod_{x, \mu} da_{\mu}(x) \prod_{x, \ell} d\psi_{\ell}(x)  \Oscr_A \Oscr_B \cdots \\
+        &\qquad \times \exp\left(\ifrak I(a, \psi)\right) \exp\left(-\frac{\ifrak\alpha}{2} \int d^4x \left(\p_0 a^0 - \nabla^2 \epsilon\right)^2 \right) \\
+        &\qquad \times \prod_x \delta\left(\nabla \cdot \abf + \nabla^2 \epsilon\right) \\
+        &= \int \prod_{x, \mu} da_{\mu}(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \exp\left(\ifrak I(a, \psi)\right) \\
+        &\qquad \times \int \prod_x d\epsilon(x) \exp\left(-\frac{\ifrak\alpha}{2} \int d^4x \left(\p_0 a^0 - \nabla^2 \epsilon\right)^2 \right) \prod_x \delta\left(\nabla \cdot \abf + \nabla^2 \epsilon\right) \\
+        &= \int \prod_{x, \mu} da_{\mu}(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \\
+        &\qquad \times \exp\left(\ifrak I(a, \psi)\right) \exp\left(-\frac{\ifrak\alpha}{2} \int d^4x \left(\p_{\mu} a^{\mu}\right)^2\right) \\
+        &= \int \prod_{x, \mu} da_{\mu}(x) \prod_{x, \ell} d\psi_{\ell}(x) \Oscr_A \Oscr_B \cdots \exp\left(\ifrak I_{\op{eff}}(a, \psi)\right)
+
+where :math:`\alpha` is an arbitrary constant and the effective action is defined by
+
+.. math:: I_{\op{eff}}(a, \psi) \coloneqq I(a, \psi) - \frac{\alpha}{2} \int d^4x~\left(\p_{\mu} a^{\mu}\right)^2
+    :label: eq_path_integral_qed_effective_action
+
+Since the extra term in :math:`I_{\op{eff}}` involves only :math:`a`-fields, it's considered as a correction term to the light action :eq:`eq_qed_light_action`, which can be put into the standard form in :eq:`eq_path_integral_fermionic_defn_d_matrix` as follows
+
+.. math::
+
+    I_{\gamma, \op{eff}}(a) &= -\frac{1}{4} \int d^4x \left(f_{\mu\nu}f^{\mu\nu}\right) - \frac{\alpha}{2} \int d^4x~\left(\p_{\mu} a^{\mu}\right)^2 \\
+        &= -\frac{1}{2} \int d^4x \left(\p_{\mu} a_{\nu} \p^{\mu} a^{\nu} - \p_{\mu} a_{\nu} \p^{\nu} a^{\mu} + \alpha \left(\p_{\mu} a^{\mu}\right)^2\right) \\
+        &= -\frac{1}{2} \int d^4x~d^4y~\delta^4(x-y) \big(\p_{\mu} a_{\nu}(x) \p^{\mu} a^{\nu}(y) - \p_{\mu} a_{\nu}(x) \p^{\nu} a^{\mu}(y) + \alpha \p_{\mu} a^{\mu}(x) \p_{\nu} a^{\nu}(y)\big) \\
+        &= -\frac{1}{2} \int d^4x~d^4y~\Dscr_{x\mu, y\nu}~a^{\mu}(x) a^{\nu}(y)
+
+where
+
+.. math::
+
+    \Dscr_{x\mu, y\nu} &\coloneqq \left(\eta_{\mu\nu} \frac{\p^2}{\p x^{\kappa} y_{\kappa}} - (1-\alpha)\frac{\p^2}{\p x^{\mu} \p y^{\nu}}\right) \delta^4(x-y) \\
+        &= (2\pi)^{-4} \int d^4q \left(\eta_{\mu\nu} q^2 - (1-\alpha)q_{\mu}q_{\nu} - \ifrak\epsilon\eta_{\mu\nu}\right) e^{\ifrak q \cdot (x-y)}
+
+Here in the definition of :math:`\Dscr_{x\mu, y\nu}` we've restored the :math:`\ifrak\epsilon` term without working out all the details.
+
+It follows from :eq:`eq_path_integral_fermionic_gaussian_like_integral_evaluation` that the propagator is given by
+
+.. math::
+
+    \Delta_{x\mu, y\nu} &= (2\pi)^{-4} \int d^4q \left(\eta_{\mu\nu} q^2 - (1-\alpha)q_{\mu}q_{\nu} - \ifrak\epsilon\eta_{\mu\nu}\right)^{-1} e^{\ifrak q \cdot (x-y)} \\
+        &= (2\pi)^{-4} \int d^4q \left(\frac{\eta^{\mu\nu}}{q^2-\ifrak\epsilon} + \frac{1-\alpha}{\alpha} \frac{q^{\mu}q^{\nu}}{(q^2-\ifrak\epsilon)^2}\right) e^{\ifrak q \cdot (x-y)}
+
+Taking the free parameter :math:`\alpha=1`, we recover the photon propagator :eq:`eq_qed_effective_photon_propagator` in Coulomb gauge. Taking :math:`\alpha=\infty` we're then working in Lorenz gauge in light of :eq:`eq_path_integral_qed_effective_action`, and the corresponding propagator is given by
+
+.. math::
+
+    \Delta_{x\mu, y\nu}^{\text{Lorenz}} = (2\pi)^{-4} \int d^4q \left(\frac{\eta^{\mu\nu}}{q^2-\ifrak\epsilon} - \frac{q^{\mu}q^{\nu}}{(q^2-\ifrak\epsilon)^2}\right) e^{\ifrak q \cdot (x-y)}
