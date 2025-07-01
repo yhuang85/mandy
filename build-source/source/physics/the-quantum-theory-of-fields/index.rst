@@ -21,3 +21,4 @@ The order of the sections correspond roughly to the order of the chapters of the
 	06-the-canonical-formalism
 	07-electrodynamics
 	08-path-integral-methods
+	09-non-perturbative-methods
