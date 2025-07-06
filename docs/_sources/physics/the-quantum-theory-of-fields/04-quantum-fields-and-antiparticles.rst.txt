@@ -1416,6 +1416,7 @@ Just as for the time inversion, we are forced to assuming the following conditio
 Under this assumption, we can work out the charge conjugation transformation law as follows
 
 .. math:: U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \Cscr \beta \psi^{\ast}(x)
+	:label: eq_dirac_field_charge_conjugation
 
 Here we've used :math:`\psi^{\ast}(x)` instead of :math:`\psi^{\dagger}(x)` because we don't want to transpose the spinors, but it should be understood that the :math:`\ast` when applied to the creation/annihilation operators are the same as taking the adjoint.
 
@@ -1448,6 +1449,7 @@ then :math:`\bar{\psi}` transforms nicely as follows
 It follows that we can construct a bilinear form as follows
 
 .. math:: \bar{\psi}(x) M \psi(x)
+	:label: eq_dirac_field_bilinear_by_m
 
 where :math:`M` is a :math:`4 \times 4` matrix, so that
 
@@ -1461,6 +1463,15 @@ An important example is Fermi's theory of beta-decay, which involves an interact
 
 where :math:`p, n, e, \nu` stand for proton, neutron, electron and neutrino, respectively.
 
+For future reference, let's record, without details of the calculation, how the bilinear form :eq:`eq_dirac_field_bilinear_by_m` transforms under spatial inversion and charge conjugation as follows. The details can be found in [Wei95]_ page 228 -- 229.
+
+.. math::
+	:label: eq_dirac_field_bilinear_form_transform_under_spatial_inversion_and_charge_conjugation
+
+	U(\Pcal) \bar{\psi}(x)M\psi(x) U^{-1}(\Pcal) &= \bar{\psi}(\Pcal x) \beta M \beta \psi(\Pcal x) \\
+	U(\Ccal) \bar{\psi}(x)M\psi(x) U^{-1}(\Ccal) &= \pm \bar{\psi}(x) M \psi(x)
+
+where the sign in the charge conjugation formula is positive if :math:`M` is one of :math:`1, \gamma_5\gamma_{\mu}, \gamma_5` and negative if :math:`M` is one of :math:`\gamma_{\mu}, \Jscr_{\mu\nu}`.
 
 .. _sec_general_fields:
 

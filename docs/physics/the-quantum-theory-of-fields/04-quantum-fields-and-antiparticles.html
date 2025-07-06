@@ -1241,8 +1241,8 @@ M(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-charge-parity-relation">
 <span class="eqno">(4.4.44)<a class="headerlink" href="#equation-eq-dirac-field-charge-parity-relation" title="Link to this equation">#</a></span>\[\xi^{\ast} = \xi^c\]</div>
 <p>Under this assumption, we can work out the charge conjugation transformation law as follows</p>
-<div class="math notranslate nohighlight">
-\[U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \Cscr \beta \psi^{\ast}(x)\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-dirac-field-charge-conjugation">
+<span class="eqno">(4.4.45)<a class="headerlink" href="#equation-eq-dirac-field-charge-conjugation" title="Link to this equation">#</a></span>\[U(\Ccal) \psi(x) U^{-1}(\Ccal) = \xi^{\ast} \Cscr \beta \psi^{\ast}(x)\]</div>
 <p>Here we’ve used <span class="math notranslate nohighlight">\(\psi^{\ast}(x)\)</span> instead of <span class="math notranslate nohighlight">\(\psi^{\dagger}(x)\)</span> because we don’t want to transpose the spinors, but it should be understood that the <span class="math notranslate nohighlight">\(\ast\)</span> when applied to the creation/annihilation operators are the same as taking the adjoint.</p>
 <p>Finally, let’s consider the special case where the spin-<span class="math notranslate nohighlight">\(1/2\)</span> particles are their own antiparticles. These particles are known as Majorana fermions, as already discussed in <a class="reference internal" href="02-scattering-theory.html#dropdown-parities-of-elementary-particles"><span class="std std-ref">Parities of elementary particles</span></a>. According to <a class="reference internal" href="#equation-eq-dirac-field-spatial-parity-relation">Eq.4.4.35</a>, <a class="reference internal" href="#equation-eq-dirac-field-time-parity-relation">Eq.4.4.43</a> and <a class="reference internal" href="#equation-eq-dirac-field-charge-parity-relation">Eq.4.4.44</a>, we see that the spatial parity of a Majorana fermion must be <span class="math notranslate nohighlight">\(\pm \ifrak\)</span>, while the time and charge parity must be <span class="math notranslate nohighlight">\(\pm 1\)</span>.</p>
 </section>
@@ -1257,13 +1257,13 @@ M(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right
         &amp;= \psi^{\dagger}(\Lambda x) \beta D(\Lambda) \beta\end{split}\]</div>
 <p>We see that if we define a new adjoint</p>
 <div class="math notranslate nohighlight" id="equation-eq-dirac-field-psi-field-bar">
-<span class="eqno">(4.4.45)<a class="headerlink" href="#equation-eq-dirac-field-psi-field-bar" title="Link to this equation">#</a></span>\[\bar{\psi} \coloneqq \psi^{\dagger} \beta\]</div>
+<span class="eqno">(4.4.46)<a class="headerlink" href="#equation-eq-dirac-field-psi-field-bar" title="Link to this equation">#</a></span>\[\bar{\psi} \coloneqq \psi^{\dagger} \beta\]</div>
 <p>then <span class="math notranslate nohighlight">\(\bar{\psi}\)</span> transforms nicely as follows</p>
 <div class="math notranslate nohighlight">
 \[U_0(\Lambda) \bar{\psi}(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda)\]</div>
 <p>It follows that we can construct a bilinear form as follows</p>
-<div class="math notranslate nohighlight">
-\[\bar{\psi}(x) M \psi(x)\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-dirac-field-bilinear-by-m">
+<span class="eqno">(4.4.47)<a class="headerlink" href="#equation-eq-dirac-field-bilinear-by-m" title="Link to this equation">#</a></span>\[\bar{\psi}(x) M \psi(x)\]</div>
 <p>where <span class="math notranslate nohighlight">\(M\)</span> is a <span class="math notranslate nohighlight">\(4 \times 4\)</span> matrix, so that</p>
 <div class="math notranslate nohighlight">
 \[U_0(\Lambda) \bar{\psi}(x) M \psi(x) U_0^{-1}(\Lambda) = \bar{\psi}(\Lambda x) D(\Lambda) M D^{-1}(\Lambda) \psi(\Lambda x)\]</div>
@@ -1272,6 +1272,11 @@ M(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right
 <div class="math notranslate nohighlight">
 \[\bar{\psi}_p \gamma^{\mu} \psi_n \bar{\psi}_e \gamma_{\mu} \psi_{\nu}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p, n, e, \nu\)</span> stand for proton, neutron, electron and neutrino, respectively.</p>
+<p>For future reference, let’s record, without details of the calculation, how the bilinear form <a class="reference internal" href="#equation-eq-dirac-field-bilinear-by-m">Eq.4.4.47</a> transforms under spatial inversion and charge conjugation as follows. The details can be found in <a class="reference internal" href="../../bib.html#wei95" id="id5"><span>[Wei95]</span></a> page 228 – 229.</p>
+<div class="math notranslate nohighlight" id="equation-eq-dirac-field-bilinear-form-transform-under-spatial-inversion-and-charge-conjugation">
+<span class="eqno">(4.4.48)<a class="headerlink" href="#equation-eq-dirac-field-bilinear-form-transform-under-spatial-inversion-and-charge-conjugation" title="Link to this equation">#</a></span>\[\begin{split}U(\Pcal) \bar{\psi}(x)M\psi(x) U^{-1}(\Pcal) &amp;= \bar{\psi}(\Pcal x) \beta M \beta \psi(\Pcal x) \\
+U(\Ccal) \bar{\psi}(x)M\psi(x) U^{-1}(\Ccal) &amp;= \pm \bar{\psi}(x) M \psi(x)\end{split}\]</div>
+<p>where the sign in the charge conjugation formula is positive if <span class="math notranslate nohighlight">\(M\)</span> is one of <span class="math notranslate nohighlight">\(1, \gamma_5\gamma_{\mu}, \gamma_5\)</span> and negative if <span class="math notranslate nohighlight">\(M\)</span> is one of <span class="math notranslate nohighlight">\(\gamma_{\mu}, \Jscr_{\mu\nu}\)</span>.</p>
 </section>
 </section>
 <section id="general-fields">
@@ -1346,7 +1351,7 @@ M(\pbf) &amp;= \frac{1}{2p_0} \left( -\ifrak p_{\mu} \gamma^{\mu} + b_- m \right
 <p>We are now one step away from being able to compare with <a class="reference internal" href="#equation-eq-general-field-uvj-relation">Eq.4.5.7</a>. Namely we need to bring the coefficients <span class="math notranslate nohighlight">\(C^{AB}(\jfrak, \sigma'; a', b')\)</span> to the left side of the equation. To to this, we recall the following identity of Clebsch-Gordan coefficients</p>
 <div class="math notranslate nohighlight" id="equation-eq-clebsch-gordan-coefficients-orthonormal-relation">
 <span class="eqno">(4.5.9)<a class="headerlink" href="#equation-eq-clebsch-gordan-coefficients-orthonormal-relation" title="Link to this equation">#</a></span>\[\sum_{a', b'} C^{AB}(\jfrak', \sigma'; a', b') C^{AB}(\jfrak, \sigma; a', b') = \delta_{\jfrak'\jfrak} \delta_{\sigma'\sigma}\]</div>
-<p>which follows from the orthonormality of the states <span class="math notranslate nohighlight">\(\Psi^{AB}_{ab}\)</span> and the reality of the Clebsch-Gordan coefficients as constructed in <a class="reference internal" href="01-quantum-mechanics.html#dropdown-clebsch-gordan-coefficients"><span class="std std-ref">Clebsch-Gordan coefficients</span></a>. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficients-orthonormality" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> Now <a class="reference internal" href="#equation-eq-general-field-calculate-j-in-clebsch-gordan-coefficients">Eq.4.5.8</a> will be satisfied if we set the blue terms to equal to the following quantity</p>
+<p>which follows from the orthonormality of the states <span class="math notranslate nohighlight">\(\Psi^{AB}_{ab}\)</span> and the reality of the Clebsch-Gordan coefficients as constructed in <a class="reference internal" href="01-quantum-mechanics.html#dropdown-clebsch-gordan-coefficients"><span class="std std-ref">Clebsch-Gordan coefficients</span></a>. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficients-orthonormality" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> Now <a class="reference internal" href="#equation-eq-general-field-calculate-j-in-clebsch-gordan-coefficients">Eq.4.5.8</a> will be satisfied if we set the blue terms to equal to the following quantity</p>
 <div class="math notranslate nohighlight" id="equation-eq-general-field-condition-on-j-by-clebsch-gordan-coefficients">
 <span class="eqno">(4.5.10)<a class="headerlink" href="#equation-eq-general-field-condition-on-j-by-clebsch-gordan-coefficients" title="Link to this equation">#</a></span>\[\sum_a C^{AB}(\jfrak, \sigma; a, b') \Jbf^{(A)}_{a'a} + \sum_b C^{AB}(\jfrak, \sigma; a', b) \Jbf^{(B)}_{b'b}
         = \sum_{\sigma''} C^{AB}(\jfrak, \sigma; a', b') \Jbf^{(\jfrak)}_{\sigma'' \sigma}\]</div>
@@ -1417,7 +1422,7 @@ L(\theta)_{ij} &amp;= \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh\theta - 1)\
 <p class="sd-card-text">A particularly interesting example of this kind is Wigner’s <a class="reference external" href="https://en.wikipedia.org/wiki/3-j_symbol">3j-symbol</a> defined as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{pmatrix} A_1 &amp; A_2 &amp; A_3 \\ a_1 &amp; a_2 &amp; a_3 \end{pmatrix} \coloneqq \sum_{a'_3} C^{A_3 A_3}(0 0; a'_3 a_3) C^{A_1 A_3}(A_3 a'_3; a_1 a_2)\end{split}\]</div>
-<p class="sd-card-text">We read the definition as a two-step process. Namely, we first (linearly) combine states <span class="math notranslate nohighlight">\(\Psi^{A_1}_{a_1}\)</span> and <span class="math notranslate nohighlight">\(\Psi^{A_2}_{a_2}\)</span> to a state with total angular momentum <span class="math notranslate nohighlight">\(A_3\)</span> (and spin <span class="math notranslate nohighlight">\(z\)</span>-component <span class="math notranslate nohighlight">\(a'_3\)</span>), and then (linearly) combine with the state <span class="math notranslate nohighlight">\(\Psi^{A_3}_{a_3}\)</span> to end up in a spinless final state. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficient-zero-total-angular-momentum" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
+<p class="sd-card-text">We read the definition as a two-step process. Namely, we first (linearly) combine states <span class="math notranslate nohighlight">\(\Psi^{A_1}_{a_1}\)</span> and <span class="math notranslate nohighlight">\(\Psi^{A_2}_{a_2}\)</span> to a state with total angular momentum <span class="math notranslate nohighlight">\(A_3\)</span> (and spin <span class="math notranslate nohighlight">\(z\)</span>-component <span class="math notranslate nohighlight">\(a'_3\)</span>), and then (linearly) combine with the state <span class="math notranslate nohighlight">\(\Psi^{A_3}_{a_3}\)</span> to end up in a spinless final state. <a class="footnote-reference brackets" href="#clebsch-gordan-coefficient-zero-total-angular-momentum" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
 </div>
 </details><p>We will now turn to the arguably most interesting causality condition <a class="reference internal" href="02-scattering-theory.html#equation-eq-h-commutativity-for-space-like-separations">Eq.2.5.14</a>. Indeed, it is this condition that clarifies the correlation between the spin and whether a particle/field is bosonic or fermionic. As before, we need to evaluate the (anti-)commutator between the fields using <a class="reference internal" href="#equation-eq-general-field-defn-psi-field">Eq.4.5.6</a> as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-general-field-psi-commutator">
@@ -1431,7 +1436,7 @@ L(\theta)_{ij} &amp;= \delta_{ij} + \hat{\pbf}_i \hat{\pbf}_j (\cosh\theta - 1)\
 <span class="eqno">(4.5.23)<a class="headerlink" href="#equation-eq-general-field-spin-sum" title="Link to this equation">#</a></span>\[\begin{split}\pi_{ab, a'b'}(\pbf) &amp;= \sum_{\bar{a}~\bar{b}} \sum_{\bar{a}'~\bar{b}'} \sum_{\sigma} C^{AB}(\jfrak \sigma; \bar{a} \bar{b}) C^{A'B'}(\jfrak \sigma; \bar{a}' \bar{b}') \\
         &amp;\quad \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A)}\right)\right)_{\bar{a}a} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B)}\right)\right)_{\bar{b}b} \\
         &amp;\quad \times \left(\exp\left(-\theta~\hat{\pbf} \cdot \Jbf^{(A')}\right)\right)_{\bar{a}'a'} \left(\exp\left(\theta~\hat{\pbf} \cdot \Jbf^{(B')}\right)\right)_{\bar{b}'b'}\end{split}\]</div>
-<p>This looks horribly complicated, but it has been evaluated by the author in <a class="reference internal" href="../../bib.html#wei69" id="id7"><span>[Wei69]</span></a>. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that <span class="math notranslate nohighlight">\(\pi_{ab,a'b'}(\pbf)\)</span> is a polynomial <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(p\)</span> on the mass shell as follows</p>
+<p>This looks horribly complicated, but it has been evaluated by the author in <a class="reference internal" href="../../bib.html#wei69" id="id8"><span>[Wei69]</span></a>. Without going into the actual calculations, we note the following two facts, which suffice our purposes. The first is that <span class="math notranslate nohighlight">\(\pi_{ab,a'b'}(\pbf)\)</span> is a polynomial <span class="math notranslate nohighlight">\(P\)</span> in <span class="math notranslate nohighlight">\(p\)</span> on the mass shell as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-general-field-spin-sum-is-polynomial">
 <span class="eqno">(4.5.24)<a class="headerlink" href="#equation-eq-general-field-spin-sum-is-polynomial" title="Link to this equation">#</a></span>\[\pi_{ab,a'b'}(\pbf) = P_{ab,a'b'}\left( \sqrt{\pbf^2 + m^2}, \pbf \right)\]</div>
 <p>The second is that this polynomial is even or odd depending on the parity of <span class="math notranslate nohighlight">\(2A + 2B'\)</span> as follows</p>
@@ -1526,14 +1531,14 @@ Q_{ab, a'b'}(-\pbf) &amp;= -(-1)^{2A+2B'} Q_{ab, a'b'}(\pbf)\end{split}\]</div>
 <p class="sd-card-text">where <span class="math notranslate nohighlight">\(\psi_{\sigma}(x)\)</span> is the <span class="math notranslate nohighlight">\((\jfrak, 0)\)</span> field. Swapping the role of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, one can also write it as rank <span class="math notranslate nohighlight">\(2A\)</span> traceless derivatives of the <span class="math notranslate nohighlight">\((0, \jfrak)\)</span> field.</p>
 </div>
 </details></section>
-<section id="id8">
-<h3><span class="section-number">4.5.3. </span>The CPT symmetries<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h3><span class="section-number">4.5.3. </span>The CPT symmetries<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>The calculations of space, time, and charge conjugation transformations in the general case is essentially the same as for the Dirac field. In particular, instead of reverting the <span class="math notranslate nohighlight">\(3\)</span>-momentum in Dirac spinors as in <a class="reference internal" href="#equation-eq-dirac-field-spatial-inversion-acts-on-psi">Eq.4.4.21</a>, we need to do it for general <span class="math notranslate nohighlight">\((A, B)\)</span> spinors <a class="reference internal" href="#equation-eq-general-field-u-at-finite-momentum">Eq.4.5.17</a>, which involves the Clebsch-Gordan coefficients.</p>
 <p>Without going to the details, we list the relevant symmetry properties of Clebsch-Gordan coefficients as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-clebsch-gordan-coeff-identities">
 <span class="eqno">(4.5.34)<a class="headerlink" href="#equation-eq-clebsch-gordan-coeff-identities" title="Link to this equation">#</a></span>\[\begin{split}C^{AB}(\jfrak, \sigma; a, b) &amp;= (-1)^{A+B-\jfrak} C^{BA}(\jfrak, \sigma; b, a) \\
 C^{AB}(\jfrak, \sigma; a, b) &amp;= (-1)^{A+B-\jfrak} C^{AB}(\jfrak, -\sigma; -a, -b)\end{split}\]</div>
-<p>The first relation is proved in <a class="reference internal" href="../../bib.html#wei00" id="id9"><span>[Wei00]</span></a> page 124, and the second relation can be deduced from the time reversal transformation law <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-time-inversion-on-massive-general">Eq.1.3.37</a>.</p>
+<p>The first relation is proved in <a class="reference internal" href="../../bib.html#wei00" id="id10"><span>[Wei00]</span></a> page 124, and the second relation can be deduced from the time reversal transformation law <a class="reference internal" href="01-quantum-mechanics.html#equation-eq-time-inversion-on-massive-general">Eq.1.3.37</a>.</p>
 <p>Consider first the spatial inversion. Combining <a class="reference internal" href="#equation-eq-clebsch-gordan-coeff-identities">Eq.4.5.34</a> with <a class="reference internal" href="#equation-eq-general-field-u-at-finite-momentum">Eq.4.5.17</a>, one obtains the following relations on the spinors</p>
 <div class="math notranslate nohighlight" id="equation-eq-general-field-u-and-v-symmetry-swap">
 <span class="eqno">(4.5.35)<a class="headerlink" href="#equation-eq-general-field-u-and-v-symmetry-swap" title="Link to this equation">#</a></span>\[\begin{split}u^{AB}_{ab}(-\pbf, \sigma) &amp;= (-1)^{A+B-\jfrak} u^{BA}_{ba}(\pbf, \sigma) \\
@@ -1850,15 +1855,15 @@ e_{\mu}(\kbf, \sigma) &amp;= {S(a, b)_{\mu}}^{\nu} e_{\nu}(\kbf, \sigma)\end{spl
 </aside>
 <aside class="footnote brackets" id="wrong-integration-of-delta-function" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../../bib.html#wei95" id="id10"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
+<p>The evaluation of the integral eq. (5.2.8) on <a class="reference internal" href="../../bib.html#wei95" id="id11"><span>[Wei95]</span></a> page 202 seems to be wrong, as the integrand oscillates as <span class="math notranslate nohighlight">\(\sin(u)\)</span> for <span class="math notranslate nohighlight">\(u\)</span> large enough, which will cause the integral to diverge.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficients-orthonormality" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
-<p>Details of the argument can be found in <a class="reference internal" href="../../bib.html#wei15" id="id11"><span>[Wei15]</span></a> page 121 – 122.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">3</a><span class="fn-bracket">]</span></span>
+<p>Details of the argument can be found in <a class="reference internal" href="../../bib.html#wei15" id="id12"><span>[Wei15]</span></a> page 121 – 122.</p>
 </aside>
 <aside class="footnote brackets" id="clebsch-gordan-coefficient-zero-total-angular-momentum" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
-<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../../bib.html#wei15" id="id12"><span>[Wei15]</span></a> page 124 – 125.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">4</a><span class="fn-bracket">]</span></span>
+<p>An explicit evaluation of <span class="math notranslate nohighlight">\(C^{AA}(0, 0;a, -a)\)</span>, with the only non-vanishing combination of spin <span class="math notranslate nohighlight">\(z\)</span>-components, can be found in <a class="reference internal" href="../../bib.html#wei15" id="id13"><span>[Wei15]</span></a> page 124 – 125.</p>
 </aside>
 </aside>
 </section>
@@ -1914,7 +1919,7 @@ e_{\mu}(\kbf, \sigma) &amp;= {S(a, b)_{\mu}}^{\nu} e_{\nu}(\kbf, \sigma)\end{spl
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-fields">4.5. General Fields</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-representation-theory-of-the-lorentz-group">4.5.1. General representation theory of the Lorentz group</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construction-of-general-fields">4.5.2. Construction of general fields</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.5.3. The CPT symmetries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.5.3. The CPT symmetries</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cpt-theorem">4.6. The CPT Theorem</a></li>
