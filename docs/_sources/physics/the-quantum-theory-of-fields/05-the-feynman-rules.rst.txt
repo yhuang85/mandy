@@ -543,7 +543,7 @@ Now with all the :math:`x` coordinates integrated out, we can reformulate the :r
 .. figure:: ./static/momenta-propagators.svg
 	:align: center
 
-	Figure. Feynman rules in momentum space.
+	Feynman rules in momentum space.
 
 To evaluate the (connected) S-matrix of the form :eq:`eq_s_matrix_fully_expanded_by_timed_ordered_interaction_density`, we follow the steps explained in :ref:`sec_spacetime_feynman_rules` with one modification:
 

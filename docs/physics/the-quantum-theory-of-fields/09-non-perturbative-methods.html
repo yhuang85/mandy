@@ -399,22 +399,22 @@
 <div class="math notranslate nohighlight">
 \[P^{\mu} \Psi_{\alpha}^- = p_{\alpha}^{\mu} \Psi_{\alpha}^-, \qquad P^{\mu} \Psi_{\beta}^+ = p_{\beta}^{\mu} \Psi_{\beta}^+\]</div>
 <p>then the time-ordered product amplitude considered in Gell-Mann and Low’s theorem <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-gell-mann-low-theorem">Eq.5.2.18</a> satisfies the following differential equation</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}&amp;(p_{\beta\mu} - p_{\alpha\mu})\left(\Psi_{\beta}^+, T\{O_a(x_1), O_b(x_2), \cdots\} \Psi_{\alpha}^-\right) \\
+<div class="math notranslate nohighlight" id="equation-eq-npm-translation-diff-eq">
+<span class="eqno">(9.1.1)<a class="headerlink" href="#equation-eq-npm-translation-diff-eq" title="Link to this equation">#</a></span>\[\begin{split}&amp;(p_{\beta\mu} - p_{\alpha\mu})\left(\Psi_{\beta}^+, T\{O_a(x_1), O_b(x_2), \cdots\} \Psi_{\alpha}^-\right) \\
     &amp;\qquad= \left(\Psi_{\beta}^+, \left[P_{\mu}, T\{O_a(x_1), O_b(x_2), \cdots\}\right] \Psi_{\alpha}^-\right) \\
     &amp;\qquad= \ifrak \left(\frac{\p}{\p x_1^{\mu}} + \frac{\p}{\p x_2^{\mu}} + \cdots\right) \left(\Psi_{\beta}^+, T\{O_a(x_1), O_b(x_2), \cdots\} \Psi_{\alpha}^-\right)\end{split}\]</div>
 <p>The general solution to the equation is given as follows</p>
 <div class="math notranslate nohighlight" id="equation-eq-npm-timed-order-amplitude">
-<span class="eqno">(9.1.1)<a class="headerlink" href="#equation-eq-npm-timed-order-amplitude" title="Link to this equation">#</a></span>\[\left(\Psi_{\beta}^+, T\{O_a(x_1), O_b(x_2), \cdots\} \Psi_{\alpha}^-\right)
+<span class="eqno">(9.1.2)<a class="headerlink" href="#equation-eq-npm-timed-order-amplitude" title="Link to this equation">#</a></span>\[\left(\Psi_{\beta}^+, T\{O_a(x_1), O_b(x_2), \cdots\} \Psi_{\alpha}^-\right)
     = e^{\ifrak(p_{\alpha}-p_{\beta}) \cdot x} F_{ab\cdots}(x_1-x_2, x_1-x_3, \cdots)\]</div>
 <p>where <span class="math notranslate nohighlight">\(x = c_1x_1 + c_2x_2 + \cdots\)</span> as long as <span class="math notranslate nohighlight">\(c_1 + c_2 + \cdots = 1\)</span>. Moreover <span class="math notranslate nohighlight">\(F_{ab\cdots}\)</span> can be any function that depends only on the coordinate differences. It turns out that this is enough to deduce the overall conservation of momentum in the following sense</p>
 <div class="math notranslate nohighlight" id="equation-eq-npm-4-momentum-conservation">
-<span class="eqno">(9.1.2)<a class="headerlink" href="#equation-eq-npm-4-momentum-conservation" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int d^4x_1~d^4x_2\cdots \left(\Psi_{\beta}^+, T\{O_a(x_1), O_b(x_2), \cdots\} \Psi_{\alpha}^-\right) \exp(-\ifrak k_1 \cdot x_1 - \ifrak k_2 \cdot x_2 - \cdots)  \\
+<span class="eqno">(9.1.3)<a class="headerlink" href="#equation-eq-npm-4-momentum-conservation" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int d^4x_1~d^4x_2\cdots \left(\Psi_{\beta}^+, T\{O_a(x_1), O_b(x_2), \cdots\} \Psi_{\alpha}^-\right) \exp(-\ifrak k_1 \cdot x_1 - \ifrak k_2 \cdot x_2 - \cdots)  \\
     &amp;\qquad\propto \delta^4(p_{\alpha} - p_{\beta} - k_1 - k_2 - \cdots)\end{split}\]</div>
-<p>To see this, let’s consider a special case where <span class="math notranslate nohighlight">\(x=x_1\)</span> in <a class="reference internal" href="#equation-eq-npm-timed-order-amplitude">Eq.9.1.1</a>. In this case, the power in the exponential in <a class="reference internal" href="#equation-eq-npm-4-momentum-conservation">Eq.9.1.2</a> can be rewritten as follows</p>
+<p>To see this, let’s consider a special case where <span class="math notranslate nohighlight">\(x=x_1\)</span> in <a class="reference internal" href="#equation-eq-npm-timed-order-amplitude">Eq.9.1.2</a>. In this case, the power in the exponential in <a class="reference internal" href="#equation-eq-npm-4-momentum-conservation">Eq.9.1.3</a> can be rewritten as follows</p>
 <div class="math notranslate nohighlight">
 \[-\ifrak k_1 \cdot x_1 - \ifrak k_2 \cdot x_2 - \cdots = -\ifrak\left(k_1 + k_2 + \cdots\right) \cdot x_1 - \ifrak k_2 \cdot (x_2 - x_1) - \cdots\]</div>
-<p>Then the delta function in <a class="reference internal" href="#equation-eq-npm-4-momentum-conservation">Eq.9.1.2</a> comes out as the integral over <span class="math notranslate nohighlight">\(x_1\)</span>.</p>
+<p>Then the delta function in <a class="reference internal" href="#equation-eq-npm-4-momentum-conservation">Eq.9.1.3</a> comes out as the integral over <span class="math notranslate nohighlight">\(x_1\)</span>.</p>
 <p>The conservation of momentum of obvious from perturbation theory since the momentum is conserved at every vertex of every contributing Feynman diagram.</p>
 </section>
 <section id="internal-symmetry">
@@ -446,27 +446,157 @@
 <section id="polology">
 <h2><span class="section-number">9.2. </span>Polology<a class="headerlink" href="#polology" title="Link to this heading">#</a></h2>
 <p>This is a made-up a word to describe the study of the structure and distribution of poles in amplitudes. To keep the discussion on a general ground, consider the following momentum-space vacuum expectation value</p>
-<div class="math notranslate nohighlight">
-\[G(q_1, q_2, \cdots, q_n) \coloneqq \int d^4x_1 \cdots d^4x_n~e^{-\ifrak q_1 \cdot x_1} \cdots e^{-\ifrak q_n \cdot x_n} \braket{T\{A_1(x_1) \cdots A_n(x_n)\}}_{\VAC}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-polology-defn-g">
+<span class="eqno">(9.2.1)<a class="headerlink" href="#equation-eq-polology-defn-g" title="Link to this equation">#</a></span>\[G(q_1, q_2, \cdots, q_n) \coloneqq \int d^4x_1 \cdots d^4x_n~e^{-\ifrak q_1 \cdot x_1} \cdots e^{-\ifrak q_n \cdot x_n} \braket{T\{A_1(x_1) \cdots A_n(x_n)\}}_{\VAC}\]</div>
 <p>Here the <span class="math notranslate nohighlight">\(A\)</span>s are Heisenberg-picture operators of arbitrary Lorentz type.</p>
 <p>So far the only constraint on the off-mass-shell <span class="math notranslate nohighlight">\(4\)</span>-momenta <span class="math notranslate nohighlight">\(q_1, q_2, \cdots, q_n\)</span> is that they sum up to zero according to total momentum conservation. We’re going to impose a further constraint that <span class="math notranslate nohighlight">\(G\)</span> is a function of <span class="math notranslate nohighlight">\(q^2\)</span> where</p>
-<div class="math notranslate nohighlight">
-\[q \coloneqq q_1 + \cdots + q_r = -q_{r+1} - \cdots - q_n\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-polology-defn-q">
+<span class="eqno">(9.2.2)<a class="headerlink" href="#equation-eq-polology-defn-q" title="Link to this equation">#</a></span>\[q \coloneqq q_1 + \cdots + q_r = -q_{r+1} - \cdots - q_n\]</div>
 <p>In other words, the first <span class="math notranslate nohighlight">\(r\)</span> momenta combined together is constrained to the mass shell. Then we’ll argue that <span class="math notranslate nohighlight">\(G\)</span> has a pole at <span class="math notranslate nohighlight">\(q^2 = -m^2\)</span>, where <span class="math notranslate nohighlight">\(m\)</span> is the mass of any one-particle state that has non-vanishing matrix elements with the states <span class="math notranslate nohighlight">\(A_1^{\dagger} \cdots A_r^{\dagger} \Psi_{\VAC}\)</span> and <span class="math notranslate nohighlight">\(A_{r+1} \cdots A_n \Psi_{\VAC}\)</span>. Moreover the residue at the pole is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-vacuum-expectation-pole-formula">
-<span class="eqno">(9.2.1)<a class="headerlink" href="#equation-eq-vacuum-expectation-pole-formula" title="Link to this equation">#</a></span>\[G \to \frac{-2\ifrak\sqrt{\qbf^2 + m^2}}{q^2 + m^2 - \ifrak\epsilon} (2\pi)^7 \delta^4(q_1 + \cdots + q_n) \sum_{\sigma} M_{0 | \qbf, \sigma}(q_2, \cdots, q_r) M_{\qbf, \sigma | 0}(q_{r+2}, \cdots, q_n)\]</div>
+<span class="eqno">(9.2.3)<a class="headerlink" href="#equation-eq-vacuum-expectation-pole-formula" title="Link to this equation">#</a></span>\[G \to \frac{-2\ifrak\sqrt{\qbf^2 + m^2}}{q^2 + m^2 - \ifrak\epsilon} (2\pi)^7 \delta^4(q_1 + \cdots + q_n) \sum_{\sigma} M_{0 | \qbf, \sigma}(q_2, \cdots, q_r) M_{\qbf, \sigma | 0}(q_{r+2}, \cdots, q_n)\]</div>
 <p>where the <span class="math notranslate nohighlight">\(M\)</span>s are defined by</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}&amp;\int d^4x_1 \cdots d^4x_r~e^{-\ifrak q_1 \cdot x_1} \cdots e^{-\ifrak q_r \cdot x_r} \left(\Psi_{\VAC}, T\{A_1(x_1), \cdots, A_r(x_r)\} \Psi_{\pbf, \sigma}\right) \\
+<div class="math notranslate nohighlight" id="equation-eq-polology-defn-m">
+<span class="eqno">(9.2.4)<a class="headerlink" href="#equation-eq-polology-defn-m" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int d^4x_1 \cdots d^4x_r~e^{-\ifrak q_1 \cdot x_1} \cdots e^{-\ifrak q_r \cdot x_r} \left(\Psi_{\VAC}, T\{A_1(x_1), \cdots, A_r(x_r)\} \Psi_{\pbf, \sigma}\right) \\
     &amp;\qquad = (2\pi)^4 \delta^4(q_1 + \cdots + q_r - p) M_{0 | \pbf, \sigma}(q_2, \cdots, q_r) \\
 &amp;\int d^4x_{r+1} \cdots d^4x_n~e^{-\ifrak q_{r+1} \cdot x_{r+1}} \cdots e^{-\ifrak q_n \cdot x_n} \left(\Psi_{\pbf, \sigma}, T\{A_{r+1}(x_{r+1}), \cdots, A_n(x_n)\} \Psi_{\VAC}\right) \\
     &amp;\qquad = (2\pi)^4 \delta^4(q_{r+1} + \cdots + q_n + p) M_{\pbf, \sigma | 0}(q_{r+2}, \cdots, q_n)\end{split}\]</div>
-<p>Before diving into the proof, it’s instructive to rewrite <a class="reference internal" href="#equation-eq-vacuum-expectation-pole-formula">Eq.9.2.1</a> in a way closer to a Feynman diagram evaluation as follows</p>
+<p>Before diving into the proof, it’s instructive to rewrite <a class="reference internal" href="#equation-eq-vacuum-expectation-pole-formula">Eq.9.2.3</a> in a way closer to a Feynman diagram evaluation as follows</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp;G(q_1, \cdots, q_n) \to \sum_{\sigma} \int d^4k \\
     &amp;\qquad \times \left((2\pi)^4 \delta^4(q_1 + \cdots + q_r - k) (2\pi)^{3/2} \left(2\sqrt{\kbf^2 + m^2}\right)^{1/2} M_{0 | \kbf, \sigma}(q_2, \cdots, q_r)\right) \\
     &amp;\qquad \times \frac{-\ifrak}{(2\pi)^4} \frac{1}{k^2 + m^2 - \ifrak\epsilon} \\
     &amp;\qquad \times \left((2\pi)^4 \delta^4(q_{r+1} + \cdots + q_n + k) (2\pi)^{3/2} \left(2\sqrt{\kbf^2 + m^2}\right)^{1/2} M_{0 | \kbf, \sigma}(q_{r+1}, \cdots, q_n)\right)\end{split}\]</div>
+<p>This can be thought of as the evaluation of a Feynman diagram with one internal line carrying a particle of mass <span class="math notranslate nohighlight">\(m\)</span> connecting the first <span class="math notranslate nohighlight">\(r\)</span> and the last <span class="math notranslate nohighlight">\(n-r\)</span> external lines. The upshot here is that the particle carried by the internal line may <em>not</em> necessarily present in the Lagrangian, nor does it have to be “elementary”, i.e., it may be a bound state of elementary particles.</p>
+<p>Now to the proof. Let’s first single out the term of interest from <a class="reference internal" href="#equation-eq-polology-defn-g">Eq.9.2.1</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}G(q_1, \cdots, q_n) &amp;= \int d^4x_1 \cdots d^4x_n~e^{-\ifrak q_1 \cdot x_1} \cdots e^{-\ifrak q_n \cdot x_n} \\
+    &amp;\quad \times \theta\left(\min\left(x_1^0, \cdots, x_r^0\right) - \max\left(x_{r+1}^0, \cdots, x_n^0\right)\right) \\
+    &amp;\quad \times \left(\Psi_{\VAC}, T\{A_1(x_1), \cdots, A_r(x_r)\} T\{A_{r+1}(x_{r+1}), \cdots, A_n(x_n)\} \Psi_{\VAC}\right) + \cdots\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the usual step function (cf. <a class="reference internal" href="02-scattering-theory.html#equation-eq-defn-time-ordered-product">Eq.2.5.9</a>) and the terms corresponding to other time-ordering are omitted.</p>
+<p>The next step is to insert a complete set of basis corresponding to the particle of interest</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;G(q_1, \cdots, q_n) = \int d^4x_1 \cdots d^4x_n~e^{-\ifrak q_1 \cdot x_1} \cdots e^{-\ifrak q_n \cdot x_n} \\
+    &amp;\qquad \times \theta\left(\min\left(x_1^0, \cdots, x_r^0\right) - \max\left(x_{r+1}^0, \cdots, x_n^0\right)\right) \\
+    &amp;\qquad \sum_{\sigma} \int d^3p \left(\Psi_{\VAC}, T\{A_1(x_1), \cdots, A_r(x_r)\} \Psi_{\pbf, \sigma}\right)
+        \left(\Psi_{\pbf, \sigma}, T\{A_{r+1}(x_{r+1}), \cdots, A_n(x_n)\} \Psi_{\VAC}\right) \\
+    &amp;\qquad + \cdots\end{split}\]</div>
+<p>Using the translational symmetry (cf. <a class="reference internal" href="#equation-eq-npm-translation-diff-eq">Eq.9.1.1</a>), we can make the following change of variables</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x_i &amp;= x_1 + y_i, &amp;\qquad i &amp;= 2, 3, \cdots, r \\
+x_i &amp;= x_{r+1} + y_i, &amp;\qquad i &amp;= r+2, \cdots, n\end{split}\]</div>
+<p>and evaluate</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\left(\Psi_{\VAC}, T\{A_1(x_1), \cdots, A_r(x_r)\} \Psi_{\pbf, \sigma}\right) \\
+    &amp;\qquad= e^{\ifrak p \cdot x_1} \left(\Psi_{\VAC}, T\{A_1(0), A_2(y_2), \cdots, A_r(y_r)\} \Psi_{\pbf, \sigma}\right) \\
+&amp;\left(\Psi_{\pbf, \sigma}, T\{A_{r+1}(x_{r+1}), \cdots, A_n(x_n)\} \Psi_{\VAC}\right) \\
+    &amp;\qquad= e^{-\ifrak p \cdot x_{r+1}} \left(\Psi_{\pbf, \sigma}, T\{A_{r+1}(0), A_{r+2}(y_{r+2}), \cdots, A_n(x_n)\} \Psi_{\VAC}\right)\end{split}\]</div>
+<p>Moreover, the argument of the <span class="math notranslate nohighlight">\(\theta\)</span> function can be rewritten as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\min(x_1^0, \cdots, x_r^0) - \max(x_{r+1}^0, \cdots, x_n^0) \\
+    &amp;\qquad= x_1^0 - x_{r+1}^0 + \min(0, y_2^0, \cdots, y_r^0) - \max(0, y_{r+2}^0, \cdots, y_n^0)\end{split}\]</div>
+<p>and recall the Fourier representation of the <span class="math notranslate nohighlight">\(\theta\)</span> function itself</p>
+<div class="math notranslate nohighlight">
+\[\theta(\tau) = -\frac{1}{2\pi\ifrak} \int_{-\infty}^{\infty} \frac{e^{-\ifrak \omega \tau}}{\omega + \ifrak \epsilon} d\omega\]</div>
+<p>Now let’s re-evaluate <span class="math notranslate nohighlight">\(G(q_1, \cdots, q_n)\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;G(q_1, \cdots, q_n) = -\frac{1}{2\pi\ifrak} \int d^4x_1~d^4y_2 \cdots d^4y_r~d^4x_{r+1}~d^4y_{r+2} \cdots d^4y_n \\
+    &amp;\qquad \times e^{-\ifrak q_2 \cdot y_2} \cdots e^{-\ifrak q_r \cdot y_r} e^{-\ifrak q_{r+2} \cdot y_{r+2}} \cdots e^{-\ifrak q_n \cdot y_n} \\
+    &amp;\qquad \times \exp(-\ifrak (q_1 + \cdots + q_r) \cdot x_1) \exp(-\ifrak (q_{r+1} + \cdots + q_n) \cdot x_{r+1}) \\
+    &amp;\qquad \times \int_{-\infty}^{\infty} \frac{d\omega}{\omega + \ifrak\epsilon} \exp\left(-\ifrak\omega\left(x_1^0 - x_{r+1}^0 + \min(0, y_2^0, \cdots, y_r^0) - \max(0, y_{r+2}^0, \cdots, y_n^0)\right)\right) \\
+    &amp;\qquad \times \sum_{\sigma} \int d^3p~\exp\left(\ifrak p \cdot x_1 - \ifrak p \cdot x_{r+1}\right) \left(\Psi_{\VAC}, T\{A_1(0), A_2(y_2), \cdots, A_r(y_r)\} \Psi_{\pbf, \sigma}\right) \\
+        &amp;\qquad\qquad \times \left(\Psi_{\pbf, \sigma}, T\{A_{r+1}(0), A_{r+2}(y_{r+2}), \cdots, A_n(y_n)\} \Psi_{\VAC}\right) + \cdots \\
+    &amp;\quad= -\frac{1}{2\pi\ifrak} \int d^4y_2 \cdots d^4y_r~d^4y_{r+2} \cdots d^4y_n~e^{-\ifrak q_2 \cdot y_2} \cdots e^{-\ifrak q_r \cdot y_r} e^{-\ifrak q_{r+2} \cdot y_{r+2}} \cdots e^{-\ifrak q_n \cdot y_n} \\
+    &amp;\qquad \times \int_{-\infty}^{\infty} \frac{d\omega}{\omega + \ifrak\epsilon} \exp\left(\blue{-\ifrak\omega\left(\min(0, y_2^0, \cdots, y_r^0) - \max(0, y_{r+2}^0, \cdots, y_n^0)\right)}\right) \\
+    &amp;\qquad \times \sum_{\sigma} \int d^3p \left(\Psi_{\VAC}, T\{A_1(0), A_2(y_2), \cdots, A_r(y_r)\} \Psi_{\pbf, \sigma}\right) \\
+        &amp;\qquad\qquad \times \left(\Psi_{\pbf, \sigma}, T\{A_{r+1}(0), A_{r+2}(y_{r+2}), \cdots, A_n(y_n)\} \Psi_{\VAC}\right) \\
+    &amp;\qquad \times (2\pi)^4 \delta^3(\pbf - \qbf_1 - \cdots - \qbf_r) \delta\left(\sqrt{\pbf^2 + m^2} + \omega - q_1^0 - \cdots - q_r^0\right) \\
+    &amp;\qquad \times (2\pi)^4 \delta^3(\pbf + \qbf_{r+1} + \cdots + \qbf_n) \delta\left(\sqrt{\pbf^2 + m^2} + \omega + q_{r+1}^0 + \cdots + q_n^0\right) + \cdots\end{split}\]</div>
+<p>where the omitted terms in <span class="math notranslate nohighlight">\(\cdots\)</span> are those arising from other time ordering.</p>
+<p>Finally since we’re interested in the pole at <span class="math notranslate nohighlight">\(\omega = 0\)</span>, we may set the blue term to zero and evaluate the integral in <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(p\)</span> to arrive at the following pole structure</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}G(q_1, \cdots, q_n) &amp;\to \ifrak (2\pi)^7 \delta^4(q_1 + \cdots + q_n) \left(q^0 - \sqrt{\qbf^2 + m^2} + \ifrak\epsilon\right)^{-1} \\
+    &amp;\qquad \times \sum_{\sigma} M_{0 | \qbf, \sigma}(q_2, \cdots, q_r) M_{\qbf, \sigma | 0}(q_{r+2}, \cdots, q_n)\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-eq-polology-q-and-m-computation">
+<span class="eqno">(9.2.5)<a class="headerlink" href="#equation-eq-polology-q-and-m-computation" title="Link to this equation">#</a></span>\[\begin{split}q &amp;\coloneqq q_1 + \cdots + q_r = -q_{r+1} - \cdots - q_n \\
+M_{0 | \qbf, \sigma}(q_2, \cdots, q_r) &amp;\coloneqq \int d^4y_2 \cdots d^4y_r~e^{-\ifrak q_2 \cdot y_2} \cdots e^{-\ifrak q_r \cdot y_r} \\
+    &amp;\qquad \times \left(\Psi_{\VAC}, T\{A_1(0), A_2(y_2), \cdots, A_r(y_r)\} \Psi_{\qbf, \sigma}\right) \\
+M_{\qbf, \sigma | 0}(q_{r+2}, \cdots, q_n) &amp;\coloneqq \int d^4y_{r+2} \cdots d^4y_n~e^{-\ifrak q_{r+2} \cdot y_{r+2}} \cdots e^{-\ifrak q_n \cdot y_n} \\
+    &amp;\qquad \times \left(\Psi_{\qbf, \sigma}, T\{A_{r+1}(0), A_{r+2}(y_{r+2}), \cdots, A_n(y_n)\} \Psi_{\VAC}\right)\end{split}\]</div>
+<p>is consistent with <a class="reference internal" href="#equation-eq-polology-defn-q">Eq.9.2.2</a> and <a class="reference internal" href="#equation-eq-polology-defn-m">Eq.9.2.4</a>. This finishes the proof of <a class="reference internal" href="#equation-eq-vacuum-expectation-pole-formula">Eq.9.2.3</a> with the understanding that</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{q^0 - \sqrt{\qbf^2 + m^2} + \ifrak\epsilon}
+    = \frac{-q^0 - \sqrt{\qbf^2 + m^2} + \ifrak\epsilon}{-(q^0)^2 + \left(\sqrt{\qbf^2 + m^2} - \ifrak\epsilon\right)^2}
+    = \frac{-2\sqrt{\qbf^2 + m^2}}{q^2 + m^2 - \ifrak\epsilon}\]</div>
+<p>near the pole.</p>
+</section>
+<section id="field-and-mass-renormalization">
+<h2><span class="section-number">9.3. </span>Field and Mass Renormalization<a class="headerlink" href="#field-and-mass-renormalization" title="Link to this heading">#</a></h2>
+<p>We’ll apply the pole analysis developed in the previous section to the special case where a single external line approaches the mass shell. This analysis will lead us to the notion of renormalized masses and fields, which had traditionally been thought of as a trick to handle infinities in quantum field theories.</p>
+<p>More precisely, let’s consider a special case of <a class="reference internal" href="#equation-eq-polology-defn-g">Eq.9.2.1</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-defn-g">
+<span class="eqno">(9.3.1)<a class="headerlink" href="#equation-eq-renormalization-defn-g" title="Link to this equation">#</a></span>\[G_{\ell}(q_1, q_2, \cdots) = \int d^4x_1~d^4x_2 \cdots e^{-\ifrak q_1 \cdot x_1} e^{-\ifrak q_2 \cdot x_2} \cdots \braket{T\{\Oscr_{\ell}(x_1), A_2(x_2), \cdots\}}_{\VAC}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Oscr_{\ell}(x)\)</span> is a Heisenberg-picture operator with the same Lorentz transformation property as a free field <span class="math notranslate nohighlight">\(\psi_{\ell}(x)\)</span> discussed in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#sec-quantum-fields-and-antiparticles"><span class="std std-ref">Quantum Fields and Antiparticles</span></a> (cf. <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-defn-annihilation-and-creation-field">Eq.4.1.1</a>), while the rest <span class="math notranslate nohighlight">\(A_2, A_3, \cdots\)</span> are arbitrary operators as in <a class="reference internal" href="#equation-eq-polology-defn-g">Eq.9.2.1</a>.</p>
+<p>Now suppose there is a one-particle state <span class="math notranslate nohighlight">\(\Psi_{\qbf_1, \sigma}\)</span> with non-vanishing matrix elements with <span class="math notranslate nohighlight">\(\Oscr_{\ell}^{\dagger} \Psi_{\VAC}\)</span> and <span class="math notranslate nohighlight">\(A_2 A_3 \cdots \Psi_{\VAC}\)</span>. It follows from <a class="reference internal" href="#equation-eq-vacuum-expectation-pole-formula">Eq.9.2.3</a> and <a class="reference internal" href="#equation-eq-polology-q-and-m-computation">Eq.9.2.5</a> that <span class="math notranslate nohighlight">\(G_{\ell}\)</span> admits a pole at <span class="math notranslate nohighlight">\(q_1^2 = -m^2\)</span> with the following residue</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-defn-pole-original">
+<span class="eqno">(9.3.2)<a class="headerlink" href="#equation-eq-renormalization-defn-pole-original" title="Link to this equation">#</a></span>\[\begin{split}G_{\ell} &amp;\to \frac{-2\ifrak\sqrt{\qbf_1^2 + m^2}}{q_1^2 + m^2 - \ifrak\epsilon} (2\pi)^3 \sum_{\sigma} \left(\Psi_{\VAC}, \Oscr_{\ell}(0) \Psi_{\qbf_1, \sigma}\right) \\
+    &amp;\qquad \times \int d^4x_2 \cdots e^{-\ifrak q_2 \cdot x_2} \cdots \left(\Psi_{\qbf_1, \sigma}, T\{A_2(x_2), \cdots\} \Psi_{\VAC}\right)\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\Oscr_{\ell}\)</span> is assumed to transform in the same way as a free field, we can write</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-one-particle-contribution">
+<span class="eqno">(9.3.3)<a class="headerlink" href="#equation-eq-renormalization-one-particle-contribution" title="Link to this equation">#</a></span>\[\left(\Psi_{\VAC}, \Oscr_{\ell}(0) \Psi_{\qbf_1, \sigma}\right) = (2\pi)^{-3/2} N u_{\ell}(\qbf_1, \sigma)\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_{\ell}\)</span> transforms in the same way as in <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-annihilation-and-creation-field-simplified-by-translation">Eq.4.1.10</a>, <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-annihilation-and-creation-transformation-simplified-by-boost">Eq.4.1.12</a>, and <a class="reference internal" href="04-quantum-fields-and-antiparticles.html#equation-eq-j-intertwines-u-and-v">Eq.4.1.13</a>, and <span class="math notranslate nohighlight">\(N\)</span> is a constant to be discussed later.</p>
+<p>Using the fact that <span class="math notranslate nohighlight">\(u_{\ell}\)</span> form a basis of the spinors, we can define “truncated” matrix elements <span class="math notranslate nohighlight">\(M_{\ell}\)</span> by</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-truncated-matrix-element">
+<span class="eqno">(9.3.4)<a class="headerlink" href="#equation-eq-renormalization-truncated-matrix-element" title="Link to this equation">#</a></span>\[\begin{split}&amp;\int d^4x_2 \cdots e^{-\ifrak q_2 \cdot x_2} \cdots \left(\Psi_{\qbf_1, \sigma}, T\{A_2(x_2), \cdots\} \Psi_{\VAC}\right) \\
+    &amp;\qquad \eqqcolon N^{-1} (2\pi)^{-3/2} \sum_{\ell} u_{\ell}^{\ast}(\qbf_1, \sigma) M_{\ell}(q_2, \cdots)\end{split}\]</div>
+<p>Together we can rewrite <a class="reference internal" href="#equation-eq-renormalization-defn-pole-original">Eq.9.3.2</a> as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-residue-as-feynman-diagram">
+<span class="eqno">(9.3.5)<a class="headerlink" href="#equation-eq-renormalization-residue-as-feynman-diagram" title="Link to this equation">#</a></span>\[G_{\ell} \to \frac{-2\ifrak\sqrt{\qbf_1^2 + m^2}}{q_1^2 + m^2 - \ifrak\epsilon}
+    \sum_{\sigma, \ell'} u_{\ell}(\qbf_1, \sigma) u_{\ell'}^{\ast}(\qbf_1, \sigma) M_{\ell'}(q_2, \cdots)\]</div>
+<p>Recall from <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-spin-sum-u-and-v-as-polynomial">Eq.5.2.2</a> and <a class="reference internal" href="05-the-feynman-rules.html#equation-eq-propagator-as-momentum-space-integral">Eq.5.2.15</a> that, besides a factor of <span class="math notranslate nohighlight">\((2\pi)^{-4}\)</span> <a class="footnote-reference brackets" href="#missing-pi4-factor" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, the coefficient in front of <span class="math notranslate nohighlight">\(M_{\ell'}\)</span> is nothing but the (momentum-space) propagator <span class="math notranslate nohighlight">\(-\ifrak \Delta_{\ell \ell'}(q_1)\)</span> for the (hypothetical) free field that transforms in the same way as <span class="math notranslate nohighlight">\(\Oscr_{\ell}\)</span>. Hence the right-hand-side of <a class="reference internal" href="#equation-eq-renormalization-residue-as-feynman-diagram">Eq.9.3.5</a> can be interpreted as a sum over Feynman diagrams, where <span class="math notranslate nohighlight">\(M_{\ell'}(q_2, \cdots)\)</span> represents the sum of Feynman diagrams with external lines carrying momenta <span class="math notranslate nohighlight">\(q_1, q_2, \cdots\)</span>, corresponding to operators <span class="math notranslate nohighlight">\(\Oscr_{\ell}, A_2, \cdots\)</span>, respectively, but with the first external line corresponding to <span class="math notranslate nohighlight">\(q_1\)</span> and <span class="math notranslate nohighlight">\(\Oscr_{\ell}\)</span> stripped off. Under this interpretation, we see the right-hand-side of <a class="reference internal" href="#equation-eq-renormalization-truncated-matrix-element">Eq.9.3.4</a> also as a sum of Feynman diagrams, whose only difference with <a class="reference internal" href="#equation-eq-renormalization-residue-as-feynman-diagram">Eq.9.3.5</a> is to replace the external line corresponding to <span class="math notranslate nohighlight">\(\Oscr_{\ell}\)</span> with an external line corresponding to an emission of a particle in state <span class="math notranslate nohighlight">\(\Psi_{\qbf_1, \sigma}\)</span> (cf. <a class="reference internal" href="05-the-feynman-rules.html#fig-momentum-space-feynman-diagrams"><span class="std std-numref">Fig. 5.2.1</span></a>), besides of course the extra factor <span class="math notranslate nohighlight">\(N^{-1}\)</span>.</p>
+<p>The above calculation, which allows S-matrix elements <a class="reference internal" href="#equation-eq-renormalization-defn-g">Eq.9.3.1</a> to be computed in terms of a (renormalized) one-particle state <a class="reference internal" href="#equation-eq-renormalization-one-particle-contribution">Eq.9.3.3</a> and the rest <a class="reference internal" href="#equation-eq-renormalization-truncated-matrix-element">Eq.9.3.4</a> is known as the <a class="reference external" href="https://en.wikipedia.org/wiki/LSZ_reduction_formula">Lehmann-Symanzik-Zimmermann reduction formula</a>. Obviously, a particularly interesting operator here is <span class="math notranslate nohighlight">\(\Oscr_{\ell}\)</span>, which transforms like a free field. It’s important to note, however, that it doesn’t have an actual field appearing in the Lagrangian, nor does it have to be elementary, i.e., it may be a bound state of elementary particles. But in any case, when treating <span class="math notranslate nohighlight">\(\Oscr_{\ell}\)</span> as a field in Feynman diagram calculations, it must be renormalized such that</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-field-defn">
+<span class="eqno">(9.3.6)<a class="headerlink" href="#equation-eq-renormalization-field-defn" title="Link to this equation">#</a></span>\[\left(\Psi_{\VAC}, \Psi_{\ell}(0) \Psi_{\qbf, \sigma}\right) = (2\pi)^{-3/2} u_{\ell}(\qbf, \sigma)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Psi_{\ell} \coloneqq \Oscr_{\ell} / N\)</span> in light of <a class="reference internal" href="#equation-eq-renormalization-one-particle-contribution">Eq.9.3.3</a>. Here we unfortunately run into yet another conflict of notation where the letter <span class="math notranslate nohighlight">\(\Psi\)</span> is used for both states and fields.</p>
+<p>The rule of renormalization can be summarized as follows</p>
+<blockquote>
+<div><p>A renormalized field is one whose propagator has the same behavior near its pole as for a free field, and the renormalized mass is defined by the position of the pole.</p>
+</div></blockquote>
+<p>The rest of this section is to work out some simple examples of the renormalization procedure. The simplest example involves a self-interacting real scalar field <span class="math notranslate nohighlight">\(\Phi_B\)</span>, where the subscript <span class="math notranslate nohighlight">\(B\)</span> is used to emphasize that this is a “bare” field, as opposed to a renormalized one. The Lagrangian describing this field is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-scalar-field-lagrangian-density">
+<span class="eqno">(9.3.7)<a class="headerlink" href="#equation-eq-renormalization-scalar-field-lagrangian-density" title="Link to this equation">#</a></span>\[\Lscr \coloneqq -\frac{1}{2} \p_{\mu} \Phi_B \p^{\mu} \Phi_B - \frac{1}{2} m_B^2 \Phi_B^2 - V_B(\Phi_B)\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_B\)</span> is the self-interaction term. With nontrivial interaction, there is no reason for <span class="math notranslate nohighlight">\(\Psi_B\)</span> to satisfy <a class="reference internal" href="#equation-eq-renormalization-field-defn">Eq.9.3.6</a>, nor would the pole in <span class="math notranslate nohighlight">\(q^2\)</span> be at <span class="math notranslate nohighlight">\(-m_B^2\)</span>. To see how renormalization works in this case, let’s introduce a new field and mass as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Phi &amp;\coloneqq Z^{-1/2} \Phi_B \\
+m^2 &amp;\coloneqq m_B^2 + \delta m^2\end{split}\]</div>
+<p>such that <span class="math notranslate nohighlight">\(\Phi\)</span> satisfies <a class="reference internal" href="#equation-eq-renormalization-field-defn">Eq.9.3.6</a> and the pole of the propagator is at <span class="math notranslate nohighlight">\(q^2 = -m^2\)</span>.</p>
+<p>Using the renormalized field and mass, we can rewrite <a class="reference internal" href="#equation-eq-renormalization-scalar-field-lagrangian-density">Eq.9.3.7</a> as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Lscr &amp;= \Lscr_0 + \Lscr_1 \\
+\Lscr_0 &amp;\coloneqq -\frac{1}{2} \p_{\mu} \Phi \p^{\mu} \Phi - \frac{1}{2} m^2 \Phi^2 \\
+\Lscr_1 &amp;\coloneqq -\frac{1}{2} \left(Z-1\right) \left(\p_{\mu} \Phi \p^{\mu} \Phi + m^2 \Phi^2\right) + \frac{1}{2} Z \delta m^2 \Phi^2 - V(\Phi) \\
+V(\Phi) &amp;\coloneqq V_B(\sqrt{Z} \Phi)\end{split}\]</div>
+<p>so that <span class="math notranslate nohighlight">\(\Lscr_0\)</span> is the Lagrangian of the free scalar field, and can be thought of as the “non-interacting” part of the Feynman diagrams. Now the momentum-space propagator of the renormalized field <span class="math notranslate nohighlight">\(\Phi\)</span>, denoted by <span class="math notranslate nohighlight">\(\Delta'(q)\)</span>, takes the form of a geometric series as follows</p>
+<div class="math notranslate nohighlight" id="equation-eq-renormalization-scalar-field-propagator-as-geometric-series">
+<span class="eqno">(9.3.8)<a class="headerlink" href="#equation-eq-renormalization-scalar-field-propagator-as-geometric-series" title="Link to this equation">#</a></span>\[\begin{split}\frac{-\ifrak}{(2\pi)^4} \Delta'(q) &amp;= \frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon} \\
+    &amp;\quad + \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) \left(\ifrak(2\pi)^4 \Pi^{\ast}(q^2)\right) \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) \\
+    &amp;\quad + \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) \left(\ifrak(2\pi)^4 \Pi^{\ast}(q^2)\right) \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) \\
+        &amp;\qquad \times \left(\ifrak(2\pi)^4 \Pi^{\ast}(q^2)\right) \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) + \cdots\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\ifrak (2\pi)^4 \Pi^{\ast}(q^2)\)</span> aggregates the contributions of <em>one-particle-irreducible</em> Feynman diagrams with two external lines corresponding to the propagator <span class="math notranslate nohighlight">\(-\ifrak (2\pi)^{-4} \left(q^2 + m^2 - \ifrak\epsilon\right)^{-1}\)</span> without taking these two propagators into account. Here “one-particle-irreducible” means that the diagram contains no internal lines that carry the particle represented by the free scalar field.</p>
+<figure class="align-center" id="id2">
+<img alt="../../_images/renormalized-scalar-field-propagator.svg" src="../../_images/renormalized-scalar-field-propagator.svg" />
+<figcaption>
+<p><span class="caption-number">Fig. 9.3.1 </span><span class="caption-text">An example contribution in <a class="reference internal" href="#equation-eq-renormalization-scalar-field-propagator-as-geometric-series">Eq.9.3.8</a> in the case where <span class="math notranslate nohighlight">\(V(\Phi) = \Phi^4\)</span>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="missing-pi4-factor" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The missing <span class="math notranslate nohighlight">\((2\pi)^{-4}\)</span> has to do with the fact that in the initial setup <a class="reference internal" href="#equation-eq-polology-defn-g">Eq.9.2.1</a>, we’ve ignored a factor <span class="math notranslate nohighlight">\((2\pi)^{-4}\)</span> for each <span class="math notranslate nohighlight">\(q_i\)</span>.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -500,6 +630,7 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polology">9.2. Polology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field-and-mass-renormalization">9.3. Field and Mass Renormalization</a></li>
 </ul>
   </nav></div>
 

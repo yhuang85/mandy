@@ -18,12 +18,12 @@ import string
 
 # -- Project information -----------------------------------------------------
 
-project = 'Mandy'
-copyright = '2021, Mandy'
-author = 'Mandy'
+project = "Mandy"
+copyright = "2021, Mandy"
+author = "Mandy"
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = "0.1"
 
 
 # -- General configuration ---------------------------------------------------
@@ -32,9 +32,9 @@ release = '0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-	'sphinx.ext.mathjax',
-	'sphinx.ext.todo',
-	'sphinx_design',
+    "sphinx.ext.mathjax",
+    "sphinx.ext.todo",
+    "sphinx_design",
 ]
 
 todo_include_todos = True
@@ -47,7 +47,7 @@ todo_include_todos = True
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'en'
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -63,98 +63,101 @@ rst_prolog = """
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'pydata_sphinx_theme'
+html_theme = "pydata_sphinx_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 html_css_files = [
-	'css/custom.css',
+    "css/custom.css",
 ]
 html_js_files = [
-    'js/custom.js',
+    "js/custom.js",
 ]
 
-html_logo = '_static/dms.png'
+html_logo = "_static/dms.png"
 html_title = "Mandy's wonderland"
 html_theme_options = {
-	"icon_links": [
-		{
-			"name": "GitHub",
-			"url": "https://github.com/yhuang85/mandy",
-			"icon": "fab fa-github-square",
-		}
-	],
-	"navigation_depth": 4,
-	"secondary_sidebar_items": ["page-toc", "edit-this-page"],
-	"show_prev_next": False,
-	"use_edit_page_button": True,
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/yhuang85/mandy",
+            "icon": "fab fa-github-square",
+        }
+    ],
+    "navigation_depth": 4,
+    "secondary_sidebar_items": ["page-toc", "edit-this-page"],
+    "show_prev_next": False,
+    "use_edit_page_button": True,
 }
 
 html_context = {
-	"github_user": "yhuang85",
-	"github_repo": "mandy",
-	"github_version": "main",
-	"doc_path": "build-source/source",
+    "github_user": "yhuang85",
+    "github_repo": "mandy",
+    "github_version": "main",
+    "doc_path": "build-source/source",
 }
 
 html_sidebars = {
-	# Hide primary sidebar
-	"math/*": [],
-	"physics/index": [],
+    # Hide primary sidebar
+    "math/*": [],
+    "physics/index": [],
 }
 
 numfig = True
 numfig_format = {
-	'figure': 'Fig. %s',
-    'section': 'Section',
-	'table': 'Table %s',
+    "figure": "Fig. %s",
+    "section": "Section",
+    "table": "Table %s",
 }
 numfig_secnum_depth = 2
 math_eqref_format = "Eq.{number}"
 math_numfig = True
 
 mathjax3_config = {
-	'tex': {
-		'macros': {
-			'op': ['\\operatorname {#1}', 1],
-			'p': '{\\partial}',
-			'ps': ['\\prescript {#1}{#2}{#3}', 3],
-			'psup': ['\\prescript {#1}{}{#2}', 2],
-			'blue': ['{\\color{blue} {#1}}', 1],
-			'bm': ['{{\\boldsymbol{#1}}}', 1],
-			'orange': ['{\\color{orange} {#1}}', 1],
-			**{w: f'{{\\operatorname{{{w}}}}}' for w in ['dist', 'ind', 'std', 'Tr', 'VAC']},
-			**{f'{w}bb': f'{{\\mathbb {w}}}' for w in string.ascii_letters},
-			**{f'{w}bf': f'{{\\mathbf {w}}}' for w in string.ascii_letters},
-			**{f'{w}cal': f'{{\\mathcal {w}}}' for w in string.ascii_letters},
-			**{f'{w}frak': f'{{\\mathfrak {w}}}' for w in string.ascii_letters},
-			**{f'{w}scr': f'{{\\mathscr {w}}}' for w in string.ascii_letters},
-            **{f'{w}slash': f'{{\\cancel{{{w}}}}}' for w in string.ascii_letters},
-		},
-		'packages': {
-			'[+]': [
-				'ams',
-				'boldsymbol',
-				'color',
-				'mathtools',
-				'unicode',
-                'cancel',
-                'braket',
-			],
-		},
-		'tags': 'ams',
-	},
-	'loader': {
-		'load': [
-			'[tex]/ams',
-			'[tex]/boldsymbol',
-			'[tex]/color',
-			'[tex]/mathtools',
-			'[tex]/unicode',
-            '[tex]/cancel',
-            '[tex]/braket',
-		],
-	}
+    "tex": {
+        "macros": {
+            "op": ["\\operatorname {#1}", 1],
+            "p": "{\\partial}",
+            "ps": ["\\prescript {#1}{#2}{#3}", 3],
+            "psup": ["\\prescript {#1}{}{#2}", 2],
+            "blue": ["{\\color{blue} {#1}}", 1],
+            "bm": ["{{\\boldsymbol{#1}}}", 1],
+            "orange": ["{\\color{orange} {#1}}", 1],
+            **{
+                w: f"{{\\operatorname{{{w}}}}}"
+                for w in ["dist", "ind", "std", "Tr", "VAC"]
+            },
+            **{f"{w}bb": f"{{\\mathbb {w}}}" for w in string.ascii_letters},
+            **{f"{w}bf": f"{{\\mathbf {w}}}" for w in string.ascii_letters},
+            **{f"{w}cal": f"{{\\mathcal {w}}}" for w in string.ascii_letters},
+            **{f"{w}frak": f"{{\\mathfrak {w}}}" for w in string.ascii_letters},
+            **{f"{w}scr": f"{{\\mathscr {w}}}" for w in string.ascii_letters},
+            **{f"{w}slash": f"{{\\cancel{{{w}}}}}" for w in string.ascii_letters},
+        },
+        "packages": {
+            "[+]": [
+                "ams",
+                "boldsymbol",
+                "color",
+                "mathtools",
+                "unicode",
+                "cancel",
+                "braket",
+            ],
+        },
+        "tags": "ams",
+    },
+    "loader": {
+        "load": [
+            "[tex]/ams",
+            "[tex]/boldsymbol",
+            "[tex]/color",
+            "[tex]/mathtools",
+            "[tex]/unicode",
+            "[tex]/cancel",
+            "[tex]/braket",
+        ],
+    },
 }
