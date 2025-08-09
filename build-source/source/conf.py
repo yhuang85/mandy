@@ -124,6 +124,8 @@ mathjax3_config = {
             "psup": ["\\prescript {#1}{}{#2}", 2],
             "blue": ["{\\color{blue} {#1}}", 1],
             "bm": ["{{\\boldsymbol{#1}}}", 1],
+            "slash": ["#1\\!\\!\\!/", 1],
+            "sslash": ["#1\\!\\!/", 1],
             "orange": ["{\\color{orange} {#1}}", 1],
             **{
                 w: f"{{\\operatorname{{{w}}}}}"
@@ -134,7 +136,6 @@ mathjax3_config = {
             **{f"{w}cal": f"{{\\mathcal {w}}}" for w in string.ascii_letters},
             **{f"{w}frak": f"{{\\mathfrak {w}}}" for w in string.ascii_letters},
             **{f"{w}scr": f"{{\\mathscr {w}}}" for w in string.ascii_letters},
-            **{f"{w}slash": f"{{\\cancel{{{w}}}}}" for w in string.ascii_letters},
         },
         "packages": {
             "[+]": [

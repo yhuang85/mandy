@@ -642,12 +642,14 @@ Internal lines
     * For each internal electron line from :math:`\beta` to :math:`\alpha`, include a factor (cf. :eq:`eq_p_polynomial_dirac` and :eq:`eq_propagator_as_momentum_space_integral`)
 
       .. math::
+        :label: eq_qed_electron_propagator
 
-            \frac{-\ifrak}{(2\pi)^4} \frac{\left( -\ifrak \kslash + m \right)_{\alpha \beta}}{k^2 + m^2 - \ifrak \epsilon}
+        \frac{-\ifrak}{(2\pi)^4} \frac{\left( -\ifrak \slash{k} + m \right)_{\alpha \beta}}{k^2 + m^2 - \ifrak \epsilon}
 
       where the :math:`\beta` matrix in :eq:`eq_p_polynomial_dirac` is dropped because of the use of :math:`\bar{\psi}`, rather than :math:`\psi^{\dagger}`, in :eq:`eq_qed_concrete_interaction_massive_spin_half_fermion`. Moreover, the `Feynman slash notation <https://en.wikipedia.org/wiki/Feynman_slash_notation>`__
 
-      .. math:: \kslash \coloneqq \gamma^{\mu} k_{\mu}
+      .. math:: \slash{k} \coloneqq \gamma^{\mu} k_{\mu}
+        :label: eq_qed_defn_slash_k
 
       is adopted here.
     * For each internal photon line between :math:`\mu` and :math:`\nu`, include a factor (cf. :eq:`eq_qed_photon_line_contribution_covariant`)
@@ -728,7 +730,7 @@ The corresponding S-matrix element is given as follows
             \frac{e_{\mu}(\kbf)}{(2\pi)^{3/2} \sqrt{2k_0}}
             \frac{\bar{u}_{\beta'}(\pbf', \sigma')}{(2\pi)^{3/2}}
             \frac{{e'_{\nu}}^{\ast}(\kbf')}{(2\pi)^{3/2} \sqrt{2k'_0}} \\
-        &\quad \times \int d^4 q~\frac{-\ifrak}{(2\pi)^4} \frac{\left(-\ifrak \qslash + m\right)_{\alpha' \beta}}{q^2 + m^2 - \ifrak \epsilon} \\
+        &\quad \times \int d^4 q~\frac{-\ifrak}{(2\pi)^4} \frac{\left(-\ifrak \slash{q} + m\right)_{\alpha' \beta}}{q^2 + m^2 - \ifrak \epsilon} \\
             &\qquad \times \Big( (2\pi)^4 e (\gamma^{\mu})_{\beta \alpha} \delta^4(q-p-k) (2\pi)^4 e (\gamma^{\nu})_{\beta' \alpha'} \delta^4(p'+k'-q) \\
             &\qquad + (2\pi)^4 e (\gamma^{\mu})_{\beta' \alpha'} \delta^4(p'-q-k) (2\pi)^4 e (\gamma^{\nu})_{\beta \alpha} \delta^4(q-p-k') \Big)
 
@@ -738,8 +740,8 @@ Evaluating the (trivial) integral, using obvious shorthand notations, and with m
 
     S &= \frac{-\ifrak e^2 \delta^4(p+k-p'-k')}{(2\pi)^2 2\sqrt{k_0 k'_0}} \\
             &\quad \times \bar{u}(\pbf', \sigma') \left(
-                \cancel{{e'}^{\ast}} \frac{-\ifrak \left(\pslash + \kslash \right) + m}{(p+k)^2 + m^2} \eslash +
-                \eslash \frac{-\ifrak \left( \pslash - \cancel{k'} \right) + m}{(p - k')^2 + m^2} \cancel{{e'}^{\ast}}
+                \slash{e}'^{\ast} \frac{-\ifrak \left(\slash{p} + \slash{k} \right) + m}{(p+k)^2 + m^2} \slash{e} +
+                \slash{e} \frac{-\ifrak \left( \slash{p} - \slash{k}' \right) + m}{(p - k')^2 + m^2} \slash{e}'^{\ast}
             \right) u(\pbf, \sigma) \\
 
 Using the mass-shell conditions :math:`p^2 = m^2` and :math:`k^2 = 0`, the denominators in the big parenthesis may be simplified as follows
@@ -759,8 +761,8 @@ where
     :label: eq_compton_scattering_defn_m
 
     M &= \frac{e^2}{(2\pi)^3 4\sqrt{k_0 k'_0}} \bar{u}(\pbf', \sigma') \left(
-            \cancel{{e'}^{\ast}} \frac{-\ifrak \left( \pslash + \kslash \right) + m}{p \cdot k} \eslash \right. \\
-        &\qquad \left. + \eslash \frac{\ifrak \left( \pslash - \cancel{k'} \right) - m}{p \cdot k'} \cancel{{e'}^{\ast}}
+            \slash{e}'^{\ast} \frac{-\ifrak \left( \slash{p} + \slash{k} \right) + m}{p \cdot k} \slash{e} \right. \\
+        &\qquad \left. + \slash{e} \frac{\ifrak \left( \slash{p} - \slash{k}' \right) - m}{p \cdot k'} \slash{e}'^{\ast}
         \right) u(\pbf, \sigma)
 
 Now the differential cross-section :math:`d\sigma` (not to be confused with spin :math:`z`-component :math:`\sigma`) according to :eq:`eq_cross_section_two_particles` is
@@ -843,7 +845,7 @@ Now let's evaluate :math:`|M|^2` where :math:`M` is given by :eq:`eq_compton_sca
         &= \sum_{\sigma, \sigma'} \left( \bar{u}(\pbf', \sigma') A u(\pbf, \sigma) \right) \left( u^{\dagger}(\pbf, \sigma) A^{\dagger} \bar{u}^{\dagger}(\pbf', \sigma') \right) \\
         &= \sum_{\sigma, \sigma'} \left( \bar{u}(\pbf', \sigma') A u(\pbf, \sigma) \right) \left( \bar{u}(\pbf, \sigma) \beta A^{\dagger} \beta u(\pbf', \sigma') \right) \\
         &= \sum_{\sigma, \sigma', \alpha, \beta, \gamma, \delta} A_{\beta \alpha} u_{\alpha}(\pbf, \sigma) \bar{u}_{\gamma}(\pbf, \sigma) \left( \beta A^{\dagger} \beta \right)_{\gamma \delta} u_{\delta}(\pbf', \sigma') \bar{u}_{\alpha}(\pbf', \sigma') \\
-        &= \Tr\left( A \frac{-\ifrak \pslash + m}{2p_0} \beta A^{\dagger} \beta \frac{-\ifrak \cancel{p'} + m}{2p'_0} \right)
+        &= \Tr\left( A \frac{-\ifrak \slash{p} + m}{2p_0} \beta A^{\dagger} \beta \frac{-\ifrak \slash{p}' + m}{2p'_0} \right)
 
 Applying this calculation to :eq:`eq_compton_scattering_defn_m`, and using :eq:`eq_compton_scattering_defn_photon_energy_variable` and :eq:`eq_dirac_field_beta_conjugate_gamma_dagger`, we get
 
@@ -853,13 +855,13 @@ Applying this calculation to :eq:`eq_compton_scattering_defn_m`, and using :eq:`
         &= \frac{e^4}{64 (2\pi)^6 \omega \omega' p_0 p'_0} \\
         &\quad \times \Tr\left(
             \left(
-                \cancel{{e'}^{\ast}} \frac{-\ifrak \left( \pslash + \kslash \right) + m}{p \cdot k} \eslash + \eslash \frac{\ifrak \left( \cancel{p'} - \cancel{k'} \right) - m}{p \cdot k'} \cancel{{e'}^{\ast}}
-            \right) (-\ifrak \pslash + m)
+                \slash{e}'^{\ast} \frac{-\ifrak \left( \slash{p} + \slash{k} \right) + m}{p \cdot k} \slash{e} + \slash{e} \frac{\ifrak \left( \slash{p}' - \slash{k}' \right) - m}{p \cdot k'} \slash{e}'^{\ast}
+            \right) (-\ifrak \slash{p} + m)
         \right. \\
         &\qquad \left. \times
             \left(
-                \cancel{e^{\ast}} \frac{-\ifrak \left( \pslash + \kslash \right) + m}{p \cdot k} \cancel{e'} + \cancel{e'} \frac{\ifrak \left( \cancel{p'} - \cancel{k'} \right)- m}{p \cdot k'} \cancel{e^{\ast}}
-            \right) (-\ifrak \cancel{p'} + m)
+                \slash{e}^{\ast} \frac{-\ifrak \left( \slash{p} + \slash{k} \right) + m}{p \cdot k} \slash{e}' + \slash{e}' \frac{\ifrak \left( \slash{p}' - \slash{k}' \right)- m}{p \cdot k'} \slash{e}^{\ast}
+            \right) (-\ifrak \slash{p}' + m)
         \right)
 
 A few tricks can be applied to simplify such a complicated expression. First, recall that the Coulomb gauge condition :eq:`eq_qed_coulomb_gauge_polarization_vector` implies :math:`e_0 = 0`, and the laboratory frame condition :eq:`eq_compton_scattering_lab_frame` implies :math:`\pbf = 0`. It follows that
@@ -871,31 +873,31 @@ This, together with the Clifford algebra relation :eq:`eq_dirac_field_clifford_a
 
 .. math::
 
-    \left( -\ifrak \pslash + m \right) \eslash \left( -\ifrak \pslash + m \right)
-        &= \eslash \left( \ifrak \pslash + m \right) \left( -\ifrak \pslash + m \right) \\
-        &= \eslash \left( \pslash^2 + m^2 \right) \\
-        &= \eslash \left( p^2 + m^2 \right) = 0
+    \left( -\ifrak \slash{p} + m \right) \slash{e} \left( -\ifrak \slash{p} + m \right)
+        &= \slash{e} \left( \ifrak \slash{p} + m \right) \left( -\ifrak \slash{p} + m \right) \\
+        &= \slash{e} \left( \slash{p}^2 + m^2 \right) \\
+        &= \slash{e} \left( p^2 + m^2 \right) = 0
 
-and likewise for :math:`\cancel{e^{\ast}}, \cancel{e'},` and :math:`\cancel{{e'}^{\ast}}`. This allows the following simplification
+and likewise for :math:`\slash{e}^{\ast}, \slash{e}',` and :math:`\slash{e}'^{\ast}`. This allows the following simplification
 
 .. math::
 
     \sum_{\sigma, \sigma'} |M|^2
         &= \frac{-e^4}{64 (2\pi)^6 \omega \omega' p_0 p'_0} \Tr\left(
-            \left( \frac{\cancel{{e'}^{\ast}} \kslash \eslash}{p \cdot k} + \frac{\eslash \cancel{k'} \cancel{{e'}^{\ast}}}{p \cdot k'} \right)
-            \left( -\ifrak \pslash + m \right) \right. \\
-        &\quad \left. \times \left( \frac{\cancel{e^{\ast}} \kslash \cancel{e'}}{p \cdot k} + \frac{\cancel{e'} \cancel{k'} \cancel{e^{\ast}}}{p \cdot k'} \right)
-            \left( -\ifrak \cancel{p'} + m \right)
+            \left( \frac{\slash{e}'^{\ast} \slash{k} \slash{e}}{p \cdot k} + \frac{\slash{e} \slash{k}' \slash{e}'^{\ast}}{p \cdot k'} \right)
+            \left( -\ifrak \slash{p} + m \right) \right. \\
+        &\quad \left. \times \left( \frac{\slash{e}^{\ast} \slash{k} \slash{e}'}{p \cdot k} + \frac{\slash{e}' \slash{k}' \slash{e}^{\ast}}{p \cdot k'} \right)
+            \left( -\ifrak \slash{p}' + m \right)
     \right) \\
         &= \frac{e^4}{64 (2\pi)^6 \omega \omega' p_0 p'_0} \left(
-            \frac{\Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \pslash \cancel{e^{\ast}} \kslash \cancel{e'} \cancel{p'} \right)}{(p \cdot k)^2} \right. \\
-            &\quad + \frac{\Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \pslash \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \cancel{p'} \right)}{(p \cdot k)(p \cdot k')}
-            + \frac{\Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \pslash \cancel{e^{\ast}} \kslash \cancel{e'} \cancel{p'} \right)}{(p \cdot k')(p \cdot k)} \\
-            &\quad + \frac{\Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \pslash \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \cancel{p'} \right)}{(p \cdot k')^2}
-            - \frac{m^2 \Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \cancel{e^{\ast}} \kslash \cancel{e'} \right)}{(p \cdot k)^2} \\
-            &\quad - \frac{m^2 \Tr\left( \cancel{{e'}^{\ast}} \kslash \eslash \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \right)}{(p \cdot k)(p \cdot k')}
-            - \frac{m^2 \Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \cancel{e^{\ast}} \kslash \cancel{e'} \right)}{(p \cdot k')(p \cdot k)} \\
-            &\quad - \left. \frac{m^2 \Tr\left( \eslash \cancel{k'} \cancel{{e'}^{\ast}} \cancel{e'} \cancel{k'} \cancel{e^{\ast}} \right)}{(p \cdot k')^2}
+            \frac{\Tr\left( \slash{e}'^{\ast} \slash{k} \slash{e} \slash{p} \slash{e}^{\ast} \slash{k} \slash{e}' \slash{p}' \right)}{(p \cdot k)^2} \right. \\
+            &\quad + \frac{\Tr\left( \slash{e}'^{\ast} \slash{k} \slash{e} \slash{p} \slash{e}' \slash{k}' \slash{e}^{\ast} \slash{p}' \right)}{(p \cdot k)(p \cdot k')}
+            + \frac{\Tr\left( \slash{e} \slash{k}' \slash{e}'^{\ast} \slash{p} \slash{e}^{\ast} \slash{k} \slash{e}' \slash{p}' \right)}{(p \cdot k')(p \cdot k)} \\
+            &\quad + \frac{\Tr\left( \slash{e} \slash{k}' \slash{e}'^{\ast} \slash{p} \slash{e}' \slash{k}' \slash{e}^{\ast} \slash{p}' \right)}{(p \cdot k')^2}
+            - \frac{m^2 \Tr\left( \slash{e}'^{\ast} \slash{k} \slash{e} \slash{e}^{\ast} \slash{k} \slash{e}' \right)}{(p \cdot k)^2} \\
+            &\quad - \frac{m^2 \Tr\left( \slash{e}'^{\ast} \slash{k} \slash{e} \slash{e}' \slash{k}' \slash{e}^{\ast} \right)}{(p \cdot k)(p \cdot k')}
+            - \frac{m^2 \Tr\left( \slash{e} \slash{k}' \slash{e}'^{\ast} \slash{e}^{\ast} \slash{k} \slash{e}' \right)}{(p \cdot k')(p \cdot k)} \\
+            &\quad - \left. \frac{m^2 \Tr\left( \slash{e} \slash{k}' \slash{e}'^{\ast} \slash{e}' \slash{k}' \slash{e}^{\ast} \right)}{(p \cdot k')^2}
         \right)
 
 where the last equality uses the fact that the trace of a product of odd number of gamma matrices vanishes.

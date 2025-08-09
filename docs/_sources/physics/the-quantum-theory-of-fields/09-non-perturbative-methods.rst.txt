@@ -291,7 +291,12 @@ The rule of renormalization can be summarized as follows
 
     A renormalized field is one whose propagator has the same behavior near its pole as for a free field, and the renormalized mass is defined by the position of the pole.
 
-The rest of this section is to work out some simple examples of the renormalization procedure. The simplest example involves a self-interacting real scalar field :math:`\Phi_B`, where the subscript :math:`B` is used to emphasize that this is a "bare" field, as opposed to a renormalized one. The Lagrangian describing this field is given by
+The rest of this section is to work out some simple examples of the renormalization procedure.
+
+Renormalization of scalar fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The simplest example involves a self-interacting real scalar field :math:`\Phi_B`, where the subscript :math:`B` is used to emphasize that this is a "bare" field, as opposed to a renormalized one. The Lagrangian describing this field is given by
 
 .. math:: \Lscr \coloneqq -\frac{1}{2} \p_{\mu} \Phi_B \p^{\mu} \Phi_B - \frac{1}{2} m_B^2 \Phi_B^2 - V_B(\Phi_B)
     :label: eq_renormalization_scalar_field_lagrangian_density
@@ -299,6 +304,7 @@ The rest of this section is to work out some simple examples of the renormalizat
 where :math:`V_B` is the self-interaction term. With nontrivial interaction, there is no reason for :math:`\Psi_B` to satisfy :eq:`eq_renormalization_field_defn`, nor would the pole in :math:`q^2` be at :math:`-m_B^2`. To see how renormalization works in this case, let's introduce a new field and mass as follows
 
 .. math::
+    :label: eq_renormalization_scalar_field_renormalize_field_and_mass
 
     \Phi &\coloneqq Z^{-1/2} \Phi_B \\
     m^2 &\coloneqq m_B^2 + \delta m^2
@@ -308,6 +314,7 @@ such that :math:`\Phi` satisfies :eq:`eq_renormalization_field_defn` and the pol
 Using the renormalized field and mass, we can rewrite :eq:`eq_renormalization_scalar_field_lagrangian_density` as follows
 
 .. math::
+    :label: eq_renormalization_scalar_field_split_lagrangian
 
     \Lscr &= \Lscr_0 + \Lscr_1 \\
     \Lscr_0 &\coloneqq -\frac{1}{2} \p_{\mu} \Phi \p^{\mu} \Phi - \frac{1}{2} m^2 \Phi^2 \\
@@ -324,14 +331,100 @@ so that :math:`\Lscr_0` is the Lagrangian of the free scalar field, and can be t
         &\quad + \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) \left(\ifrak(2\pi)^4 \Pi^{\ast}(q^2)\right) \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) \\
             &\qquad \times \left(\ifrak(2\pi)^4 \Pi^{\ast}(q^2)\right) \left(\frac{-\ifrak}{(2\pi)^4} \frac{1}{q^2 + m^2 - \ifrak\epsilon}\right) + \cdots
 
-where :math:`\ifrak (2\pi)^4 \Pi^{\ast}(q^2)` aggregates the contributions of *one-particle-irreducible* Feynman diagrams with two external lines corresponding to the propagator :math:`-\ifrak (2\pi)^{-4} \left(q^2 + m^2 - \ifrak\epsilon\right)^{-1}` without taking these two propagators into account. Here "one-particle-irreducible" means that the diagram contains no internal lines that carry the particle represented by the free scalar field.
+where :math:`\ifrak (2\pi)^4 \Pi^{\ast}(q^2)` aggregates the contributions of *one-particle-irreducible* Feynman diagrams with two external lines corresponding to the propagator :math:`-\ifrak (2\pi)^{-4} \left(q^2 + m^2 - \ifrak\epsilon\right)^{-1}` without taking these two propagators into account. Here "one-particle-irreducible" means that the diagram cannot be disconnected by cutting an internal line that carries the particle represented by :math:`\Lscr_0`.
 
 .. figure:: ./static/renormalized-scalar-field-propagator.svg
     :align: center
 
-    An example contribution in :eq:`eq_renormalization_scalar_field_propagator_as_geometric_series` in the case where :math:`V(\Phi) = \Phi^4`.
+    An example contribution in :eq:`eq_renormalization_scalar_field_propagator_as_geometric_series` in the case where :math:`V(\Phi) = \Phi^4`. Each :math:`\Theta`-shaped subgraph contributes a factor in :math:`\ifrak (2\pi)^4 \Pi^{\ast}(q^2)`.
 
+The geometric series :eq:`eq_renormalization_scalar_field_propagator_as_geometric_series` can be summed up to give the following
+
+.. math:: \Delta'(q) = \left(q^2 + m^2 - \Pi^{\ast}\left(q^2\right) - \ifrak\epsilon\right)^{-1}
+    :label: eq_renormalization_scalar_field_renormalized_propagator
+
+Moreover, the structure of interaction part :math:`\Lscr_1` (cf. :eq:`eq_renormalization_scalar_field_split_lagrangian`) implies that
+
+.. math:: \Pi^{\ast}(q^2) = -(Z-1)\left(q^2+m^2\right) + Z \delta m^2 + \Pi^{\ast}_{\op{LOOP}}(q^2)
+    :label: eq_renormalization_scalar_field_one_particle_irreducible_contribution
+
+where :math:`\Pi^{\ast}_{\op{LOOP}}` aggregates the contributions from one-particle-irreducible diagrams that don't involve :math:`2`-valent vertices that correspond to either :math:`\p_{\mu} \Phi \p^{\mu} \Phi` or :math:`\Phi^2` in :math:`\Lscr_1`.
+
+Now the requirement that :math:`\Delta'(q)` should possess a pole at :math:`q^2 = -m^2` with residue :math:`1` implies the following two conditions
+
+.. math::
+    :label: eq_renormalization_scalar_field_pi_ast_condition
+
+    \Pi^{\ast}(-m^2) &= 0 \\
+    \left. \frac{d}{dq^2} \right|_{q^2=-m^2} \Pi^{\ast}(q^2) &= 0
+
+which, in light of :eq:`eq_renormalization_scalar_field_one_particle_irreducible_contribution`, translate into the following conditions on :math:`Z` and :math:`\delta m^2`
+
+.. math::
+
+    Z \delta m^2 &= -\Pi^{\ast}_{\op{LOOP}}(-m^2) \\
+    Z &= 1 + \left. \frac{d}{dq^2} \right|_{q^2=-m^2} \Pi^{\ast}_{\op{LOOP}}(q^2)
+
+Since the coupling constants appear in :math:`V(\Phi)`, and therefore in :math:`\Pi^{\ast}_{\op{LOOP}}`, it follows that both :math:`Z \delta m^2` and :math:`Z-1` are given by a series of terms involving one or more coupling constants. This justifies :eq:`eq_renormalization_scalar_field_split_lagrangian` where :math:`\Lscr_1` encodes the interaction.
+
+In actual calculations, the quantity :math:`\Pi^{\ast}_{\op{LOOP}}(q^2)` can be computed in terms of Feynman diagrams, though often involves infinities. The renormalized propagator :eq:`eq_renormalization_scalar_field_renormalized_propagator` can then be evaluated using :eq:`eq_renormalization_scalar_field_one_particle_irreducible_contribution` by subtracting from :math:`\Pi^{\ast}_{\op{LOOP}}(q^2)` a first-order polynomial in :math:`q^2` such that :eq:`eq_renormalization_scalar_field_pi_ast_condition` is satisfied. Another noteworthy consequence of :eq:`eq_renormalization_scalar_field_pi_ast_condition` is that all the terms on the right-hand-side of :eq:`eq_renormalization_scalar_field_propagator_as_geometric_series` except the first one vanish as :math:`q^2 \to -m^2`. In other words, external lines on the mass shell need no "radiative" corrections.
+
+Renormalization of Dirac fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The same principle applies also to self-interacting fields of arbitrary spin, for example, the Dirac fields. In light of :eq:`eq_canonical_formalism_dirac_field_lagrangian_density`, consider the following Lagrangian made of bare fields
+
+.. math:: \Lscr = - \bar{\Psi}_B \left(\slash{\p} + m_B\right) \Psi_B - V_B\left(\bar{\Psi}_B \Psi\right)
+
+Similar to :eq:`eq_renormalization_scalar_field_renormalize_field_and_mass`, introduce the renormalized field and mass as follows [#z2notation]_
+
+.. math::
+
+    \Psi &\coloneqq Z_2^{-1/2} \Psi_B \\
+    m &\coloneqq m_B + \delta m
+
+Split the Lagrangian density :math:`\Lscr = \Lscr_0 + \Lscr_1` into the free part and the interaction part in the same way as in the bosonic case :eq:`eq_renormalization_scalar_field_split_lagrangian` where
+
+.. math::
+
+    \Lscr_0 &= -\bar{\Psi} \left(\slash{\p} + m\right) \Psi \\
+    \Lscr_1 &= -(Z_2-1) \bar{\Psi}\left(\slash{\p} + m\right) \Psi + Z_2 \delta m \bar{\Psi} \Psi - V_B\left(Z_2 \bar{\Psi} \Psi\right)
+
+Similar to :math:`\Pi^{\ast}(q^2)` considered in :eq:`eq_renormalization_scalar_field_propagator_as_geometric_series`, let :math:`\Sigma^{\ast}\left(\slash{k}\right)` be the aggregation of one-particle-irreducible Feynman diagrams with one incoming and one outgoing fermionic external lines of momentum :math:`k`. Now the renormalized fermionic momentum-space propagator :math:`S'(k)` (cf. :eq:`eq_qed_electron_propagator`), similar to the bosonic counterpart :eq:`eq_renormalization_scalar_field_propagator_as_geometric_series`, is given by
+
+.. math::
+
+    S'(k) &= \frac{1}{\ifrak \slash{k} + m - \ifrak\epsilon}
+            + \frac{1}{\ifrak \slash{k} + m - \ifrak\epsilon} \Sigma^{\ast}(\slash{k}) \frac{1}{\ifrak \slash{k} + m - \ifrak\epsilon} + \cdots \\
+        &= \frac{1}{\ifrak\slash{k} + m - \Sigma^{\ast}(\slash{k}) - \ifrak\epsilon}
+
+where :math:`\slash{k} = k_{\mu} \gamma^{\mu}` is given by :eq:`eq_qed_defn_slash_k`. Moreover :math:`\Sigma^{\ast}(\slash{k})` is, in analogy to :eq:`eq_renormalization_scalar_field_one_particle_irreducible_contribution`, given by
+
+.. math::
+    :label: eq_renormalization_fermionic_one_particle_irreducible_contribution
+
+    \Sigma^{\ast}(\slash{k}) = -(Z_2-1) \left(\ifrak\slash{k} + m\right) + Z_2 \delta m + \Sigma^{\ast}_{\op{LOOP}}(\slash{k})
+
+The condition that the renormalized :math:`S'(k)` has a pole at :math:`k^2 = -m^2` with the same residue as the uncorrected propagator (cf. :eq:`eq_qed_electron_propagator`) translates into
+
+.. math::
+
+    \Sigma^{\ast}(\ifrak m) &= 0 \\
+    \left.\frac{d}{d\slash{k}}\right|_{\sslash{k}=\ifrak m} \Sigma^{\ast}(\slash{k}) &= 0
+
+In light of :eq:`eq_renormalization_fermionic_one_particle_irreducible_contribution`, these conditions can be rephrased in terms of :math:`Z_2` amd :math:`\delta m` as follows
+
+.. math::
+
+    Z_2 \delta m &= \Sigma^{\ast}_{\op{LOOP}}(\ifrak m) \\
+    Z_2 &= 1 - \ifrak \left.\frac{d}{d\slash{k}}\right|_{\sslash{k}=\ifrak m} \Sigma^{\ast}_{\op{LOOP}}(\slash{k})
+
+
+Charge Renormalization and Ward Identities
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. rubric:: Footnotes
 
 .. [#missing_pi4_factor] The missing :math:`(2\pi)^{-4}` has to do with the fact that in the initial setup :eq:`eq_polology_defn_g`, we've ignored a factor :math:`(2\pi)^{-4}` for each :math:`q_i`.
+
+.. [#z2notation] The subscript :math:`2` in :math:`Z_2`, in contrast to the factor :math:`Z` in :eq:`eq_renormalization_scalar_field_renormalize_field_and_mass`, is used as a convention to distinguish a fermionic renormalization factor from a bosonic one.
